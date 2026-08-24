@@ -11,7 +11,19 @@
 }
 .accueil-ecran > .bande:first-child { padding-top: 10px; flex: 0 0 auto; }
 .accueil-ecran > .bande:last-child { margin-top: auto; flex: 0 0 auto; }
-.accueil { padding-block: 0; }
+/* Le contenu se centre entre les deux frises : collé en haut, il laissait un grand vide
+   sous les chiffres dès que la fenêtre était haute. */
+.accueil {
+  padding-block: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+/* En recherche la page défile : le contenu reprend le fil normal, sans centrage. */
+.accueil-ecran.en-recherche .accueil { justify-content: flex-start; }
 .accueil-hero { padding-top: 30px; flex: 0 0 auto; }
 .accueil-chiffres { flex: 0 0 auto; }
 

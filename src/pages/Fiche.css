@@ -1,0 +1,85 @@
+/* Fiches d'un objet et d'un Pokémon : même gabarit, seul le liseré change de couleur. */
+
+.fiche { padding-block: 20px 60px; }
+
+.retour {
+  display: inline-block;
+  margin: 0 0 14px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+}
+.retour:hover { color: var(--accent-ink); }
+
+.fiche-tete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--accent-ink);
+  border-radius: var(--radius);
+}
+.fiche-tete.pokemon { border-left-color: var(--second); }
+.fiche-tete img { width: 96px; height: 96px; object-fit: contain; }
+.fiche-tete h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(24px, 3.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.1;
+}
+.fiche-tete .ghost-btn { margin-left: auto; }
+.fiche-sous { margin: 4px 0 0; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: .04em; }
+
+.fiche-bloc { margin-top: 26px; }
+.fiche-bloc > h2 { display: block; margin: 0 0 8px; }
+.fiche-note { font-size: 13px; color: var(--ink-3); margin: 0 0 12px; max-width: 78ch; }
+.fiche-note a { color: var(--accent-ink); }
+
+.fiche-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+/* Les étiquettes de fiche sont purement informatives : pas de survol cliquable. */
+.chip-tag.statique { cursor: default; display: inline-flex; align-items: baseline; gap: 6px; }
+.chip-tag.statique:hover { border-color: var(--line-strong); color: var(--ink); }
+.chip-tag.statique b { font-family: var(--mono); font-size: 10px; font-weight: 400; color: var(--ink-3); }
+
+.voisin { display: flex; flex-direction: column; gap: 2px; }
+.voisin-score {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+/* Types et spécialités : deux registres distincts, donc deux étiquettes distinctes —
+   le type est une donnée de la série, la spécialité est le travail rendu sur l'île. */
+.fiche-tags-ligne { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.etiquette-type,
+.etiquette-specialite {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+}
+.etiquette-specialite { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+.fiche-tags-intitule {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  align-self: center;
+}
+.fiche-tags-intitule:not(:first-child) { margin-left: 10px; }

@@ -1,0 +1,55 @@
+.grille-habitats { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+
+.carte-habitat {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--second);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.carte-habitat-corps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 34px 14px 16px;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.carte-habitat-corps:hover .carte-habitat-nom { color: var(--accent-ink); }
+.carte-habitat-corps:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+.carte-habitat-nom { font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+.carte-habitat-sprites { display: flex; gap: 4px; flex-wrap: wrap; }
+.carte-habitat-sprites img { width: 48px; height: 48px; object-fit: contain; }
+.carte-habitat-meta { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: .04em; }
+.carte-habitat-meta b { font-weight: 400; }
+.carte-habitat-meta b.fort { color: var(--second); }
+.carte-habitat-meta b.moyen { color: var(--accent-ink); }
+.carte-habitat-meta b.faible { color: var(--ink-2); }
+
+/* Le × de suppression, posé dans l'angle de la carte comme sur les colocataires. */
+.carte-habitat .retirer {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1;
+  padding: 3px 5px;
+  border-radius: var(--radius);
+}
+.carte-habitat .retirer:hover { color: var(--ink); background: var(--line); }
+.carte-habitat .retirer:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+
+/* Carte dont tous les Pokémon partagent un habitat : le liseré en prend la couleur. */
+.carte-habitat.teintee { border-left-color: var(--teinte); }
+.carte-habitat-meta .marque-habitat { display: inline-flex; align-items: center; gap: 3px; }
+.carte-habitat-meta .marque-habitat svg { font-size: 10px; }

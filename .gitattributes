@@ -1,0 +1,10 @@
+# Fins de ligne normalisées en LF dans le dépôt : le projet se développe sous Windows
+# mais se construit sous Linux (GitHub Actions).
+* text=auto eol=lf
+
+# Binaires : jamais de conversion
+*.png binary
+*.webp binary
+*.ico binary
+*.icns binary
+*.jpg binary

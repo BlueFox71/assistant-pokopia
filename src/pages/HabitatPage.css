@@ -1,0 +1,261 @@
+.habitat { padding-block: 20px 60px; }
+.selecteur { padding-block: 20px 60px; }
+
+.retour {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.retour:hover { color: var(--accent-ink); }
+
+.ghost-btn.primaire { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.ghost-btn.primaire:hover { color: var(--on-accent); filter: brightness(1.08); }
+.ghost-btn:disabled { opacity: .45; cursor: not-allowed; }
+.ghost-btn:disabled:hover { border-color: var(--line-strong); color: var(--ink-2); filter: none; }
+
+/* ---- liste des habitats ---- */
+.liste-tete { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-end; justify-content: space-between; margin: 6px 0 22px; }
+.liste-tete h1 {
+  margin: 4px 0 0;
+  font-family: var(--display);
+  font-size: clamp(24px, 3.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.1;
+}
+.liste-chapeau { margin: 8px 0 0; max-width: 68ch; color: var(--ink-2); font-size: 14px; }
+
+/* Les cartes d’habitat vivent dans components/CarteHabitat.css : l’accueil les affiche aussi. */
+
+/* ---- sélecteur ---- */
+.selecteur-tete { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; margin-bottom: 14px; }
+.selecteur-filtres { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 14px 0; }
+.selecteur-filtres .champ-groupe { margin: 0; flex: 1 1 260px; max-width: 380px; }
+
+/* Le panier reste visible pendant qu'on parcourt les 366 vignettes : sans ça, on perd de
+   vue combien de places restent et où cliquer pour valider. */
+.panier {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+.panier-choix { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.panier-vide { font-size: 13px; color: var(--ink-3); }
+.panier-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-left: auto; }
+.panier-compte { font-family: var(--mono); font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+.jeton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px 3px 3px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.jeton img { width: 34px; height: 34px; object-fit: contain; }
+.jeton:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+
+/* ---- groupe de colocataires ---- */
+.entete-groupe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--second);
+  border-radius: var(--radius);
+}
+.entete-identite { display: flex; flex-direction: column; gap: 12px; }
+.champ-nom { max-width: 320px; }
+.champ-nom input { font-family: var(--display); font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+.entete-actions { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.note-max { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+
+.colocataires { display: flex; flex-wrap: wrap; gap: 10px; }
+.colocataire {
+  position: relative;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.colocataire-lien {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px 8px 8px;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.colocataire-lien:hover strong { color: var(--accent-ink); }
+.colocataire-lien:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+.colocataire img { width: 56px; height: 56px; object-fit: contain; }
+.colocataire-id { display: flex; flex-direction: column; }
+.colocataire-id strong { font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+.colocataire-id span { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: .04em; }
+
+.retirer {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1;
+  padding: 3px 5px;
+  border-radius: var(--radius);
+}
+.retirer:hover { color: var(--ink); background: var(--line); }
+.retirer:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+
+/* ---- filtres ---- */
+.barre-filtres {
+  margin: 14px 0 0;
+  padding: 14px 20px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.barre-filtres h3 { display: block; margin: 0 0 4px; color: var(--ink-2); }
+.barre-filtres h3.second { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.indice { font-size: 12.5px; color: var(--ink-3); margin: 0 0 10px; max-width: 78ch; }
+.champ-groupe { width: 100%; max-width: 460px; margin: 0 0 14px; }
+
+.bascules { display: flex; flex-wrap: wrap; gap: 6px; }
+.bascule {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 11px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+.bascule b { font-family: var(--mono); font-size: 10.5px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.bascule:hover { border-color: var(--accent-ink); }
+.bascule:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.bascule[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.bascule[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
+.bascule.reset[aria-pressed='true'] { background: var(--ink-2); border-color: var(--ink-2); }
+
+/* ---- résultats ---- */
+.resultats { margin-top: 18px; }
+.resultats > h3 { display: block; margin: 0 0 4px; }
+.confort { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); margin: 0 0 12px; }
+.resultats .vide { padding: 30px 0; text-align: left; }
+
+/* La spécialité du colocataire : c'est elle qui décide du travail rendu sur l'île. */
+.colocataire-specialite {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+/* ---- en-tête d'un groupe de filtres ---- */
+.titre-filtre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 0 0 4px; }
+.titre-filtre h3 { margin: 0; }
+.actions-filtre { display: flex; gap: 10px; margin-left: auto; }
+
+.mini-btn {
+  border: 0;
+  background: none;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+.mini-btn:hover { border-bottom-color: var(--accent-ink); }
+.mini-btn:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+.mini-btn:disabled { color: var(--ink-3); cursor: not-allowed; border-bottom-color: transparent; }
+
+/* ---- sauvegarde des habitats ---- */
+.liste-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.panneau-sauvegarde {
+  margin: 0 0 22px;
+  padding: 14px 20px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+.panneau-sauvegarde h2 { display: block; margin: 0 0 4px; }
+
+.zone-sauvegarde {
+  width: 100%;
+  min-height: 160px;
+  resize: vertical;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+.zone-sauvegarde:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+
+.actions-sauvegarde { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.message-sauvegarde { font-family: var(--mono); font-size: 11.5px; color: var(--accent-ink); }
+
+/* ---- compatibilité ---- */
+.jauge-compat { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); }
+.jauge-compat b { font-size: 14px; font-variant-numeric: tabular-nums; }
+.jauge-compat.fort b { color: var(--second); }
+.jauge-compat.moyen b { color: var(--accent-ink); }
+.jauge-compat.faible b { color: var(--ink-2); }
+
+.bandeau-compat {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  font-size: 13px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-strong);
+  color: var(--ink-2);
+}
+.bandeau-compat strong { color: var(--ink); }
+.bandeau-compat.fort { border-left-color: var(--second); }
+.bandeau-compat.moyen { border-left-color: var(--accent); }
+.bandeau-compat.faible { border-left-color: var(--line-strong); }

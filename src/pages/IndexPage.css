@@ -1,0 +1,115 @@
+/* ---- chapeau de page ---- */
+.intro { background: var(--surface); border-bottom: 1px solid var(--line); }
+.intro-inner {
+  padding: 30px 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.intro h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -.015em;
+  margin: 6px 0 0;
+}
+.chapeau { margin: 10px 0 0; max-width: 62ch; color: var(--ink-2); font-size: 14.5px; }
+
+.totaux { display: flex; gap: 22px; font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
+.totaux b {
+  display: block;
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- recherche inversée ---- */
+.inverse {
+  margin: 20px 0 0;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--accent-ink);
+  border-radius: var(--radius);
+}
+.inverse h2 { margin: 0 0 10px; }
+.inverse-ligne + .inverse-ligne { margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.inverse-tuile { display: inline-flex; align-items: center; gap: 8px; vertical-align: middle; }
+.inverse-tuile img { width: 34px; height: 34px; object-fit: contain; }
+.inverse-nom { font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+.inverse-note { font-family: var(--mono); font-size: 12px; color: var(--ink-3); margin-left: 8px; }
+.inverse-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.inverse-reste { margin: 14px 0 0; font-size: 13px; color: var(--ink-3); }
+
+/* ---- grille des 43 préférences ---- */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+  gap: 14px;
+  padding: 22px 0 60px;
+  align-items: start;
+}
+
+.carte {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.carte-tete {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-align: left;
+  padding: 14px 16px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.carte.est-ouverte .carte-tete { border-bottom-color: var(--line); }
+.carte-tete:hover .carte-titre { color: var(--accent-ink); }
+.carte-tete:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+.carte-titre { font-family: var(--display); font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
+.carte-en {
+  display: block;
+  font-family: var(--body);
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--ink-3);
+  letter-spacing: 0;
+  margin-top: 1px;
+}
+.carte-compteurs {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink-3);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+/* lavande pour les objets, vert pour les Pokémon : la même convention que les vignettes */
+.carte-compteurs i { font-style: normal; color: var(--accent-ink); }
+.carte-compteurs em { font-style: normal; color: var(--second); }
+.chevron { flex: 0 0 auto; color: var(--ink-3); transition: transform .18s ease; font-size: 11px; }
+.carte.est-ouverte .chevron { transform: rotate(90deg); }
+
+.carte-corps { padding: 4px 16px 16px; }
+.bloc + .bloc { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.bloc h3 { margin: 10px 0 8px; }
+
+@media (max-width: 620px) {
+  .intro-inner { padding: 24px 20px 20px; }
+  .grille { grid-template-columns: 1fr; }
+}

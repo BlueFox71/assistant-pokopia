@@ -1,0 +1,4911 @@
+[
+ {
+  "en": "Abra",
+  "fr": "Abra",
+  "numero": "213",
+  "habitat": "Dark",
+  "sprite": "063",
+  "types": [
+   "psy"
+  ],
+  "specialites": [
+   "Téléportation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Absol",
+  "fr": "Absol",
+  "numero": "127",
+  "habitat": "Dark",
+  "sprite": "359",
+  "types": [
+   "tenebres"
+  ],
+  "specialites": [
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Aerodactyl",
+  "fr": "Ptéra",
+  "numero": "271",
+  "habitat": "Dry",
+  "sprite": "142",
+  "types": [
+   "roche",
+   "vol"
+  ],
+  "specialites": [
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Alakazam",
+  "fr": "Alakazam",
+  "numero": "215",
+  "habitat": "Dark",
+  "sprite": "065",
+  "types": [
+   "psy"
+  ],
+  "specialites": [
+   "Téléportation",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Alomomola",
+  "fr": "Mamanbo",
+  "numero": "030",
+  "habitat": "Warm",
+  "sprite": "594",
+  "dex": "bassin"
+ },
+ {
+  "en": "Altaria",
+  "fr": "Altaria",
+  "numero": "241",
+  "habitat": "Bright",
+  "sprite": "334",
+  "types": [
+   "dragon",
+   "vol"
+  ],
+  "specialites": [
+   "Désordre",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Amaura",
+  "fr": "Amagara",
+  "numero": "278",
+  "habitat": "Cool",
+  "sprite": "698",
+  "types": [
+   "roche",
+   "glace"
+  ],
+  "specialites": [
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Ampharos",
+  "fr": "Pharamp",
+  "numero": "113",
+  "habitat": "Bright",
+  "sprite": "181",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Arbok",
+  "fr": "Arbok",
+  "numero": "147",
+  "habitat": "Dark",
+  "sprite": "024",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Arcanine",
+  "fr": "Arcanin",
+  "numero": "089",
+  "habitat": "Warm",
+  "sprite": "059",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Ariados",
+  "fr": "Migalos",
+  "numero": "110",
+  "habitat": "Humid",
+  "sprite": "168",
+  "types": [
+   "insecte",
+   "poison"
+  ],
+  "specialites": [
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Armarouge",
+  "fr": "Carmadura",
+  "numero": "201",
+  "habitat": "Warm",
+  "sprite": "936",
+  "types": [
+   "feu",
+   "psy"
+  ],
+  "specialites": [
+   "Combustion",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Articuno",
+  "fr": "Artikodin",
+  "numero": "294",
+  "habitat": "Cool",
+  "sprite": "144",
+  "types": [
+   "glace",
+   "vol"
+  ],
+  "specialites": [
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Audino",
+  "fr": "Nanméouïe",
+  "numero": "131",
+  "habitat": "Bright",
+  "sprite": "531",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Aurorus",
+  "fr": "Dragmara",
+  "numero": "279",
+  "habitat": "Cool",
+  "sprite": "699",
+  "types": [
+   "roche",
+   "glace"
+  ],
+  "specialites": [
+   "Broyage",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Axew",
+  "fr": "Coupenotte",
+  "numero": "071",
+  "habitat": "Dark",
+  "sprite": "610",
+  "types": [
+   "dragon"
+  ],
+  "specialites": [
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Azumarill",
+  "fr": "Azumarill",
+  "numero": "116",
+  "habitat": "Humid",
+  "sprite": "184",
+  "types": [
+   "eau",
+   "fee"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Azurill",
+  "fr": "Azurill",
+  "numero": "114",
+  "habitat": "Humid",
+  "sprite": "298",
+  "types": [
+   "normal",
+   "fee"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Barboach",
+  "fr": "Barloche",
+  "numero": "019",
+  "habitat": "Humid",
+  "sprite": "339",
+  "dex": "bassin"
+ },
+ {
+  "en": "Bastiodon",
+  "fr": "Bastiodon",
+  "numero": "275",
+  "habitat": "Dry",
+  "sprite": "411",
+  "types": [
+   "roche",
+   "acier"
+  ],
+  "specialites": [
+   "Broyage",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Beldum",
+  "fr": "Terhal",
+  "numero": "245",
+  "habitat": "Cool",
+  "sprite": "374",
+  "types": [
+   "acier",
+   "psy"
+  ],
+  "specialites": [
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Bellossom",
+  "fr": "Joliflor",
+  "numero": "016",
+  "habitat": "Bright",
+  "sprite": "182",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Bellsprout",
+  "fr": "Chétiflor",
+  "numero": "021",
+  "habitat": "Humid",
+  "sprite": "069",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Blastoise",
+  "fr": "Tortank",
+  "numero": "009",
+  "habitat": "Humid",
+  "sprite": "009",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Blaziken",
+  "fr": "Braségali",
+  "numero": "122",
+  "habitat": "Warm",
+  "sprite": "257",
+  "types": [
+   "feu",
+   "combat"
+  ],
+  "specialites": [
+   "Combustion",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Blissey",
+  "fr": "Leuphorie",
+  "numero": "102",
+  "habitat": "Bright",
+  "sprite": "242",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Troc",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Bonsly",
+  "fr": "Manzaï",
+  "numero": "165",
+  "habitat": "Dry",
+  "sprite": "438",
+  "types": [
+   "roche"
+  ],
+  "specialites": [
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Brionne",
+  "fr": "Otarlette",
+  "numero": "035",
+  "habitat": "Bright",
+  "sprite": "729",
+  "dex": "bassin"
+ },
+ {
+  "en": "Bruxish",
+  "fr": "Denticrisse",
+  "numero": "041",
+  "habitat": "Warm",
+  "sprite": "779",
+  "dex": "bassin"
+ },
+ {
+  "en": "Buizel",
+  "fr": "Mustébouée",
+  "numero": "024",
+  "habitat": "Bright",
+  "sprite": "418",
+  "dex": "bassin"
+ },
+ {
+  "en": "Bulbasaur",
+  "fr": "Bulbizarre",
+  "numero": "001",
+  "habitat": "Bright",
+  "sprite": "001",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Cacnea",
+  "fr": "Cacnea",
+  "numero": "055",
+  "habitat": "Dry",
+  "sprite": "331",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Cacturne",
+  "fr": "Cacturne",
+  "numero": "056",
+  "habitat": "Dry",
+  "sprite": "332",
+  "types": [
+   "plante",
+   "tenebres"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Carkol",
+  "fr": "Wagomine",
+  "numero": "194",
+  "habitat": "Warm",
+  "sprite": "838",
+  "types": [
+   "roche",
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Carvanha",
+  "fr": "Carvanha",
+  "numero": "017",
+  "habitat": "Warm",
+  "sprite": "318",
+  "dex": "bassin"
+ },
+ {
+  "en": "Ceruledge",
+  "fr": "Malvalame",
+  "numero": "202",
+  "habitat": "Warm",
+  "sprite": "937",
+  "types": [
+   "feu",
+   "spectre"
+  ],
+  "specialites": [
+   "Combustion",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Chandelure",
+  "fr": "Lugulabre",
+  "numero": "070",
+  "habitat": "Warm",
+  "sprite": "609",
+  "types": [
+   "feu",
+   "spectre"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Chansey",
+  "fr": "Leveinard",
+  "numero": "101",
+  "habitat": "Bright",
+  "sprite": "113",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Charcadet",
+  "fr": "Charcabex",
+  "numero": "200",
+  "habitat": "Warm",
+  "sprite": "935",
+  "dex": "principal"
+ },
+ {
+  "en": "Charizard",
+  "fr": "Dracaufeu",
+  "numero": "006",
+  "habitat": "Warm",
+  "sprite": "006",
+  "types": [
+   "feu",
+   "vol"
+  ],
+  "specialites": [
+   "Combustion",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Charjabug",
+  "fr": "Coconfort",
+  "numero": "139",
+  "habitat": "Bright",
+  "sprite": "737",
+  "dex": "principal"
+ },
+ {
+  "en": "Charmander",
+  "fr": "Salamèche",
+  "numero": "004",
+  "habitat": "Warm",
+  "sprite": "004",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Charmeleon",
+  "fr": "Reptincel",
+  "numero": "005",
+  "habitat": "Warm",
+  "sprite": "005",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Chatot",
+  "fr": "Pijako",
+  "numero": "179",
+  "habitat": "Warm",
+  "sprite": "441",
+  "types": [
+   "normal",
+   "vol"
+  ],
+  "specialites": [
+   "Animation",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Chewtle",
+  "fr": "Khélocrok",
+  "numero": "043",
+  "habitat": "Bright",
+  "sprite": "833",
+  "dex": "bassin"
+ },
+ {
+  "en": "Chinchou",
+  "fr": "Loupio",
+  "numero": "011",
+  "habitat": "Humid",
+  "sprite": "170",
+  "dex": "bassin"
+ },
+ {
+  "en": "Cinccino",
+  "fr": "Pashmilla",
+  "numero": "137",
+  "habitat": "Bright",
+  "sprite": "573",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Rangement",
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Cinderace",
+  "fr": "Pyrobut",
+  "numero": "190",
+  "habitat": "Warm",
+  "sprite": "815",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Clefable",
+  "fr": "Mélodelfe",
+  "numero": "150",
+  "habitat": "Dark",
+  "sprite": "036",
+  "types": [
+   "fee"
+  ],
+  "specialites": [
+   "Animation",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Clefairy",
+  "fr": "Mélofée",
+  "numero": "149",
+  "habitat": "Dark",
+  "sprite": "035",
+  "types": [
+   "fee"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Cleffa",
+  "fr": "Mélo",
+  "numero": "148",
+  "habitat": "Dark",
+  "sprite": "173",
+  "types": [
+   "fee"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Clodsire",
+  "fr": "Terraiste",
+  "numero": "118",
+  "habitat": "Humid",
+  "sprite": "980",
+  "types": [
+   "poison",
+   "sol"
+  ],
+  "specialites": [
+   "Désordre",
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Cloyster",
+  "fr": "Crustabri",
+  "numero": "002",
+  "habitat": "Cool",
+  "sprite": "091",
+  "dex": "bassin"
+ },
+ {
+  "en": "Coalossal",
+  "fr": "Monthracite",
+  "numero": "195",
+  "habitat": "Warm",
+  "sprite": "839",
+  "types": [
+   "roche",
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Combee",
+  "fr": "Apitrini",
+  "numero": "057",
+  "habitat": "Bright",
+  "sprite": "415",
+  "types": [
+   "insecte",
+   "vol"
+  ],
+  "specialites": [
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Combusken",
+  "fr": "Galifeu",
+  "numero": "121",
+  "habitat": "Warm",
+  "sprite": "256",
+  "types": [
+   "feu",
+   "combat"
+  ],
+  "specialites": [
+   "Combustion",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Conkeldurr",
+  "fr": "Bétochef",
+  "numero": "067",
+  "habitat": "Bright",
+  "sprite": "534",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction",
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Corphish",
+  "fr": "Écrapince",
+  "numero": "021",
+  "habitat": "Humid",
+  "sprite": "341",
+  "dex": "bassin"
+ },
+ {
+  "en": "Corsola",
+  "fr": "Corayon",
+  "numero": "013",
+  "habitat": "Warm",
+  "sprite": "222",
+  "dex": "bassin"
+ },
+ {
+  "en": "Corviknight",
+  "fr": "Corvaillus",
+  "numero": "259",
+  "habitat": "Bright",
+  "sprite": "823",
+  "types": [
+   "vol",
+   "acier"
+  ],
+  "specialites": [
+   "Coupe de bois",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Corvisquire",
+  "fr": "Bleuseille",
+  "numero": "258",
+  "habitat": "Bright",
+  "sprite": "822",
+  "types": [
+   "vol"
+  ],
+  "specialites": [
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Cramorant",
+  "fr": "Nigosier",
+  "numero": "077",
+  "habitat": "Humid",
+  "sprite": "845",
+  "types": [
+   "vol",
+   "eau"
+  ],
+  "specialites": [
+   "Vol",
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Cranidos",
+  "fr": "Kranidos",
+  "numero": "272",
+  "habitat": "Dry",
+  "sprite": "408",
+  "types": [
+   "roche"
+  ],
+  "specialites": [
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Crawdaunt",
+  "fr": "Colhomard",
+  "numero": "022",
+  "habitat": "Humid",
+  "sprite": "342",
+  "dex": "bassin"
+ },
+ {
+  "en": "Crobat",
+  "fr": "Nostenfer",
+  "numero": "083",
+  "habitat": "Dark",
+  "sprite": "169",
+  "types": [
+   "poison",
+   "vol"
+  ],
+  "specialites": [
+   "Recherche",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Croconaw",
+  "fr": "Crocrodil",
+  "numero": "009",
+  "habitat": "Bright",
+  "sprite": "159",
+  "dex": "bassin"
+ },
+ {
+  "en": "Cubone",
+  "fr": "Osselait",
+  "numero": "032",
+  "habitat": "Dry",
+  "sprite": "104",
+  "types": [
+   "sol"
+  ],
+  "specialites": [
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Cyndaquil",
+  "fr": "Héricendre",
+  "numero": "224",
+  "habitat": "Warm",
+  "sprite": "155",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dachsbun",
+  "fr": "Briochien",
+  "numero": "199",
+  "habitat": "Warm",
+  "sprite": "927",
+  "types": [
+   "fee"
+  ],
+  "specialites": [
+   "Recherche",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dartrix",
+  "fr": "Efflèche",
+  "numero": "186",
+  "habitat": "Dark",
+  "sprite": "723",
+  "types": [
+   "plante",
+   "vol"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Decidueye",
+  "fr": "Archéduc",
+  "numero": "187",
+  "habitat": "Dark",
+  "sprite": "724",
+  "types": [
+   "plante",
+   "spectre"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dedenne",
+  "fr": "Dedenne",
+  "numero": "254",
+  "habitat": "Bright",
+  "sprite": "702",
+  "types": [
+   "electrik",
+   "fee"
+  ],
+  "specialites": [
+   "Électrification",
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dhelmise",
+  "fr": "Sinistrail",
+  "numero": "042",
+  "habitat": "Dark",
+  "sprite": "781",
+  "dex": "bassin"
+ },
+ {
+  "en": "Diglett",
+  "fr": "Taupiqueur",
+  "numero": "154",
+  "habitat": "Dark",
+  "sprite": "050",
+  "types": [
+   "sol"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dragapult",
+  "fr": "Lanssorien",
+  "numero": "262",
+  "habitat": "Humid",
+  "sprite": "887",
+  "types": [
+   "dragon",
+   "spectre"
+  ],
+  "specialites": [
+   "Rangement",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dragonair",
+  "fr": "Draco",
+  "numero": "222",
+  "habitat": "Humid",
+  "sprite": "148",
+  "types": [
+   "dragon"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dragonite",
+  "fr": "Dracolosse",
+  "numero": "223",
+  "habitat": "Humid",
+  "sprite": "149",
+  "types": [
+   "dragon",
+   "vol"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Drakloak",
+  "fr": "Dispareptil",
+  "numero": "261",
+  "habitat": "Humid",
+  "sprite": "886",
+  "types": [
+   "dragon",
+   "spectre"
+  ],
+  "specialites": [
+   "Rangement",
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dratini",
+  "fr": "Minidraco",
+  "numero": "221",
+  "habitat": "Humid",
+  "sprite": "147",
+  "types": [
+   "dragon"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Drednaw",
+  "fr": "Torgamord",
+  "numero": "044",
+  "habitat": "Bright",
+  "sprite": "834",
+  "dex": "bassin"
+ },
+ {
+  "en": "Dreepy",
+  "fr": "Fantyrm",
+  "numero": "260",
+  "habitat": "Humid",
+  "sprite": "885",
+  "types": [
+   "dragon",
+   "spectre"
+  ],
+  "specialites": [
+   "Rangement",
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Drifblim",
+  "fr": "Grodrive",
+  "numero": "062",
+  "habitat": "Warm",
+  "sprite": "426",
+  "types": [
+   "spectre",
+   "vol"
+  ],
+  "specialites": [
+   "Vol",
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Drifloon",
+  "fr": "Baudrive",
+  "numero": "061",
+  "habitat": "Warm",
+  "sprite": "425",
+  "types": [
+   "spectre",
+   "vol"
+  ],
+  "specialites": [
+   "Île Rêve"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Drilbur",
+  "fr": "Rototaupe",
+  "numero": "063",
+  "habitat": "Dark",
+  "sprite": "529",
+  "types": [
+   "sol"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dugtrio",
+  "fr": "Triopikeur",
+  "numero": "155",
+  "habitat": "Dark",
+  "sprite": "051",
+  "types": [
+   "sol"
+  ],
+  "specialites": [
+   "Animation",
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dusclops",
+  "fr": "Téraclope",
+  "numero": "243",
+  "habitat": "Dark",
+  "sprite": "356",
+  "types": [
+   "spectre"
+  ],
+  "specialites": [
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Dusknoir",
+  "fr": "Noctunoir",
+  "numero": "244",
+  "habitat": "Dark",
+  "sprite": "477",
+  "types": [
+   "spectre"
+  ],
+  "specialites": [
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Duskull",
+  "fr": "Skelénox",
+  "numero": "242",
+  "habitat": "Dark",
+  "sprite": "355",
+  "types": [
+   "spectre"
+  ],
+  "specialites": [
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Eevee",
+  "fr": "Évoli",
+  "numero": "280",
+  "habitat": "Warm",
+  "sprite": "133",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Ekans",
+  "fr": "Abo",
+  "numero": "146",
+  "habitat": "Dark",
+  "sprite": "023",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Electabuzz",
+  "fr": "Élektek",
+  "numero": "104",
+  "habitat": "Bright",
+  "sprite": "125",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Electivire",
+  "fr": "Élekable",
+  "numero": "105",
+  "habitat": "Bright",
+  "sprite": "466",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification",
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Electrode",
+  "fr": "Électrode",
+  "numero": "097",
+  "habitat": "Bright",
+  "sprite": "101",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification",
+   "Explosion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Elekid",
+  "fr": "Élekid",
+  "numero": "103",
+  "habitat": "Bright",
+  "sprite": "239",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Empoleon",
+  "fr": "Pingoléon",
+  "numero": "130",
+  "habitat": "Humid",
+  "sprite": "395",
+  "types": [
+   "eau",
+   "acier"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Entei",
+  "fr": "Entei",
+  "numero": "291",
+  "habitat": "Warm",
+  "sprite": "244",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Espeon",
+  "fr": "Mentali",
+  "numero": "284",
+  "habitat": "Bright",
+  "sprite": "196",
+  "types": [
+   "psy"
+  ],
+  "specialites": [
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Excadrill",
+  "fr": "Minotaupe",
+  "numero": "064",
+  "habitat": "Dark",
+  "sprite": "530",
+  "types": [
+   "sol",
+   "acier"
+  ],
+  "specialites": [
+   "Recherche",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Exeggcute",
+  "fr": "Nœunœuf",
+  "numero": "098",
+  "habitat": "Bright",
+  "sprite": "102",
+  "dex": "principal"
+ },
+ {
+  "en": "Exeggutor",
+  "fr": "Noadkoko",
+  "numero": "099",
+  "habitat": "Bright",
+  "sprite": "103",
+  "types": [
+   "plante",
+   "psy"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Téléportation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Farfetch'd",
+  "fr": "Canarticho",
+  "numero": "090",
+  "habitat": "Warm",
+  "sprite": "083",
+  "types": [
+   "normal",
+   "vol"
+  ],
+  "specialites": [
+   "Coupe de bois",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Farigiraf",
+  "fr": "Farigiraf",
+  "numero": "230",
+  "habitat": "Warm",
+  "sprite": "981",
+  "types": [
+   "normal",
+   "psy"
+  ],
+  "specialites": [
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Feebas",
+  "fr": "Barpau",
+  "numero": "006",
+  "habitat": "Humid",
+  "sprite": "349",
+  "dex": "evenement"
+ },
+ {
+  "en": "Feraligatr",
+  "fr": "Aligatueur",
+  "numero": "010",
+  "habitat": "Bright",
+  "sprite": "160",
+  "dex": "bassin"
+ },
+ {
+  "en": "Fidough",
+  "fr": "Pâtachiot",
+  "numero": "198",
+  "habitat": "Warm",
+  "sprite": "926",
+  "types": [
+   "fee"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Finneon",
+  "fr": "Écayon",
+  "numero": "026",
+  "habitat": "Bright",
+  "sprite": "456",
+  "dex": "bassin"
+ },
+ {
+  "en": "Flaaffy",
+  "fr": "Lainergie",
+  "numero": "112",
+  "habitat": "Bright",
+  "sprite": "180",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Flareon",
+  "fr": "Pyroli",
+  "numero": "283",
+  "habitat": "Warm",
+  "sprite": "136",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Floatzel",
+  "fr": "Mustéflott",
+  "numero": "025",
+  "habitat": "Bright",
+  "sprite": "419",
+  "dex": "bassin"
+ },
+ {
+  "en": "Floragato",
+  "fr": "Matourgeon",
+  "numero": "264",
+  "habitat": "Bright",
+  "sprite": "907",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Flygon",
+  "fr": "Libégon",
+  "numero": "239",
+  "habitat": "Dry",
+  "sprite": "330",
+  "types": [
+   "sol",
+   "dragon"
+  ],
+  "specialites": [
+   "Aplanissement",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Fraxure",
+  "fr": "Incisécaille",
+  "numero": "072",
+  "habitat": "Dark",
+  "sprite": "611",
+  "dex": "principal"
+ },
+ {
+  "en": "Frillish Female Form",
+  "fr": "Viskuse (femelle)",
+  "numero": "028",
+  "habitat": "Dark",
+  "sprite": "592-frillishfemaleform",
+  "dex": "bassin"
+ },
+ {
+  "en": "Frillish Male Form",
+  "fr": "Viskuse (mâle)",
+  "numero": "028",
+  "habitat": "Dark",
+  "sprite": "592-frillishmaleform",
+  "dex": "bassin"
+ },
+ {
+  "en": "Froakie",
+  "fr": "Grenousse",
+  "numero": "251",
+  "habitat": "Humid",
+  "sprite": "656",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Frogadier",
+  "fr": "Croâporal",
+  "numero": "252",
+  "habitat": "Humid",
+  "sprite": "657",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Gallade",
+  "fr": "Gallame",
+  "numero": "234",
+  "habitat": "Bright",
+  "sprite": "475",
+  "types": [
+   "psy",
+   "combat"
+  ],
+  "specialites": [
+   "Téléportation",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Garbodor",
+  "fr": "Miasmax",
+  "numero": "133",
+  "habitat": "Humid",
+  "sprite": "569",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Recyclage",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Gardevoir",
+  "fr": "Gardevoir",
+  "numero": "233",
+  "habitat": "Bright",
+  "sprite": "282",
+  "types": [
+   "psy",
+   "fee"
+  ],
+  "specialites": [
+   "Téléportation",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Gastly",
+  "fr": "Fantominus",
+  "numero": "093",
+  "habitat": "Dark",
+  "sprite": "092",
+  "types": [
+   "spectre",
+   "poison"
+  ],
+  "specialites": [
+   "Rangement",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Gastrodon",
+  "fr": "Tritosor",
+  "numero": "060",
+  "habitat": "Humid",
+  "sprite": "423",
+  "dex": "principal"
+ },
+ {
+  "en": "Gastrodon East Sea",
+  "fr": "Tritosor (Mer Est)",
+  "numero": "060",
+  "habitat": "Humid",
+  "sprite": "423-gastrodoneastsea",
+  "dex": "principal"
+ },
+ {
+  "en": "Gengar",
+  "fr": "Ectoplasma",
+  "numero": "095",
+  "habitat": "Dark",
+  "sprite": "094",
+  "types": [
+   "spectre",
+   "poison"
+  ],
+  "specialites": [
+   "Rangement",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Geodude",
+  "fr": "Racaillou",
+  "numero": "159",
+  "habitat": "Dark",
+  "sprite": "074",
+  "types": [
+   "roche",
+   "sol"
+  ],
+  "specialites": [
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Gholdengo",
+  "fr": "Auradraille",
+  "numero": "206",
+  "habitat": "Bright",
+  "sprite": "1000",
+  "dex": "principal"
+ },
+ {
+  "en": "Gimmighoul",
+  "fr": "Mordudor",
+  "numero": "205",
+  "habitat": "Dark",
+  "sprite": "999",
+  "types": [
+   "spectre"
+  ],
+  "specialites": [
+   "Collection"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Girafarig",
+  "fr": "Girafarig",
+  "numero": "229",
+  "habitat": "Warm",
+  "sprite": "203",
+  "types": [
+   "normal",
+   "psy"
+  ],
+  "specialites": [
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Glaceon",
+  "fr": "Givrali",
+  "numero": "287",
+  "habitat": "Cool",
+  "sprite": "471",
+  "types": [
+   "glace"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Glimmet",
+  "fr": "Germéclat",
+  "numero": "203",
+  "habitat": "Dark",
+  "sprite": "969",
+  "types": [
+   "roche",
+   "poison"
+  ],
+  "specialites": [
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Glimmora",
+  "fr": "Fluoreiller",
+  "numero": "204",
+  "habitat": "Dark",
+  "sprite": "970",
+  "dex": "principal"
+ },
+ {
+  "en": "Gloom",
+  "fr": "Ortide",
+  "numero": "014",
+  "habitat": "Humid",
+  "sprite": "044",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Golbat",
+  "fr": "Nosferalto",
+  "numero": "082",
+  "habitat": "Dark",
+  "sprite": "042",
+  "types": [
+   "poison",
+   "vol"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Golduck",
+  "fr": "Akwakwak",
+  "numero": "087",
+  "habitat": "Humid",
+  "sprite": "055",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Golem",
+  "fr": "Grolem",
+  "numero": "161",
+  "habitat": "Dark",
+  "sprite": "076",
+  "types": [
+   "roche",
+   "sol"
+  ],
+  "specialites": [
+   "Broyage",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Golisopod",
+  "fr": "Sarmuraï",
+  "numero": "040",
+  "habitat": "Dark",
+  "sprite": "768",
+  "dex": "bassin"
+ },
+ {
+  "en": "Goodra",
+  "fr": "Muplodocus",
+  "numero": "076",
+  "habitat": "Humid",
+  "sprite": "706",
+  "types": [
+   "dragon"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Goomy",
+  "fr": "Mucuscule",
+  "numero": "074",
+  "habitat": "Humid",
+  "sprite": "704",
+  "types": [
+   "dragon"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Graveler",
+  "fr": "Gravalanch",
+  "numero": "160",
+  "habitat": "Dark",
+  "sprite": "075",
+  "types": [
+   "roche",
+   "sol"
+  ],
+  "specialites": [
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Greedent",
+  "fr": "Rongrigou",
+  "numero": "192",
+  "habitat": "Warm",
+  "sprite": "820-cook",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Fête"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Greninja",
+  "fr": "Amphinobi",
+  "numero": "253",
+  "habitat": "Humid",
+  "sprite": "658",
+  "types": [
+   "eau",
+   "tenebres"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Grimer",
+  "fr": "Tadmorv",
+  "numero": "091",
+  "habitat": "Dark",
+  "sprite": "088",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Growlithe",
+  "fr": "Caninos",
+  "numero": "088",
+  "habitat": "Warm",
+  "sprite": "058",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Grubbin",
+  "fr": "Larvibule",
+  "numero": "138",
+  "habitat": "Bright",
+  "sprite": "736",
+  "types": [
+   "insecte"
+  ],
+  "specialites": [
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Gulpin",
+  "fr": "Gloupti",
+  "numero": "053",
+  "habitat": "Humid",
+  "sprite": "316",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Stockage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Gurdurr",
+  "fr": "Ouvrifier",
+  "numero": "066",
+  "habitat": "Bright",
+  "sprite": "533",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Gyarados",
+  "fr": "Léviator",
+  "numero": "046",
+  "habitat": "Humid",
+  "sprite": "130",
+  "types": [
+   "eau",
+   "vol"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Happiny",
+  "fr": "Ptiravi",
+  "numero": "100",
+  "habitat": "Bright",
+  "sprite": "440",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Hariyama",
+  "fr": "Hariyama",
+  "numero": "126",
+  "habitat": "Bright",
+  "sprite": "297",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction",
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Haunter",
+  "fr": "Spectrum",
+  "numero": "094",
+  "habitat": "Dark",
+  "sprite": "093",
+  "types": [
+   "spectre",
+   "poison"
+  ],
+  "specialites": [
+   "Rangement",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Haxorus",
+  "fr": "Tranchodon",
+  "numero": "073",
+  "habitat": "Dark",
+  "sprite": "612",
+  "types": [
+   "dragon"
+  ],
+  "specialites": [
+   "Coupe de bois",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Heracross",
+  "fr": "Scarhino",
+  "numero": "050",
+  "habitat": "Bright",
+  "sprite": "214",
+  "types": [
+   "insecte",
+   "combat"
+  ],
+  "specialites": [
+   "Coupe de bois",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Hitmonchan",
+  "fr": "Tygnon",
+  "numero": "036",
+  "habitat": "Bright",
+  "sprite": "107",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Hitmonlee",
+  "fr": "Kicklee",
+  "numero": "035",
+  "habitat": "Bright",
+  "sprite": "106",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Hitmontop",
+  "fr": "Kapoera",
+  "numero": "037",
+  "habitat": "Bright",
+  "sprite": "237",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Ho-Oh",
+  "fr": "Ho-Oh",
+  "numero": "298",
+  "habitat": "Warm",
+  "sprite": "250",
+  "types": [
+   "feu",
+   "vol"
+  ],
+  "specialites": [],
+  "dex": "principal"
+ },
+ {
+  "en": "Honchkrow",
+  "fr": "Corboss",
+  "numero": "168",
+  "habitat": "Dark",
+  "sprite": "430",
+  "types": [
+   "tenebres",
+   "vol"
+  ],
+  "specialites": [
+   "Troc",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Hoothoot",
+  "fr": "Hoothoot",
+  "numero": "048",
+  "habitat": "Dark",
+  "sprite": "163",
+  "types": [
+   "normal",
+   "vol"
+  ],
+  "specialites": [
+   "Troc",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Hoppip",
+  "fr": "Granivol",
+  "numero": "001",
+  "habitat": "Bright",
+  "sprite": "187",
+  "dex": "evenement"
+ },
+ {
+  "en": "Horsea",
+  "fr": "Hypotrempe",
+  "numero": "003",
+  "habitat": "Humid",
+  "sprite": "116",
+  "dex": "bassin"
+ },
+ {
+  "en": "Igglybuff",
+  "fr": "Toudoudou",
+  "numero": "151",
+  "habitat": "Warm",
+  "sprite": "174",
+  "types": [
+   "normal",
+   "fee"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Illumise",
+  "fr": "Lumivole",
+  "numero": "052",
+  "habitat": "Dark",
+  "sprite": "314",
+  "types": [
+   "insecte"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Inkay",
+  "fr": "Sepiatop",
+  "numero": "032",
+  "habitat": "Dark",
+  "sprite": "686",
+  "dex": "bassin"
+ },
+ {
+  "en": "Ivysaur",
+  "fr": "Herbizarre",
+  "numero": "002",
+  "habitat": "Bright",
+  "sprite": "002",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Jellicent Female Form",
+  "fr": "Moyade (femelle)",
+  "numero": "029",
+  "habitat": "Dark",
+  "sprite": "593-jellicentfemaleform",
+  "dex": "bassin"
+ },
+ {
+  "en": "Jellicent Male Form",
+  "fr": "Moyade (mâle)",
+  "numero": "029",
+  "habitat": "Dark",
+  "sprite": "593-jellicentmaleform",
+  "dex": "bassin"
+ },
+ {
+  "en": "Jigglypuff",
+  "fr": "Rondoudou",
+  "numero": "152",
+  "habitat": "Bright",
+  "sprite": "039",
+  "types": [
+   "normal",
+   "fee"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Jirachi",
+  "fr": "Jirachi",
+  "numero": "005",
+  "habitat": "Bright",
+  "sprite": "385",
+  "dex": "evenement"
+ },
+ {
+  "en": "Jolteon",
+  "fr": "Voltali",
+  "numero": "282",
+  "habitat": "Bright",
+  "sprite": "135",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Jumpluff",
+  "fr": "Cotovol",
+  "numero": "003",
+  "habitat": "Bright",
+  "sprite": "189",
+  "dex": "evenement"
+ },
+ {
+  "en": "Kadabra",
+  "fr": "Kadabra",
+  "numero": "214",
+  "habitat": "Dark",
+  "sprite": "064",
+  "types": [
+   "psy"
+  ],
+  "specialites": [
+   "Téléportation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Kilowattrel",
+  "fr": "Fulgudog",
+  "numero": "267",
+  "habitat": "Bright",
+  "sprite": "941",
+  "dex": "principal"
+ },
+ {
+  "en": "Kingdra",
+  "fr": "Hyporoi",
+  "numero": "005",
+  "habitat": "Dark",
+  "sprite": "230",
+  "dex": "bassin"
+ },
+ {
+  "en": "Kirlia",
+  "fr": "Kirlia",
+  "numero": "232",
+  "habitat": "Bright",
+  "sprite": "281",
+  "types": [
+   "psy",
+   "fee"
+  ],
+  "specialites": [
+   "Téléportation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Koffing",
+  "fr": "Smogo",
+  "numero": "038",
+  "habitat": "Dark",
+  "sprite": "109",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Kricketot",
+  "fr": "Crikzik",
+  "numero": "177",
+  "habitat": "Dark",
+  "sprite": "401",
+  "types": [
+   "insecte"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Kricketune",
+  "fr": "Mélokrik",
+  "numero": "178",
+  "habitat": "Dark",
+  "sprite": "402",
+  "types": [
+   "insecte"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Kyogre",
+  "fr": "Kyogre",
+  "numero": "289",
+  "habitat": "Humid",
+  "sprite": "382",
+  "types": [
+   "eau"
+  ],
+  "specialites": [],
+  "dex": "principal"
+ },
+ {
+  "en": "Lampent",
+  "fr": "Mélancolux",
+  "numero": "069",
+  "habitat": "Warm",
+  "sprite": "608",
+  "types": [
+   "feu",
+   "spectre"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Lanturn",
+  "fr": "Lanturn",
+  "numero": "012",
+  "habitat": "Dark",
+  "sprite": "171",
+  "dex": "bassin"
+ },
+ {
+  "en": "Lapras",
+  "fr": "Lokhlass",
+  "numero": "106",
+  "habitat": "Humid",
+  "sprite": "131",
+  "types": [
+   "eau",
+   "glace"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Larvesta",
+  "fr": "Pyronille",
+  "numero": "183",
+  "habitat": "Dry",
+  "sprite": "636",
+  "types": [
+   "insecte",
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Larvitar",
+  "fr": "Embrylex",
+  "numero": "169",
+  "habitat": "Dark",
+  "sprite": "246",
+  "types": [
+   "roche",
+   "sol"
+  ],
+  "specialites": [
+   "Broyage",
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Leafeon",
+  "fr": "Phyllali",
+  "numero": "286",
+  "habitat": "Bright",
+  "sprite": "470",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Litwick",
+  "fr": "Funécire",
+  "numero": "068",
+  "habitat": "Warm",
+  "sprite": "607",
+  "types": [
+   "feu",
+   "spectre"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Lombre",
+  "fr": "Lombre",
+  "numero": "173",
+  "habitat": "Humid",
+  "sprite": "271",
+  "types": [
+   "eau",
+   "plante"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Lotad",
+  "fr": "Nénupiot",
+  "numero": "172",
+  "habitat": "Humid",
+  "sprite": "270",
+  "types": [
+   "eau",
+   "plante"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Lucario",
+  "fr": "Lucario",
+  "numero": "181",
+  "habitat": "Dark",
+  "sprite": "448",
+  "types": [
+   "combat",
+   "acier"
+  ],
+  "specialites": [
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Ludicolo",
+  "fr": "Ludicolo",
+  "numero": "174",
+  "habitat": "Humid",
+  "sprite": "272",
+  "types": [
+   "eau",
+   "plante"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Lugia",
+  "fr": "Lugia",
+  "numero": "297",
+  "habitat": "Humid",
+  "sprite": "249",
+  "types": [
+   "psy",
+   "vol"
+  ],
+  "specialites": [],
+  "dex": "principal"
+ },
+ {
+  "en": "Lumineon",
+  "fr": "Luminéon",
+  "numero": "027",
+  "habitat": "Dark",
+  "sprite": "457",
+  "dex": "bassin"
+ },
+ {
+  "en": "Luvdisc",
+  "fr": "Lovdisc",
+  "numero": "023",
+  "habitat": "Warm",
+  "sprite": "370",
+  "dex": "bassin"
+ },
+ {
+  "en": "Machamp",
+  "fr": "Mackogneur",
+  "numero": "158",
+  "habitat": "Bright",
+  "sprite": "068",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction",
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Machoke",
+  "fr": "Machopeur",
+  "numero": "157",
+  "habitat": "Bright",
+  "sprite": "067",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction",
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Machop",
+  "fr": "Machoc",
+  "numero": "156",
+  "habitat": "Bright",
+  "sprite": "066",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction",
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Magby",
+  "fr": "Limagma",
+  "numero": "162",
+  "habitat": "Warm",
+  "sprite": "240",
+  "dex": "principal"
+ },
+ {
+  "en": "Magikarp",
+  "fr": "Magicarpe",
+  "numero": "045",
+  "habitat": "Humid",
+  "sprite": "129",
+  "types": [
+   "eau"
+  ],
+  "specialites": [],
+  "dex": "principal"
+ },
+ {
+  "en": "Magmar",
+  "fr": "Magmar",
+  "numero": "163",
+  "habitat": "Warm",
+  "sprite": "126",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Magmortar",
+  "fr": "Maganon",
+  "numero": "164",
+  "habitat": "Warm",
+  "sprite": "467",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Magnemite",
+  "fr": "Magnéti",
+  "numero": "027",
+  "habitat": "Bright",
+  "sprite": "081",
+  "types": [
+   "electrik",
+   "acier"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Magneton",
+  "fr": "Magnéton",
+  "numero": "028",
+  "habitat": "Bright",
+  "sprite": "082",
+  "types": [
+   "electrik",
+   "acier"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Magnezone",
+  "fr": "Magnézone",
+  "numero": "029",
+  "habitat": "Bright",
+  "sprite": "462",
+  "types": [
+   "electrik",
+   "acier"
+  ],
+  "specialites": [
+   "Électrification",
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Makuhita",
+  "fr": "Makuhita",
+  "numero": "125",
+  "habitat": "Bright",
+  "sprite": "296",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction",
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Malamar",
+  "fr": "Sepiallious",
+  "numero": "033",
+  "habitat": "Bright",
+  "sprite": "687",
+  "dex": "bassin"
+ },
+ {
+  "en": "Manaphy",
+  "fr": "Manaphy",
+  "numero": "050",
+  "habitat": "Cool",
+  "sprite": "490",
+  "dex": "bassin"
+ },
+ {
+  "en": "Mareanie",
+  "fr": "Vorastérie",
+  "numero": "037",
+  "habitat": "Warm",
+  "sprite": "747",
+  "dex": "bassin"
+ },
+ {
+  "en": "Mareep",
+  "fr": "Wattouat",
+  "numero": "111",
+  "habitat": "Bright",
+  "sprite": "179",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Marill",
+  "fr": "Marill",
+  "numero": "115",
+  "habitat": "Humid",
+  "sprite": "183",
+  "types": [
+   "eau",
+   "fee"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Marowak",
+  "fr": "Ossatueur",
+  "numero": "033",
+  "habitat": "Dry",
+  "sprite": "105",
+  "types": [
+   "sol"
+  ],
+  "specialites": [
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Marshtomp",
+  "fr": "Flobio",
+  "numero": "015",
+  "habitat": "Bright",
+  "sprite": "259",
+  "dex": "bassin"
+ },
+ {
+  "en": "Mawile",
+  "fr": "Mysdibule",
+  "numero": "175",
+  "habitat": "Bright",
+  "sprite": "303",
+  "types": [
+   "acier",
+   "fee"
+  ],
+  "specialites": [
+   "Troc",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Meowscarada",
+  "fr": "Miascarade",
+  "numero": "265",
+  "habitat": "Bright",
+  "sprite": "908",
+  "types": [
+   "plante",
+   "tenebres"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Meowth",
+  "fr": "Miaouss",
+  "numero": "084",
+  "habitat": "Cool",
+  "sprite": "052",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Metagross",
+  "fr": "Métalosse",
+  "numero": "247",
+  "habitat": "Cool",
+  "sprite": "376",
+  "types": [
+   "acier",
+   "psy"
+  ],
+  "specialites": [
+   "Recyclage",
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Metang",
+  "fr": "Métang",
+  "numero": "246",
+  "habitat": "Cool",
+  "sprite": "375",
+  "types": [
+   "acier",
+   "psy"
+  ],
+  "specialites": [
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Mew",
+  "fr": "Mew",
+  "numero": "300",
+  "habitat": "Warm",
+  "sprite": "151",
+  "types": [
+   "psy"
+  ],
+  "specialites": [
+   "Téléportation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Mewtwo",
+  "fr": "Mewtwo",
+  "numero": "299",
+  "habitat": "Dark",
+  "sprite": "150",
+  "types": [
+   "psy"
+  ],
+  "specialites": [
+   "Téléportation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Milotic",
+  "fr": "Milobellus",
+  "numero": "007",
+  "habitat": "Humid",
+  "sprite": "350",
+  "dex": "evenement"
+ },
+ {
+  "en": "Mime Jr.",
+  "fr": "Mime Jr.",
+  "numero": "216",
+  "habitat": "Bright",
+  "sprite": "439",
+  "types": [
+   "psy",
+   "fee"
+  ],
+  "specialites": [
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Mimikyu",
+  "fr": "Mimiqui",
+  "numero": "141",
+  "habitat": "Dark",
+  "sprite": "778",
+  "types": [
+   "spectre",
+   "fee"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Minccino",
+  "fr": "Chinchidou",
+  "numero": "136",
+  "habitat": "Bright",
+  "sprite": "572",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Minun",
+  "fr": "Négapi",
+  "numero": "236",
+  "habitat": "Bright",
+  "sprite": "312",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Misdreavus",
+  "fr": "Feuforêve",
+  "numero": "227",
+  "habitat": "Dark",
+  "sprite": "200",
+  "types": [
+   "spectre"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Mismagius",
+  "fr": "Magirêve",
+  "numero": "228",
+  "habitat": "Dark",
+  "sprite": "429",
+  "types": [
+   "spectre"
+  ],
+  "specialites": [
+   "Rangement",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Moltres",
+  "fr": "Sulfura",
+  "numero": "296",
+  "habitat": "Warm",
+  "sprite": "146",
+  "types": [
+   "feu",
+   "vol"
+  ],
+  "specialites": [
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Mosslax",
+  "fr": "Ronflex moussu",
+  "numero": "108",
+  "habitat": "Bright",
+  "sprite": "143-mosslax",
+  "dex": "principal"
+ },
+ {
+  "en": "Mr. Mime",
+  "fr": "M. Mime",
+  "numero": "217",
+  "habitat": "Bright",
+  "sprite": "122",
+  "types": [
+   "psy",
+   "fee"
+  ],
+  "specialites": [
+   "Rangement",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Mudkip",
+  "fr": "Gobou",
+  "numero": "014",
+  "habitat": "Bright",
+  "sprite": "258",
+  "dex": "bassin"
+ },
+ {
+  "en": "Muk",
+  "fr": "Grotadmorv",
+  "numero": "092",
+  "habitat": "Dark",
+  "sprite": "089",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Munchlax",
+  "fr": "Goinfrex",
+  "numero": "107",
+  "habitat": "Warm",
+  "sprite": "446",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Murkrow",
+  "fr": "Cornèbre",
+  "numero": "167",
+  "habitat": "Dark",
+  "sprite": "198",
+  "types": [
+   "tenebres",
+   "vol"
+  ],
+  "specialites": [
+   "Troc",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Ninetales",
+  "fr": "Feunard",
+  "numero": "208",
+  "habitat": "Warm",
+  "sprite": "038",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Noctowl",
+  "fr": "Noarfang",
+  "numero": "049",
+  "habitat": "Dark",
+  "sprite": "164",
+  "types": [
+   "normal",
+   "vol"
+  ],
+  "specialites": [
+   "Troc",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Noibat",
+  "fr": "Sonistrelle",
+  "numero": "255",
+  "habitat": "Dark",
+  "sprite": "714",
+  "types": [
+   "vol",
+   "dragon"
+  ],
+  "specialites": [
+   "Recherche",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Noivern",
+  "fr": "Bruyverne",
+  "numero": "256",
+  "habitat": "Dark",
+  "sprite": "715",
+  "types": [
+   "vol",
+   "dragon"
+  ],
+  "specialites": [
+   "Recherche",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Oddish",
+  "fr": "Mystherbe",
+  "numero": "013",
+  "habitat": "Humid",
+  "sprite": "043",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Onix",
+  "fr": "Onix",
+  "numero": "030",
+  "habitat": "Dry",
+  "sprite": "095",
+  "types": [
+   "roche",
+   "sol"
+  ],
+  "specialites": [
+   "Broyage",
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Paldean Wooper",
+  "fr": "Axoloto de Paldea",
+  "numero": "117",
+  "habitat": "Humid",
+  "sprite": "194-p",
+  "types": [
+   "poison",
+   "sol"
+  ],
+  "specialites": [
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Paras",
+  "fr": "Paras",
+  "numero": "017",
+  "habitat": "Humid",
+  "sprite": "046",
+  "types": [
+   "insecte",
+   "plante"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Parasect",
+  "fr": "Parasect",
+  "numero": "018",
+  "habitat": "Humid",
+  "sprite": "047",
+  "types": [
+   "insecte",
+   "plante"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pawmi",
+  "fr": "Pohm",
+  "numero": "142",
+  "habitat": "Bright",
+  "sprite": "921",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pawmo",
+  "fr": "Pohmotte",
+  "numero": "143",
+  "habitat": "Bright",
+  "sprite": "922",
+  "types": [
+   "electrik",
+   "combat"
+  ],
+  "specialites": [
+   "Électrification",
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pawmot",
+  "fr": "Pohmarmotte",
+  "numero": "144",
+  "habitat": "Bright",
+  "sprite": "923",
+  "types": [
+   "electrik",
+   "combat"
+  ],
+  "specialites": [
+   "Électrification",
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Peakychu",
+  "fr": "Pikachu (Peakychu)",
+  "numero": "079",
+  "habitat": "Bright",
+  "sprite": "025-peakychu",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pelipper",
+  "fr": "Bekipan",
+  "numero": "124",
+  "habitat": "Humid",
+  "sprite": "279",
+  "types": [
+   "eau",
+   "vol"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Persian",
+  "fr": "Persian",
+  "numero": "085",
+  "habitat": "Cool",
+  "sprite": "053",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Phione",
+  "fr": "Phione",
+  "numero": "049",
+  "habitat": "Warm",
+  "sprite": "489",
+  "dex": "bassin"
+ },
+ {
+  "en": "Pichu",
+  "fr": "Pichu",
+  "numero": "078",
+  "habitat": "Bright",
+  "sprite": "172",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pidgeot",
+  "fr": "Roucarnage",
+  "numero": "012",
+  "habitat": "Bright",
+  "sprite": "018",
+  "types": [
+   "normal",
+   "vol"
+  ],
+  "specialites": [
+   "Vol",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pidgeotto",
+  "fr": "Roucoups",
+  "numero": "011",
+  "habitat": "Bright",
+  "sprite": "017",
+  "types": [
+   "normal",
+   "vol"
+  ],
+  "specialites": [
+   "Vol",
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pidgey",
+  "fr": "Roucool",
+  "numero": "010",
+  "habitat": "Bright",
+  "sprite": "016",
+  "types": [
+   "normal",
+   "vol"
+  ],
+  "specialites": [
+   "Vol",
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pikachu",
+  "fr": "Pikachu",
+  "numero": "079",
+  "habitat": "Bright",
+  "sprite": "025",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pincurchin",
+  "fr": "Wattapik",
+  "numero": "045",
+  "habitat": "Humid",
+  "sprite": "871",
+  "dex": "bassin"
+ },
+ {
+  "en": "Pinsir",
+  "fr": "Scarabrute",
+  "numero": "044",
+  "habitat": "Bright",
+  "sprite": "127",
+  "types": [
+   "insecte"
+  ],
+  "specialites": [
+   "Coupe de bois",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Piplup",
+  "fr": "Tiplouf",
+  "numero": "128",
+  "habitat": "Humid",
+  "sprite": "393",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Plusle",
+  "fr": "Posipi",
+  "numero": "235",
+  "habitat": "Bright",
+  "sprite": "311",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Politoed",
+  "fr": "Tarpaud",
+  "numero": "212",
+  "habitat": "Humid",
+  "sprite": "186",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Poliwag",
+  "fr": "Ptitard",
+  "numero": "209",
+  "habitat": "Humid",
+  "sprite": "060",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Poliwhirl",
+  "fr": "Têtarte",
+  "numero": "210",
+  "habitat": "Humid",
+  "sprite": "061",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Poliwrath",
+  "fr": "Tartard",
+  "numero": "211",
+  "habitat": "Humid",
+  "sprite": "062",
+  "types": [
+   "eau",
+   "combat"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Popplio",
+  "fr": "Otaquin",
+  "numero": "034",
+  "habitat": "Bright",
+  "sprite": "728",
+  "dex": "bassin"
+ },
+ {
+  "en": "Porygon",
+  "fr": "Porygon",
+  "numero": "218",
+  "habitat": "Bright",
+  "sprite": "137",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Porygon-Z",
+  "fr": "Porygon-Z",
+  "numero": "220",
+  "habitat": "Bright",
+  "sprite": "474",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Minerai rare"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Porygon2",
+  "fr": "Porygon2",
+  "numero": "219",
+  "habitat": "Bright",
+  "sprite": "233",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Primarina",
+  "fr": "Oratoria",
+  "numero": "036",
+  "habitat": "Bright",
+  "sprite": "730",
+  "dex": "bassin"
+ },
+ {
+  "en": "Prinplup",
+  "fr": "Prinplouf",
+  "numero": "129",
+  "habitat": "Humid",
+  "sprite": "394",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Professor Tangrowth",
+  "fr": "Professeur Bouldeneu",
+  "numero": "041",
+  "habitat": "Humid",
+  "sprite": "465-professortangrowth",
+  "dex": "principal"
+ },
+ {
+  "en": "Psyduck",
+  "fr": "Psykokwak",
+  "numero": "086",
+  "habitat": "Humid",
+  "sprite": "054",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Pupitar",
+  "fr": "Ymphect",
+  "numero": "170",
+  "habitat": "Dark",
+  "sprite": "247",
+  "types": [
+   "roche",
+   "sol"
+  ],
+  "specialites": [
+   "Broyage",
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Quilava",
+  "fr": "Feurisson",
+  "numero": "225",
+  "habitat": "Warm",
+  "sprite": "156",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Raboot",
+  "fr": "Lapyro",
+  "numero": "189",
+  "habitat": "Warm",
+  "sprite": "814",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Raichu",
+  "fr": "Raichu",
+  "numero": "080",
+  "habitat": "Bright",
+  "sprite": "026",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Raikou",
+  "fr": "Raikou",
+  "numero": "290",
+  "habitat": "Bright",
+  "sprite": "243",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Ralts",
+  "fr": "Tarsal",
+  "numero": "231",
+  "habitat": "Bright",
+  "sprite": "280",
+  "types": [
+   "psy",
+   "fee"
+  ],
+  "specialites": [
+   "Téléportation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Rampardos",
+  "fr": "Charkos",
+  "numero": "273",
+  "habitat": "Dry",
+  "sprite": "409",
+  "types": [
+   "roche"
+  ],
+  "specialites": [
+   "Broyage",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Riolu",
+  "fr": "Riolu",
+  "numero": "180",
+  "habitat": "Dark",
+  "sprite": "447",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Rolycoly",
+  "fr": "Charbi",
+  "numero": "193",
+  "habitat": "Warm",
+  "sprite": "837",
+  "types": [
+   "roche"
+  ],
+  "specialites": [
+   "Combustion",
+   "Rangement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Rookidee",
+  "fr": "Minisange",
+  "numero": "257",
+  "habitat": "Bright",
+  "sprite": "821",
+  "types": [
+   "vol"
+  ],
+  "specialites": [
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Rowlet",
+  "fr": "Brindibou",
+  "numero": "185",
+  "habitat": "Dark",
+  "sprite": "722",
+  "types": [
+   "plante",
+   "vol"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Sableye",
+  "fr": "Ténéfix",
+  "numero": "004",
+  "habitat": "Dark",
+  "sprite": "302",
+  "dex": "evenement"
+ },
+ {
+  "en": "Scizor",
+  "fr": "Cizayox",
+  "numero": "043",
+  "habitat": "Bright",
+  "sprite": "212",
+  "types": [
+   "insecte",
+   "acier"
+  ],
+  "specialites": [
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Scorbunny",
+  "fr": "Flambino",
+  "numero": "188",
+  "habitat": "Warm",
+  "sprite": "813",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Scyther",
+  "fr": "Insécateur",
+  "numero": "042",
+  "habitat": "Bright",
+  "sprite": "123",
+  "types": [
+   "insecte",
+   "vol"
+  ],
+  "specialites": [
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Seadra",
+  "fr": "Hypocéan",
+  "numero": "004",
+  "habitat": "Humid",
+  "sprite": "117",
+  "dex": "bassin"
+ },
+ {
+  "en": "Serperior",
+  "fr": "Majaspic",
+  "numero": "250",
+  "habitat": "Humid",
+  "sprite": "497",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Servine",
+  "fr": "Lianaja",
+  "numero": "249",
+  "habitat": "Humid",
+  "sprite": "496",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Sharpedo",
+  "fr": "Sharpedo",
+  "numero": "018",
+  "habitat": "Humid",
+  "sprite": "319",
+  "dex": "bassin"
+ },
+ {
+  "en": "Shellder",
+  "fr": "Kokiyas",
+  "numero": "001",
+  "habitat": "Dark",
+  "sprite": "090",
+  "dex": "bassin"
+ },
+ {
+  "en": "Shellos",
+  "fr": "Sancoki",
+  "numero": "059",
+  "habitat": "Humid",
+  "sprite": "422",
+  "dex": "principal"
+ },
+ {
+  "en": "Shellos East Sea",
+  "fr": "Sancoki (Mer Est)",
+  "numero": "059",
+  "habitat": "Humid",
+  "sprite": "422-shelloseastsea",
+  "dex": "principal"
+ },
+ {
+  "en": "Shieldon",
+  "fr": "Dinoclier",
+  "numero": "274",
+  "habitat": "Dry",
+  "sprite": "410",
+  "types": [
+   "roche",
+   "acier"
+  ],
+  "specialites": [
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Skiploom",
+  "fr": "Floravol",
+  "numero": "002",
+  "habitat": "Bright",
+  "sprite": "188",
+  "dex": "evenement"
+ },
+ {
+  "en": "Skwovet",
+  "fr": "Rongourmand",
+  "numero": "191",
+  "habitat": "Warm",
+  "sprite": "819",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Recherche",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Sliggoo",
+  "fr": "Colimucus",
+  "numero": "075",
+  "habitat": "Humid",
+  "sprite": "705",
+  "types": [
+   "dragon"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Slowbro",
+  "fr": "Flagadoss",
+  "numero": "025",
+  "habitat": "Humid",
+  "sprite": "080",
+  "types": [
+   "eau",
+   "psy"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Slowking",
+  "fr": "Roigada",
+  "numero": "026",
+  "habitat": "Humid",
+  "sprite": "199",
+  "types": [
+   "eau",
+   "psy"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Téléportation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Slowpoke",
+  "fr": "Ramoloss",
+  "numero": "024",
+  "habitat": "Humid",
+  "sprite": "079",
+  "types": [
+   "eau",
+   "psy"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Bâillement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Smeargle",
+  "fr": "Queulorior",
+  "numero": "119",
+  "habitat": "Bright",
+  "sprite": "235-smearguru",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Peinture"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Snivy",
+  "fr": "Vipélierre",
+  "numero": "248",
+  "habitat": "Humid",
+  "sprite": "495",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Snorlax",
+  "fr": "Ronflex",
+  "numero": "108",
+  "habitat": "Warm",
+  "sprite": "143",
+  "types": [
+   "normal"
+  ],
+  "specialites": [
+   "Aplanissement",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Spinarak",
+  "fr": "Mimigal",
+  "numero": "109",
+  "habitat": "Humid",
+  "sprite": "167",
+  "types": [
+   "insecte",
+   "poison"
+  ],
+  "specialites": [
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Sprigatito",
+  "fr": "Poussacha",
+  "numero": "263",
+  "habitat": "Bright",
+  "sprite": "906",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Squirtle",
+  "fr": "Carapuce",
+  "numero": "007",
+  "habitat": "Humid",
+  "sprite": "007",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Starmie",
+  "fr": "Staross",
+  "numero": "007",
+  "habitat": "Bright",
+  "sprite": "121",
+  "dex": "bassin"
+ },
+ {
+  "en": "Staryu",
+  "fr": "Stari",
+  "numero": "006",
+  "habitat": "Bright",
+  "sprite": "120",
+  "dex": "bassin"
+ },
+ {
+  "en": "Steelix",
+  "fr": "Steelix",
+  "numero": "031",
+  "habitat": "Dry",
+  "sprite": "208",
+  "types": [
+   "acier",
+   "sol"
+  ],
+  "specialites": [
+   "Broyage",
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Stereo Rotom",
+  "fr": "Motisma Enceinte",
+  "numero": "182",
+  "habitat": "Bright",
+  "sprite": "479-stereorotom",
+  "dex": "principal"
+ },
+ {
+  "en": "Stunfisk",
+  "fr": "Limonde",
+  "numero": "031",
+  "habitat": "Humid",
+  "sprite": "618",
+  "dex": "bassin"
+ },
+ {
+  "en": "Sudowoodo",
+  "fr": "Simularbre",
+  "numero": "166",
+  "habitat": "Dry",
+  "sprite": "185",
+  "types": [
+   "roche"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Suicune",
+  "fr": "Suicune",
+  "numero": "292",
+  "habitat": "Humid",
+  "sprite": "245",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Swablu",
+  "fr": "Tylton",
+  "numero": "240",
+  "habitat": "Bright",
+  "sprite": "333",
+  "types": [
+   "normal",
+   "vol"
+  ],
+  "specialites": [
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Swalot",
+  "fr": "Avaltout",
+  "numero": "054",
+  "habitat": "Humid",
+  "sprite": "317",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Stockage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Swampert",
+  "fr": "Laggron",
+  "numero": "016",
+  "habitat": "Bright",
+  "sprite": "260",
+  "dex": "bassin"
+ },
+ {
+  "en": "Sylveon",
+  "fr": "Nymphali",
+  "numero": "288",
+  "habitat": "Warm",
+  "sprite": "700",
+  "types": [
+   "fee"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tangela",
+  "fr": "Saquedeneu",
+  "numero": "040",
+  "habitat": "Bright",
+  "sprite": "114",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tangrowth",
+  "fr": "Bouldeneu",
+  "numero": "041",
+  "habitat": "Humid",
+  "sprite": "465",
+  "types": [
+   "plante"
+  ],
+  "specialites": [
+   "Expertise"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tatsugiri Curly Form",
+  "fr": "Nigirigon (Forme Bouclée)",
+  "numero": "145",
+  "habitat": "Humid",
+  "sprite": "978-tatsugiricurlyform",
+  "dex": "principal"
+ },
+ {
+  "en": "Tatsugiri Droopy Form",
+  "fr": "Nigirigon (Forme Affaissée)",
+  "numero": "145",
+  "habitat": "Humid",
+  "sprite": "978-tatsugiridroopyform",
+  "dex": "principal"
+ },
+ {
+  "en": "Tatsugiri Stretchy Form",
+  "fr": "Nigirigon (Forme Étirée)",
+  "numero": "145",
+  "habitat": "Humid",
+  "sprite": "978-tatsugiristretchyform",
+  "dex": "principal"
+ },
+ {
+  "en": "Timburr",
+  "fr": "Charpenti",
+  "numero": "065",
+  "habitat": "Bright",
+  "sprite": "532",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tinkatink",
+  "fr": "Forgerette",
+  "numero": "268",
+  "habitat": "Bright",
+  "sprite": "957",
+  "types": [
+   "fee",
+   "acier"
+  ],
+  "specialites": [
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tinkaton",
+  "fr": "Forgelina",
+  "numero": "270",
+  "habitat": "Bright",
+  "sprite": "959-tinkmeister",
+  "types": [
+   "fee",
+   "acier"
+  ],
+  "specialites": [
+   "Travaux"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tinkatuff",
+  "fr": "Forgella",
+  "numero": "269",
+  "habitat": "Bright",
+  "sprite": "958",
+  "types": [
+   "fee",
+   "acier"
+  ],
+  "specialites": [
+   "Construction"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Torchic",
+  "fr": "Poussifeu",
+  "numero": "120",
+  "habitat": "Warm",
+  "sprite": "255",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Torkoal",
+  "fr": "Chartor",
+  "numero": "176",
+  "habitat": "Warm",
+  "sprite": "324",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Totodile",
+  "fr": "Kaiminus",
+  "numero": "008",
+  "habitat": "Bright",
+  "sprite": "158",
+  "dex": "bassin"
+ },
+ {
+  "en": "Toxapex",
+  "fr": "Prédastérie",
+  "numero": "038",
+  "habitat": "Warm",
+  "sprite": "748",
+  "dex": "bassin"
+ },
+ {
+  "en": "Toxel",
+  "fr": "Toxizap",
+  "numero": "196",
+  "habitat": "Humid",
+  "sprite": "848",
+  "types": [
+   "electrik",
+   "poison"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Toxtricity Amped Form",
+  "fr": "Salarsen (Forme Aiguë)",
+  "numero": "197",
+  "habitat": "Humid",
+  "sprite": "849-toxtricityampedform",
+  "types": [
+   "electrik",
+   "poison"
+  ],
+  "specialites": [
+   "Électrification",
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Toxtricity Low Key Form",
+  "fr": "Salarsen (Forme Grave)",
+  "numero": "197",
+  "habitat": "Humid",
+  "sprite": "849-toxtricitylowkeyform",
+  "dex": "principal"
+ },
+ {
+  "en": "Trapinch",
+  "fr": "Kraknoix",
+  "numero": "237",
+  "habitat": "Dry",
+  "sprite": "328",
+  "types": [
+   "sol"
+  ],
+  "specialites": [
+   "Aplanissement",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Trubbish",
+  "fr": "Miamiasme",
+  "numero": "132",
+  "habitat": "Humid",
+  "sprite": "568",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Typhlosion",
+  "fr": "Typhlosion",
+  "numero": "226",
+  "habitat": "Warm",
+  "sprite": "157",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tyranitar",
+  "fr": "Tyranocif",
+  "numero": "171",
+  "habitat": "Dark",
+  "sprite": "248",
+  "types": [
+   "roche",
+   "tenebres"
+  ],
+  "specialites": [
+   "Broyage",
+   "Aplanissement"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tyrantrum",
+  "fr": "Rexillius",
+  "numero": "277",
+  "habitat": "Dry",
+  "sprite": "697",
+  "types": [
+   "roche",
+   "dragon"
+  ],
+  "specialites": [
+   "Broyage",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tyrogue",
+  "fr": "Debugant",
+  "numero": "034",
+  "habitat": "Bright",
+  "sprite": "236",
+  "types": [
+   "combat"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Tyrunt",
+  "fr": "Ptyranidur",
+  "numero": "276",
+  "habitat": "Dry",
+  "sprite": "696",
+  "types": [
+   "roche",
+   "dragon"
+  ],
+  "specialites": [
+   "Broyage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Umbreon",
+  "fr": "Noctali",
+  "numero": "285",
+  "habitat": "Dark",
+  "sprite": "197",
+  "types": [
+   "tenebres"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Vaporeon",
+  "fr": "Aquali",
+  "numero": "281",
+  "habitat": "Humid",
+  "sprite": "134",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Veluza",
+  "fr": "Délestin",
+  "numero": "048",
+  "habitat": "Cool",
+  "sprite": "976",
+  "dex": "bassin"
+ },
+ {
+  "en": "Venomoth",
+  "fr": "Aéromite",
+  "numero": "020",
+  "habitat": "Bright",
+  "sprite": "049",
+  "types": [
+   "insecte",
+   "poison"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Venonat",
+  "fr": "Mimitoss",
+  "numero": "019",
+  "habitat": "Bright",
+  "sprite": "048",
+  "types": [
+   "insecte",
+   "poison"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Venusaur",
+  "fr": "Florizarre",
+  "numero": "003",
+  "habitat": "Bright",
+  "sprite": "003",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Vespiquen",
+  "fr": "Apireine",
+  "numero": "058",
+  "habitat": "Bright",
+  "sprite": "416",
+  "types": [
+   "insecte",
+   "vol"
+  ],
+  "specialites": [
+   "Récolte de miel",
+   "Recherche"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Vibrava",
+  "fr": "Vibraninf",
+  "numero": "238",
+  "habitat": "Dry",
+  "sprite": "329",
+  "types": [
+   "sol",
+   "dragon"
+  ],
+  "specialites": [
+   "Aplanissement",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Victreebel",
+  "fr": "Empiflor",
+  "numero": "023",
+  "habitat": "Humid",
+  "sprite": "071",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Vikavolt",
+  "fr": "Lucanon",
+  "numero": "140",
+  "habitat": "Bright",
+  "sprite": "738",
+  "types": [
+   "insecte",
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Vileplume",
+  "fr": "Rafflesia",
+  "numero": "015",
+  "habitat": "Humid",
+  "sprite": "045",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Volbeat",
+  "fr": "Muciole",
+  "numero": "051",
+  "habitat": "Dark",
+  "sprite": "313",
+  "types": [
+   "insecte"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Volcanion",
+  "fr": "Volcanion",
+  "numero": "293",
+  "habitat": "Warm",
+  "sprite": "721",
+  "types": [
+   "feu",
+   "eau"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Volcarona",
+  "fr": "Pyrax",
+  "numero": "184",
+  "habitat": "Dry",
+  "sprite": "637",
+  "types": [
+   "insecte",
+   "feu"
+  ],
+  "specialites": [
+   "Combustion",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Voltorb",
+  "fr": "Voltorbe",
+  "numero": "096",
+  "habitat": "Bright",
+  "sprite": "100",
+  "types": [
+   "electrik"
+  ],
+  "specialites": [
+   "Électrification",
+   "Explosion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Vulpix",
+  "fr": "Goupix",
+  "numero": "207",
+  "habitat": "Warm",
+  "sprite": "037",
+  "types": [
+   "feu"
+  ],
+  "specialites": [
+   "Combustion"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Wartortle",
+  "fr": "Carabaffe",
+  "numero": "008",
+  "habitat": "Humid",
+  "sprite": "008",
+  "types": [
+   "eau"
+  ],
+  "specialites": [
+   "Arrosage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Wattrel",
+  "fr": "Zapétrel",
+  "numero": "266",
+  "habitat": "Bright",
+  "sprite": "940",
+  "types": [
+   "electrik",
+   "vol"
+  ],
+  "specialites": [
+   "Électrification"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Weepinbell",
+  "fr": "Boustiflor",
+  "numero": "022",
+  "habitat": "Humid",
+  "sprite": "070",
+  "types": [
+   "plante",
+   "poison"
+  ],
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Weezing",
+  "fr": "Smogogo",
+  "numero": "039",
+  "habitat": "Dark",
+  "sprite": "110",
+  "types": [
+   "poison"
+  ],
+  "specialites": [
+   "Recyclage"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Whiscash",
+  "fr": "Barbicha",
+  "numero": "020",
+  "habitat": "Humid",
+  "sprite": "340",
+  "dex": "bassin"
+ },
+ {
+  "en": "Wigglytuff",
+  "fr": "Grodoudou",
+  "numero": "153",
+  "habitat": "Bright",
+  "sprite": "040",
+  "types": [
+   "normal",
+   "fee"
+  ],
+  "specialites": [
+   "Animation"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Wiglett",
+  "fr": "Taupikeau",
+  "numero": "046",
+  "habitat": "Humid",
+  "sprite": "960",
+  "dex": "bassin"
+ },
+ {
+  "en": "Wimpod",
+  "fr": "Sovkipou",
+  "numero": "039",
+  "habitat": "Dark",
+  "sprite": "767",
+  "dex": "bassin"
+ },
+ {
+  "en": "Wingull",
+  "fr": "Goélise",
+  "numero": "123",
+  "habitat": "Humid",
+  "sprite": "278",
+  "types": [
+   "eau",
+   "vol"
+  ],
+  "specialites": [
+   "Arrosage",
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Wugtrio",
+  "fr": "Triopikeau",
+  "numero": "047",
+  "habitat": "Humid",
+  "sprite": "961",
+  "dex": "bassin"
+ },
+ {
+  "en": "Zapdos",
+  "fr": "Électhor",
+  "numero": "295",
+  "habitat": "Bright",
+  "sprite": "145",
+  "types": [
+   "electrik",
+   "vol"
+  ],
+  "specialites": [
+   "Vol"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Zoroark",
+  "fr": "Zoroark",
+  "numero": "135",
+  "habitat": "Dark",
+  "sprite": "571",
+  "types": [
+   "tenebres"
+  ],
+  "specialites": [
+   "Troc",
+   "Coupe de bois"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Zorua",
+  "fr": "Zorua",
+  "numero": "134",
+  "habitat": "Dark",
+  "sprite": "570",
+  "types": [
+   "tenebres"
+  ],
+  "specialites": [
+   "Troc"
+  ],
+  "dex": "principal"
+ },
+ {
+  "en": "Zubat",
+  "fr": "Nosferapti",
+  "numero": "081",
+  "habitat": "Dark",
+  "sprite": "041",
+  "types": [
+   "poison",
+   "vol"
+  ],
+  "specialites": [
+   "Recherche"
+  ],
+  "dex": "principal"
+ }
+]

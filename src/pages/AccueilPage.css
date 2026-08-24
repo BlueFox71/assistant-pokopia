@@ -1,0 +1,156 @@
+/* L'accueil tient dans un écran, sans défilement : une colonne haute d'exactement le
+   viewport moins l'en-tête. La frise du haut ouvre la page, celle du bas est poussée en
+   pied par la marge automatique, et c'est la zone de résultats — la seule qui puisse
+   grandir — qui défile en interne le cas échéant. */
+/* La colonne pleine largeur : elle porte la hauteur d'écran et pose les frises aux deux
+   bouts. Le contenu, lui, reste dans le `.wrap` centré. */
+.accueil-ecran {
+  height: calc(100dvh - var(--hauteur-entete, 68px));
+  display: flex;
+  flex-direction: column;
+}
+.accueil-ecran > .bande:first-child { padding-top: 10px; flex: 0 0 auto; }
+.accueil-ecran > .bande:last-child { margin-top: auto; flex: 0 0 auto; }
+.accueil { padding-block: 0; }
+.accueil-hero { padding-top: 30px; flex: 0 0 auto; }
+.accueil-chiffres { flex: 0 0 auto; }
+
+/* Une recherche en cours, ou une fenêtre trop courte : la page reprend sa hauteur
+   naturelle et défile. La frise du bas suit le contenu au lieu d'être collée au viewport. */
+.accueil-ecran.en-recherche { height: auto; padding-bottom: 40px; }
+.accueil-ecran.en-recherche > .bande:last-child { margin-top: 34px; }
+
+@media (max-height: 720px) {
+  .accueil-ecran { height: auto; padding-bottom: 40px; }
+  .accueil-ecran > .bande:last-child { margin-top: 34px; }
+}
+
+/* ---- en-tête ---- */
+.accueil-tete { max-width: 62ch; }
+.accueil-tete h1 {
+  margin: 6px 0 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(28px, 4.6vw, 44px);
+  line-height: 1.06;
+  letter-spacing: -.02em;
+}
+.accueil-chapeau { margin: 12px 0 0; color: var(--ink-2); font-size: 15px; }
+
+.accueil-recherche { margin: 24px 0 0; max-width: 620px; }
+
+/* ---- résultats de la recherche globale ---- */
+.resultats-globaux {
+  margin: 18px 0 0;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+.famille + .famille { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.famille > h2 { display: block; margin: 0 0 8px; }
+.lignes { display: grid; gap: 2px; }
+.lignes-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.lignes-tags b { font-family: var(--mono); font-size: 10px; font-weight: 400; color: var(--ink-3); }
+
+.ligne-resultat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 6px 8px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.ligne-resultat:hover { background: var(--surface-2); border-color: var(--line); }
+.ligne-resultat:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+.ligne-resultat img { width: 34px; height: 34px; object-fit: contain; flex: 0 0 auto; }
+.ligne-nom { font-family: var(--display); font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+.ligne-note { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--ink-3); text-align: right; }
+
+.accueil-note { margin: 14px 0 0; font-size: 13px; }
+.accueil-note a { color: var(--accent-ink); }
+
+/* ---- les chiffres, mis en avant ----
+   Ce sont eux qui disent ce que couvre l'application : ils tiennent la page maintenant
+   qu'elle n'a plus qu'une recherche. D'où les quatre colonnes séparées par un filet,
+   plutôt qu'une ligne de bas de page. */
+.accueil-chiffres {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  margin: 30px 0 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.chiffre {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 22px 20px 20px;
+  background: var(--surface);
+}
+.chiffre b {
+  font-family: var(--display);
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+}
+.chiffre span {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.marque-ligne { display: inline-flex; align-items: center; gap: 6px; color: var(--c-plante); }
+.marque-ligne svg { font-size: 13px; }
+
+.chiffre svg { font-size: 20px; color: var(--teinte); margin-bottom: 4px; }
+.chiffre b { color: var(--teinte); }
+
+/* ---- hero : le texte à gauche, l'illustration à droite ----
+   L'image du jeu a un fond crème qui n'appartient à aucun des deux thèmes : elle reste
+   donc une illustration encadrée, pas un fond de page. En sombre, on la pose sur son
+   propre cadre clair et on l'atténue un peu pour qu'elle n'éblouisse pas. */
+.accueil-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  gap: 32px;
+  align-items: center;
+}
+.accueil-hero-texte { min-width: 0; }
+
+.accueil-illustration {
+  margin: 0;
+  border-radius: calc(var(--radius) * 3);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow);
+  line-height: 0;
+}
+.accueil-illustration img { width: 100%; height: auto; display: block; }
+
+/* L'atténuation ne vaut qu'en thème sombre : hors media query, la seconde règle
+   s'appliquerait aussi au thème clair du système, qui n'a pas [data-theme]. */
+:root[data-theme='dark'] .accueil-illustration img { filter: brightness(.92) saturate(.96); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .accueil-illustration img { filter: brightness(.92) saturate(.96); }
+}
+
+@media (max-width: 900px) {
+  .accueil-hero { grid-template-columns: 1fr; gap: 22px; }
+  .accueil-illustration { order: -1; }
+}

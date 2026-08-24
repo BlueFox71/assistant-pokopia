@@ -1,0 +1,361 @@
+/**
+ * Charte de l'Assistant Pokopia.
+ *
+ * Lavande (#BDADEA) pour la marque et les objets, vert pour les Pokémon : la distinction
+ * est portée par la couleur partout dans l'app (compteurs des cartes, fond des vignettes,
+ * liseré des panneaux), donc les deux teintes ne sont pas interchangeables.
+ *
+ * L'accent existe en deux valeurs, et les confondre casse la lisibilité :
+ *   • `--accent` est la lavande elle-même, réservée aux APLATS (onglet actif, bascule
+ *     enfoncée, bouton principal), avec `--on-accent` — une encre sombre — par-dessus ;
+ *   • `--accent-ink` est sa version foncée, pour tout ce qui est TEXTE, bordure ou
+ *     liseré. En thème clair, la lavande sur du papier tombe à 1,9:1 de contraste : elle
+ *     y est illisible. En thème sombre les deux se rejoignent.
+ *
+ * Le thème suit le système par défaut ; `data-theme` sur <html> le force dans un sens ou
+ * dans l'autre (cf. src/context/ThemeContext.jsx), et antd reçoit l'algorithme
+ * correspondant dans main.jsx.
+ */
+
+:root {
+  --paper: #F5F3FA;
+  --surface: #FFFFFF;
+  --surface-2: #ECE8F5;
+  --ink: #23203A;
+  --ink-2: #565073;
+  --ink-3: #857FA0;
+  --line: #DCD6EC;
+  --line-strong: #BFB6DA;
+  --accent: #BDADEA;
+  --accent-ink: #5B45A6;
+  --accent-soft: #EDE8F9;
+  --second: #1F7A63;
+  --second-soft: #DDEFE7;
+  --hit-bg: #F7DE9A;
+  --hit-ink: #4A3608;
+  --on-accent: #241C3D;
+  --radius: 3px;
+  --shadow: 0 1px 0 rgba(35, 32, 58, .04), 0 1px 3px rgba(35, 32, 58, .06);
+  --display: Cambria, Constantia, "Iowan Old Style", Georgia, serif;
+  --body: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: Consolas, "SF Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #16131F;
+    --surface: #1E1A2B;
+    --surface-2: #262135;
+    --ink: #EAE6F5;
+    --ink-2: #ADA5C4;
+    --ink-3: #857DA0;
+    --line: #322B45;
+    --line-strong: #473E60;
+    --accent: #BDADEA;
+    --accent-ink: #BDADEA;
+    --accent-soft: #2C2542;
+    --second: #5CC3A3;
+    --second-soft: #1D3B31;
+    --hit-bg: #5C4A17;
+    --hit-ink: #FBE9BC;
+    --on-accent: #1B1530;
+    --shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 1px 3px rgba(0, 0, 0, .25);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #16131F;
+  --surface: #1E1A2B;
+  --surface-2: #262135;
+  --ink: #EAE6F5;
+  --ink-2: #ADA5C4;
+  --ink-3: #857DA0;
+  --line: #322B45;
+  --line-strong: #473E60;
+  --accent: #BDADEA;
+  --accent-ink: #BDADEA;
+  --accent-soft: #2C2542;
+  --second: #5CC3A3;
+  --second-soft: #1D3B31;
+  --hit-bg: #5C4A17;
+  --hit-ink: #FBE9BC;
+  --on-accent: #1B1530;
+  --shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 1px 3px rgba(0, 0, 0, .25);
+  color-scheme: dark;
+}
+
+/**
+ * Couleurs sémantiques — types, habitats, catégories de meuble.
+ *
+ * Chacune est écrite UNE fois, en HSL, et emprunte sa luminosité à deux variables :
+ * `--lum` pour l'encre, `--lum-fond` pour l'aplat. Le thème sombre ne redéfinit que ces
+ * deux-là, et les trente-six teintes suivent. Écrire deux jeux complets à la main, c'était
+ * garantir qu'ils divergent à la première retouche.
+ */
+:root {
+  --lum: 34%;
+  --lum-fond: 93%;
+  --sat-fond: 62%;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) { --lum: 72%; --lum-fond: 22%; --sat-fond: 32%; }
+}
+:root[data-theme='dark'] { --lum: 72%; --lum-fond: 22%; --sat-fond: 32%; }
+
+:root {
+  /* les 18 types, aux teintes de la série */
+  --t-normal: hsl(50 10% var(--lum));
+  --t-combat: hsl(0 65% var(--lum));
+  --t-vol: hsl(220 55% var(--lum));
+  --t-poison: hsl(295 50% var(--lum));
+  --t-sol: hsl(38 55% var(--lum));
+  --t-roche: hsl(45 30% var(--lum));
+  --t-insecte: hsl(75 50% var(--lum));
+  --t-spectre: hsl(270 40% var(--lum));
+  --t-acier: hsl(205 18% var(--lum));
+  --t-feu: hsl(14 80% var(--lum));
+  --t-eau: hsl(208 75% var(--lum));
+  --t-plante: hsl(110 50% var(--lum));
+  --t-electrik: hsl(45 85% var(--lum));
+  --t-psy: hsl(330 65% var(--lum));
+  --t-glace: hsl(188 55% var(--lum));
+  --t-dragon: hsl(255 60% var(--lum));
+  --t-tenebres: hsl(25 22% var(--lum));
+  --t-fee: hsl(320 55% var(--lum));
+
+  --t-normal-fond: hsl(50 var(--sat-fond) var(--lum-fond));
+  --t-combat-fond: hsl(0 var(--sat-fond) var(--lum-fond));
+  --t-vol-fond: hsl(220 var(--sat-fond) var(--lum-fond));
+  --t-poison-fond: hsl(295 var(--sat-fond) var(--lum-fond));
+  --t-sol-fond: hsl(38 var(--sat-fond) var(--lum-fond));
+  --t-roche-fond: hsl(45 var(--sat-fond) var(--lum-fond));
+  --t-insecte-fond: hsl(75 var(--sat-fond) var(--lum-fond));
+  --t-spectre-fond: hsl(270 var(--sat-fond) var(--lum-fond));
+  --t-acier-fond: hsl(205 var(--sat-fond) var(--lum-fond));
+  --t-feu-fond: hsl(14 var(--sat-fond) var(--lum-fond));
+  --t-eau-fond: hsl(208 var(--sat-fond) var(--lum-fond));
+  --t-plante-fond: hsl(110 var(--sat-fond) var(--lum-fond));
+  --t-electrik-fond: hsl(45 var(--sat-fond) var(--lum-fond));
+  --t-psy-fond: hsl(330 var(--sat-fond) var(--lum-fond));
+  --t-glace-fond: hsl(188 var(--sat-fond) var(--lum-fond));
+  --t-dragon-fond: hsl(255 var(--sat-fond) var(--lum-fond));
+  --t-tenebres-fond: hsl(25 var(--sat-fond) var(--lum-fond));
+  --t-fee-fond: hsl(320 var(--sat-fond) var(--lum-fond));
+
+  /* les six habitats idéaux */
+  --h-bright: hsl(45 85% var(--lum));
+  --h-dark: hsl(252 38% var(--lum));
+  --h-humid: hsl(200 70% var(--lum));
+  --h-dry: hsl(34 55% var(--lum));
+  --h-warm: hsl(12 78% var(--lum));
+  --h-cool: hsl(186 55% var(--lum));
+  --h-bright-fond: hsl(45 var(--sat-fond) var(--lum-fond));
+  --h-dark-fond: hsl(252 var(--sat-fond) var(--lum-fond));
+  --h-humid-fond: hsl(200 var(--sat-fond) var(--lum-fond));
+  --h-dry-fond: hsl(34 var(--sat-fond) var(--lum-fond));
+  --h-warm-fond: hsl(12 var(--sat-fond) var(--lum-fond));
+  --h-cool-fond: hsl(186 var(--sat-fond) var(--lum-fond));
+
+  /* les douze catégories de meuble */
+  --c-lit: hsl(265 50% var(--lum));
+  --c-chaise: hsl(200 55% var(--lum));
+  --c-canape: hsl(322 50% var(--lum));
+  --c-table: hsl(28 60% var(--lum));
+  --c-commode: hsl(12 45% var(--lum));
+  --c-lumiere: hsl(45 80% var(--lum));
+  --c-ecran: hsl(215 55% var(--lum));
+  --c-meuble: hsl(174 45% var(--lum));
+  --c-plante: hsl(122 50% var(--lum));
+  --c-decoration: hsl(288 45% var(--lum));
+  --c-fossile: hsl(38 30% var(--lum));
+  --c-ressource: hsl(220 12% var(--lum));
+  --c-lit-fond: hsl(265 var(--sat-fond) var(--lum-fond));
+  --c-chaise-fond: hsl(200 var(--sat-fond) var(--lum-fond));
+  --c-canape-fond: hsl(322 var(--sat-fond) var(--lum-fond));
+  --c-table-fond: hsl(28 var(--sat-fond) var(--lum-fond));
+  --c-commode-fond: hsl(12 var(--sat-fond) var(--lum-fond));
+  --c-lumiere-fond: hsl(45 var(--sat-fond) var(--lum-fond));
+  --c-ecran-fond: hsl(215 var(--sat-fond) var(--lum-fond));
+  --c-meuble-fond: hsl(174 var(--sat-fond) var(--lum-fond));
+  --c-plante-fond: hsl(122 var(--sat-fond) var(--lum-fond));
+  --c-decoration-fond: hsl(288 var(--sat-fond) var(--lum-fond));
+  --c-fossile-fond: hsl(38 var(--sat-fond) var(--lum-fond));
+  --c-ressource-fond: hsl(220 14% var(--lum-fond));
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+h1, h2, h3 { text-wrap: balance; }
+
+/* ---- libellés en petites capitales monospace, repris partout ---- */
+.etiquette {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+  font-weight: 400; color: var(--ink-3);
+}
+
+/* ---- boutons maison ---- */
+.ghost-btn {
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  font: inherit; font-size: 13px; padding: 9px 14px; border-radius: var(--radius); cursor: pointer;
+}
+.ghost-btn:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+.ghost-btn:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+
+.chip-tag {
+  background: var(--surface-2); border: 1px solid var(--line-strong); font-size: 12px;
+  padding: 3px 8px; border-radius: var(--radius); cursor: pointer; font-family: inherit; color: var(--ink);
+}
+.chip-tag:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+
+/* ---- grille de vignettes, partagée par toutes les vues ---- */
+.chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(102px, 1fr)); gap: 4px; }
+
+.chip {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+  padding: 8px 4px 7px; border-radius: var(--radius); border: 1px solid transparent;
+  background: var(--accent-soft); color: var(--ink); cursor: pointer; font: inherit;
+  font-size: 10.5px; line-height: 1.2; text-align: center;
+}
+.chip img { width: 60px; height: 60px; object-fit: contain; flex: 0 0 auto; margin-bottom: 3px; }
+.chip:hover { border-color: var(--accent-ink); }
+.chip:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.chip.mon { background: var(--second-soft); }
+.chip.mon:hover { border-color: var(--second); }
+/* Vignette retenue pendant la composition d'un habitat. Un simple liseré ne suffisait pas :
+   on clique, la liste garde l'élément en place, encore faut-il le voir. D'où le changement
+   de fond — le violet des Pokémon passe au lavande de la sélection — et la coche. */
+.chip.sel {
+  outline: 3px solid var(--accent-ink);
+  outline-offset: -3px;
+  background: var(--accent-soft);
+}
+.chip.sel .chip-name { font-weight: 700; }
+.chip.sel::after {
+  content: '✓';
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-ink);
+}
+/* surlignage des correspondances de recherche */
+.chip.hit { background: var(--hit-bg); color: var(--hit-ink); }
+.chip.multi { border-color: var(--accent-ink); }
+.chip-name { font-weight: 600; text-wrap: balance; font-size: 10.5px; }
+.chip-en { font-family: var(--mono); font-size: 8.5px; line-height: 1.2; color: var(--ink-3); word-break: break-word; }
+.chip.hit .chip-en, .chip.hit .chip-sub { color: var(--hit-ink); opacity: .8; }
+.chip-sub {
+  font-family: var(--mono); font-size: 8px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.chip-badge {
+  font-family: var(--mono); font-size: 8.5px; font-weight: 700; letter-spacing: .04em;
+  color: var(--accent-ink); text-transform: uppercase;
+}
+.chip-badge.shared { color: var(--second); }
+/* compatibilité avec le groupe en cours de composition */
+.chip-badge.compat.fort { color: var(--second); }
+.chip-badge.compat.moyen { color: var(--accent-ink); }
+.chip-badge.compat.faible { color: var(--ink-3); }
+/* nom de l'habitat où un Pokémon vit déjà */
+.chip-badge.loge {
+  color: var(--ink-3); text-transform: none; font-weight: 400; letter-spacing: 0;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.chip.off { opacity: .45; cursor: not-allowed; }
+.chip.off:hover { border-color: transparent; }
+
+/* ---- barre d'outils collante, commune à l'index et au Pokédex ---- */
+.controls { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+.controls-inner { padding: 14px 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.controls .field { flex: 1 1 320px; min-width: 240px; }
+.statut { font-family: var(--mono); font-size: 12px; color: var(--ink-3); margin-left: auto; }
+
+.vide { padding: 60px 0; text-align: center; color: var(--ink-3); }
+
+.avertissement {
+  margin: 12px 0 0; padding: 10px 14px; font-size: 13px;
+  background: var(--hit-bg); color: var(--hit-ink); border-radius: var(--radius);
+}
+
+/* ---- antd : recoller ses composants à la charte ---- */
+.ant-input-affix-wrapper, .ant-input { border-radius: var(--radius) !important; }
+.ant-segmented { border-radius: var(--radius) !important; }
+.ant-segmented .ant-segmented-item-label { font-size: 13px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (max-width: 620px) {
+  .statut { margin-left: 0; width: 100%; }
+}
+
+/* ---- couleurs sémantiques appliquées ---- */
+
+/* Catégorie de meuble, sous chaque objet : douze teintes, une par famille. */
+.meuble-lit { color: var(--c-lit); }
+.meuble-chaise { color: var(--c-chaise); }
+.meuble-canape { color: var(--c-canape); }
+.meuble-table { color: var(--c-table); }
+.meuble-commode { color: var(--c-commode); }
+.meuble-lumiere { color: var(--c-lumiere); }
+.meuble-ecran { color: var(--c-ecran); }
+.meuble-meuble { color: var(--c-meuble); }
+.meuble-plante { color: var(--c-plante); }
+.meuble-decoration { color: var(--c-decoration); }
+.meuble-fossile { color: var(--c-fossile); }
+.meuble-ressource { color: var(--c-ressource); }
+
+/* Habitat idéal, sous chaque Pokémon : l'icône hérite de la couleur du texte. */
+.marque-habitat { display: inline-flex; align-items: center; gap: 3px; }
+.marque-habitat svg { font-size: 9px; }
+.hab-Bright { color: var(--h-bright); }
+.hab-Dark { color: var(--h-dark); }
+.hab-Humid { color: var(--h-humid); }
+.hab-Dry { color: var(--h-dry); }
+.hab-Warm { color: var(--h-warm); }
+.hab-Cool { color: var(--h-cool); }
+
+/* Bascule teintée : le filtre prend la couleur de ce qu'il filtre, éteint comme allumé. */
+.bascule.teintee { border-color: color-mix(in srgb, var(--teinte) 45%, var(--line-strong)); }
+.bascule.teintee svg { font-size: 14px; color: var(--teinte); }
+.bascule.teintee:hover { border-color: var(--teinte); }
+.bascule.teintee[aria-pressed='true'] {
+  background: var(--teinte-fond);
+  border-color: var(--teinte);
+  color: var(--ink);
+}
+.bascule.teintee[aria-pressed='true'] svg { color: var(--teinte); }
+.bascule.teintee[aria-pressed='true'] b { color: var(--ink-2); opacity: 1; }
+
+/* Étiquette pleine : les types d'un Pokémon, et la catégorie d'un objet sur sa fiche. */
+.pastille {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--teinte);
+  background: var(--teinte-fond);
+  border: 1px solid color-mix(in srgb, var(--teinte) 40%, transparent);
+}
+.pastille svg { font-size: 12px; }

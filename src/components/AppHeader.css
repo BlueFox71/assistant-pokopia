@@ -1,0 +1,50 @@
+.app-header { background: var(--surface); border-bottom: 1px solid var(--line); }
+
+.app-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 12px 20px;
+}
+
+.marque { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.marque img { border-radius: 6px; }
+.marque span { display: flex; flex-direction: column; line-height: 1.15; }
+.marque-sur {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.marque strong { font-family: var(--display); font-size: 19px; letter-spacing: -.01em; }
+
+.onglets { display: flex; gap: 4px; flex-wrap: wrap; }
+.onglet {
+  padding: 7px 13px; border-radius: var(--radius); font-size: 14px;
+  color: var(--ink-2); text-decoration: none; border: 1px solid transparent;
+}
+.onglet:hover { color: var(--accent-ink); border-color: var(--line-strong); }
+.onglet.active { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.onglet:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+
+.bascule-theme {
+  margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  border-radius: var(--radius); padding: 7px 10px; cursor: pointer; font: inherit; font-size: 14px;
+}
+.bascule-theme:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+.bascule-theme:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.pastille-auto {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+@media (max-width: 720px) {
+  .app-header-inner { gap: 12px; flex-wrap: wrap; }
+  .onglets { order: 3; width: 100%; }
+  .bascule-theme { margin-left: auto; }
+}
+
+/* Les onglets portent une icône : elle prend la couleur du texte, donc l'onglet actif
+   la fait passer en encre sur lavande sans règle supplémentaire. */
+.onglet { display: inline-flex; align-items: center; gap: 7px; }
+.onglet svg { font-size: 15px; opacity: .85; }
+.onglet.active svg { opacity: 1; }

@@ -1,0 +1,4286 @@
+[
+ {
+  "en": "Adrenaline Orb",
+  "fr": "Orbe Frisson",
+  "categorie": null,
+  "sprite": "adrenalineorb"
+ },
+ {
+  "en": "Adventure kit",
+  "fr": "Kit d'aventure",
+  "categorie": "Toy",
+  "sprite": "adventurekit"
+ },
+ {
+  "en": "Aether Paradise",
+  "fr": "Paradis Æther",
+  "categorie": null,
+  "sprite": "aetherparadise"
+ },
+ {
+  "en": "Afternoon tea set",
+  "fr": "Goûter d'après-midi",
+  "categorie": "Decoration",
+  "sprite": "afternoonteaset"
+ },
+ {
+  "en": "Air conditioner",
+  "fr": "Climatiseur",
+  "categorie": "Decoration",
+  "sprite": "airconditioner"
+ },
+ {
+  "en": "Alarm Clock",
+  "fr": "Réveil",
+  "categorie": "Toy",
+  "sprite": "alarmclock"
+ },
+ {
+  "en": "Antique bed",
+  "fr": "Lit antique",
+  "categorie": "Relaxation",
+  "sprite": "antiquebed"
+ },
+ {
+  "en": "Antique chair",
+  "fr": "Chaise antique",
+  "categorie": "Relaxation",
+  "sprite": "antiquechair"
+ },
+ {
+  "en": "Antique chandelier",
+  "fr": "Lustre antique",
+  "categorie": "Decoration",
+  "sprite": "antiquechandelier"
+ },
+ {
+  "en": "Antique chest",
+  "fr": "Commode antique",
+  "categorie": "Decoration",
+  "sprite": "antiquechest"
+ },
+ {
+  "en": "Antique clock",
+  "fr": "Horloge antique",
+  "categorie": "Toy",
+  "sprite": "antiqueclock"
+ },
+ {
+  "en": "Antique closet",
+  "fr": "Armoire antique",
+  "categorie": "Decoration",
+  "sprite": "antiquecloset"
+ },
+ {
+  "en": "Antique dresser",
+  "fr": "Coiffeuse antique",
+  "categorie": "Toy",
+  "sprite": "antiquedresser"
+ },
+ {
+  "en": "Antique sofa",
+  "fr": "Canapé antique",
+  "categorie": "Relaxation",
+  "sprite": "antiquesofa"
+ },
+ {
+  "en": "Antique table",
+  "fr": "Table antique",
+  "categorie": null,
+  "sprite": "antiquetable"
+ },
+ {
+  "en": "Arcade machine",
+  "fr": "Borne d'arcade",
+  "categorie": "Toy",
+  "sprite": "arcademachine"
+ },
+ {
+  "en": "Arcanine doll",
+  "fr": "Peluche Arcanin",
+  "categorie": "Toy",
+  "sprite": "arcaninedoll"
+ },
+ {
+  "en": "Area Zero",
+  "fr": "Zone Zéro",
+  "categorie": null,
+  "sprite": "areazero"
+ },
+ {
+  "en": "Armor Fossil",
+  "fr": "Fossile Armure",
+  "categorie": "Decoration",
+  "sprite": "armorfossil"
+ },
+ {
+  "en": "Armor fragment",
+  "fr": "Fragment d'armure",
+  "categorie": null,
+  "sprite": "armorfragment"
+ },
+ {
+  "en": "Arrow sign",
+  "fr": "Panneau fléché",
+  "categorie": "Decoration",
+  "sprite": "arrowsign"
+ },
+ {
+  "en": "Arrow sign (left)",
+  "fr": "Panneau fléché (gauche)",
+  "categorie": "Decoration",
+  "sprite": "arrowsign(left)"
+ },
+ {
+  "en": "Arrow sign (right)",
+  "fr": "Panneau fléché (droite)",
+  "categorie": "Decoration",
+  "sprite": "arrowsign(right)"
+ },
+ {
+  "en": "Audio mixer",
+  "fr": "Table de mixage",
+  "categorie": "Toy",
+  "sprite": "audiomixer"
+ },
+ {
+  "en": "Auspicious Armor",
+  "fr": "Armure Bénie",
+  "categorie": "Decoration",
+  "sprite": "auspiciousarmor"
+ },
+ {
+  "en": "Balloons",
+  "fr": "Ballons",
+  "categorie": "Toy",
+  "sprite": "balloons"
+ },
+ {
+  "en": "Barrel",
+  "fr": "Tonneau",
+  "categorie": "Decoration",
+  "sprite": "barrel"
+ },
+ {
+  "en": "Bathtime set",
+  "fr": "Nécessaire de bain",
+  "categorie": "Toy",
+  "sprite": "bathtimeset"
+ },
+ {
+  "en": "Bathtub",
+  "fr": "Baignoire",
+  "categorie": "Decoration",
+  "sprite": "bathtub"
+ },
+ {
+  "en": "Battle! (Gym Leader Battle)",
+  "fr": "Combat ! (Champion d'Arène)",
+  "categorie": null,
+  "sprite": "battle!(gymleaderbattle)"
+ },
+ {
+  "en": "Battle! (Gym Leader) 1",
+  "fr": "Combat ! (Champion d'Arène) 1",
+  "categorie": null,
+  "sprite": "battle!(gymleader)1"
+ },
+ {
+  "en": "Battle! (Gym Leader) 2",
+  "fr": "Combat ! (Champion d'Arène) 2",
+  "categorie": null,
+  "sprite": "battle!(gymleader)2"
+ },
+ {
+  "en": "Beach chair",
+  "fr": "Chaise de plage",
+  "categorie": "Relaxation",
+  "sprite": "beachchair"
+ },
+ {
+  "en": "Beach parasol",
+  "fr": "Parasol de plage",
+  "categorie": "Relaxation",
+  "sprite": "beachparasol"
+ },
+ {
+  "en": "Beach volleyball set",
+  "fr": "Kit de beach-volley",
+  "categorie": "Toy",
+  "sprite": "beachvolleyballset"
+ },
+ {
+  "en": "Beautiful flower",
+  "fr": "Belle fleur",
+  "categorie": null,
+  "sprite": "beautifulflower"
+ },
+ {
+  "en": "Beautiful flower (pink)",
+  "fr": "Belle fleur (rose)",
+  "categorie": null,
+  "sprite": "beautifulflower(pink)"
+ },
+ {
+  "en": "Beautiful flower (purple)",
+  "fr": "Belle fleur (violette)",
+  "categorie": null,
+  "sprite": "beautifulflower(purple)"
+ },
+ {
+  "en": "Beautiful flower (white)",
+  "fr": "Belle fleur (blanche)",
+  "categorie": null,
+  "sprite": "beautifulflower(white)"
+ },
+ {
+  "en": "Beautiful flower (yellow)",
+  "fr": "Belle fleur (jaune)",
+  "categorie": null,
+  "sprite": "beautifulflower(yellow)"
+ },
+ {
+  "en": "Bell",
+  "fr": "Cloche",
+  "categorie": "Toy",
+  "sprite": "bell"
+ },
+ {
+  "en": "Bell Tower",
+  "fr": "Tour Cendrée",
+  "categorie": null,
+  "sprite": "belltower"
+ },
+ {
+  "en": "Berry basket",
+  "fr": "Panier de Baies",
+  "categorie": "Decoration",
+  "sprite": "berrybasket"
+ },
+ {
+  "en": "Berry bed",
+  "fr": "Lit Baie",
+  "categorie": "Relaxation",
+  "sprite": "berrybed"
+ },
+ {
+  "en": "Berry case",
+  "fr": "Boîte Baie",
+  "categorie": "Decoration",
+  "sprite": "berrycase"
+ },
+ {
+  "en": "Berry chair",
+  "fr": "Chaise Baie",
+  "categorie": "Relaxation",
+  "sprite": "berrychair"
+ },
+ {
+  "en": "Berry clock",
+  "fr": "Horloge Baie",
+  "categorie": "Toy",
+  "sprite": "berryclock"
+ },
+ {
+  "en": "Berry hanging lamp",
+  "fr": "Suspension Baie",
+  "categorie": "Decoration",
+  "sprite": "berryhanginglamp"
+ },
+ {
+  "en": "Berry print",
+  "fr": "Motif Baies",
+  "categorie": null,
+  "sprite": "berryprint"
+ },
+ {
+  "en": "Berry print (wallpaper)",
+  "fr": "Motif Baies (papier peint)",
+  "categorie": null,
+  "sprite": "berryprint(wallpaper)"
+ },
+ {
+  "en": "Berry table",
+  "fr": "Table Baie",
+  "categorie": null,
+  "sprite": "berrytable"
+ },
+ {
+  "en": "Berry table lamp",
+  "fr": "Lampe de table Baie",
+  "categorie": "Decoration",
+  "sprite": "berrytablelamp"
+ },
+ {
+  "en": "Berry wall decoration",
+  "fr": "Décoration murale Baies",
+  "categorie": "Decoration",
+  "sprite": "berrywalldecoration"
+ },
+ {
+  "en": "Big Nugget",
+  "fr": "Grosse Pépite",
+  "categorie": "Toy",
+  "sprite": "bignugget"
+ },
+ {
+  "en": "Big Root",
+  "fr": "Grosse Racine",
+  "categorie": null,
+  "sprite": "bigroot"
+ },
+ {
+  "en": "Big drum",
+  "fr": "Grosse caisse",
+  "categorie": "Toy",
+  "sprite": "bigdrum"
+ },
+ {
+  "en": "Big storage box",
+  "fr": "Gros coffre de rangement",
+  "categorie": null,
+  "sprite": "bigstoragebox"
+ },
+ {
+  "en": "Big swim ring",
+  "fr": "Grande bouée",
+  "categorie": "Relaxation",
+  "sprite": "bigswimring"
+ },
+ {
+  "en": "Bike",
+  "fr": "Vélo",
+  "categorie": "Toy",
+  "sprite": "bike"
+ },
+ {
+  "en": "Black Sludge",
+  "fr": "Boue Noire",
+  "categorie": null,
+  "sprite": "blacksludge"
+ },
+ {
+  "en": "Black paint",
+  "fr": "Peinture noire",
+  "categorie": null,
+  "sprite": "blackpaint"
+ },
+ {
+  "en": "Blank canvas",
+  "fr": "Toile vierge",
+  "categorie": "Decoration",
+  "sprite": "blankcanvas"
+ },
+ {
+  "en": "Blender",
+  "fr": "Mixeur",
+  "categorie": "Toy",
+  "sprite": "blender"
+ },
+ {
+  "en": "Blue meteor lamp",
+  "fr": "Lampe météore bleue",
+  "categorie": "Decoration",
+  "sprite": "bluemeteorlamp"
+ },
+ {
+  "en": "Blue paint",
+  "fr": "Peinture bleue",
+  "categorie": null,
+  "sprite": "bluepaint"
+ },
+ {
+  "en": "Bonfire",
+  "fr": "Grand feu de camp",
+  "categorie": "Decoration",
+  "sprite": "bonfire"
+ },
+ {
+  "en": "Boo-in-the-box",
+  "fr": "Diable en boîte",
+  "categorie": "Toy",
+  "sprite": "boo-in-the-box"
+ },
+ {
+  "en": "Book",
+  "fr": "Livre",
+  "categorie": "Toy",
+  "sprite": "book"
+ },
+ {
+  "en": "Book stack",
+  "fr": "Pile de livres",
+  "categorie": "Toy",
+  "sprite": "bookstack"
+ },
+ {
+  "en": "Bookcase",
+  "fr": "Bibliothèque",
+  "categorie": "Decoration",
+  "sprite": "bookcase"
+ },
+ {
+  "en": "Bottled ship",
+  "fr": "Bateau en bouteille",
+  "categorie": "Toy",
+  "sprite": "bottledship"
+ },
+ {
+  "en": "Bouncy blue bathtub",
+  "fr": "Baignoire bleue rebondissante",
+  "categorie": "Decoration",
+  "sprite": "bouncybluebathtub"
+ },
+ {
+  "en": "Boutique",
+  "fr": "Boutique",
+  "categorie": null,
+  "sprite": "boutique"
+ },
+ {
+  "en": "Box Sofa",
+  "fr": "Canapé cube",
+  "categorie": "Relaxation",
+  "sprite": "boxsofa"
+ },
+ {
+  "en": "Brick",
+  "fr": "Brique",
+  "categorie": null,
+  "sprite": "brick"
+ },
+ {
+  "en": "Broken streetlight",
+  "fr": "Lampadaire cassé",
+  "categorie": null,
+  "sprite": "brokenstreetlight"
+ },
+ {
+  "en": "Bubble machine",
+  "fr": "Machine à bulles",
+  "categorie": "Toy",
+  "sprite": "bubblemachine"
+ },
+ {
+  "en": "CD player",
+  "fr": "Lecteur CD",
+  "categorie": "Toy",
+  "sprite": "cdplayer"
+ },
+ {
+  "en": "CD rack",
+  "fr": "Range-CD",
+  "categorie": "Decoration",
+  "sprite": "cdrack"
+ },
+ {
+  "en": "Café sign",
+  "fr": "Enseigne de café",
+  "categorie": "Decoration",
+  "sprite": "cafesign"
+ },
+ {
+  "en": "Campfire",
+  "fr": "Feu de camp",
+  "categorie": "Relaxation",
+  "sprite": "campfire"
+ },
+ {
+  "en": "Camping chair",
+  "fr": "Chaise de camping",
+  "categorie": "Relaxation",
+  "sprite": "campingchair"
+ },
+ {
+  "en": "Canalave City (Night)",
+  "fr": "Joliberges (Nuit)",
+  "categorie": null,
+  "sprite": "canalavecity(night)"
+ },
+ {
+  "en": "Cannon",
+  "fr": "Canon",
+  "categorie": "Toy",
+  "sprite": "cannon"
+ },
+ {
+  "en": "Canoe",
+  "fr": "Canoë",
+  "categorie": "Toy",
+  "sprite": "canoe"
+ },
+ {
+  "en": "Card reader",
+  "fr": "Lecteur de carte",
+  "categorie": "Decoration",
+  "sprite": "cardreader"
+ },
+ {
+  "en": "Cardboard boxes",
+  "fr": "Cartons",
+  "categorie": "Decoration",
+  "sprite": "cardboardboxes"
+ },
+ {
+  "en": "Cascarrafa",
+  "fr": "Cascarafa",
+  "categorie": null,
+  "sprite": "cascarrafa"
+ },
+ {
+  "en": "Cash register",
+  "fr": "Caisse enregistreuse",
+  "categorie": "Toy",
+  "sprite": "cashregister"
+ },
+ {
+  "en": "Castform weather charm",
+  "fr": "Porte-bonheur météo Morphéo",
+  "categorie": "Toy",
+  "sprite": "castformweathercharm"
+ },
+ {
+  "en": "Caves of Mt. Moon",
+  "fr": "Grottes du Mont Sélénite",
+  "categorie": null,
+  "sprite": "cavesofmt.moon"
+ },
+ {
+  "en": "Ceiling fan",
+  "fr": "Ventilateur de plafond",
+  "categorie": "Decoration",
+  "sprite": "ceilingfan"
+ },
+ {
+  "en": "Cell phone",
+  "fr": "Téléphone portable",
+  "categorie": "Toy",
+  "sprite": "cellphone"
+ },
+ {
+  "en": "Chain lamp",
+  "fr": "Lampe à chaîne",
+  "categorie": "Decoration",
+  "sprite": "chainlamp"
+ },
+ {
+  "en": "Chansey plant",
+  "fr": "Plante Leveinard",
+  "categorie": "Decoration",
+  "sprite": "chanseyplant"
+ },
+ {
+  "en": "Charcoal",
+  "fr": "Charbon",
+  "categorie": null,
+  "sprite": "charcoal"
+ },
+ {
+  "en": "Chic chair",
+  "fr": "Chaise chic",
+  "categorie": "Relaxation",
+  "sprite": "chicchair"
+ },
+ {
+  "en": "Chic sofa",
+  "fr": "Canapé chic",
+  "categorie": "Relaxation",
+  "sprite": "chicsofa"
+ },
+ {
+  "en": "Chic streetlight",
+  "fr": "Lampadaire chic",
+  "categorie": "Decoration",
+  "sprite": "chicstreetlight"
+ },
+ {
+  "en": "Chic table",
+  "fr": "Table chic",
+  "categorie": null,
+  "sprite": "chictable"
+ },
+ {
+  "en": "Chimecho wind chime",
+  "fr": "Carillon Éoko",
+  "categorie": "Toy",
+  "sprite": "chimechowindchime"
+ },
+ {
+  "en": "Chocolate cookies",
+  "fr": "Cookies au chocolat",
+  "categorie": "Decoration",
+  "sprite": "chocolatecookies"
+ },
+ {
+  "en": "Cleaning supplies",
+  "fr": "Produits d'entretien",
+  "categorie": "Toy",
+  "sprite": "cleaningsupplies"
+ },
+ {
+  "en": "Clear Amulet",
+  "fr": "Amulette Claire",
+  "categorie": null,
+  "sprite": "clearamulet"
+ },
+ {
+  "en": "Clear Bell",
+  "fr": "Cloche Limpide",
+  "categorie": "Toy",
+  "sprite": "clearbell"
+ },
+ {
+  "en": "Clefairy doll",
+  "fr": "Peluche Mélofée",
+  "categorie": "Toy",
+  "sprite": "clefairydoll"
+ },
+ {
+  "en": "Cloud cannon",
+  "fr": "Canon à nuages",
+  "categorie": "Toy",
+  "sprite": "cloudcannon"
+ },
+ {
+  "en": "Computer",
+  "fr": "Ordinateur",
+  "categorie": "Toy",
+  "sprite": "computer"
+ },
+ {
+  "en": "Concrete",
+  "fr": "Béton",
+  "categorie": null,
+  "sprite": "concrete"
+ },
+ {
+  "en": "Concrete pipe",
+  "fr": "Buse en béton",
+  "categorie": "Decoration",
+  "sprite": "concretepipe"
+ },
+ {
+  "en": "Construction supplies",
+  "fr": "Matériel de chantier",
+  "categorie": "Decoration",
+  "sprite": "constructionsupplies"
+ },
+ {
+  "en": "Contest Spectacular",
+  "fr": "Concours Live",
+  "categorie": null,
+  "sprite": "contestspectacular"
+ },
+ {
+  "en": "Control unit",
+  "fr": "Unité de contrôle",
+  "categorie": "Toy",
+  "sprite": "controlunit"
+ },
+ {
+  "en": "Cooking stove",
+  "fr": "Plaque de cuisson",
+  "categorie": "Decoration",
+  "sprite": "cookingstove"
+ },
+ {
+  "en": "Cool bass guitar",
+  "fr": "Basse électrique stylée",
+  "categorie": "Toy",
+  "sprite": "coolbassguitar"
+ },
+ {
+  "en": "Cool electric guitar",
+  "fr": "Guitare électrique stylée",
+  "categorie": "Toy",
+  "sprite": "coolelectricguitar"
+ },
+ {
+  "en": "Cooler",
+  "fr": "Glacière",
+  "categorie": "Decoration",
+  "sprite": "cooler"
+ },
+ {
+  "en": "Copper ingot",
+  "fr": "Lingot de cuivre",
+  "categorie": null,
+  "sprite": "copperingot"
+ },
+ {
+  "en": "Copper ore",
+  "fr": "Minerai de cuivre",
+  "categorie": null,
+  "sprite": "copperore"
+ },
+ {
+  "en": "Corkboard",
+  "fr": "Tableau en liège",
+  "categorie": "Decoration",
+  "sprite": "corkboard"
+ },
+ {
+  "en": "Corrugated metal",
+  "fr": "Tôle ondulée",
+  "categorie": "Road",
+  "sprite": "corrugatedmetal"
+ },
+ {
+  "en": "Cotton Spores",
+  "fr": "Spores de coton",
+  "categorie": null,
+  "sprite": "cottonspores"
+ },
+ {
+  "en": "Crystal ball",
+  "fr": "Boule de cristal",
+  "categorie": "Toy",
+  "sprite": "crystalball"
+ },
+ {
+  "en": "Crystal fragment",
+  "fr": "Fragment de cristal",
+  "categorie": null,
+  "sprite": "crystalfragment"
+ },
+ {
+  "en": "Cursola light",
+  "fr": "Lumière Corayôme",
+  "categorie": "Decoration",
+  "sprite": "cursolalight"
+ },
+ {
+  "en": "Cushion bed",
+  "fr": "Lit coussin",
+  "categorie": "Relaxation",
+  "sprite": "cushionbed"
+ },
+ {
+  "en": "Cute bed",
+  "fr": "Lit mignon",
+  "categorie": "Relaxation",
+  "sprite": "cutebed"
+ },
+ {
+  "en": "Cute chair",
+  "fr": "Chaise mignonne",
+  "categorie": "Relaxation",
+  "sprite": "cutechair"
+ },
+ {
+  "en": "Cute dresser",
+  "fr": "Coiffeuse mignonne",
+  "categorie": "Toy",
+  "sprite": "cutedresser"
+ },
+ {
+  "en": "Cute flower",
+  "fr": "Fleur mignonne",
+  "categorie": null,
+  "sprite": "cuteflower"
+ },
+ {
+  "en": "Cute flower (blue)",
+  "fr": "Fleur mignonne (bleue)",
+  "categorie": null,
+  "sprite": "cuteflower(blue)"
+ },
+ {
+  "en": "Cute flower (pink)",
+  "fr": "Fleur mignonne (rose)",
+  "categorie": null,
+  "sprite": "cuteflower(pink)"
+ },
+ {
+  "en": "Cute flower (white)",
+  "fr": "Fleur mignonne (blanche)",
+  "categorie": null,
+  "sprite": "cuteflower(white)"
+ },
+ {
+  "en": "Cute flower (yellow)",
+  "fr": "Fleur mignonne (jaune)",
+  "categorie": null,
+  "sprite": "cuteflower(yellow)"
+ },
+ {
+  "en": "Cute lamp",
+  "fr": "Lampe mignonne",
+  "categorie": "Decoration",
+  "sprite": "cutelamp"
+ },
+ {
+  "en": "Cute sofa",
+  "fr": "Canapé mignon",
+  "categorie": "Relaxation",
+  "sprite": "cutesofa"
+ },
+ {
+  "en": "Cute table",
+  "fr": "Table mignonne",
+  "categorie": null,
+  "sprite": "cutetable"
+ },
+ {
+  "en": "Cutting board",
+  "fr": "Planche à découper",
+  "categorie": null,
+  "sprite": "cuttingboard"
+ },
+ {
+  "en": "Cyan paint",
+  "fr": "Peinture cyan",
+  "categorie": null,
+  "sprite": "cyanpaint"
+ },
+ {
+  "en": "Cycle shop sign",
+  "fr": "Enseigne de magasin de vélos",
+  "categorie": "Decoration",
+  "sprite": "cycleshopsign"
+ },
+ {
+  "en": "Dangling streetlight",
+  "fr": "Lampadaire suspendu",
+  "categorie": "Decoration",
+  "sprite": "danglingstreetlight"
+ },
+ {
+  "en": "Deck chair",
+  "fr": "Chaise longue",
+  "categorie": "Relaxation",
+  "sprite": "deckchair"
+ },
+ {
+  "en": "Decorative Dive Ball",
+  "fr": "Scuba Ball décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativediveball"
+ },
+ {
+  "en": "Decorative Great Ball",
+  "fr": "Super Ball décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativegreatball"
+ },
+ {
+  "en": "Decorative Heal Ball",
+  "fr": "Soin Ball décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativehealball"
+ },
+ {
+  "en": "Decorative Lure Ball",
+  "fr": "Appât Ball décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativelureball"
+ },
+ {
+  "en": "Decorative Net Ball",
+  "fr": "Filet Ball décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativenetball"
+ },
+ {
+  "en": "Decorative Poké Ball",
+  "fr": "Poké Ball décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativepokeball"
+ },
+ {
+  "en": "Decorative Quick Ball",
+  "fr": "Rapide Ball décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativequickball"
+ },
+ {
+  "en": "Decorative bookshelf",
+  "fr": "Étagère à livres décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativebookshelf"
+ },
+ {
+  "en": "Decorative cloth",
+  "fr": "Tissu décoratif",
+  "categorie": "Decoration",
+  "sprite": "decorativecloth"
+ },
+ {
+  "en": "Decorative plant shelf",
+  "fr": "Étagère à plantes décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativeplantshelf"
+ },
+ {
+  "en": "Decorative plates",
+  "fr": "Assiettes décoratives",
+  "categorie": "Decoration",
+  "sprite": "decorativeplates"
+ },
+ {
+  "en": "Decorative shop shelf",
+  "fr": "Rayonnage de boutique décoratif",
+  "categorie": "Decoration",
+  "sprite": "decorativeshopshelf"
+ },
+ {
+  "en": "Decorative storage shelf",
+  "fr": "Étagère de rangement décorative",
+  "categorie": "Decoration",
+  "sprite": "decorativestorageshelf"
+ },
+ {
+  "en": "Desk light",
+  "fr": "Lampe de bureau",
+  "categorie": "Decoration",
+  "sprite": "desklight"
+ },
+ {
+  "en": "Despot Fossil (body)",
+  "fr": "Fossile Despote (corps)",
+  "categorie": "Decoration",
+  "sprite": "despotfossil(body)"
+ },
+ {
+  "en": "Despot Fossil (head)",
+  "fr": "Fossile Despote (tête)",
+  "categorie": "Decoration",
+  "sprite": "despotfossil(head)"
+ },
+ {
+  "en": "Despot Fossil (legs)",
+  "fr": "Fossile Despote (pattes)",
+  "categorie": "Decoration",
+  "sprite": "despotfossil(legs)"
+ },
+ {
+  "en": "Despot Fossil (tail)",
+  "fr": "Fossile Despote (queue)",
+  "categorie": "Decoration",
+  "sprite": "despotfossil(tail)"
+ },
+ {
+  "en": "Destiny Knot",
+  "fr": "Nœud Destin",
+  "categorie": null,
+  "sprite": "destinyknot"
+ },
+ {
+  "en": "Digital camera",
+  "fr": "Appareil photo numérique",
+  "categorie": "Toy",
+  "sprite": "digitalcamera"
+ },
+ {
+  "en": "Dining cabinet",
+  "fr": "Vaisselier",
+  "categorie": "Decoration",
+  "sprite": "diningcabinet"
+ },
+ {
+  "en": "Ditto Flag",
+  "fr": "Drapeau Métamorph",
+  "categorie": null,
+  "sprite": "dittoflag"
+ },
+ {
+  "en": "Ditto doll",
+  "fr": "Peluche Métamorph",
+  "categorie": "Toy",
+  "sprite": "dittodoll"
+ },
+ {
+  "en": "Dive",
+  "fr": "Plongée",
+  "categorie": null,
+  "sprite": "dive"
+ },
+ {
+  "en": "Double streetlight",
+  "fr": "Lampadaire double",
+  "categorie": "Decoration",
+  "sprite": "doublestreetlight"
+ },
+ {
+  "en": "Dragonite doll",
+  "fr": "Peluche Dracolosse",
+  "categorie": "Toy",
+  "sprite": "dragonitedoll"
+ },
+ {
+  "en": "Dress Up With Props",
+  "fr": "Séance déguisement",
+  "categorie": null,
+  "sprite": "dressupwithprops"
+ },
+ {
+  "en": "Driftveil City",
+  "fr": "Volucité",
+  "categorie": null,
+  "sprite": "driftveilcity"
+ },
+ {
+  "en": "Ecruteak City",
+  "fr": "Rosalia",
+  "categorie": null,
+  "sprite": "ecruteakcity"
+ },
+ {
+  "en": "Eerie candle",
+  "fr": "Bougie inquiétante",
+  "categorie": "Decoration",
+  "sprite": "eeriecandle"
+ },
+ {
+  "en": "Eevee doll",
+  "fr": "Peluche Évoli",
+  "categorie": "Toy",
+  "sprite": "eeveedoll"
+ },
+ {
+  "en": "Elegant flower",
+  "fr": "Fleur élégante",
+  "categorie": null,
+  "sprite": "elegantflower"
+ },
+ {
+  "en": "Elegant flower (orange)",
+  "fr": "Fleur élégante (orange)",
+  "categorie": null,
+  "sprite": "elegantflower(orange)"
+ },
+ {
+  "en": "Elegant flower (pink)",
+  "fr": "Fleur élégante (rose)",
+  "categorie": null,
+  "sprite": "elegantflower(pink)"
+ },
+ {
+  "en": "Elegant flower (red)",
+  "fr": "Fleur élégante (rouge)",
+  "categorie": null,
+  "sprite": "elegantflower(red)"
+ },
+ {
+  "en": "Elegant flower (yellow)",
+  "fr": "Fleur élégante (jaune)",
+  "categorie": null,
+  "sprite": "elegantflower(yellow)"
+ },
+ {
+  "en": "Excavation tools",
+  "fr": "Outils de fouille",
+  "categorie": "Toy",
+  "sprite": "excavationtools"
+ },
+ {
+  "en": "Extravagant flowers",
+  "fr": "Fleurs extravagantes",
+  "categorie": "Decoration",
+  "sprite": "extravagantflowers"
+ },
+ {
+  "en": "Fairy Feather",
+  "fr": "Plume Enchantée",
+  "categorie": null,
+  "sprite": "fairyfeather"
+ },
+ {
+  "en": "Fan",
+  "fr": "Ventilateur",
+  "categorie": "Toy",
+  "sprite": "fan"
+ },
+ {
+  "en": "Fancy chair",
+  "fr": "Chaise raffinée",
+  "categorie": "Relaxation",
+  "sprite": "fancychair"
+ },
+ {
+  "en": "Fancy pen",
+  "fr": "Stylo raffiné",
+  "categorie": "Decoration",
+  "sprite": "fancypen"
+ },
+ {
+  "en": "Fiery Magby statue",
+  "fr": "Statue Limagma enflammée",
+  "categorie": "Toy",
+  "sprite": "fierymagbystatue"
+ },
+ {
+  "en": "Fire hydrant",
+  "fr": "Bouche d'incendie",
+  "categorie": "Decoration",
+  "sprite": "firehydrant"
+ },
+ {
+  "en": "Firepit",
+  "fr": "Foyer",
+  "categorie": "Decoration",
+  "sprite": "firepit"
+ },
+ {
+  "en": "Firework (blue)",
+  "fr": "Feu d'artifice (bleu)",
+  "categorie": null,
+  "sprite": "firework(blue)"
+ },
+ {
+  "en": "Firework (green)",
+  "fr": "Feu d'artifice (vert)",
+  "categorie": null,
+  "sprite": "firework(green)"
+ },
+ {
+  "en": "Firework (red)",
+  "fr": "Feu d'artifice (rouge)",
+  "categorie": null,
+  "sprite": "firework(red)"
+ },
+ {
+  "en": "Firework (white)",
+  "fr": "Feu d'artifice (blanc)",
+  "categorie": null,
+  "sprite": "firework(white)"
+ },
+ {
+  "en": "Firework (yellow)",
+  "fr": "Feu d'artifice (jaune)",
+  "categorie": null,
+  "sprite": "firework(yellow)"
+ },
+ {
+  "en": "First aid kit",
+  "fr": "Trousse de premiers secours",
+  "categorie": "Toy",
+  "sprite": "firstaidkit"
+ },
+ {
+  "en": "Fishing rod",
+  "fr": "Canne à pêche",
+  "categorie": "Toy",
+  "sprite": "fishingrod"
+ },
+ {
+  "en": "Flame Orb",
+  "fr": "Orbe Flamme",
+  "categorie": null,
+  "sprite": "flameorb"
+ },
+ {
+  "en": "Flat-leaf plant",
+  "fr": "Plante à feuilles plates",
+  "categorie": "Decoration",
+  "sprite": "flat-leafplant"
+ },
+ {
+  "en": "Floating lantern",
+  "fr": "Lanterne flottante",
+  "categorie": "Decoration",
+  "sprite": "floatinglantern"
+ },
+ {
+  "en": "Floor switch",
+  "fr": "Interrupteur au sol",
+  "categorie": null,
+  "sprite": "floorswitch"
+ },
+ {
+  "en": "Flower backpack",
+  "fr": "Sac à dos fleuri",
+  "categorie": null,
+  "sprite": "flowerbackpack"
+ },
+ {
+  "en": "Flower cushion",
+  "fr": "Coussin fleuri",
+  "categorie": "Relaxation",
+  "sprite": "flowercushion"
+ },
+ {
+  "en": "Flower garland",
+  "fr": "Guirlande de fleurs",
+  "categorie": "Decoration",
+  "sprite": "flowergarland"
+ },
+ {
+  "en": "Flowery table setting",
+  "fr": "Service de table fleuri",
+  "categorie": "Decoration",
+  "sprite": "flowerytablesetting"
+ },
+ {
+  "en": "Fluff",
+  "fr": "Duvet",
+  "categorie": null,
+  "sprite": "fluff"
+ },
+ {
+  "en": "Fluorescent light",
+  "fr": "Néon",
+  "categorie": "Decoration",
+  "sprite": "fluorescentlight"
+ },
+ {
+  "en": "Folding chair",
+  "fr": "Chaise pliante",
+  "categorie": "Relaxation",
+  "sprite": "foldingchair"
+ },
+ {
+  "en": "Food counter",
+  "fr": "Comptoir de cuisine",
+  "categorie": "Decoration",
+  "sprite": "foodcounter"
+ },
+ {
+  "en": "Fortree City",
+  "fr": "Atalanopolis",
+  "categorie": null,
+  "sprite": "fortreecity"
+ },
+ {
+  "en": "Frame",
+  "fr": "Cadre",
+  "categorie": "Decoration",
+  "sprite": "frame"
+ },
+ {
+  "en": "Fried potatoes",
+  "fr": "Frites",
+  "categorie": "Decoration",
+  "sprite": "friedpotatoes"
+ },
+ {
+  "en": "Fuchsia City Theme",
+  "fr": "Thème de Parmanie",
+  "categorie": null,
+  "sprite": "fuchsiacitytheme"
+ },
+ {
+  "en": "Funky diffuser",
+  "fr": "Diffuseur funky",
+  "categorie": "Toy",
+  "sprite": "funkydiffuser"
+ },
+ {
+  "en": "Game Boy system",
+  "fr": "Console Game Boy",
+  "categorie": "Toy",
+  "sprite": "gameboysystem"
+ },
+ {
+  "en": "Game Corner",
+  "fr": "Casino",
+  "categorie": null,
+  "sprite": "gamecorner"
+ },
+ {
+  "en": "Gaming PC",
+  "fr": "PC gaming",
+  "categorie": "Toy",
+  "sprite": "gamingpc"
+ },
+ {
+  "en": "Gaming bed",
+  "fr": "Lit gaming",
+  "categorie": "Relaxation",
+  "sprite": "gamingbed"
+ },
+ {
+  "en": "Gaming chair",
+  "fr": "Chaise gaming",
+  "categorie": "Relaxation",
+  "sprite": "gamingchair"
+ },
+ {
+  "en": "Gaming fridge",
+  "fr": "Frigo gaming",
+  "categorie": "Decoration",
+  "sprite": "gamingfridge"
+ },
+ {
+  "en": "Gaming light",
+  "fr": "Lumière gaming",
+  "categorie": "Decoration",
+  "sprite": "gaminglight"
+ },
+ {
+  "en": "Garbage bags",
+  "fr": "Sacs poubelle",
+  "categorie": "Decoration",
+  "sprite": "garbagebags"
+ },
+ {
+  "en": "Garbage bin",
+  "fr": "Poubelle",
+  "categorie": "Decoration",
+  "sprite": "garbagebin"
+ },
+ {
+  "en": "Garden bench",
+  "fr": "Banc de jardin",
+  "categorie": "Relaxation",
+  "sprite": "gardenbench"
+ },
+ {
+  "en": "Garden chair",
+  "fr": "Chaise de jardin",
+  "categorie": "Relaxation",
+  "sprite": "gardenchair"
+ },
+ {
+  "en": "Garden flowers",
+  "fr": "Fleurs de jardin",
+  "categorie": "Decoration",
+  "sprite": "gardenflowers"
+ },
+ {
+  "en": "Garden light",
+  "fr": "Lumière de jardin",
+  "categorie": "Decoration",
+  "sprite": "gardenlight"
+ },
+ {
+  "en": "Garden ornament",
+  "fr": "Ornement de jardin",
+  "categorie": "Decoration",
+  "sprite": "gardenornament"
+ },
+ {
+  "en": "Garden table",
+  "fr": "Table de jardin",
+  "categorie": null,
+  "sprite": "gardentable"
+ },
+ {
+  "en": "Gift shop sign",
+  "fr": "Enseigne de boutique de souvenirs",
+  "categorie": "Decoration",
+  "sprite": "giftshopsign"
+ },
+ {
+  "en": "Glass",
+  "fr": "Verre",
+  "categorie": null,
+  "sprite": "glass"
+ },
+ {
+  "en": "Glass window",
+  "fr": "Fenêtre en verre",
+  "categorie": null,
+  "sprite": "glasswindow"
+ },
+ {
+  "en": "Gold Bottle Cap",
+  "fr": "Capsule Dorée",
+  "categorie": null,
+  "sprite": "goldbottlecap"
+ },
+ {
+  "en": "Gold Teeth",
+  "fr": "Dents en Or",
+  "categorie": "Toy",
+  "sprite": "goldteeth"
+ },
+ {
+  "en": "Gold ingot",
+  "fr": "Lingot d'or",
+  "categorie": null,
+  "sprite": "goldingot"
+ },
+ {
+  "en": "Gold ore",
+  "fr": "Minerai d'or",
+  "categorie": null,
+  "sprite": "goldore"
+ },
+ {
+  "en": "Gravestone",
+  "fr": "Pierre tombale",
+  "categorie": "Decoration",
+  "sprite": "gravestone"
+ },
+ {
+  "en": "Green meteor lamp",
+  "fr": "Lampe météore verte",
+  "categorie": "Decoration",
+  "sprite": "greenmeteorlamp"
+ },
+ {
+  "en": "Green paint",
+  "fr": "Peinture verte",
+  "categorie": null,
+  "sprite": "greenpaint"
+ },
+ {
+  "en": "Grubby book",
+  "fr": "Livre crasseux",
+  "categorie": "Toy",
+  "sprite": "grubbybook"
+ },
+ {
+  "en": "Grubby cell phone",
+  "fr": "Téléphone crasseux",
+  "categorie": "Toy",
+  "sprite": "grubbycellphone"
+ },
+ {
+  "en": "Grubby letter",
+  "fr": "Lettre crasseuse",
+  "categorie": "Toy",
+  "sprite": "grubbyletter"
+ },
+ {
+  "en": "Grubby newspaper",
+  "fr": "Journal crasseux",
+  "categorie": "Toy",
+  "sprite": "grubbynewspaper"
+ },
+ {
+  "en": "Grubby notepad",
+  "fr": "Carnet crasseux",
+  "categorie": "Toy",
+  "sprite": "grubbynotepad"
+ },
+ {
+  "en": "Grubby papers",
+  "fr": "Papiers crasseux",
+  "categorie": "Toy",
+  "sprite": "grubbypapers"
+ },
+ {
+  "en": "Grubby pearl",
+  "fr": "Perle crasseuse",
+  "categorie": null,
+  "sprite": "grubbypearl"
+ },
+ {
+  "en": "Grubby tablet",
+  "fr": "Tablette crasseuse",
+  "categorie": "Toy",
+  "sprite": "grubbytablet"
+ },
+ {
+  "en": "Guest-room bed",
+  "fr": "Lit de chambre d'hôtes",
+  "categorie": "Relaxation",
+  "sprite": "guest-roombed"
+ },
+ {
+  "en": "Gyarados fountain",
+  "fr": "Fontaine Léviator",
+  "categorie": "Toy",
+  "sprite": "gyaradosfountain"
+ },
+ {
+  "en": "Gym emblem statue",
+  "fr": "Statue à l'emblème d'Arène",
+  "categorie": "Decoration",
+  "sprite": "gymemblemstatue"
+ },
+ {
+  "en": "Hanging banner",
+  "fr": "Banderole suspendue",
+  "categorie": "Decoration",
+  "sprite": "hangingbanner"
+ },
+ {
+  "en": "Hanging scroll",
+  "fr": "Rouleau suspendu",
+  "categorie": "Decoration",
+  "sprite": "hangingscroll"
+ },
+ {
+  "en": "Hanging sign",
+  "fr": "Enseigne suspendue",
+  "categorie": "Decoration",
+  "sprite": "hangingsign"
+ },
+ {
+  "en": "Harbor streetlight",
+  "fr": "Lampadaire de port",
+  "categorie": "Decoration",
+  "sprite": "harborstreetlight"
+ },
+ {
+  "en": "Hard Stone",
+  "fr": "Pierre Dure",
+  "categorie": null,
+  "sprite": "hardstone"
+ },
+ {
+  "en": "Harp",
+  "fr": "Harpe",
+  "categorie": "Toy",
+  "sprite": "harp"
+ },
+ {
+  "en": "Hau'oli City (Day)",
+  "fr": "Hau'oli (Jour)",
+  "categorie": null,
+  "sprite": "hau'olicity(day)"
+ },
+ {
+  "en": "Headbutt Fossil (body)",
+  "fr": "Fossile Cornu (corps)",
+  "categorie": "Decoration",
+  "sprite": "headbuttfossil(body)"
+ },
+ {
+  "en": "Headbutt Fossil (head)",
+  "fr": "Fossile Cornu (tête)",
+  "categorie": "Decoration",
+  "sprite": "headbuttfossil(head)"
+ },
+ {
+  "en": "Headbutt Fossil (tail)",
+  "fr": "Fossile Cornu (queue)",
+  "categorie": "Decoration",
+  "sprite": "headbuttfossil(tail)"
+ },
+ {
+  "en": "Heart Scale",
+  "fr": "Écaille Cœur",
+  "categorie": null,
+  "sprite": "heartscale"
+ },
+ {
+  "en": "Hide-and-sneak trophy",
+  "fr": "Trophée de cache-cache",
+  "categorie": "Decoration",
+  "sprite": "hide-and-sneaktrophy"
+ },
+ {
+  "en": "Hoppip water bottle",
+  "fr": "Gourde Granivol",
+  "categorie": "Decoration",
+  "sprite": "hoppipwaterbottle"
+ },
+ {
+  "en": "Horsea fountain",
+  "fr": "Fontaine Hypotrempe",
+  "categorie": "Toy",
+  "sprite": "horseafountain"
+ },
+ {
+  "en": "Hotel Z",
+  "fr": "Hôtel Z",
+  "categorie": null,
+  "sprite": "hotelz"
+ },
+ {
+  "en": "Humidifier",
+  "fr": "Humidificateur",
+  "categorie": "Decoration",
+  "sprite": "humidifier"
+ },
+ {
+  "en": "Indigo meteor lamp",
+  "fr": "Lampe météore indigo",
+  "categorie": "Decoration",
+  "sprite": "indigometeorlamp"
+ },
+ {
+  "en": "Industrial bed",
+  "fr": "Lit industriel",
+  "categorie": "Relaxation",
+  "sprite": "industrialbed"
+ },
+ {
+  "en": "Industrial bench",
+  "fr": "Banc industriel",
+  "categorie": "Relaxation",
+  "sprite": "industrialbench"
+ },
+ {
+  "en": "Industrial chair",
+  "fr": "Chaise industrielle",
+  "categorie": "Relaxation",
+  "sprite": "industrialchair"
+ },
+ {
+  "en": "Industrial desk",
+  "fr": "Bureau industriel",
+  "categorie": null,
+  "sprite": "industrialdesk"
+ },
+ {
+  "en": "Inflatable Sudowoodo",
+  "fr": "Simularbre gonflable",
+  "categorie": "Toy",
+  "sprite": "inflatablesudowoodo"
+ },
+ {
+  "en": "Inflatable boat",
+  "fr": "Bateau gonflable",
+  "categorie": "Relaxation",
+  "sprite": "inflatableboat"
+ },
+ {
+  "en": "Information board",
+  "fr": "Panneau d'information",
+  "categorie": "Decoration",
+  "sprite": "informationboard"
+ },
+ {
+  "en": "Iron Ball",
+  "fr": "Balle Fer",
+  "categorie": null,
+  "sprite": "ironball"
+ },
+ {
+  "en": "Iron bed",
+  "fr": "Lit en fer",
+  "categorie": "Relaxation",
+  "sprite": "ironbed"
+ },
+ {
+  "en": "Iron bench",
+  "fr": "Banc en fer",
+  "categorie": "Relaxation",
+  "sprite": "ironbench"
+ },
+ {
+  "en": "Iron chair",
+  "fr": "Chaise en fer",
+  "categorie": "Relaxation",
+  "sprite": "ironchair"
+ },
+ {
+  "en": "Iron deposit",
+  "fr": "Gisement de fer",
+  "categorie": null,
+  "sprite": "irondeposit"
+ },
+ {
+  "en": "Iron door",
+  "fr": "Porte en fer",
+  "categorie": null,
+  "sprite": "irondoor"
+ },
+ {
+  "en": "Iron gate",
+  "fr": "Portail en fer",
+  "categorie": null,
+  "sprite": "irongate"
+ },
+ {
+  "en": "Iron ingot",
+  "fr": "Lingot de fer",
+  "categorie": null,
+  "sprite": "ironingot"
+ },
+ {
+  "en": "Iron ladder",
+  "fr": "Échelle en fer",
+  "categorie": null,
+  "sprite": "ironladder"
+ },
+ {
+  "en": "Iron ore",
+  "fr": "Minerai de fer",
+  "categorie": null,
+  "sprite": "ironore"
+ },
+ {
+  "en": "Iron pipes",
+  "fr": "Tuyaux en fer",
+  "categorie": "Decoration",
+  "sprite": "ironpipes"
+ },
+ {
+  "en": "Iron rack",
+  "fr": "Étagère en fer",
+  "categorie": null,
+  "sprite": "ironrack"
+ },
+ {
+  "en": "Iron scaffold",
+  "fr": "Échafaudage en fer",
+  "categorie": "Road",
+  "sprite": "ironscaffold"
+ },
+ {
+  "en": "Iron stand",
+  "fr": "Meuble en fer",
+  "categorie": "Decoration",
+  "sprite": "ironstand"
+ },
+ {
+  "en": "Iron steps",
+  "fr": "Marches en fer",
+  "categorie": "Road",
+  "sprite": "ironsteps"
+ },
+ {
+  "en": "Iron table",
+  "fr": "Table en fer",
+  "categorie": null,
+  "sprite": "irontable"
+ },
+ {
+  "en": "Iron wall",
+  "fr": "Mur en fer",
+  "categorie": null,
+  "sprite": "ironwall"
+ },
+ {
+  "en": "Iron-plate flooring",
+  "fr": "Sol en plaques de fer",
+  "categorie": "Road",
+  "sprite": "iron-plateflooring"
+ },
+ {
+  "en": "Iron-plate flooring (wallpaper)",
+  "fr": "Sol en plaques de fer (papier peint)",
+  "categorie": null,
+  "sprite": "iron-plateflooring(wallpaper)"
+ },
+ {
+  "en": "Iron-scaffold plank",
+  "fr": "Planche d'échafaudage en fer",
+  "categorie": "Road",
+  "sprite": "iron-scaffoldplank"
+ },
+ {
+  "en": "Jaw Fossil",
+  "fr": "Fossile Mâchoire",
+  "categorie": "Decoration",
+  "sprite": "jawfossil"
+ },
+ {
+  "en": "Jewel wall decoration",
+  "fr": "Décoration murale de joyaux",
+  "categorie": "Decoration",
+  "sprite": "jewelwalldecoration"
+ },
+ {
+  "en": "Jirachi lamp",
+  "fr": "Lampe Jirachi",
+  "categorie": "Decoration",
+  "sprite": "jirachilamp"
+ },
+ {
+  "en": "Jubilife Village",
+  "fr": "Village Rusti-Cité",
+  "categorie": null,
+  "sprite": "jubilifevillage"
+ },
+ {
+  "en": "Juice trio",
+  "fr": "Trio de jus",
+  "categorie": "Decoration",
+  "sprite": "juicetrio"
+ },
+ {
+  "en": "Jumbled cords",
+  "fr": "Câbles emmêlés",
+  "categorie": "Toy",
+  "sprite": "jumbledcords"
+ },
+ {
+  "en": "Jump rope trophy",
+  "fr": "Trophée de corde à sauter",
+  "categorie": "Decoration",
+  "sprite": "jumpropetrophy"
+ },
+ {
+  "en": "Knitting supplies",
+  "fr": "Matériel de tricot",
+  "categorie": "Toy",
+  "sprite": "knittingsupplies"
+ },
+ {
+  "en": "Lagging Tail",
+  "fr": "Queue Plombée",
+  "categorie": null,
+  "sprite": "laggingtail"
+ },
+ {
+  "en": "Lampion",
+  "fr": "Lampion",
+  "categorie": "Decoration",
+  "sprite": "lampion"
+ },
+ {
+  "en": "Lantern",
+  "fr": "Lanterne",
+  "categorie": "Decoration",
+  "sprite": "lantern"
+ },
+ {
+  "en": "Laptop",
+  "fr": "Ordinateur portable",
+  "categorie": "Toy",
+  "sprite": "laptop"
+ },
+ {
+  "en": "Large Lost Relic",
+  "fr": "Grande relique perdue",
+  "categorie": null,
+  "sprite": "largelostrelic"
+ },
+ {
+  "en": "Large mirror",
+  "fr": "Grand miroir",
+  "categorie": "Toy",
+  "sprite": "largemirror"
+ },
+ {
+  "en": "Large ventilation fan",
+  "fr": "Grand ventilateur d'extraction",
+  "categorie": "Decoration",
+  "sprite": "largeventilationfan"
+ },
+ {
+  "en": "Laser sensor",
+  "fr": "Capteur laser",
+  "categorie": null,
+  "sprite": "lasersensor"
+ },
+ {
+  "en": "Leafy plant",
+  "fr": "Plante feuillue",
+  "categorie": "Decoration",
+  "sprite": "leafyplant"
+ },
+ {
+  "en": "Leftovers",
+  "fr": "Restes",
+  "categorie": null,
+  "sprite": "leftovers"
+ },
+ {
+  "en": "Letter",
+  "fr": "Lettre",
+  "categorie": "Toy",
+  "sprite": "letter"
+ },
+ {
+  "en": "Life Orb",
+  "fr": "Vie Orbe",
+  "categorie": null,
+  "sprite": "lifeorb"
+ },
+ {
+  "en": "Light Clay",
+  "fr": "Boue Armure",
+  "categorie": null,
+  "sprite": "lightclay"
+ },
+ {
+  "en": "Loaded Dice",
+  "fr": "Dés Pipés",
+  "categorie": null,
+  "sprite": "loadeddice"
+ },
+ {
+  "en": "Log Bed",
+  "fr": "Lit en rondins",
+  "categorie": "Relaxation",
+  "sprite": "logbed"
+ },
+ {
+  "en": "Log chair",
+  "fr": "Chaise en rondins",
+  "categorie": "Relaxation",
+  "sprite": "logchair"
+ },
+ {
+  "en": "Log table",
+  "fr": "Table en rondins",
+  "categorie": null,
+  "sprite": "logtable"
+ },
+ {
+  "en": "Lucky Egg",
+  "fr": "Œuf Chance",
+  "categorie": null,
+  "sprite": "luckyegg"
+ },
+ {
+  "en": "Lumber",
+  "fr": "Bois de charpente",
+  "categorie": null,
+  "sprite": "lumber"
+ },
+ {
+  "en": "Lumiose City",
+  "fr": "Illumis",
+  "categorie": null,
+  "sprite": "lumiosecity"
+ },
+ {
+  "en": "Lunch box",
+  "fr": "Boîte-repas",
+  "categorie": "Decoration",
+  "sprite": "lunchbox"
+ },
+ {
+  "en": "Luxury bed",
+  "fr": "Lit de luxe",
+  "categorie": "Relaxation",
+  "sprite": "luxurybed"
+ },
+ {
+  "en": "Luxury chair",
+  "fr": "Chaise de luxe",
+  "categorie": "Relaxation",
+  "sprite": "luxurychair"
+ },
+ {
+  "en": "Luxury dresser",
+  "fr": "Coiffeuse de luxe",
+  "categorie": "Toy",
+  "sprite": "luxurydresser"
+ },
+ {
+  "en": "Luxury lamp",
+  "fr": "Lampe de luxe",
+  "categorie": "Decoration",
+  "sprite": "luxurylamp"
+ },
+ {
+  "en": "Luxury sofa",
+  "fr": "Canapé de luxe",
+  "categorie": "Relaxation",
+  "sprite": "luxurysofa"
+ },
+ {
+  "en": "Luxury table",
+  "fr": "Table de luxe",
+  "categorie": null,
+  "sprite": "luxurytable"
+ },
+ {
+  "en": "Magazine rack",
+  "fr": "Porte-revues",
+  "categorie": "Decoration",
+  "sprite": "magazinerack"
+ },
+ {
+  "en": "Mailbox",
+  "fr": "Boîte aux lettres",
+  "categorie": "Decoration",
+  "sprite": "mailbox"
+ },
+ {
+  "en": "Malicious Armor",
+  "fr": "Armure Maudite",
+  "categorie": "Decoration",
+  "sprite": "maliciousarmor"
+ },
+ {
+  "en": "Map and compass",
+  "fr": "Carte et boussole",
+  "categorie": "Toy",
+  "sprite": "mapandcompass"
+ },
+ {
+  "en": "Marine chair",
+  "fr": "Chaise marine",
+  "categorie": "Relaxation",
+  "sprite": "marinechair"
+ },
+ {
+  "en": "Marine chest",
+  "fr": "Commode marine",
+  "categorie": "Decoration",
+  "sprite": "marinechest"
+ },
+ {
+  "en": "Marine closet",
+  "fr": "Armoire marine",
+  "categorie": "Decoration",
+  "sprite": "marinecloset"
+ },
+ {
+  "en": "Marine dresser",
+  "fr": "Coiffeuse marine",
+  "categorie": "Toy",
+  "sprite": "marinedresser"
+ },
+ {
+  "en": "Marine sofa",
+  "fr": "Canapé marin",
+  "categorie": "Relaxation",
+  "sprite": "marinesofa"
+ },
+ {
+  "en": "Marine table",
+  "fr": "Table marine",
+  "categorie": null,
+  "sprite": "marinetable"
+ },
+ {
+  "en": "Menu board",
+  "fr": "Ardoise de menu",
+  "categorie": "Decoration",
+  "sprite": "menuboard"
+ },
+ {
+  "en": "Metal Coat",
+  "fr": "Peau Métal",
+  "categorie": null,
+  "sprite": "metalcoat"
+ },
+ {
+  "en": "Metal Debris",
+  "fr": "Débris métalliques",
+  "categorie": null,
+  "sprite": "metaldebris"
+ },
+ {
+  "en": "Metal Powder",
+  "fr": "Poudre Métal",
+  "categorie": null,
+  "sprite": "metalpowder"
+ },
+ {
+  "en": "Metal chain",
+  "fr": "Chaîne métallique",
+  "categorie": null,
+  "sprite": "metalchain"
+ },
+ {
+  "en": "Metal drum",
+  "fr": "Bidon métallique",
+  "categorie": "Decoration",
+  "sprite": "metaldrum"
+ },
+ {
+  "en": "Metal fragments",
+  "fr": "Fragments métalliques",
+  "categorie": null,
+  "sprite": "metalfragments"
+ },
+ {
+  "en": "Metallic smelting furnace",
+  "fr": "Four de fonte métallique",
+  "categorie": null,
+  "sprite": "metallicsmeltingfurnace"
+ },
+ {
+  "en": "Metronome",
+  "fr": "Métronome",
+  "categorie": "Toy",
+  "sprite": "metronome"
+ },
+ {
+  "en": "Microscope",
+  "fr": "Microscope",
+  "categorie": "Toy",
+  "sprite": "microscope"
+ },
+ {
+  "en": "Microwave oven",
+  "fr": "Four à micro-ondes",
+  "categorie": "Toy",
+  "sprite": "microwaveoven"
+ },
+ {
+  "en": "Mini bookcase",
+  "fr": "Petite bibliothèque",
+  "categorie": "Decoration",
+  "sprite": "minibookcase"
+ },
+ {
+  "en": "Mini generator",
+  "fr": "Mini-générateur",
+  "categorie": "Decoration",
+  "sprite": "minigenerator"
+ },
+ {
+  "en": "Mini plain bed",
+  "fr": "Petit lit simple",
+  "categorie": "Relaxation",
+  "sprite": "miniplainbed"
+ },
+ {
+  "en": "Miracle Seed",
+  "fr": "Herbe Miracle",
+  "categorie": null,
+  "sprite": "miracleseed"
+ },
+ {
+  "en": "Mirror ball",
+  "fr": "Boule à facettes",
+  "categorie": "Decoration",
+  "sprite": "mirrorball"
+ },
+ {
+  "en": "Model planet",
+  "fr": "Maquette de planète",
+  "categorie": "Toy",
+  "sprite": "modelplanet"
+ },
+ {
+  "en": "Model space shuttle",
+  "fr": "Maquette de navette spatiale",
+  "categorie": "Toy",
+  "sprite": "modelspaceshuttle"
+ },
+ {
+  "en": "Modern door",
+  "fr": "Porte moderne",
+  "categorie": null,
+  "sprite": "moderndoor"
+ },
+ {
+  "en": "Modern sink",
+  "fr": "Évier moderne",
+  "categorie": "Toy",
+  "sprite": "modernsink"
+ },
+ {
+  "en": "Moon clock",
+  "fr": "Horloge lune",
+  "categorie": "Toy",
+  "sprite": "moonclock"
+ },
+ {
+  "en": "Mountain flowers",
+  "fr": "Fleurs de montagne",
+  "categorie": null,
+  "sprite": "mountainflowers"
+ },
+ {
+  "en": "Mountain flowers (pink)",
+  "fr": "Fleurs de montagne (roses)",
+  "categorie": null,
+  "sprite": "mountainflowers(pink)"
+ },
+ {
+  "en": "Mountain flowers (purple)",
+  "fr": "Fleurs de montagne (violettes)",
+  "categorie": null,
+  "sprite": "mountainflowers(purple)"
+ },
+ {
+  "en": "Mountain flowers (red)",
+  "fr": "Fleurs de montagne (rouges)",
+  "categorie": null,
+  "sprite": "mountainflowers(red)"
+ },
+ {
+  "en": "Mountain flowers (white)",
+  "fr": "Fleurs de montagne (blanches)",
+  "categorie": null,
+  "sprite": "mountainflowers(white)"
+ },
+ {
+  "en": "Mt. Coronet",
+  "fr": "Mont Couronné",
+  "categorie": null,
+  "sprite": "mt.coronet"
+ },
+ {
+  "en": "Mug",
+  "fr": "Mug",
+  "categorie": "Decoration",
+  "sprite": "mug"
+ },
+ {
+  "en": "Munna bank",
+  "fr": "Tirelire Munna",
+  "categorie": "Toy",
+  "sprite": "munnabank"
+ },
+ {
+  "en": "Mushroom lamp",
+  "fr": "Lampe champignon",
+  "categorie": "Decoration",
+  "sprite": "mushroomlamp"
+ },
+ {
+  "en": "Mushroom streetlight",
+  "fr": "Lampadaire champignon",
+  "categorie": "Decoration",
+  "sprite": "mushroomstreetlight"
+ },
+ {
+  "en": "Music box",
+  "fr": "Boîte à musique",
+  "categorie": "Toy",
+  "sprite": "musicbox"
+ },
+ {
+  "en": "Music mat (Fa)",
+  "fr": "Tapis musical (fa)",
+  "categorie": "Toy",
+  "sprite": "musicmat(fa)"
+ },
+ {
+  "en": "Music mat (High do)",
+  "fr": "Tapis musical (do aigu)",
+  "categorie": "Toy",
+  "sprite": "musicmat(highdo)"
+ },
+ {
+  "en": "Music mat (La)",
+  "fr": "Tapis musical (la)",
+  "categorie": "Toy",
+  "sprite": "musicmat(la)"
+ },
+ {
+  "en": "Music mat (Mi)",
+  "fr": "Tapis musical (mi)",
+  "categorie": "Toy",
+  "sprite": "musicmat(mi)"
+ },
+ {
+  "en": "Music mat (Re)",
+  "fr": "Tapis musical (ré)",
+  "categorie": "Toy",
+  "sprite": "musicmat(re)"
+ },
+ {
+  "en": "Music mat (Sol)",
+  "fr": "Tapis musical (sol)",
+  "categorie": "Toy",
+  "sprite": "musicmat(sol)"
+ },
+ {
+  "en": "Music mat (Ti)",
+  "fr": "Tapis musical (si)",
+  "categorie": "Toy",
+  "sprite": "musicmat(ti)"
+ },
+ {
+  "en": "Music mat (low do)",
+  "fr": "Tapis musical (do grave)",
+  "categorie": "Toy",
+  "sprite": "musicmat(lowdo)"
+ },
+ {
+  "en": "Mysterious statue",
+  "fr": "Statue mystérieuse",
+  "categorie": "Decoration",
+  "sprite": "mysteriousstatue"
+ },
+ {
+  "en": "Mystic Water",
+  "fr": "Eau Mystique",
+  "categorie": null,
+  "sprite": "mysticwater"
+ },
+ {
+  "en": "Naptime bed",
+  "fr": "Lit à sieste",
+  "categorie": "Relaxation",
+  "sprite": "naptimebed"
+ },
+ {
+  "en": "Newspaper",
+  "fr": "Journal",
+  "categorie": "Toy",
+  "sprite": "newspaper"
+ },
+ {
+  "en": "Nonburnable garbage",
+  "fr": "Déchets non incinérables",
+  "categorie": null,
+  "sprite": "nonburnablegarbage"
+ },
+ {
+  "en": "Nonburnable garbage (outdoor)",
+  "fr": "Déchets non incinérables (extérieur)",
+  "categorie": null,
+  "sprite": "nonburnablegarbage(outdoor)"
+ },
+ {
+  "en": "Notepad",
+  "fr": "Carnet",
+  "categorie": "Toy",
+  "sprite": "notepad"
+ },
+ {
+  "en": "Nugget",
+  "fr": "Pépite",
+  "categorie": null,
+  "sprite": "nugget"
+ },
+ {
+  "en": "Oak's Lab",
+  "fr": "Labo du Prof. Chen",
+  "categorie": null,
+  "sprite": "oak'slab"
+ },
+ {
+  "en": "Office cabinet",
+  "fr": "Petit meuble de bureau",
+  "categorie": "Decoration",
+  "sprite": "officecabinet"
+ },
+ {
+  "en": "Office chair",
+  "fr": "Chaise de bureau",
+  "categorie": "Relaxation",
+  "sprite": "officechair"
+ },
+ {
+  "en": "Office desk",
+  "fr": "Bureau",
+  "categorie": null,
+  "sprite": "officedesk"
+ },
+ {
+  "en": "Office locker",
+  "fr": "Casier de bureau",
+  "categorie": "Decoration",
+  "sprite": "officelocker"
+ },
+ {
+  "en": "Office shelf",
+  "fr": "Armoire de bureau",
+  "categorie": "Decoration",
+  "sprite": "officeshelf"
+ },
+ {
+  "en": "Oil lantern",
+  "fr": "Lanterne à huile",
+  "categorie": "Decoration",
+  "sprite": "oillantern"
+ },
+ {
+  "en": "Open Book",
+  "fr": "Livre ouvert",
+  "categorie": "Toy",
+  "sprite": "openbook"
+ },
+ {
+  "en": "Orange meteor lamp",
+  "fr": "Lampe météore orange",
+  "categorie": "Decoration",
+  "sprite": "orangemeteorlamp"
+ },
+ {
+  "en": "Ornate bed",
+  "fr": "Lit ouvragé",
+  "categorie": "Relaxation",
+  "sprite": "ornatebed"
+ },
+ {
+  "en": "Ornate chair",
+  "fr": "Chaise ouvragée",
+  "categorie": "Relaxation",
+  "sprite": "ornatechair"
+ },
+ {
+  "en": "Ornate decorative shelf",
+  "fr": "Étagère décorative ouvragée",
+  "categorie": "Decoration",
+  "sprite": "ornatedecorativeshelf"
+ },
+ {
+  "en": "Ornate stand",
+  "fr": "Meuble ouvragé",
+  "categorie": "Decoration",
+  "sprite": "ornatestand"
+ },
+ {
+  "en": "Ornate table",
+  "fr": "Table ouvragée",
+  "categorie": null,
+  "sprite": "ornatetable"
+ },
+ {
+  "en": "Paint balloon (aquamarine)",
+  "fr": "Ballon de peinture (aigue-marine)",
+  "categorie": null,
+  "sprite": "paintballoon(aquamarine)"
+ },
+ {
+  "en": "Paint balloon (beige)",
+  "fr": "Ballon de peinture (beige)",
+  "categorie": null,
+  "sprite": "paintballoon(beige)"
+ },
+ {
+  "en": "Paint balloon (black)",
+  "fr": "Ballon de peinture (noir)",
+  "categorie": null,
+  "sprite": "paintballoon(black)"
+ },
+ {
+  "en": "Paint balloon (blue)",
+  "fr": "Ballon de peinture (bleu)",
+  "categorie": null,
+  "sprite": "paintballoon(blue)"
+ },
+ {
+  "en": "Paint balloon (brown)",
+  "fr": "Ballon de peinture (marron)",
+  "categorie": null,
+  "sprite": "paintballoon(brown)"
+ },
+ {
+  "en": "Paint balloon (cyan)",
+  "fr": "Ballon de peinture (cyan)",
+  "categorie": null,
+  "sprite": "paintballoon(cyan)"
+ },
+ {
+  "en": "Paint balloon (gray)",
+  "fr": "Ballon de peinture (gris)",
+  "categorie": null,
+  "sprite": "paintballoon(gray)"
+ },
+ {
+  "en": "Paint balloon (green)",
+  "fr": "Ballon de peinture (vert)",
+  "categorie": null,
+  "sprite": "paintballoon(green)"
+ },
+ {
+  "en": "Paint balloon (lime)",
+  "fr": "Ballon de peinture (vert lime)",
+  "categorie": null,
+  "sprite": "paintballoon(lime)"
+ },
+ {
+  "en": "Paint balloon (navy)",
+  "fr": "Ballon de peinture (bleu marine)",
+  "categorie": null,
+  "sprite": "paintballoon(navy)"
+ },
+ {
+  "en": "Paint balloon (orange)",
+  "fr": "Ballon de peinture (orange)",
+  "categorie": null,
+  "sprite": "paintballoon(orange)"
+ },
+ {
+  "en": "Paint balloon (pink)",
+  "fr": "Ballon de peinture (rose)",
+  "categorie": null,
+  "sprite": "paintballoon(pink)"
+ },
+ {
+  "en": "Paint balloon (plum)",
+  "fr": "Ballon de peinture (prune)",
+  "categorie": null,
+  "sprite": "paintballoon(plum)"
+ },
+ {
+  "en": "Paint balloon (purple)",
+  "fr": "Ballon de peinture (violet)",
+  "categorie": null,
+  "sprite": "paintballoon(purple)"
+ },
+ {
+  "en": "Paint balloon (red)",
+  "fr": "Ballon de peinture (rouge)",
+  "categorie": null,
+  "sprite": "paintballoon(red)"
+ },
+ {
+  "en": "Paint balloon (rose)",
+  "fr": "Ballon de peinture (rose pâle)",
+  "categorie": null,
+  "sprite": "paintballoon(rose)"
+ },
+ {
+  "en": "Paint balloon (white)",
+  "fr": "Ballon de peinture (blanc)",
+  "categorie": null,
+  "sprite": "paintballoon(white)"
+ },
+ {
+  "en": "Paint balloon (yellow)",
+  "fr": "Ballon de peinture (jaune)",
+  "categorie": null,
+  "sprite": "paintballoon(yellow)"
+ },
+ {
+  "en": "Painting (landscape)",
+  "fr": "Tableau (paysage)",
+  "categorie": "Decoration",
+  "sprite": "painting(landscape)"
+ },
+ {
+  "en": "Painting (portrait)",
+  "fr": "Tableau (portrait)",
+  "categorie": "Decoration",
+  "sprite": "painting(portrait)"
+ },
+ {
+  "en": "Painting (still life)",
+  "fr": "Tableau (nature morte)",
+  "categorie": "Decoration",
+  "sprite": "painting(stilllife)"
+ },
+ {
+  "en": "Pallet Town",
+  "fr": "Bourg Palette",
+  "categorie": null,
+  "sprite": "pallettown"
+ },
+ {
+  "en": "Paper",
+  "fr": "Papier",
+  "categorie": null,
+  "sprite": "paper"
+ },
+ {
+  "en": "Paper Party cups",
+  "fr": "Gobelets en carton",
+  "categorie": "Decoration",
+  "sprite": "paperpartycups"
+ },
+ {
+  "en": "Papers",
+  "fr": "Papiers",
+  "categorie": "Toy",
+  "sprite": "papers"
+ },
+ {
+  "en": "Party ball",
+  "fr": "Boule de fête",
+  "categorie": "Decoration",
+  "sprite": "partyball"
+ },
+ {
+  "en": "Party bunting",
+  "fr": "Fanions de fête",
+  "categorie": "Decoration",
+  "sprite": "partybunting"
+ },
+ {
+  "en": "Pearl streetlight",
+  "fr": "Lampadaire perle",
+  "categorie": "Decoration",
+  "sprite": "pearlstreetlight"
+ },
+ {
+  "en": "Pencil holder",
+  "fr": "Pot à crayons",
+  "categorie": "Toy",
+  "sprite": "pencilholder"
+ },
+ {
+  "en": "Pewter City Theme",
+  "fr": "Thème d'Argenta",
+  "categorie": null,
+  "sprite": "pewtercitytheme"
+ },
+ {
+  "en": "Photo cutout board",
+  "fr": "Panneau photo découpé",
+  "categorie": "Toy",
+  "sprite": "photocutoutboard"
+ },
+ {
+  "en": "Photo frame",
+  "fr": "Cadre photo",
+  "categorie": "Decoration",
+  "sprite": "photoframe"
+ },
+ {
+  "en": "Picnic basket",
+  "fr": "Panier de pique-nique",
+  "categorie": null,
+  "sprite": "picnicbasket"
+ },
+ {
+  "en": "Pikachu doll",
+  "fr": "Peluche Pikachu",
+  "categorie": "Toy",
+  "sprite": "pikachudoll"
+ },
+ {
+  "en": "Pikachu sofa",
+  "fr": "Canapé Pikachu",
+  "categorie": "Relaxation",
+  "sprite": "pikachusofa"
+ },
+ {
+  "en": "Pink paint",
+  "fr": "Peinture rose",
+  "categorie": null,
+  "sprite": "pinkpaint"
+ },
+ {
+  "en": "Pinwheels",
+  "fr": "Moulins à vent",
+  "categorie": "Toy",
+  "sprite": "pinwheels"
+ },
+ {
+  "en": "Pitcher-plant pot",
+  "fr": "Pot à plante carnivore",
+  "categorie": "Decoration",
+  "sprite": "pitcher-plantpot"
+ },
+ {
+  "en": "Pizza",
+  "fr": "Pizza",
+  "categorie": "Decoration",
+  "sprite": "pizza"
+ },
+ {
+  "en": "Plain bed",
+  "fr": "Lit simple",
+  "categorie": "Relaxation",
+  "sprite": "plainbed"
+ },
+ {
+  "en": "Plain chair",
+  "fr": "Chaise simple",
+  "categorie": "Relaxation",
+  "sprite": "plainchair"
+ },
+ {
+  "en": "Plain chest",
+  "fr": "Commode simple",
+  "categorie": "Decoration",
+  "sprite": "plainchest"
+ },
+ {
+  "en": "Plain closet",
+  "fr": "Armoire simple",
+  "categorie": "Decoration",
+  "sprite": "plaincloset"
+ },
+ {
+  "en": "Plain lamp",
+  "fr": "Lampe simple",
+  "categorie": "Decoration",
+  "sprite": "plainlamp"
+ },
+ {
+  "en": "Plain sofa",
+  "fr": "Canapé simple",
+  "categorie": "Relaxation",
+  "sprite": "plainsofa"
+ },
+ {
+  "en": "Plain stand",
+  "fr": "Meuble simple",
+  "categorie": "Decoration",
+  "sprite": "plainstand"
+ },
+ {
+  "en": "Plain stool",
+  "fr": "Tabouret simple",
+  "categorie": "Relaxation",
+  "sprite": "plainstool"
+ },
+ {
+  "en": "Plain table",
+  "fr": "Table simple",
+  "categorie": null,
+  "sprite": "plaintable"
+ },
+ {
+  "en": "Po Town",
+  "fr": "Bourg Po",
+  "categorie": null,
+  "sprite": "potown"
+ },
+ {
+  "en": "Poké Ball Chest",
+  "fr": "Coffre Poké Ball",
+  "categorie": "Decoration",
+  "sprite": "pokeballchest"
+ },
+ {
+  "en": "Poké Ball Sofa",
+  "fr": "Canapé Poké Ball",
+  "categorie": "Relaxation",
+  "sprite": "pokeballsofa"
+ },
+ {
+  "en": "Poké Ball bed",
+  "fr": "Lit Poké Ball",
+  "categorie": "Relaxation",
+  "sprite": "pokeballbed"
+ },
+ {
+  "en": "Poké Ball lamp",
+  "fr": "Lampe Poké Ball",
+  "categorie": "Decoration",
+  "sprite": "pokeballlamp"
+ },
+ {
+  "en": "Poké Ball light",
+  "fr": "Lumière Poké Ball",
+  "categorie": "Decoration",
+  "sprite": "pokeballlight"
+ },
+ {
+  "en": "Pokémetal",
+  "fr": "Pokémétal",
+  "categorie": null,
+  "sprite": "pokemetal"
+ },
+ {
+  "en": "Pokémetal fragment",
+  "fr": "Fragment de Pokémétal",
+  "categorie": null,
+  "sprite": "pokemetalfragment"
+ },
+ {
+  "en": "Pokémon Center",
+  "fr": "Centre Pokémon",
+  "categorie": null,
+  "sprite": "pokemoncenter"
+ },
+ {
+  "en": "Pokémon Gym",
+  "fr": "Arène Pokémon",
+  "categorie": null,
+  "sprite": "pokemongym"
+ },
+ {
+  "en": "Polygonal Shelf",
+  "fr": "Étagère polygonale",
+  "categorie": "Decoration",
+  "sprite": "polygonalshelf"
+ },
+ {
+  "en": "Pop art bed",
+  "fr": "Lit pop art",
+  "categorie": "Relaxation",
+  "sprite": "popartbed"
+ },
+ {
+  "en": "Pop art chair",
+  "fr": "Chaise pop art",
+  "categorie": "Relaxation",
+  "sprite": "popartchair"
+ },
+ {
+  "en": "Pop art lamp",
+  "fr": "Lampe pop art",
+  "categorie": "Decoration",
+  "sprite": "popartlamp"
+ },
+ {
+  "en": "Pop art sofa",
+  "fr": "Canapé pop art",
+  "categorie": "Relaxation",
+  "sprite": "popartsofa"
+ },
+ {
+  "en": "Pop art table",
+  "fr": "Table pop art",
+  "categorie": null,
+  "sprite": "poparttable"
+ },
+ {
+  "en": "Primarina statue",
+  "fr": "Statue Oratoria",
+  "categorie": "Toy",
+  "sprite": "primarinastatue"
+ },
+ {
+  "en": "Printer",
+  "fr": "Imprimante",
+  "categorie": "Decoration",
+  "sprite": "printer"
+ },
+ {
+  "en": "Prism scale",
+  "fr": "Bel'Écaille",
+  "categorie": null,
+  "sprite": "prismscale"
+ },
+ {
+  "en": "Public seat",
+  "fr": "Siège public",
+  "categorie": "Relaxation",
+  "sprite": "publicseat"
+ },
+ {
+  "en": "Punching bag",
+  "fr": "Sac de frappe",
+  "categorie": "Toy",
+  "sprite": "punchingbag"
+ },
+ {
+  "en": "Punching game",
+  "fr": "Machine de frappe",
+  "categorie": "Toy",
+  "sprite": "punchinggame"
+ },
+ {
+  "en": "Raichu sign",
+  "fr": "Enseigne Raichu",
+  "categorie": "Decoration",
+  "sprite": "raichusign"
+ },
+ {
+  "en": "Rainbow Feather",
+  "fr": "Plume Arc-en-ciel",
+  "categorie": null,
+  "sprite": "rainbowfeather"
+ },
+ {
+  "en": "Rare Bone",
+  "fr": "Os Rare",
+  "categorie": null,
+  "sprite": "rarebone"
+ },
+ {
+  "en": "Rare Pokémetal",
+  "fr": "Pokémétal rare",
+  "categorie": null,
+  "sprite": "rarepokemetal"
+ },
+ {
+  "en": "Rare Pokémetal fragment",
+  "fr": "Fragment de Pokémétal rare",
+  "categorie": null,
+  "sprite": "rarepokemetalfragment"
+ },
+ {
+  "en": "Recycling bin",
+  "fr": "Bac de recyclage",
+  "categorie": "Decoration",
+  "sprite": "recyclingbin"
+ },
+ {
+  "en": "Red crystal fragment",
+  "fr": "Fragment de cristal rouge",
+  "categorie": null,
+  "sprite": "redcrystalfragment"
+ },
+ {
+  "en": "Red meteor lamp",
+  "fr": "Lampe météore rouge",
+  "categorie": "Decoration",
+  "sprite": "redmeteorlamp"
+ },
+ {
+  "en": "Red paint",
+  "fr": "Peinture rouge",
+  "categorie": null,
+  "sprite": "redpaint"
+ },
+ {
+  "en": "Refrigerator",
+  "fr": "Réfrigérateur",
+  "categorie": "Toy",
+  "sprite": "refrigerator"
+ },
+ {
+  "en": "Repel",
+  "fr": "Repousse",
+  "categorie": "Toy",
+  "sprite": "repel"
+ },
+ {
+  "en": "Resort bed",
+  "fr": "Lit de villégiature",
+  "categorie": "Relaxation",
+  "sprite": "resortbed"
+ },
+ {
+  "en": "Resort chair",
+  "fr": "Chaise de villégiature",
+  "categorie": "Relaxation",
+  "sprite": "resortchair"
+ },
+ {
+  "en": "Resort hammock",
+  "fr": "Hamac de villégiature",
+  "categorie": "Relaxation",
+  "sprite": "resorthammock"
+ },
+ {
+  "en": "Resort light",
+  "fr": "Lumière de villégiature",
+  "categorie": "Decoration",
+  "sprite": "resortlight"
+ },
+ {
+  "en": "Resort sofa",
+  "fr": "Canapé de villégiature",
+  "categorie": "Relaxation",
+  "sprite": "resortsofa"
+ },
+ {
+  "en": "Resort stool",
+  "fr": "Tabouret de villégiature",
+  "categorie": "Relaxation",
+  "sprite": "resortstool"
+ },
+ {
+  "en": "Restaurant sign",
+  "fr": "Enseigne de restaurant",
+  "categorie": "Decoration",
+  "sprite": "restaurantsign"
+ },
+ {
+  "en": "Ribbon cake",
+  "fr": "Gâteau à ruban",
+  "categorie": "Decoration",
+  "sprite": "ribboncake"
+ },
+ {
+  "en": "Ring Target",
+  "fr": "Cible Anneau",
+  "categorie": null,
+  "sprite": "ringtarget"
+ },
+ {
+  "en": "Road to Bill",
+  "fr": "Route vers Léo",
+  "categorie": null,
+  "sprite": "roadtobill"
+ },
+ {
+  "en": "Road to Cerulean City",
+  "fr": "Route vers Azuria",
+  "categorie": null,
+  "sprite": "roadtoceruleancity"
+ },
+ {
+  "en": "Road to Viridian City",
+  "fr": "Route vers Jadielle",
+  "categorie": null,
+  "sprite": "roadtoviridiancity"
+ },
+ {
+  "en": "Robust flower",
+  "fr": "Fleur robuste",
+  "categorie": null,
+  "sprite": "robustflower"
+ },
+ {
+  "en": "Robust flower (blue)",
+  "fr": "Fleur robuste (bleue)",
+  "categorie": null,
+  "sprite": "robustflower(blue)"
+ },
+ {
+  "en": "Robust flower (orange)",
+  "fr": "Fleur robuste (orange)",
+  "categorie": null,
+  "sprite": "robustflower(orange)"
+ },
+ {
+  "en": "Robust flower (purple)",
+  "fr": "Fleur robuste (violette)",
+  "categorie": null,
+  "sprite": "robustflower(purple)"
+ },
+ {
+  "en": "Robust flower (white)",
+  "fr": "Fleur robuste (blanche)",
+  "categorie": null,
+  "sprite": "robustflower(white)"
+ },
+ {
+  "en": "Rocket Hideout",
+  "fr": "Repaire de la Team Rocket",
+  "categorie": null,
+  "sprite": "rockethideout"
+ },
+ {
+  "en": "Room Service",
+  "fr": "Room service",
+  "categorie": null,
+  "sprite": "roomservice"
+ },
+ {
+  "en": "Rope",
+  "fr": "Corde",
+  "categorie": null,
+  "sprite": "rope"
+ },
+ {
+  "en": "Rose Tower",
+  "fr": "Tour Rose",
+  "categorie": null,
+  "sprite": "rosetower"
+ },
+ {
+  "en": "Route 10 (Unova)",
+  "fr": "Route 10 (Unys)",
+  "categorie": null,
+  "sprite": "route10(unova)"
+ },
+ {
+  "en": "Route 209 (Day)",
+  "fr": "Route 209 (Jour)",
+  "categorie": null,
+  "sprite": "route209(day)"
+ },
+ {
+  "en": "Rowlet clock",
+  "fr": "Horloge Brindibou",
+  "categorie": "Toy",
+  "sprite": "rowletclock"
+ },
+ {
+  "en": "Running shoes",
+  "fr": "Chaussures de course",
+  "categorie": "Decoration",
+  "sprite": "runningshoes"
+ },
+ {
+  "en": "Sail Fossil",
+  "fr": "Fossile Voile",
+  "categorie": "Decoration",
+  "sprite": "sailfossil"
+ },
+ {
+  "en": "Sand bed",
+  "fr": "Lit de sable",
+  "categorie": "Toy",
+  "sprite": "sandbed"
+ },
+ {
+  "en": "Sand toys",
+  "fr": "Jouets de plage",
+  "categorie": "Toy",
+  "sprite": "sandtoys"
+ },
+ {
+  "en": "Sandbags",
+  "fr": "Sacs de sable",
+  "categorie": "Decoration",
+  "sprite": "sandbags"
+ },
+ {
+  "en": "Sandbox",
+  "fr": "Bac à sable",
+  "categorie": "Toy",
+  "sprite": "sandbox"
+ },
+ {
+  "en": "Sandwiches",
+  "fr": "Sandwichs",
+  "categorie": "Decoration",
+  "sprite": "sandwiches"
+ },
+ {
+  "en": "Sash window",
+  "fr": "Fenêtre à guillotine",
+  "categorie": null,
+  "sprite": "sashwindow"
+ },
+ {
+  "en": "Science experiment",
+  "fr": "Expérience scientifique",
+  "categorie": "Toy",
+  "sprite": "scienceexperiment"
+ },
+ {
+  "en": "Sea glass fragments",
+  "fr": "Fragments de verre de mer",
+  "categorie": null,
+  "sprite": "seaglassfragments"
+ },
+ {
+  "en": "Seashell",
+  "fr": "Coquillage",
+  "categorie": null,
+  "sprite": "seashell"
+ },
+ {
+  "en": "Seashell seat",
+  "fr": "Siège coquillage",
+  "categorie": "Relaxation",
+  "sprite": "seashellseat"
+ },
+ {
+  "en": "Seashore flowers",
+  "fr": "Fleurs du littoral",
+  "categorie": null,
+  "sprite": "seashoreflowers"
+ },
+ {
+  "en": "Seashore flowers (blue)",
+  "fr": "Fleurs du littoral (bleues)",
+  "categorie": null,
+  "sprite": "seashoreflowers(blue)"
+ },
+ {
+  "en": "Seashore flowers (orange)",
+  "fr": "Fleurs du littoral (orange)",
+  "categorie": null,
+  "sprite": "seashoreflowers(orange)"
+ },
+ {
+  "en": "Seashore flowers (white)",
+  "fr": "Fleurs du littoral (blanches)",
+  "categorie": null,
+  "sprite": "seashoreflowers(white)"
+ },
+ {
+  "en": "Seashore flowers (yellow)",
+  "fr": "Fleurs du littoral (jaunes)",
+  "categorie": null,
+  "sprite": "seashoreflowers(yellow)"
+ },
+ {
+  "en": "Security camera",
+  "fr": "Caméra de surveillance",
+  "categorie": null,
+  "sprite": "securitycamera"
+ },
+ {
+  "en": "Seedot Lamp",
+  "fr": "Lampe Grainipiot",
+  "categorie": "Decoration",
+  "sprite": "seedotlamp"
+ },
+ {
+  "en": "Servers",
+  "fr": "Serveurs",
+  "categorie": "Decoration",
+  "sprite": "servers"
+ },
+ {
+  "en": "Shaved ice",
+  "fr": "Glace pilée",
+  "categorie": "Decoration",
+  "sprite": "shavedice"
+ },
+ {
+  "en": "Shell lamp",
+  "fr": "Lampe coquillage",
+  "categorie": "Decoration",
+  "sprite": "shelllamp"
+ },
+ {
+  "en": "Shield Fossil (Head)",
+  "fr": "Fossile Bouclier (tête)",
+  "categorie": "Decoration",
+  "sprite": "shieldfossil(head)"
+ },
+ {
+  "en": "Shield Fossil (body)",
+  "fr": "Fossile Bouclier (corps)",
+  "categorie": "Decoration",
+  "sprite": "shieldfossil(body)"
+ },
+ {
+  "en": "Shield Fossil (tail)",
+  "fr": "Fossile Bouclier (queue)",
+  "categorie": "Decoration",
+  "sprite": "shieldfossil(tail)"
+ },
+ {
+  "en": "Ship's Wheel",
+  "fr": "Barre à roue",
+  "categorie": "Toy",
+  "sprite": "ship'swheel"
+ },
+ {
+  "en": "Shop display case",
+  "fr": "Vitrine de boutique",
+  "categorie": "Decoration",
+  "sprite": "shopdisplaycase"
+ },
+ {
+  "en": "Shop fridge",
+  "fr": "Frigo de boutique",
+  "categorie": "Decoration",
+  "sprite": "shopfridge"
+ },
+ {
+  "en": "Shop shelf",
+  "fr": "Rayonnage de boutique",
+  "categorie": "Decoration",
+  "sprite": "shopshelf"
+ },
+ {
+  "en": "Shower",
+  "fr": "Douche",
+  "categorie": "Toy",
+  "sprite": "shower"
+ },
+ {
+  "en": "Sign",
+  "fr": "Panneau",
+  "categorie": "Decoration",
+  "sprite": "sign"
+ },
+ {
+  "en": "Signpost",
+  "fr": "Poteau indicateur",
+  "categorie": "Decoration",
+  "sprite": "signpost"
+ },
+ {
+  "en": "Silk Scarf",
+  "fr": "Mouchoir Soie",
+  "categorie": null,
+  "sprite": "silkscarf"
+ },
+ {
+  "en": "Silph Co.",
+  "fr": "Sylphe SARL",
+  "categorie": null,
+  "sprite": "silphco."
+ },
+ {
+  "en": "Silver Bottle Cap",
+  "fr": "Capsule Argentée",
+  "categorie": null,
+  "sprite": "silverbottlecap"
+ },
+ {
+  "en": "Silver Feather",
+  "fr": "Plume Argentée",
+  "categorie": null,
+  "sprite": "silverfeather"
+ },
+ {
+  "en": "Silver Powder",
+  "fr": "Poudre Argent",
+  "categorie": null,
+  "sprite": "silverpowder"
+ },
+ {
+  "en": "Simple cushion",
+  "fr": "Coussin simple",
+  "categorie": "Relaxation",
+  "sprite": "simplecushion"
+ },
+ {
+  "en": "Sink",
+  "fr": "Lavabo",
+  "categorie": "Toy",
+  "sprite": "sink"
+ },
+ {
+  "en": "Skull Fossil",
+  "fr": "Fossile Crâne",
+  "categorie": "Decoration",
+  "sprite": "skullfossil"
+ },
+ {
+  "en": "Skyland flowers",
+  "fr": "Fleurs des hauteurs",
+  "categorie": null,
+  "sprite": "skylandflowers"
+ },
+ {
+  "en": "Skyland flowers (blue)",
+  "fr": "Fleurs des hauteurs (bleues)",
+  "categorie": null,
+  "sprite": "skylandflowers(blue)"
+ },
+ {
+  "en": "Skyland flowers (orange)",
+  "fr": "Fleurs des hauteurs (orange)",
+  "categorie": null,
+  "sprite": "skylandflowers(orange)"
+ },
+ {
+  "en": "Skyland flowers (pink)",
+  "fr": "Fleurs des hauteurs (roses)",
+  "categorie": null,
+  "sprite": "skylandflowers(pink)"
+ },
+ {
+  "en": "Skyland flowers (yellow)",
+  "fr": "Fleurs des hauteurs (jaunes)",
+  "categorie": null,
+  "sprite": "skylandflowers(yellow)"
+ },
+ {
+  "en": "Sleeping bag",
+  "fr": "Sac de couchage",
+  "categorie": "Relaxation",
+  "sprite": "sleepingbag"
+ },
+ {
+  "en": "Slender candle",
+  "fr": "Bougie fine",
+  "categorie": "Decoration",
+  "sprite": "slendercandle"
+ },
+ {
+  "en": "Slide",
+  "fr": "Toboggan",
+  "categorie": "Toy",
+  "sprite": "slide"
+ },
+ {
+  "en": "Slim information board",
+  "fr": "Panneau d'information étroit",
+  "categorie": "Decoration",
+  "sprite": "sliminformationboard"
+ },
+ {
+  "en": "Small Lost Relic",
+  "fr": "Petite relique perdue",
+  "categorie": null,
+  "sprite": "smalllostrelic"
+ },
+ {
+  "en": "Small garbage can",
+  "fr": "Petite poubelle",
+  "categorie": "Decoration",
+  "sprite": "smallgarbagecan"
+ },
+ {
+  "en": "Small log",
+  "fr": "Petit rondin",
+  "categorie": null,
+  "sprite": "smalllog"
+ },
+ {
+  "en": "Small stage",
+  "fr": "Petite scène",
+  "categorie": "Toy",
+  "sprite": "smallstage"
+ },
+ {
+  "en": "Small vase",
+  "fr": "Petit vase",
+  "categorie": "Decoration",
+  "sprite": "smallvase"
+ },
+ {
+  "en": "Smelting furnace",
+  "fr": "Four de fonte",
+  "categorie": null,
+  "sprite": "smeltingfurnace"
+ },
+ {
+  "en": "Snowbelle City",
+  "fr": "Neigetiède",
+  "categorie": null,
+  "sprite": "snowbellecity"
+ },
+ {
+  "en": "Soda float",
+  "fr": "Soda flotteur",
+  "categorie": "Decoration",
+  "sprite": "sodafloat"
+ },
+ {
+  "en": "Soft Sand",
+  "fr": "Sable Doux",
+  "categorie": null,
+  "sprite": "softsand"
+ },
+ {
+  "en": "Soft seat",
+  "fr": "Siège moelleux",
+  "categorie": "Relaxation",
+  "sprite": "softseat"
+ },
+ {
+  "en": "Sootopolis City",
+  "fr": "Atlantis",
+  "categorie": null,
+  "sprite": "sootopoliscity"
+ },
+ {
+  "en": "South Province",
+  "fr": "Province Sud",
+  "categorie": null,
+  "sprite": "southprovince"
+ },
+ {
+  "en": "Spaceship",
+  "fr": "Vaisseau spatial",
+  "categorie": "Toy",
+  "sprite": "spaceship"
+ },
+ {
+  "en": "Spacesuit",
+  "fr": "Combinaison spatiale",
+  "categorie": "Toy",
+  "sprite": "spacesuit"
+ },
+ {
+  "en": "Sparkling jewelry",
+  "fr": "Bijoux scintillants",
+  "categorie": "Decoration",
+  "sprite": "sparklingjewelry"
+ },
+ {
+  "en": "Speaker",
+  "fr": "Enceinte",
+  "categorie": "Toy",
+  "sprite": "speaker"
+ },
+ {
+  "en": "Spectator chair",
+  "fr": "Siège de spectateur",
+  "categorie": "Relaxation",
+  "sprite": "spectatorchair"
+ },
+ {
+  "en": "Spell Tag",
+  "fr": "Rune Sort",
+  "categorie": null,
+  "sprite": "spelltag"
+ },
+ {
+  "en": "Spotlight",
+  "fr": "Projecteur",
+  "categorie": "Decoration",
+  "sprite": "spotlight"
+ },
+ {
+  "en": "Sprinkler",
+  "fr": "Arroseur",
+  "categorie": "Toy",
+  "sprite": "sprinkler"
+ },
+ {
+  "en": "Squishy clay",
+  "fr": "Argile molle",
+  "categorie": null,
+  "sprite": "squishyclay"
+ },
+ {
+  "en": "Stained-glass window (lower)",
+  "fr": "Vitrail (bas)",
+  "categorie": null,
+  "sprite": "stained-glasswindow(lower)"
+ },
+ {
+  "en": "Stained-glass window (middle)",
+  "fr": "Vitrail (milieu)",
+  "categorie": null,
+  "sprite": "stained-glasswindow(middle)"
+ },
+ {
+  "en": "Stained-glass window (upper)",
+  "fr": "Vitrail (haut)",
+  "categorie": null,
+  "sprite": "stained-glasswindow(upper)"
+ },
+ {
+  "en": "Standing frame",
+  "fr": "Cadre sur pied",
+  "categorie": "Decoration",
+  "sprite": "standingframe"
+ },
+ {
+  "en": "Standing mic",
+  "fr": "Micro sur pied",
+  "categorie": "Toy",
+  "sprite": "standingmic"
+ },
+ {
+  "en": "Star Piece",
+  "fr": "Éclat Étoile",
+  "categorie": null,
+  "sprite": "starpiece"
+ },
+ {
+  "en": "Star closet",
+  "fr": "Armoire étoile",
+  "categorie": "Decoration",
+  "sprite": "starcloset"
+ },
+ {
+  "en": "Star wall decoration",
+  "fr": "Décoration murale étoile",
+  "categorie": "Decoration",
+  "sprite": "starwalldecoration"
+ },
+ {
+  "en": "Star-shaped Dresser",
+  "fr": "Coiffeuse en forme d'étoile",
+  "categorie": "Toy",
+  "sprite": "star-shapeddresser"
+ },
+ {
+  "en": "Stardust",
+  "fr": "Poussière Étoile",
+  "categorie": null,
+  "sprite": "stardust"
+ },
+ {
+  "en": "Starmie doll",
+  "fr": "Peluche Staross",
+  "categorie": "Toy",
+  "sprite": "starmiedoll"
+ },
+ {
+  "en": "Starry-sky bed",
+  "fr": "Lit ciel étoilé",
+  "categorie": "Relaxation",
+  "sprite": "starry-skybed"
+ },
+ {
+  "en": "Step stool",
+  "fr": "Marchepied",
+  "categorie": "Toy",
+  "sprite": "stepstool"
+ },
+ {
+  "en": "Stone",
+  "fr": "Pierre",
+  "categorie": null,
+  "sprite": "stone"
+ },
+ {
+  "en": "Stone bench",
+  "fr": "Banc en pierre",
+  "categorie": "Relaxation",
+  "sprite": "stonebench"
+ },
+ {
+  "en": "Stone brick wall",
+  "fr": "Mur en briques de pierre",
+  "categorie": null,
+  "sprite": "stonebrickwall"
+ },
+ {
+  "en": "Stone brick wall (wallpaper)",
+  "fr": "Mur en briques de pierre (papier peint)",
+  "categorie": null,
+  "sprite": "stonebrickwall(wallpaper)"
+ },
+ {
+  "en": "Stone debris",
+  "fr": "Débris de pierre",
+  "categorie": null,
+  "sprite": "stonedebris"
+ },
+ {
+  "en": "Stone fireplace",
+  "fr": "Cheminée en pierre",
+  "categorie": "Relaxation",
+  "sprite": "stonefireplace"
+ },
+ {
+  "en": "Stone flooring",
+  "fr": "Sol en pierre",
+  "categorie": "Road",
+  "sprite": "stoneflooring"
+ },
+ {
+  "en": "Stone flooring (wallpaper)",
+  "fr": "Sol en pierre (papier peint)",
+  "categorie": null,
+  "sprite": "stoneflooring(wallpaper)"
+ },
+ {
+  "en": "Stone fragments",
+  "fr": "Fragments de pierre",
+  "categorie": null,
+  "sprite": "stonefragments"
+ },
+ {
+  "en": "Stone hipped roof",
+  "fr": "Toit en croupe en pierre",
+  "categorie": null,
+  "sprite": "stonehippedroof"
+ },
+ {
+  "en": "Stone pillar (lower)",
+  "fr": "Pilier en pierre (bas)",
+  "categorie": null,
+  "sprite": "stonepillar(lower)"
+ },
+ {
+  "en": "Stone pillar (middle)",
+  "fr": "Pilier en pierre (milieu)",
+  "categorie": null,
+  "sprite": "stonepillar(middle)"
+ },
+ {
+  "en": "Stone pillar (upper)",
+  "fr": "Pilier en pierre (haut)",
+  "categorie": null,
+  "sprite": "stonepillar(upper)"
+ },
+ {
+  "en": "Stone roof decoration",
+  "fr": "Ornement de toit en pierre",
+  "categorie": null,
+  "sprite": "stoneroofdecoration"
+ },
+ {
+  "en": "Stone roof valley",
+  "fr": "Noue de toit en pierre",
+  "categorie": null,
+  "sprite": "stoneroofvalley"
+ },
+ {
+  "en": "Stone sign",
+  "fr": "Panneau en pierre",
+  "categorie": "Decoration",
+  "sprite": "stonesign"
+ },
+ {
+  "en": "Stone steps",
+  "fr": "Marches en pierre",
+  "categorie": "Road",
+  "sprite": "stonesteps"
+ },
+ {
+  "en": "Stone table",
+  "fr": "Table en pierre",
+  "categorie": null,
+  "sprite": "stonetable"
+ },
+ {
+  "en": "Stone tiling",
+  "fr": "Carrelage en pierre",
+  "categorie": "Road",
+  "sprite": "stonetiling"
+ },
+ {
+  "en": "Stone tiling (wallpaper)",
+  "fr": "Carrelage en pierre (papier peint)",
+  "categorie": null,
+  "sprite": "stonetiling(wallpaper)"
+ },
+ {
+  "en": "Storage box",
+  "fr": "Coffre de rangement",
+  "categorie": null,
+  "sprite": "storagebox"
+ },
+ {
+  "en": "Stow-on-Side",
+  "fr": "Krachbourg",
+  "categorie": null,
+  "sprite": "stow-on-side"
+ },
+ {
+  "en": "Straw bed",
+  "fr": "Lit en paille",
+  "categorie": "Relaxation",
+  "sprite": "strawbed"
+ },
+ {
+  "en": "Straw stool",
+  "fr": "Tabouret en paille",
+  "categorie": "Relaxation",
+  "sprite": "strawstool"
+ },
+ {
+  "en": "Straw table",
+  "fr": "Table en paille",
+  "categorie": null,
+  "sprite": "strawtable"
+ },
+ {
+  "en": "Strength rock",
+  "fr": "Rocher Force",
+  "categorie": null,
+  "sprite": "strengthrock"
+ },
+ {
+  "en": "String lights",
+  "fr": "Guirlande lumineuse",
+  "categorie": "Decoration",
+  "sprite": "stringlights"
+ },
+ {
+  "en": "Study desk",
+  "fr": "Bureau d'étude",
+  "categorie": null,
+  "sprite": "studydesk"
+ },
+ {
+  "en": "Sturdy stick",
+  "fr": "Bâton solide",
+  "categorie": null,
+  "sprite": "sturdystick"
+ },
+ {
+  "en": "Stylish stool",
+  "fr": "Tabouret stylé",
+  "categorie": "Relaxation",
+  "sprite": "stylishstool"
+ },
+ {
+  "en": "Substitute doll",
+  "fr": "Peluche Clone",
+  "categorie": "Toy",
+  "sprite": "substitutedoll"
+ },
+ {
+  "en": "Super Training!",
+  "fr": "Super Entraînement !",
+  "categorie": null,
+  "sprite": "supertraining!"
+ },
+ {
+  "en": "Supermarket sign",
+  "fr": "Enseigne de supermarché",
+  "categorie": "Decoration",
+  "sprite": "supermarketsign"
+ },
+ {
+  "en": "Surface light",
+  "fr": "Lumière de surface",
+  "categorie": "Decoration",
+  "sprite": "surfacelight"
+ },
+ {
+  "en": "Swim ring",
+  "fr": "Bouée",
+  "categorie": "Relaxation",
+  "sprite": "swimring"
+ },
+ {
+  "en": "Table setting",
+  "fr": "Service de table",
+  "categorie": "Decoration",
+  "sprite": "tablesetting"
+ },
+ {
+  "en": "Tablet",
+  "fr": "Tablette",
+  "categorie": "Toy",
+  "sprite": "tablet"
+ },
+ {
+  "en": "Tabletop mic",
+  "fr": "Micro de table",
+  "categorie": "Toy",
+  "sprite": "tabletopmic"
+ },
+ {
+  "en": "Tall potted plant",
+  "fr": "Grande plante en pot",
+  "categorie": "Decoration",
+  "sprite": "tallpottedplant"
+ },
+ {
+  "en": "Tea set",
+  "fr": "Service à thé",
+  "categorie": "Decoration",
+  "sprite": "teaset"
+ },
+ {
+  "en": "Team Rocket Wall Hanging",
+  "fr": "Tenture Team Rocket",
+  "categorie": "Decoration",
+  "sprite": "teamrocketwallhanging"
+ },
+ {
+  "en": "Teaware set",
+  "fr": "Nécessaire à thé",
+  "categorie": "Decoration",
+  "sprite": "teawareset"
+ },
+ {
+  "en": "Telescope",
+  "fr": "Télescope",
+  "categorie": "Toy",
+  "sprite": "telescope"
+ },
+ {
+  "en": "Television",
+  "fr": "Télévision",
+  "categorie": "Toy",
+  "sprite": "television"
+ },
+ {
+  "en": "The Academy",
+  "fr": "L'Académie",
+  "categorie": null,
+  "sprite": "theacademy"
+ },
+ {
+  "en": "The S.S. Anne",
+  "fr": "L'Océane",
+  "categorie": null,
+  "sprite": "thes.s.anne"
+ },
+ {
+  "en": "The Sea",
+  "fr": "La Mer",
+  "categorie": null,
+  "sprite": "thesea"
+ },
+ {
+  "en": "Throat Spray",
+  "fr": "Spray Voix",
+  "categorie": null,
+  "sprite": "throatspray"
+ },
+ {
+  "en": "Tidal Bell",
+  "fr": "Cloche Marine",
+  "categorie": "Toy",
+  "sprite": "tidalbell"
+ },
+ {
+  "en": "Tinkagear",
+  "fr": "Engrenage Forgelina",
+  "categorie": null,
+  "sprite": "tinkagear"
+ },
+ {
+  "en": "Tire toy",
+  "fr": "Pneu-jouet",
+  "categorie": "Toy",
+  "sprite": "tiretoy"
+ },
+ {
+  "en": "Tires",
+  "fr": "Pneus",
+  "categorie": "Toy",
+  "sprite": "tires"
+ },
+ {
+  "en": "Title Screen",
+  "fr": "Écran-titre",
+  "categorie": null,
+  "sprite": "titlescreen"
+ },
+ {
+  "en": "Toilet",
+  "fr": "Toilettes",
+  "categorie": "Decoration",
+  "sprite": "toilet"
+ },
+ {
+  "en": "Toolbox",
+  "fr": "Boîte à outils",
+  "categorie": "Toy",
+  "sprite": "toolbox"
+ },
+ {
+  "en": "Torch",
+  "fr": "Torche",
+  "categorie": "Relaxation",
+  "sprite": "torch"
+ },
+ {
+  "en": "Towel rack",
+  "fr": "Porte-serviettes",
+  "categorie": "Decoration",
+  "sprite": "towelrack"
+ },
+ {
+  "en": "Town map",
+  "fr": "Carte de la ville",
+  "categorie": "Toy",
+  "sprite": "townmap"
+ },
+ {
+  "en": "Town streetlight",
+  "fr": "Lampadaire de ville",
+  "categorie": "Decoration",
+  "sprite": "townstreetlight"
+ },
+ {
+  "en": "Toy blocks",
+  "fr": "Cubes de construction",
+  "categorie": "Toy",
+  "sprite": "toyblocks"
+ },
+ {
+  "en": "Treasure",
+  "fr": "Trésor",
+  "categorie": "Toy",
+  "sprite": "treasure"
+ },
+ {
+  "en": "Tundra Fossil (body)",
+  "fr": "Fossile Toundra (corps)",
+  "categorie": "Decoration",
+  "sprite": "tundrafossil(body)"
+ },
+ {
+  "en": "Tundra Fossil (head)",
+  "fr": "Fossile Toundra (tête)",
+  "categorie": "Decoration",
+  "sprite": "tundrafossil(head)"
+ },
+ {
+  "en": "Tundra Fossil (tail)",
+  "fr": "Fossile Toundra (queue)",
+  "categorie": "Decoration",
+  "sprite": "tundrafossil(tail)"
+ },
+ {
+  "en": "Twine",
+  "fr": "Ficelle",
+  "categorie": null,
+  "sprite": "twine"
+ },
+ {
+  "en": "Twisted Spoon",
+  "fr": "Cuiller Tordue",
+  "categorie": null,
+  "sprite": "twistedspoon"
+ },
+ {
+  "en": "Twisted potted plant",
+  "fr": "Plante en pot tortueuse",
+  "categorie": "Decoration",
+  "sprite": "twistedpottedplant"
+ },
+ {
+  "en": "Ultra Ruin",
+  "fr": "Ruine Ultra",
+  "categorie": null,
+  "sprite": "ultraruin"
+ },
+ {
+  "en": "Undella Town (Summer)",
+  "fr": "Vaguelone (Été)",
+  "categorie": null,
+  "sprite": "undellatown(summer)"
+ },
+ {
+  "en": "Union Cave",
+  "fr": "Grotte Unio",
+  "categorie": null,
+  "sprite": "unioncave"
+ },
+ {
+  "en": "Utility pole",
+  "fr": "Poteau électrique",
+  "categorie": null,
+  "sprite": "utilitypole"
+ },
+ {
+  "en": "Vending machine",
+  "fr": "Distributeur automatique",
+  "categorie": "Toy",
+  "sprite": "vendingmachine"
+ },
+ {
+  "en": "Vermilion City Theme",
+  "fr": "Thème de Carmin sur Mer",
+  "categorie": null,
+  "sprite": "vermilioncitytheme"
+ },
+ {
+  "en": "Vine rope",
+  "fr": "Corde de lianes",
+  "categorie": null,
+  "sprite": "vinerope"
+ },
+ {
+  "en": "Vine wall decoration",
+  "fr": "Décoration murale de lianes",
+  "categorie": "Decoration",
+  "sprite": "vinewalldecoration"
+ },
+ {
+  "en": "Violet City",
+  "fr": "Mauville",
+  "categorie": null,
+  "sprite": "violetcity"
+ },
+ {
+  "en": "Violet meteor lamp",
+  "fr": "Lampe météore violette",
+  "categorie": "Decoration",
+  "sprite": "violetmeteorlamp"
+ },
+ {
+  "en": "Wall Calendar",
+  "fr": "Calendrier mural",
+  "categorie": "Decoration",
+  "sprite": "wallcalendar"
+ },
+ {
+  "en": "Wall clock",
+  "fr": "Horloge murale",
+  "categorie": "Toy",
+  "sprite": "wallclock"
+ },
+ {
+  "en": "Wall light",
+  "fr": "Applique murale",
+  "categorie": "Decoration",
+  "sprite": "walllight"
+ },
+ {
+  "en": "Wall mirror",
+  "fr": "Miroir mural",
+  "categorie": "Toy",
+  "sprite": "wallmirror"
+ },
+ {
+  "en": "Wall monitor",
+  "fr": "Écran mural",
+  "categorie": "Toy",
+  "sprite": "wallmonitor"
+ },
+ {
+  "en": "Wall photo frame",
+  "fr": "Cadre photo mural",
+  "categorie": "Decoration",
+  "sprite": "wallphotoframe"
+ },
+ {
+  "en": "Wall plant",
+  "fr": "Plante murale",
+  "categorie": "Decoration",
+  "sprite": "wallplant"
+ },
+ {
+  "en": "Wall storage box",
+  "fr": "Coffre de rangement mural",
+  "categorie": "Decoration",
+  "sprite": "wallstoragebox"
+ },
+ {
+  "en": "Wall switch",
+  "fr": "Interrupteur mural",
+  "categorie": null,
+  "sprite": "wallswitch"
+ },
+ {
+  "en": "Wall torch",
+  "fr": "Torche murale",
+  "categorie": "Decoration",
+  "sprite": "walltorch"
+ },
+ {
+  "en": "Wall-mounted flowers",
+  "fr": "Fleurs murales",
+  "categorie": "Decoration",
+  "sprite": "wall-mountedflowers"
+ },
+ {
+  "en": "Wall-mounted tools",
+  "fr": "Outils muraux",
+  "categorie": "Toy",
+  "sprite": "wall-mountedtools"
+ },
+ {
+  "en": "Washing machine",
+  "fr": "Machine à laver",
+  "categorie": "Toy",
+  "sprite": "washingmachine"
+ },
+ {
+  "en": "Wastepaper",
+  "fr": "Papier usagé",
+  "categorie": null,
+  "sprite": "wastepaper"
+ },
+ {
+  "en": "Water basin",
+  "fr": "Bassin d'eau",
+  "categorie": "Decoration",
+  "sprite": "waterbasin"
+ },
+ {
+  "en": "Water pillar quarter",
+  "fr": "Quart de pilier d'eau",
+  "categorie": "Decoration",
+  "sprite": "waterpillarquarter"
+ },
+ {
+  "en": "Waterproof seat",
+  "fr": "Siège imperméable",
+  "categorie": "Relaxation",
+  "sprite": "waterproofseat"
+ },
+ {
+  "en": "Weakness Policy",
+  "fr": "Vulné-Rancune",
+  "categorie": null,
+  "sprite": "weaknesspolicy"
+ },
+ {
+  "en": "Weather vane",
+  "fr": "Girouette",
+  "categorie": "Toy",
+  "sprite": "weathervane"
+ },
+ {
+  "en": "Wheelbarrow",
+  "fr": "Brouette",
+  "categorie": "Decoration",
+  "sprite": "wheelbarrow"
+ },
+ {
+  "en": "White paint",
+  "fr": "Peinture blanche",
+  "categorie": null,
+  "sprite": "whitepaint"
+ },
+ {
+  "en": "Whiteboard",
+  "fr": "Tableau blanc",
+  "categorie": "Decoration",
+  "sprite": "whiteboard"
+ },
+ {
+  "en": "Wiggly mirror",
+  "fr": "Miroir déformant",
+  "categorie": "Toy",
+  "sprite": "wigglymirror"
+ },
+ {
+  "en": "Wild Area (North)",
+  "fr": "Zone Sauvage (Nord)",
+  "categorie": null,
+  "sprite": "wildarea(north)"
+ },
+ {
+  "en": "Wildflowers",
+  "fr": "Fleurs sauvages",
+  "categorie": null,
+  "sprite": "wildflowers"
+ },
+ {
+  "en": "Wildflowers (blue)",
+  "fr": "Fleurs sauvages (bleues)",
+  "categorie": null,
+  "sprite": "wildflowers(blue)"
+ },
+ {
+  "en": "Wildflowers (orange)",
+  "fr": "Fleurs sauvages (orange)",
+  "categorie": null,
+  "sprite": "wildflowers(orange)"
+ },
+ {
+  "en": "Wildflowers (purple)",
+  "fr": "Fleurs sauvages (violettes)",
+  "categorie": null,
+  "sprite": "wildflowers(purple)"
+ },
+ {
+  "en": "Wildflowers (red)",
+  "fr": "Fleurs sauvages (rouges)",
+  "categorie": null,
+  "sprite": "wildflowers(red)"
+ },
+ {
+  "en": "Window pane",
+  "fr": "Vitre",
+  "categorie": null,
+  "sprite": "windowpane"
+ },
+ {
+  "en": "Windup Inkay",
+  "fr": "Sepiatop mécanique",
+  "categorie": "Toy",
+  "sprite": "windupinkay"
+ },
+ {
+  "en": "Wing Fossil (head)",
+  "fr": "Fossile Ailé (tête)",
+  "categorie": "Decoration",
+  "sprite": "wingfossil(head)"
+ },
+ {
+  "en": "Wing Fossil (left wing)",
+  "fr": "Fossile Ailé (aile gauche)",
+  "categorie": "Decoration",
+  "sprite": "wingfossil(leftwing)"
+ },
+ {
+  "en": "Wing Fossil (right wing)",
+  "fr": "Fossile Ailé (aile droite)",
+  "categorie": "Decoration",
+  "sprite": "wingfossil(rightwing)"
+ },
+ {
+  "en": "Wing Fossil (tail)",
+  "fr": "Fossile Ailé (queue)",
+  "categorie": "Decoration",
+  "sprite": "wingfossil(tail)"
+ },
+ {
+  "en": "Wing fossil (body)",
+  "fr": "Fossile Ailé (corps)",
+  "categorie": "Decoration",
+  "sprite": "wingfossil(body)"
+ },
+ {
+  "en": "Wire",
+  "fr": "Fil électrique",
+  "categorie": null,
+  "sprite": "wire"
+ },
+ {
+  "en": "Wireless power transmitter",
+  "fr": "Transmetteur d'énergie sans fil",
+  "categorie": null,
+  "sprite": "wirelesspowertransmitter"
+ },
+ {
+  "en": "Wireless power-transmitter switch",
+  "fr": "Interrupteur du transmetteur sans fil",
+  "categorie": null,
+  "sprite": "wirelesspower-transmitterswitch"
+ },
+ {
+  "en": "Wobbuffet Wobbler",
+  "fr": "Culbuto Qulbutoké",
+  "categorie": "Toy",
+  "sprite": "wobbuffetwobbler"
+ },
+ {
+  "en": "Wooden Bed",
+  "fr": "Lit en bois",
+  "categorie": "Relaxation",
+  "sprite": "woodenbed"
+ },
+ {
+  "en": "Wooden bench",
+  "fr": "Banc en bois",
+  "categorie": "Relaxation",
+  "sprite": "woodenbench"
+ },
+ {
+  "en": "Wooden birdhouse",
+  "fr": "Nichoir en bois",
+  "categorie": "Decoration",
+  "sprite": "woodenbirdhouse"
+ },
+ {
+  "en": "Wooden crate",
+  "fr": "Caisse en bois",
+  "categorie": "Decoration",
+  "sprite": "woodencrate"
+ },
+ {
+  "en": "Wooden plate",
+  "fr": "Assiette en bois",
+  "categorie": null,
+  "sprite": "woodenplate"
+ },
+ {
+  "en": "Wooden stool",
+  "fr": "Tabouret en bois",
+  "categorie": "Relaxation",
+  "sprite": "woodenstool"
+ },
+ {
+  "en": "Worn wooden crate",
+  "fr": "Caisse en bois usée",
+  "categorie": "Decoration",
+  "sprite": "wornwoodencrate"
+ },
+ {
+  "en": "Wreath",
+  "fr": "Couronne",
+  "categorie": "Decoration",
+  "sprite": "wreath"
+ },
+ {
+  "en": "Wyndon",
+  "fr": "Smashings",
+  "categorie": null,
+  "sprite": "wyndon"
+ },
+ {
+  "en": "Yellow meteor lamp",
+  "fr": "Lampe météore jaune",
+  "categorie": "Decoration",
+  "sprite": "yellowmeteorlamp"
+ },
+ {
+  "en": "Yellow paint",
+  "fr": "Peinture jaune",
+  "categorie": null,
+  "sprite": "yellowpaint"
+ }
+]

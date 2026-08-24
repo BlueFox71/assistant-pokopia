@@ -1,0 +1,68 @@
+name: Release desktop
+
+# Publier une version = pousser un tag :  git tag v1.0.0 && git push --tags
+#
+# Le Grenier (BlueFox71/le-grenier) lit la dernière release de ce dépôt, compare son tag
+# à la version installée, et télécharge l'asset .exe. Deux contraintes viennent de lui,
+# et rien ne les signale si on les enfreint :
+#
+#  • un EXÉCUTABLE AUTONOME, jamais un installeur — il est lancé directement, là où un
+#    Setup.exe ouvrirait un assistant. D'où `tauri build --no-bundle`.
+#  • un nom d'asset PORTANT LA VERSION, puisque c'est là-dessus que son `assetPattern`
+#    fait sa correspondance. Sans version dans le nom, aucun fichier n'est retenu.
+#
+# Le nom est écrit sans espace : GitHub remplace les espaces par des tirets à l'upload,
+# et un motif qui attend une espace ne correspondrait jamais.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      # La compilation de la coquille Tauri prend plusieurs minutes à froid ; le cache
+      # ramène les builds suivants à moins d'une minute.
+      - name: Cache cargo
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install dependencies
+        run: npm ci
+
+      # `--no-bundle` : on veut l'exe nu de target/release, pas l'installeur NSIS. Le
+      # frontend est bâti par beforeBuildCommand (npm run build:desktop), qui pose la
+      # base relative et le HashRouter.
+      - name: Build desktop app
+        run: npm run desktop:build
+
+      - name: Name the asset after the tag
+        shell: bash
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          src="src-tauri/target/release/assistant-pokopia.exe"
+          test -f "$src" || { echo "exe introuvable : $src"; exit 1; }
+          cp "$src" "Assistant-Pokopia-${version}.exe"
+          ls -lh "Assistant-Pokopia-${version}.exe"
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Assistant-Pokopia-*.exe

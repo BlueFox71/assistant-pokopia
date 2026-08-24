@@ -3,6 +3,9 @@ name: Deploy on GitHub Pages
 on:
   push:
     branches: [main, master]
+  # Pour relancer le déploiement sans avoir à pousser un commit — utile après un
+  # changement de réglage côté dépôt.
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -19,6 +22,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # `enablement: true` active GitHub Pages sur le dépôt s'il ne l'est pas déjà, au lieu
+      # d'exiger un passage par Settings → Pages avant le premier déploiement.
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Setup Node
         uses: actions/setup-node@v4

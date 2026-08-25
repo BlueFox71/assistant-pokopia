@@ -1,6 +1,6 @@
 [package]
 name = "assistant-pokopia"
-version = "1.0.0"
+version = "1.1.0"
 description = "Index des préférences de Pokémon Pokopia, entièrement hors ligne"
 edition = "2021"
 rust-version = "1.77"

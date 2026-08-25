@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ICONE_HABITAT } from '../components/Icones'
+import { ICONE_HABITAT, ICONE_VILLE } from '../components/Icones'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
 import { urlSpritePokemon } from '../data/images'
 import {
@@ -17,11 +17,12 @@ import {
   spritePokemon,
   typesDe,
 } from '../data'
+import { cleVilleDe, nomVille, useAttributions, useNomsVilles } from '../utils/villesStorage'
 import './Fiche.css'
 
 /** Objets mis en avant sur la fiche ; la vue habitat donne la liste complète. */
 const APERCU = 24
-/** Voisins de goût proposés en bas de fiche. */
+/** Voisins de goût proposés en bas de fiche, par groupe. */
 const VOISINS = 6
 
 /**
@@ -32,6 +33,8 @@ const VOISINS = 6
 export default function FichePokemonPage() {
   const { nom: nomBrut } = useParams()
   const navigate = useNavigate()
+  const attributions = useAttributions()
+  const nomsVilles = useNomsVilles()
   const nom = decodeURIComponent(nomBrut || '')
   const connu = pokemonParNom.has(nom)
 
@@ -40,19 +43,33 @@ export default function FichePokemonPage() {
   const specialites = connu ? specialitesDe(nom) : []
   const objets = useMemo(() => (connu ? objetsPourGroupe([nom], slugs) : []), [connu, nom, slugs])
 
-  const voisins = useMemo(() => {
-    if (!connu) return []
+  const maVille = connu ? cleVilleDe(attributions, nom) : null
+
+  /**
+   * Les voisins de goût, séparés en deux : ceux de la MÊME VILLE d'abord.
+   *
+   * Un colocataire se prend là où on est — un Pokémon de Grisemer ne rejoint pas un enclos
+   * de Terrassec sans qu'on l'y déplace. Les autres suivent quand même, en second : ce sont
+   * eux qu'on va chercher quand la ville ne donne personne d'assez proche.
+   */
+  const { memeVille, ailleurs } = useMemo(() => {
+    if (!connu) return { memeVille: [], ailleurs: [] }
     const mien = new Set(slugs)
-    return [...prefsParPokemon.keys()]
+    const tous = [...prefsParPokemon.keys()]
       .filter((autre) => autre !== nom)
       .map((autre) => ({
         nom: autre,
         communes: (prefsParPokemon.get(autre) || []).filter((s) => mien.has(s)).length,
+        ville: cleVilleDe(attributions, autre),
       }))
       .filter((v) => v.communes > 0)
       .sort((a, b) => b.communes - a.communes || comparerParNumero(a.nom, b.nom))
-      .slice(0, VOISINS)
-  }, [connu, nom, slugs])
+
+    return {
+      memeVille: tous.filter((v) => v.ville === maVille).slice(0, VOISINS),
+      ailleurs: tous.filter((v) => v.ville !== maVille).slice(0, VOISINS),
+    }
+  }, [connu, nom, slugs, attributions, maVille])
 
   if (!connu) {
     return (
@@ -87,7 +104,19 @@ export default function FichePokemonPage() {
                   habitat {habitatDe(nom).toLowerCase()}
                 </span>
               </>
-            )}{' '}
+            )}
+            {' · '}
+            <Link
+              to={`/villes?ville=${maVille}`}
+              className={'marque-ville ville-' + maVille}
+              title="Voir tous les Pokémon de cette ville"
+            >
+              {(() => {
+                const I = ICONE_VILLE[maVille]
+                return I ? <I /> : null
+              })()}
+              {nomVille(nomsVilles, maVille)}
+            </Link>{' '}
             · {slugs.length} préférences · {objets.length} objets
           </p>
           {/* Type et spécialité peuvent porter le même mot — Dracaufeu est de type Vol et
@@ -175,18 +204,57 @@ export default function FichePokemonPage() {
         )}
       </section>
 
-      {voisins.length > 0 && (
-        <section className="fiche-bloc">
-          <h2 className="etiquette">Goûts les plus proches</h2>
-          <p className="fiche-note">
-            Nombre de préférences en commun avec {frPokemon(nom)} — un bon colocataire en
-            partage beaucoup, et le même habitat.
-          </p>
+      <section className="fiche-bloc">
+        <h2 className="etiquette">
+          Goûts les plus proches à {nomVille(nomsVilles, maVille)}
+        </h2>
+        <p className="fiche-note">
+          Nombre de préférences en commun avec {frPokemon(nom)}, parmi les Pokémon de sa
+          ville — un bon colocataire en partage beaucoup, et le même habitat.
+        </p>
+        {memeVille.length ? (
           <div className="chips">
-            {voisins.map((v) => (
+            {memeVille.map((v) => (
               <div key={v.nom} className="voisin">
                 <VignettePokemon
                   nom={v.nom}
+                  onClick={() =>
+                    navigate(
+                      `/habitat?pokemon=${encodeURIComponent(nom)},${encodeURIComponent(v.nom)}`,
+                    )
+                  }
+                />
+                <span className="voisin-score">
+                  {v.communes} préf. en commun
+                  {habitatDe(v.nom) === habitatDe(nom) ? ' · même habitat' : ''}
+                </span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="fiche-note">
+            Personne d’autre à {nomVille(nomsVilles, maVille)} ne partage ses goûts.
+          </p>
+        )}
+      </section>
+
+      {/* Second choix, mais pas hors sujet : c'est là qu'on regarde quand la ville ne donne
+          personne, quitte à déplacer le Pokémon depuis la vue Villes. */}
+      {ailleurs.length > 0 && (
+        <section className="fiche-bloc">
+          <h2 className="etiquette">Ailleurs sur l’île</h2>
+          <p className="fiche-note">
+            Les goûts les plus proches hors de {nomVille(nomsVilles, maVille)}. Il faudrait{' '}
+            <Link to={`/villes?ville=${maVille}`}>les réattribuer à cette ville</Link> pour les
+            faire cohabiter.
+          </p>
+          <div className="chips">
+            {ailleurs.map((v) => (
+              <div key={v.nom} className="voisin">
+                <VignettePokemon
+                  nom={v.nom}
+                  ville={v.ville}
+                  nomVille={nomVille(nomsVilles, v.ville)}
                   onClick={() =>
                     navigate(
                       `/habitat?pokemon=${encodeURIComponent(nom)},${encodeURIComponent(v.nom)}`,

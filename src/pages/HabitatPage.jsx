@@ -1,6 +1,6 @@
 import { useCallback, useDeferredValue, useMemo, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { Input, Popconfirm } from 'antd'
+import { Input, Popconfirm, Select } from 'antd'
 import CarteHabitat from '../components/CarteHabitat'
 import { ICONE_CATEGORIE } from '../components/Icones'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
@@ -27,6 +27,13 @@ import {
   spritePokemon,
 } from '../data'
 import { FR_TYPE_OBJET, TYPES_OBJET, TYPES_PAR_DEFAUT, typeObjet } from '../data/categories'
+import { VILLES } from '../data/villes'
+import {
+  cleVilleDe,
+  nomVille,
+  useAttributions,
+  useNomsVilles,
+} from '../utils/villesStorage'
 import {
   creerHabitat,
   exporterHabitats,
@@ -41,6 +48,9 @@ import './HabitatPage.css'
 
 /** Ordre d'affichage des catégories de confort dans le décompte. */
 const CATEGORIES_CONFORT = ['Relaxation', 'Decoration', 'Toy']
+
+/** Profondeur du classement de « Suggestion colocataire » : ce que « Suivant » peut parcourir. */
+const MAX_SUGGESTIONS = 8
 
 const typeDe = (nom) => typeObjet(nom, objetParNom.get(nom)?.categorie)
 
@@ -312,14 +322,22 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
  * et les 366 vignettes d'un coup noient les quelques-uns qui restent à loger.
  */
 function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = false, onValider, onAnnuler }) {
+  const attributions = useAttributions()
+  const nomsVilles = useNomsVilles()
+
   const [choisis, setChoisis] = useState([])
   const [saisie, setSaisie] = useState('')
   const [nom, setNom] = useState('')
   const [sansHabitatSeul, setSansHabitatSeul] = useState(() => habitats.length > 0)
+  const [villeFiltre, setVilleFiltre] = useState(null)
   // Éteint par défaut : trier par compatibilité reclasse la liste à chaque choix, si bien
   // que le Pokémon qu'on vient de cliquer change de place et paraît disparaître. L'ordre du
   // Pokédex ne bouge pas, on voit la vignette passer à l'état sélectionné là où elle est.
   const [triCompat, setTriCompat] = useState(false)
+  // La suggestion est un panneau qu'on ouvre, pas un tri : elle désigne UN Pokémon, et
+  // « Suivant » descend le classement sans réorganiser les 366 vignettes sous les yeux.
+  const [suggestionOuverte, setSuggestionOuverte] = useState(false)
+  const [rang, setRang] = useState(0)
 
   const saisieDifferee = useDeferredValue(saisie)
   const terme = normaliser(saisieDifferee.trim())
@@ -332,6 +350,10 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
   const liste = useMemo(() => {
     let noms = [...prefsParPokemon.keys()].filter((n) => !deja.includes(n))
     if (sansHabitatSeul) noms = noms.filter((n) => choisis.includes(n) || !habitatDuPokemon(habitats, n))
+    // Un Pokémon déjà retenu reste visible même si le filtre l'exclut : le voir disparaître
+    // du panier au moment où on change de ville laisserait croire qu'il a été retiré.
+    if (villeFiltre)
+      noms = noms.filter((n) => choisis.includes(n) || cleVilleDe(attributions, n) === villeFiltre)
     if (terme) noms = noms.filter((n) => correspond(terme, n, frPokemon(n)))
 
     // Sans groupe en cours, il n'y a rien à comparer : on retombe sur l'ordre du Pokédex.
@@ -342,9 +364,63 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
           comparerParNumero(a, b),
       )
     return noms.sort(comparerParNumero)
-  }, [terme, sansHabitatSeul, habitats, deja, choisis, triCompat, groupeEnCours])
+  }, [terme, sansHabitatSeul, habitats, deja, choisis, triCompat, groupeEnCours, villeFiltre, attributions])
 
-  const basculer = (nomPokemon) =>
+  /** Combien de candidats par ville, à filtre de ville près — affiché dans le sélecteur. */
+  const repartitionVilles = useMemo(() => {
+    const compte = Object.fromEntries(VILLES.map((v) => [v.cle, 0]))
+    for (const n of prefsParPokemon.keys()) {
+      if (deja.includes(n)) continue
+      if (sansHabitatSeul && !choisis.includes(n) && habitatDuPokemon(habitats, n)) continue
+      compte[cleVilleDe(attributions, n)] += 1
+    }
+    return compte
+  }, [deja, choisis, habitats, sansHabitatSeul, attributions])
+
+  /**
+   * Les colocataires qui iraient le mieux au groupe en cours, du meilleur au moins bon.
+   *
+   * L'habitat idéal passe avant tout : un enclos n'en satisfait qu'un, donc un Pokémon du
+   * mauvais habitat serait un mauvais conseil quelle que soit sa compatibilité. Vient
+   * ensuite le taux de compatibilité — le vrai « match » —, puis la ville, qui départage à
+   * score égal. Le classement se fait sur la liste AFFICHÉE : les filtres en cours (ville,
+   * « sans habitat seulement », recherche) valent aussi pour la suggestion.
+   */
+  const suggestions = useMemo(() => {
+    if (!groupeEnCours.length || places <= 0) return []
+    const habitatsGroupe = new Set(
+      groupeEnCours.map((n) => pokemonParNom.get(n)?.habitat).filter(Boolean),
+    )
+    const habitatCible = habitatsGroupe.size === 1 ? [...habitatsGroupe][0] : null
+    const villesGroupe = new Set(groupeEnCours.map((n) => cleVilleDe(attributions, n)))
+
+    return liste
+      .filter((n) => !choisis.includes(n))
+      .map((n) => ({
+        nom: n,
+        score: compatibiliteAvec(groupeEnCours, n) ?? 0,
+        memeHabitat: habitatCible ? pokemonParNom.get(n)?.habitat === habitatCible : false,
+        memeVille: villesGroupe.has(cleVilleDe(attributions, n)),
+      }))
+      .sort(
+        (a, b) =>
+          Number(b.memeHabitat) - Number(a.memeHabitat) ||
+          b.score - a.score ||
+          Number(b.memeVille) - Number(a.memeVille) ||
+          comparerParNumero(a.nom, b.nom),
+      )
+      .slice(0, MAX_SUGGESTIONS)
+  }, [liste, choisis, groupeEnCours, attributions, places])
+
+  // Le modulo évite de sortir du classement quand il rétrécit — un choix, une frappe ou un
+  // changement de ville le raccourcissent sans que « Suivant » ait été touché.
+  const suggestion = suggestions.length ? suggestions[rang % suggestions.length] : null
+  const suggestionPossible = groupeEnCours.length > 0 && places > 0
+
+  const basculer = (nomPokemon) => {
+    // Le classement des suggestions change dès que le groupe change : repartir du meilleur,
+    // plutôt que de rester au 3e d'un classement qui n'existe plus.
+    setRang(0)
     setChoisis((precedent) =>
       precedent.includes(nomPokemon)
         ? precedent.filter((n) => n !== nomPokemon)
@@ -352,6 +428,7 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
           ? [...precedent, nomPokemon]
           : precedent,
     )
+  }
 
   const tries = [...choisis].sort(comparerParNumero)
 
@@ -425,16 +502,37 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
           <Input
             allowClear
             value={saisie}
-            onChange={(e) => setSaisie(e.target.value)}
+            onChange={(e) => {
+              setSaisie(e.target.value)
+              setRang(0)
+            }}
             placeholder="Chercher un Pokémon…"
             aria-label="Chercher un Pokémon"
           />
         </div>
+        <Select
+          allowClear
+          value={villeFiltre}
+          onChange={(cle) => {
+            setVilleFiltre(cle || null)
+            setRang(0)
+          }}
+          placeholder="Ville"
+          aria-label="Filtrer les candidats par ville"
+          style={{ minWidth: 210 }}
+          options={VILLES.map((v) => ({
+            value: v.cle,
+            label: `${nomVille(nomsVilles, v.cle)} (${repartitionVilles[v.cle]})`,
+          }))}
+        />
         <button
           type="button"
           className="bascule"
           aria-pressed={sansHabitatSeul}
-          onClick={() => setSansHabitatSeul((v) => !v)}
+          onClick={() => {
+            setSansHabitatSeul((v) => !v)
+            setRang(0)
+          }}
         >
           Sans habitat seulement
         </button>
@@ -452,13 +550,88 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
         >
           Trier par compatibilité
         </button>
+        <button
+          type="button"
+          className="bascule"
+          aria-pressed={suggestionOuverte}
+          disabled={!suggestionPossible}
+          title={
+            !groupeEnCours.length
+              ? 'Choisissez d’abord un Pokémon : la suggestion se compare à lui'
+              : places <= 0
+                ? 'L’habitat est complet'
+                : 'Le Pokémon qui irait le mieux à cet habitat'
+          }
+          onClick={() => {
+            setSuggestionOuverte((v) => !v)
+            setRang(0)
+          }}
+        >
+          Suggestion colocataire
+        </button>
         <span className="statut">{liste.length} Pokémon</span>
       </div>
+
+      {/* Une suggestion désigne un Pokémon et dit pourquoi : sans le « pourquoi », rien ne
+          distingue un bon conseil d'un tirage au sort. */}
+      {suggestionOuverte && suggestionPossible && (
+        <div className="panneau-suggestion">
+          {suggestion ? (
+            <>
+              <img
+                src={urlSpritePokemon(spritePokemon(suggestion.nom))}
+                alt=""
+                width="56"
+                height="56"
+              />
+              <div className="suggestion-texte">
+                <strong>{frPokemon(suggestion.nom)}</strong>
+                <span className="suggestion-raison">
+                  {suggestion.memeHabitat
+                    ? `même habitat idéal (${habitatDe(suggestion.nom).toLowerCase()})`
+                    : `habitat ${habitatDe(suggestion.nom).toLowerCase() || 'inconnu'}`}
+                  {` · ${suggestion.score} % de compatibilité`}
+                  {` · ${nomVille(nomsVilles, cleVilleDe(attributions, suggestion.nom))}`}
+                  {suggestion.memeVille ? ' (même ville)' : ''}
+                </span>
+                <span className="suggestion-rang">
+                  proposition {(rang % suggestions.length) + 1} sur {suggestions.length}
+                </span>
+              </div>
+              <div className="suggestion-actions">
+                <button
+                  type="button"
+                  className="ghost-btn primaire"
+                  onClick={() => {
+                    basculer(suggestion.nom)
+                    setRang(0)
+                  }}
+                >
+                  Ajouter {frPokemon(suggestion.nom)}
+                </button>
+                <button
+                  type="button"
+                  className="ghost-btn"
+                  disabled={suggestions.length < 2}
+                  onClick={() => setRang((r) => r + 1)}
+                >
+                  Suivant
+                </button>
+              </div>
+            </>
+          ) : (
+            <span className="suggestion-raison">
+              Aucun candidat ne reste sous ces filtres : élargissez la ville ou la recherche.
+            </span>
+          )}
+        </div>
+      )}
 
       {liste.length ? (
         <div className="chips">
           {liste.map((n) => {
             const loge = habitatDuPokemon(habitats, n)
+            const cleVille = cleVilleDe(attributions, n)
             return (
               <VignettePokemon
                 key={n}
@@ -468,6 +641,9 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
                 note={loge ? loge.nom : ''}
                 desactive={places <= 0 && !choisis.includes(n)}
                 score={groupeEnCours.length ? compatibiliteAvec(groupeEnCours, n) : null}
+                ville={cleVille}
+                nomVille={nomVille(nomsVilles, cleVille)}
+                suggere={suggestionOuverte && suggestion?.nom === n}
                 onClick={() => basculer(n)}
               />
             )

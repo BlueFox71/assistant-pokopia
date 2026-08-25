@@ -37,6 +37,10 @@
 }
 .fiche-tete .ghost-btn { margin-left: auto; }
 .fiche-sous { margin: 4px 0 0; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: .04em; }
+/* La ville est le seul lien de cette ligne : souligné au survol seulement, pour ne pas
+   ressembler à l'habitat juste à côté, qui n'en est pas un. */
+.fiche-sous .marque-ville { text-decoration: none; }
+.fiche-sous .marque-ville:hover { text-decoration: underline; }
 
 .fiche-bloc { margin-top: 26px; }
 .fiche-bloc > h2 { display: block; margin: 0 0 8px; }

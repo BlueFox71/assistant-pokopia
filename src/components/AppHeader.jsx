@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router-dom'
 import { MoonOutlined, SunOutlined } from '@ant-design/icons'
 import { Tooltip } from 'antd'
-import { IconeListe, IconeMaison, IconePokeball } from './Icones'
+import { IconeListe, IconeMaison, IconePokeball, IconeTerrasse } from './Icones'
 import { useTheme } from '../context/ThemeContext'
 import './AppHeader.css'
 
 const ONGLETS = [
   { to: '/preferences', libelle: 'Préférences', Icone: IconeListe },
   { to: '/habitat', libelle: 'Habitat', Icone: IconeMaison },
+  { to: '/villes', libelle: 'Villes', Icone: IconeTerrasse },
   { to: '/pokedex', libelle: 'Pokédex', Icone: IconePokeball },
 ]
 

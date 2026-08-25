@@ -212,6 +212,63 @@ export const IconeRondin = (p) => (
   </Svg>
 )
 
+/* ---------- villes ---------- */
+
+/** Terrasses cultivées : Terrassec, la région de départ. */
+export const IconeTerrasse = (p) => (
+  <Svg {...p}>
+    <path d="M3 21h18" />
+    <path d="M3 21v-4h5v-4h5v-4h5V5" />
+  </Svg>
+)
+
+/** Ancre : Grisemer et son port gris. */
+export const IconeAncre = (p) => (
+  <Svg {...p}>
+    <circle cx="12" cy="4" r="2" />
+    <path d="M12 6v14" />
+    <path d="M8.5 10h7" />
+    <path d="M5 14a7 7 0 0 0 14 0" />
+  </Svg>
+)
+
+/** Deux collines : Collinangle et ses galeries. */
+export const IconeColline = (p) => (
+  <Svg {...p}>
+    <path d="M2 20h20" />
+    <path d="M2 20 8 10l3.5 5" />
+    <path d="M10 20l5.5-9L22 20" />
+  </Svg>
+)
+
+/** Pont suspendu : Flotîles-Millefeux, ses îles et ses passerelles. */
+export const IconePont = (p) => (
+  <Svg {...p}>
+    <path d="M4 7v12M20 7v12" />
+    <path d="M4 8c5 6 11 6 16 0" />
+    <path d="M2 15h20" />
+  </Svg>
+)
+
+/** Silhouette de bâtiments : Ville-Nouvelle, le terrain libre du joueur. */
+export const IconeVille = (p) => (
+  <Svg {...p}>
+    <path d="M2 21h20" />
+    <path d="M4 21v-8h5v8" />
+    <path d="M9 21V7h6v14" />
+    <path d="M15 21v-6h5v6" />
+  </Svg>
+)
+
+/** Bulles : Fonds Bulleux, le bassin du DLC. */
+export const IconeBulles = (p) => (
+  <Svg {...p}>
+    <circle cx="9" cy="14.5" r="4.5" />
+    <circle cx="17" cy="8.5" r="2.8" />
+    <circle cx="17.5" cy="16.5" r="1.5" />
+  </Svg>
+)
+
 /* ---------- index par clé ---------- */
 
 /** Habitat idéal : les clés sont celles des données (Bright, Dark…). */
@@ -222,6 +279,16 @@ export const ICONE_HABITAT = {
   Dry: IconeDune,
   Warm: IconeFlamme,
   Cool: IconeFlocon,
+}
+
+/** Ville de l'île : les clés sont celles de data/villes.js. */
+export const ICONE_VILLE = {
+  terrassec: IconeTerrasse,
+  grisemer: IconeAncre,
+  collinangle: IconeColline,
+  flotiles: IconePont,
+  'ville-nouvelle': IconeVille,
+  'fonds-bulleux': IconeBulles,
 }
 
 /** Catégorie de meuble : les clés sont celles de data/categories.js. */

@@ -16,11 +16,6 @@
 }
 .retour:hover { color: var(--accent-ink); }
 
-.ghost-btn.primaire { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.ghost-btn.primaire:hover { color: var(--on-accent); filter: brightness(1.08); }
-.ghost-btn:disabled { opacity: .45; cursor: not-allowed; }
-.ghost-btn:disabled:hover { border-color: var(--line-strong); color: var(--ink-2); filter: none; }
-
 /* ---- liste des habitats ---- */
 .liste-tete { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-end; justify-content: space-between; margin: 6px 0 22px; }
 .liste-tete h1 {
@@ -31,7 +26,6 @@
   letter-spacing: -.015em;
   line-height: 1.1;
 }
-.liste-chapeau { margin: 8px 0 0; max-width: 68ch; color: var(--ink-2); font-size: 14px; }
 
 /* Les cartes d’habitat vivent dans components/CarteHabitat.css : l’accueil les affiche aussi. */
 
@@ -76,6 +70,34 @@
 }
 .jeton img { width: 34px; height: 34px; object-fit: contain; }
 .jeton:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+
+/* ---- suggestion de colocataire ---- */
+
+/* Liseré vert, comme les Pokémon : le panneau propose quelqu'un, il ne filtre rien. */
+.panneau-suggestion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin: 0 0 14px;
+  padding: 12px 16px;
+  background: var(--second-soft);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--second);
+  border-radius: var(--radius);
+}
+.panneau-suggestion img { width: 56px; height: 56px; object-fit: contain; flex: 0 0 auto; }
+.suggestion-texte { display: flex; flex-direction: column; }
+.suggestion-texte strong { font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+.suggestion-raison { font-size: 12.5px; color: var(--ink-2); }
+.suggestion-rang {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.suggestion-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: auto; }
 
 /* ---- groupe de colocataires ---- */
 .entete-groupe {
@@ -147,7 +169,6 @@
 }
 .barre-filtres h3 { display: block; margin: 0 0 4px; color: var(--ink-2); }
 .barre-filtres h3.second { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); }
-.indice { font-size: 12.5px; color: var(--ink-3); margin: 0 0 10px; max-width: 78ch; }
 .champ-groupe { width: 100%; max-width: 460px; margin: 0 0 14px; }
 
 .bascules { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -167,6 +188,10 @@
 .bascule b { font-family: var(--mono); font-size: 10.5px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .bascule:hover { border-color: var(--accent-ink); }
 .bascule:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+/* « Trier par compatibilité » et « Suggestion colocataire » sont éteintes tant qu'aucun
+   Pokémon n'est choisi : sans cette règle, elles paraissaient cliquables et ne l'étaient pas. */
+.bascule:disabled { opacity: .45; cursor: not-allowed; }
+.bascule:disabled:hover { border-color: var(--line-strong); }
 .bascule[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .bascule[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
 .bascule.reset[aria-pressed='true'] { background: var(--ink-2); border-color: var(--ink-2); }
@@ -190,53 +215,6 @@
 .titre-filtre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 0 0 4px; }
 .titre-filtre h3 { margin: 0; }
 .actions-filtre { display: flex; gap: 10px; margin-left: auto; }
-
-.mini-btn {
-  border: 0;
-  background: none;
-  padding: 0;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-}
-.mini-btn:hover { border-bottom-color: var(--accent-ink); }
-.mini-btn:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
-.mini-btn:disabled { color: var(--ink-3); cursor: not-allowed; border-bottom-color: transparent; }
-
-/* ---- sauvegarde des habitats ---- */
-.liste-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-
-.panneau-sauvegarde {
-  margin: 0 0 22px;
-  padding: 14px 20px;
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-}
-.panneau-sauvegarde h2 { display: block; margin: 0 0 4px; }
-
-.zone-sauvegarde {
-  width: 100%;
-  min-height: 160px;
-  resize: vertical;
-  padding: 10px 12px;
-  font-family: var(--mono);
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--ink);
-  background: var(--surface);
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
-}
-.zone-sauvegarde:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
-
-.actions-sauvegarde { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
-.message-sauvegarde { font-family: var(--mono); font-size: 11.5px; color: var(--accent-ink); }
 
 /* ---- compatibilité ---- */
 .jauge-compat { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); }

@@ -1,0 +1,127 @@
+/* La vue Villes : six sections, une par région, et la barre de réattribution. */
+
+.villes { padding-block: 20px 60px; }
+
+.villes-tete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 6px 0 16px;
+}
+.villes-tete h1 {
+  margin: 4px 0 0;
+  font-family: var(--display);
+  font-size: clamp(24px, 3.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.1;
+}
+
+/* Les bascules reprennent celles de la vue habitat : redéclarées ici pour que la page ne
+   dépende pas de l'ordre de chargement des feuilles (cf. PokedexPage.css). */
+.villes-bascules { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; }
+.villes .bascule {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 11px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+.villes .bascule b {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+.villes .bascule:hover { border-color: var(--accent-ink); }
+.villes .bascule:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.villes .bascule[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.villes .bascule[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
+.villes .bascule.reset[aria-pressed='true'] { background: var(--ink-2); border-color: var(--ink-2); }
+
+/* ---- barre de réattribution ---- */
+
+/* Collante, comme le panier du sélecteur d'habitat : on sélectionne en parcourant 366
+   vignettes, et la destination doit rester à portée de clic tout du long. */
+.barre-selection {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+.barre-selection-compte {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- une ville ---- */
+
+.ville-section {
+  margin: 0 0 30px;
+  padding: 14px 0 0;
+  border-top: 2px solid var(--teinte);
+}
+.ville-tete { margin: 0 0 12px; }
+
+.ville-nom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(19px, 2.4vw, 23px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+  color: var(--teinte);
+}
+.ville-nom svg { font-size: 20px; flex: 0 0 auto; }
+
+/* Ville-Nouvelle porte le nom que le joueur lui a donné en jeu : le champ ressemble au
+   titre qu'il remplace, sinon la ligne se lit comme un formulaire au milieu d'une page. */
+.champ-ville { max-width: 320px; }
+.champ-ville input {
+  font-family: var(--display);
+  font-size: clamp(19px, 2.4vw, 23px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--teinte);
+}
+
+.ville-resume { margin: 4px 0 0; font-size: 13.5px; color: var(--ink-2); max-width: 78ch; }
+.ville-compte {
+  margin: 4px 0 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.ville-vide { padding: 14px 0 4px; font-size: 13px; color: var(--ink-3); }
+
+.note-source { font-size: 12.5px; color: var(--ink-3); margin: 0 0 20px; max-width: 88ch; }
+.note-source b { color: var(--ink-2); font-weight: 600; }
+
+@media (max-width: 620px) {
+  .barre-selection { position: static; }
+}

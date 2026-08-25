@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { ICONE_HABITAT } from './Icones'
+import { ICONE_HABITAT, ICONE_VILLE } from './Icones'
 import { FR_TYPE_OBJET, typeObjet } from '../data/categories'
 import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
@@ -75,6 +75,9 @@ export const VignetteObjet = memo(function VignetteObjet({
  * @param note           ligne supplémentaire — sert à nommer l'habitat où il vit déjà
  * @param desactive      non sélectionnable (déjà placé ailleurs, ou groupe complet)
  * @param score          compatibilité en % avec le groupe en cours de composition
+ * @param ville          clé de ville, affichée sous le numéro (vue Villes, sélecteur)
+ * @param nomVille       son libellé — passé plutôt que résolu ici, à cause du renommage
+ * @param suggere        mis en avant : la suggestion de colocataire du moment
  */
 export const VignettePokemon = memo(function VignettePokemon({
   nom,
@@ -83,21 +86,30 @@ export const VignettePokemon = memo(function VignettePokemon({
   note = '',
   desactive = false,
   score = null,
+  ville = '',
+  nomVille = '',
+  suggere = false,
   onClick,
 }) {
   const habitat = habitatDe(nom)
   const brutHabitat = pokemonParNom.get(nom)?.habitat
   const IconeHab = ICONE_HABITAT[brutHabitat]
+  const IconeVil = ville ? ICONE_VILLE[ville] : null
   const numero = numeroAffiche(nom)
 
   return (
     <button
       type="button"
       className={
-        'chip mon' + (trouve ? ' hit' : '') + (selectionne ? ' sel' : '') + (desactive ? ' off' : '')
+        'chip mon' +
+        (trouve ? ' hit' : '') +
+        (selectionne ? ' sel' : '') +
+        (desactive ? ' off' : '') +
+        (suggere ? ' sug' : '')
       }
       title={
         `${frPokemon(nom)} (${nom})` +
+        (nomVille ? ` — ${nomVille}` : '') +
         (specialitesDe(nom).length ? ` — ${specialitesDe(nom).join(', ')}` : '') +
         (note ? ` — ${note}` : '')
       }
@@ -118,6 +130,12 @@ export const VignettePokemon = memo(function VignettePokemon({
           </>
         )}
       </span>
+      {ville && (
+        <span className={'chip-sub chip-ville ville-' + ville}>
+          {IconeVil && <IconeVil />}
+          {nomVille}
+        </span>
+      )}
       {/* Trois paliers plutôt qu'un dégradé : on choisit un colocataire, pas une nuance. */}
       {score !== null && (
         <span className={'chip-badge compat ' + (score >= 40 ? 'fort' : score >= 15 ? 'moyen' : 'faible')}>

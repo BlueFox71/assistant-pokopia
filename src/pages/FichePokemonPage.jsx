@@ -1,5 +1,6 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Modal, Select } from 'antd'
 import { ICONE_HABITAT, ICONE_VILLE } from '../components/Icones'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
 import { urlSpritePokemon } from '../data/images'
@@ -17,7 +18,17 @@ import {
   spritePokemon,
   typesDe,
 } from '../data'
-import { cleVilleDe, nomVille, useAttributions, useNomsVilles } from '../utils/villesStorage'
+import { FR_SOURCE_VILLE, VILLES, habitatsDeVille } from '../data/villes'
+import { habitatDuPokemon, useHabitats } from '../utils/habitatsStorage'
+import {
+  attribuerVille,
+  cleVilleDe,
+  nomVille,
+  reinitialiserVille,
+  useAttributions,
+  useNomsVilles,
+  villeDe,
+} from '../utils/villesStorage'
 import './Fiche.css'
 
 /** Objets mis en avant sur la fiche ; la vue habitat donne la liste complète. */
@@ -35,15 +46,27 @@ export default function FichePokemonPage() {
   const navigate = useNavigate()
   const attributions = useAttributions()
   const nomsVilles = useNomsVilles()
+  const listeHabitats = useHabitats()
   const nom = decodeURIComponent(nomBrut || '')
   const connu = pokemonParNom.has(nom)
+
+  /** L'enclos où ce Pokémon vit déjà, s'il en a un : on l'ouvre au lieu d'en composer un autre. */
+  const sonHabitat = connu ? habitatDuPokemon(listeHabitats, nom) : null
 
   const slugs = useMemo(() => (connu ? prefsParPokemon.get(nom) || [] : []), [connu, nom])
   const types = connu ? typesDe(nom) : []
   const specialites = connu ? specialitesDe(nom) : []
   const objets = useMemo(() => (connu ? objetsPourGroupe([nom], slugs) : []), [connu, nom, slugs])
 
-  const maVille = connu ? cleVilleDe(attributions, nom) : null
+  const { cle: maVille, source: sourceVille } = connu
+    ? villeDe(attributions, nom)
+    : { cle: null, source: null }
+
+  // Le dialogue de réattribution. `choix` part de la ville actuelle : on ouvre pour
+  // déplacer, pas pour repartir d'une case vide.
+  const [dialogueVille, setDialogueVille] = useState(false)
+  const [choix, setChoix] = useState(null)
+  const villeChoisie = choix || maVille
 
   /**
    * Les voisins de goût, séparés en deux : ceux de la MÊME VILLE d'abord.
@@ -156,14 +179,90 @@ export default function FichePokemonPage() {
             </p>
           )}
         </div>
-        <button
-          type="button"
-          className="ghost-btn"
-          onClick={() => navigate(`/habitat?pokemon=${encodeURIComponent(nom)}`)}
-        >
-          Composer un habitat →
-        </button>
+        <div className="fiche-actions">
+          <button
+            type="button"
+            className="ghost-btn"
+            onClick={() => {
+              setChoix(maVille)
+              setDialogueVille(true)
+            }}
+          >
+            Changer de ville
+          </button>
+          <button
+            type="button"
+            className="ghost-btn"
+            title={sonHabitat ? sonHabitat.nom : undefined}
+            onClick={() =>
+              navigate(
+                sonHabitat
+                  ? `/habitat?habitat=${encodeURIComponent(sonHabitat.id)}`
+                  : `/habitat?pokemon=${encodeURIComponent(nom)}`,
+              )
+            }
+          >
+            {sonHabitat ? 'Voir son habitat →' : 'Composer un habitat →'}
+          </button>
+        </div>
       </header>
+
+      {/* Réattribuer depuis la fiche : c'est ici qu'on se rend compte qu'un Pokémon n'est
+          pas dans la bonne ville — en lisant ses voisins de goût — et la page Villes
+          demandait d'y retourner pour le déplacer. */}
+      <Modal
+        title="Changer de ville"
+        open={dialogueVille}
+        onCancel={() => setDialogueVille(false)}
+        footer={null}
+      >
+        <p className="fiche-note">
+          {frPokemon(nom)} est actuellement à <b>{nomVille(nomsVilles, maVille)}</b> —{' '}
+          {FR_SOURCE_VILLE[sourceVille]}.
+          {sourceVille === 'habitat' &&
+            ' Aucune source ne publie la ville d’origine des Pokémon : celle-ci est une déduction, à corriger si vous l’avez croisé ailleurs.'}
+        </p>
+        <Select
+          className="champ-ville-fiche"
+          value={villeChoisie}
+          aria-label="Nouvelle ville"
+          onChange={setChoix}
+          options={VILLES.map((v) => {
+            const habitats = habitatsDeVille(v.cle)
+            return {
+              value: v.cle,
+              label: nomVille(nomsVilles, v.cle),
+              // Les habitats de la ville aident à choisir : c'est le climat de l'enclos.
+              title: habitats.length ? `Habitats : ${habitats.join(', ').toLowerCase()}` : v.resume,
+            }
+          })}
+        />
+        <div className="actions-dialogue">
+          <button
+            type="button"
+            className="ghost-btn primaire"
+            disabled={villeChoisie === maVille}
+            onClick={() => {
+              attribuerVille([nom], villeChoisie)
+              setDialogueVille(false)
+            }}
+          >
+            Attribuer à cette ville
+          </button>
+          {sourceVille === 'perso' && (
+            <button
+              type="button"
+              className="mini-btn"
+              onClick={() => {
+                reinitialiserVille([nom])
+                setDialogueVille(false)
+              }}
+            >
+              Annuler ma réattribution
+            </button>
+          )}
+        </div>
+      </Modal>
 
       <section className="fiche-bloc">
         <h2 className="etiquette">Ses {slugs.length} préférences</h2>

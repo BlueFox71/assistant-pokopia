@@ -36,6 +36,13 @@
   line-height: 1.1;
 }
 .fiche-tete .ghost-btn { margin-left: auto; }
+/* Deux boutons dans l'en-tête : c'est le groupe qui est poussé à droite, pas chacun d'eux. */
+.fiche-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+.fiche-actions .ghost-btn { margin-left: 0; }
+
+/* ---- dialogue « Changer de ville » ---- */
+.champ-ville-fiche { width: 100%; max-width: 280px; }
+.actions-dialogue { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 18px; }
 .fiche-sous { margin: 4px 0 0; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: .04em; }
 /* La ville est le seul lien de cette ligne : souligné au survol seulement, pour ne pas
    ressembler à l'habitat juste à côté, qui n'en est pas un. */
@@ -52,6 +59,65 @@
 .chip-tag.statique { cursor: default; display: inline-flex; align-items: baseline; gap: 6px; }
 .chip-tag.statique:hover { border-color: var(--line-strong); color: var(--ink); }
 .chip-tag.statique b { font-family: var(--mono); font-size: 10px; font-weight: 400; color: var(--ink-3); }
+
+/* ---- variantes de couleurs (fiche objet) ---- */
+
+/* L'état vient qualifier le titre : « Variantes de couleurs — Peinture et motifs ». */
+.etat-perso {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid var(--line-strong);
+  color: var(--ink-3);
+  text-transform: none;
+  letter-spacing: .04em;
+}
+.fiche-bloc > h2 svg { font-size: 13px; vertical-align: -2px; margin-right: 5px; }
+
+/* Les 18 teintes : une grille dense, parce qu'on les compare d'un coup d'œil plutôt qu'on
+   ne les lit une à une. La pastille porte la couleur relevée sur les vignettes du jeu. */
+.palette {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  /* Assez large pour que « Rouge + Jaune » tienne sur une ligne : sinon une teinte sur
+     deux monte d'une ligne et la grille ondule. */
+  grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+  gap: 4px;
+}
+.teinte {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.teinte-pastille {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--teinte);
+  /* Le blanc du jeu est presque celui de la page : un liseré, sinon la pastille disparaît. */
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / .28);
+}
+.teinte-nom { font-size: 13px; font-weight: 600; }
+.teinte-recette {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-align: right;
+}
+.baies { margin-top: 12px; }
+.baies a { color: var(--accent-ink); text-decoration: none; }
+.baies a:hover { text-decoration: underline; }
+/* La teinte secondaire, entre parenthèses : plus rare, donc plus discrète. */
+.baies i { font-style: normal; color: var(--ink-3); }
 
 .voisin { display: flex; flex-direction: column; gap: 2px; }
 .voisin-score {

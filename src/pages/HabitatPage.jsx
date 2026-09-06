@@ -2,7 +2,7 @@ import { useCallback, useDeferredValue, useMemo, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Input, Popconfirm, Select } from 'antd'
 import CarteHabitat from '../components/CarteHabitat'
-import { ICONE_CATEGORIE } from '../components/Icones'
+import { ICONE_CATEGORIE, ICONE_VILLE } from '../components/Icones'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
 import { urlSpritePokemon } from '../data/images'
 import {
@@ -17,9 +17,9 @@ import {
   habitatDe,
   numeroAffiche,
   objetParNom,
+  objetsCommuns,
   objetsPourGroupe,
   pokemonParNom,
-  preferencesCommunes,
   preferencesDuGroupe,
   prefParSlug,
   prefsParPokemon,
@@ -40,6 +40,7 @@ import {
   habitatDuPokemon,
   importerHabitats,
   modifierHabitat,
+  nomDeGroupe,
   supprimerHabitat,
   useHabitats,
 } from '../utils/habitatsStorage'
@@ -48,6 +49,9 @@ import './HabitatPage.css'
 
 /** Ordre d'affichage des catégories de confort dans le décompte. */
 const CATEGORIES_CONFORT = ['Relaxation', 'Decoration', 'Toy']
+
+/** Ce que montre le filtre de catégories quand aucune case n'est cochée. */
+const TYPES_VISIBLES_PAR_DEFAUT = new Set(TYPES_PAR_DEFAUT)
 
 /** Profondeur du classement de « Suggestion colocataire » : ce que « Suivant » peut parcourir. */
 const MAX_SUGGESTIONS = 8
@@ -61,7 +65,6 @@ const listerParam = (params) =>
     .filter((n) => pokemonParNom.has(n))
     .sort(comparerParNumero)
 
-const nomPropose = (noms) => noms.map(frPokemon).join(' + ')
 
 /**
  * L'onglet Habitat, en quatre états lus dans l'URL :
@@ -83,7 +86,12 @@ export default function HabitatPage() {
   // Filtres de la vue détaillée : conservés d'un habitat à l'autre, volontairement — on
   // compare souvent deux enclos avec le même filtre en tête.
   const [prefsActives, setPrefsActives] = useState(() => new Set())
-  const [typesActifs, setTypesActifs] = useState(() => new Set(TYPES_PAR_DEFAUT))
+  // Vide au départ, et vide veut dire « tout sauf fossiles et ressources » : le filtre part
+  // d'un état neutre, où cocher une catégorie restreint au lieu d'avoir à décocher les onze
+  // autres.
+  const [typesActifs, setTypesActifs] = useState(() => new Set())
+  // « Choses en commun » : une vue à part, qui court-circuite les deux filtres ci-dessus.
+  const [modeCommun, setModeCommun] = useState(false)
   const [saisie, setSaisie] = useState('')
 
   const idHabitat = params.get('habitat')
@@ -111,9 +119,9 @@ export default function HabitatPage() {
         habitats={listeHabitats}
         titre="Composer un habitat"
         sousTitre={`Choisissez de 1 à ${MAX_COLOCATAIRES} Pokémon. Ils partageront le même enclos, donc idéalement le même habitat idéal.`}
-        avecNom
-        onValider={(noms, nom) => {
-          const cree = creerHabitat(nom || nomPropose(noms), noms)
+        creation
+        onValider={(noms) => {
+          const cree = creerHabitat(noms)
           if (cree) allerVers({ habitat: cree.id })
         }}
         onAnnuler={() => allerVers({})}
@@ -130,7 +138,7 @@ export default function HabitatPage() {
         habitats={listeHabitats}
         deja={groupe}
         titre="Ajouter un colocataire"
-        sousTitre={`${nomPropose(groupe)} — ${places} place${places > 1 ? 's' : ''} restante${places > 1 ? 's' : ''}.`}
+        sousTitre={`${nomDeGroupe(groupe)} — ${places} place${places > 1 ? 's' : ''} restante${places > 1 ? 's' : ''}.`}
         onValider={(noms) => {
           const complet = [...groupe, ...noms].sort(comparerParNumero)
           if (habitat) {
@@ -170,6 +178,8 @@ export default function HabitatPage() {
       setPrefsActives={setPrefsActives}
       typesActifs={typesActifs}
       setTypesActifs={setTypesActifs}
+      modeCommun={modeCommun}
+      setModeCommun={setModeCommun}
       onAjouter={() =>
         allerVers(habitat ? { habitat: habitat.id, choisir: '1' } : { pokemon: groupe.join(','), choisir: '1' })
       }
@@ -179,13 +189,12 @@ export default function HabitatPage() {
         else if (suivant.length) ouvrirGroupe(suivant)
         else allerVers({})
       }}
-      onRenommer={(nom) => habitat && modifierHabitat(habitat.id, { nom })}
       onSupprimer={() => {
         if (habitat) supprimerHabitat(habitat.id)
         allerVers({})
       }}
       onEnregistrer={() => {
-        const cree = creerHabitat(nomPropose(groupe), groupe)
+        const cree = creerHabitat(groupe)
         if (cree) allerVers({ habitat: cree.id })
       }}
       onRetour={() => allerVers({})}
@@ -198,10 +207,54 @@ export default function HabitatPage() {
 /* ================================================================= liste */
 
 function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
+  const attributions = useAttributions()
+  const nomsVilles = useNomsVilles()
   const loges = new Set(habitats.flatMap((h) => h.pokemon))
   const sansHabitat = prefsParPokemon.size - loges.size
   const [sauvegarde, setSauvegarde] = useState(null)
   const [message, setMessage] = useState('')
+  const [saisie, setSaisie] = useState('')
+
+  const saisieDifferee = useDeferredValue(saisie)
+  const terme = normaliser(saisieDifferee.trim())
+
+  /**
+   * Les habitats rangés par ville, dans l'ordre où l'île se découvre.
+   *
+   * La ville d'un habitat est celle de ses colocataires — quand ils la partagent. Un enclos
+   * mixte n'est pas rangé de force sous la ville de son premier occupant : il finit dans une
+   * section à part, parce que le ranger ailleurs cacherait justement ce qu'on veut voir.
+   * Les sections vides ne s'affichent pas : six titres pour deux habitats se liraient comme
+   * une grille de cases à remplir.
+   */
+  const sections = useMemo(() => {
+    const retenus = terme
+      ? habitats.filter(
+          (h) =>
+            correspond(terme, h.nom) ||
+            h.pokemon.some((n) => correspond(terme, n, frPokemon(n))),
+        )
+      : habitats
+
+    const parCle = new Map(VILLES.map((v) => [v.cle, []]))
+    const melees = []
+    for (const h of retenus) {
+      const villes = new Set(h.pokemon.map((n) => cleVilleDe(attributions, n)))
+      if (villes.size === 1) parCle.get([...villes][0])?.push(h)
+      else melees.push(h)
+    }
+
+    const liste = VILLES.filter((v) => parCle.get(v.cle).length).map((v) => ({
+      cle: v.cle,
+      nom: nomVille(nomsVilles, v.cle),
+      habitats: parCle.get(v.cle),
+    }))
+    if (melees.length)
+      liste.push({ cle: null, nom: 'Villes mêlées', habitats: melees })
+    return liste
+  }, [habitats, attributions, nomsVilles, terme])
+
+  const trouves = sections.reduce((n, s) => n + s.habitats.length, 0)
 
   return (
     <div className="wrap habitat">
@@ -296,18 +349,65 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
         </section>
       )}
 
-      {habitats.length ? (
-        <div className="grille-habitats">
-          {habitats.map((h) => (
-            <CarteHabitat key={h.id} habitat={h} onOuvrir={onOuvrir} onSupprimer={onSupprimer} />
-          ))}
+      {habitats.length > 0 && (
+        <div className="liste-recherche">
+          <Input
+            allowClear
+            value={saisie}
+            onChange={(e) => setSaisie(e.target.value)}
+            placeholder="Chercher un Pokémon, ou un habitat par son nom…"
+            aria-label="Chercher un Pokémon parmi les habitats"
+          />
+          {terme && (
+            <span className="liste-recherche-compte">
+              {trouves} habitat{trouves > 1 ? 's' : ''} sur {habitats.length}
+            </span>
+          )}
         </div>
-      ) : (
+      )}
+
+      {!habitats.length ? (
         <div className="vide">
           <p>
             Rien d’enregistré pour l’instant. Composez-en un, ou partez d’une fiche du{' '}
             <Link to="/pokedex">Pokédex</Link>.
           </p>
+        </div>
+      ) : sections.length ? (
+        sections.map((section) => {
+          const IconeVil = section.cle ? ICONE_VILLE[section.cle] : null
+          return (
+            <section
+              key={section.cle || 'melees'}
+              className={'groupe-ville' + (section.cle ? '' : ' melees')}
+              style={section.cle ? { '--teinte': `var(--v-${section.cle})` } : undefined}
+            >
+              <header className="groupe-ville-tete">
+                <h2 className="groupe-ville-nom">
+                  {IconeVil && <IconeVil />}
+                  {section.nom}
+                </h2>
+                <p className="groupe-ville-compte">
+                  {section.habitats.length} habitat{section.habitats.length > 1 ? 's' : ''}
+                  {section.cle ? '' : ' · colocataires de villes différentes'}
+                </p>
+              </header>
+              <div className="grille-habitats">
+                {section.habitats.map((h) => (
+                  <CarteHabitat
+                    key={h.id}
+                    habitat={h}
+                    onOuvrir={onOuvrir}
+                    onSupprimer={onSupprimer}
+                  />
+                ))}
+              </div>
+            </section>
+          )
+        })
+      ) : (
+        <div className="vide">
+          <p>Aucun habitat ne loge « {saisieDifferee.trim()} ».</p>
         </div>
       )}
     </div>
@@ -321,13 +421,12 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
  * habitat existe : on compose en général pour les Pokémon qui n'ont pas encore de place,
  * et les 366 vignettes d'un coup noient les quelques-uns qui restent à loger.
  */
-function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = false, onValider, onAnnuler }) {
+function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, creation = false, onValider, onAnnuler }) {
   const attributions = useAttributions()
   const nomsVilles = useNomsVilles()
 
   const [choisis, setChoisis] = useState([])
   const [saisie, setSaisie] = useState('')
-  const [nom, setNom] = useState('')
   const [sansHabitatSeul, setSansHabitatSeul] = useState(() => habitats.length > 0)
   const [villeFiltre, setVilleFiltre] = useState(null)
   // Éteint par défaut : trier par compatibilité reclasse la liste à chaque choix, si bien
@@ -346,6 +445,24 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
   /** Le groupe tel qu'il est à cet instant : les colocataires déjà là, plus les choisis. */
   const groupeEnCours = useMemo(() => [...deja, ...choisis], [deja, choisis])
   const tauxGroupe = compatibilite(groupeEnCours)
+
+  /**
+   * Les villes du groupe en cours.
+   *
+   * Un enclos est posé dans UNE ville : réunir des Pokémon de plusieurs régions demande de
+   * les y déplacer d'abord. L'avertissement se lève dès le deuxième choix, pendant qu'on
+   * compose — c'est là qu'il sert, pas une fois l'habitat enregistré. Il n'interdit rien :
+   * le rattachement reste souvent une déduction (cf. src/data/villes.js), et c'est au
+   * joueur de savoir où il a vu ses Pokémon.
+   */
+  const villesDuGroupe = useMemo(() => {
+    const par = new Map()
+    for (const n of groupeEnCours) {
+      const cle = cleVilleDe(attributions, n)
+      par.set(cle, [...(par.get(cle) || []), n])
+    }
+    return [...par]
+  }, [groupeEnCours, attributions])
 
   const liste = useMemo(() => {
     let noms = [...prefsParPokemon.keys()].filter((n) => !deja.includes(n))
@@ -465,16 +582,6 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
         </div>
 
         <div className="panier-actions">
-          {avecNom && (
-            <Input
-              value={nom}
-              onChange={(e) => setNom(e.target.value)}
-              placeholder={tries.length ? nomPropose(tries) : 'Nom de l’habitat'}
-              aria-label="Nom de l’habitat"
-              maxLength={40}
-              style={{ width: 240 }}
-            />
-          )}
           {tauxGroupe !== null && (
             <span
               className={'jauge-compat ' + (tauxGroupe >= 40 ? 'fort' : tauxGroupe >= 15 ? 'moyen' : 'faible')}
@@ -490,12 +597,23 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, avecNom = fal
             type="button"
             className="ghost-btn primaire"
             disabled={!choisis.length}
-            onClick={() => onValider(tries, nom.trim())}
+            onClick={() => onValider(tries)}
           >
-            {avecNom ? 'Créer l’habitat' : 'Ajouter'}
+            {creation ? 'Créer l’habitat' : 'Ajouter'}
           </button>
         </div>
       </div>
+
+      {villesDuGroupe.length > 1 && (
+        <p className="avertissement">
+          Ce groupe mêle {villesDuGroupe.length} villes —{' '}
+          {villesDuGroupe
+            .map(([cle, noms]) => `${nomVille(nomsVilles, cle)} (${noms.map(frPokemon).join(', ')})`)
+            .join(', ')}
+          . Un enclos se pose dans une seule ville : il faudra y déplacer les autres, depuis
+          leur fiche ou la page Villes.
+        </p>
+      )}
 
       <div className="selecteur-filtres">
         <div className="champ-groupe">
@@ -672,9 +790,10 @@ function VueHabitat({
   setPrefsActives,
   typesActifs,
   setTypesActifs,
+  modeCommun,
+  setModeCommun,
   onAjouter,
   onRetirer,
-  onRenommer,
   onSupprimer,
   onEnregistrer,
   onRetour,
@@ -684,14 +803,28 @@ function VueHabitat({
   const saisieDifferee = useDeferredValue(saisie)
   const terme = normaliser(saisieDifferee.trim())
 
+  const solo = groupe.length === 1
+  // Seul, un Pokémon n'a rien « en commun » avec personne : la bascule disparaît, et son
+  // état — qui survit d'un habitat à l'autre comme les autres filtres — cesse d'agir.
+  const commun = modeCommun && !solo
+
   const toutesLesPrefs = useMemo(() => preferencesDuGroupe(groupe), [groupe])
   // Le filtre survit à un changement de groupe : les préférences retenues peuvent alors
   // n'appartenir à personne. On retombe sur « toutes » plutôt que d'afficher une liste
   // vide sans bouton coché pour l'expliquer.
   const retenues = toutesLesPrefs.filter((s) => prefsActives.has(s))
-  const slugsActifs = retenues.length ? retenues : toutesLesPrefs
+  const slugsActifs = commun || !retenues.length ? toutesLesPrefs : retenues
 
   const objets = useMemo(() => objetsPourGroupe(groupe, slugsActifs), [groupe, slugsActifs])
+  // Comme partout ailleurs, fossiles et ressources restent dehors : le terrain d'entente
+  // qu'on cherche est ce qu'on va POSER dans l'enclos, et un minerai ne meuble rien.
+  const nbCommuns = useMemo(
+    () =>
+      solo
+        ? 0
+        : objetsCommuns(groupe).filter((nom) => TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(nom))).length,
+    [groupe, solo],
+  )
 
   /** Décompte par catégorie de meuble, calculé avant filtrage : les bascules le montrent. */
   const parType = useMemo(() => {
@@ -700,10 +833,21 @@ function VueHabitat({
     return compte
   }, [objets])
 
+  // Aucune catégorie cochée = toutes sauf fossiles et ressources.
+  const typesRetenus = typesActifs.size ? typesActifs : TYPES_VISIBLES_PAR_DEFAUT
+
   const objetsFiltres = useMemo(() => {
-    const gardes = objets.filter((o) => typesActifs.has(typeDe(o.nom)))
+    // « Choses en commun » remplace le filtre de catégories, sans lever le tri par défaut :
+    // fossiles et ressources en sont exclus comme partout ailleurs.
+    const gardes = commun
+      ? objets.filter(
+          (o) =>
+            o.pokemonSatisfaits.length === groupe.length &&
+            TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(o.nom)),
+        )
+      : objets.filter((o) => typesRetenus.has(typeDe(o.nom)))
     return terme ? gardes.filter((o) => correspond(terme, o.nom, frObjet(o.nom))) : gardes
-  }, [objets, typesActifs, terme])
+  }, [objets, typesRetenus, terme, commun, groupe.length])
 
   const confort = useMemo(() => {
     const compte = { Relaxation: 0, Decoration: 0, Toy: 0 }
@@ -714,13 +858,13 @@ function VueHabitat({
     return compte
   }, [objetsFiltres])
 
-  const solo = groupe.length === 1
   const taux = compatibilite(groupe)
-  const communes = preferencesCommunes(groupe)
   const zones = [...new Set(groupe.map(habitatDe).filter(Boolean))]
-  const portee = retenues.length
-    ? `${slugsActifs.length} préférence${slugsActifs.length > 1 ? 's' : ''} sur ${toutesLesPrefs.length}`
-    : `${toutesLesPrefs.length} préférences${solo ? '' : ' cumulées'}`
+  const portee = commun
+    ? `communs aux ${groupe.length} colocataires`
+    : retenues.length
+      ? `${slugsActifs.length} préférence${slugsActifs.length > 1 ? 's' : ''} sur ${toutesLesPrefs.length}`
+      : `${toutesLesPrefs.length} préférences${solo ? '' : ' cumulées'}`
   const masques = objets.length - objetsFiltres.length
 
   return (
@@ -732,15 +876,7 @@ function VueHabitat({
       <div className="entete-groupe">
         <div className="entete-identite">
           {habitat ? (
-            <Input
-              key={habitat.id}
-              className="champ-nom"
-              defaultValue={habitat.nom}
-              maxLength={40}
-              aria-label="Nom de l’habitat"
-              onBlur={(e) => onRenommer(e.target.value.trim() || habitat.nom)}
-              onPressEnter={(e) => e.target.blur()}
-            />
+            <h1 className="nom-habitat">{nomDeGroupe(groupe)}</h1>
           ) : (
             <span className="etiquette">Groupe libre, non enregistré</span>
           )}
@@ -815,11 +951,11 @@ function VueHabitat({
 
       {taux !== null && (
         <p className={'bandeau-compat ' + (taux >= 40 ? 'fort' : taux >= 15 ? 'moyen' : 'faible')}>
-          <strong>{taux} % de compatibilité</strong> — recouvrement moyen des préférences, paire
-          par paire.{' '}
-          {communes.length
-            ? `${communes.length} préférence${communes.length > 1 ? 's' : ''} appréciée${communes.length > 1 ? 's' : ''} par tout le groupe : ${communes.map((s) => prefParSlug.get(s).fr).join(', ')}.`
-            : 'Aucune préférence ne fait l’unanimité : chaque objet ne contentera qu’une partie du groupe.'}
+          <strong>{taux} % de compatibilité</strong> — recouvrement moyen des objets appréciés,
+          paire par paire.{' '}
+          {nbCommuns
+            ? `${nbCommuns} objet${nbCommuns > 1 ? 's' : ''} content${nbCommuns > 1 ? 'ent' : 'e'} tout le groupe à la fois — la bascule « Choses en commun » ne montre que ceux-là.`
+            : 'Aucun objet ne fait l’unanimité : chaque objet posé ne contentera qu’une partie du groupe.'}
         </p>
       )}
 
@@ -847,24 +983,25 @@ function VueHabitat({
             <button
               type="button"
               className="mini-btn"
-              disabled={typesActifs.size === TYPES_OBJET.length}
-              onClick={() => setTypesActifs(new Set(TYPES_OBJET))}
+              disabled={commun || typesActifs.size === 0}
+              onClick={() => setTypesActifs(new Set())}
             >
-              Tout sélectionner
+              Réinitialiser
             </button>
             <button
               type="button"
               className="mini-btn"
-              disabled={typesActifs.size === 0}
-              onClick={() => setTypesActifs(new Set())}
+              disabled={commun || typesActifs.size === TYPES_OBJET.length}
+              onClick={() => setTypesActifs(new Set(TYPES_OBJET))}
             >
-              Tout désélectionner
+              Tout sélectionner
             </button>
           </span>
         </div>
         <p className="indice">
-          Les fossiles et les ressources — matériaux, peintures, revêtements, disques — sont
-          masqués par défaut : ils ne meublent rien.
+          {commun
+            ? '« Choses en commun » montre le terrain d’entente du groupe : les catégories ne s’appliquent pas, hors fossiles et ressources qui restent masqués.'
+            : 'Aucune catégorie cochée = toutes, sauf les fossiles et les ressources — matériaux, peintures, revêtements, disques —, qui ne meublent rien. Cocher restreint à ce qui est coché.'}
         </p>
         <div className="bascules">
           {TYPES_OBJET.map((type) => {
@@ -875,7 +1012,8 @@ function VueHabitat({
               type="button"
               className="bascule teintee"
               style={{ '--teinte': `var(--c-${type})`, '--teinte-fond': `var(--c-${type}-fond)` }}
-              aria-pressed={typesActifs.has(type)}
+              aria-pressed={!commun && typesActifs.has(type)}
+              disabled={commun}
               onClick={() =>
                 setTypesActifs((precedent) => {
                   const suivant = new Set(precedent)
@@ -894,17 +1032,31 @@ function VueHabitat({
         <h3 className="etiquette second">Filtrer par préférence</h3>
         <p className="indice">
           Cumulatif : chaque préférence ajoutée élargit la liste. Aucune sélection = toutes.
-          {solo ? '' : ` Le compteur indique combien des ${groupe.length} colocataires l’apprécient.`}
+          {solo
+            ? ''
+            : ` Le compteur indique combien des ${groupe.length} colocataires l’apprécient. « Choses en commun » sort du cumul : elle ne garde que les objets appréciés par tout le monde, fossiles et ressources exclus.`}
         </p>
         <div className="bascules">
           <button
             type="button"
             className="bascule reset"
-            aria-pressed={retenues.length === 0}
+            aria-pressed={!commun && retenues.length === 0}
+            disabled={commun}
             onClick={() => setPrefsActives(new Set())}
           >
             Toutes
           </button>
+          {!solo && (
+            <button
+              type="button"
+              className="bascule commun"
+              aria-pressed={commun}
+              title={`Les objets appréciés par les ${groupe.length} colocataires`}
+              onClick={() => setModeCommun((precedent) => !precedent)}
+            >
+              Choses en commun <b>{nbCommuns}</b>
+            </button>
+          )}
           {toutesLesPrefs.map((slug) => {
             const amateurs = amateursDe(groupe, slug)
             return (
@@ -912,7 +1064,8 @@ function VueHabitat({
                 key={slug}
                 type="button"
                 className="bascule"
-                aria-pressed={prefsActives.has(slug)}
+                aria-pressed={!commun && prefsActives.has(slug)}
+                disabled={commun}
                 title={amateurs.map(frPokemon).join(', ')}
                 onClick={() =>
                   setPrefsActives((precedent) => {

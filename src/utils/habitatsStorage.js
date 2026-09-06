@@ -1,23 +1,38 @@
 import { useSyncExternalStore } from 'react'
-import { MAX_COLOCATAIRES, pokemonParNom } from '../data'
+import { MAX_COLOCATAIRES, comparerParNumero, frPokemon, pokemonParNom } from '../data'
 
 /**
  * Les habitats enregistrés, dans le localStorage du navigateur.
  *
- * Un habitat = un nom et de un à quatre Pokémon. Rien d'autre n'est stocké : les objets,
- * les préférences et les avertissements se recalculent à l'affichage, donc un habitat
+ * Un habitat = de un à quatre Pokémon. Rien d'autre n'est stocké : le nom, les objets, les
+ * préférences et les avertissements se recalculent à l'affichage, donc un habitat
  * enregistré aujourd'hui reste juste si les listes de Serebii bougent demain.
+ *
+ * Le nom EST la liste de ses habitants — « Onix + Coconfort » — et se recalcule à chaque
+ * lecture comme à chaque écriture. Il a été renommable un temps, et un nom saisi à la main
+ * mentait dès qu'on retirait un colocataire : la carte annonçait encore quelqu'un qui n'y
+ * vivait plus. Le dériver retire la question.
  *
  * Le store est partagé (`useSyncExternalStore`) parce que deux vues le lisent en même
  * temps : la liste des habitats et le sélecteur, qui grise les Pokémon déjà placés.
  */
+
+/** Le nom d'un groupe : ses Pokémon dans l'ordre du Pokédex. */
+export const nomDeGroupe = (noms) =>
+  [...noms].sort(comparerParNumero).map(frPokemon).join(' + ')
 
 const CLE = 'pokopia:habitats'
 
 let cache = null
 const abonnes = new Set()
 
-/** Une entrée valide : un id, un nom, et des Pokémon connus, sans doublon, au plus quatre. */
+/**
+ * Une entrée valide : un id et des Pokémon connus, sans doublon, au plus quatre.
+ *
+ * Tout passe par ici — la lecture du disque, la création, chaque modification — donc c'est
+ * le seul endroit où le nom doit être calculé pour ne jamais diverger. Un `nom` reçu, d'un
+ * import ou d'un stockage écrit par une version précédente, est ignoré.
+ */
 function assainir(brut) {
   if (!brut || typeof brut !== 'object') return null
   const pokemon = Array.isArray(brut.pokemon)
@@ -26,7 +41,7 @@ function assainir(brut) {
   if (!pokemon.length) return null
   return {
     id: typeof brut.id === 'string' && brut.id ? brut.id : nouvelId(),
-    nom: typeof brut.nom === 'string' && brut.nom.trim() ? brut.nom.trim() : 'Habitat',
+    nom: nomDeGroupe(pokemon),
     pokemon,
     creeLe: typeof brut.creeLe === 'number' ? brut.creeLe : Date.now(),
   }
@@ -76,8 +91,8 @@ export const habitatDuPokemon = (liste, nom) => liste.find((h) => h.pokemon.incl
 
 /* ---------- écriture ---------- */
 
-export function creerHabitat(nom, pokemon) {
-  const habitat = assainir({ id: nouvelId(), nom, pokemon, creeLe: Date.now() })
+export function creerHabitat(pokemon) {
+  const habitat = assainir({ id: nouvelId(), pokemon, creeLe: Date.now() })
   if (!habitat) return null
   ecrireDisque([...habitats(), habitat])
   return habitat

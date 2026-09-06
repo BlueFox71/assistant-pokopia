@@ -13,7 +13,7 @@
  *     données changent.
  */
 
-/** Ordre d'affichage des bascules ; les deux dernières sont les seules décochées. */
+/** Ordre d'affichage des bascules ; les deux dernières sont hors de TYPES_PAR_DEFAUT. */
 export const TYPES_OBJET = [
   'lit',
   'chaise',
@@ -45,8 +45,8 @@ export const FR_TYPE_OBJET = {
 }
 
 /**
- * Masquées par défaut : ni les fossiles ni les matériaux ne meublent un enclos. Elles
- * restent à un clic, pour qui cherche à compléter sa collection de fossiles.
+ * Ce qu'on montre quand aucune catégorie n'est cochée : ni les fossiles ni les matériaux ne
+ * meublent un enclos. Ils restent à un clic, pour qui cherche à compléter sa collection.
  */
 export const TYPES_PAR_DEFAUT = TYPES_OBJET.filter((t) => t !== 'ressource' && t !== 'fossile')
 

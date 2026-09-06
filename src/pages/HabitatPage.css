@@ -27,6 +27,48 @@
   line-height: 1.1;
 }
 
+.liste-recherche { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 22px; }
+.liste-recherche .ant-input-affix-wrapper, .liste-recherche .ant-input { flex: 1 1 300px; max-width: 460px; }
+.liste-recherche-compte {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- les habitats rangés par ville ---- */
+
+/* Même dessin que les sections de la page Villes, redéclaré ici : leur feuille n'est pas
+   chargée sur cet onglet (cf. la note des bascules dans VillesPage.css). */
+.groupe-ville { margin: 0 0 30px; padding: 14px 0 0; border-top: 2px solid var(--teinte); }
+/* Les enclos mixtes n'ont pas de ville, donc pas de teinte : le liseré reste neutre. */
+.groupe-ville.melees { --teinte: var(--line-strong); }
+.groupe-ville-tete { margin: 0 0 12px; }
+.groupe-ville-nom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(17px, 2.1vw, 20px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+  color: var(--teinte);
+}
+.groupe-ville.melees .groupe-ville-nom { color: var(--ink-2); }
+.groupe-ville-nom svg { font-size: 18px; flex: 0 0 auto; }
+.groupe-ville-compte {
+  margin: 4px 0 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
 /* Les cartes d’habitat vivent dans components/CarteHabitat.css : l’accueil les affiche aussi. */
 
 /* ---- sélecteur ---- */
@@ -112,8 +154,16 @@
   border-radius: var(--radius);
 }
 .entete-identite { display: flex; flex-direction: column; gap: 12px; }
-.champ-nom { max-width: 320px; }
-.champ-nom input { font-family: var(--display); font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+/* Le nom d'un habitat est la liste de ses habitants, calculée : c'est un titre, plus un
+   champ. Il garde la taille qu'avait la saisie, la ligne n'ayant pas changé de rôle. */
+.nom-habitat {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+}
 .entete-actions { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .note-max { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
 
@@ -195,6 +245,13 @@
 .bascule[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .bascule[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
 .bascule.reset[aria-pressed='true'] { background: var(--ink-2); border-color: var(--ink-2); }
+/* « Choses en commun » n'est pas une préférence de plus mais une vue à part : la seconde
+   teinte la distingue de la rangée de bascules cumulatives au milieu de laquelle elle vit. */
+.bascule.commun { border-color: var(--second); color: var(--second); }
+.bascule.commun b { color: var(--second); opacity: .75; }
+.bascule.commun:hover { border-color: var(--second); background: var(--second-soft); }
+.bascule.commun[aria-pressed='true'] { background: var(--second); border-color: var(--second); color: var(--on-accent); }
+.bascule.commun[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
 
 /* ---- résultats ---- */
 .resultats { margin-top: 18px; }

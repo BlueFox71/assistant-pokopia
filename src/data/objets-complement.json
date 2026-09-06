@@ -1,0 +1,29 @@
+{
+ "_lisezMoi": "Les objets que l'extraction d'origine n'a pas rapportés. objets.json se construit à partir des objets cités par preferences.json : un objet qui ne coche aucune préférence n'y entre jamais, quand bien même le jeu le propose. Ce fichier les rattrape pour que le catalogue soit complet et cherchable. Sauf Mud, aucun ne coche de préférence : ils ne seront recommandés dans aucun habitat, et c'est correct — sans préférence, ils ne contentent personne. Relevé via scripts/auditer-objets-serebii.mjs, qui signale tout nouvel écart. `frReleve` dit si le nom français vient d'un relevé en jeu (Pokékalos) ou s'il est de notre fait, faute de source.",
+ "_sources": {
+  "catalogue": "https://www.serebii.net/pokemonpokopia/furniture.shtml",
+  "nomsFr": "https://www.pokekalos.fr/jeux/switch2/pokopia/objets.html"
+ },
+ "objets": [
+  { "en": "Mud", "fr": "Boue", "categorie": null, "sprite": null, "frReleve": false },
+  { "en": "Side table", "fr": "Guéridon", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Wooden table", "fr": "Table en bois", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Counter", "fr": "Comptoir", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Wall-mounted table", "fr": "Table comptoir", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Pokémon Center counter", "fr": "Comptoir du Centre Pokémon", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Kitchen table", "fr": "Comptoir de cuisine", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Push cart", "fr": "Chariot", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Exhibition stand", "fr": "Présentoir", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Mysterious pedestal", "fr": "Piédestal mystérieux", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Resort table", "fr": "Table balnéaire", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Poké Ball table", "fr": "Table Poké Ball", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Office table", "fr": "Table de bureau", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Avalugg Table", "fr": "Table Séracrawl", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Flower table", "fr": "Table fleur", "categorie": "Decoration", "sprite": null, "frReleve": true },
+  { "en": "Cloud table", "fr": "Table nuage", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Portal pod", "fr": "Dispositif de stockage", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Safe", "fr": "Coffre-fort", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Big treasure chest", "fr": "Coffre au trésor imposant", "categorie": null, "sprite": null, "frReleve": true },
+  { "en": "Worn treasure chest", "fr": "Coffre au trésor usé", "categorie": null, "sprite": null, "frReleve": false }
+ ]
+}

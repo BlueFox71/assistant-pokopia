@@ -1,25 +1,25 @@
 [
  {
   "en": "Adrenaline Orb",
-  "fr": "Orbe Frisson",
+  "fr": "Orbe Frousse",
   "categorie": null,
   "sprite": "adrenalineorb"
  },
  {
   "en": "Adventure kit",
-  "fr": "Kit d'aventure",
+  "fr": "Sac d'exploration",
   "categorie": "Toy",
   "sprite": "adventurekit"
  },
  {
   "en": "Aether Paradise",
-  "fr": "Paradis Æther",
+  "fr": "Paradis Ether",
   "categorie": null,
   "sprite": "aetherparadise"
  },
  {
   "en": "Afternoon tea set",
-  "fr": "Goûter d'après-midi",
+  "fr": "Assortiment de mignardises",
   "categorie": "Decoration",
   "sprite": "afternoonteaset"
  },
@@ -61,7 +61,7 @@
  },
  {
   "en": "Antique clock",
-  "fr": "Horloge antique",
+  "fr": "Pendule antique",
   "categorie": "Toy",
   "sprite": "antiqueclock"
  },
@@ -127,13 +127,13 @@
  },
  {
   "en": "Arrow sign (left)",
-  "fr": "Panneau fléché (gauche)",
+  "fr": "Écriteau fléché (gauche)",
   "categorie": "Decoration",
   "sprite": "arrowsign(left)"
  },
  {
   "en": "Arrow sign (right)",
-  "fr": "Panneau fléché (droite)",
+  "fr": "Écriteau fléché (droite)",
   "categorie": "Decoration",
   "sprite": "arrowsign(right)"
  },
@@ -145,13 +145,13 @@
  },
  {
   "en": "Auspicious Armor",
-  "fr": "Armure Bénie",
+  "fr": "Armure de la Fortune",
   "categorie": "Decoration",
   "sprite": "auspiciousarmor"
  },
  {
   "en": "Balloons",
-  "fr": "Ballons",
+  "fr": "Ballons de baudruche",
   "categorie": "Toy",
   "sprite": "balloons"
  },
@@ -163,7 +163,7 @@
  },
  {
   "en": "Bathtime set",
-  "fr": "Nécessaire de bain",
+  "fr": "Produit de bain",
   "categorie": "Toy",
   "sprite": "bathtimeset"
  },
@@ -175,19 +175,19 @@
  },
  {
   "en": "Battle! (Gym Leader Battle)",
-  "fr": "Combat ! (Champion d'Arène)",
+  "fr": "Combat (combat d'Arène)",
   "categorie": null,
   "sprite": "battle!(gymleaderbattle)"
  },
  {
   "en": "Battle! (Gym Leader) 1",
-  "fr": "Combat ! (Champion d'Arène) 1",
+  "fr": "Combat (Champion d'Arène) 1",
   "categorie": null,
   "sprite": "battle!(gymleader)1"
  },
  {
   "en": "Battle! (Gym Leader) 2",
-  "fr": "Combat ! (Champion d'Arène) 2",
+  "fr": "Combat (Champion d'Arène) 2",
   "categorie": null,
   "sprite": "battle!(gymleader)2"
  },
@@ -205,13 +205,13 @@
  },
  {
   "en": "Beach volleyball set",
-  "fr": "Kit de beach-volley",
+  "fr": "Kit de volley-ball de plage",
   "categorie": "Toy",
   "sprite": "beachvolleyballset"
  },
  {
   "en": "Beautiful flower",
-  "fr": "Belle fleur",
+  "fr": "Fleurs sublimes",
   "categorie": null,
   "sprite": "beautifulflower"
  },
@@ -247,13 +247,13 @@
  },
  {
   "en": "Bell Tower",
-  "fr": "Tour Cendrée",
+  "fr": "Tour Carillon",
   "categorie": null,
   "sprite": "belltower"
  },
  {
   "en": "Berry basket",
-  "fr": "Panier de Baies",
+  "fr": "Paniers à Baies",
   "categorie": "Decoration",
   "sprite": "berrybasket"
  },
@@ -289,13 +289,13 @@
  },
  {
   "en": "Berry print",
-  "fr": "Motif Baies",
+  "fr": "Motif Baie",
   "categorie": null,
   "sprite": "berryprint"
  },
  {
   "en": "Berry print (wallpaper)",
-  "fr": "Motif Baies (papier peint)",
+  "fr": "Motif Baie (papier peint)",
   "categorie": null,
   "sprite": "berryprint(wallpaper)"
  },
@@ -307,19 +307,19 @@
  },
  {
   "en": "Berry table lamp",
-  "fr": "Lampe de table Baie",
+  "fr": "Lampe de chevet Baie",
   "categorie": "Decoration",
   "sprite": "berrytablelamp"
  },
  {
   "en": "Berry wall decoration",
-  "fr": "Décoration murale Baies",
+  "fr": "Décoration murale Baie",
   "categorie": "Decoration",
   "sprite": "berrywalldecoration"
  },
  {
   "en": "Big Nugget",
-  "fr": "Grosse Pépite",
+  "fr": "Maxi pépite",
   "categorie": "Toy",
   "sprite": "bignugget"
  },
@@ -331,7 +331,7 @@
  },
  {
   "en": "Big drum",
-  "fr": "Grosse caisse",
+  "fr": "Gros tambour",
   "categorie": "Toy",
   "sprite": "bigdrum"
  },
@@ -343,13 +343,13 @@
  },
  {
   "en": "Big swim ring",
-  "fr": "Grande bouée",
+  "fr": "Bouée géante",
   "categorie": "Relaxation",
   "sprite": "bigswimring"
  },
  {
   "en": "Bike",
-  "fr": "Vélo",
+  "fr": "Bicyclette",
   "categorie": "Toy",
   "sprite": "bike"
  },
@@ -373,7 +373,7 @@
  },
  {
   "en": "Blender",
-  "fr": "Mixeur",
+  "fr": "Blender",
   "categorie": "Toy",
   "sprite": "blender"
  },
@@ -397,7 +397,7 @@
  },
  {
   "en": "Boo-in-the-box",
-  "fr": "Diable en boîte",
+  "fr": "Boîte à surprise",
   "categorie": "Toy",
   "sprite": "boo-in-the-box"
  },
@@ -427,7 +427,7 @@
  },
  {
   "en": "Bouncy blue bathtub",
-  "fr": "Baignoire bleue rebondissante",
+  "fr": "Baignoire Aqualapin",
   "categorie": "Decoration",
   "sprite": "bouncybluebathtub"
  },
@@ -439,7 +439,7 @@
  },
  {
   "en": "Box Sofa",
-  "fr": "Canapé cube",
+  "fr": "Canapé modulable",
   "categorie": "Relaxation",
   "sprite": "boxsofa"
  },
@@ -469,7 +469,7 @@
  },
  {
   "en": "CD rack",
-  "fr": "Range-CD",
+  "fr": "Étagère à CD",
   "categorie": "Decoration",
   "sprite": "cdrack"
  },
@@ -493,7 +493,7 @@
  },
  {
   "en": "Canalave City (Night)",
-  "fr": "Joliberges (Nuit)",
+  "fr": "Joliberges (nuit)",
   "categorie": null,
   "sprite": "canalavecity(night)"
  },
@@ -505,43 +505,43 @@
  },
  {
   "en": "Canoe",
-  "fr": "Canoë",
+  "fr": "Barque",
   "categorie": "Toy",
   "sprite": "canoe"
  },
  {
   "en": "Card reader",
-  "fr": "Lecteur de carte",
+  "fr": "Lecteur de cartes",
   "categorie": "Decoration",
   "sprite": "cardreader"
  },
  {
   "en": "Cardboard boxes",
-  "fr": "Cartons",
+  "fr": "Boîtes en carton",
   "categorie": "Decoration",
   "sprite": "cardboardboxes"
  },
  {
   "en": "Cascarrafa",
-  "fr": "Cascarafa",
+  "fr": "Jarramanca",
   "categorie": null,
   "sprite": "cascarrafa"
  },
  {
   "en": "Cash register",
-  "fr": "Caisse enregistreuse",
+  "fr": "Caisse",
   "categorie": "Toy",
   "sprite": "cashregister"
  },
  {
   "en": "Castform weather charm",
-  "fr": "Porte-bonheur météo Morphéo",
+  "fr": "Morphe-Météo",
   "categorie": "Toy",
   "sprite": "castformweathercharm"
  },
  {
   "en": "Caves of Mt. Moon",
-  "fr": "Grottes du Mont Sélénite",
+  "fr": "Les cavernes du Mont Sélénite",
   "categorie": null,
   "sprite": "cavesofmt.moon"
  },
@@ -565,7 +565,7 @@
  },
  {
   "en": "Chansey plant",
-  "fr": "Plante Leveinard",
+  "fr": "Arbuste Leveinard",
   "categorie": "Decoration",
   "sprite": "chanseyplant"
  },
@@ -577,7 +577,7 @@
  },
  {
   "en": "Chic chair",
-  "fr": "Chaise chic",
+  "fr": "Fauteuil chic",
   "categorie": "Relaxation",
   "sprite": "chicchair"
  },
@@ -607,25 +607,25 @@
  },
  {
   "en": "Chocolate cookies",
-  "fr": "Cookies au chocolat",
+  "fr": "Biscuits au chocolat",
   "categorie": "Decoration",
   "sprite": "chocolatecookies"
  },
  {
   "en": "Cleaning supplies",
-  "fr": "Produits d'entretien",
+  "fr": "Produits de nettoyage",
   "categorie": "Toy",
   "sprite": "cleaningsupplies"
  },
  {
   "en": "Clear Amulet",
-  "fr": "Amulette Claire",
+  "fr": "Talisman Sain",
   "categorie": null,
   "sprite": "clearamulet"
  },
  {
   "en": "Clear Bell",
-  "fr": "Cloche Limpide",
+  "fr": "Glas Transparent",
   "categorie": "Toy",
   "sprite": "clearbell"
  },
@@ -637,7 +637,7 @@
  },
  {
   "en": "Cloud cannon",
-  "fr": "Canon à nuages",
+  "fr": "Canon nuage",
   "categorie": "Toy",
   "sprite": "cloudcannon"
  },
@@ -655,13 +655,13 @@
  },
  {
   "en": "Concrete pipe",
-  "fr": "Buse en béton",
+  "fr": "Tuyau",
   "categorie": "Decoration",
   "sprite": "concretepipe"
  },
  {
   "en": "Construction supplies",
-  "fr": "Matériel de chantier",
+  "fr": "Outils de construction",
   "categorie": "Decoration",
   "sprite": "constructionsupplies"
  },
@@ -673,25 +673,25 @@
  },
  {
   "en": "Control unit",
-  "fr": "Unité de contrôle",
+  "fr": "Panneau de contrôle",
   "categorie": "Toy",
   "sprite": "controlunit"
  },
  {
   "en": "Cooking stove",
-  "fr": "Plaque de cuisson",
+  "fr": "Cuisinière",
   "categorie": "Decoration",
   "sprite": "cookingstove"
  },
  {
   "en": "Cool bass guitar",
-  "fr": "Basse électrique stylée",
+  "fr": "Basse électrique cool",
   "categorie": "Toy",
   "sprite": "coolbassguitar"
  },
  {
   "en": "Cool electric guitar",
-  "fr": "Guitare électrique stylée",
+  "fr": "Guitare électrique cool",
   "categorie": "Toy",
   "sprite": "coolelectricguitar"
  },
@@ -709,25 +709,25 @@
  },
  {
   "en": "Copper ore",
-  "fr": "Minerai de cuivre",
+  "fr": "Cuivre",
   "categorie": null,
   "sprite": "copperore"
  },
  {
   "en": "Corkboard",
-  "fr": "Tableau en liège",
+  "fr": "Panneau en liège",
   "categorie": "Decoration",
   "sprite": "corkboard"
  },
  {
   "en": "Corrugated metal",
-  "fr": "Tôle ondulée",
+  "fr": "Plaque ondulée",
   "categorie": "Road",
   "sprite": "corrugatedmetal"
  },
  {
   "en": "Cotton Spores",
-  "fr": "Spores de coton",
+  "fr": "Aigrettes",
   "categorie": null,
   "sprite": "cottonspores"
  },
@@ -745,37 +745,37 @@
  },
  {
   "en": "Cursola light",
-  "fr": "Lumière Corayôme",
+  "fr": "Lampe Corayôme",
   "categorie": "Decoration",
   "sprite": "cursolalight"
  },
  {
   "en": "Cushion bed",
-  "fr": "Lit coussin",
+  "fr": "Coussin géant",
   "categorie": "Relaxation",
   "sprite": "cushionbed"
  },
  {
   "en": "Cute bed",
-  "fr": "Lit mignon",
+  "fr": "Lit mimi",
   "categorie": "Relaxation",
   "sprite": "cutebed"
  },
  {
   "en": "Cute chair",
-  "fr": "Chaise mignonne",
+  "fr": "Chaise mimi",
   "categorie": "Relaxation",
   "sprite": "cutechair"
  },
  {
   "en": "Cute dresser",
-  "fr": "Coiffeuse mignonne",
+  "fr": "Coiffeuse mimi",
   "categorie": "Toy",
   "sprite": "cutedresser"
  },
  {
   "en": "Cute flower",
-  "fr": "Fleur mignonne",
+  "fr": "Fleurs ravissantes",
   "categorie": null,
   "sprite": "cuteflower"
  },
@@ -805,19 +805,19 @@
  },
  {
   "en": "Cute lamp",
-  "fr": "Lampe mignonne",
+  "fr": "Lampe mimi",
   "categorie": "Decoration",
   "sprite": "cutelamp"
  },
  {
   "en": "Cute sofa",
-  "fr": "Canapé mignon",
+  "fr": "Canapé mimi",
   "categorie": "Relaxation",
   "sprite": "cutesofa"
  },
  {
   "en": "Cute table",
-  "fr": "Table mignonne",
+  "fr": "Table mimi",
   "categorie": null,
   "sprite": "cutetable"
  },
@@ -829,7 +829,7 @@
  },
  {
   "en": "Cyan paint",
-  "fr": "Peinture cyan",
+  "fr": "Peinture bleu clair",
   "categorie": null,
   "sprite": "cyanpaint"
  },
@@ -841,7 +841,7 @@
  },
  {
   "en": "Dangling streetlight",
-  "fr": "Lampadaire suspendu",
+  "fr": "Lampadaire à têtes suspendues",
   "categorie": "Decoration",
   "sprite": "danglingstreetlight"
  },
@@ -895,19 +895,19 @@
  },
  {
   "en": "Decorative bookshelf",
-  "fr": "Étagère à livres décorative",
+  "fr": "Étagère avec livres",
   "categorie": "Decoration",
   "sprite": "decorativebookshelf"
  },
  {
   "en": "Decorative cloth",
-  "fr": "Tissu décoratif",
+  "fr": "Tenture murale",
   "categorie": "Decoration",
   "sprite": "decorativecloth"
  },
  {
   "en": "Decorative plant shelf",
-  "fr": "Étagère à plantes décorative",
+  "fr": "Étagère avec plantes",
   "categorie": "Decoration",
   "sprite": "decorativeplantshelf"
  },
@@ -919,13 +919,13 @@
  },
  {
   "en": "Decorative shop shelf",
-  "fr": "Rayonnage de boutique décoratif",
+  "fr": "Étagère de boutique",
   "categorie": "Decoration",
   "sprite": "decorativeshopshelf"
  },
  {
   "en": "Decorative storage shelf",
-  "fr": "Étagère de rangement décorative",
+  "fr": "Étagère avec récipients",
   "categorie": "Decoration",
   "sprite": "decorativestorageshelf"
  },
@@ -937,25 +937,25 @@
  },
  {
   "en": "Despot Fossil (body)",
-  "fr": "Fossile Despote (corps)",
+  "fr": "Fossile Tyran (tronc)",
   "categorie": "Decoration",
   "sprite": "despotfossil(body)"
  },
  {
   "en": "Despot Fossil (head)",
-  "fr": "Fossile Despote (tête)",
+  "fr": "Fossile Tyran (tête)",
   "categorie": "Decoration",
   "sprite": "despotfossil(head)"
  },
  {
   "en": "Despot Fossil (legs)",
-  "fr": "Fossile Despote (pattes)",
+  "fr": "Fossile Tyran (jambes)",
   "categorie": "Decoration",
   "sprite": "despotfossil(legs)"
  },
  {
   "en": "Despot Fossil (tail)",
-  "fr": "Fossile Despote (queue)",
+  "fr": "Fossile Tyran (queue)",
   "categorie": "Decoration",
   "sprite": "despotfossil(tail)"
  },
@@ -979,7 +979,7 @@
  },
  {
   "en": "Ditto Flag",
-  "fr": "Drapeau Métamorph",
+  "fr": "Drapeau de Métamorph",
   "categorie": null,
   "sprite": "dittoflag"
  },
@@ -1009,13 +1009,13 @@
  },
  {
   "en": "Dress Up With Props",
-  "fr": "Séance déguisement",
+  "fr": "Déguisement",
   "categorie": null,
   "sprite": "dressupwithprops"
  },
  {
   "en": "Driftveil City",
-  "fr": "Volucité",
+  "fr": "Port Yoneuve",
   "categorie": null,
   "sprite": "driftveilcity"
  },
@@ -1039,7 +1039,7 @@
  },
  {
   "en": "Elegant flower",
-  "fr": "Fleur élégante",
+  "fr": "Fleurs élégantes",
   "categorie": null,
   "sprite": "elegantflower"
  },
@@ -1069,13 +1069,13 @@
  },
  {
   "en": "Excavation tools",
-  "fr": "Outils de fouille",
+  "fr": "Outils pour creuser",
   "categorie": "Toy",
   "sprite": "excavationtools"
  },
  {
   "en": "Extravagant flowers",
-  "fr": "Fleurs extravagantes",
+  "fr": "Fleurs somptueuses",
   "categorie": "Decoration",
   "sprite": "extravagantflowers"
  },
@@ -1105,61 +1105,61 @@
  },
  {
   "en": "Fiery Magby statue",
-  "fr": "Statue Limagma enflammée",
+  "fr": "Statue cracheuse de feu Magby",
   "categorie": "Toy",
   "sprite": "fierymagbystatue"
  },
  {
   "en": "Fire hydrant",
-  "fr": "Bouche d'incendie",
+  "fr": "Borne d'incendie",
   "categorie": "Decoration",
   "sprite": "firehydrant"
  },
  {
   "en": "Firepit",
-  "fr": "Foyer",
+  "fr": "Braséro",
   "categorie": "Decoration",
   "sprite": "firepit"
  },
  {
   "en": "Firework (blue)",
-  "fr": "Feu d'artifice (bleu)",
+  "fr": "Boule de feu d'artifice bleu",
   "categorie": null,
   "sprite": "firework(blue)"
  },
  {
   "en": "Firework (green)",
-  "fr": "Feu d'artifice (vert)",
+  "fr": "Boule de feu d'artifice vert",
   "categorie": null,
   "sprite": "firework(green)"
  },
  {
   "en": "Firework (red)",
-  "fr": "Feu d'artifice (rouge)",
+  "fr": "Boule de feu d'artifice rouge",
   "categorie": null,
   "sprite": "firework(red)"
  },
  {
   "en": "Firework (white)",
-  "fr": "Feu d'artifice (blanc)",
+  "fr": "Boule de feu d'artifice blanc",
   "categorie": null,
   "sprite": "firework(white)"
  },
  {
   "en": "Firework (yellow)",
-  "fr": "Feu d'artifice (jaune)",
+  "fr": "Boule de feu d'artifice jaune",
   "categorie": null,
   "sprite": "firework(yellow)"
  },
  {
   "en": "First aid kit",
-  "fr": "Trousse de premiers secours",
+  "fr": "Trousse de premiers soins",
   "categorie": "Toy",
   "sprite": "firstaidkit"
  },
  {
   "en": "Fishing rod",
-  "fr": "Canne à pêche",
+  "fr": "Canne à Pêche",
   "categorie": "Toy",
   "sprite": "fishingrod"
  },
@@ -1171,7 +1171,7 @@
  },
  {
   "en": "Flat-leaf plant",
-  "fr": "Plante à feuilles plates",
+  "fr": "Plante aux feuilles plates",
   "categorie": "Decoration",
   "sprite": "flat-leafplant"
  },
@@ -1189,55 +1189,55 @@
  },
  {
   "en": "Flower backpack",
-  "fr": "Sac à dos fleuri",
+  "fr": "Sac à dos fleur",
   "categorie": null,
   "sprite": "flowerbackpack"
  },
  {
   "en": "Flower cushion",
-  "fr": "Coussin fleuri",
+  "fr": "Coussin fleur",
   "categorie": "Relaxation",
   "sprite": "flowercushion"
  },
  {
   "en": "Flower garland",
-  "fr": "Guirlande de fleurs",
+  "fr": "Guirlande fleurie",
   "categorie": "Decoration",
   "sprite": "flowergarland"
  },
  {
   "en": "Flowery table setting",
-  "fr": "Service de table fleuri",
+  "fr": "Service de table fleur",
   "categorie": "Decoration",
   "sprite": "flowerytablesetting"
  },
  {
   "en": "Fluff",
-  "fr": "Duvet",
+  "fr": "Coton",
   "categorie": null,
   "sprite": "fluff"
  },
  {
   "en": "Fluorescent light",
-  "fr": "Néon",
+  "fr": "Lampe fluorescente",
   "categorie": "Decoration",
   "sprite": "fluorescentlight"
  },
  {
   "en": "Folding chair",
-  "fr": "Chaise pliante",
+  "fr": "Chaise pliable",
   "categorie": "Relaxation",
   "sprite": "foldingchair"
  },
  {
   "en": "Food counter",
-  "fr": "Comptoir de cuisine",
+  "fr": "Table de buffet",
   "categorie": "Decoration",
   "sprite": "foodcounter"
  },
  {
   "en": "Fortree City",
-  "fr": "Atalanopolis",
+  "fr": "Cimetronelle",
   "categorie": null,
   "sprite": "fortreecity"
  },
@@ -1249,19 +1249,19 @@
  },
  {
   "en": "Fried potatoes",
-  "fr": "Frites",
+  "fr": "Pommes frites",
   "categorie": "Decoration",
   "sprite": "friedpotatoes"
  },
  {
   "en": "Fuchsia City Theme",
-  "fr": "Thème de Parmanie",
+  "fr": "Musique de Parmanie",
   "categorie": null,
   "sprite": "fuchsiacitytheme"
  },
  {
   "en": "Funky diffuser",
-  "fr": "Diffuseur funky",
+  "fr": "Diffuseur douteux",
   "categorie": "Toy",
   "sprite": "funkydiffuser"
  },
@@ -1273,13 +1273,13 @@
  },
  {
   "en": "Game Corner",
-  "fr": "Casino",
+  "fr": "Salle d'arcade",
   "categorie": null,
   "sprite": "gamecorner"
  },
  {
   "en": "Gaming PC",
-  "fr": "PC gaming",
+  "fr": "Ordinateur gaming",
   "categorie": "Toy",
   "sprite": "gamingpc"
  },
@@ -1303,13 +1303,13 @@
  },
  {
   "en": "Gaming light",
-  "fr": "Lumière gaming",
+  "fr": "Lampe néon gaming",
   "categorie": "Decoration",
   "sprite": "gaminglight"
  },
  {
   "en": "Garbage bags",
-  "fr": "Sacs poubelle",
+  "fr": "Sacs-poubelle",
   "categorie": "Decoration",
   "sprite": "garbagebags"
  },
@@ -1339,13 +1339,13 @@
  },
  {
   "en": "Garden light",
-  "fr": "Lumière de jardin",
+  "fr": "Lampe de jardin",
   "categorie": "Decoration",
   "sprite": "gardenlight"
  },
  {
   "en": "Garden ornament",
-  "fr": "Ornement de jardin",
+  "fr": "Décoration de jardin",
   "categorie": "Decoration",
   "sprite": "gardenornament"
  },
@@ -1357,7 +1357,7 @@
  },
  {
   "en": "Gift shop sign",
-  "fr": "Enseigne de boutique de souvenirs",
+  "fr": "Enseigne de boutique de cadeaux",
   "categorie": "Decoration",
   "sprite": "giftshopsign"
  },
@@ -1375,13 +1375,13 @@
  },
  {
   "en": "Gold Bottle Cap",
-  "fr": "Capsule Dorée",
+  "fr": "Capsule d'Or",
   "categorie": null,
   "sprite": "goldbottlecap"
  },
  {
   "en": "Gold Teeth",
-  "fr": "Dents en Or",
+  "fr": "Dentier en Or",
   "categorie": "Toy",
   "sprite": "goldteeth"
  },
@@ -1393,13 +1393,13 @@
  },
  {
   "en": "Gold ore",
-  "fr": "Minerai d'or",
+  "fr": "Or",
   "categorie": null,
   "sprite": "goldore"
  },
  {
   "en": "Gravestone",
-  "fr": "Pierre tombale",
+  "fr": "Tombe",
   "categorie": "Decoration",
   "sprite": "gravestone"
  },
@@ -1417,55 +1417,55 @@
  },
  {
   "en": "Grubby book",
-  "fr": "Livre crasseux",
+  "fr": "Livre sale",
   "categorie": "Toy",
   "sprite": "grubbybook"
  },
  {
   "en": "Grubby cell phone",
-  "fr": "Téléphone crasseux",
+  "fr": "Téléphone portable sale",
   "categorie": "Toy",
   "sprite": "grubbycellphone"
  },
  {
   "en": "Grubby letter",
-  "fr": "Lettre crasseuse",
+  "fr": "Lettre sale",
   "categorie": "Toy",
   "sprite": "grubbyletter"
  },
  {
   "en": "Grubby newspaper",
-  "fr": "Journal crasseux",
+  "fr": "Journal sale",
   "categorie": "Toy",
   "sprite": "grubbynewspaper"
  },
  {
   "en": "Grubby notepad",
-  "fr": "Carnet crasseux",
+  "fr": "Bloc-notes sale",
   "categorie": "Toy",
   "sprite": "grubbynotepad"
  },
  {
   "en": "Grubby papers",
-  "fr": "Papiers crasseux",
+  "fr": "Documents sales",
   "categorie": "Toy",
   "sprite": "grubbypapers"
  },
  {
   "en": "Grubby pearl",
-  "fr": "Perle crasseuse",
+  "fr": "Perle sale",
   "categorie": null,
   "sprite": "grubbypearl"
  },
  {
   "en": "Grubby tablet",
-  "fr": "Tablette crasseuse",
+  "fr": "Tablette sale",
   "categorie": "Toy",
   "sprite": "grubbytablet"
  },
  {
   "en": "Guest-room bed",
-  "fr": "Lit de chambre d'hôtes",
+  "fr": "Lit de cabine",
   "categorie": "Relaxation",
   "sprite": "guest-roombed"
  },
@@ -1477,19 +1477,19 @@
  },
  {
   "en": "Gym emblem statue",
-  "fr": "Statue à l'emblème d'Arène",
+  "fr": "Sculpture symbole d'Arène",
   "categorie": "Decoration",
   "sprite": "gymemblemstatue"
  },
  {
   "en": "Hanging banner",
-  "fr": "Banderole suspendue",
+  "fr": "Bannière suspendue",
   "categorie": "Decoration",
   "sprite": "hangingbanner"
  },
  {
   "en": "Hanging scroll",
-  "fr": "Rouleau suspendu",
+  "fr": "Rouleau mural",
   "categorie": "Decoration",
   "sprite": "hangingscroll"
  },
@@ -1501,7 +1501,7 @@
  },
  {
   "en": "Harbor streetlight",
-  "fr": "Lampadaire de port",
+  "fr": "Lampadaire portuaire",
   "categorie": "Decoration",
   "sprite": "harborstreetlight"
  },
@@ -1519,25 +1519,25 @@
  },
  {
   "en": "Hau'oli City (Day)",
-  "fr": "Hau'oli (Jour)",
+  "fr": "Ekaeka (jour)",
   "categorie": null,
   "sprite": "hau'olicity(day)"
  },
  {
   "en": "Headbutt Fossil (body)",
-  "fr": "Fossile Cornu (corps)",
+  "fr": "Fossile Coud'Boule (tronc)",
   "categorie": "Decoration",
   "sprite": "headbuttfossil(body)"
  },
  {
   "en": "Headbutt Fossil (head)",
-  "fr": "Fossile Cornu (tête)",
+  "fr": "Fossile Coud'Boule (tête)",
   "categorie": "Decoration",
   "sprite": "headbuttfossil(head)"
  },
  {
   "en": "Headbutt Fossil (tail)",
-  "fr": "Fossile Cornu (queue)",
+  "fr": "Fossile Coud'Boule (queue)",
   "categorie": "Decoration",
   "sprite": "headbuttfossil(tail)"
  },
@@ -1549,7 +1549,7 @@
  },
  {
   "en": "Hide-and-sneak trophy",
-  "fr": "Trophée de cache-cache",
+  "fr": "Trophée du défi de camoufilage",
   "categorie": "Decoration",
   "sprite": "hide-and-sneaktrophy"
  },
@@ -1573,13 +1573,13 @@
  },
  {
   "en": "Humidifier",
-  "fr": "Humidificateur",
+  "fr": "Humidificateur d'air",
   "categorie": "Decoration",
   "sprite": "humidifier"
  },
  {
   "en": "Indigo meteor lamp",
-  "fr": "Lampe météore indigo",
+  "fr": "Lampe météore bleu-clair",
   "categorie": "Decoration",
   "sprite": "indigometeorlamp"
  },
@@ -1597,7 +1597,7 @@
  },
  {
   "en": "Industrial chair",
-  "fr": "Chaise industrielle",
+  "fr": "Tabouret industriel",
   "categorie": "Relaxation",
   "sprite": "industrialchair"
  },
@@ -1609,13 +1609,13 @@
  },
  {
   "en": "Inflatable Sudowoodo",
-  "fr": "Simularbre gonflable",
+  "fr": "Décoration gonflable Simularbre",
   "categorie": "Toy",
   "sprite": "inflatablesudowoodo"
  },
  {
   "en": "Inflatable boat",
-  "fr": "Bateau gonflable",
+  "fr": "Lit gonflable",
   "categorie": "Relaxation",
   "sprite": "inflatableboat"
  },
@@ -1645,7 +1645,7 @@
  },
  {
   "en": "Iron chair",
-  "fr": "Chaise en fer",
+  "fr": "Tabouret en fer",
   "categorie": "Relaxation",
   "sprite": "ironchair"
  },
@@ -1663,7 +1663,7 @@
  },
  {
   "en": "Iron gate",
-  "fr": "Portail en fer",
+  "fr": "Portail en métal",
   "categorie": null,
   "sprite": "irongate"
  },
@@ -1681,7 +1681,7 @@
  },
  {
   "en": "Iron ore",
-  "fr": "Minerai de fer",
+  "fr": "Fer",
   "categorie": null,
   "sprite": "ironore"
  },
@@ -1693,7 +1693,7 @@
  },
  {
   "en": "Iron rack",
-  "fr": "Étagère en fer",
+  "fr": "Rangement en fer",
   "categorie": null,
   "sprite": "ironrack"
  },
@@ -1705,13 +1705,13 @@
  },
  {
   "en": "Iron stand",
-  "fr": "Meuble en fer",
+  "fr": "Meuble bas en fer",
   "categorie": "Decoration",
   "sprite": "ironstand"
  },
  {
   "en": "Iron steps",
-  "fr": "Marches en fer",
+  "fr": "Escalier en fer",
   "categorie": "Road",
   "sprite": "ironsteps"
  },
@@ -1741,7 +1741,7 @@
  },
  {
   "en": "Iron-scaffold plank",
-  "fr": "Planche d'échafaudage en fer",
+  "fr": "Plateforme d'échafaudage en fer",
   "categorie": "Road",
   "sprite": "iron-scaffoldplank"
  },
@@ -1753,7 +1753,7 @@
  },
  {
   "en": "Jewel wall decoration",
-  "fr": "Décoration murale de joyaux",
+  "fr": "Guirlande de gemmes",
   "categorie": "Decoration",
   "sprite": "jewelwalldecoration"
  },
@@ -1765,13 +1765,13 @@
  },
  {
   "en": "Jubilife Village",
-  "fr": "Village Rusti-Cité",
+  "fr": "Rusti-Cité",
   "categorie": null,
   "sprite": "jubilifevillage"
  },
  {
   "en": "Juice trio",
-  "fr": "Trio de jus",
+  "fr": "Bouteilles de jus",
   "categorie": "Decoration",
   "sprite": "juicetrio"
  },
@@ -1789,13 +1789,13 @@
  },
  {
   "en": "Knitting supplies",
-  "fr": "Matériel de tricot",
+  "fr": "Nécessaire à tricot",
   "categorie": "Toy",
   "sprite": "knittingsupplies"
  },
  {
   "en": "Lagging Tail",
-  "fr": "Queue Plombée",
+  "fr": "Ralentiqueue",
   "categorie": null,
   "sprite": "laggingtail"
  },
@@ -1819,7 +1819,7 @@
  },
  {
   "en": "Large Lost Relic",
-  "fr": "Grande relique perdue",
+  "fr": "Objet perdu de grande taille",
   "categorie": null,
   "sprite": "largelostrelic"
  },
@@ -1831,19 +1831,19 @@
  },
  {
   "en": "Large ventilation fan",
-  "fr": "Grand ventilateur d'extraction",
+  "fr": "Gros ventilateur d'extraction",
   "categorie": "Decoration",
   "sprite": "largeventilationfan"
  },
  {
   "en": "Laser sensor",
-  "fr": "Capteur laser",
+  "fr": "Détecteur de mouvements",
   "categorie": null,
   "sprite": "lasersensor"
  },
  {
   "en": "Leafy plant",
-  "fr": "Plante feuillue",
+  "fr": "Plante aux feuilles larges",
   "categorie": "Decoration",
   "sprite": "leafyplant"
  },
@@ -1861,19 +1861,19 @@
  },
  {
   "en": "Life Orb",
-  "fr": "Vie Orbe",
+  "fr": "Orbe Vie",
   "categorie": null,
   "sprite": "lifeorb"
  },
  {
   "en": "Light Clay",
-  "fr": "Boue Armure",
+  "fr": "Lumargile",
   "categorie": null,
   "sprite": "lightclay"
  },
  {
   "en": "Loaded Dice",
-  "fr": "Dés Pipés",
+  "fr": "Dé Pipé",
   "categorie": null,
   "sprite": "loadeddice"
  },
@@ -1885,13 +1885,13 @@
  },
  {
   "en": "Log chair",
-  "fr": "Chaise en rondins",
+  "fr": "Tabouret en rondin",
   "categorie": "Relaxation",
   "sprite": "logchair"
  },
  {
   "en": "Log table",
-  "fr": "Table en rondins",
+  "fr": "Table en rondin",
   "categorie": null,
   "sprite": "logtable"
  },
@@ -1903,7 +1903,7 @@
  },
  {
   "en": "Lumber",
-  "fr": "Bois de charpente",
+  "fr": "Bois",
   "categorie": null,
   "sprite": "lumber"
  },
@@ -1915,49 +1915,49 @@
  },
  {
   "en": "Lunch box",
-  "fr": "Boîte-repas",
+  "fr": "Boîtes-repas",
   "categorie": "Decoration",
   "sprite": "lunchbox"
  },
  {
   "en": "Luxury bed",
-  "fr": "Lit de luxe",
+  "fr": "Lit luxueux",
   "categorie": "Relaxation",
   "sprite": "luxurybed"
  },
  {
   "en": "Luxury chair",
-  "fr": "Chaise de luxe",
+  "fr": "Chaise luxueuse",
   "categorie": "Relaxation",
   "sprite": "luxurychair"
  },
  {
   "en": "Luxury dresser",
-  "fr": "Coiffeuse de luxe",
+  "fr": "Coiffeuse luxueuse",
   "categorie": "Toy",
   "sprite": "luxurydresser"
  },
  {
   "en": "Luxury lamp",
-  "fr": "Lampe de luxe",
+  "fr": "Lampe luxueuse",
   "categorie": "Decoration",
   "sprite": "luxurylamp"
  },
  {
   "en": "Luxury sofa",
-  "fr": "Canapé de luxe",
+  "fr": "Canapé luxueux",
   "categorie": "Relaxation",
   "sprite": "luxurysofa"
  },
  {
   "en": "Luxury table",
-  "fr": "Table de luxe",
+  "fr": "Table luxueuse",
   "categorie": null,
   "sprite": "luxurytable"
  },
  {
   "en": "Magazine rack",
-  "fr": "Porte-revues",
+  "fr": "Porte-revue",
   "categorie": "Decoration",
   "sprite": "magazinerack"
  },
@@ -1969,55 +1969,55 @@
  },
  {
   "en": "Malicious Armor",
-  "fr": "Armure Maudite",
+  "fr": "Armure de la Rancune",
   "categorie": "Decoration",
   "sprite": "maliciousarmor"
  },
  {
   "en": "Map and compass",
-  "fr": "Carte et boussole",
+  "fr": "Carte assortie d'une boussole",
   "categorie": "Toy",
   "sprite": "mapandcompass"
  },
  {
   "en": "Marine chair",
-  "fr": "Chaise marine",
+  "fr": "Siège océanique",
   "categorie": "Relaxation",
   "sprite": "marinechair"
  },
  {
   "en": "Marine chest",
-  "fr": "Commode marine",
+  "fr": "Commode océanique",
   "categorie": "Decoration",
   "sprite": "marinechest"
  },
  {
   "en": "Marine closet",
-  "fr": "Armoire marine",
+  "fr": "Armoire océanique",
   "categorie": "Decoration",
   "sprite": "marinecloset"
  },
  {
   "en": "Marine dresser",
-  "fr": "Coiffeuse marine",
+  "fr": "Coiffeuse océanique",
   "categorie": "Toy",
   "sprite": "marinedresser"
  },
  {
   "en": "Marine sofa",
-  "fr": "Canapé marin",
+  "fr": "Canapé océanique",
   "categorie": "Relaxation",
   "sprite": "marinesofa"
  },
  {
   "en": "Marine table",
-  "fr": "Table marine",
+  "fr": "Table océanique",
   "categorie": null,
   "sprite": "marinetable"
  },
  {
   "en": "Menu board",
-  "fr": "Ardoise de menu",
+  "fr": "Chevalet en ardoise",
   "categorie": "Decoration",
   "sprite": "menuboard"
  },
@@ -2041,13 +2041,13 @@
  },
  {
   "en": "Metal chain",
-  "fr": "Chaîne métallique",
+  "fr": "Chaîne",
   "categorie": null,
   "sprite": "metalchain"
  },
  {
   "en": "Metal drum",
-  "fr": "Bidon métallique",
+  "fr": "Baril",
   "categorie": "Decoration",
   "sprite": "metaldrum"
  },
@@ -2059,7 +2059,7 @@
  },
  {
   "en": "Metallic smelting furnace",
-  "fr": "Four de fonte métallique",
+  "fr": "Fourneau en métal",
   "categorie": null,
   "sprite": "metallicsmeltingfurnace"
  },
@@ -2083,25 +2083,25 @@
  },
  {
   "en": "Mini bookcase",
-  "fr": "Petite bibliothèque",
+  "fr": "Petite étagère",
   "categorie": "Decoration",
   "sprite": "minibookcase"
  },
  {
   "en": "Mini generator",
-  "fr": "Mini-générateur",
+  "fr": "Petit générateur",
   "categorie": "Decoration",
   "sprite": "minigenerator"
  },
  {
   "en": "Mini plain bed",
-  "fr": "Petit lit simple",
+  "fr": "Petit lit style naturel",
   "categorie": "Relaxation",
   "sprite": "miniplainbed"
  },
  {
   "en": "Miracle Seed",
-  "fr": "Herbe Miracle",
+  "fr": "Graine Miracle",
   "categorie": null,
   "sprite": "miracleseed"
  },
@@ -2131,19 +2131,19 @@
  },
  {
   "en": "Modern sink",
-  "fr": "Évier moderne",
+  "fr": "Évier",
   "categorie": "Toy",
   "sprite": "modernsink"
  },
  {
   "en": "Moon clock",
-  "fr": "Horloge lune",
+  "fr": "Pendule lune",
   "categorie": "Toy",
   "sprite": "moonclock"
  },
  {
   "en": "Mountain flowers",
-  "fr": "Fleurs de montagne",
+  "fr": "Fleurs des collines",
   "categorie": null,
   "sprite": "mountainflowers"
  },
@@ -2179,7 +2179,7 @@
  },
  {
   "en": "Mug",
-  "fr": "Mug",
+  "fr": "Tasse",
   "categorie": "Decoration",
   "sprite": "mug"
  },
@@ -2251,7 +2251,7 @@
  },
  {
   "en": "Music mat (low do)",
-  "fr": "Tapis musical (do grave)",
+  "fr": "Tapis musical (do)",
   "categorie": "Toy",
   "sprite": "musicmat(lowdo)"
  },
@@ -2269,7 +2269,7 @@
  },
  {
   "en": "Naptime bed",
-  "fr": "Lit à sieste",
+  "fr": "Lit Ronflex",
   "categorie": "Relaxation",
   "sprite": "naptimebed"
  },
@@ -2293,7 +2293,7 @@
  },
  {
   "en": "Notepad",
-  "fr": "Carnet",
+  "fr": "Bloc-notes",
   "categorie": "Toy",
   "sprite": "notepad"
  },
@@ -2305,7 +2305,7 @@
  },
  {
   "en": "Oak's Lab",
-  "fr": "Labo du Prof. Chen",
+  "fr": "Laboratoire du Professeur Chen",
   "categorie": null,
   "sprite": "oak'slab"
  },
@@ -2323,7 +2323,7 @@
  },
  {
   "en": "Office desk",
-  "fr": "Bureau",
+  "fr": "Bureau d'entreprise",
   "categorie": null,
   "sprite": "officedesk"
  },
@@ -2341,7 +2341,7 @@
  },
  {
   "en": "Oil lantern",
-  "fr": "Lanterne à huile",
+  "fr": "Lampe à huile",
   "categorie": "Decoration",
   "sprite": "oillantern"
  },
@@ -2359,163 +2359,163 @@
  },
  {
   "en": "Ornate bed",
-  "fr": "Lit ouvragé",
+  "fr": "Lit à entrelacs",
   "categorie": "Relaxation",
   "sprite": "ornatebed"
  },
  {
   "en": "Ornate chair",
-  "fr": "Chaise ouvragée",
+  "fr": "Siège à entrelacs",
   "categorie": "Relaxation",
   "sprite": "ornatechair"
  },
  {
   "en": "Ornate decorative shelf",
-  "fr": "Étagère décorative ouvragée",
+  "fr": "Étagère à entrelacs",
   "categorie": "Decoration",
   "sprite": "ornatedecorativeshelf"
  },
  {
   "en": "Ornate stand",
-  "fr": "Meuble ouvragé",
+  "fr": "Commode à entrelacs",
   "categorie": "Decoration",
   "sprite": "ornatestand"
  },
  {
   "en": "Ornate table",
-  "fr": "Table ouvragée",
+  "fr": "Table à entrelacs",
   "categorie": null,
   "sprite": "ornatetable"
  },
  {
   "en": "Paint balloon (aquamarine)",
-  "fr": "Ballon de peinture (aigue-marine)",
+  "fr": "Ballon de peinture bleu-vert",
   "categorie": null,
   "sprite": "paintballoon(aquamarine)"
  },
  {
   "en": "Paint balloon (beige)",
-  "fr": "Ballon de peinture (beige)",
+  "fr": "Ballon de peinture kaki",
   "categorie": null,
   "sprite": "paintballoon(beige)"
  },
  {
   "en": "Paint balloon (black)",
-  "fr": "Ballon de peinture (noir)",
+  "fr": "Ballon de peinture noire",
   "categorie": null,
   "sprite": "paintballoon(black)"
  },
  {
   "en": "Paint balloon (blue)",
-  "fr": "Ballon de peinture (bleu)",
+  "fr": "Ballon de peinture bleue",
   "categorie": null,
   "sprite": "paintballoon(blue)"
  },
  {
   "en": "Paint balloon (brown)",
-  "fr": "Ballon de peinture (marron)",
+  "fr": "Ballon de peinture marron",
   "categorie": null,
   "sprite": "paintballoon(brown)"
  },
  {
   "en": "Paint balloon (cyan)",
-  "fr": "Ballon de peinture (cyan)",
+  "fr": "Ballon de peinture bleu clair",
   "categorie": null,
   "sprite": "paintballoon(cyan)"
  },
  {
   "en": "Paint balloon (gray)",
-  "fr": "Ballon de peinture (gris)",
+  "fr": "Ballon de peinture grise",
   "categorie": null,
   "sprite": "paintballoon(gray)"
  },
  {
   "en": "Paint balloon (green)",
-  "fr": "Ballon de peinture (vert)",
+  "fr": "Ballon de peinture verte",
   "categorie": null,
   "sprite": "paintballoon(green)"
  },
  {
   "en": "Paint balloon (lime)",
-  "fr": "Ballon de peinture (vert lime)",
+  "fr": "Ballon de peinture vert-jaune",
   "categorie": null,
   "sprite": "paintballoon(lime)"
  },
  {
   "en": "Paint balloon (navy)",
-  "fr": "Ballon de peinture (bleu marine)",
+  "fr": "Ballon de peinture bleu marine",
   "categorie": null,
   "sprite": "paintballoon(navy)"
  },
  {
   "en": "Paint balloon (orange)",
-  "fr": "Ballon de peinture (orange)",
+  "fr": "Ballon de peinture orange",
   "categorie": null,
   "sprite": "paintballoon(orange)"
  },
  {
   "en": "Paint balloon (pink)",
-  "fr": "Ballon de peinture (rose)",
+  "fr": "Ballon de peinture rose",
   "categorie": null,
   "sprite": "paintballoon(pink)"
  },
  {
   "en": "Paint balloon (plum)",
-  "fr": "Ballon de peinture (prune)",
+  "fr": "Ballon de peinture violet foncé",
   "categorie": null,
   "sprite": "paintballoon(plum)"
  },
  {
   "en": "Paint balloon (purple)",
-  "fr": "Ballon de peinture (violet)",
+  "fr": "Ballon de peinture violette",
   "categorie": null,
   "sprite": "paintballoon(purple)"
  },
  {
   "en": "Paint balloon (red)",
-  "fr": "Ballon de peinture (rouge)",
+  "fr": "Ballon de peinture rouge",
   "categorie": null,
   "sprite": "paintballoon(red)"
  },
  {
   "en": "Paint balloon (rose)",
-  "fr": "Ballon de peinture (rose pâle)",
+  "fr": "Ballon de peinture magenta",
   "categorie": null,
   "sprite": "paintballoon(rose)"
  },
  {
   "en": "Paint balloon (white)",
-  "fr": "Ballon de peinture (blanc)",
+  "fr": "Ballon de peinture blanche",
   "categorie": null,
   "sprite": "paintballoon(white)"
  },
  {
   "en": "Paint balloon (yellow)",
-  "fr": "Ballon de peinture (jaune)",
+  "fr": "Ballon de peinture jaune",
   "categorie": null,
   "sprite": "paintballoon(yellow)"
  },
  {
   "en": "Painting (landscape)",
-  "fr": "Tableau (paysage)",
+  "fr": "Toile - paysage",
   "categorie": "Decoration",
   "sprite": "painting(landscape)"
  },
  {
   "en": "Painting (portrait)",
-  "fr": "Tableau (portrait)",
+  "fr": "Toile - portrait",
   "categorie": "Decoration",
   "sprite": "painting(portrait)"
  },
  {
   "en": "Painting (still life)",
-  "fr": "Tableau (nature morte)",
+  "fr": "Toile - nature morte",
   "categorie": "Decoration",
   "sprite": "painting(stilllife)"
  },
  {
   "en": "Pallet Town",
-  "fr": "Bourg Palette",
+  "fr": "Musique de Bourg Palette",
   "categorie": null,
   "sprite": "pallettown"
  },
@@ -2527,13 +2527,13 @@
  },
  {
   "en": "Paper Party cups",
-  "fr": "Gobelets en carton",
+  "fr": "Gobelets de fête",
   "categorie": "Decoration",
   "sprite": "paperpartycups"
  },
  {
   "en": "Papers",
-  "fr": "Papiers",
+  "fr": "Documents",
   "categorie": "Toy",
   "sprite": "papers"
  },
@@ -2545,7 +2545,7 @@
  },
  {
   "en": "Party bunting",
-  "fr": "Fanions de fête",
+  "fr": "Décoration murale festive",
   "categorie": "Decoration",
   "sprite": "partybunting"
  },
@@ -2563,13 +2563,13 @@
  },
  {
   "en": "Pewter City Theme",
-  "fr": "Thème d'Argenta",
+  "fr": "Musique d'Argenta",
   "categorie": null,
   "sprite": "pewtercitytheme"
  },
  {
   "en": "Photo cutout board",
-  "fr": "Panneau photo découpé",
+  "fr": "Passe-tête",
   "categorie": "Toy",
   "sprite": "photocutoutboard"
  },
@@ -2611,7 +2611,7 @@
  },
  {
   "en": "Pitcher-plant pot",
-  "fr": "Pot à plante carnivore",
+  "fr": "Vase carnivore",
   "categorie": "Decoration",
   "sprite": "pitcher-plantpot"
  },
@@ -2623,61 +2623,61 @@
  },
  {
   "en": "Plain bed",
-  "fr": "Lit simple",
+  "fr": "Lit style naturel",
   "categorie": "Relaxation",
   "sprite": "plainbed"
  },
  {
   "en": "Plain chair",
-  "fr": "Chaise simple",
+  "fr": "Chaise style naturel",
   "categorie": "Relaxation",
   "sprite": "plainchair"
  },
  {
   "en": "Plain chest",
-  "fr": "Commode simple",
+  "fr": "Commode style naturel",
   "categorie": "Decoration",
   "sprite": "plainchest"
  },
  {
   "en": "Plain closet",
-  "fr": "Armoire simple",
+  "fr": "Armoire style naturel",
   "categorie": "Decoration",
   "sprite": "plaincloset"
  },
  {
   "en": "Plain lamp",
-  "fr": "Lampe simple",
+  "fr": "Lampe style naturel",
   "categorie": "Decoration",
   "sprite": "plainlamp"
  },
  {
   "en": "Plain sofa",
-  "fr": "Canapé simple",
+  "fr": "Canapé style naturel",
   "categorie": "Relaxation",
   "sprite": "plainsofa"
  },
  {
   "en": "Plain stand",
-  "fr": "Meuble simple",
+  "fr": "Meuble bas style naturel",
   "categorie": "Decoration",
   "sprite": "plainstand"
  },
  {
   "en": "Plain stool",
-  "fr": "Tabouret simple",
+  "fr": "Tabouret style naturel",
   "categorie": "Relaxation",
   "sprite": "plainstool"
  },
  {
   "en": "Plain table",
-  "fr": "Table simple",
+  "fr": "Table style naturel",
   "categorie": null,
   "sprite": "plaintable"
  },
  {
   "en": "Po Town",
-  "fr": "Bourg Po",
+  "fr": "Kokohio",
   "categorie": null,
   "sprite": "potown"
  },
@@ -2713,13 +2713,13 @@
  },
  {
   "en": "Pokémetal",
-  "fr": "Pokémétal",
+  "fr": "Poké Métal",
   "categorie": null,
   "sprite": "pokemetal"
  },
  {
   "en": "Pokémetal fragment",
-  "fr": "Fragment de Pokémétal",
+  "fr": "Fragment de Poké Métal",
   "categorie": null,
   "sprite": "pokemetalfragment"
  },
@@ -2737,7 +2737,7 @@
  },
  {
   "en": "Polygonal Shelf",
-  "fr": "Étagère polygonale",
+  "fr": "Étagère anguleuse",
   "categorie": "Decoration",
   "sprite": "polygonalshelf"
  },
@@ -2803,19 +2803,19 @@
  },
  {
   "en": "Punching game",
-  "fr": "Machine de frappe",
+  "fr": "Machine à coup de poing",
   "categorie": "Toy",
   "sprite": "punchinggame"
  },
  {
   "en": "Raichu sign",
-  "fr": "Enseigne Raichu",
+  "fr": "Panneau Raichu",
   "categorie": "Decoration",
   "sprite": "raichusign"
  },
  {
   "en": "Rainbow Feather",
-  "fr": "Plume Arc-en-ciel",
+  "fr": "Arc-en-Ci'Aile",
   "categorie": null,
   "sprite": "rainbowfeather"
  },
@@ -2827,19 +2827,19 @@
  },
  {
   "en": "Rare Pokémetal",
-  "fr": "Pokémétal rare",
+  "fr": "Poké Métal rare",
   "categorie": null,
   "sprite": "rarepokemetal"
  },
  {
   "en": "Rare Pokémetal fragment",
-  "fr": "Fragment de Pokémétal rare",
+  "fr": "Fragment de Poké Métal rare",
   "categorie": null,
   "sprite": "rarepokemetalfragment"
  },
  {
   "en": "Recycling bin",
-  "fr": "Bac de recyclage",
+  "fr": "Poubelle pour canettes",
   "categorie": "Decoration",
   "sprite": "recyclingbin"
  },
@@ -2875,37 +2875,37 @@
  },
  {
   "en": "Resort bed",
-  "fr": "Lit de villégiature",
+  "fr": "Lit balnéaire",
   "categorie": "Relaxation",
   "sprite": "resortbed"
  },
  {
   "en": "Resort chair",
-  "fr": "Chaise de villégiature",
+  "fr": "Chaise balnéaire",
   "categorie": "Relaxation",
   "sprite": "resortchair"
  },
  {
   "en": "Resort hammock",
-  "fr": "Hamac de villégiature",
+  "fr": "Hamac balnéaire",
   "categorie": "Relaxation",
   "sprite": "resorthammock"
  },
  {
   "en": "Resort light",
-  "fr": "Lumière de villégiature",
+  "fr": "Lampe balnéaire",
   "categorie": "Decoration",
   "sprite": "resortlight"
  },
  {
   "en": "Resort sofa",
-  "fr": "Canapé de villégiature",
+  "fr": "Canapé balnéaire",
   "categorie": "Relaxation",
   "sprite": "resortsofa"
  },
  {
   "en": "Resort stool",
-  "fr": "Tabouret de villégiature",
+  "fr": "Tabouret balnéaire",
   "categorie": "Relaxation",
   "sprite": "resortstool"
  },
@@ -2917,37 +2917,37 @@
  },
  {
   "en": "Ribbon cake",
-  "fr": "Gâteau à ruban",
+  "fr": "Gâteau ruban",
   "categorie": "Decoration",
   "sprite": "ribboncake"
  },
  {
   "en": "Ring Target",
-  "fr": "Cible Anneau",
+  "fr": "Point de Mire",
   "categorie": null,
   "sprite": "ringtarget"
  },
  {
   "en": "Road to Bill",
-  "fr": "Route vers Léo",
+  "fr": "Vers Léo",
   "categorie": null,
   "sprite": "roadtobill"
  },
  {
   "en": "Road to Cerulean City",
-  "fr": "Route vers Azuria",
+  "fr": "Vers Azuria",
   "categorie": null,
   "sprite": "roadtoceruleancity"
  },
  {
   "en": "Road to Viridian City",
-  "fr": "Route vers Jadielle",
+  "fr": "Vers Jadielle",
   "categorie": null,
   "sprite": "roadtoviridiancity"
  },
  {
   "en": "Robust flower",
-  "fr": "Fleur robuste",
+  "fr": "Fleurs résistantes",
   "categorie": null,
   "sprite": "robustflower"
  },
@@ -2977,13 +2977,13 @@
  },
  {
   "en": "Rocket Hideout",
-  "fr": "Repaire de la Team Rocket",
+  "fr": "Repaire Rocket",
   "categorie": null,
   "sprite": "rockethideout"
  },
  {
   "en": "Room Service",
-  "fr": "Room service",
+  "fr": "Chariot Distordu",
   "categorie": null,
   "sprite": "roomservice"
  },
@@ -2995,19 +2995,19 @@
  },
  {
   "en": "Rose Tower",
-  "fr": "Tour Rose",
+  "fr": "Sheroz Tower",
   "categorie": null,
   "sprite": "rosetower"
  },
  {
   "en": "Route 10 (Unova)",
-  "fr": "Route 10 (Unys)",
+  "fr": "Route 10",
   "categorie": null,
   "sprite": "route10(unova)"
  },
  {
   "en": "Route 209 (Day)",
-  "fr": "Route 209 (Jour)",
+  "fr": "Route 209 (jour)",
   "categorie": null,
   "sprite": "route209(day)"
  },
@@ -3019,13 +3019,13 @@
  },
  {
   "en": "Running shoes",
-  "fr": "Chaussures de course",
+  "fr": "Chaussures de Sport",
   "categorie": "Decoration",
   "sprite": "runningshoes"
  },
  {
   "en": "Sail Fossil",
-  "fr": "Fossile Voile",
+  "fr": "Fossile Nageoire",
   "categorie": "Decoration",
   "sprite": "sailfossil"
  },
@@ -3067,7 +3067,7 @@
  },
  {
   "en": "Science experiment",
-  "fr": "Expérience scientifique",
+  "fr": "Équipement de laboratoire",
   "categorie": "Toy",
   "sprite": "scienceexperiment"
  },
@@ -3085,13 +3085,13 @@
  },
  {
   "en": "Seashell seat",
-  "fr": "Siège coquillage",
+  "fr": "Coussin coquillage",
   "categorie": "Relaxation",
   "sprite": "seashellseat"
  },
  {
   "en": "Seashore flowers",
-  "fr": "Fleurs du littoral",
+  "fr": "Fleurs maritimes",
   "categorie": null,
   "sprite": "seashoreflowers"
  },
@@ -3133,7 +3133,7 @@
  },
  {
   "en": "Servers",
-  "fr": "Serveurs",
+  "fr": "Serveur",
   "categorie": "Decoration",
   "sprite": "servers"
  },
@@ -3157,7 +3157,7 @@
  },
  {
   "en": "Shield Fossil (body)",
-  "fr": "Fossile Bouclier (corps)",
+  "fr": "Fossile Bouclier (tronc)",
   "categorie": "Decoration",
   "sprite": "shieldfossil(body)"
  },
@@ -3169,7 +3169,7 @@
  },
  {
   "en": "Ship's Wheel",
-  "fr": "Barre à roue",
+  "fr": "Barre de bateau",
   "categorie": "Toy",
   "sprite": "ship'swheel"
  },
@@ -3181,13 +3181,13 @@
  },
  {
   "en": "Shop fridge",
-  "fr": "Frigo de boutique",
+  "fr": "Réfrigérateur de boutique",
   "categorie": "Decoration",
   "sprite": "shopfridge"
  },
  {
   "en": "Shop shelf",
-  "fr": "Rayonnage de boutique",
+  "fr": "Présentoir de boutique",
   "categorie": "Decoration",
   "sprite": "shopshelf"
  },
@@ -3205,7 +3205,7 @@
  },
  {
   "en": "Signpost",
-  "fr": "Poteau indicateur",
+  "fr": "Panneau sur pied",
   "categorie": "Decoration",
   "sprite": "signpost"
  },
@@ -3223,25 +3223,25 @@
  },
  {
   "en": "Silver Bottle Cap",
-  "fr": "Capsule Argentée",
+  "fr": "Capsule d'Argent",
   "categorie": null,
   "sprite": "silverbottlecap"
  },
  {
   "en": "Silver Feather",
-  "fr": "Plume Argentée",
+  "fr": "Argent'Aile",
   "categorie": null,
   "sprite": "silverfeather"
  },
  {
   "en": "Silver Powder",
-  "fr": "Poudre Argent",
+  "fr": "Poudre Argentée",
   "categorie": null,
   "sprite": "silverpowder"
  },
  {
   "en": "Simple cushion",
-  "fr": "Coussin simple",
+  "fr": "Coussin ordinaire",
   "categorie": "Relaxation",
   "sprite": "simplecushion"
  },
@@ -3259,7 +3259,7 @@
  },
  {
   "en": "Skyland flowers",
-  "fr": "Fleurs des hauteurs",
+  "fr": "Fleurs de Flotîles",
   "categorie": null,
   "sprite": "skylandflowers"
  },
@@ -3307,19 +3307,19 @@
  },
  {
   "en": "Slim information board",
-  "fr": "Panneau d'information étroit",
+  "fr": "Panneau d'information fin",
   "categorie": "Decoration",
   "sprite": "sliminformationboard"
  },
  {
   "en": "Small Lost Relic",
-  "fr": "Petite relique perdue",
+  "fr": "Objet perdu de petite taille",
   "categorie": null,
   "sprite": "smalllostrelic"
  },
  {
   "en": "Small garbage can",
-  "fr": "Petite poubelle",
+  "fr": "Corbeille",
   "categorie": "Decoration",
   "sprite": "smallgarbagecan"
  },
@@ -3331,31 +3331,31 @@
  },
  {
   "en": "Small stage",
-  "fr": "Petite scène",
+  "fr": "Scène portative",
   "categorie": "Toy",
   "sprite": "smallstage"
  },
  {
   "en": "Small vase",
-  "fr": "Petit vase",
+  "fr": "Vase uniflore",
   "categorie": "Decoration",
   "sprite": "smallvase"
  },
  {
   "en": "Smelting furnace",
-  "fr": "Four de fonte",
+  "fr": "Fourneau",
   "categorie": null,
   "sprite": "smeltingfurnace"
  },
  {
   "en": "Snowbelle City",
-  "fr": "Neigetiède",
+  "fr": "Auffrac-les-Congères",
   "categorie": null,
   "sprite": "snowbellecity"
  },
  {
   "en": "Soda float",
-  "fr": "Soda flotteur",
+  "fr": "Soda à la glace",
   "categorie": "Decoration",
   "sprite": "sodafloat"
  },
@@ -3367,19 +3367,19 @@
  },
  {
   "en": "Soft seat",
-  "fr": "Siège moelleux",
+  "fr": "Pouf moelleux",
   "categorie": "Relaxation",
   "sprite": "softseat"
  },
  {
   "en": "Sootopolis City",
-  "fr": "Atlantis",
+  "fr": "Atalanopolis",
   "categorie": null,
   "sprite": "sootopoliscity"
  },
  {
   "en": "South Province",
-  "fr": "Province Sud",
+  "fr": "Zone Sud",
   "categorie": null,
   "sprite": "southprovince"
  },
@@ -3409,7 +3409,7 @@
  },
  {
   "en": "Spectator chair",
-  "fr": "Siège de spectateur",
+  "fr": "Siège de gradin",
   "categorie": "Relaxation",
   "sprite": "spectatorchair"
  },
@@ -3427,13 +3427,13 @@
  },
  {
   "en": "Sprinkler",
-  "fr": "Arroseur",
+  "fr": "Arroseur automatique",
   "categorie": "Toy",
   "sprite": "sprinkler"
  },
  {
   "en": "Squishy clay",
-  "fr": "Argile molle",
+  "fr": "Argile malléable",
   "categorie": null,
   "sprite": "squishyclay"
  },
@@ -3469,7 +3469,7 @@
  },
  {
   "en": "Star Piece",
-  "fr": "Éclat Étoile",
+  "fr": "Morceau d'Étoile",
   "categorie": null,
   "sprite": "starpiece"
  },
@@ -3481,13 +3481,13 @@
  },
  {
   "en": "Star wall decoration",
-  "fr": "Décoration murale étoile",
+  "fr": "Décoration murale étoiles",
   "categorie": "Decoration",
   "sprite": "starwalldecoration"
  },
  {
   "en": "Star-shaped Dresser",
-  "fr": "Coiffeuse en forme d'étoile",
+  "fr": "Coiffeuse étoile",
   "categorie": "Toy",
   "sprite": "star-shapeddresser"
  },
@@ -3511,7 +3511,7 @@
  },
  {
   "en": "Step stool",
-  "fr": "Marchepied",
+  "fr": "Escabeau",
   "categorie": "Toy",
   "sprite": "stepstool"
  },
@@ -3529,13 +3529,13 @@
  },
  {
   "en": "Stone brick wall",
-  "fr": "Mur en briques de pierre",
+  "fr": "Mur en brique de pierre",
   "categorie": null,
   "sprite": "stonebrickwall"
  },
  {
   "en": "Stone brick wall (wallpaper)",
-  "fr": "Mur en briques de pierre (papier peint)",
+  "fr": "Mur en brique de pierre (papier peint)",
   "categorie": null,
   "sprite": "stonebrickwall(wallpaper)"
  },
@@ -3571,7 +3571,7 @@
  },
  {
   "en": "Stone hipped roof",
-  "fr": "Toit en croupe en pierre",
+  "fr": "Saillie de toit en pierre",
   "categorie": null,
   "sprite": "stonehippedroof"
  },
@@ -3595,7 +3595,7 @@
  },
  {
   "en": "Stone roof decoration",
-  "fr": "Ornement de toit en pierre",
+  "fr": "Décoration de toit en pierre",
   "categorie": null,
   "sprite": "stoneroofdecoration"
  },
@@ -3613,7 +3613,7 @@
  },
  {
   "en": "Stone steps",
-  "fr": "Marches en pierre",
+  "fr": "Escalier en pierre",
   "categorie": "Road",
   "sprite": "stonesteps"
  },
@@ -3625,13 +3625,13 @@
  },
  {
   "en": "Stone tiling",
-  "fr": "Carrelage en pierre",
+  "fr": "Revêtement pierres",
   "categorie": "Road",
   "sprite": "stonetiling"
  },
  {
   "en": "Stone tiling (wallpaper)",
-  "fr": "Carrelage en pierre (papier peint)",
+  "fr": "Revêtement pierres (papier peint)",
   "categorie": null,
   "sprite": "stonetiling(wallpaper)"
  },
@@ -3643,7 +3643,7 @@
  },
  {
   "en": "Stow-on-Side",
-  "fr": "Krachbourg",
+  "fr": "Old Chister",
   "categorie": null,
   "sprite": "stow-on-side"
  },
@@ -3655,13 +3655,13 @@
  },
  {
   "en": "Straw stool",
-  "fr": "Tabouret en paille",
+  "fr": "Siège en paille",
   "categorie": "Relaxation",
   "sprite": "strawstool"
  },
  {
   "en": "Straw table",
-  "fr": "Table en paille",
+  "fr": "Table sur paille",
   "categorie": null,
   "sprite": "strawtable"
  },
@@ -3673,37 +3673,37 @@
  },
  {
   "en": "String lights",
-  "fr": "Guirlande lumineuse",
+  "fr": "Guirlande de lanternes",
   "categorie": "Decoration",
   "sprite": "stringlights"
  },
  {
   "en": "Study desk",
-  "fr": "Bureau d'étude",
+  "fr": "Bureau à tiroirs",
   "categorie": null,
   "sprite": "studydesk"
  },
  {
   "en": "Sturdy stick",
-  "fr": "Bâton solide",
+  "fr": "Branche robuste",
   "categorie": null,
   "sprite": "sturdystick"
  },
  {
   "en": "Stylish stool",
-  "fr": "Tabouret stylé",
+  "fr": "Tabouret élégant",
   "categorie": "Relaxation",
   "sprite": "stylishstool"
  },
  {
   "en": "Substitute doll",
-  "fr": "Peluche Clone",
+  "fr": "Peluche Clonage",
   "categorie": "Toy",
   "sprite": "substitutedoll"
  },
  {
   "en": "Super Training!",
-  "fr": "Super Entraînement !",
+  "fr": "SPV",
   "categorie": null,
   "sprite": "supertraining!"
  },
@@ -3715,7 +3715,7 @@
  },
  {
   "en": "Surface light",
-  "fr": "Lumière de surface",
+  "fr": "Spot lumineux",
   "categorie": "Decoration",
   "sprite": "surfacelight"
  },
@@ -3727,7 +3727,7 @@
  },
  {
   "en": "Table setting",
-  "fr": "Service de table",
+  "fr": "Couverts de table",
   "categorie": "Decoration",
   "sprite": "tablesetting"
  },
@@ -3745,7 +3745,7 @@
  },
  {
   "en": "Tall potted plant",
-  "fr": "Grande plante en pot",
+  "fr": "Arbuste élancé en pot",
   "categorie": "Decoration",
   "sprite": "tallpottedplant"
  },
@@ -3757,13 +3757,13 @@
  },
  {
   "en": "Team Rocket Wall Hanging",
-  "fr": "Tenture Team Rocket",
+  "fr": "Tableau Team Rocket",
   "categorie": "Decoration",
   "sprite": "teamrocketwallhanging"
  },
  {
   "en": "Teaware set",
-  "fr": "Nécessaire à thé",
+  "fr": "Service à thé en céramique",
   "categorie": "Decoration",
   "sprite": "teawareset"
  },
@@ -3781,7 +3781,7 @@
  },
  {
   "en": "The Academy",
-  "fr": "L'Académie",
+  "fr": "Académie",
   "categorie": null,
   "sprite": "theacademy"
  },
@@ -3793,31 +3793,31 @@
  },
  {
   "en": "The Sea",
-  "fr": "La Mer",
+  "fr": "La mer",
   "categorie": null,
   "sprite": "thesea"
  },
  {
   "en": "Throat Spray",
-  "fr": "Spray Voix",
+  "fr": "Spray Gorge",
   "categorie": null,
   "sprite": "throatspray"
  },
  {
   "en": "Tidal Bell",
-  "fr": "Cloche Marine",
+  "fr": "Glas Tempête",
   "categorie": "Toy",
   "sprite": "tidalbell"
  },
  {
   "en": "Tinkagear",
-  "fr": "Engrenage Forgelina",
+  "fr": "Forgeliroue",
   "categorie": null,
   "sprite": "tinkagear"
  },
  {
   "en": "Tire toy",
-  "fr": "Pneu-jouet",
+  "fr": "Pneu récréatif",
   "categorie": "Toy",
   "sprite": "tiretoy"
  },
@@ -3829,7 +3829,7 @@
  },
  {
   "en": "Title Screen",
-  "fr": "Écran-titre",
+  "fr": "Écran titre",
   "categorie": null,
   "sprite": "titlescreen"
  },
@@ -3853,25 +3853,25 @@
  },
  {
   "en": "Towel rack",
-  "fr": "Porte-serviettes",
+  "fr": "Porte-serviette",
   "categorie": "Decoration",
   "sprite": "towelrack"
  },
  {
   "en": "Town map",
-  "fr": "Carte de la ville",
+  "fr": "Carte",
   "categorie": "Toy",
   "sprite": "townmap"
  },
  {
   "en": "Town streetlight",
-  "fr": "Lampadaire de ville",
+  "fr": "Lampadaire urbain",
   "categorie": "Decoration",
   "sprite": "townstreetlight"
  },
  {
   "en": "Toy blocks",
-  "fr": "Cubes de construction",
+  "fr": "Jeu de construction",
   "categorie": "Toy",
   "sprite": "toyblocks"
  },
@@ -3883,7 +3883,7 @@
  },
  {
   "en": "Tundra Fossil (body)",
-  "fr": "Fossile Toundra (corps)",
+  "fr": "Fossile Toundra (tronc)",
   "categorie": "Decoration",
   "sprite": "tundrafossil(body)"
  },
@@ -3901,37 +3901,37 @@
  },
  {
   "en": "Twine",
-  "fr": "Ficelle",
+  "fr": "Fil de tissu",
   "categorie": null,
   "sprite": "twine"
  },
  {
   "en": "Twisted Spoon",
-  "fr": "Cuiller Tordue",
+  "fr": "Cuillère Tordue",
   "categorie": null,
   "sprite": "twistedspoon"
  },
  {
   "en": "Twisted potted plant",
-  "fr": "Plante en pot tortueuse",
+  "fr": "Arbuste torsadé en pot",
   "categorie": "Decoration",
   "sprite": "twistedpottedplant"
  },
  {
   "en": "Ultra Ruin",
-  "fr": "Ruine Ultra",
+  "fr": "Ultra-Gratte-Ciel",
   "categorie": null,
   "sprite": "ultraruin"
  },
  {
   "en": "Undella Town (Summer)",
-  "fr": "Vaguelone (Été)",
+  "fr": "Vaguelone (été)",
   "categorie": null,
   "sprite": "undellatown(summer)"
  },
  {
   "en": "Union Cave",
-  "fr": "Grotte Unio",
+  "fr": "Caves Jumelles",
   "categorie": null,
   "sprite": "unioncave"
  },
@@ -3943,25 +3943,25 @@
  },
  {
   "en": "Vending machine",
-  "fr": "Distributeur automatique",
+  "fr": "Distributeur de boissons",
   "categorie": "Toy",
   "sprite": "vendingmachine"
  },
  {
   "en": "Vermilion City Theme",
-  "fr": "Thème de Carmin sur Mer",
+  "fr": "Musique de Carmin sur Mer",
   "categorie": null,
   "sprite": "vermilioncitytheme"
  },
  {
   "en": "Vine rope",
-  "fr": "Corde de lianes",
+  "fr": "Corde en lierre",
   "categorie": null,
   "sprite": "vinerope"
  },
  {
   "en": "Vine wall decoration",
-  "fr": "Décoration murale de lianes",
+  "fr": "Décoration murale végétale",
   "categorie": "Decoration",
   "sprite": "vinewalldecoration"
  },
@@ -3991,7 +3991,7 @@
  },
  {
   "en": "Wall light",
-  "fr": "Applique murale",
+  "fr": "Lampe murale",
   "categorie": "Decoration",
   "sprite": "walllight"
  },
@@ -4039,7 +4039,7 @@
  },
  {
   "en": "Wall-mounted flowers",
-  "fr": "Fleurs murales",
+  "fr": "Bac à fleurs mural",
   "categorie": "Decoration",
   "sprite": "wall-mountedflowers"
  },
@@ -4051,37 +4051,37 @@
  },
  {
   "en": "Washing machine",
-  "fr": "Machine à laver",
+  "fr": "Lave-linge",
   "categorie": "Toy",
   "sprite": "washingmachine"
  },
  {
   "en": "Wastepaper",
-  "fr": "Papier usagé",
+  "fr": "Déchets de papier",
   "categorie": null,
   "sprite": "wastepaper"
  },
  {
   "en": "Water basin",
-  "fr": "Bassin d'eau",
+  "fr": "Bassine",
   "categorie": "Decoration",
   "sprite": "waterbasin"
  },
  {
   "en": "Water pillar quarter",
-  "fr": "Quart de pilier d'eau",
+  "fr": "Quart de pilier rempli d'eau",
   "categorie": "Decoration",
   "sprite": "waterpillarquarter"
  },
  {
   "en": "Waterproof seat",
-  "fr": "Siège imperméable",
+  "fr": "Tabouret de bain",
   "categorie": "Relaxation",
   "sprite": "waterproofseat"
  },
  {
   "en": "Weakness Policy",
-  "fr": "Vulné-Rancune",
+  "fr": "Vulné-Assurance",
   "categorie": null,
   "sprite": "weaknesspolicy"
  },
@@ -4111,13 +4111,13 @@
  },
  {
   "en": "Wiggly mirror",
-  "fr": "Miroir déformant",
+  "fr": "Miroir biscornu",
   "categorie": "Toy",
   "sprite": "wigglymirror"
  },
  {
   "en": "Wild Area (North)",
-  "fr": "Zone Sauvage (Nord)",
+  "fr": "Terres Sauvages (nord)",
   "categorie": null,
   "sprite": "wildarea(north)"
  },
@@ -4153,61 +4153,61 @@
  },
  {
   "en": "Window pane",
-  "fr": "Vitre",
+  "fr": "Carreau de verre",
   "categorie": null,
   "sprite": "windowpane"
  },
  {
   "en": "Windup Inkay",
-  "fr": "Sepiatop mécanique",
+  "fr": "Jouet Sepiatop",
   "categorie": "Toy",
   "sprite": "windupinkay"
  },
  {
   "en": "Wing Fossil (head)",
-  "fr": "Fossile Ailé (tête)",
+  "fr": "Fossile Aile (tête)",
   "categorie": "Decoration",
   "sprite": "wingfossil(head)"
  },
  {
   "en": "Wing Fossil (left wing)",
-  "fr": "Fossile Ailé (aile gauche)",
+  "fr": "Fossile Aile (aile gauche)",
   "categorie": "Decoration",
   "sprite": "wingfossil(leftwing)"
  },
  {
   "en": "Wing Fossil (right wing)",
-  "fr": "Fossile Ailé (aile droite)",
+  "fr": "Fossile Aile (aile droite)",
   "categorie": "Decoration",
   "sprite": "wingfossil(rightwing)"
  },
  {
   "en": "Wing Fossil (tail)",
-  "fr": "Fossile Ailé (queue)",
+  "fr": "Fossile Aile (queue)",
   "categorie": "Decoration",
   "sprite": "wingfossil(tail)"
  },
  {
   "en": "Wing fossil (body)",
-  "fr": "Fossile Ailé (corps)",
+  "fr": "Fossile Aile (tronc)",
   "categorie": "Decoration",
   "sprite": "wingfossil(body)"
  },
  {
   "en": "Wire",
-  "fr": "Fil électrique",
+  "fr": "Câble",
   "categorie": null,
   "sprite": "wire"
  },
  {
   "en": "Wireless power transmitter",
-  "fr": "Transmetteur d'énergie sans fil",
+  "fr": "Transmetteur sans fil",
   "categorie": null,
   "sprite": "wirelesspowertransmitter"
  },
  {
   "en": "Wireless power-transmitter switch",
-  "fr": "Interrupteur du transmetteur sans fil",
+  "fr": "Transmetteur sans fil activable",
   "categorie": null,
   "sprite": "wirelesspower-transmitterswitch"
  },
@@ -4261,13 +4261,13 @@
  },
  {
   "en": "Wreath",
-  "fr": "Couronne",
+  "fr": "Couronne végétale",
   "categorie": "Decoration",
   "sprite": "wreath"
  },
  {
   "en": "Wyndon",
-  "fr": "Smashings",
+  "fr": "Winscor",
   "categorie": null,
   "sprite": "wyndon"
  },

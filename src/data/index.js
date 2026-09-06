@@ -13,6 +13,7 @@
 
 import preferencesBrutes from './preferences.json'
 import objetsBruts from './objets.json'
+import complementObjets from './objets-complement.json'
 import pokemonBruts from './pokemon.json'
 
 /** Nombre maximum de colocataires d'un même habitat. */
@@ -47,7 +48,23 @@ export const FR_TYPE = {
 }
 
 export const preferences = preferencesBrutes
-export const objets = objetsBruts
+
+/**
+ * Le catalogue, extraction d'origine plus rattrapage.
+ *
+ * objets.json ne porte que les objets CITÉS par une préférence — c'est ainsi qu'il est
+ * produit (cf. scripts/extraire-artifact.mjs). Une vingtaine de meubles du jeu n'en
+ * cochent aucune : ils manquaient donc au catalogue, introuvables par la recherche et sans
+ * fiche. objets-complement.json les rajoute ; l'ordre alphabétique est refait ici pour que
+ * le catalogue reste rangé, et les doublons éventuels laissent la main à l'extraction, qui
+ * seule porte un sprite.
+ */
+const parNomBrut = new Map(objetsBruts.map((o) => [o.en, o]))
+export const objets = [
+  ...objetsBruts,
+  ...complementObjets.objets.filter((o) => !parNomBrut.has(o.en)),
+].sort((a, b) => a.en.localeCompare(b.en, 'en'))
+
 export const pokemon = pokemonBruts
 
 export const prefParSlug = new Map(preferences.map((p) => [p.slug, p]))
@@ -151,14 +168,59 @@ export function preferencesDuGroupe(noms) {
 }
 
 /**
+ * Les objets qu'un Pokémon apprécie : l'union des objets de toutes ses préférences.
+ *
+ * C'est la granularité qui compte en jeu — on pose des objets, pas des préférences — et
+ * deux préférences distinctes se recouvrent souvent largement en objets. Mémoïsé : la
+ * compatibilité est évaluée pour les 366 Pokémon à chaque frappe du sélecteur.
+ */
+const cacheObjetsPokemon = new Map()
+
+export function objetsDuPokemon(nom) {
+  let ensemble = cacheObjetsPokemon.get(nom)
+  if (!ensemble) {
+    ensemble = new Set()
+    for (const slug of prefsParPokemon.get(nom) || [])
+      for (const objet of prefParSlug.get(slug)?.objets || []) ensemble.add(objet)
+    cacheObjetsPokemon.set(nom, ensemble)
+  }
+  return ensemble
+}
+
+/** Recouvrement d'objets d'une paire, de 0 à 1. Mis en cache : la paire ne change jamais. */
+const cachePaires = new Map()
+
+function recouvrementPaire(a, b) {
+  const cle = a < b ? `${a} ${b}` : `${b} ${a}`
+  let taux = cachePaires.get(cle)
+  if (taux === undefined) {
+    const objetsA = objetsDuPokemon(a)
+    const objetsB = objetsDuPokemon(b)
+    const [petit, grand] = objetsA.size <= objetsB.size ? [objetsA, objetsB] : [objetsB, objetsA]
+    let communs = 0
+    for (const objet of petit) if (grand.has(objet)) communs += 1
+    const reunis = objetsA.size + objetsB.size - communs
+    taux = reunis ? communs / reunis : 0
+    cachePaires.set(cle, taux)
+  }
+  return taux
+}
+
+/**
  * Compatibilité d'un groupe, de 0 à 100.
  *
- * On moyenne le recouvrement de chaque PAIRE — préférences communes ÷ préférences réunies —
- * plutôt que de prendre l'intersection de tout le groupe : à quatre, cette intersection est
- * presque toujours vide, et le score resterait bloqué à zéro sans rien distinguer. La
- * moyenne par paire, elle, récompense chaque affinité, même partielle.
+ * On moyenne le recouvrement de chaque PAIRE — objets communs ÷ objets réunis — plutôt que
+ * de prendre l'intersection de tout le groupe : à quatre, cette intersection est souvent
+ * vide, et le score resterait bloqué à zéro sans rien distinguer. La moyenne par paire,
+ * elle, récompense chaque affinité, même partielle.
  *
- * Deux Pokémon aux goûts identiques donnent 100, deux Pokémon sans aucune préférence commune
+ * Le recouvrement se mesure sur les OBJETS, pas sur les préférences : deux Pokémon qui
+ * n'ont aucune préférence en commun peuvent aimer largement les mêmes meubles — « Lits » et
+ * « Sommeil » désignent en partie les mêmes objets — et un enclos se meuble en objets. Le
+ * score dit donc directement ce qu'on veut savoir : combien de ce qu'on posera fera plaisir
+ * à plusieurs colocataires à la fois.
+ *
+ * Deux Pokémon aux goûts identiques donnent 100, deux Pokémon sans aucun objet commun
  * donnent 0. Un Pokémon seul n'a personne avec qui s'entendre : la fonction renvoie null,
  * et l'affichage saute la mention.
  *
@@ -168,14 +230,11 @@ export function preferencesDuGroupe(noms) {
  */
 export function compatibilite(noms) {
   if (noms.length < 2) return null
-  const prefs = noms.map((n) => new Set(prefsParPokemon.get(n) || []))
   let total = 0
   let paires = 0
-  for (let i = 0; i < prefs.length; i++) {
-    for (let j = i + 1; j < prefs.length; j++) {
-      const communes = [...prefs[i]].filter((s) => prefs[j].has(s)).length
-      const reunies = new Set([...prefs[i], ...prefs[j]]).size
-      total += reunies ? communes / reunies : 0
+  for (let i = 0; i < noms.length; i++) {
+    for (let j = i + 1; j < noms.length; j++) {
+      total += recouvrementPaire(noms[i], noms[j])
       paires += 1
     }
   }
@@ -186,12 +245,14 @@ export function compatibilite(noms) {
 export const compatibiliteAvec = (noms, candidat) =>
   noms.includes(candidat) ? compatibilite(noms) : compatibilite([...noms, candidat])
 
-/** Les préférences que TOUT le groupe apprécie — le socle sur lequel un objet contente tout le monde. */
-export function preferencesCommunes(noms) {
+/**
+ * Les objets que TOUT le groupe apprécie — ceux qui contentent l'enclos entier d'un coup.
+ * C'est ce que montre la bascule « Choses en commun » de la vue habitat.
+ */
+export function objetsCommuns(noms) {
   if (!noms.length) return []
-  return (prefsParPokemon.get(noms[0]) || []).filter((slug) =>
-    noms.every((n) => (prefsParPokemon.get(n) || []).includes(slug)),
-  )
+  const autres = noms.slice(1).map(objetsDuPokemon)
+  return [...objetsDuPokemon(noms[0])].filter((objet) => autres.every((s) => s.has(objet)))
 }
 
 /** Parmi `noms`, ceux qui apprécient la préférence `slug`. */

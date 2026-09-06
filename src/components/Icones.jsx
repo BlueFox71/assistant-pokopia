@@ -63,6 +63,24 @@ export const IconeListe = (p) => (
   </Svg>
 )
 
+/** Caisse : le catalogue des objets. */
+export const IconeCaisse = (p) => (
+  <Svg {...p}>
+    <path d="M3 8h18v12H3z" />
+    <path d="M3 8 5.5 4h13L21 8" />
+    <path d="M12 4v4M9 12h6" />
+  </Svg>
+)
+
+/** Pinceau : ce que Smearguru peut repeindre. */
+export const IconePinceau = (p) => (
+  <Svg {...p}>
+    <path d="M14.5 3.5 20.5 9.5 12 18H6v-6z" />
+    <path d="M11 7 17 13" />
+    <path d="M6 18l-2.5 2.5" />
+  </Svg>
+)
+
 export const IconeLoupe = (p) => (
   <Svg {...p}>
     <circle cx="11" cy="11" r="6" />

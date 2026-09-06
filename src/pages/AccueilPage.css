@@ -133,6 +133,13 @@
 .chiffre svg { font-size: 20px; color: var(--teinte); margin-bottom: 4px; }
 .chiffre b { color: var(--teinte); }
 
+/* Le compteur d'objets ouvre le catalogue. Rien ne le distingue au repos — c'est une
+   tuile de plus dans la rangée —, seul le survol dit qu'on peut cliquer. */
+.chiffre.lien { text-decoration: none; color: inherit; }
+.chiffre.lien:hover { background: var(--accent-soft); }
+.chiffre.lien:hover span { color: var(--ink-2); }
+.chiffre.lien:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+
 /* ---- hero : le texte à gauche, l'illustration à droite ----
    L'image du jeu a un fond crème qui n'appartient à aucun des deux thèmes : elle reste
    donc une illustration encadrée, pas un fond de page. En sombre, on la pose sur son

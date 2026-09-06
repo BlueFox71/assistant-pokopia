@@ -341,6 +341,9 @@ h1, h2, h3 { text-wrap: balance; }
   font-family: var(--mono); font-size: 8px; letter-spacing: .06em; text-transform: uppercase;
   color: var(--ink-3);
 }
+/* Le pinceau du catalogue : il hérite de la couleur du type d'objet, juste à côté. */
+.chip-pinceau { font-size: 9px; margin-left: 3px; vertical-align: -1px; }
+
 /* La ville tient sur sa propre ligne : le nom d'une ville renommée peut être long, et
    l'entasser avec le numéro et l'habitat rendait les trois illisibles. */
 .chip-ville {

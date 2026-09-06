@@ -213,11 +213,12 @@ export default function AccueilPage() {
           <b>{preferences.length}</b>
           <span>préférences</span>
         </div>
-        <div className="chiffre" style={{ '--teinte': 'var(--c-table)' }}>
+        {/* Le seul chiffre qui mène quelque part : le catalogue est fait pour être parcouru. */}
+        <Link to="/objets" className="chiffre lien" style={{ '--teinte': 'var(--c-table)' }}>
           <IconeCommode />
           <b>{prefsParObjet.size}</b>
           <span>objets indexés</span>
-        </div>
+        </Link>
         <div className="chiffre" style={{ '--teinte': 'var(--second)' }}>
           <IconePokeball />
           <b>{prefsParPokemon.size}</b>

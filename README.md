@@ -15,9 +15,12 @@ réseau, sur le web comme en version bureau.
 | **Préférences** (`/preferences`) | Les 43 cartes dépliables. La recherche accepte le français et l'anglais, et remonte au-dessus de la grille la **recherche inversée** : un objet coche souvent plusieurs préférences, c'est ce croisement qui décide de le fabriquer. |
 | **Habitat** (`/habitat`) | Des habitats nommés, enregistrés, de un à quatre colocataires. Leurs préférences se cumulent, et chaque objet est classé d'abord par le **nombre de colocataires** qu'il satisfait, ensuite par le nombre de préférences cochées : un objet « 3 Pokémon » vaut mieux que trois objets séparés. Deux filtres — **catégorie d'objet** et préférence — plus le décompte Repos / Décoration / Jouet du confort « exceptionnel ». Le sélecteur filtre les candidats **par ville** et sait en proposer un (« Suggestion colocataire »). |
 | **Villes** (`/villes`) | Les 366 Pokémon rangés par région de l'île, et de quoi **les réattribuer** — un ou plusieurs à la fois. Aucune source ne publie la ville d'origine : 287 rattachements sont relevés en jeu, les 79 autres sont **déduits** de l'habitat idéal et le disent. |
+| **Objets** (`/objets`) | Le catalogue des 714 objets, filtrable par **catégorie de meuble**, catégorie de confort et **personnalisation**, triable par nom, préférences ou nombre de Pokémon contentés. Un pinceau sous la vignette marque ce que Smearguru peut repeindre. |
 | **Pokédex** (`/pokedex`) | Les 366 Pokémon, filtrables par habitat, **type** et **spécialité**, triables par numéro, nom ou nombre de préférences. Chaque fiche donne ses préférences, ses objets les plus utiles et les Pokémon aux **goûts les plus proches dans sa ville** — le bon réflexe avant de composer un enclos. |
 
-L'index accepte `?q=` comme point d'entrée (`/preferences?q=lampe`), ce dont se sert l'accueil.
+L'index et le catalogue acceptent `?q=` comme point d'entrée (`/preferences?q=lampe`,
+`/objets?q=lit`), ce dont se sert l'accueil ; le catalogue accepte en plus
+`?personnalisation=repeignable`.
 Deux fiches complètent l'ensemble : `/pokedex/:nom` et `/objet/:nom` (« j'ai ce plan de
 fabrication, à qui sert-il ? »).
 
@@ -190,6 +193,45 @@ confort et seraient devenus des « ressources » sur ce seul critère.
 Une règle par mot-clé se trompe en silence : `node scripts/auditer-categories.mjs --tout`
 imprime le classement complet, à relire quand les données changent.
 
+### La personnalisation, et la palette unique
+
+La question qu'on se pose en jeu — « quelles couleurs pour ce meuble ? » — est mal posée :
+**la palette ne dépend pas de l'objet.** Le jeu a dix-huit couleurs, les mêmes partout. Ce
+qui change d'un objet à l'autre, c'est seulement ce que Smearguru accepte d'y toucher, et
+la fiche objet le dit avant de dérouler la palette :
+
+| État | Objets | Ce que le jeu permet |
+| --- | --- | --- |
+| Repeignable | 40 | les 18 couleurs |
+| Peinture et motifs | 26 | les 18 couleurs, plus un imprimé sur les parties en tissu |
+| Motifs seulement | 5 | l'imprimé, pas la couleur |
+| Non personnalisable | 50 | rien |
+| *non documenté* | 593 | *absence de donnée, pas une impossibilité* |
+
+Huit couleurs se ramassent — un Pokémon de spécialité Broyage écrase une baie et en tire la
+peinture, avec parfois du blanc ou du noir en second tirage, les deux seules teintes
+qu'aucune baie ne rend en principal. Les dix autres se mélangent, et la fiche donne la
+recette de chacune. Un ballon de peinture lancé sur un objet déjà posé fait la même chose
+sans avoir à le ramasser.
+
+Les valeurs hexadécimales de `src/data/couleurs.js` ne sont pas choisies à l'œil : ce sont
+les couleurs dominantes des dix-huit pastilles de Serebii, relevées une fois au pixel. D'où
+le « gris » qui tire sur le bleu et le « beige » sur l'olive — ce sont les siennes.
+
+**Ce qui est relevé, et ce qui manque.** Une seule page de Serebii porte l'information : la
+table des meubles, dont la dernière colonne vaut « Paint », « Pattern », les deux ou « No
+change possible ». Ni la liste des objets ni celle des kits de construction n'ont cette
+colonne, et 593 de nos 714 entrées — matériaux, revêtements, fossiles, disques — n'y sont
+donc pas. `personnalisation.json` ne porte pas de clé pour elles, plutôt qu'un « aucune »
+qu'on ne pourrait pas justifier ; la fiche et le filtre disent « non documenté ».
+
+Les motifs, eux, ne sont pas repris : Serebii les publie en images, sans nom.
+
+```sh
+node scripts/importer-serebii-personnalisation.mjs            # télécharge, compare, n'écrit rien
+node scripts/importer-serebii-personnalisation.mjs --ecrire   # applique
+```
+
 ### Les trois Pokédex, et pourquoi le numéro seul ne suffit pas
 
 Pokopia tient **trois Pokédex, chacun numéroté à partir de #001** :
@@ -307,13 +349,14 @@ npm run desktop:build  # exe autonome (--no-bundle)
 
 ## Les données
 
-`src/data/` contient trois fichiers plats et les vignettes :
+`src/data/` contient les fichiers plats et les vignettes :
 
 | Fichier | Contenu |
 | --- | --- |
 | `preferences.json` | les 43 préférences : `slug`, nom anglais, nom français, objets, Pokémon |
 | `objets.json` | 714 objets : nom anglais, traduction, catégorie en jeu, clé de sprite |
 | `pokemon.json` | 366 Pokémon : nom anglais, nom français, numéro Pokopia, habitat, clé de sprite, types et spécialités (cf. « Types et spécialités ») |
+| `personnalisation.json` | ce que Smearguru peut changer sur 121 meubles : peinture, motif, les deux ou rien (cf. « La personnalisation ») |
 | `villes.json` | la ville d'origine de chaque Pokémon — **vide par défaut**, aucune source ne la publie (cf. « Les villes ») |
 | `sprites/objets/`, `sprites/pokemon/` | 1 081 vignettes WebP de 44 px |
 
@@ -343,7 +386,9 @@ indiquée partout, et la réattribution (cf. « Les villes »). Les noms des six
 sont les libellés officiels français.
 
 Sources : [Serebii](https://www.serebii.net/pokemonpokopia/favorites.shtml) pour les listes,
-icônes, catégories et habitats (section signalée comme en cours de complétion) ;
+icônes, catégories et habitats (section signalée comme en cours de complétion), ainsi que
+pour la [personnalisation des meubles](https://www.serebii.net/pokemonpokopia/furniture.shtml)
+et la [palette](https://www.serebii.net/pokemonpokopia/paint.shtml) ;
 [Joenesteam](https://www.joenesteam.fr/pokopia-preferences-exceptionnel/) pour les noms
 français des préférences ;
 [Pokébip](https://www.pokebip.com/page/jeux-video/pokemon-pokopia/pokedex) pour les numéros,

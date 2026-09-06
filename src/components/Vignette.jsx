@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { ICONE_HABITAT, ICONE_VILLE } from './Icones'
+import { ICONE_HABITAT, ICONE_VILLE, IconePinceau } from './Icones'
 import { FR_TYPE_OBJET, typeObjet } from '../data/categories'
 import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
@@ -34,6 +34,9 @@ function Image({ src }) {
  * @param nomsPrefs      détail des préférences, pour l'infobulle
  * @param nbPokemon      colocataires satisfaits (vue habitat), affiché au-delà de 1
  * @param nomsPokemon    détail des colocataires, pour l'infobulle
+ * @param pinceau        un pinceau sous le type : Smearguru peut le repeindre. Réservé au
+ *                       catalogue des objets — ailleurs, la vignette répond à une autre
+ *                       question, et la marque n'y serait qu'un signe de plus à lire.
  */
 export const VignetteObjet = memo(function VignetteObjet({
   nom,
@@ -42,6 +45,7 @@ export const VignetteObjet = memo(function VignetteObjet({
   nomsPrefs = '',
   nbPokemon = 0,
   nomsPokemon = '',
+  pinceau = false,
   onClick,
 }) {
   const fr = frObjet(nom)
@@ -61,7 +65,10 @@ export const VignetteObjet = memo(function VignetteObjet({
       <Image src={urlSpriteObjet(spriteObjet(nom))} />
       <span className="chip-name">{fr}</span>
       {fr !== nom && <span className="chip-en">{nom}</span>}
-      <span className={'chip-sub meuble-' + meuble}>{FR_TYPE_OBJET[meuble]}</span>
+      <span className={'chip-sub meuble-' + meuble}>
+        {FR_TYPE_OBJET[meuble]}
+        {pinceau && <IconePinceau className="chip-pinceau" />}
+      </span>
       {partage && <span className="chip-badge shared">{nbPokemon} Pokémon</span>}
       {multi && <span className="chip-badge">{nbPrefs} préf.</span>}
     </button>

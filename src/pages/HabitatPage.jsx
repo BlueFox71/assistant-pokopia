@@ -1,20 +1,28 @@
-import { useCallback, useDeferredValue, useMemo, useState } from 'react'
+import { Fragment, useCallback, useDeferredValue, useMemo, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { Input, Popconfirm, Select } from 'antd'
+import { Checkbox, Input, Popconfirm, Segmented, Select, Slider, Tooltip } from 'antd'
 import CarteHabitat from '../components/CarteHabitat'
-import { ICONE_CATEGORIE, ICONE_VILLE } from '../components/Icones'
+import { ICONE_CATEGORIE, ICONE_GOUT, ICONE_VILLE } from '../components/Icones'
+import ProgressionVilles from '../components/ProgressionVilles'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
-import { urlSpritePokemon } from '../data/images'
+import { urlSpriteAliment, urlSpritePokemon } from '../data/images'
 import {
   FR_CATEGORIE,
   MAX_COLOCATAIRES,
+  alimentsDe,
   amateursDe,
   comparerParNumero,
   compatibilite,
   compatibiliteAvec,
+  completerLot,
+  frAliment,
   frObjet,
   frPokemon,
+  goutBrutDe,
+  goutDe,
   habitatDe,
+  logeable,
+  lotMinimal,
   numeroAffiche,
   objetParNom,
   objetsCommuns,
@@ -27,7 +35,7 @@ import {
   spritePokemon,
 } from '../data'
 import { FR_TYPE_OBJET, TYPES_OBJET, TYPES_PAR_DEFAUT, typeObjet } from '../data/categories'
-import { VILLES } from '../data/villes'
+import { VILLES, cleVilleValide } from '../data/villes'
 import {
   cleVilleDe,
   nomVille,
@@ -55,6 +63,43 @@ const TYPES_VISIBLES_PAR_DEFAUT = new Set(TYPES_PAR_DEFAUT)
 
 /** Profondeur du classement de « Suggestion colocataire » : ce que « Suivant » peut parcourir. */
 const MAX_SUGGESTIONS = 8
+
+/**
+ * Les trois ordres de la liste d'objets.
+ *
+ * « Utilité » reste le défaut : ce qui contente le plus de colocataires d'un coup est ce
+ * qu'on veut poser en premier. Les deux autres classent sur le seul nombre de préférences
+ * cochées — le badge « N préf. » de la vignette —, pour répondre à deux questions
+ * différentes : quel objet fait mouche le plus largement, et lequel ne coche qu'une case,
+ * quand il reste justement une préférence à satisfaire.
+ */
+const TRIS_OBJETS = [
+  { value: 'utilite', label: 'Utilité' },
+  { value: 'prefs-desc', label: 'Préférences ↓' },
+  { value: 'prefs-asc', label: 'Préférences ↑' },
+]
+
+/**
+ * Bornes du curseur de taille, en pixels de sprite.
+ *
+ * 32 px tient encore le badge « 4 Pokémon » sous l'image, et met huit cents objets à
+ * l'écran d'un coup — c'est la vue d'ensemble, où l'on cherche une silhouette. 128 px est
+ * le plafond utile : les sprites sont des WebP de 44 px, et au-delà l'agrandissement se
+ * voit. 60 px, le défaut, est la taille des autres vues — on y revient d'un double-clic
+ * sur le curseur.
+ */
+const TAILLE_MIN = 32
+const TAILLE_MAX = 128
+const TAILLE_DEFAUT = 60
+
+/**
+ * Bornes du curseur de taille du lot. Le lot minimal d'un groupe de quatre compte de 4 à 8
+ * objets, parfois 3 : 6 par défaut le complète le plus souvent d'un ou deux objets de
+ * réserve, et 12 laisse de quoi doubler chaque préférence. Le curseur ne descend jamais sous
+ * le lot minimal — en dessous, une préférence resterait à découvert.
+ */
+const LOT_DEFAUT = 6
+const LOT_MAX = 12
 
 const typeDe = (nom) => typeObjet(nom, objetParNom.get(nom)?.categorie)
 
@@ -92,6 +137,16 @@ export default function HabitatPage() {
   const [typesActifs, setTypesActifs] = useState(() => new Set())
   // « Choses en commun » : une vue à part, qui court-circuite les deux filtres ci-dessus.
   const [modeCommun, setModeCommun] = useState(false)
+  const [triObjets, setTriObjets] = useState('utilite')
+  // Taille des vignettes et compteurs sous l'image : deux réglages d'affichage, retenus
+  // d'un habitat à l'autre comme les filtres — on n'a pas à les refaire à chaque enclos.
+  const [tailleObjets, setTailleObjets] = useState(TAILLE_DEFAUT)
+  const [compteursObjets, setCompteursObjets] = useState(true)
+  // Le lot minimal est replié par défaut : c'est une réponse qu'on va chercher, pas une
+  // grille de plus à faire défiler avant d'arriver aux filtres. Retenu d'un habitat à
+  // l'autre, comme les réglages ci-dessus.
+  const [lotOuvert, setLotOuvert] = useState(false)
+  const [tailleLot, setTailleLot] = useState(LOT_DEFAUT)
   const [saisie, setSaisie] = useState('')
 
   const idHabitat = params.get('habitat')
@@ -120,6 +175,7 @@ export default function HabitatPage() {
         titre="Composer un habitat"
         sousTitre={`Choisissez de 1 à ${MAX_COLOCATAIRES} Pokémon. Ils partageront le même enclos, donc idéalement le même habitat idéal.`}
         creation
+        villeInitiale={params.get('ville')}
         onValider={(noms) => {
           const cree = creerHabitat(noms)
           if (cree) allerVers({ habitat: cree.id })
@@ -180,6 +236,16 @@ export default function HabitatPage() {
       setTypesActifs={setTypesActifs}
       modeCommun={modeCommun}
       setModeCommun={setModeCommun}
+      triObjets={triObjets}
+      setTriObjets={setTriObjets}
+      tailleObjets={tailleObjets}
+      setTailleObjets={setTailleObjets}
+      compteursObjets={compteursObjets}
+      setCompteursObjets={setCompteursObjets}
+      lotOuvert={lotOuvert}
+      setLotOuvert={setLotOuvert}
+      tailleLot={tailleLot}
+      setTailleLot={setTailleLot}
       onAjouter={() =>
         allerVers(habitat ? { habitat: habitat.id, choisir: '1' } : { pokemon: groupe.join(','), choisir: '1' })
       }
@@ -210,10 +276,15 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
   const attributions = useAttributions()
   const nomsVilles = useNomsVilles()
   const loges = new Set(habitats.flatMap((h) => h.pokemon))
-  const sansHabitat = prefsParPokemon.size - loges.size
+  // Kyogre ne compte ni d'un côté ni de l'autre : sans quoi le décompte ne tomberait
+  // jamais à zéro, et donnerait à chercher une place pour un Pokémon qui n'en a pas.
+  const logeables = [...prefsParPokemon.keys()].filter(logeable)
+  const sansHabitat = logeables.filter((n) => !loges.has(n)).length
   const [sauvegarde, setSauvegarde] = useState(null)
   const [message, setMessage] = useState('')
   const [saisie, setSaisie] = useState('')
+  // Clé de la section affichée seule — une ville, ou 'melees' —, null pour toutes.
+  const [villeChoisie, setVilleChoisie] = useState(null)
 
   const saisieDifferee = useDeferredValue(saisie)
   const terme = normaliser(saisieDifferee.trim())
@@ -227,7 +298,7 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
    * Les sections vides ne s'affichent pas : six titres pour deux habitats se liraient comme
    * une grille de cases à remplir.
    */
-  const sections = useMemo(() => {
+  const toutesSections = useMemo(() => {
     const retenus = terme
       ? habitats.filter(
           (h) =>
@@ -254,7 +325,36 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
     return liste
   }, [habitats, attributions, nomsVilles, terme])
 
+  // Le filtre de ville s'applique après la recherche : ses compteurs disent donc ce que
+  // chaque bouton montrerait, recherche comprise. Une ville vidée par la recherche garde
+  // son bouton allumé plutôt que de disparaître sous le doigt.
+  const villesProposees = useMemo(() => {
+    const presentes = new Set(
+      habitats.map((h) => {
+        const villes = new Set(h.pokemon.map((n) => cleVilleDe(attributions, n)))
+        return villes.size === 1 ? [...villes][0] : 'melees'
+      }),
+    )
+    const compte = new Map(toutesSections.map((s) => [s.cle || 'melees', s.habitats.length]))
+    const liste = VILLES.filter((v) => presentes.has(v.cle)).map((v) => ({
+      cle: v.cle,
+      nom: nomVille(nomsVilles, v.cle),
+      resume: v.resume,
+      compte: compte.get(v.cle) || 0,
+    }))
+    if (presentes.has('melees'))
+      liste.push({ cle: 'melees', nom: 'Villes mêlées', compte: compte.get('melees') || 0 })
+    return liste
+  }, [habitats, attributions, nomsVilles, toutesSections])
+
+  // Le dernier habitat d'une ville supprimé, son bouton disparaît : le filtre tombe avec lui
+  // plutôt que de laisser une liste vide sans bouton pour en sortir.
+  const villeFiltre = villesProposees.some((v) => v.cle === villeChoisie) ? villeChoisie : null
+  const sections = villeFiltre
+    ? toutesSections.filter((s) => (s.cle || 'melees') === villeFiltre)
+    : toutesSections
   const trouves = sections.reduce((n, s) => n + s.habitats.length, 0)
+  const totalRecherche = toutesSections.reduce((n, s) => n + s.habitats.length, 0)
 
   return (
     <div className="wrap habitat">
@@ -265,7 +365,7 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
           <p className="liste-chapeau">
             Un habitat réunit jusqu’à {MAX_COLOCATAIRES} Pokémon et se souvient d’eux : les
             objets à y poser se recalculent à l’ouverture. {sansHabitat} Pokémon sur{' '}
-            {prefsParPokemon.size} n’en ont pas encore.
+            {logeables.length} n’en ont pas encore.
           </p>
         </div>
         <div className="liste-actions">
@@ -284,6 +384,8 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
           </button>
         </div>
       </div>
+
+      <ProgressionVilles habitats={habitats} resume={false} />
 
       {/* Les habitats vivent dans le stockage du navigateur : cette zone est le seul moyen
           de les emporter ailleurs, et de les retrouver s'ils disparaissent. */}
@@ -358,11 +460,45 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
             placeholder="Chercher un Pokémon, ou un habitat par son nom…"
             aria-label="Chercher un Pokémon parmi les habitats"
           />
-          {terme && (
+          {(terme || villeFiltre) && (
             <span className="liste-recherche-compte">
               {trouves} habitat{trouves > 1 ? 's' : ''} sur {habitats.length}
             </span>
           )}
+        </div>
+      )}
+
+      {villesProposees.length > 1 && (
+        <div className="bascules liste-villes" role="group" aria-label="Filtrer les habitats par ville">
+          <button
+            type="button"
+            className="bascule reset"
+            aria-pressed={villeFiltre === null}
+            onClick={() => setVilleChoisie(null)}
+          >
+            Toutes <b>{totalRecherche}</b>
+          </button>
+          {villesProposees.map((v) => {
+            const IconeVil = v.cle === 'melees' ? null : ICONE_VILLE[v.cle]
+            return (
+              <button
+                key={v.cle}
+                type="button"
+                className={'bascule' + (v.cle === 'melees' ? '' : ' teintee')}
+                style={
+                  v.cle === 'melees'
+                    ? undefined
+                    : { '--teinte': `var(--v-${v.cle})`, '--teinte-fond': `var(--v-${v.cle}-fond)` }
+                }
+                aria-pressed={villeFiltre === v.cle}
+                title={v.resume}
+                onClick={() => setVilleChoisie(villeFiltre === v.cle ? null : v.cle)}
+              >
+                {IconeVil && <IconeVil />}
+                {v.nom} <b>{v.compte}</b>
+              </button>
+            )
+          })}
         </div>
       )}
 
@@ -407,7 +543,11 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
         })
       ) : (
         <div className="vide">
-          <p>Aucun habitat ne loge « {saisieDifferee.trim()} ».</p>
+          <p>
+            {terme
+              ? `Aucun habitat ne loge « ${saisieDifferee.trim()} »${villeFiltre ? ' dans cette ville' : ''}.`
+              : 'Aucun habitat dans cette ville.'}
+          </p>
         </div>
       )}
     </div>
@@ -421,14 +561,27 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
  * habitat existe : on compose en général pour les Pokémon qui n'ont pas encore de place,
  * et les 366 vignettes d'un coup noient les quelques-uns qui restent à loger.
  */
-function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, creation = false, onValider, onAnnuler }) {
+function SelecteurPokemon({
+  habitats,
+  deja = [],
+  titre,
+  sousTitre,
+  creation = false,
+  villeInitiale = null,
+  onValider,
+  onAnnuler,
+}) {
   const attributions = useAttributions()
   const nomsVilles = useNomsVilles()
 
   const [choisis, setChoisis] = useState([])
   const [saisie, setSaisie] = useState('')
   const [sansHabitatSeul, setSansHabitatSeul] = useState(() => habitats.length > 0)
-  const [villeFiltre, setVilleFiltre] = useState(null)
+  // La ville d'arrivée n'est qu'un point de départ : la changer ensuite ne réécrit pas
+  // l'URL, comme les autres filtres du sélecteur.
+  const [villeFiltre, setVilleFiltre] = useState(() =>
+    cleVilleValide(villeInitiale) ? villeInitiale : null,
+  )
   // Éteint par défaut : trier par compatibilité reclasse la liste à chaque choix, si bien
   // que le Pokémon qu'on vient de cliquer change de place et paraît disparaître. L'ordre du
   // Pokédex ne bouge pas, on voit la vignette passer à l'état sélectionné là où elle est.
@@ -465,7 +618,8 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, creation = fa
   }, [groupeEnCours, attributions])
 
   const liste = useMemo(() => {
-    let noms = [...prefsParPokemon.keys()].filter((n) => !deja.includes(n))
+    // Kyogre n'entre dans aucun enclos : il ne figure donc jamais parmi les candidats.
+    let noms = [...prefsParPokemon.keys()].filter((n) => logeable(n) && !deja.includes(n))
     if (sansHabitatSeul) noms = noms.filter((n) => choisis.includes(n) || !habitatDuPokemon(habitats, n))
     // Un Pokémon déjà retenu reste visible même si le filtre l'exclut : le voir disparaître
     // du panier au moment où on change de ville laisserait croire qu'il a été retiré.
@@ -487,7 +641,7 @@ function SelecteurPokemon({ habitats, deja = [], titre, sousTitre, creation = fa
   const repartitionVilles = useMemo(() => {
     const compte = Object.fromEntries(VILLES.map((v) => [v.cle, 0]))
     for (const n of prefsParPokemon.keys()) {
-      if (deja.includes(n)) continue
+      if (!logeable(n) || deja.includes(n)) continue
       if (sansHabitatSeul && !choisis.includes(n) && habitatDuPokemon(habitats, n)) continue
       compte[cleVilleDe(attributions, n)] += 1
     }
@@ -792,6 +946,16 @@ function VueHabitat({
   setTypesActifs,
   modeCommun,
   setModeCommun,
+  triObjets,
+  setTriObjets,
+  tailleObjets,
+  setTailleObjets,
+  compteursObjets,
+  setCompteursObjets,
+  lotOuvert,
+  setLotOuvert,
+  tailleLot,
+  setTailleLot,
   onAjouter,
   onRetirer,
   onSupprimer,
@@ -826,6 +990,24 @@ function VueHabitat({
     [groupe, solo],
   )
 
+  // Le lot minimal ignore les filtres : il répond à « que fabriquer pour tout le monde ? »,
+  // et une préférence décochée n'en reste pas moins une préférence du groupe.
+  const lot = useMemo(
+    () => lotMinimal(groupe, (nom) => TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(nom))),
+    [groupe],
+  )
+  // Complété jusqu'à la taille demandée. Hors de la grille, la taille demandée survit d'un
+  // groupe à l'autre ; un lot minimal plus gros qu'elle l'emporte simplement.
+  const complements = useMemo(
+    () =>
+      completerLot(groupe, lot.objets, tailleLot, {
+        admissible: (nom) => TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(nom)),
+        categorie: (nom) => objetParNom.get(nom)?.categorie,
+        confort: CATEGORIES_CONFORT,
+      }),
+    [groupe, lot, tailleLot],
+  )
+
   /** Décompte par catégorie de meuble, calculé avant filtrage : les bascules le montrent. */
   const parType = useMemo(() => {
     const compte = Object.fromEntries(TYPES_OBJET.map((t) => [t, 0]))
@@ -846,8 +1028,20 @@ function VueHabitat({
             TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(o.nom)),
         )
       : objets.filter((o) => typesRetenus.has(typeDe(o.nom)))
-    return terme ? gardes.filter((o) => correspond(terme, o.nom, frObjet(o.nom))) : gardes
-  }, [objets, typesRetenus, terme, commun, groupe.length])
+    const retenus = terme ? gardes.filter((o) => correspond(terme, o.nom, frObjet(o.nom))) : gardes
+    if (triObjets === 'utilite') return retenus
+
+    // `objetsPourGroupe` a déjà trié par utilité : on ne reclasse que sur demande, et le
+    // nombre de colocataires satisfaits reste le départage — à préférences égales, mieux
+    // vaut l'objet qui contente tout le monde.
+    const sens = triObjets === 'prefs-asc' ? -1 : 1
+    return [...retenus].sort(
+      (a, b) =>
+        sens * (b.prefs.length - a.prefs.length) ||
+        b.pokemonSatisfaits.length - a.pokemonSatisfaits.length ||
+        frObjet(a.nom).localeCompare(frObjet(b.nom), 'fr'),
+    )
+  }, [objets, typesRetenus, terme, commun, groupe.length, triObjets])
 
   const confort = useMemo(() => {
     const compte = { Relaxation: 0, Decoration: 0, Toy: 0 }
@@ -884,27 +1078,33 @@ function VueHabitat({
           <div className="colocataires">
             {groupe.map((nom) => (
               <div key={nom} className="colocataire">
-                <button
-                  type="button"
-                  className="colocataire-lien"
-                  title={`Ouvrir la fiche de ${frPokemon(nom)}`}
-                  onClick={() => onPokemon(nom)}
-                >
-                  <img src={urlSpritePokemon(spritePokemon(nom))} alt="" width="56" height="56" />
-                  <span className="colocataire-id">
-                    <strong>{frPokemon(nom)}</strong>
-                    <span>
-                      {numeroAffiche(nom)}
-                      {habitatDe(nom) ? ` · ${habitatDe(nom).toLowerCase()}` : ''} ·{' '}
-                      {(prefsParPokemon.get(nom) || []).length} préf.
-                    </span>
-                    {specialitesDe(nom).length > 0 && (
-                      <span className="colocataire-specialite">
-                        {specialitesDe(nom).join(' · ')}
+                <BulleAliments nom={nom}>
+                  <button
+                    type="button"
+                    className="colocataire-lien"
+                    aria-label={`Ouvrir la fiche de ${frPokemon(nom)}`}
+                    onClick={() => onPokemon(nom)}
+                  >
+                    <img src={urlSpritePokemon(spritePokemon(nom))} alt="" width="56" height="56" />
+                    <span className="colocataire-id">
+                      <strong>{frPokemon(nom)}</strong>
+                      <span>
+                        {numeroAffiche(nom)}
+                        {habitatDe(nom) ? ` · ${habitatDe(nom).toLowerCase()}` : ''} ·{' '}
+                        {(prefsParPokemon.get(nom) || []).length} préf.
                       </span>
-                    )}
-                  </span>
-                </button>
+                      {/* Le goût préféré décide des aliments à offrir : c'est l'autre moitié
+                          du confort, à côté des objets qu'on pose. Les aliments eux-mêmes
+                          sont dans l'infobulle de la fiche. */}
+                      {goutDe(nom) && <MarqueGout nom={nom} />}
+                      {specialitesDe(nom).length > 0 && (
+                        <span className="colocataire-specialite">
+                          {specialitesDe(nom).join(' · ')}
+                        </span>
+                      )}
+                    </span>
+                  </button>
+                </BulleAliments>
                 {groupe.length > 1 && (
                   <button
                     type="button"
@@ -966,6 +1166,23 @@ function VueHabitat({
         </p>
       )}
 
+      {lot.objets.length > 0 && (
+        <LotMinimal
+          lot={lot}
+          complements={complements}
+          cible={tailleLot}
+          onCible={setTailleLot}
+          groupe={groupe}
+          solo={solo}
+          nbPrefs={toutesLesPrefs.length}
+          taille={tailleObjets}
+          badges={compteursObjets}
+          ouvert={lotOuvert}
+          onBasculer={() => setLotOuvert((precedent) => !precedent)}
+          onObjet={onObjet}
+        />
+      )}
+
       <div className="barre-filtres">
         <div className="champ-groupe">
           <Input
@@ -998,11 +1215,16 @@ function VueHabitat({
             </button>
           </span>
         </div>
-        <p className="indice">
-          {commun
-            ? '« Choses en commun » montre le terrain d’entente du groupe : les catégories ne s’appliquent pas, hors fossiles et ressources qui restent masqués.'
-            : 'Aucune catégorie cochée = toutes, sauf les fossiles et les ressources — matériaux, peintures, revêtements, disques —, qui ne meublent rien. Cocher restreint à ce qui est coché.'}
-        </p>
+        {/* L'explication du filtre neutre ne s'affiche plus : la règle se découvre en
+            cochant, et le paragraphe pesait plus lourd que les bascules qu'il décrivait.
+            Reste le seul cas où l'état surprend — les catégories éteintes par « Choses en
+            commun » —, qu'aucune bascule ne dit d'elle-même. */}
+        {commun && (
+          <p className="indice">
+            « Choses en commun » montre le terrain d’entente du groupe : les catégories ne
+            s’appliquent pas, hors fossiles et ressources qui restent masqués.
+          </p>
+        )}
         <div className="bascules">
           {TYPES_OBJET.map((type) => {
             const IconeCat = ICONE_CATEGORIE[type]
@@ -1030,12 +1252,6 @@ function VueHabitat({
         </div>
 
         <h3 className="etiquette second">Filtrer par préférence</h3>
-        <p className="indice">
-          Cumulatif : chaque préférence ajoutée élargit la liste. Aucune sélection = toutes.
-          {solo
-            ? ''
-            : ` Le compteur indique combien des ${groupe.length} colocataires l’apprécient. « Choses en commun » sort du cumul : elle ne garde que les objets appréciés par tout le monde, fossiles et ressources exclus.`}
-        </p>
         <div className="bascules">
           <button
             type="button"
@@ -1088,17 +1304,53 @@ function VueHabitat({
       </div>
 
       <div className="resultats">
-        <h3 className="etiquette">
-          {objetsFiltres.length} objets · {portee}
-          {masques > 0 ? ` · ${masques} masqués par les filtres` : ''}
-        </h3>
+        <div className="tete-resultats">
+          <h3 className="etiquette">
+            {objetsFiltres.length} objets · {portee}
+            {masques > 0 ? ` · ${masques} masqués par les filtres` : ''}
+          </h3>
+          <div className="reglages-resultats">
+            <Checkbox
+              checked={compteursObjets}
+              onChange={(e) => setCompteursObjets(e.target.checked)}
+              title="Le nombre de colocataires satisfaits et de préférences cochées, sous chaque objet"
+            >
+              Compteurs sous l’image
+            </Checkbox>
+            {/* Le double-clic revient au défaut : un curseur qu'on a poussé trop loin se
+                recale sans viser les 60 px au pixel près. */}
+            <div
+              className="reglage-taille"
+              onDoubleClick={() => setTailleObjets(TAILLE_DEFAUT)}
+              title="Taille des vignettes — double-cliquez pour revenir au défaut"
+            >
+              <span className="reglage-taille-mini" aria-hidden="true" />
+              <Slider
+                min={TAILLE_MIN}
+                max={TAILLE_MAX}
+                step={4}
+                value={tailleObjets}
+                onChange={setTailleObjets}
+                tooltip={{ formatter: (v) => `${v} px` }}
+                aria-label="Taille des vignettes d’objet"
+              />
+              <span className="reglage-taille-maxi" aria-hidden="true" />
+            </div>
+            <Segmented
+              options={TRIS_OBJETS}
+              value={triObjets}
+              onChange={setTriObjets}
+              aria-label="Trier les objets"
+            />
+          </div>
+        </div>
         <p className="confort">
           {CATEGORIES_CONFORT.map((c) => `${FR_CATEGORIE[c]} ${confort[c]}`).join(' · ')} — un
           habitat « exceptionnel » demande au moins un objet de chaque.
         </p>
 
         {objetsFiltres.length ? (
-          <div className="chips">
+          <div className="chips" style={{ '--sprite': `${tailleObjets}px` }}>
             {objetsFiltres.map((o) => (
               <VignetteObjet
                 key={o.nom}
@@ -1108,6 +1360,9 @@ function VueHabitat({
                 nomsPrefs={o.prefs.map((s) => prefParSlug.get(s).fr).join(' + ')}
                 nbPokemon={solo ? 0 : o.pokemonSatisfaits.length}
                 nomsPokemon={solo ? '' : o.pokemonSatisfaits.map(frPokemon).join(', ')}
+                bulle={<BullePreferences objet={o} groupe={groupe} solo={solo} />}
+                nue
+                badges={compteursObjets}
                 onClick={() => onObjet(o.nom)}
               />
             ))}
@@ -1118,6 +1373,194 @@ function VueHabitat({
           </p>
         )}
       </div>
+    </div>
+  )
+}
+
+/* ========================================================= petits blocs */
+
+/** Le goût préféré d'un colocataire, sur le gabarit des marques d'habitat et de ville. */
+function MarqueGout({ nom }) {
+  const cle = goutBrutDe(nom)
+  const IconeG = ICONE_GOUT[cle]
+  return (
+    <span className={'colocataire-gout marque-gout gout-' + cle} title="Goût préféré : les aliments de ce goût font monter son confort plus vite">
+      {IconeG && <IconeG />}
+      goût {goutDe(nom).toLowerCase()}
+    </span>
+  )
+}
+
+/**
+ * Au survol d'un colocataire, les aliments de son goût : la réponse à « que lui donner ? ».
+ * Dans la fiche elle-même, une douzaine d'images chargeait trop une ligne qui n'en demande
+ * qu'une ; l'infobulle les nomme en plus. Sans goût connu, pas d'infobulle du tout.
+ */
+function BulleAliments({ nom, children }) {
+  const liste = alimentsDe(nom)
+  if (!liste.length) return children
+  return (
+    <Tooltip
+      title={
+        <div className="bulle-aliments">
+          <span className="bulle-tete">
+            <strong>À offrir à {frPokemon(nom)}</strong>
+            <span className="bulle-en">aliments au goût {goutDe(nom).toLowerCase()}</span>
+          </span>
+          <ul>
+            {liste.map((aliment) => (
+              <li key={aliment.en}>
+                <img src={urlSpriteAliment(aliment.sprite)} alt="" width="22" height="22" />
+                {frAliment(aliment)}
+              </li>
+            ))}
+          </ul>
+        </div>
+      }
+      mouseEnterDelay={0.25}
+      placement="bottom"
+      classNames={{ root: 'bulle-objet bulle-large' }}
+    >
+      {children}
+    </Tooltip>
+  )
+}
+
+/**
+ * Le plus petit lot d'objets qui coche toutes les préférences du groupe — cf. `lotMinimal`.
+ *
+ * C'est la liste de fabrication : la grille d'en dessous classe tout ce qui peut servir,
+ * celle-ci dit ce qui suffit. Elle reprend la taille et les compteurs réglés pour la grille,
+ * pour que les deux se lisent de la même façon.
+ *
+ * Le décompte de confort dit ce qu'il manque au lot pour un habitat « exceptionnel » : le
+ * lot minimal ne s'en soucie pas, et c'est le seul endroit où il pourrait tromper.
+ */
+function LotMinimal({
+  lot,
+  complements,
+  cible,
+  onCible,
+  groupe,
+  solo,
+  nbPrefs,
+  taille,
+  badges,
+  ouvert,
+  onBasculer,
+  onObjet,
+}) {
+  const tous = [...lot.objets, ...complements]
+  const categories = new Set(tous.map((o) => objetParNom.get(o.nom)?.categorie))
+  const manquantes = CATEGORIES_CONFORT.filter((c) => !categories.has(c))
+  const n = lot.objets.length
+  const total = tous.length
+  // Les préférences que le lot complété coche au moins deux fois : ce que la réserve protège.
+  const doublees = new Set(
+    tous.flatMap((o) => o.prefs).filter((slug, i, liste) => liste.indexOf(slug) !== i),
+  ).size
+  return (
+    <section className={'lot-minimal' + (ouvert ? '' : ' replie')}>
+      <div className="lot-tete">
+        <h3 className="etiquette">Le lot minimal</h3>
+        {!ouvert && (
+          <p>
+            {total} objet{total > 1 ? 's' : ''} pour les {nbPrefs} préférences
+          </p>
+        )}
+        {ouvert && (
+          <div
+            className="reglage-taille"
+            onDoubleClick={() => onCible(LOT_DEFAUT)}
+            title="Nombre d’objets du lot — double-cliquez pour revenir au défaut"
+          >
+            <span className="reglage-lot-borne">{n}</span>
+            <Slider
+              min={n}
+              max={Math.max(n, LOT_MAX)}
+              value={Math.max(n, cible)}
+              onChange={onCible}
+              disabled={n >= LOT_MAX}
+              tooltip={{ formatter: (v) => `${v} objets` }}
+              aria-label="Nombre d’objets du lot"
+            />
+            <span className="reglage-lot-borne">{Math.max(n, LOT_MAX)}</span>
+          </div>
+        )}
+        <button type="button" className="mini-btn" aria-expanded={ouvert} onClick={onBasculer}>
+          {ouvert ? 'Masquer' : 'Afficher'}
+        </button>
+      </div>
+      {ouvert && (
+        <>
+          <p className="lot-resume">
+            <strong>
+              {n} objet{n > 1 ? 's' : ''}
+            </strong>{' '}
+            suffi{n > 1 ? 'sent' : 't'} à cocher les {nbPrefs} préférences
+            {solo ? ` de ${frPokemon(groupe[0])}` : ' du groupe'}
+            {lot.orphelines.length
+              ? ` — sauf ${lot.orphelines.map((s) => prefParSlug.get(s).fr).join(', ')}, qu’aucun objet ne coche`
+              : ''}
+            .{' '}
+            {complements.length > 0 &&
+              `${complements.length} de plus en réserve : ${doublees} préférence${doublees > 1 ? 's sont' : ' est'} cochée${doublees > 1 ? 's' : ''} au moins deux fois, si un plan manque. `}
+            {manquantes.length
+              ? `Pour un habitat « exceptionnel », il y manque : ${manquantes.map((c) => FR_CATEGORIE[c].toLowerCase()).join(', ')}.`
+              : 'Il contient déjà un repos, une décoration et un jouet.'}
+          </p>
+          <div className="chips" style={{ '--sprite': `${taille}px` }}>
+            {tous.map((o, i) => (
+              <Fragment key={o.nom}>
+                {/* La réserve suit le lot minimal, séparée : le premier bloc suffit, le
+                    second protège d'un plan qui manque. */}
+                {i === n && <span className="lot-separateur">réserve</span>}
+                <VignetteObjet
+                  nom={o.nom}
+                  nbPrefs={o.prefs.length}
+                  nomsPrefs={o.prefs.map((s) => prefParSlug.get(s).fr).join(' + ')}
+                  nbPokemon={solo ? 0 : o.pokemonSatisfaits.length}
+                  nomsPokemon={solo ? '' : o.pokemonSatisfaits.map(frPokemon).join(', ')}
+                  bulle={<BullePreferences objet={o} groupe={groupe} solo={solo} />}
+                  nue
+                  badges={badges}
+                  onClick={() => onObjet(o.nom)}
+                />
+              </Fragment>
+            ))}
+          </div>
+        </>
+      )}
+    </section>
+  )
+}
+
+/**
+ * Ce que dit le badge « N préf. » d'une vignette, déplié.
+ *
+ * Le badge donne un nombre, jamais lesquelles : une bibliothèque « 3 préf. » ne dit pas si
+ * elle coche « Choses carrées », « Choses avec du texte » et « Choses en bois », ni lequel
+ * des colocataires y tient. Les préférences listées sont exactement celles que compte le
+ * badge — donc celles du filtre en cours, pour que les deux ne se contredisent jamais.
+ *
+ * Le nom et le type ne sont pas répétés ici : la vignette les met elle-même en tête de son
+ * infobulle, puisque c'est elle qui les a ôtés de l'écran.
+ */
+function BullePreferences({ objet, groupe, solo }) {
+  return (
+    <div className="bulle-prefs">
+      <ul>
+        {objet.prefs.map((slug) => (
+          <li key={slug}>
+            {prefParSlug.get(slug).fr}
+            {!solo && (
+              <span className="bulle-amateurs">
+                {amateursDe(groupe, slug).map(frPokemon).join(', ')}
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

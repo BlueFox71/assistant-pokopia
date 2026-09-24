@@ -1,6 +1,20 @@
 .habitat { padding-block: 20px 60px; }
 .selecteur { padding-block: 20px 60px; }
 
+/**
+ * L'onglet Habitat déborde la largeur commune : il aligne des centaines de vignettes, et
+ * jusqu'à quatre fiches de colocataires côte à côte. 80 % de la fenêtre, donc, plutôt que
+ * les 1 180 px des autres pages — et la liste, le sélecteur et le détail la prennent
+ * ensemble, sans quoi la page sauterait de largeur en passant de l'un à l'autre.
+ *
+ * Sous 1 480 px, 80 % rendraient moins que ces 1 180 px : on repasse à la règle commune,
+ * plutôt que de creuser des marges là où la place manque déjà.
+ */
+@media (min-width: 1480px) {
+  .wrap.habitat,
+  .wrap.selecteur { max-width: 80%; }
+}
+
 .retour {
   display: inline-block;
   margin: 0 0 14px;
@@ -26,6 +40,20 @@
   letter-spacing: -.015em;
   line-height: 1.1;
 }
+
+/* La progression (components/ProgressionVilles) sépare la tête de liste des filtres :
+   un filet dessous, parce qu'elle parle de l'île entière quand tout ce qui suit parle des
+   enclos enregistrés. */
+.habitat .progression { margin: 0 0 20px; padding: 0 0 18px; border-bottom: 1px dashed var(--line); }
+
+/* Les six villes sur une seule ligne : la page est large, et le rang unique se lit comme
+   une règle graduée — l'île d'un bout à l'autre, sans avoir à changer de rangée. Les noms
+   longs s'y coupent (le lien porte le nom entier en infobulle). En dessous, on retombe sur
+   la disposition du composant. */
+.habitat .progression-villes { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px 10px; }
+@media (max-width: 1180px) { .habitat .progression-villes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .habitat .progression-villes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .habitat .progression-villes { grid-template-columns: 1fr; } }
 
 .liste-recherche { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 22px; }
 .liste-recherche .ant-input-affix-wrapper, .liste-recherche .ant-input { flex: 1 1 300px; max-width: 460px; }
@@ -69,7 +97,24 @@
   color: var(--ink-3);
 }
 
-/* Les cartes d’habitat vivent dans components/CarteHabitat.css : l’accueil les affiche aussi. */
+/* Le filtre de ville, sous la recherche : une bascule par ville qui a au moins un habitat. */
+.liste-villes { margin: -8px 0 24px; }
+
+/* Les cartes d’habitat vivent dans components/CarteHabitat.css : l’accueil les affiche aussi.
+   Dans la liste, où elles se comptent par dizaines, elles se resserrent : nom plus petit
+   et tenu sur une ligne, sprites réduits — trois ou quatre colonnes au lieu de deux. */
+.groupe-ville .grille-habitats { grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 10px; }
+.groupe-ville .carte-habitat-corps { gap: 6px; padding: 10px 26px 10px 12px; }
+.groupe-ville .carte-habitat-nom {
+  font-size: 14.5px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.groupe-ville .carte-habitat-sprites { gap: 2px; }
+.groupe-ville .carte-habitat-sprites img { width: 40px; height: 40px; }
+.groupe-ville .carte-habitat-meta { font-size: 10px; line-height: 1.5; }
 
 /* ---- sélecteur ---- */
 .selecteur-tete { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; margin-bottom: 14px; }
@@ -255,9 +300,42 @@
 
 /* ---- résultats ---- */
 .resultats { margin-top: 18px; }
-.resultats > h3 { display: block; margin: 0 0 4px; }
+.resultats h3 { display: block; margin: 0 0 4px; }
 .confort { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); margin: 0 0 12px; }
 .resultats .vide { padding: 30px 0; text-align: left; }
+
+/* Le décompte à gauche, le tri à droite : la bascule se lit comme une action sur la liste
+   qu'elle surplombe, pas comme un filtre de plus à cocher. */
+.tete-resultats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.tete-resultats h3 { margin: 0; }
+.reglages-resultats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+.reglages-resultats .ant-checkbox-wrapper { font-size: 12.5px; color: var(--ink-2); }
+
+/* Deux carrés encadrent le curseur — petit à gauche, grand à droite : ils disent ce qu'il
+   règle sans une étiquette de plus, et donnent l'échelle du geste. */
+.reglage-taille { display: flex; align-items: center; gap: 8px; }
+.reglage-taille .ant-slider { width: 110px; margin: 0; }
+.reglage-taille-mini,
+.reglage-taille-maxi {
+  flex: 0 0 auto;
+  border-radius: 2px;
+  background: var(--ink-3);
+  opacity: .55;
+}
+.reglage-taille-mini { width: 7px; height: 7px; }
+.reglage-taille-maxi { width: 13px; height: 13px; }
 
 /* La spécialité du colocataire : c'est elle qui décide du travail rendu sur l'île. */
 .colocataire-specialite {
@@ -268,8 +346,77 @@
   color: var(--accent-ink);
 }
 
+/* Le goût préféré, juste sous le numéro : même gabarit mono que la ligne qu'il suit. */
+.colocataire-gout {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* Les aliments du goût, dans l'infobulle d'un colocataire : deux colonnes, pour qu'une
+   douzaine d'entrées ne fasse pas une bulle plus haute que la fiche. */
+.bulle-large { max-width: 380px; }
+.bulle-aliments ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bulle-aliments li { display: flex; align-items: center; gap: 6px; font-size: 12px; line-height: 1.3; }
+.bulle-aliments img { flex: 0 0 auto; width: 22px; height: 22px; object-fit: contain; }
+
+/* ---- lot minimal ---- */
+/* Liseré d'accent, comme les objets : c'est une réponse, pas un filtre de plus. */
+.lot-minimal {
+  margin: 0 0 18px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+.lot-minimal.replie { padding-block: 10px; }
+.lot-tete { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.lot-tete h3 { margin: 0; }
+.lot-tete p { margin: 0; font-size: 13px; color: var(--ink-3); }
+.lot-tete .mini-btn { margin-left: auto; }
+.lot-resume { margin: 8px 0 10px; font-size: 13px; color: var(--ink-2); }
+/* Le curseur de taille du lot reprend celui des vignettes, bornes chiffrées au lieu des
+   carrés : ce qu'il règle est un nombre d'objets, pas une taille. */
+.lot-tete .reglage-taille { margin-left: auto; }
+.lot-tete .reglage-taille + .mini-btn { margin-left: 0; }
+.reglage-lot-borne { font-family: var(--mono); font-size: 10px; color: var(--ink-3); }
+/* Un trait vertical et un mot, entre le lot minimal et sa réserve. */
+.lot-separateur {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 0 2px 0 8px;
+  border-left: 1px dashed var(--line-strong);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ---- infobulle d'un objet : ce qu'il coche, et qui y tient ---- */
+
+/* Une ligne par préférence : la liste se parcourt du regard, là où une énumération séparée
+   par des virgules se relit deux fois. L'identité de l'objet, elle, est posée au-dessus
+   par la vignette (cf. `.bulle-tete` dans index.css). */
+.bulle-prefs ul { margin: 0; padding: 0; list-style: none; }
+.bulle-prefs li { font-size: 12px; line-height: 1.5; }
+.bulle-prefs li + li { margin-top: 2px; }
+.bulle-amateurs { display: block; font-family: var(--mono); font-size: 10px; opacity: .75; }
+
 /* ---- en-tête d'un groupe de filtres ---- */
-.titre-filtre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 0 0 4px; }
+/* 12 px, et non 4 : les bascules suivent désormais le titre directement, l'explication qui
+   les séparait étant tombée. */
+.titre-filtre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 0 0 12px; }
 .titre-filtre h3 { margin: 0; }
 .actions-filtre { display: flex; gap: 10px; margin-left: auto; }
 

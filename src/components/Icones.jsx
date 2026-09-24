@@ -131,6 +131,55 @@ export const IconeFlocon = (p) => (
   </Svg>
 )
 
+/* ---------- goûts préférés ---------- */
+
+/** Bonbon : le sucré. */
+export const IconeBonbon = (p) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M8.5 9.5 4 6v12l4.5-3.5" />
+    <path d="M15.5 9.5 20 6v12l-4.5-3.5" />
+  </Svg>
+)
+
+/** Piment : l'épicé. La flamme sert déjà à l'habitat chaud. */
+export const IconePiment = (p) => (
+  <Svg {...p}>
+    <path d="M14 6c4 0 6 3 6 6.5 0 4-3.5 7-8 7-3.5 0-6-2-6-4.5 0-3 2.5-4 5-5s3-2.5 3-4z" />
+    <path d="M14 6c0-1.5 1-3 3-3" />
+  </Svg>
+)
+
+/** Tranche d'agrume : l'acide. */
+export const IconeAgrume = (p) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <circle cx="12" cy="12" r="1" />
+    <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
+  </Svg>
+)
+
+/** Tasse fumante : l'amer, celui du café et des infusions. */
+export const IconeTasse = (p) => (
+  <Svg {...p}>
+    <path d="M4 10h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-5z" />
+    <path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17" />
+    <path d="M8 3v3M12 3v3" />
+  </Svg>
+)
+
+/** Épi de blé : le sec. La dune sert déjà à l'habitat sec. */
+export const IconeEpi = (p) => (
+  <Svg {...p}>
+    <path d="M12 21V8" />
+    <path d="M12 8c0-2.5 1.5-4.5 3.5-5.5C16 5 14.5 7 12 8z" />
+    <path d="M12 13c0-2 1.5-3.5 3.5-4C16 11 14.5 12.5 12 13z" />
+    <path d="M12 18c0-2 1.5-3.5 3.5-4C16 16 14.5 17.5 12 18z" />
+    <path d="M12 13c0-2-1.5-3.5-3.5-4C8 11 9.5 12.5 12 13z" />
+    <path d="M12 18c0-2-1.5-3.5-3.5-4C8 16 9.5 17.5 12 18z" />
+  </Svg>
+)
+
 /* ---------- catégories de meuble ---------- */
 
 export const IconeLit = (p) => (
@@ -297,6 +346,15 @@ export const ICONE_HABITAT = {
   Dry: IconeDune,
   Warm: IconeFlamme,
   Cool: IconeFlocon,
+}
+
+/** Goût préféré : les clés sont celles de GOUTS, dans src/data/index.js. */
+export const ICONE_GOUT = {
+  sweet: IconeBonbon,
+  spicy: IconePiment,
+  sour: IconeAgrume,
+  bitter: IconeTasse,
+  dry: IconeEpi,
 }
 
 /** Ville de l'île : les clés sont celles de data/villes.js. */

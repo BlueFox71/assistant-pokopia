@@ -11,7 +11,8 @@
   "specialites": [
    "Téléportation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Absol",
@@ -25,7 +26,8 @@
   "specialites": [
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Aerodactyl",
@@ -40,7 +42,8 @@
   "specialites": [
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Alakazam",
@@ -55,7 +58,8 @@
    "Téléportation",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Alomomola",
@@ -63,7 +67,8 @@
   "numero": "030",
   "habitat": "Warm",
   "sprite": "594",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Altaria",
@@ -79,7 +84,8 @@
    "Désordre",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Amaura",
@@ -94,7 +100,8 @@
   "specialites": [
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Ampharos",
@@ -109,7 +116,8 @@
    "Électrification",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Arbok",
@@ -123,7 +131,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Arcanine",
@@ -138,7 +147,8 @@
    "Combustion",
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Ariados",
@@ -153,7 +163,8 @@
   "specialites": [
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Armarouge",
@@ -169,7 +180,8 @@
    "Combustion",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Articuno",
@@ -184,7 +196,8 @@
   "specialites": [
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Audino",
@@ -198,7 +211,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Aurorus",
@@ -214,7 +228,8 @@
    "Broyage",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Axew",
@@ -228,7 +243,8 @@
   "specialites": [
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Azumarill",
@@ -244,7 +260,8 @@
    "Arrosage",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Azurill",
@@ -260,7 +277,8 @@
    "Arrosage",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Barboach",
@@ -268,7 +286,8 @@
   "numero": "019",
   "habitat": "Humid",
   "sprite": "339",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Bastiodon",
@@ -284,7 +303,8 @@
    "Broyage",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Beldum",
@@ -299,7 +319,8 @@
   "specialites": [
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Bellossom",
@@ -314,7 +335,8 @@
    "Fertilisation",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Bellsprout",
@@ -330,7 +352,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Blastoise",
@@ -345,7 +368,8 @@
    "Arrosage",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Blaziken",
@@ -361,7 +385,8 @@
    "Combustion",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Blissey",
@@ -376,7 +401,8 @@
    "Troc",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Bonsly",
@@ -390,7 +416,8 @@
   "specialites": [
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Brionne",
@@ -398,7 +425,8 @@
   "numero": "035",
   "habitat": "Bright",
   "sprite": "729",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Bruxish",
@@ -406,7 +434,8 @@
   "numero": "041",
   "habitat": "Warm",
   "sprite": "779",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Buizel",
@@ -414,7 +443,8 @@
   "numero": "024",
   "habitat": "Bright",
   "sprite": "418",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Bulbasaur",
@@ -429,7 +459,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Cacnea",
@@ -443,7 +474,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Cacturne",
@@ -459,7 +491,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Carkol",
@@ -475,7 +508,8 @@
    "Combustion",
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Carvanha",
@@ -483,7 +517,8 @@
   "numero": "017",
   "habitat": "Warm",
   "sprite": "318",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Ceruledge",
@@ -499,7 +534,8 @@
    "Combustion",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Chandelure",
@@ -514,7 +550,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Chansey",
@@ -528,7 +565,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Charcadet",
@@ -536,7 +574,8 @@
   "numero": "200",
   "habitat": "Warm",
   "sprite": "935",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Charizard",
@@ -552,7 +591,8 @@
    "Combustion",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Charjabug",
@@ -560,7 +600,8 @@
   "numero": "139",
   "habitat": "Bright",
   "sprite": "737",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Charmander",
@@ -574,7 +615,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Charmeleon",
@@ -588,7 +630,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Chatot",
@@ -604,7 +647,8 @@
    "Animation",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Chewtle",
@@ -612,7 +656,8 @@
   "numero": "043",
   "habitat": "Bright",
   "sprite": "833",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Chinchou",
@@ -620,7 +665,8 @@
   "numero": "011",
   "habitat": "Humid",
   "sprite": "170",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Cinccino",
@@ -635,7 +681,8 @@
    "Rangement",
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Cinderace",
@@ -650,7 +697,8 @@
    "Combustion",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Clefable",
@@ -665,7 +713,8 @@
    "Animation",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Clefairy",
@@ -679,7 +728,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Cleffa",
@@ -693,7 +743,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Clodsire",
@@ -709,7 +760,8 @@
    "Désordre",
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Cloyster",
@@ -717,7 +769,8 @@
   "numero": "002",
   "habitat": "Cool",
   "sprite": "091",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Coalossal",
@@ -733,7 +786,8 @@
    "Combustion",
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Combee",
@@ -748,7 +802,8 @@
   "specialites": [
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Combusken",
@@ -764,7 +819,8 @@
    "Combustion",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Conkeldurr",
@@ -779,7 +835,8 @@
    "Construction",
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Corphish",
@@ -787,7 +844,8 @@
   "numero": "021",
   "habitat": "Humid",
   "sprite": "341",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Corsola",
@@ -795,7 +853,8 @@
   "numero": "013",
   "habitat": "Warm",
   "sprite": "222",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Corviknight",
@@ -811,7 +870,8 @@
    "Coupe de bois",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Corvisquire",
@@ -825,7 +885,8 @@
   "specialites": [
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Cramorant",
@@ -841,7 +902,8 @@
    "Vol",
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Cranidos",
@@ -855,7 +917,8 @@
   "specialites": [
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Crawdaunt",
@@ -863,7 +926,8 @@
   "numero": "022",
   "habitat": "Humid",
   "sprite": "342",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Crobat",
@@ -879,7 +943,8 @@
    "Recherche",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Croconaw",
@@ -887,7 +952,8 @@
   "numero": "009",
   "habitat": "Bright",
   "sprite": "159",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Cubone",
@@ -901,7 +967,8 @@
   "specialites": [
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Cyndaquil",
@@ -915,7 +982,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Dachsbun",
@@ -930,7 +998,8 @@
    "Recherche",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Dartrix",
@@ -946,7 +1015,8 @@
    "Fertilisation",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Decidueye",
@@ -962,7 +1032,8 @@
    "Fertilisation",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Dedenne",
@@ -978,7 +1049,8 @@
    "Électrification",
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Dhelmise",
@@ -986,7 +1058,8 @@
   "numero": "042",
   "habitat": "Dark",
   "sprite": "781",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Diglett",
@@ -1000,7 +1073,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Dragapult",
@@ -1016,7 +1090,8 @@
    "Rangement",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Dragonair",
@@ -1030,7 +1105,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Dragonite",
@@ -1046,7 +1122,8 @@
    "Arrosage",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Drakloak",
@@ -1062,7 +1139,8 @@
    "Rangement",
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Dratini",
@@ -1076,7 +1154,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Drednaw",
@@ -1084,7 +1163,8 @@
   "numero": "044",
   "habitat": "Bright",
   "sprite": "834",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Dreepy",
@@ -1100,7 +1180,8 @@
    "Rangement",
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Drifblim",
@@ -1116,7 +1197,8 @@
    "Vol",
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Drifloon",
@@ -1131,7 +1213,8 @@
   "specialites": [
    "Île Rêve"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Drilbur",
@@ -1145,7 +1228,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Dugtrio",
@@ -1160,7 +1244,8 @@
    "Animation",
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Dusclops",
@@ -1174,7 +1259,8 @@
   "specialites": [
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Dusknoir",
@@ -1188,7 +1274,8 @@
   "specialites": [
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Duskull",
@@ -1202,7 +1289,8 @@
   "specialites": [
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Eevee",
@@ -1216,7 +1304,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Ekans",
@@ -1230,7 +1319,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Electabuzz",
@@ -1244,7 +1334,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Electivire",
@@ -1259,7 +1350,8 @@
    "Électrification",
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Electrode",
@@ -1274,7 +1366,8 @@
    "Électrification",
    "Explosion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Elekid",
@@ -1288,7 +1381,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Empoleon",
@@ -1304,7 +1398,8 @@
    "Arrosage",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Entei",
@@ -1318,7 +1413,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Espeon",
@@ -1332,7 +1428,8 @@
   "specialites": [
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Excadrill",
@@ -1348,7 +1445,8 @@
    "Recherche",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Exeggcute",
@@ -1356,7 +1454,8 @@
   "numero": "098",
   "habitat": "Bright",
   "sprite": "102",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Exeggutor",
@@ -1372,7 +1471,8 @@
    "Fertilisation",
    "Téléportation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Farfetch'd",
@@ -1388,7 +1488,8 @@
    "Coupe de bois",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Farigiraf",
@@ -1403,7 +1504,8 @@
   "specialites": [
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Feebas",
@@ -1411,7 +1513,8 @@
   "numero": "006",
   "habitat": "Humid",
   "sprite": "349",
-  "dex": "evenement"
+  "dex": "evenement",
+  "gout": "sweet"
  },
  {
   "en": "Feraligatr",
@@ -1419,7 +1522,8 @@
   "numero": "010",
   "habitat": "Bright",
   "sprite": "160",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Fidough",
@@ -1433,7 +1537,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Finneon",
@@ -1441,7 +1546,8 @@
   "numero": "026",
   "habitat": "Bright",
   "sprite": "456",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Flaaffy",
@@ -1456,7 +1562,8 @@
    "Électrification",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Flareon",
@@ -1470,7 +1577,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Floatzel",
@@ -1478,7 +1586,8 @@
   "numero": "025",
   "habitat": "Bright",
   "sprite": "419",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Floragato",
@@ -1492,7 +1601,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Flygon",
@@ -1508,7 +1618,8 @@
    "Aplanissement",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Fraxure",
@@ -1516,7 +1627,8 @@
   "numero": "072",
   "habitat": "Dark",
   "sprite": "611",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Frillish Female Form",
@@ -1524,7 +1636,8 @@
   "numero": "028",
   "habitat": "Dark",
   "sprite": "592-frillishfemaleform",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Frillish Male Form",
@@ -1532,7 +1645,8 @@
   "numero": "028",
   "habitat": "Dark",
   "sprite": "592-frillishmaleform",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Froakie",
@@ -1546,7 +1660,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Frogadier",
@@ -1560,7 +1675,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Gallade",
@@ -1576,7 +1692,8 @@
    "Téléportation",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Garbodor",
@@ -1591,7 +1708,8 @@
    "Recyclage",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Gardevoir",
@@ -1607,7 +1725,8 @@
    "Téléportation",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Gastly",
@@ -1623,7 +1742,8 @@
    "Rangement",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Gastrodon",
@@ -1631,7 +1751,8 @@
   "numero": "060",
   "habitat": "Humid",
   "sprite": "423",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Gastrodon East Sea",
@@ -1639,7 +1760,8 @@
   "numero": "060",
   "habitat": "Humid",
   "sprite": "423-gastrodoneastsea",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Gengar",
@@ -1655,7 +1777,8 @@
    "Rangement",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Geodude",
@@ -1670,7 +1793,8 @@
   "specialites": [
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Gholdengo",
@@ -1678,7 +1802,8 @@
   "numero": "206",
   "habitat": "Bright",
   "sprite": "1000",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Gimmighoul",
@@ -1692,7 +1817,8 @@
   "specialites": [
    "Collection"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Girafarig",
@@ -1707,7 +1833,8 @@
   "specialites": [
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Glaceon",
@@ -1721,7 +1848,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Glimmet",
@@ -1736,7 +1864,8 @@
   "specialites": [
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Glimmora",
@@ -1744,7 +1873,8 @@
   "numero": "204",
   "habitat": "Dark",
   "sprite": "970",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Gloom",
@@ -1759,7 +1889,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Golbat",
@@ -1774,7 +1905,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Golduck",
@@ -1788,7 +1920,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Golem",
@@ -1804,7 +1937,8 @@
    "Broyage",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Golisopod",
@@ -1812,7 +1946,8 @@
   "numero": "040",
   "habitat": "Dark",
   "sprite": "768",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Goodra",
@@ -1827,7 +1962,8 @@
    "Arrosage",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Goomy",
@@ -1841,7 +1977,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Graveler",
@@ -1856,7 +1993,8 @@
   "specialites": [
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Greedent",
@@ -1870,7 +2008,8 @@
   "specialites": [
    "Fête"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Greninja",
@@ -1886,7 +2025,8 @@
    "Arrosage",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Grimer",
@@ -1900,7 +2040,8 @@
   "specialites": [
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Growlithe",
@@ -1915,7 +2056,8 @@
    "Combustion",
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Grubbin",
@@ -1929,7 +2071,8 @@
   "specialites": [
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Gulpin",
@@ -1943,7 +2086,8 @@
   "specialites": [
    "Stockage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Gurdurr",
@@ -1957,7 +2101,8 @@
   "specialites": [
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Gyarados",
@@ -1972,7 +2117,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Happiny",
@@ -1986,7 +2132,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Hariyama",
@@ -2001,7 +2148,8 @@
    "Construction",
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Haunter",
@@ -2017,7 +2165,8 @@
    "Rangement",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Haxorus",
@@ -2032,7 +2181,8 @@
    "Coupe de bois",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Heracross",
@@ -2048,7 +2198,8 @@
    "Coupe de bois",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Hitmonchan",
@@ -2062,7 +2213,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Hitmonlee",
@@ -2076,7 +2228,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Hitmontop",
@@ -2090,7 +2243,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Ho-Oh",
@@ -2103,7 +2257,8 @@
    "vol"
   ],
   "specialites": [],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Honchkrow",
@@ -2119,7 +2274,8 @@
    "Troc",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Hoothoot",
@@ -2135,7 +2291,8 @@
    "Troc",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Hoppip",
@@ -2143,7 +2300,8 @@
   "numero": "001",
   "habitat": "Bright",
   "sprite": "187",
-  "dex": "evenement"
+  "dex": "evenement",
+  "gout": "sweet"
  },
  {
   "en": "Horsea",
@@ -2151,7 +2309,8 @@
   "numero": "003",
   "habitat": "Humid",
   "sprite": "116",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Igglybuff",
@@ -2166,7 +2325,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Illumise",
@@ -2180,7 +2340,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Inkay",
@@ -2188,7 +2349,8 @@
   "numero": "032",
   "habitat": "Dark",
   "sprite": "686",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Ivysaur",
@@ -2203,7 +2365,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Jellicent Female Form",
@@ -2211,7 +2374,8 @@
   "numero": "029",
   "habitat": "Dark",
   "sprite": "593-jellicentfemaleform",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Jellicent Male Form",
@@ -2219,7 +2383,8 @@
   "numero": "029",
   "habitat": "Dark",
   "sprite": "593-jellicentmaleform",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Jigglypuff",
@@ -2234,7 +2399,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Jirachi",
@@ -2256,7 +2422,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Jumpluff",
@@ -2264,7 +2431,8 @@
   "numero": "003",
   "habitat": "Bright",
   "sprite": "189",
-  "dex": "evenement"
+  "dex": "evenement",
+  "gout": "sour"
  },
  {
   "en": "Kadabra",
@@ -2278,7 +2446,8 @@
   "specialites": [
    "Téléportation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Kilowattrel",
@@ -2286,7 +2455,8 @@
   "numero": "267",
   "habitat": "Bright",
   "sprite": "941",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Kingdra",
@@ -2294,7 +2464,8 @@
   "numero": "005",
   "habitat": "Dark",
   "sprite": "230",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Kirlia",
@@ -2309,7 +2480,8 @@
   "specialites": [
    "Téléportation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Koffing",
@@ -2323,7 +2495,8 @@
   "specialites": [
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Kricketot",
@@ -2337,7 +2510,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Kricketune",
@@ -2351,7 +2525,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Kyogre",
@@ -2363,7 +2538,8 @@
    "eau"
   ],
   "specialites": [],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Lampent",
@@ -2378,7 +2554,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Lanturn",
@@ -2386,7 +2563,8 @@
   "numero": "012",
   "habitat": "Dark",
   "sprite": "171",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Lapras",
@@ -2401,7 +2579,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Larvesta",
@@ -2417,7 +2596,8 @@
    "Combustion",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Larvitar",
@@ -2433,7 +2613,8 @@
    "Broyage",
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Leafeon",
@@ -2447,7 +2628,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Litwick",
@@ -2462,7 +2644,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Lombre",
@@ -2477,7 +2660,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Lotad",
@@ -2492,7 +2676,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Lucario",
@@ -2507,7 +2692,8 @@
   "specialites": [
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Ludicolo",
@@ -2523,7 +2709,8 @@
    "Arrosage",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Lugia",
@@ -2536,7 +2723,8 @@
    "vol"
   ],
   "specialites": [],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Lumineon",
@@ -2544,7 +2732,8 @@
   "numero": "027",
   "habitat": "Dark",
   "sprite": "457",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Luvdisc",
@@ -2552,7 +2741,8 @@
   "numero": "023",
   "habitat": "Warm",
   "sprite": "370",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Machamp",
@@ -2567,7 +2757,8 @@
    "Construction",
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Machoke",
@@ -2582,7 +2773,8 @@
    "Construction",
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Machop",
@@ -2597,7 +2789,8 @@
    "Construction",
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Magby",
@@ -2605,7 +2798,8 @@
   "numero": "162",
   "habitat": "Warm",
   "sprite": "240",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Magikarp",
@@ -2617,7 +2811,8 @@
    "eau"
   ],
   "specialites": [],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Magmar",
@@ -2631,7 +2826,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Magmortar",
@@ -2646,7 +2842,8 @@
    "Combustion",
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Magnemite",
@@ -2661,7 +2858,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Magneton",
@@ -2676,7 +2874,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Magnezone",
@@ -2692,7 +2891,8 @@
    "Électrification",
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Makuhita",
@@ -2707,7 +2907,8 @@
    "Construction",
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Malamar",
@@ -2715,7 +2916,8 @@
   "numero": "033",
   "habitat": "Bright",
   "sprite": "687",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Manaphy",
@@ -2723,7 +2925,8 @@
   "numero": "050",
   "habitat": "Cool",
   "sprite": "490",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Mareanie",
@@ -2731,7 +2934,8 @@
   "numero": "037",
   "habitat": "Warm",
   "sprite": "747",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Mareep",
@@ -2746,7 +2950,8 @@
    "Électrification",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Marill",
@@ -2762,7 +2967,8 @@
    "Arrosage",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Marowak",
@@ -2776,7 +2982,8 @@
   "specialites": [
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Marshtomp",
@@ -2784,7 +2991,8 @@
   "numero": "015",
   "habitat": "Bright",
   "sprite": "259",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Mawile",
@@ -2800,7 +3008,8 @@
    "Troc",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Meowscarada",
@@ -2816,7 +3025,8 @@
    "Fertilisation",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Meowth",
@@ -2830,7 +3040,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Metagross",
@@ -2846,7 +3057,8 @@
    "Recyclage",
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Metang",
@@ -2861,7 +3073,8 @@
   "specialites": [
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Mew",
@@ -2875,7 +3088,8 @@
   "specialites": [
    "Téléportation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Mewtwo",
@@ -2889,7 +3103,8 @@
   "specialites": [
    "Téléportation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Milotic",
@@ -2897,7 +3112,8 @@
   "numero": "007",
   "habitat": "Humid",
   "sprite": "350",
-  "dex": "evenement"
+  "dex": "evenement",
+  "gout": "sour"
  },
  {
   "en": "Mime Jr.",
@@ -2912,7 +3128,8 @@
   "specialites": [
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Mimikyu",
@@ -2927,7 +3144,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Minccino",
@@ -2941,7 +3159,8 @@
   "specialites": [
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Minun",
@@ -2955,7 +3174,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Misdreavus",
@@ -2969,7 +3189,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Mismagius",
@@ -2984,7 +3205,8 @@
    "Rangement",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Moltres",
@@ -2999,7 +3221,8 @@
   "specialites": [
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Mosslax",
@@ -3023,7 +3246,8 @@
    "Rangement",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Mudkip",
@@ -3031,7 +3255,8 @@
   "numero": "014",
   "habitat": "Bright",
   "sprite": "258",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Muk",
@@ -3045,7 +3270,8 @@
   "specialites": [
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Munchlax",
@@ -3059,7 +3285,8 @@
   "specialites": [
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Murkrow",
@@ -3075,7 +3302,8 @@
    "Troc",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Ninetales",
@@ -3089,7 +3317,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Noctowl",
@@ -3105,7 +3334,8 @@
    "Troc",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Noibat",
@@ -3121,7 +3351,8 @@
    "Recherche",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Noivern",
@@ -3137,7 +3368,8 @@
    "Recherche",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Oddish",
@@ -3152,7 +3384,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Onix",
@@ -3168,7 +3401,8 @@
    "Broyage",
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Paldean Wooper",
@@ -3183,7 +3417,8 @@
   "specialites": [
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Paras",
@@ -3198,7 +3433,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Parasect",
@@ -3213,7 +3449,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Pawmi",
@@ -3227,7 +3464,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Pawmo",
@@ -3243,7 +3481,8 @@
    "Électrification",
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Pawmot",
@@ -3259,7 +3498,8 @@
    "Électrification",
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Peakychu",
@@ -3289,7 +3529,8 @@
    "Arrosage",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Persian",
@@ -3303,7 +3544,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Phione",
@@ -3311,7 +3553,8 @@
   "numero": "049",
   "habitat": "Warm",
   "sprite": "489",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Pichu",
@@ -3325,7 +3568,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Pidgeot",
@@ -3341,7 +3585,8 @@
    "Vol",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Pidgeotto",
@@ -3357,7 +3602,8 @@
    "Vol",
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Pidgey",
@@ -3373,7 +3619,8 @@
    "Vol",
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Pikachu",
@@ -3387,7 +3634,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Pincurchin",
@@ -3395,7 +3643,8 @@
   "numero": "045",
   "habitat": "Humid",
   "sprite": "871",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Pinsir",
@@ -3410,7 +3659,8 @@
    "Coupe de bois",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Piplup",
@@ -3424,7 +3674,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Plusle",
@@ -3438,7 +3689,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Politoed",
@@ -3453,7 +3705,8 @@
    "Arrosage",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Poliwag",
@@ -3467,7 +3720,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Poliwhirl",
@@ -3481,7 +3735,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Poliwrath",
@@ -3497,7 +3752,8 @@
    "Arrosage",
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Popplio",
@@ -3505,7 +3761,8 @@
   "numero": "034",
   "habitat": "Bright",
   "sprite": "728",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Porygon",
@@ -3519,7 +3776,8 @@
   "specialites": [
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Porygon-Z",
@@ -3533,7 +3791,8 @@
   "specialites": [
    "Minerai rare"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Porygon2",
@@ -3547,7 +3806,8 @@
   "specialites": [
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Primarina",
@@ -3555,7 +3815,8 @@
   "numero": "036",
   "habitat": "Bright",
   "sprite": "730",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sour"
  },
  {
   "en": "Prinplup",
@@ -3570,7 +3831,8 @@
    "Arrosage",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Professor Tangrowth",
@@ -3592,7 +3854,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Pupitar",
@@ -3608,7 +3871,8 @@
    "Broyage",
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Quilava",
@@ -3622,7 +3886,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Raboot",
@@ -3636,7 +3901,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Raichu",
@@ -3651,7 +3917,8 @@
    "Électrification",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Raikou",
@@ -3665,7 +3932,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Ralts",
@@ -3680,7 +3948,8 @@
   "specialites": [
    "Téléportation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Rampardos",
@@ -3695,7 +3964,8 @@
    "Broyage",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Riolu",
@@ -3709,7 +3979,8 @@
   "specialites": [
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Rolycoly",
@@ -3724,7 +3995,8 @@
    "Combustion",
    "Rangement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Rookidee",
@@ -3738,7 +4010,8 @@
   "specialites": [
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Rowlet",
@@ -3753,7 +4026,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Sableye",
@@ -3776,7 +4050,8 @@
   "specialites": [
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Scorbunny",
@@ -3790,7 +4065,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Scyther",
@@ -3805,7 +4081,8 @@
   "specialites": [
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Seadra",
@@ -3813,7 +4090,8 @@
   "numero": "004",
   "habitat": "Humid",
   "sprite": "117",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Serperior",
@@ -3828,7 +4106,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Servine",
@@ -3843,7 +4122,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Sharpedo",
@@ -3851,7 +4131,8 @@
   "numero": "018",
   "habitat": "Humid",
   "sprite": "319",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Shellder",
@@ -3859,7 +4140,8 @@
   "numero": "001",
   "habitat": "Dark",
   "sprite": "090",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Shellos",
@@ -3867,7 +4149,8 @@
   "numero": "059",
   "habitat": "Humid",
   "sprite": "422",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Shellos East Sea",
@@ -3875,7 +4158,8 @@
   "numero": "059",
   "habitat": "Humid",
   "sprite": "422-shelloseastsea",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Shieldon",
@@ -3890,7 +4174,8 @@
   "specialites": [
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Skiploom",
@@ -3898,7 +4183,8 @@
   "numero": "002",
   "habitat": "Bright",
   "sprite": "188",
-  "dex": "evenement"
+  "dex": "evenement",
+  "gout": "dry"
  },
  {
   "en": "Skwovet",
@@ -3913,7 +4199,8 @@
    "Recherche",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Sliggoo",
@@ -3927,7 +4214,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Slowbro",
@@ -3943,7 +4231,8 @@
    "Arrosage",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Slowking",
@@ -3959,7 +4248,8 @@
    "Arrosage",
    "Téléportation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Slowpoke",
@@ -3975,7 +4265,8 @@
    "Arrosage",
    "Bâillement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Smeargle",
@@ -3989,7 +4280,8 @@
   "specialites": [
    "Peinture"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Snivy",
@@ -4004,7 +4296,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Snorlax",
@@ -4019,7 +4312,8 @@
    "Aplanissement",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Spinarak",
@@ -4034,7 +4328,8 @@
   "specialites": [
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Sprigatito",
@@ -4048,7 +4343,8 @@
   "specialites": [
    "Fertilisation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Squirtle",
@@ -4062,7 +4358,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Starmie",
@@ -4070,7 +4367,8 @@
   "numero": "007",
   "habitat": "Bright",
   "sprite": "121",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Staryu",
@@ -4078,7 +4376,8 @@
   "numero": "006",
   "habitat": "Bright",
   "sprite": "120",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Steelix",
@@ -4094,7 +4393,8 @@
    "Broyage",
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Stereo Rotom",
@@ -4102,7 +4402,8 @@
   "numero": "182",
   "habitat": "Bright",
   "sprite": "479-stereorotom",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Stunfisk",
@@ -4110,7 +4411,8 @@
   "numero": "031",
   "habitat": "Humid",
   "sprite": "618",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Sudowoodo",
@@ -4124,7 +4426,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Suicune",
@@ -4138,7 +4441,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Swablu",
@@ -4153,7 +4457,8 @@
   "specialites": [
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Swalot",
@@ -4167,7 +4472,8 @@
   "specialites": [
    "Stockage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Swampert",
@@ -4175,7 +4481,8 @@
   "numero": "016",
   "habitat": "Bright",
   "sprite": "260",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Sylveon",
@@ -4189,7 +4496,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Tangela",
@@ -4204,7 +4512,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Tangrowth",
@@ -4218,7 +4527,8 @@
   "specialites": [
    "Expertise"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Tatsugiri Curly Form",
@@ -4226,7 +4536,8 @@
   "numero": "145",
   "habitat": "Humid",
   "sprite": "978-tatsugiricurlyform",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Tatsugiri Droopy Form",
@@ -4234,7 +4545,8 @@
   "numero": "145",
   "habitat": "Humid",
   "sprite": "978-tatsugiridroopyform",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Tatsugiri Stretchy Form",
@@ -4242,7 +4554,8 @@
   "numero": "145",
   "habitat": "Humid",
   "sprite": "978-tatsugiristretchyform",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Timburr",
@@ -4256,7 +4569,8 @@
   "specialites": [
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Tinkatink",
@@ -4271,7 +4585,8 @@
   "specialites": [
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Tinkaton",
@@ -4286,7 +4601,8 @@
   "specialites": [
    "Travaux"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Tinkatuff",
@@ -4301,7 +4617,8 @@
   "specialites": [
    "Construction"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Torchic",
@@ -4315,7 +4632,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Torkoal",
@@ -4329,7 +4647,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Totodile",
@@ -4337,7 +4656,8 @@
   "numero": "008",
   "habitat": "Bright",
   "sprite": "158",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "spicy"
  },
  {
   "en": "Toxapex",
@@ -4345,7 +4665,8 @@
   "numero": "038",
   "habitat": "Warm",
   "sprite": "748",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Toxel",
@@ -4360,7 +4681,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Toxtricity Amped Form",
@@ -4376,7 +4698,8 @@
    "Électrification",
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Toxtricity Low Key Form",
@@ -4384,7 +4707,8 @@
   "numero": "197",
   "habitat": "Humid",
   "sprite": "849-toxtricitylowkeyform",
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Trapinch",
@@ -4399,7 +4723,8 @@
    "Aplanissement",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Trubbish",
@@ -4413,7 +4738,8 @@
   "specialites": [
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Typhlosion",
@@ -4428,7 +4754,8 @@
    "Combustion",
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Tyranitar",
@@ -4444,7 +4771,8 @@
    "Broyage",
    "Aplanissement"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Tyrantrum",
@@ -4460,7 +4788,8 @@
    "Broyage",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Tyrogue",
@@ -4474,7 +4803,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Tyrunt",
@@ -4489,7 +4819,8 @@
   "specialites": [
    "Broyage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Umbreon",
@@ -4503,7 +4834,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Vaporeon",
@@ -4517,7 +4849,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Veluza",
@@ -4525,7 +4858,8 @@
   "numero": "048",
   "habitat": "Cool",
   "sprite": "976",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Venomoth",
@@ -4540,7 +4874,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Venonat",
@@ -4555,7 +4890,8 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Venusaur",
@@ -4571,7 +4907,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Vespiquen",
@@ -4587,7 +4924,8 @@
    "Récolte de miel",
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Vibrava",
@@ -4603,7 +4941,8 @@
    "Aplanissement",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Victreebel",
@@ -4619,7 +4958,8 @@
    "Fertilisation",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Vikavolt",
@@ -4635,7 +4975,8 @@
    "Électrification",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Vileplume",
@@ -4651,7 +4992,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Volbeat",
@@ -4665,7 +5007,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sweet"
  },
  {
   "en": "Volcanion",
@@ -4680,7 +5023,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Volcarona",
@@ -4696,7 +5040,8 @@
    "Combustion",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Voltorb",
@@ -4711,7 +5056,8 @@
    "Électrification",
    "Explosion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Vulpix",
@@ -4725,7 +5071,8 @@
   "specialites": [
    "Combustion"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Wartortle",
@@ -4739,7 +5086,8 @@
   "specialites": [
    "Arrosage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Wattrel",
@@ -4754,7 +5102,8 @@
   "specialites": [
    "Électrification"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Weepinbell",
@@ -4770,7 +5119,8 @@
    "Fertilisation",
    "Désordre"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Weezing",
@@ -4784,7 +5134,8 @@
   "specialites": [
    "Recyclage"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "bitter"
  },
  {
   "en": "Whiscash",
@@ -4792,7 +5143,8 @@
   "numero": "020",
   "habitat": "Humid",
   "sprite": "340",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Wigglytuff",
@@ -4807,7 +5159,8 @@
   "specialites": [
    "Animation"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Wiglett",
@@ -4815,7 +5168,8 @@
   "numero": "046",
   "habitat": "Humid",
   "sprite": "960",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "dry"
  },
  {
   "en": "Wimpod",
@@ -4823,7 +5177,8 @@
   "numero": "039",
   "habitat": "Dark",
   "sprite": "767",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "bitter"
  },
  {
   "en": "Wingull",
@@ -4839,7 +5194,8 @@
    "Arrosage",
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "dry"
  },
  {
   "en": "Wugtrio",
@@ -4847,7 +5203,8 @@
   "numero": "047",
   "habitat": "Humid",
   "sprite": "961",
-  "dex": "bassin"
+  "dex": "bassin",
+  "gout": "sweet"
  },
  {
   "en": "Zapdos",
@@ -4862,7 +5219,8 @@
   "specialites": [
    "Vol"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Zoroark",
@@ -4877,7 +5235,8 @@
    "Troc",
    "Coupe de bois"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  },
  {
   "en": "Zorua",
@@ -4891,7 +5250,8 @@
   "specialites": [
    "Troc"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "sour"
  },
  {
   "en": "Zubat",
@@ -4906,6 +5266,7 @@
   "specialites": [
    "Recherche"
   ],
-  "dex": "principal"
+  "dex": "principal",
+  "gout": "spicy"
  }
 ]

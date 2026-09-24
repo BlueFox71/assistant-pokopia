@@ -4,6 +4,7 @@ import { Input } from 'antd'
 import illustration from '../assets/accueil-pokopia.webp'
 import BandeDefilante from '../components/BandeDefilante'
 import { IconeCommode, IconeFeuille, IconeListe, IconePokeball } from '../components/Icones'
+import ProgressionVilles from '../components/ProgressionVilles'
 import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
   objetParNom,
@@ -19,6 +20,7 @@ import {
   spritePokemon,
 } from '../data'
 import { FR_TYPE_OBJET, typeObjet } from '../data/categories'
+import { useHabitats } from '../utils/habitatsStorage'
 import { correspond, normaliser } from '../utils/recherche'
 import './AccueilPage.css'
 
@@ -38,6 +40,7 @@ const MAX_PAR_FAMILLE = 5
  */
 export default function AccueilPage() {
   const navigate = useNavigate()
+  const habitats = useHabitats()
   const [saisie, setSaisie] = useState('')
 
   const saisieDifferee = useDeferredValue(saisie)
@@ -79,7 +82,13 @@ export default function AccueilPage() {
   // Au repos, l'accueil tient dans un écran ; dès qu'une recherche affiche des résultats,
   // on rend le défilement plutôt que de les enfermer dans une bande de cent pixels.
   return (
-    <div className={'accueil-ecran' + (resultats ? ' en-recherche' : '')}>
+    <div
+      className={
+        'accueil-ecran' +
+        (resultats ? ' en-recherche' : '') +
+        (habitats.length ? ' a-progression' : '')
+      }
+    >
       <BandeDefilante sens="gauche" nombre={60} duree={190} />
 
       <div className="wrap accueil">
@@ -206,6 +215,8 @@ export default function AccueilPage() {
           )}
         </section>
       )}
+
+      <ProgressionVilles habitats={habitats} />
 
       <section className="accueil-chiffres">
         <div className="chiffre" style={{ '--teinte': 'var(--accent-ink)' }}>

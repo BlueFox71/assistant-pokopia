@@ -37,6 +37,13 @@
   .accueil-ecran > .bande:last-child { margin-top: 34px; }
 }
 
+/* La progression ajoute une rangée de barres : le pli remonte d'autant, et la page reprend
+   sa hauteur naturelle plus tôt que sans elle. */
+@media (max-height: 830px) {
+  .accueil-ecran.a-progression { height: auto; padding-bottom: 40px; }
+  .accueil-ecran.a-progression > .bande:last-child { margin-top: 34px; }
+}
+
 /* ---- en-tête ---- */
 .accueil-tete { max-width: 62ch; }
 .accueil-tete h1 {
@@ -139,6 +146,11 @@
 .chiffre.lien:hover { background: var(--accent-soft); }
 .chiffre.lien:hover span { color: var(--ink-2); }
 .chiffre.lien:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+
+/* ---- suivre la progression ----
+   Le bloc est un composant partagé (components/ProgressionVilles) : l'accueil ne pose ici
+   que sa place dans la colonne. */
+.accueil .progression { margin: 26px 0 0; flex: 0 0 auto; }
 
 /* ---- hero : le texte à gauche, l'illustration à droite ----
    L'image du jeu a un fond crème qui n'appartient à aucun des deux thèmes : elle reste

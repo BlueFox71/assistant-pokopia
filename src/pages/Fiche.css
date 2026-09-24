@@ -54,6 +54,9 @@
 .fiche-note { font-size: 13px; color: var(--ink-3); margin: 0 0 12px; max-width: 78ch; }
 .fiche-note a { color: var(--accent-ink); }
 
+/* À la place du bouton « Composer un habitat » pour le seul Pokémon qui n'en aura jamais. */
+.fiche-sans-habitat { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+
 .fiche-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 /* Les étiquettes de fiche sont purement informatives : pas de survol cliquable. */
 .chip-tag.statique { cursor: default; display: inline-flex; align-items: baseline; gap: 6px; }

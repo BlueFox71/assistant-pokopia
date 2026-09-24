@@ -1,0 +1,290 @@
+[
+ {
+  "en": "Rawst Berry",
+  "fr": "Baie Fraive",
+  "gout": "bitter",
+  "sprite": "rawstberry"
+ },
+ {
+  "en": "Potato",
+  "fr": "Pomme de terre",
+  "gout": "bitter",
+  "sprite": "potato"
+ },
+ {
+  "en": "Seaweed",
+  "fr": "Algue",
+  "gout": "bitter",
+  "sprite": "seaweed"
+ },
+ {
+  "en": "Seaweed salad",
+  "fr": "Salade d’algues",
+  "gout": "bitter",
+  "sprite": "seaweedsalad"
+ },
+ {
+  "en": "Seaweed soup",
+  "fr": "Soupe d’algues",
+  "gout": "bitter",
+  "sprite": "seaweedsoup"
+ },
+ {
+  "en": "Recycled bread",
+  "fr": "Pain recyclé",
+  "gout": "bitter",
+  "sprite": "recycledbread"
+ },
+ {
+  "en": "Bitter hamburger steak",
+  "fr": "Steak haché amer",
+  "gout": "bitter",
+  "sprite": "bitterhamburgersteak"
+ },
+ {
+  "en": "Sea grapes",
+  "fr": "Raisins de mer",
+  "gout": "bitter",
+  "sprite": "seagrapes"
+ },
+ {
+  "en": "Popping salad",
+  "fr": "Salade pétillante",
+  "gout": "bitter",
+  "sprite": "poppingsalad"
+ },
+ {
+  "en": "Popping soup",
+  "fr": "Soupe pétillante",
+  "gout": "bitter",
+  "sprite": "poppingsoup"
+ },
+ {
+  "en": "Coffee parfait smoothie",
+  "fr": "Smoothie parfait café",
+  "gout": "bitter",
+  "sprite": "coffeeparfaitsmoothie"
+ },
+ {
+  "en": "Chesto Berry",
+  "fr": "Baie Maron",
+  "gout": "dry",
+  "sprite": "chestoberry"
+ },
+ {
+  "en": "Wheat",
+  "fr": "Blé",
+  "gout": "dry",
+  "sprite": "wheat"
+ },
+ {
+  "en": "Cave mushrooms",
+  "fr": "Champignons des cavernes",
+  "gout": "dry",
+  "sprite": "cavemushrooms"
+ },
+ {
+  "en": "Crushed-berry salad",
+  "fr": "Salade de baies pilées",
+  "gout": "dry",
+  "sprite": "crushed-berrysalad"
+ },
+ {
+  "en": "Mushroom soup",
+  "fr": "Soupe aux champignons",
+  "gout": "dry",
+  "sprite": "mushroomsoup"
+ },
+ {
+  "en": "Mushroom hamburger steak",
+  "fr": "Steak haché aux champignons",
+  "gout": "dry",
+  "sprite": "mushroomhamburgersteak"
+ },
+ {
+  "en": "Roserade Tea",
+  "fr": "Thé Roserade",
+  "gout": "dry",
+  "sprite": "roseradetea"
+ },
+ {
+  "en": "Sea grape smoothie",
+  "fr": "Smoothie aux raisins de mer",
+  "gout": "dry",
+  "sprite": "seagrapesmoothie"
+ },
+ {
+  "en": "Aspear Berry",
+  "fr": "Baie Willia",
+  "gout": "sour",
+  "sprite": "aspearberry"
+ },
+ {
+  "en": "Tomato",
+  "fr": "Tomate",
+  "gout": "sour",
+  "sprite": "tomato"
+ },
+ {
+  "en": "Shredded salad",
+  "fr": "Salade émincée",
+  "gout": "sour",
+  "sprite": "shreddedsalad"
+ },
+ {
+  "en": "Flavorful soup",
+  "fr": "Soupe savoureuse",
+  "gout": "sour",
+  "sprite": "flavorfulsoup"
+ },
+ {
+  "en": "Leppa bread",
+  "fr": "Pain Mepo",
+  "gout": "sour",
+  "sprite": "leppabread"
+ },
+ {
+  "en": "Tomato hamburger steak",
+  "fr": "Steak haché à la tomate",
+  "gout": "sour",
+  "sprite": "tomatohamburgersteak"
+ },
+ {
+  "en": "Soda Pop",
+  "fr": "Soda Cool",
+  "gout": "sour",
+  "sprite": "sodapop"
+ },
+ {
+  "en": "Refreshing soda smoothie",
+  "fr": "Smoothie soda rafraîchissant",
+  "gout": "sour",
+  "sprite": "refreshingsodasmoothie"
+ },
+ {
+  "en": "Fresh carrot",
+  "fr": "Carotte fraîche",
+  "gout": "spicy",
+  "sprite": "freshcarrot"
+ },
+ {
+  "en": "Crouton salad",
+  "fr": "Salade aux croûtons",
+  "gout": "spicy",
+  "sprite": "croutonsalad"
+ },
+ {
+  "en": "Electrifying soup",
+  "fr": "Soupe électrisante",
+  "gout": "spicy",
+  "sprite": "electrifyingsoup"
+ },
+ {
+  "en": "Healthy soup",
+  "fr": "Soupe santé",
+  "gout": "spicy",
+  "sprite": "healthysoup"
+ },
+ {
+  "en": "Carrot bread",
+  "fr": "Pain à la carotte",
+  "gout": "spicy",
+  "sprite": "carrotbread"
+ },
+ {
+  "en": "Bread bowl",
+  "fr": "Pain-bol",
+  "gout": "spicy",
+  "sprite": "breadbowl"
+ },
+ {
+  "en": "Chili sauce",
+  "fr": "Sauce pimentée",
+  "gout": "spicy",
+  "sprite": "chilisauce"
+ },
+ {
+  "en": "Explosive hamburger steak",
+  "fr": "Steak haché explosif",
+  "gout": "spicy",
+  "sprite": "explosivehamburgersteak"
+ },
+ {
+  "en": "Red-hot smoothie",
+  "fr": "Smoothie brûlant",
+  "gout": "spicy",
+  "sprite": "red-hotsmoothie"
+ },
+ {
+  "en": "Pecha Berry",
+  "fr": "Baie Pêcha",
+  "gout": "sweet",
+  "sprite": "pechaberry"
+ },
+ {
+  "en": "Bean",
+  "fr": "Haricot",
+  "gout": "sweet",
+  "sprite": "bean"
+ },
+ {
+  "en": "Leppa salad",
+  "fr": "Salade Mepo",
+  "gout": "sweet",
+  "sprite": "leppasalad"
+ },
+ {
+  "en": "Fluffy bread",
+  "fr": "Pain moelleux",
+  "gout": "sweet",
+  "sprite": "fluffybread"
+ },
+ {
+  "en": "Potato hamburger steak",
+  "fr": "Steak haché aux pommes de terre",
+  "gout": "sweet",
+  "sprite": "potatohamburgersteak"
+ },
+ {
+  "en": "Moomoo Milk Coffee",
+  "fr": "Café au Lait Meumeu",
+  "gout": "sweet",
+  "sprite": "moomoomilkcoffee"
+ },
+ {
+  "en": "Common candy",
+  "fr": "Bonbon ordinaire",
+  "gout": "sweet",
+  "sprite": "commoncandy"
+ },
+ {
+  "en": "Rare Candy",
+  "fr": "Super Bonbon",
+  "gout": "sweet",
+  "sprite": "rarecandy"
+ },
+ {
+  "en": "Watermelon slice",
+  "fr": "Tranche de pastèque",
+  "gout": "sweet",
+  "sprite": "watermelonslice"
+ },
+ {
+  "en": "Watermelon smoothie",
+  "fr": "Smoothie pastèque",
+  "gout": "sweet",
+  "sprite": "watermelonsmoothie"
+ },
+ {
+  "en": "Watermelon bread",
+  "fr": "Pain à la pastèque",
+  "gout": "sweet",
+  "sprite": "watermelonbread"
+ },
+ {
+  "en": "Leppa smoothie",
+  "fr": "Smoothie Mepo",
+  "gout": "sweet",
+  "sprite": "leppasmoothie"
+ }
+]

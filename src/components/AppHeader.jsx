@@ -6,9 +6,9 @@ import { useTheme } from '../context/ThemeContext'
 import './AppHeader.css'
 
 const ONGLETS = [
-  { to: '/preferences', libelle: 'Préférences', Icone: IconeListe },
   { to: '/habitat', libelle: 'Habitat', Icone: IconeMaison },
   { to: '/villes', libelle: 'Villes', Icone: IconeTerrasse },
+  { to: '/preferences', libelle: 'Préférences', Icone: IconeListe },
   { to: '/objets', libelle: 'Objets', Icone: IconeCaisse },
   { to: '/pokedex', libelle: 'Pokédex', Icone: IconePokeball },
 ]

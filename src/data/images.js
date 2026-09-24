@@ -1,8 +1,8 @@
 /**
  * Résolution des URL de sprites, mutualisée.
  *
- * Les 1 081 vignettes (715 objets, 366 Pokémon) viennent de l'index des préférences :
- * elles sont globées une seule fois ici et indexées dans deux Map, plutôt que
+ * Les 1 081 vignettes (715 objets, 366 Pokémon) viennent de l'index des préférences, les
+ * 48 aliments de Serebii (cf. scripts/importer-aliments.mjs) : elles sont globées une seule fois ici et indexées dans deux Map, plutôt que
  * re-résolues à chaque rendu de vignette — l'index affiche jusqu'à 3 000 chips d'un
  * coup quand tout est déplié.
  *
@@ -22,6 +22,12 @@ const modulesPokemon = import.meta.glob('./sprites/pokemon/*.webp', {
   eager: true,
 })
 
+const modulesAliments = import.meta.glob('./sprites/aliments/*.webp', {
+  query: '?url',
+  import: 'default',
+  eager: true,
+})
+
 /** `./sprites/objets/plainchest.webp` -> `plainchest` */
 const cleDepuisChemin = (chemin) =>
   (chemin.split('/').pop() || '').replace(/\.webp$/i, '')
@@ -34,9 +40,13 @@ function indexer(modules) {
 
 const objetsParCle = indexer(modulesObjets)
 const pokemonParCle = indexer(modulesPokemon)
+const alimentsParCle = indexer(modulesAliments)
 
 /** URL de la vignette d'un objet, ou null si la clé est inconnue. */
 export const urlSpriteObjet = (cle) => (cle && objetsParCle.get(cle)) || null
 
 /** URL de la vignette d'un Pokémon, ou null si la clé est inconnue. */
 export const urlSpritePokemon = (cle) => (cle && pokemonParCle.get(cle)) || null
+
+/** URL de la vignette d'un aliment, ou null si la clé est inconnue. */
+export const urlSpriteAliment = (cle) => (cle && alimentsParCle.get(cle)) || null

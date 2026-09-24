@@ -9,6 +9,7 @@ import {
   comparerParNumero,
   frPokemon,
   habitatDe,
+  logeable,
   numeroAffiche,
   objetsPourGroupe,
   pokemonParNom,
@@ -78,8 +79,10 @@ export default function FichePokemonPage() {
   const { memeVille, ailleurs } = useMemo(() => {
     if (!connu) return { memeVille: [], ailleurs: [] }
     const mien = new Set(slugs)
+    // Un voisin de goût est un colocataire en puissance : Kyogre, qu'aucun enclos ne peut
+    // accueillir, n'a pas à figurer dans une liste dont chaque entrée propose un enclos.
     const tous = [...prefsParPokemon.keys()]
-      .filter((autre) => autre !== nom)
+      .filter((autre) => autre !== nom && logeable(autre))
       .map((autre) => ({
         nom: autre,
         communes: (prefsParPokemon.get(autre) || []).filter((s) => mien.has(s)).length,
@@ -190,20 +193,26 @@ export default function FichePokemonPage() {
           >
             Changer de ville
           </button>
-          <button
-            type="button"
-            className="ghost-btn"
-            title={sonHabitat ? sonHabitat.nom : undefined}
-            onClick={() =>
-              navigate(
-                sonHabitat
-                  ? `/habitat?habitat=${encodeURIComponent(sonHabitat.id)}`
-                  : `/habitat?pokemon=${encodeURIComponent(nom)}`,
-              )
-            }
-          >
-            {sonHabitat ? 'Voir son habitat →' : 'Composer un habitat →'}
-          </button>
+          {/* Kyogre n'entre dans aucun enclos : lui proposer d'en composer un mènerait à
+              une page que le sélecteur, lui, refuse de peupler. */}
+          {logeable(nom) ? (
+            <button
+              type="button"
+              className="ghost-btn"
+              title={sonHabitat ? sonHabitat.nom : undefined}
+              onClick={() =>
+                navigate(
+                  sonHabitat
+                    ? `/habitat?habitat=${encodeURIComponent(sonHabitat.id)}`
+                    : `/habitat?pokemon=${encodeURIComponent(nom)}`,
+                )
+              }
+            >
+              {sonHabitat ? 'Voir son habitat →' : 'Composer un habitat →'}
+            </button>
+          ) : (
+            <span className="fiche-sans-habitat">Aucun habitat ne peut l’accueillir</span>
+          )}
         </div>
       </header>
 

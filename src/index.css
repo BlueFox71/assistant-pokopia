@@ -158,6 +158,18 @@
   --h-warm-fond: hsl(12 var(--sat-fond) var(--lum-fond));
   --h-cool-fond: hsl(186 var(--sat-fond) var(--lum-fond));
 
+  /* les cinq goûts — la teinte de l'aliment, pas celle de l'habitat le plus proche */
+  --g-sweet: hsl(335 62% var(--lum));
+  --g-spicy: hsl(6 75% var(--lum));
+  --g-sour: hsl(68 58% var(--lum));
+  --g-bitter: hsl(158 42% var(--lum));
+  --g-dry: hsl(30 42% var(--lum));
+  --g-sweet-fond: hsl(335 var(--sat-fond) var(--lum-fond));
+  --g-spicy-fond: hsl(6 var(--sat-fond) var(--lum-fond));
+  --g-sour-fond: hsl(68 var(--sat-fond) var(--lum-fond));
+  --g-bitter-fond: hsl(158 var(--sat-fond) var(--lum-fond));
+  --g-dry-fond: hsl(30 var(--sat-fond) var(--lum-fond));
+
   /* les six villes de l'île — chacune sur la teinte de ce qu'on y voit */
   --v-terrassec: hsl(95 45% var(--lum));
   --v-grisemer: hsl(212 24% var(--lum));
@@ -297,8 +309,19 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .chip-tag:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 
-/* ---- grille de vignettes, partagée par toutes les vues ---- */
-.chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(102px, 1fr)); gap: 4px; }
+/**
+ * ---- grille de vignettes, partagée par toutes les vues ----
+ *
+ * Une seule variable règle la grille : la taille du sprite. La colonne suit à 42 px près —
+ * de quoi loger les marges et un badge « 4 Pokémon » sur une ligne —, si bien que les 60 px
+ * par défaut redonnent exactement les 102 px d'origine. La vue habitat pose `--sprite` sur
+ * sa grille pour la faire varier au curseur ; partout ailleurs, le repli s'applique.
+ */
+.chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--sprite, 60px) + 42px), 1fr));
+  gap: 4px;
+}
 
 .chip {
   position: relative;
@@ -307,7 +330,10 @@ h1, h2, h3 { text-wrap: balance; }
   background: var(--accent-soft); color: var(--ink); cursor: pointer; font: inherit;
   font-size: 10.5px; line-height: 1.2; text-align: center;
 }
-.chip img { width: 60px; height: 60px; object-fit: contain; flex: 0 0 auto; margin-bottom: 3px; }
+.chip img {
+  width: var(--sprite, 60px); height: var(--sprite, 60px);
+  object-fit: contain; flex: 0 0 auto; margin-bottom: 3px;
+}
 .chip:hover { border-color: var(--accent-ink); }
 .chip:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
 .chip.mon { background: var(--second-soft); }
@@ -344,6 +370,29 @@ h1, h2, h3 { text-wrap: balance; }
 /* Le pinceau du catalogue : il hérite de la couleur du type d'objet, juste à côté. */
 .chip-pinceau { font-size: 9px; margin-left: 3px; vertical-align: -1px; }
 
+/* La vignette nue : plus de nom ni de type, seulement le sprite et ses badges. Elle se
+   resserre d'autant, et la grille en tient bien davantage à l'écran. */
+.chip.nue { padding: 6px 4px 5px; }
+.chip.nue img { margin-bottom: 0; }
+
+/* ---- infobulle d'une vignette d'objet ---- */
+
+/**
+ * `--lum` redéfini : l'infobulle d'antd est sombre dans les deux thèmes, or les teintes
+ * sémantiques empruntent leur luminosité à cette variable, réglée pour un fond clair. Sans
+ * cette ligne, un « DÉCORATION » violet foncé se perdrait sur le fond de la bulle en thème
+ * clair. On lui donne donc la valeur du thème sombre, et tous les `var(--c-*)` employés à
+ * l'intérieur se recalculent en clair.
+ */
+.bulle-objet { --lum: 72%; max-width: 280px; }
+.bulle-tete { display: block; margin-bottom: 6px; }
+.bulle-tete strong { display: block; font-size: 13px; line-height: 1.3; }
+.bulle-en { display: block; font-family: var(--mono); font-size: 10px; opacity: .7; }
+.bulle-type {
+  display: block; font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; margin-top: 2px;
+}
+
 /* La ville tient sur sa propre ligne : le nom d'une ville renommée peut être long, et
    l'entasser avec le numéro et l'habitat rendait les trois illisibles. */
 .chip-ville {
@@ -363,6 +412,9 @@ h1, h2, h3 { text-wrap: balance; }
   color: var(--accent-ink); text-transform: uppercase;
 }
 .chip-badge.shared { color: var(--second); }
+/* Un seul — une préférence, un colocataire : le compte est là, mais la couleur reste à ceux
+   qui en réunissent plusieurs. Après `.shared`, dont elle reprend la place. */
+.chip-badge.seule { color: var(--ink-3); }
 /* compatibilité avec le groupe en cours de composition */
 .chip-badge.compat.fort { color: var(--second); }
 .chip-badge.compat.moyen { color: var(--accent-ink); }
@@ -423,6 +475,15 @@ h1, h2, h3 { text-wrap: balance; }
 .hab-Dry { color: var(--h-dry); }
 .hab-Warm { color: var(--h-warm); }
 .hab-Cool { color: var(--h-cool); }
+
+/* Goût préféré, sous un Pokémon : même gabarit que la marque d'habitat. */
+.marque-gout { display: inline-flex; align-items: center; gap: 3px; }
+.marque-gout svg { font-size: 9px; }
+.gout-sweet { color: var(--g-sweet); }
+.gout-spicy { color: var(--g-spicy); }
+.gout-sour { color: var(--g-sour); }
+.gout-bitter { color: var(--g-bitter); }
+.gout-dry { color: var(--g-dry); }
 
 /* Ville de rattachement, sous un Pokémon : même gabarit que la marque d'habitat. */
 .marque-ville { display: inline-flex; align-items: center; gap: 3px; }

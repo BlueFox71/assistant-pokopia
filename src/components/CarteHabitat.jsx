@@ -36,7 +36,9 @@ export default function CarteHabitat({ habitat, onOuvrir, onSupprimer }) {
       style={brut ? { '--teinte': `var(--h-${brut.toLowerCase()})` } : undefined}
     >
       <button type="button" className="carte-habitat-corps" onClick={() => onOuvrir(habitat)}>
-        <span className="carte-habitat-nom">{habitat.nom}</span>
+        <span className="carte-habitat-nom" title={habitat.nom}>
+          {habitat.nom}
+        </span>
         <span className="carte-habitat-sprites">
           {tries.map((nom) => (
             <img

@@ -4,16 +4,16 @@ Index des **43 préférences d'aménagement** de *Pokémon Pokopia* : pour chacu
 qui la satisfont et les Pokémon qui l'apprécient — et l'inverse, qui est la question qu'on
 se pose vraiment en jeu : « quels objets poser dans l'enclos de ces quatre-là ? »
 
-Tout est embarqué (données et 1 081 vignettes) : l'application ne fait aucune requête
+Tout est embarqué (données et 1 129 vignettes) : l'application ne fait aucune requête
 réseau, sur le web comme en version bureau.
 
 ## Les vues
 
 | Vue | Ce qu'elle répond |
 | --- | --- |
-| **Accueil** (`/`) | Le tableau de bord : une **recherche globale** qui mène directement à la bonne fiche — un objet ouvre la sienne, un Pokémon la sienne, une préférence ouvre l'index positionné dessus —, les habitats enregistrés avec leur compatibilité, et les trois vues en accès. |
+| **Accueil** (`/`) | Le tableau de bord : une **recherche globale** qui mène directement à la bonne fiche — un objet ouvre la sienne, un Pokémon la sienne, une préférence ouvre l'index positionné dessus —, une **barre de progression par ville** (« 42/73 logés ») dès le premier habitat enregistré, et ce que couvre l'application en chiffres. |
 | **Préférences** (`/preferences`) | Les 43 cartes dépliables. La recherche accepte le français et l'anglais, et remonte au-dessus de la grille la **recherche inversée** : un objet coche souvent plusieurs préférences, c'est ce croisement qui décide de le fabriquer. |
-| **Habitat** (`/habitat`) | Des habitats nommés, enregistrés, de un à quatre colocataires. Leurs préférences se cumulent, et chaque objet est classé d'abord par le **nombre de colocataires** qu'il satisfait, ensuite par le nombre de préférences cochées : un objet « 3 Pokémon » vaut mieux que trois objets séparés. Deux filtres — **catégorie d'objet** et préférence — plus le décompte Repos / Décoration / Jouet du confort « exceptionnel ». Le sélecteur filtre les candidats **par ville** et sait en proposer un (« Suggestion colocataire »). |
+| **Habitat** (`/habitat`) | Des habitats nommés, enregistrés, de un à quatre colocataires, avec le **goût préféré** de chacun — le survol d'un colocataire liste les aliments qui l'ont. En tête, le **lot minimal**, replié par défaut : le plus petit ensemble d'objets qui coche toutes les préférences du groupe. Leurs préférences se cumulent, et chaque objet est classé d'abord par le **nombre de colocataires** qu'il satisfait, ensuite par le nombre de préférences cochées : un objet « 3 Pokémon » vaut mieux que trois objets séparés — un tri à part reclasse sur les seules préférences, croissant ou décroissant. Les vignettes y sont **nues** — le sprite et ses badges, rien d'autre : le survol donne le nom, le type et les préférences cochées avec, pour chacune, le colocataire qui y tient. Un curseur règle leur taille de 32 à 128 px, et une case éteint les deux compteurs sous l'image pour ne garder que les silhouettes. Deux filtres — **catégorie d'objet** et préférence — plus le décompte Repos / Décoration / Jouet du confort « exceptionnel ». Le sélecteur filtre les candidats **par ville** et sait en proposer un (« Suggestion colocataire »). |
 | **Villes** (`/villes`) | Les 366 Pokémon rangés par région de l'île, et de quoi **les réattribuer** — un ou plusieurs à la fois. Aucune source ne publie la ville d'origine : 287 rattachements sont relevés en jeu, les 79 autres sont **déduits** de l'habitat idéal et le disent. |
 | **Objets** (`/objets`) | Le catalogue des 714 objets, filtrable par **catégorie de meuble**, catégorie de confort et **personnalisation**, triable par nom, préférences ou nombre de Pokémon contentés. Un pinceau sous la vignette marque ce que Smearguru peut repeindre. |
 | **Pokédex** (`/pokedex`) | Les 366 Pokémon, filtrables par habitat, **type** et **spécialité**, triables par numéro, nom ou nombre de préférences. Chaque fiche donne ses préférences, ses objets les plus utiles et les Pokémon aux **goûts les plus proches dans sa ville** — le bon réflexe avant de composer un enclos. |
@@ -34,6 +34,7 @@ L'onglet Habitat a quatre états, tous lisibles dans l'URL :
 | `/habitat?nouveau=1` | le sélecteur, pour en composer un (1 à 4 Pokémon) |
 | `/habitat?habitat=<id>` | un habitat enregistré, et les objets à y poser |
 | `/habitat?pokemon=A,B` | un **groupe libre**, non enregistré mais partageable par lien |
+| `/habitat?nouveau=1&ville=<cle>` | le sélecteur, candidats filtrés sur une ville — ce que visent les barres de l'accueil |
 
 Un habitat est stocké dans le `localStorage` (`pokopia:habitats`) sous la forme minimale
 « un nom, un à quatre Pokémon » : tout le reste — préférences, objets, avertissements — se
@@ -43,6 +44,13 @@ de Serebii bougent demain.
 Le sélecteur masque par défaut les Pokémon **qui vivent déjà quelque part** (bascule
 « Sans habitat seulement », active dès qu'un habitat existe), et affiche sous les autres le
 nom de leur habitat. Un Pokémon n'appartient qu'à un seul habitat à la fois.
+
+**Kyogre est le seul qu'aucun enclos ne peut accueillir.** Rien dans les données ne le
+distingue — il a ses cinq préférences comme les autres —, c'est donc `NON_LOGEABLES`, dans
+`src/data/index.js`, qui le dit. Il ne paraît jamais parmi les candidats du sélecteur, ni
+dans les voisins de goût d'une fiche, et sa propre fiche remplace « Composer un habitat »
+par une mention ; le décompte « N Pokémon sur M n'en ont pas encore » l'exclut des deux
+côtés, sans quoi il ne tomberait jamais à zéro.
 
 Le groupe libre existe pour les liens venant des fiches (« Composer un habitat ») et
 s'enregistre en un clic.
@@ -147,6 +155,29 @@ node scripts/importer-villes.mjs villes.txt --ecrire       # applique
 Il imprime ce qui corrige la déduction, ce qui reste déduit, les noms non reconnus et les
 Pokémon cités deux fois. Une liste **partielle** est utile telle quelle : ce qu'elle ne
 couvre pas continue d'être déduit.
+
+### Suivre la progression
+
+L'accueil et la liste des habitats portent **une barre par ville** — « 42/73 logés » — dès
+qu'un premier habitat est enregistré. Rien de nouveau n'est stocké pour elle : un Pokémon
+est logé s'il figure dans un habitat, et sa ville est celle du rattachement, réattributions comprises. Les deux vivent
+déjà dans le `localStorage`, chacun derrière son store partagé, donc les barres bougent
+d'elles-mêmes dès qu'on compose un enclos ou qu'on déplace un Pokémon.
+
+Kyogre ne compte d'aucun côté, comme le décompte de la vue habitat : la somme des six villes
+fait **365**, pas 366 — sans quoi la sienne n'atteindrait jamais son total.
+
+Chaque barre mène au sélecteur avec ses candidats filtrés sur la ville
+(`/habitat?nouveau=1&ville=terrassec`) : c'est là que se règle ce qu'elle signale.
+
+Le bloc ne paraît pas tant qu'aucun habitat n'existe — six barres à zéro se liraient comme
+une grille de cases à remplir, et l'accueil tient dans un écran.
+
+Les deux pages l'affichent différemment, parce qu'elles n'ont pas la même largeur utile :
+trois colonnes sur deux rangs sur l'accueil, **les six villes d'un seul rang** en tête de la
+liste des habitats, où la ligne se lit comme une règle graduée. La liste tait aussi le total
+du bloc : son chapeau annonce déjà combien de Pokémon n'ont pas encore de place, et deux
+comptes voisins qui disent la même chose à l'envers se lisent mal.
 
 ### Suggestion de colocataire
 
@@ -285,9 +316,80 @@ et doit passer après lui. Pokébip porte d'ailleurs une coquille sur ce point :
 Lucario y sont tous deux en #180, puis la liste saute à #182 ; Serebii donne #180 et #181,
 sans trou.
 
+### Les goûts
+
+Chaque Pokémon préfère un goût — **sucré, épicé, acide, amer ou sec**. C'est l'autre moitié
+du confort, à côté des objets qu'on pose : lui offrir un aliment de ce goût fait monter son
+amitié et son niveau de confort bien plus vite que n'importe quel autre. La vue habitat
+l'affiche sous chaque colocataire, avec sa teinte et son icône ; **les aliments qui l'ont**
+sont dans l'infobulle du colocataire, sur deux colonnes — dans la fiche elle-même, une
+douzaine d'images chargeait trop une ligne qui n'en demande qu'une.
+
+```sh
+node scripts/importer-gouts.mjs            # télécharge, croise, n'écrit rien
+node scripts/importer-gouts.mjs --ecrire   # applique
+```
+
+**Serebii ne publie pas cette donnée** : sa page `flavors.shtml` ne range que les aliments,
+et sa page `favorites.shtml` — d'où viennent nos 43 préférences — ne porte aucun Pokémon.
+Le script s'appuie donc sur deux wikis de joueurs, et les croise pour cette raison même :
+
+| Source | Rôle |
+| --- | --- |
+| `pokopiaguide.com` | primaire — le Pokédex de base, les 52 du bassin, les fiches des événementiels |
+| `wikipokopia.com` | contre-épreuve, et rattrapage d'une quinzaine d'entrées absentes de la première |
+
+Au dernier relevé, **289 Pokémon figuraient dans les deux sources sans une seule
+divergence**, pour une couverture de 361 sur 366. Les cinq restants — Jirachi, Ténéfix,
+Ronflex moussu, Peakychu et le Professeur Bouldeneu — n'ont de goût nulle part : le champ
+est alors absent, et l'affichage saute la mention. Le script imprime les désaccords, les
+rattrapages et les manquants à chaque exécution.
+
+**Les aliments** viennent, eux, de Serebii : sa page `flavors.shtml` range 48 aliments par
+goût (de 8 pour l'acide et le sec à 12 pour le sucré). La section « sans goût » — baies Mepo
+et Prine, plats « simples » — est écartée, aucun Pokémon n'y étant sensible.
+
+```sh
+node scripts/importer-aliments.mjs            # télécharge, compare, n'écrit rien
+node scripts/importer-aliments.mjs --ecrire   # écrit aliments.json et les images manquantes
+```
+
+Les images arrivent en PNG de 160 px ; elles sont gardées en WebP de 72 px, comme les
+objets, et le script liste celles qui restent à convertir. Les baies, le Super Bonbon et le
+Lait Meumeu portent leur nom officiel ; **les autres noms français sont une traduction
+maison**, écrite dans le script.
+
+### Le lot minimal
+
+Un objet posé dans l'enclos compte pour chaque colocataire qui l'apprécie : une préférence
+n'a besoin d'être cochée qu'une fois pour l'être pour tout le groupe. La question « que
+fabriquer ? » est donc une **couverture d'ensemble**, et `lotMinimal` (`src/data/index.js`)
+la résout **exactement**, pas au glouton — cinq préférences par Pokémon en font vingt au plus
+pour un groupe, ce qu'un parcours en profondeur élagué traite en quelques millisecondes. Sur
+400 groupes de quatre tirés au hasard, il fait mieux que le glouton dans 251 cas, jamais
+moins bien, et il lui faut de 4 à 8 objets, le plus souvent 5.
+
+- Il est **replié par défaut** — une ligne, « 6 objets pour les 15 préférences », et un
+  bouton Afficher. Déplié ou non, il le reste d'un habitat à l'autre, comme les réglages
+  de la grille.
+- Un curseur fixe sa **taille**, de la taille minimale à 12 objets, 6 par défaut. Au-delà
+  du minimum, `completerLot` ajoute une **réserve**, séparée par un trait : les objets qui
+  cochent une deuxième fois les préférences qui ne l'étaient qu'une fois — le gain décroît
+  à chaque doublon, pour que la réserve s'étale plutôt que d'empiler —, qui contentent le
+  plus de colocataires, et qui apportent le repos, la décoration ou le jouet manquant. La
+  phrase dit combien de préférences sont alors couvertes deux fois : c'est ce qui protège
+  d'un plan qu'on n'a pas.
+- Le lot **ignore les filtres** : une préférence décochée reste une préférence du groupe.
+- Fossiles et ressources en sont exclus, sauf pour une préférence que rien d'autre ne coche
+  — mieux vaut un minerai dans le lot qu'une préférence à découvert.
+- À taille égale, le lot qui contente le plus de colocataires l'emporte, comme dans le tri
+  « Utilité ».
+- Le lot ne cherche pas l'habitat « exceptionnel » : la phrase qui l'accompagne dit s'il
+  manque un repos, une décoration ou un jouet.
+
 ## La charte
 
-Lavande pour la marque et les objets, vert pour les Pokémon. Par-dessus, **quarante-deux
+Lavande pour la marque et les objets, vert pour les Pokémon. Par-dessus, **quarante-sept
 couleurs sémantiques** portent le sens là où il y en a un :
 
 | Famille | Où | Exemple |
@@ -296,6 +398,7 @@ couleurs sémantiques** portent le sens là où il y en a un :
 | 6 habitats idéaux | sous chaque Pokémon, filtres du Pokédex, liseré des cartes d'habitat | Lumineux ambre, Humide bleu, Chaud rouge |
 | 12 catégories de meuble | sous chaque objet, bascules de la vue habitat, fiche objet | Lumière ambre, Lit violet, Plante vert |
 | 6 villes | titre et liseré de chaque section, bascules, ville sous un Pokémon | Terrassec vert, Grisemer ardoise, Collinangle cuivre |
+| 5 goûts | sous chaque colocataire de la vue habitat | Sucré rose, Épicé rouge, Amer vert |
 
 Elles sont écrites **une seule fois**, en HSL, et empruntent leur luminosité à deux
 variables — `--lum` pour l'encre, `--lum-fond` pour l'aplat. Le thème sombre ne redéfinit
@@ -355,10 +458,12 @@ npm run desktop:build  # exe autonome (--no-bundle)
 | --- | --- |
 | `preferences.json` | les 43 préférences : `slug`, nom anglais, nom français, objets, Pokémon |
 | `objets.json` | 714 objets : nom anglais, traduction, catégorie en jeu, clé de sprite |
-| `pokemon.json` | 366 Pokémon : nom anglais, nom français, numéro Pokopia, habitat, clé de sprite, types et spécialités (cf. « Types et spécialités ») |
+| `pokemon.json` | 366 Pokémon : nom anglais, nom français, numéro Pokopia, habitat, clé de sprite, types et spécialités (cf. « Types et spécialités »), goût préféré (cf. « Les goûts ») |
 | `personnalisation.json` | ce que Smearguru peut changer sur 121 meubles : peinture, motif, les deux ou rien (cf. « La personnalisation ») |
 | `villes.json` | la ville d'origine de chaque Pokémon — **vide par défaut**, aucune source ne la publie (cf. « Les villes ») |
+| `aliments.json` | 48 aliments : nom anglais, nom français, goût, clé de sprite (cf. « Les goûts ») |
 | `sprites/objets/`, `sprites/pokemon/` | 1 081 vignettes WebP de 44 px |
+| `sprites/aliments/` | 48 vignettes WebP de 72 px |
 
 Ils sont **extraits** de l'artifact d'origine (« Pokopia — Index des préférences ») par
 `scripts/extraire-artifact.mjs`, qui vérifie au passage qu'aucune entrée ne manque d'image,
@@ -388,7 +493,8 @@ sont les libellés officiels français.
 Sources : [Serebii](https://www.serebii.net/pokemonpokopia/favorites.shtml) pour les listes,
 icônes, catégories et habitats (section signalée comme en cours de complétion), ainsi que
 pour la [personnalisation des meubles](https://www.serebii.net/pokemonpokopia/furniture.shtml)
-et la [palette](https://www.serebii.net/pokemonpokopia/paint.shtml) ;
+et la [palette](https://www.serebii.net/pokemonpokopia/paint.shtml), et les
+[aliments par goût](https://www.serebii.net/pokemonpokopia/flavors.shtml) ;
 [Joenesteam](https://www.joenesteam.fr/pokopia-preferences-exceptionnel/) pour les noms
 français des préférences ;
 [Pokébip](https://www.pokebip.com/page/jeux-video/pokemon-pokopia/pokedex) pour les numéros,

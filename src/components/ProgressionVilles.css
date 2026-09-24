@@ -1,0 +1,86 @@
+/* Suivre la progression : une barre par ville, « 42/73 logés ».
+   Deux pages s'en servent — l'accueil et la liste des habitats —, et chacune pose sa
+   marge de son côté : le bloc ne connaît que sa propre mise en page. */
+
+.progression-tete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: 0 0 10px;
+}
+.progression-tete h2 { margin: 0; }
+.progression-total {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+.progression-total b { font-weight: 400; color: var(--ink-2); }
+
+/* Trois colonnes sur deux rangs : les six régions se lisent d'un coup d'œil, et aucune
+   barre ne s'étire sur toute la largeur d'un écran large. */
+.progression-villes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 20px;
+}
+@media (max-width: 900px) { .progression-villes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .progression-villes { grid-template-columns: 1fr; } }
+
+/* Chaque ville est un lien vers le sélecteur, filtré sur elle : rien ne le signale au
+   repos — la rangée doit se lire comme un tableau de bord —, seul le survol le dit. */
+.progression-ville {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 5px 10px;
+  padding: 7px 9px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+}
+.progression-ville:hover { background: var(--surface); border-color: var(--line); }
+.progression-ville:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+
+.progression-nom {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--teinte);
+}
+.progression-nom svg { font-size: 15px; flex: 0 0 auto; }
+.progression-nom-texte { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.progression-compte {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+/* Une ville entièrement logée : le compte prend sa teinte, comme la jauge pleine. */
+.progression-ville.complet .progression-compte { color: var(--teinte); }
+
+/* La piste reste neutre, dans les deux thèmes : teintée, elle passait en sombre pour une
+   jauge pleine — l'aplat d'une ville y est plus soutenu que son encre. Seule la part logée
+   porte la couleur, et c'est elle qu'on doit lire. */
+.progression-piste {
+  grid-column: 1 / -1;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+.progression-jauge {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--teinte);
+  transition: width .35s ease;
+}
+@media (prefers-reduced-motion: reduce) { .progression-jauge { transition: none; } }

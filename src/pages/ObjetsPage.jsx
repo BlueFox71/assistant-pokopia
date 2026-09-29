@@ -1,7 +1,7 @@
 import { useDeferredValue, useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Input, Segmented, Select } from 'antd'
-import { ICONE_CATEGORIE } from '../components/Icones'
+import { ICONE_CATEGORIE, IconeCadre } from '../components/Icones'
 import { VignetteObjet } from '../components/Vignette'
 import {
   FR_CATEGORIE,
@@ -11,7 +11,7 @@ import {
   prefParSlug,
   prefsParObjet,
 } from '../data'
-import { FR_TYPE_OBJET, TYPES_OBJET, typeObjet } from '../data/categories'
+import { FR_TYPE_OBJET, TYPES_OBJET, estMural, typeObjet } from '../data/categories'
 import {
   FR_PERSONNALISATION,
   nbPersonnalisables,
@@ -59,6 +59,8 @@ export default function ObjetsPage() {
   const [saisie, setSaisie] = useState(() => params.get('q') || '')
   const [tri, setTri] = useState('nom')
   const [type, setType] = useState(null)
+  // « Mur » se combine au type au lieu de le remplacer : une lampe murale est une lumière.
+  const [murSeul, setMurSeul] = useState(false)
   const [confort, setConfort] = useState(null)
   const [personnalisation, setPersonnalisation] = useState(
     () => params.get('personnalisation') || null,
@@ -76,6 +78,7 @@ export default function ObjetsPage() {
       for (const slug of slugs) for (const p of prefParSlug.get(slug)?.pokemon || []) vus.add(p)
       table.set(objet.en, {
         type: typeObjet(objet.en, objet.categorie),
+        mural: estMural(objet.en),
         nbPrefs: slugs.length,
         nbPokemon: vus.size,
       })
@@ -83,11 +86,18 @@ export default function ObjetsPage() {
     return table
   }, [])
 
+  // « Mur » coché, chaque type ne compte que ses objets muraux : la bascule dit ce qu'on
+  // obtiendrait en la cochant. Et réciproquement pour « Mur », au type choisi près.
   const parType = useMemo(() => {
     const compte = Object.fromEntries(TYPES_OBJET.map((t) => [t, 0]))
-    for (const { type: t } of infos.values()) compte[t] = (compte[t] || 0) + 1
+    for (const { type: t, mural } of infos.values())
+      if (!murSeul || mural) compte[t] = (compte[t] || 0) + 1
     return compte
-  }, [infos])
+  }, [infos, murSeul])
+  const nbMuraux = useMemo(
+    () => [...infos.values()].filter((i) => i.mural && (!type || i.type === type)).length,
+    [infos, type],
+  )
 
   const parConfort = useMemo(() => {
     const compte = {}
@@ -101,6 +111,7 @@ export default function ObjetsPage() {
   const liste = useMemo(() => {
     let noms = objets.map((o) => o.en)
     if (type) noms = noms.filter((n) => infos.get(n).type === type)
+    if (murSeul) noms = noms.filter((n) => infos.get(n).mural)
     if (confort)
       noms = noms.filter((n) =>
         confort === SANS_CONFORT
@@ -132,7 +143,7 @@ export default function ObjetsPage() {
     else noms.sort((a, b) => frObjet(a).localeCompare(frObjet(b), 'fr'))
 
     return noms
-  }, [terme, tri, type, confort, personnalisation, infos])
+  }, [terme, tri, type, murSeul, confort, personnalisation, infos])
 
   /** Combien d'objets répondent à chaque filtre de personnalisation — mis dans son libellé. */
   const comptePersonnalisation = (valeur) => {
@@ -146,6 +157,17 @@ export default function ObjetsPage() {
 
   return (
     <>
+      <div className="wrap page-tete">
+        <div>
+          <p className="etiquette">Objets</p>
+          <h1>{objets.length} objets</h1>
+          <p className="liste-chapeau">
+            Tout ce qui se fabrique ou se ramasse, dont {prefsParObjet.size} objets utiles à au
+            moins une préférence. Ouvrez-en un pour savoir à quels Pokémon il plaît.
+          </p>
+        </div>
+      </div>
+
       <div className="controls">
         <div className="wrap controls-inner">
           <div className="field">
@@ -200,7 +222,7 @@ export default function ObjetsPage() {
             aria-pressed={type === null}
             onClick={() => setType(null)}
           >
-            Tous les types <b>{objets.length}</b>
+            Tous les types <b>{murSeul ? nbMuraux : objets.length}</b>
           </button>
           {TYPES_OBJET.map((t) => {
             const IconeCat = ICONE_CATEGORIE[t]
@@ -218,6 +240,17 @@ export default function ObjetsPage() {
               </button>
             )
           })}
+          <span className="separateur-bascules" aria-hidden="true" />
+          <button
+            type="button"
+            className="bascule"
+            aria-pressed={murSeul}
+            title="Les objets qui s’accrochent au mur : calendrier, horloge murale, lampe murale…"
+            onClick={() => setMurSeul((precedent) => !precedent)}
+          >
+            <IconeCadre />
+            Mur <b>{nbMuraux}</b>
+          </button>
         </div>
 
         <p className="note-source">

@@ -3,11 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Input } from 'antd'
 import illustration from '../assets/accueil-pokopia.webp'
 import BandeDefilante from '../components/BandeDefilante'
-import { IconeCommode, IconeFeuille, IconeListe, IconePokeball } from '../components/Icones'
+import { IconeBriques, IconeCaisse, IconeFeuille, IconeMaison } from '../components/Icones'
 import ProgressionVilles from '../components/ProgressionVilles'
 import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
   objetParNom,
+  objets as tousLesObjets,
   comparerParNumero,
   frObjet,
   frPokemon,
@@ -22,6 +23,7 @@ import {
 import { FR_TYPE_OBJET, typeObjet } from '../data/categories'
 import { useHabitats } from '../utils/habitatsStorage'
 import { correspond, normaliser } from '../utils/recherche'
+import { SIMULATIONS } from './simulations'
 import './AccueilPage.css'
 
 /** La catégorie de meuble parle plus que celle de confort : « lumière » plutôt que « décoration ». */
@@ -29,6 +31,13 @@ const meubleDe = (nom) => FR_TYPE_OBJET[typeObjet(nom, objetParNom.get(nom)?.cat
 
 /** Au-delà, la liste de résultats cesse d'aider : on invite à préciser le terme. */
 const MAX_PAR_FAMILLE = 5
+
+/**
+ * Le nom anglais, quand c'est lui seul qui a répondu à la saisie : sans lui, « lampe » qui
+ * remonte Mélancolux (Lampent) ressemble à une erreur de la recherche.
+ */
+const parLAnglais = (terme, en, fr) =>
+  en !== fr && !normaliser(fr).includes(terme) && normaliser(en).includes(terme)
 
 /**
  * L'accueil : ce qu'on veut faire en ouvrant l'application, dans l'ordre.
@@ -46,8 +55,8 @@ export default function AccueilPage() {
   const saisieDifferee = useDeferredValue(saisie)
   const terme = normaliser(saisieDifferee.trim())
 
-  // L'accueil tient dans un écran : sa hauteur est celle du viewport moins l'en-tête, dont
-  // la taille dépend du texte et du repli des onglets. On la mesure plutôt que de la figer.
+  // L'accueil occupe au moins un écran : le viewport moins l'en-tête, dont la taille dépend
+  // du texte et du repli des onglets. On la mesure plutôt que de la figer.
   useEffect(() => {
     const entete = document.querySelector('.app-header')
     if (!entete) return
@@ -79,16 +88,8 @@ export default function AccueilPage() {
     return { objets, pokemon, prefs, total: objets.length + pokemon.length + prefs.length }
   }, [terme])
 
-  // Au repos, l'accueil tient dans un écran ; dès qu'une recherche affiche des résultats,
-  // on rend le défilement plutôt que de les enfermer dans une bande de cent pixels.
   return (
-    <div
-      className={
-        'accueil-ecran' +
-        (resultats ? ' en-recherche' : '') +
-        (habitats.length ? ' a-progression' : '')
-      }
-    >
+    <div className="accueil-ecran">
       <BandeDefilante sens="gauche" nombre={60} duree={190} />
 
       <div className="wrap accueil">
@@ -141,7 +142,17 @@ export default function AccueilPage() {
             <>
               {resultats.pokemon.length > 0 && (
                 <div className="famille">
-                  <h2 className="etiquette">{resultats.pokemon.length} Pokémon</h2>
+                  <h2 className="etiquette">
+                    {resultats.pokemon.length} Pokémon
+                    {resultats.pokemon.length > MAX_PAR_FAMILLE && (
+                      <>
+                        {' · '}
+                        <Link to={`/pokedex?q=${encodeURIComponent(saisieDifferee.trim())}`}>
+                          voir les {resultats.pokemon.length} dans le Pokédex →
+                        </Link>
+                      </>
+                    )}
+                  </h2>
                   <div className="lignes">
                     {resultats.pokemon.slice(0, MAX_PAR_FAMILLE).map((nom) => (
                       <button
@@ -156,6 +167,7 @@ export default function AccueilPage() {
                           {numeroAffiche(nom)}
                           {habitatDe(nom) ? ` · ${habitatDe(nom).toLowerCase()}` : ''} ·{' '}
                           {(prefsParPokemon.get(nom) || []).length} préf.
+                          {parLAnglais(terme, nom, frPokemon(nom)) ? ` · ${nom}` : ''}
                         </span>
                       </button>
                     ))}
@@ -165,7 +177,17 @@ export default function AccueilPage() {
 
               {resultats.objets.length > 0 && (
                 <div className="famille">
-                  <h2 className="etiquette">{resultats.objets.length} objets</h2>
+                  <h2 className="etiquette">
+                    {resultats.objets.length} objet{resultats.objets.length > 1 ? 's' : ''}
+                    {resultats.objets.length > MAX_PAR_FAMILLE && (
+                      <>
+                        {' · '}
+                        <Link to={`/objets?q=${encodeURIComponent(saisieDifferee.trim())}`}>
+                          voir les {resultats.objets.length} dans le catalogue →
+                        </Link>
+                      </>
+                    )}
+                  </h2>
                   <div className="lignes">
                     {resultats.objets.slice(0, MAX_PAR_FAMILLE).map((nom) => (
                       <button
@@ -218,32 +240,39 @@ export default function AccueilPage() {
 
       <ProgressionVilles habitats={habitats} />
 
-      <section className="accueil-chiffres">
-        <div className="chiffre" style={{ '--teinte': 'var(--accent-ink)' }}>
-          <IconeListe />
-          <b>{preferences.length}</b>
-          <span>préférences</span>
-        </div>
-        {/* Le seul chiffre qui mène quelque part : le catalogue est fait pour être parcouru. */}
-        <Link to="/objets" className="chiffre lien" style={{ '--teinte': 'var(--c-table)' }}>
-          <IconeCommode />
-          <b>{prefsParObjet.size}</b>
-          <span>objets indexés</span>
+      {/* Les trois choses qu'on vient faire ici, chacune avec ce qu'elle couvre : les
+          chiffres de l'application servent de preuve, pas de décor. */}
+      <nav className="accueil-entrees" aria-label="Par où commencer">
+        <Link
+          to={habitats.length ? '/habitat' : '/habitat?nouveau=1'}
+          className="entree"
+          style={{ '--teinte': 'var(--second)' }}
+        >
+          <IconeMaison />
+          <strong>{habitats.length ? 'Reprendre mes habitats' : 'Composer un habitat'}</strong>
+          <span>
+            {habitats.length
+              ? `${habitats.length} habitat${habitats.length > 1 ? 's' : ''} enregistré${habitats.length > 1 ? 's' : ''}`
+              : 'Jusqu’à 4 Pokémon, et le plus petit lot d’objets qui les contente tous.'}
+          </span>
+          <small>{prefsParPokemon.size} Pokémon · {preferences.length} préférences</small>
         </Link>
-        <div className="chiffre" style={{ '--teinte': 'var(--second)' }}>
-          <IconePokeball />
-          <b>{prefsParPokemon.size}</b>
-          <span>Pokémon</span>
-        </div>
-        <div className="chiffre" style={{ '--teinte': 'var(--c-plante)' }}>
-          <IconeFeuille />
-          <b>1 081</b>
-          <span>vignettes embarquées</span>
-        </div>
-      </section>
+        <Link to="/objets" className="entree" style={{ '--teinte': 'var(--c-table)' }}>
+          <IconeCaisse />
+          <strong>À qui sert cet objet ?</strong>
+          <span>Le catalogue, filtrable par catégorie, confort et personnalisation.</span>
+          <small>
+            {tousLesObjets.length} objets, dont {prefsParObjet.size} utiles à une préférence
+          </small>
+        </Link>
+        <Link to="/construction" className="entree" style={{ '--teinte': 'var(--accent-ink)' }}>
+          <IconeBriques />
+          <strong>Préparer une construction</strong>
+          <span>Taille d’une maison, formes, escaliers, et un plan à dessiner case par case.</span>
+          <small>{SIMULATIONS.length} simulations</small>
+        </Link>
+      </nav>
       </div>
-
-      <BandeDefilante sens="droite" nombre={60} duree={215} />
     </div>
   )
 }

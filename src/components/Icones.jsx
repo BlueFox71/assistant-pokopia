@@ -81,6 +81,137 @@ export const IconePinceau = (p) => (
   </Svg>
 )
 
+/** Crayon : poser des blocs sur le plan personnalisé. */
+export const IconeCrayon = (p) => (
+  <Svg {...p}>
+    <path d="M4 20l1.2-4.4L15.8 5a2 2 0 0 1 2.8 0l.4.4a2 2 0 0 1 0 2.8L8.4 18.8z" />
+    <path d="M13.5 7.3l3.2 3.2" />
+  </Svg>
+)
+
+/** Gomme : effacer des blocs, ou retirer un habitat. */
+export const IconeGomme = (p) => (
+  <Svg {...p}>
+    <path d="M9.5 19.5 3.8 13.8a1.5 1.5 0 0 1 0-2.1l7.9-7.9a1.5 1.5 0 0 1 2.1 0l5.7 5.7a1.5 1.5 0 0 1 0 2.1l-7.9 7.9z" />
+    <path d="M7.5 8 16 16.5" />
+    <path d="M9.5 19.5H20" />
+  </Svg>
+)
+
+/** Un trait en biais, deux points au bout : l'outil Ligne du plan. */
+export const IconeLigne = (p) => (
+  <Svg {...p}>
+    <path d="M5 19 19 5" />
+    <circle cx="5" cy="19" r="1.6" fill="currentColor" stroke="none" />
+    <circle cx="19" cy="5" r="1.6" fill="currentColor" stroke="none" />
+  </Svg>
+)
+
+/** Flèche de souris : le curseur du plan, qui ne fait rien au clic. */
+export const IconeCurseur = (p) => (
+  <Svg {...p}>
+    <path d="M6 3.5v15l4-3.8 2.6 5.8 2.6-1.2-2.6-5.7H18z" />
+  </Svg>
+)
+
+/** Rectangle en pointillés : l'outil Sélection du plan. */
+export const IconeSelection = (p) => (
+  <Svg {...p}>
+    <rect x="4" y="5" width="16" height="14" rx="1" strokeDasharray="3 2.4" />
+  </Svg>
+)
+
+/** Un carré : l'outil Carré du plan. */
+export const IconeCarre = (p) => (
+  <Svg {...p}>
+    <rect x="4.5" y="4.5" width="15" height="15" rx="1" />
+  </Svg>
+)
+
+/** Pot de peinture qui déborde : remplir une zone d'un coup. */
+export const IconePeinture = (p) => (
+  <Svg {...p}>
+    <path d="M11 3.5 18.5 11l-6.8 6.8a1.5 1.5 0 0 1-2.1 0L4.2 12.4a1.5 1.5 0 0 1 0-2.1z" />
+    <path d="M4.5 11h13.5" />
+    <path d="M20 14.5s1.5 2 1.5 3a1.5 1.5 0 0 1-3 0c0-1 1.5-3 1.5-3z" />
+  </Svg>
+)
+
+/** Deux feuilles décalées : dupliquer une forme. */
+export const IconeCopier = (p) => (
+  <Svg {...p}>
+    <rect x="8.5" y="8.5" width="11" height="11" rx="1.5" />
+    <path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5" />
+  </Svg>
+)
+
+/** Flèche qui revient en arrière : défaire. */
+export const IconeDefaire = (p) => (
+  <Svg {...p}>
+    <path d="M9 14 4 9l5-5" />
+    <path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" />
+  </Svg>
+)
+
+/** Flèche qui repart en avant : refaire ce qu'on a défait. */
+export const IconeRefaire = (p) => (
+  <Svg {...p}>
+    <path d="m15 14 5-5-5-5" />
+    <path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13" />
+  </Svg>
+)
+
+/** Disquette : enregistrer le plan. */
+export const IconeEnregistrer = (p) => (
+  <Svg {...p}>
+    <path d="M5 4h11l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" />
+    <path d="M8 4v5h7V4" />
+    <rect x="8" y="13" width="8" height="7" />
+  </Svg>
+)
+
+/** Disquette et un « + » : enregistrer une copie, sous un nouveau plan. */
+export const IconeEnregistrerCopie = (p) => (
+  <Svg {...p}>
+    <path d="M13 20H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h11l3 3v5" />
+    <path d="M8 4v5h7V4" />
+    <path d="M18 15v6M15 18h6" />
+  </Svg>
+)
+
+/** Feuille blanche au coin plié, et un « + » : un nouveau plan vide. */
+export const IconeNouveau = (p) => (
+  <Svg {...p}>
+    <path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z" />
+    <path d="M14 3v4h4" />
+    <path d="M12 11v6M9 14h6" />
+  </Svg>
+)
+
+/** Deux flèches opposées : exporter et importer. */
+export const IconeEchange = (p) => (
+  <Svg {...p}>
+    <path d="M7 20V5M3.5 8.5 7 5l3.5 3.5" />
+    <path d="M17 4v15M13.5 15.5 17 19l3.5-3.5" />
+  </Svg>
+)
+
+/** Flèche en arc, sens antihoraire : pivoter le plan d'un quart de tour vers la gauche. */
+export const IconePivoterGauche = (p) => (
+  <Svg {...p}>
+    <path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3" />
+    <path d="M4 4v4h4" />
+  </Svg>
+)
+
+/** Flèche en arc, sens horaire : pivoter le plan d'un quart de tour vers la droite. */
+export const IconePivoterDroite = (p) => (
+  <Svg {...p}>
+    <path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3" />
+    <path d="M20 4v4h-4" />
+  </Svg>
+)
+
 export const IconeLoupe = (p) => (
   <Svg {...p}>
     <circle cx="11" cy="11" r="6" />
@@ -263,6 +394,15 @@ export const IconeEtoile = (p) => (
   </Svg>
 )
 
+/** Tableau accroché à son clou : le filtre des objets muraux. */
+export const IconeCadre = (p) => (
+  <Svg {...p}>
+    <path d="M8.5 8 12 4l3.5 4" />
+    <rect x="4" y="8" width="16" height="12" rx="1" />
+    <path d="m7 17 3.5-4 2.5 2.5 1.5-1.5L17 17" />
+  </Svg>
+)
+
 /** Os : les fossiles. */
 export const IconeOs = (p) => (
   <Svg {...p}>
@@ -276,6 +416,22 @@ export const IconeRondin = (p) => (
     <path d="M6 5h12a3 3 0 0 1 0 14H6a3 3 0 0 1 0-14z" />
     <ellipse cx="6" cy="12" rx="3" ry="7" />
     <circle cx="6" cy="12" r="1.5" />
+  </Svg>
+)
+
+/** Mur de briques : la vue Construction. */
+export const IconeBriques = (p) => (
+  <Svg {...p}>
+    <path d="M3 5h18v14H3z" />
+    <path d="M3 9.7h18M3 14.3h18" />
+    <path d="M12 5v4.7M7.5 9.7v4.6M16.5 9.7v4.6M12 14.3V19" />
+  </Svg>
+)
+
+/** Escalier vu de profil, trois marches : le générateur d'escalier. */
+export const IconeEscalier = (p) => (
+  <Svg {...p}>
+    <path d="M3 20h18V5h-5v5h-5v5H6v5" />
   </Svg>
 )
 

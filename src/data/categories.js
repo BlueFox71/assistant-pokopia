@@ -52,13 +52,17 @@ export const TYPES_PAR_DEFAUT = TYPES_OBJET.filter((t) => t !== 'ressource' && t
 
 /**
  * Ce que les mots-clés classent mal, et qu'il vaut mieux nommer que contourner par une
- * regex illisible : deux services de vaisselle qui portent le mot « table », et une
- * argile dont le nom commence par « Light ».
+ * regex illisible : deux services de vaisselle qui portent le mot « table », une argile
+ * dont le nom commence par « Light », des boîtes-repas qu'on pose sur une table et des
+ * caisses qui ne rangent rien — vérifié en jeu, « box » et « crate » n'y suffisent pas.
  */
 const EXCEPTIONS = {
   'table setting': 'decoration',
   'flowery table setting': 'decoration',
   'light clay': 'ressource',
+  'lunch box': 'decoration',
+  'wooden crate': 'meuble',
+  'worn wooden crate': 'meuble',
 }
 
 // Premier motif qui accroche l'emporte.
@@ -131,4 +135,74 @@ export function typeObjet(nom, categorieJeu) {
 
   if (REGLE_PLANTE.test(n) && !PLANTE_EXCLUE.test(n)) return 'plante'
   return 'decoration'
+}
+
+/**
+ * Objets qui s'accrochent au mur — une propriété de pose, pas une catégorie : une « Wall
+ * light » reste une lumière, un « Wall monitor » un écran. Le filtre « Mur » se combine
+ * donc aux catégories au lieu d'en être une de plus.
+ *
+ * Les données du jeu ne disent pas où un objet se pose ; sa description, si. La liste
+ * ci-dessous vient des textes de Serebii (items/<sprite>.shtml, « Flavor Text »), relevés
+ * objet par objet : « Try hanging it up on a wall », « Perfect for livening up any wall! »…
+ * Y entrent aussi les objets qui PEUVENT aller au mur sans y être obligés (la bouée, que
+ * le texte propose d'accrocher en décor), et les étagères, vérifiées en jeu.
+ *
+ * Restent dehors, parce que leur texte les met ailleurs : les toiles (sur un support,
+ * vérifié en jeu), les enseignes de boutique (sur un toit), le cadre photo (sur une table),
+ * les lustres et suspensions (au plafond), et les « Try hanging it up in a frame! » des
+ * objets tenus, qui vont dans un Cadre et non au mur.
+ */
+const MURAUX = new Set([
+  // étagères
+  'decorative bookshelf',
+  'decorative plant shelf',
+  'decorative shop shelf',
+  'decorative storage shelf',
+  'ornate decorative shelf',
+  'polygonal shelf',
+  'cd rack',
+  'mini bookcase',
+  // décors muraux
+  'decorative cloth',
+  'flower garland',
+  'frame',
+  'jewel wall decoration',
+  'party bunting',
+  'star wall decoration',
+  'town map',
+  'wreath',
+  'swim ring',
+  // horloges, lumières, appareils
+  'berry clock',
+  'rowlet clock',
+  'bell',
+  'card reader',
+  'gaming light',
+  'seedot lamp',
+  'string lights',
+  'surface light',
+  'towel rack',
+  // panneaux
+  'arrow sign (left)',
+  'arrow sign (right)',
+  'hanging sign',
+])
+
+/**
+ * Le filet sous la liste : ce que le nom affirme de lui-même — « wall », un calendrier, un
+ * rouleau ou une bannière suspendus —, pour qu'un objet mural ajouté plus tard n'attende
+ * pas un relevé pour être trouvé.
+ */
+const REGLE_MURAL = /\bwall[- ]|calendar|hanging (scroll|banner)/
+/** « Stone brick wall (wallpaper) » : un revêtement, pas un objet qu'on accroche. */
+const MURAL_EXCLU = /wallpaper/
+
+/**
+ * @param {string} nom nom anglais de l'objet
+ * @returns {boolean}
+ */
+export function estMural(nom) {
+  const n = nom.toLowerCase()
+  return MURAUX.has(n) || (REGLE_MURAL.test(n) && !MURAL_EXCLU.test(n))
 }

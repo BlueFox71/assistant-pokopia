@@ -1,5 +1,5 @@
 import { useDeferredValue, useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Input, Segmented, Select } from 'antd'
 import { ICONE_HABITAT } from '../components/Icones'
 import { VignettePokemon } from '../components/Vignette'
@@ -36,7 +36,9 @@ const HABITATS = ['Bright', 'Dark', 'Humid', 'Dry', 'Warm', 'Cool']
  */
 export default function PokedexPage() {
   const navigate = useNavigate()
-  const [saisie, setSaisie] = useState('')
+  // `?q=` comme point d'entrée, à l'image du catalogue : l'accueil y renvoie sa recherche.
+  const [params] = useSearchParams()
+  const [saisie, setSaisie] = useState(() => params.get('q') || '')
   const [tri, setTri] = useState('numero')
   const [habitat, setHabitat] = useState(null)
   const [type, setType] = useState(null)
@@ -81,6 +83,18 @@ export default function PokedexPage() {
 
   return (
     <>
+      <div className="wrap page-tete">
+        <div>
+          <p className="etiquette">Pokédex</p>
+          <h1>{pokemon.length} Pokémon</h1>
+          <p className="liste-chapeau">
+            Tous les Pokémon de l’île, des trois Pokédex. Filtrez par habitat, type ou
+            spécialité ; chaque fiche donne ses préférences, ses objets les plus utiles et
+            ses meilleurs colocataires.
+          </p>
+        </div>
+      </div>
+
       <div className="controls">
         <div className="wrap controls-inner">
           <div className="field">

@@ -1,8 +1,9 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { MoonOutlined, SunOutlined } from '@ant-design/icons'
-import { Tooltip } from 'antd'
-import { IconeCaisse, IconeListe, IconeMaison, IconePokeball, IconeTerrasse } from './Icones'
+import { Dropdown, Tooltip } from 'antd'
+import { IconeBriques, IconeCaisse, IconeListe, IconeMaison, IconePokeball, IconeTerrasse } from './Icones'
 import { useTheme } from '../context/ThemeContext'
+import { SIMULATIONS, urlSimulation } from '../pages/simulations'
 import './AppHeader.css'
 
 const ONGLETS = [
@@ -11,11 +12,17 @@ const ONGLETS = [
   { to: '/preferences', libelle: 'Préférences', Icone: IconeListe },
   { to: '/objets', libelle: 'Objets', Icone: IconeCaisse },
   { to: '/pokedex', libelle: 'Pokédex', Icone: IconePokeball },
+  // Construction déroule ses simulations au survol : on va droit à celle qu'on veut.
+  { to: '/construction', libelle: 'Construction', Icone: IconeBriques, sousMenu: SIMULATIONS },
 ]
 
 /** Bandeau commun : identité, navigation, bascule de thème. */
 export default function AppHeader() {
   const { choix, setChoix, sombre } = useTheme()
+  const navigate = useNavigate()
+  const { pathname, search } = useLocation()
+  // La simulation ouverte, pour la marquer dans le sous-menu (aucune sur l'accueil de la vue).
+  const simActive = pathname === '/construction' ? new URLSearchParams(search).get('sim') : null
 
   // Trois états dans un seul bouton : auto → clair → sombre → auto. L'infobulle dit
   // lequel est actif, sinon « auto » et le thème qu'il résout sont indiscernables.
@@ -35,12 +42,28 @@ export default function AppHeader() {
         </NavLink>
 
         <nav className="onglets">
-          {ONGLETS.map(({ to, libelle, Icone }) => (
-            <NavLink key={to} to={to} className="onglet">
-              <Icone />
-              {libelle}
-            </NavLink>
-          ))}
+          {ONGLETS.map(({ to, libelle, Icone, sousMenu }) => {
+            const lien = (
+              <NavLink key={to} to={to} className="onglet">
+                <Icone />
+                {libelle}
+              </NavLink>
+            )
+            if (!sousMenu) return lien
+            return (
+              <Dropdown
+                key={to}
+                menu={{
+                  items: sousMenu.map((s) => ({ key: s.cle, label: s.libelle })),
+                  selectedKeys: simActive ? [simActive] : [],
+                  onClick: ({ key }) => navigate(urlSimulation(key)),
+                }}
+                placement="bottomLeft"
+              >
+                {lien}
+              </Dropdown>
+            )
+          })}
         </nav>
 
         <Tooltip title={libelleTheme}>

@@ -118,6 +118,31 @@ export default function VillesPage() {
 
   return (
     <>
+      <div className="wrap page-tete villes-tete">
+        <div>
+          <p className="etiquette">Les villes de Pokopia</p>
+          <h1>{villeActive ? nomVille(noms, villeActive) : 'Six régions, 366 Pokémon'}</h1>
+          <p className="liste-chapeau">
+            Où vit chaque Pokémon de l’île. Le rattachement est réattribuable : cliquez sur
+            « Réattribuer des Pokémon », sélectionnez-en un ou plusieurs, et envoyez-les
+            ailleurs. {nbReattribues > 0 && `${nbReattribues} déjà déplacé${nbReattribues > 1 ? 's' : ''} à la main.`}
+          </p>
+        </div>
+        <div className="liste-actions">
+          <button
+            type="button"
+            className="ghost-btn"
+            onClick={() => {
+              setMessage('')
+              setSauvegarde(sauvegarde === null ? exporterVilles() : null)
+            }}
+            aria-expanded={sauvegarde !== null}
+          >
+            Exporter / importer
+          </button>
+        </div>
+      </div>
+
       <div className="controls">
         <div className="wrap controls-inner">
           <div className="field">
@@ -162,30 +187,6 @@ export default function VillesPage() {
       </div>
 
       <div className="wrap villes">
-        <div className="villes-tete">
-          <div>
-            <p className="etiquette">Les villes de Pokopia</p>
-            <h1>{villeActive ? nomVille(noms, villeActive) : 'Six régions, 366 Pokémon'}</h1>
-            <p className="liste-chapeau">
-              Où vit chaque Pokémon de l’île. Le rattachement est réattribuable : cliquez sur
-              « Réattribuer des Pokémon », sélectionnez-en un ou plusieurs, et envoyez-les
-              ailleurs. {nbReattribues > 0 && `${nbReattribues} déjà déplacé${nbReattribues > 1 ? 's' : ''} à la main.`}
-            </p>
-          </div>
-          <div className="liste-actions">
-            <button
-              type="button"
-              className="ghost-btn"
-              onClick={() => {
-                setMessage('')
-                setSauvegarde(sauvegarde === null ? exporterVilles() : null)
-              }}
-            >
-              Sauvegarde
-            </button>
-          </div>
-        </div>
-
         {/* Aucune source ne publie la ville d'origine : dire d'où vient chaque rattachement est
             la seule façon de rendre la page honnête, et c'est ce qui justifie la réattribution. */}
         <p className="note-source">

@@ -23,7 +23,7 @@
   --surface-2: #ECE8F5;
   --ink: #23203A;
   --ink-2: #565073;
-  --ink-3: #857FA0;
+  --ink-3: #6A6485;
   --line: #DCD6EC;
   --line-strong: #BFB6DA;
   --accent: #BDADEA;
@@ -48,8 +48,8 @@
     --surface: #1E1A2B;
     --surface-2: #262135;
     --ink: #EAE6F5;
-    --ink-2: #ADA5C4;
-    --ink-3: #857DA0;
+    --ink-2: #C3BCD9;
+    --ink-3: #A39BBD;
     --line: #322B45;
     --line-strong: #473E60;
     --accent: #BDADEA;
@@ -70,8 +70,8 @@
   --surface: #1E1A2B;
   --surface-2: #262135;
   --ink: #EAE6F5;
-  --ink-2: #ADA5C4;
-  --ink-3: #857DA0;
+  --ink-2: #C3BCD9;
+  --ink-3: #A39BBD;
   --line: #322B45;
   --line-strong: #473E60;
   --accent: #BDADEA;
@@ -93,18 +93,30 @@
  * `--lum` pour l'encre, `--lum-fond` pour l'aplat. Le thème sombre ne redéfinit que ces
  * deux-là, et les trente-six teintes suivent. Écrire deux jeux complets à la main, c'était
  * garantir qu'ils divergent à la première retouche.
+ *
+ * Une même luminosité HSL ne donne pas le même contraste d'une teinte à l'autre : à 34 %,
+ * un jaune ou un vert est bien plus clair à l'œil qu'un bleu ou un violet, et tombait sous
+ * 4,5:1 sur les fonds clairs. Ces teintes-là retranchent quelques points, multipliés par
+ * `--clair` (1 % en thème clair, 0 en sombre) : la correction ne joue que là où elle sert.
+ * `--sombre` fait l'inverse, pour la seule teinte qui en a besoin. Les écarts sont ceux qui
+ * amènent chaque encre à 4,5:1 sur le pire des fonds où elle paraît.
  */
 :root {
   --lum: 34%;
   --lum-fond: 93%;
   --sat-fond: 62%;
+  --clair: 1%;
+  --sombre: 0%;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) { --lum: 72%; --lum-fond: 22%; --sat-fond: 32%; }
+  :root:not([data-theme='light']) { --lum: 72%; --lum-fond: 22%; --sat-fond: 32%; --clair: 0%; --sombre: 1%; }
 }
-:root[data-theme='dark'] { --lum: 72%; --lum-fond: 22%; --sat-fond: 32%; }
+:root[data-theme='dark'] { --lum: 72%; --lum-fond: 22%; --sat-fond: 32%; --clair: 0%; --sombre: 1%; }
 
-:root {
+/* `.bulle-objet` en plus de `:root` : une propriété personnalisée se résout là où elle est
+   déclarée, puis se transmet déjà calculée. Déclarées sur la seule racine, les teintes
+   gardaient dans l'infobulle la luminosité du thème de la page, quoi qu'y dise `--lum`. */
+:root, .bulle-objet {
   /* les 18 types, aux teintes de la série */
   --t-normal: hsl(50 10% var(--lum));
   --t-combat: hsl(0 65% var(--lum));
@@ -112,16 +124,16 @@
   --t-poison: hsl(295 50% var(--lum));
   --t-sol: hsl(38 55% var(--lum));
   --t-roche: hsl(45 30% var(--lum));
-  --t-insecte: hsl(75 50% var(--lum));
+  --t-insecte: hsl(75 50% calc(var(--lum) - 5 * var(--clair)));
   --t-spectre: hsl(270 40% var(--lum));
   --t-acier: hsl(205 18% var(--lum));
   --t-feu: hsl(14 80% var(--lum));
   --t-eau: hsl(208 75% var(--lum));
-  --t-plante: hsl(110 50% var(--lum));
-  --t-electrik: hsl(45 85% var(--lum));
+  --t-plante: hsl(110 50% calc(var(--lum) - 3 * var(--clair)));
+  --t-electrik: hsl(45 85% calc(var(--lum) - 7 * var(--clair)));
   --t-psy: hsl(330 65% var(--lum));
-  --t-glace: hsl(188 55% var(--lum));
-  --t-dragon: hsl(255 60% var(--lum));
+  --t-glace: hsl(188 55% calc(var(--lum) - 2 * var(--clair)));
+  --t-dragon: hsl(255 60% calc(var(--lum) + 1 * var(--sombre)));
   --t-tenebres: hsl(25 22% var(--lum));
   --t-fee: hsl(320 55% var(--lum));
 
@@ -145,12 +157,12 @@
   --t-fee-fond: hsl(320 var(--sat-fond) var(--lum-fond));
 
   /* les six habitats idéaux */
-  --h-bright: hsl(45 85% var(--lum));
+  --h-bright: hsl(45 85% calc(var(--lum) - 7 * var(--clair)));
   --h-dark: hsl(252 38% var(--lum));
   --h-humid: hsl(200 70% var(--lum));
   --h-dry: hsl(34 55% var(--lum));
   --h-warm: hsl(12 78% var(--lum));
-  --h-cool: hsl(186 55% var(--lum));
+  --h-cool: hsl(186 55% calc(var(--lum) - 3 * var(--clair)));
   --h-bright-fond: hsl(45 var(--sat-fond) var(--lum-fond));
   --h-dark-fond: hsl(252 var(--sat-fond) var(--lum-fond));
   --h-humid-fond: hsl(200 var(--sat-fond) var(--lum-fond));
@@ -161,8 +173,8 @@
   /* les cinq goûts — la teinte de l'aliment, pas celle de l'habitat le plus proche */
   --g-sweet: hsl(335 62% var(--lum));
   --g-spicy: hsl(6 75% var(--lum));
-  --g-sour: hsl(68 58% var(--lum));
-  --g-bitter: hsl(158 42% var(--lum));
+  --g-sour: hsl(68 58% calc(var(--lum) - 7 * var(--clair)));
+  --g-bitter: hsl(158 42% calc(var(--lum) - 2 * var(--clair)));
   --g-dry: hsl(30 42% var(--lum));
   --g-sweet-fond: hsl(335 var(--sat-fond) var(--lum-fond));
   --g-spicy-fond: hsl(6 var(--sat-fond) var(--lum-fond));
@@ -171,12 +183,12 @@
   --g-dry-fond: hsl(30 var(--sat-fond) var(--lum-fond));
 
   /* les six villes de l'île — chacune sur la teinte de ce qu'on y voit */
-  --v-terrassec: hsl(95 45% var(--lum));
+  --v-terrassec: hsl(95 45% calc(var(--lum) - 3 * var(--clair)));
   --v-grisemer: hsl(212 24% var(--lum));
   --v-collinangle: hsl(28 55% var(--lum));
   --v-flotiles: hsl(315 48% var(--lum));
   --v-ville-nouvelle: hsl(262 45% var(--lum));
-  --v-fonds-bulleux: hsl(188 60% var(--lum));
+  --v-fonds-bulleux: hsl(188 60% calc(var(--lum) - 3 * var(--clair)));
   --v-terrassec-fond: hsl(95 var(--sat-fond) var(--lum-fond));
   --v-grisemer-fond: hsl(212 24% var(--lum-fond));
   --v-collinangle-fond: hsl(28 var(--sat-fond) var(--lum-fond));
@@ -190,10 +202,10 @@
   --c-canape: hsl(322 50% var(--lum));
   --c-table: hsl(28 60% var(--lum));
   --c-commode: hsl(12 45% var(--lum));
-  --c-lumiere: hsl(45 80% var(--lum));
+  --c-lumiere: hsl(45 80% calc(var(--lum) - 6 * var(--clair)));
   --c-ecran: hsl(215 55% var(--lum));
-  --c-meuble: hsl(174 45% var(--lum));
-  --c-plante: hsl(122 50% var(--lum));
+  --c-meuble: hsl(174 45% calc(var(--lum) - 3 * var(--clair)));
+  --c-plante: hsl(122 50% calc(var(--lum) - 3 * var(--clair)));
   --c-decoration: hsl(288 45% var(--lum));
   --c-fossile: hsl(38 30% var(--lum));
   --c-ressource: hsl(220 12% var(--lum));
@@ -244,6 +256,18 @@ h1, h2, h3 { text-wrap: balance; }
 .ghost-btn.primaire:hover { color: var(--on-accent); filter: brightness(1.08); }
 .ghost-btn:disabled { opacity: .45; cursor: not-allowed; }
 .ghost-btn:disabled:hover { border-color: var(--line-strong); color: var(--ink-2); filter: none; }
+
+/* Le « ⓘ » d'une explication (cf. components/Aide.jsx) : discret, mais une vraie cible de
+   24 px pour le doigt, et un focus visible pour le clavier. */
+.aide {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 24px; min-height: 24px; margin-left: 2px; padding: 0;
+  border: 0; border-radius: 50%; background: none;
+  color: var(--ink-3); font: inherit; font-size: 13px; line-height: 1; cursor: pointer;
+  vertical-align: middle;
+}
+.aide:hover { color: var(--accent-ink); }
+.aide:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 0; }
 
 /* Lien-action discret, en petites capitales : « tout sélectionner », « voir les 40 objets ». */
 .mini-btn {
@@ -312,14 +336,14 @@ h1, h2, h3 { text-wrap: balance; }
 /**
  * ---- grille de vignettes, partagée par toutes les vues ----
  *
- * Une seule variable règle la grille : la taille du sprite. La colonne suit à 42 px près —
- * de quoi loger les marges et un badge « 4 Pokémon » sur une ligne —, si bien que les 60 px
- * par défaut redonnent exactement les 102 px d'origine. La vue habitat pose `--sprite` sur
- * sa grille pour la faire varier au curseur ; partout ailleurs, le repli s'applique.
+ * Une seule variable règle la grille : la taille du sprite. La colonne suit à 50 px près —
+ * de quoi loger les marges et un badge « 4 Pokémon » sur une ligne, à 10 px au moins : en
+ * dessous, les compteurs et le nom anglais ne se lisaient plus. La vue habitat pose
+ * `--sprite` sur sa grille pour la faire varier au curseur ; ailleurs, le repli s'applique.
  */
 .chips {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(calc(var(--sprite, 60px) + 42px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--sprite, 60px) + 50px), 1fr));
   gap: 4px;
 }
 
@@ -328,7 +352,7 @@ h1, h2, h3 { text-wrap: balance; }
   display: flex; flex-direction: column; align-items: center; gap: 1px;
   padding: 8px 4px 7px; border-radius: var(--radius); border: 1px solid transparent;
   background: var(--accent-soft); color: var(--ink); cursor: pointer; font: inherit;
-  font-size: 10.5px; line-height: 1.2; text-align: center;
+  font-size: 11.5px; line-height: 1.2; text-align: center;
 }
 .chip img {
   width: var(--sprite, 60px); height: var(--sprite, 60px);
@@ -360,15 +384,15 @@ h1, h2, h3 { text-wrap: balance; }
 /* surlignage des correspondances de recherche */
 .chip.hit { background: var(--hit-bg); color: var(--hit-ink); }
 .chip.multi { border-color: var(--accent-ink); }
-.chip-name { font-weight: 600; text-wrap: balance; font-size: 10.5px; }
-.chip-en { font-family: var(--mono); font-size: 8.5px; line-height: 1.2; color: var(--ink-3); word-break: break-word; }
+.chip-name { font-weight: 600; text-wrap: balance; font-size: 11.5px; }
+.chip-en { font-family: var(--mono); font-size: 10px; line-height: 1.2; color: var(--ink-3); word-break: break-word; }
 .chip.hit .chip-en, .chip.hit .chip-sub { color: var(--hit-ink); opacity: .8; }
 .chip-sub {
-  font-family: var(--mono); font-size: 8px; letter-spacing: .06em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .04em; text-transform: uppercase;
   color: var(--ink-3);
 }
 /* Le pinceau du catalogue : il hérite de la couleur du type d'objet, juste à côté. */
-.chip-pinceau { font-size: 9px; margin-left: 3px; vertical-align: -1px; }
+.chip-pinceau { font-size: 10px; margin-left: 3px; vertical-align: -1px; }
 
 /* La vignette nue : plus de nom ni de type, seulement le sprite et ses badges. Elle se
    resserre d'autant, et la grille en tient bien davantage à l'écran. */
@@ -381,15 +405,15 @@ h1, h2, h3 { text-wrap: balance; }
  * `--lum` redéfini : l'infobulle d'antd est sombre dans les deux thèmes, or les teintes
  * sémantiques empruntent leur luminosité à cette variable, réglée pour un fond clair. Sans
  * cette ligne, un « DÉCORATION » violet foncé se perdrait sur le fond de la bulle en thème
- * clair. On lui donne donc la valeur du thème sombre, et tous les `var(--c-*)` employés à
- * l'intérieur se recalculent en clair.
+ * clair. On lui donne donc la valeur du thème sombre — corrections comprises —, et comme
+ * les teintes sont aussi déclarées sur la bulle (cf. plus haut), elles s'y recalculent.
  */
-.bulle-objet { --lum: 72%; max-width: 280px; }
+.bulle-objet { --lum: 72%; --clair: 0%; --sombre: 1%; max-width: 280px; }
 .bulle-tete { display: block; margin-bottom: 6px; }
 .bulle-tete strong { display: block; font-size: 13px; line-height: 1.3; }
 .bulle-en { display: block; font-family: var(--mono); font-size: 10px; opacity: .7; }
 .bulle-type {
-  display: block; font-family: var(--mono); font-size: 9px; font-weight: 700;
+  display: block; font-family: var(--mono); font-size: 10px; font-weight: 700;
   letter-spacing: .06em; text-transform: uppercase; margin-top: 2px;
 }
 
@@ -399,7 +423,7 @@ h1, h2, h3 { text-wrap: balance; }
   display: inline-flex; align-items: center; gap: 3px;
   max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.chip-ville svg { font-size: 9px; flex: 0 0 auto; }
+.chip-ville svg { font-size: 10px; flex: 0 0 auto; }
 .chip.hit .chip-ville { color: var(--hit-ink); opacity: .8; }
 
 /* La suggestion de colocataire : un liseré pointillé, pour ne pas se confondre avec la
@@ -408,7 +432,7 @@ h1, h2, h3 { text-wrap: balance; }
 .chip.sug.sel { outline-style: solid; }
 
 .chip-badge {
-  font-family: var(--mono); font-size: 8.5px; font-weight: 700; letter-spacing: .04em;
+  font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .02em;
   color: var(--accent-ink); text-transform: uppercase;
 }
 .chip-badge.shared { color: var(--second); }
@@ -426,6 +450,30 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .chip.off { opacity: .45; cursor: not-allowed; }
 .chip.off:hover { border-color: transparent; }
+
+/**
+ * ---- tête de page, commune aux vues de liste ----
+ *
+ * Toutes les vues s'ouvrent de la même façon : l'étiquette, le titre, le chapeau, et les
+ * actions de la page à droite — puis seulement la barre d'outils collante. On sait ainsi
+ * où l'on est avant d'avoir à filtrer quoi que ce soit.
+ */
+.page-tete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-block: 22px 16px;
+}
+.page-tete h1 {
+  margin: 4px 0 0;
+  font-family: var(--display);
+  font-size: clamp(24px, 3.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.1;
+}
 
 /* ---- barre d'outils collante, commune à l'index et au Pokédex ---- */
 .controls { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
@@ -446,8 +494,38 @@ h1, h2, h3 { text-wrap: balance; }
 .ant-segmented .ant-segmented-item-label { font-size: 13px; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/**
+ * ---- téléphone ----
+ *
+ * Trois règles pour que le contenu passe avant les réglages :
+ *   • la barre d'outils cesse d'être collante — ses trois rangées de champs mangeaient un
+ *     tiers de l'écran à demeure ; le titre au-dessus d'elle dit où elle se trouve ;
+ *   • les rangées de bascules (catégories, habitats, villes, préférences) tiennent sur une
+ *     ligne qui défile au doigt, au lieu de s'empiler sur tout un écran ;
+ *   • la gouttière passe à 16 px, celle des applications natives.
+ */
 @media (max-width: 620px) {
+  .wrap { padding: 0 16px; }
   .statut { margin-left: 0; width: 100%; }
+  .controls { position: static; }
+  /* Trois vignettes par rangée au lieu de deux : la marge de 50 px prévue pour les grands
+     écrans laissait, sur 360 px utiles, deux colonnes d'un sprite perdu dans sa case. */
+  .chips { grid-template-columns: repeat(auto-fill, minmax(calc(var(--sprite, 60px) + 32px), 1fr)); }
+  .controls-inner { gap: 8px; padding: 10px 0; }
+  .controls .field { flex-basis: 100%; min-width: 0; }
+
+  /* `main` en tête : chaque page redéclare sa rangée avec `flex-wrap: wrap`, et sa feuille
+     se charge après celle-ci — à spécificité égale, elle gagnerait. */
+  main :is(.bascules, .types, .habitats, .villes-bascules) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: -16px;
+    padding-inline: 16px;
+    padding-bottom: 2px;
+  }
+  main :is(.bascules, .types, .habitats, .villes-bascules)::-webkit-scrollbar { display: none; }
+  main :is(.bascules, .types, .habitats, .villes-bascules) > * { flex: 0 0 auto; white-space: nowrap; }
 }
 
 /* ---- couleurs sémantiques appliquées ---- */
@@ -468,7 +546,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Habitat idéal, sous chaque Pokémon : l'icône hérite de la couleur du texte. */
 .marque-habitat { display: inline-flex; align-items: center; gap: 3px; }
-.marque-habitat svg { font-size: 9px; }
+.marque-habitat svg { font-size: 10px; }
 .hab-Bright { color: var(--h-bright); }
 .hab-Dark { color: var(--h-dark); }
 .hab-Humid { color: var(--h-humid); }
@@ -478,7 +556,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Goût préféré, sous un Pokémon : même gabarit que la marque d'habitat. */
 .marque-gout { display: inline-flex; align-items: center; gap: 3px; }
-.marque-gout svg { font-size: 9px; }
+.marque-gout svg { font-size: 10px; }
 .gout-sweet { color: var(--g-sweet); }
 .gout-spicy { color: var(--g-spicy); }
 .gout-sour { color: var(--g-sour); }
@@ -487,7 +565,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Ville de rattachement, sous un Pokémon : même gabarit que la marque d'habitat. */
 .marque-ville { display: inline-flex; align-items: center; gap: 3px; }
-.marque-ville svg { font-size: 9px; }
+.marque-ville svg { font-size: 10px; }
 .ville-terrassec { color: var(--v-terrassec); }
 .ville-grisemer { color: var(--v-grisemer); }
 .ville-collinangle { color: var(--v-collinangle); }

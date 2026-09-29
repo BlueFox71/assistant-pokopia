@@ -109,10 +109,6 @@ export default function FichePokemonPage() {
 
   return (
     <div className="wrap fiche">
-      <Link to="/pokedex" className="retour">
-        ← Pokédex
-      </Link>
-
       <header className="fiche-tete pokemon">
         <img src={urlSpritePokemon(spritePokemon(nom))} alt="" width="96" height="96" />
         <div>

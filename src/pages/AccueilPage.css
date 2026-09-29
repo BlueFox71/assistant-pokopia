@@ -1,48 +1,23 @@
-/* L'accueil tient dans un écran, sans défilement : une colonne haute d'exactement le
-   viewport moins l'en-tête. La frise du haut ouvre la page, celle du bas est poussée en
-   pied par la marge automatique, et c'est la zone de résultats — la seule qui puisse
-   grandir — qui défile en interne le cas échéant. */
-/* La colonne pleine largeur : elle porte la hauteur d'écran et pose les frises aux deux
-   bouts. Le contenu, lui, reste dans le `.wrap` centré. */
+/* L'accueil occupe au moins la hauteur de l'écran sous l'en-tête : la frise ouvre la page,
+   le contenu suit. En recherche, les résultats l'allongent et la page défile normalement. */
 .accueil-ecran {
-  height: calc(100dvh - var(--hauteur-entete, 68px));
+  min-height: calc(100dvh - var(--hauteur-entete, 68px));
   display: flex;
   flex-direction: column;
 }
 .accueil-ecran > .bande:first-child { padding-top: 10px; flex: 0 0 auto; }
-.accueil-ecran > .bande:last-child { margin-top: auto; flex: 0 0 auto; }
-/* Le contenu se centre entre les deux frises : collé en haut, il laissait un grand vide
-   sous les chiffres dès que la fenêtre était haute. */
+/* Le contenu part d'une marge fixe sous la frise, jamais d'un centrage vertical : centré,
+   il remontait d'un bloc à la première lettre tapée, champ de recherche compris, dès que
+   les résultats rendaient la page défilante. */
 .accueil {
-  padding-block: 0;
+  padding-block: clamp(20px, 6vh, 64px) 40px;
   flex: 1 1 auto;
-  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 4px;
 }
-/* En recherche la page défile : le contenu reprend le fil normal, sans centrage. */
-.accueil-ecran.en-recherche .accueil { justify-content: flex-start; }
-.accueil-hero { padding-top: 30px; flex: 0 0 auto; }
-.accueil-chiffres { flex: 0 0 auto; }
-
-/* Une recherche en cours, ou une fenêtre trop courte : la page reprend sa hauteur
-   naturelle et défile. La frise du bas suit le contenu au lieu d'être collée au viewport. */
-.accueil-ecran.en-recherche { height: auto; padding-bottom: 40px; }
-.accueil-ecran.en-recherche > .bande:last-child { margin-top: 34px; }
-
-@media (max-height: 720px) {
-  .accueil-ecran { height: auto; padding-bottom: 40px; }
-  .accueil-ecran > .bande:last-child { margin-top: 34px; }
-}
-
-/* La progression ajoute une rangée de barres : le pli remonte d'autant, et la page reprend
-   sa hauteur naturelle plus tôt que sans elle. */
-@media (max-height: 830px) {
-  .accueil-ecran.a-progression { height: auto; padding-bottom: 40px; }
-  .accueil-ecran.a-progression > .bande:last-child { margin-top: 34px; }
-}
+.accueil-hero { flex: 0 0 auto; }
+.accueil-entrees { flex: 0 0 auto; }
 
 /* ---- en-tête ---- */
 .accueil-tete { max-width: 62ch; }
@@ -96,56 +71,45 @@
 .accueil-note { margin: 14px 0 0; font-size: 13px; }
 .accueil-note a { color: var(--accent-ink); }
 
-/* ---- les chiffres, mis en avant ----
-   Ce sont eux qui disent ce que couvre l'application : ils tiennent la page maintenant
-   qu'elle n'a plus qu'une recherche. D'où les quatre colonnes séparées par un filet,
-   plutôt qu'une ligne de bas de page. */
-.accueil-chiffres {
+/* ---- par où commencer ----
+   Trois cartes, une par tâche : c'est ce qu'on vient faire, et chacune porte en pied ce
+   qu'elle couvre — les chiffres de l'application, rangés là où ils prouvent quelque chose. */
+.accueil-entrees {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
   margin: 30px 0 0;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
 }
-.chiffre {
+.entree {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 22px 20px 20px;
+  gap: 4px;
+  padding: 18px 20px;
   background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--teinte);
+  border-radius: var(--radius);
+  color: inherit;
+  text-decoration: none;
 }
-.chiffre b {
-  font-family: var(--display);
-  font-size: clamp(34px, 5vw, 48px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -.03em;
-  color: var(--accent-ink);
-  font-variant-numeric: tabular-nums;
-}
-.chiffre span {
+.entree:hover { border-color: var(--teinte); background: var(--surface-2); }
+.entree:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.entree svg { font-size: 22px; color: var(--teinte); margin-bottom: 4px; }
+.entree strong { font-family: var(--display); font-size: 19px; letter-spacing: -.01em; }
+.entree strong::after { content: ' →'; color: var(--teinte); }
+.entree span { color: var(--ink-2); font-size: 14px; }
+.entree small {
+  margin-top: auto;
+  padding-top: 8px;
   font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .04em;
   color: var(--ink-3);
 }
 
 .marque-ligne { display: inline-flex; align-items: center; gap: 6px; color: var(--c-plante); }
 .marque-ligne svg { font-size: 13px; }
 
-.chiffre svg { font-size: 20px; color: var(--teinte); margin-bottom: 4px; }
-.chiffre b { color: var(--teinte); }
-
-/* Le compteur d'objets ouvre le catalogue. Rien ne le distingue au repos — c'est une
-   tuile de plus dans la rangée —, seul le survol dit qu'on peut cliquer. */
-.chiffre.lien { text-decoration: none; color: inherit; }
-.chiffre.lien:hover { background: var(--accent-soft); }
-.chiffre.lien:hover span { color: var(--ink-2); }
-.chiffre.lien:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
 
 /* ---- suivre la progression ----
    Le bloc est un composant partagé (components/ProgressionVilles) : l'accueil ne pose ici
@@ -185,3 +149,6 @@
   .accueil-hero { grid-template-columns: 1fr; gap: 22px; }
   .accueil-illustration { order: -1; }
 }
+
+/* « voir les 26 dans le catalogue » : un lien dans l'étiquette de la famille. */
+.famille > h2 a { color: var(--accent-ink); }

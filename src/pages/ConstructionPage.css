@@ -1,0 +1,673 @@
+/* La vue Construction : un onglet par simulation, et le générateur de formes. */
+
+.construction { padding-block: 20px 60px; }
+
+.construction-tete { margin: 6px 0 18px; }
+.construction-tete h1 {
+  margin: 4px 0 0;
+  font-family: var(--display);
+  font-size: clamp(24px, 3.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.1;
+}
+
+/* Les bascules reprennent celles de la vue habitat, redéclarées (cf. PokedexPage.css). */
+/* L'accueil de la vue : une carte par simulation. */
+.simulations-accueil { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.carte-simulation {
+  display: flex; flex-direction: column; gap: 6px; padding: 16px 18px;
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius);
+  color: var(--ink-2); text-decoration: none; box-shadow: var(--shadow);
+}
+.carte-simulation-icone { font-size: 26px; color: var(--accent-ink); margin-bottom: 4px; }
+.carte-simulation strong { font-family: var(--display); font-size: 18px; color: var(--ink); }
+.carte-simulation span { font-size: 13px; line-height: 1.45; }
+.carte-simulation:hover { border-color: var(--accent-ink); }
+.carte-simulation:hover strong { color: var(--accent-ink); }
+.carte-simulation:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+
+/* ---- réglages ---- */
+
+.reglages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  align-items: flex-end;
+  padding: 16px 20px;
+  margin: 0 0 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.reglage { display: flex; flex-direction: column; gap: 6px; }
+.reglage-dimension { flex: 1 1 240px; max-width: 360px; }
+.dimension { display: flex; align-items: center; gap: 12px; }
+.dimension .ant-slider { flex: 1 1 auto; margin: 0 4px; }
+.dimension .ant-input-number { width: 76px; flex: 0 0 auto; }
+.reglages .indice { flex: 1 1 100%; margin: 0; }
+
+/* ---- bilan ---- */
+
+.bilan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  align-items: center;
+  margin: 0 0 16px;
+}
+.bilan-chiffre { display: flex; align-items: baseline; gap: 8px; }
+.bilan-chiffre strong {
+  font-family: var(--display);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+}
+.bilan-detail { font-size: 13px; color: var(--ink-2); }
+.bilan-survol {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.bilan-survol b { color: var(--ink); font-weight: 600; }
+
+/* ---- plan : la grille et son décompte ---- */
+
+.plan {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  gap: 16px;
+  align-items: start;
+}
+
+.grille-cadre {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 8px;
+}
+/* La grille tient dans la largeur, et jamais plus haut que l'écran : une ellipse très
+   allongée resterait sinon à faire défiler pour voir son autre bout. */
+.grille {
+  display: block;
+  /* Largeur bornée par le cadre ET par la hauteur d'écran, via le rapport de la grille. */
+  width: min(100%, calc((100vh - 140px) * var(--ratio, 1)));
+  height: auto;
+  aspect-ratio: var(--ratio, 1);
+  margin: 0 auto;
+  user-select: none;
+}
+.grille.suivie { cursor: crosshair; }
+/* Éditable : le doigt dessine au lieu de faire défiler la page. */
+.grille.dessinable { touch-action: none; }
+.grille-fond { fill: var(--paper); }
+.grille-blocs { fill: var(--accent); }
+/* Sous les marches d'un escalier plein : le remplissage, en retrait des blocs qu'on foule. */
+/* L'intérieur d'un habitat marqué sur le plan : le vert du sol, comme au générateur
+   d'habitat ; et celui d'un habitat que les derniers tracés ont cassé. */
+.grille-habitat { fill: var(--second-soft); }
+/* Les couleurs qu'on donne aux habitats (cf. TEINTES_HABITAT) : à demi transparentes sur la
+   grille, pour rester lisibles sous les numéros, en clair comme en sombre. */
+:root {
+  --teinte-vert: hsl(152 45% 55%);
+  --teinte-menthe: hsl(168 55% 62%);
+  --teinte-bleu: hsl(210 70% 62%);
+  --teinte-lavande: hsl(258 55% 70%);
+  --teinte-rose: hsl(330 65% 70%);
+  --teinte-rouge: hsl(0 65% 60%);
+  --teinte-orange: hsl(28 85% 60%);
+  --teinte-jaune: hsl(48 90% 60%);
+  --teinte-sable: hsl(38 45% 68%);
+  --teinte-gris: hsl(220 8% 62%);
+}
+.grille-teinte-vert { fill: color-mix(in srgb, var(--teinte-vert) 55%, transparent); }
+.teinte-vert { --teinte: var(--teinte-vert); }
+.grille-teinte-menthe { fill: color-mix(in srgb, var(--teinte-menthe) 55%, transparent); }
+.teinte-menthe { --teinte: var(--teinte-menthe); }
+.grille-teinte-bleu { fill: color-mix(in srgb, var(--teinte-bleu) 55%, transparent); }
+.teinte-bleu { --teinte: var(--teinte-bleu); }
+.grille-teinte-lavande { fill: color-mix(in srgb, var(--teinte-lavande) 55%, transparent); }
+.teinte-lavande { --teinte: var(--teinte-lavande); }
+.grille-teinte-rose { fill: color-mix(in srgb, var(--teinte-rose) 55%, transparent); }
+.teinte-rose { --teinte: var(--teinte-rose); }
+.grille-teinte-rouge { fill: color-mix(in srgb, var(--teinte-rouge) 55%, transparent); }
+.teinte-rouge { --teinte: var(--teinte-rouge); }
+.grille-teinte-orange { fill: color-mix(in srgb, var(--teinte-orange) 55%, transparent); }
+.teinte-orange { --teinte: var(--teinte-orange); }
+.grille-teinte-jaune { fill: color-mix(in srgb, var(--teinte-jaune) 55%, transparent); }
+.teinte-jaune { --teinte: var(--teinte-jaune); }
+.grille-teinte-sable { fill: color-mix(in srgb, var(--teinte-sable) 55%, transparent); }
+.teinte-sable { --teinte: var(--teinte-sable); }
+.grille-teinte-gris { fill: color-mix(in srgb, var(--teinte-gris) 55%, transparent); }
+.teinte-gris { --teinte: var(--teinte-gris); }
+.pastille-teinte {
+  width: 18px; height: 18px; padding: 0; flex: none;
+  border: 1px solid color-mix(in srgb, var(--teinte, var(--second-soft)) 60%, var(--ink));
+  border-radius: 50%; background: var(--teinte, var(--second-soft)); cursor: pointer;
+}
+.pastille-teinte:hover { outline: 2px solid var(--line-strong); outline-offset: 1px; }
+.pastille-teinte:focus-visible, .pastille-teinte.choisie { outline: 2px solid var(--ink); outline-offset: 2px; }
+.habitat-plan-teinte { align-self: center; }
+.palette-teintes { display: grid; grid-template-columns: repeat(6, 22px); gap: 8px; padding: 2px; }
+.palette-teintes .pastille-teinte { width: 22px; height: 22px; }
+/* L'étage du dessous, sous le niveau qu'on dessine : un repère, pas un bloc. */
+.grille-niveau-dessous { fill: var(--ink-3); opacity: .22; }
+.grille-habitat-ko { fill: var(--hit-bg); }
+
+/* L'outil Habitat au survol : l'enclos qu'un clic marquerait, celui qu'il refuserait, ou
+   l'habitat qu'il retirerait. Plus appuyés que le vert d'un habitat déjà marqué. */
+.grille-sonde-ok { fill: var(--second); opacity: .45; }
+.grille-sonde-ko { fill: var(--hit-bg); opacity: .75; }
+.grille-sonde-retrait { fill: var(--hit-bg); opacity: .5; }
+.grille-sonde-deja { fill: var(--second); opacity: .2; }
+/* L'habitat survolé dans la liste des Pokémon prévus. */
+.grille-habitat-choisi { fill: var(--accent); opacity: .45; }
+/* Le numéro d'un habitat, au centre de son intérieur : lisible sans masquer la grille. */
+.grille-etiquette { fill: var(--ink-2); font-family: var(--display); font-weight: 700; pointer-events: none; opacity: .75; }
+/* Les sprites des Pokémon prévus, sous le numéro : le clic traverse, comme pour le numéro. */
+.grille-etiquette-image { pointer-events: none; }
+/* La sélection de l'outil Dupliquer, pendant qu'on la tire. */
+.grille-selection { fill: var(--second); opacity: .22; }
+
+/* L'empreinte d'un pinceau large, sous le curseur avant d'appuyer. */
+.grille-pinceau { fill: var(--accent-ink); opacity: .3; }
+.grille-pinceau-gomme { fill: var(--hit-bg); opacity: .6; }
+.bilan-survol.sonde-ok b { color: var(--second); }
+.bilan-survol.sonde-ko b { color: var(--hit-ink); background: var(--hit-bg); padding: 0 3px; border-radius: 2px; }
+
+/* L'aperçu d'un tracé, avant le relâchement : à poser, ou à effacer. */
+.grille-apercu { fill: var(--accent-ink); opacity: .55; }
+.grille-gomme { fill: var(--hit-bg); opacity: .85; }
+.grille-dessous { fill: color-mix(in srgb, var(--accent) 38%, var(--paper)); }
+.grille-ligne { fill: none; stroke: var(--line-strong); stroke-width: .04; }
+.grille-ligne.forte { stroke: var(--ink-3); stroke-width: .07; }
+.grille-axe { fill: none; stroke: var(--second); stroke-width: .08; stroke-dasharray: .3 .2; }
+.grille-survol rect { fill: var(--hit-bg); opacity: .55; }
+.grille-curseur { fill: none; stroke: var(--accent-ink); stroke-width: .15; }
+.grille-reperes text { fill: var(--ink-3); font-family: var(--mono); }
+
+.rangees {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 0 6px;
+  position: sticky;
+  top: 12px;
+}
+.rangees h2 { display: block; margin: 0 14px 8px; }
+.rangees-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+.rangees-entete,
+.rangees-liste li {
+  display: grid;
+  grid-template-columns: 28px 30px 1fr;
+  gap: 6px;
+  padding: 2px 14px;
+  cursor: default;
+}
+.rangees-entete { padding-bottom: 4px; font-size: 10px; }
+.rangees-entete span:nth-child(-n+2) { text-align: right; }
+.rangees-liste li.actif { background: var(--hit-bg); color: var(--hit-ink); }
+.rangee-num { color: var(--ink-3); text-align: right; }
+.rangees-liste li.actif .rangee-num { color: inherit; }
+.rangee-total { font-weight: 700; text-align: right; }
+.rangee-segments { color: var(--ink-2); }
+.rangees-liste li.actif .rangee-segments { color: inherit; }
+
+@media (max-width: 820px) {
+  .plan { grid-template-columns: minmax(0, 1fr); }
+  .rangees { position: static; }
+  .bilan-survol { margin-left: 0; width: 100%; }
+}
+
+/* ---- générateur d'habitat ---- */
+
+.verdict {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  align-items: baseline;
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  border-left-width: 3px;
+  font-size: 13.5px;
+}
+.verdict strong { font-family: var(--display); font-size: 20px; }
+.verdict.ok { background: var(--second-soft); border-left-color: var(--second); }
+.verdict.ok strong { color: var(--second); }
+.verdict.refus { background: var(--hit-bg); color: var(--hit-ink); border-left-color: var(--hit-ink); }
+/* Un message qu'on peut fermer : la croix en bout de ligne, le texte garde la place. */
+.verdict.fermable { position: relative; padding-right: 40px; }
+.verdict-fermer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: inherit;
+  font-size: 13px;
+  opacity: .7;
+  cursor: pointer;
+}
+.verdict-fermer:hover { opacity: 1; background: color-mix(in srgb, currentColor 12%, transparent); }
+.verdict-fermer:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; opacity: 1; }
+
+.bilan-habitat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin: 0 0 16px;
+}
+.chiffre-habitat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 2px 8px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.chiffre-habitat .etiquette { grid-column: 1 / -1; }
+.chiffre-habitat strong {
+  font-family: var(--display);
+  font-size: 30px;
+  line-height: 1.1;
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+}
+.chiffre-unite { font-size: 12.5px; color: var(--ink-2); }
+.chiffre-detail { grid-column: 1 / -1; font-size: 12px; color: var(--ink-3); }
+.chiffre-option { grid-column: 1 / -1; margin-top: 6px; }
+.chiffre-option .ant-checkbox-wrapper { font-size: 12.5px; color: var(--ink-2); }
+
+/* Une maison tient dans une dizaine de blocs : pleine largeur, chaque case ferait la taille
+   d'un pouce. On borne le plan, et le tableau des tailles prend la place libérée. */
+.plan-habitat { grid-template-columns: minmax(0, 1fr) minmax(0, 380px); }
+.plan-habitat .grille { max-width: 560px; }
+.grille-sol { fill: var(--second-soft); }
+/* La bordure : le même sol, éclairci vers le fond de page, pour rester lisible dans les deux thèmes. */
+.grille-bordure { fill: color-mix(in srgb, var(--second-soft) 45%, var(--paper)); }
+.grille-mur { fill: var(--ink-3); }
+.grille-porte { fill: var(--accent); }
+
+.tailles { padding: 12px 14px; }
+.tailles h2 { margin: 0 0 6px; }
+.tailles .indice { margin: 0 0 10px; }
+
+.tableau-tailles {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  table-layout: fixed;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+}
+.tableau-tailles th { color: var(--ink-3); font-weight: 400; padding: 0 2px; }
+.tableau-tailles td { padding: 0; }
+.tableau-tailles button {
+  width: 100%;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font: inherit;
+  cursor: pointer;
+}
+.tableau-tailles button.ok { background: var(--second-soft); color: var(--ink); }
+.tableau-tailles button.refus { background: var(--surface-2); color: var(--ink-3); }
+.tableau-tailles button:hover { border-color: var(--accent-ink); }
+.tableau-tailles button:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.tableau-tailles button.actif { background: var(--accent); color: var(--on-accent); font-weight: 700; }
+
+.legende { list-style: none; margin: 12px 0 0; padding: 0; font-size: 12px; color: var(--ink-2); }
+.legende li { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
+.legende i { width: 12px; height: 12px; border-radius: 2px; flex: 0 0 auto; }
+.pastille-sol { background: var(--second-soft); border: 1px solid var(--line-strong); }
+.pastille-bordure { background: color-mix(in srgb, var(--second-soft) 45%, var(--paper)); border: 1px solid var(--line-strong); }
+.pastille-mur { background: var(--ink-3); }
+.pastille-porte { background: var(--accent); }
+
+.escalier-survol { margin: 0 0 10px; }
+
+/* ---- plan personnalisé : les outils en colonne, la grille à côté ---- */
+
+.construction.large { max-width: 1680px; }
+
+/* 60 % de la largeur pour la grille, 40 % pour les outils. */
+.plan-editeur {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 12px;
+  align-items: start;
+}
+/* Collée en haut : on dessine en bas d'une grande grille sans remonter chercher l'outil. */
+.outils-colonne {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 10px 14px;
+  margin: 0;
+  padding: 10px 12px;
+  position: sticky;
+  top: 12px;
+}
+.outils-colonne .reglage-dimension { flex: none; max-width: none; }
+.outils-colonne .dimension .ant-input-number { width: 54px; }
+/* Tout est resserré dans la colonne : les réglages, les boutons, la palette, les habitats. */
+.outils-colonne .reglage { gap: 4px; }
+.outils-colonne .dimension { gap: 8px; }
+.outils-colonne .dimension .ant-slider { margin: 0 2px; }
+.outils-colonne .ghost-btn { font-size: 12px; padding: 5px 10px; }
+.outils-colonne .palette { gap: 4px; }
+.outils-colonne .pastille-type { height: 20px; }
+.outils-colonne .habitats-plan .indice { font-size: 11.5px; margin: 2px 0 8px; }
+.outils-colonne .habitat-plan { padding: 6px 8px; gap: 6px; }
+.outils-colonne .habitat-plan-numero { font-size: 15px; }
+.outils-colonne .liste-actions .ghost-btn { flex: 1 1 auto; }
+.outils-colonne .indice { font-size: 12px; grid-column: 1 / -1; }
+/* La boîte à outils : une grille de boutons carrés, icône et mot dessous, sur toute la largeur. */
+/* La boîte à outils : des familles de boutons carrés, plus d'espace entre deux familles
+   qu'entre deux boutons d'une même famille. */
+.boite-outils { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.groupe-outils { position: relative; display: flex; gap: 3px; }
+/* Un filet vertical entre deux familles, au milieu de l'espace qui les sépare. */
+.groupe-outils + .groupe-outils::before {
+  content: ''; position: absolute; left: -8px; top: 6px; bottom: 6px;
+  width: 2px; border-radius: 1px; background: var(--line-strong);
+}
+.bouton-outil {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  width: 58px; aspect-ratio: 1; padding: 4px 2px;
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink-2);
+  font: inherit; font-size: 10.5px; line-height: 1.1; cursor: pointer;
+}
+.bouton-outil svg { font-size: 17px; }
+.bouton-outil:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+.bouton-outil:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.bouton-outil.actif { background: var(--accent-soft); border-color: var(--accent-ink); color: var(--accent-ink); font-weight: 600; }
+.bouton-outil:disabled { opacity: .45; cursor: not-allowed; }
+.bouton-outil:disabled:hover { border-color: var(--line-strong); color: var(--ink-2); }
+/* Les réglages de l'outil choisi : sur toute la largeur, deux par rangée. */
+.outils-reglages { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; align-items: start; }
+.outils-reglages:empty { display: none; }
+/* Un bouton qui ne porte qu'une icône : pivoter le plan. */
+.bouton-icone { display: inline-flex; align-items: center; justify-content: center; font-size: 17px; padding: 7px 12px; }
+
+/* Le crayon et la gomme du choix Poser / Effacer : l'icône seule, à taille lisible. */
+.action-icone { display: inline-flex; align-items: center; justify-content: center; font-size: 17px; line-height: 1; vertical-align: -3px; }
+/* La grille à gauche, les outils à droite ; dans le document, les outils restent devant :
+   c'est l'ordre du clavier, et celui de l'empilement sur petit écran. */
+.plan-zone { min-width: 0; grid-column: 1; grid-row: 1; }
+/* La grille dans le thème qu'on lui force, quel que soit celui de la page (cf. index.css). */
+.plan-zone.grille-sombre {
+  --paper: #16131F; --surface: #1E1A2B; --surface-2: #262135; --ink: #EAE6F5; --ink-2: #C3BCD9; --ink-3: #A39BBD;
+  --line: #322B45; --line-strong: #473E60; --accent-ink: #BDADEA; --accent-soft: #2C2542;
+  --second: #5CC3A3; --second-soft: #1D3B31; --hit-bg: #5C4A17; --hit-ink: #FBE9BC;
+  color-scheme: dark;
+}
+.plan-zone.grille-clair {
+  --paper: #F5F3FA; --surface: #FFFFFF; --surface-2: #ECE8F5; --ink: #23203A; --ink-2: #565073; --ink-3: #6A6485;
+  --line: #DCD6EC; --line-strong: #BFB6DA; --accent-ink: #5B45A6; --accent-soft: #EDE8F9;
+  --second: #1F7A63; --second-soft: #DDEFE7; --hit-bg: #F7DE9A; --hit-ink: #4A3608;
+  color-scheme: light;
+}
+.plan-editeur > .outils-colonne { grid-column: 2; grid-row: 1; }
+/* La grille du plan, au plus grand : cadre resserré, et presque toute la hauteur d'écran. */
+.plan-zone .grille-cadre { padding: 2px; }
+.plan-zone .grille { width: min(100%, calc((100vh - 64px) * var(--ratio, 1))); }
+/* « Grille entière » : la hauteur mesurée sous la grille, pour la voir d'un bloc. */
+.plan-zone.ajuste .grille { width: min(100%, calc(var(--haut-dispo, 70vh) * var(--ratio, 1))); }
+.plan-messages .verdict { margin-bottom: 10px; }
+/* La ligne d'info garde sa hauteur même vide : sans quoi colonne et grille sauteraient d'une ligne. */
+.plan-messages .bilan-survol { min-height: 1.6em; margin-bottom: 8px; }
+
+@media (max-width: 820px) {
+  .plan-editeur { grid-template-columns: minmax(0, 1fr); }
+  .plan-zone, .plan-editeur > .outils-colonne { grid-column: auto; grid-row: auto; }
+  .outils-colonne { position: static; }
+  /* Sur un téléphone, la grille passe devant les réglages — c'est elle qu'on vient voir —,
+     et la boîte à outils se fixe au bas de l'écran : on change de crayon sans perdre la
+     grille des yeux. Les outils restent premiers dans le document, pour le clavier. */
+  .plan-zone { order: -1; }
+  .construction.large { padding-bottom: 96px; }
+  .boite-outils {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 16px;
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+    background: var(--surface);
+    border-top: 1px solid var(--line-strong);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, .12);
+  }
+  .boite-outils::-webkit-scrollbar { display: none; }
+  .groupe-outils { flex: 0 0 auto; }
+  .bouton-outil { width: 54px; }
+}
+
+/* ---- les types de bloc du plan personnalisé ---- */
+
+/*
+ * Une teinte par type, la même dans les deux thèmes : ce sont des matériaux posés sur une
+ * grille sombre ou claire, pas du texte, et un chemin doit rester couleur de sable partout.
+ * Déclarées sur :root pour servir aussi à l'aperçu des plans, rendu dans une infobulle hors
+ * de la page.
+ */
+:root {
+  --bloc-mur: var(--accent);
+  --bloc-chemin: hsl(36 58% 62%);
+  --bloc-herbe: hsl(105 42% 50%);
+  --bloc-eau: hsl(205 72% 56%);
+  --bloc-bois: hsl(24 46% 42%);
+  --bloc-pierre: hsl(220 8% 60%);
+  --bloc-fleurs: hsl(330 66% 67%);
+  --bloc-lumiere: hsl(48 92% 60%);
+  --bloc-sable: hsl(44 62% 80%);
+  --bloc-terre: hsl(26 38% 28%);
+  --bloc-brique: hsl(6 58% 47%);
+  --bloc-lave: hsl(18 94% 54%);
+  --bloc-glace: hsl(188 72% 80%);
+  --bloc-feuillage: hsl(142 48% 29%);
+  --bloc-metal: hsl(212 14% 40%);
+  --bloc-neige: hsl(210 40% 97%);
+}
+.grille-bloc-mur { fill: var(--bloc-mur); --bloc: var(--bloc-mur); }
+.grille-bloc-chemin { fill: var(--bloc-chemin); --bloc: var(--bloc-chemin); }
+.grille-bloc-herbe { fill: var(--bloc-herbe); --bloc: var(--bloc-herbe); }
+.grille-bloc-eau { fill: var(--bloc-eau); --bloc: var(--bloc-eau); }
+.grille-bloc-bois { fill: var(--bloc-bois); --bloc: var(--bloc-bois); }
+.grille-bloc-pierre { fill: var(--bloc-pierre); --bloc: var(--bloc-pierre); }
+.grille-bloc-fleurs { fill: var(--bloc-fleurs); --bloc: var(--bloc-fleurs); }
+.grille-bloc-lumiere { fill: var(--bloc-lumiere); --bloc: var(--bloc-lumiere); }
+.grille-bloc-sable { fill: var(--bloc-sable); --bloc: var(--bloc-sable); }
+.grille-bloc-terre { fill: var(--bloc-terre); --bloc: var(--bloc-terre); }
+.grille-bloc-brique { fill: var(--bloc-brique); --bloc: var(--bloc-brique); }
+.grille-bloc-lave { fill: var(--bloc-lave); --bloc: var(--bloc-lave); }
+.grille-bloc-glace { fill: var(--bloc-glace); --bloc: var(--bloc-glace); }
+.grille-bloc-feuillage { fill: var(--bloc-feuillage); --bloc: var(--bloc-feuillage); }
+.grille-bloc-metal { fill: var(--bloc-metal); --bloc: var(--bloc-metal); }
+.grille-bloc-neige { fill: var(--bloc-neige); --bloc: var(--bloc-neige); }
+/* L'aperçu d'un plan, dans l'infobulle : le lavande du thème n'y est pas défini. */
+.plan-apercu .grille-bloc-mur { fill: #BDADEA; }
+
+.palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.pastille-type {
+  height: 26px;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--bloc) 60%, var(--ink));
+  border-radius: var(--radius);
+  background: var(--bloc);
+  cursor: pointer;
+}
+.pastille-type:hover { outline: 2px solid var(--line-strong); outline-offset: 1px; }
+.pastille-type:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+.pastille-type.choisie { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* ---- plans enregistrés ---- */
+
+.mes-plans {
+  margin: 0 0 16px;
+  padding: 14px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.mes-plans-tete { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: flex-end; }
+.mes-plans-nom { flex: 1 1 240px; max-width: 360px; }
+.mes-plans-lieu { flex: 0 1 200px; }
+/* Le bilan, à droite sur la ligne du nom : trois chiffres resserrés. */
+.mes-plans-tete .bilan-habitat { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 0 auto; }
+.mes-plans-tete .chiffre-habitat { padding: 4px 10px; gap: 0 6px; min-width: 0; max-width: 240px; }
+.mes-plans-tete .chiffre-habitat strong { font-size: 20px; }
+.mes-plans-tete .chiffre-detail { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mes-plans-lieu .ant-select { width: 100%; }
+.habitats-plan-tete { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.habitats-plan-tete h3 { margin: 0; }
+.coche-sprites { font-size: 12px; color: var(--ink-2); white-space: nowrap; }
+.mes-plans .bouton-icone { padding: 7px 11px; }
+.mes-plans .bouton-icone.avec-texte { gap: 6px; font-size: 12.5px; }
+.mes-plans .bouton-icone.avec-texte svg { font-size: 16px; }
+.mes-plans .bouton-icone.ouvert { border-color: var(--accent-ink); color: var(--accent-ink); background: var(--accent-soft); }
+.mes-plans .panneau-sauvegarde { margin: 14px 0 0; }
+
+.plans-liste {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.plans-liste li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px 5px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+.plans-liste li.actif { border-color: var(--accent-ink); box-shadow: inset 0 0 0 1px var(--accent-ink); }
+.plan-ouvrir {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  max-width: 28ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.plan-ouvrir:hover { color: var(--accent-ink); }
+.plan-ouvrir:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+
+/* L'aperçu, dans l'infobulle : la bulle d'antd est sombre dans les deux thèmes, d'où des
+   couleurs fixées ici plutôt que celles de la page (cf. .bulle-objet dans index.css). */
+.bulle-plan { display: flex; flex-direction: column; gap: 2px; font-family: var(--mono); font-size: 11px; }
+.plan-apercu {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: 2px 0 6px;
+  border-radius: 2px;
+}
+.plan-apercu .grille-fond { fill: #16131F; }
+.plan-apercu .grille-blocs { fill: #BDADEA; }
+.plan-apercu .grille-habitat { fill: #1D3B31; }
+
+/* Redéclarée : la page peut s'ouvrir seule (cf. PokedexPage.css). */
+.construction .note-source { font-size: 12.5px; color: var(--ink-3); margin: 18px 0 0; max-width: 88ch; }
+
+@media (max-width: 820px) {
+  .plan-habitat { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---- les Pokémon prévus dans les habitats du plan ---- */
+.habitats-plan { margin-top: 24px; }
+/* Dans la colonne d'outils : sur toute sa largeur, sous les réglages, une carte par rangée. */
+.outils-colonne .habitats-plan { grid-column: 1 / -1; margin-top: 2px; padding-top: 10px; border-top: 1px solid var(--line); }
+.outils-colonne .habitats-plan-liste { grid-template-columns: minmax(0, 1fr); }
+.habitats-plan .indice { margin: 4px 0 12px; }
+.habitats-plan-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.habitat-plan { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface); padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+.habitat-plan.survole { border-color: var(--accent-ink); }
+.habitat-plan-tete { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.habitat-plan-numero { font-family: var(--display); font-weight: 700; font-size: 18px; }
+.habitat-plan-nom { font-weight: 600; font-size: 14px; }
+.habitat-plan-dims { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+.habitat-plan-tete .marque-habitat { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+.habitat-plan-alerte { font-size: 12px; color: var(--hit-ink); background: var(--hit-bg); padding: 1px 6px; border-radius: var(--radius); }
+/* Les Pokémon d'un habitat : une grille de sprites, le nom en infobulle, × pour retirer. */
+.habitat-plan-pokemon { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); gap: 4px; }
+.habitat-plan-pokemon li { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--surface-2); border-radius: var(--radius); }
+.habitat-plan-pokemon img { width: 100%; height: 100%; object-fit: contain; }
+.habitat-plan-pokemon .retirer {
+  position: absolute; top: 1px; right: 1px; width: 16px; height: 16px; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: 0; border-radius: 50%; background: var(--surface); color: var(--ink-3);
+  font-size: 13px; line-height: 1; cursor: pointer; opacity: 0;
+}
+/* Le × n'apparaît qu'au survol ou au clavier, pour ne pas couvrir le sprite. */
+.habitat-plan-pokemon li:hover .retirer, .habitat-plan-pokemon .retirer:focus-visible { opacity: 1; }
+.habitat-plan-pokemon .retirer:hover { color: var(--ink); }
+.habitat-plan-pokemon li.habitat-plan-ajout { background: none; }
+/* Le « + » d'ajout : une case de la grille des sprites, en pointillés. */
+.habitat-plan-choix {
+  width: 100%; height: 100%; padding: 0;
+  border: 1px dashed var(--line-strong); border-radius: var(--radius);
+  background: none; color: var(--ink-3);
+  font: inherit; font-size: 26px; font-weight: 300; line-height: 1; cursor: pointer;
+}
+.habitat-plan-choix:hover { border-color: var(--accent-ink); color: var(--accent-ink); background: var(--accent-soft); }
+.habitat-plan-choix:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+/* La grille de sprites du choix d'un Pokémon, dans sa bulle. */
+.choix-pokemon { width: min(380px, 80vw); display: flex; flex-direction: column; gap: 8px; }
+.choix-pokemon-grille {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 4px;
+  max-height: 320px; overflow-y: auto; padding: 2px;
+}
+.choix-pokemon-case {
+  display: flex; align-items: center; justify-content: center; aspect-ratio: 1;
+  padding: 2px; border: 1px solid transparent; border-radius: var(--radius);
+  background: var(--surface-2); cursor: pointer;
+}
+.choix-pokemon-case img { width: 100%; height: 100%; object-fit: contain; }
+.choix-pokemon-case:hover { border-color: var(--accent-ink); background: var(--accent-soft); }
+.choix-pokemon-case:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+/* Déjà logé dans un autre habitat du plan : pâli, il déménagerait. */
+.choix-pokemon-case.ailleurs img { opacity: .4; }
+.choix-pokemon-lieu { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 12px; color: var(--ink-2); }
+.choix-pokemon-vide { margin: 0; font-size: 12px; color: var(--ink-3); }
+.habitat-plan .note-max { font-size: 12px; color: var(--ink-3); }

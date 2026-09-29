@@ -1,7 +1,8 @@
 /**
  * Résolution des URL de sprites, mutualisée.
  *
- * Les 1 081 vignettes (715 objets, 366 Pokémon) viennent de l'index des préférences, les
+ * Les 1 100 vignettes (734 objets, 366 Pokémon) viennent de l'index des préférences et,
+ * pour les 19 meubles d'objets-complement.json, du catalogue de Serebii ; les
  * 48 aliments de Serebii (cf. scripts/importer-aliments.mjs) : elles sont globées une seule fois ici et indexées dans deux Map, plutôt que
  * re-résolues à chaque rendu de vignette — l'index affiche jusqu'à 3 000 chips d'un
  * coup quand tout est déplié.

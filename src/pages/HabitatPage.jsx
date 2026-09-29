@@ -1,8 +1,9 @@
 import { Fragment, useCallback, useDeferredValue, useMemo, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Checkbox, Input, Popconfirm, Segmented, Select, Slider, Tooltip } from 'antd'
+import Aide from '../components/Aide'
 import CarteHabitat from '../components/CarteHabitat'
-import { ICONE_CATEGORIE, ICONE_GOUT, ICONE_VILLE } from '../components/Icones'
+import { ICONE_CATEGORIE, ICONE_GOUT, ICONE_HABITAT, ICONE_VILLE, IconeCadre } from '../components/Icones'
 import ProgressionVilles from '../components/ProgressionVilles'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
 import { urlSpriteAliment, urlSpritePokemon } from '../data/images'
@@ -34,7 +35,7 @@ import {
   specialitesDe,
   spritePokemon,
 } from '../data'
-import { FR_TYPE_OBJET, TYPES_OBJET, TYPES_PAR_DEFAUT, typeObjet } from '../data/categories'
+import { FR_TYPE_OBJET, TYPES_OBJET, TYPES_PAR_DEFAUT, estMural, typeObjet } from '../data/categories'
 import { VILLES, cleVilleValide } from '../data/villes'
 import {
   cleVilleDe,
@@ -135,6 +136,8 @@ export default function HabitatPage() {
   // d'un état neutre, où cocher une catégorie restreint au lieu d'avoir à décocher les onze
   // autres.
   const [typesActifs, setTypesActifs] = useState(() => new Set())
+  // « Mur » : restreint aux objets qu'on accroche, en plus des catégories et non à leur place.
+  const [murSeul, setMurSeul] = useState(false)
   // « Choses en commun » : une vue à part, qui court-circuite les deux filtres ci-dessus.
   const [modeCommun, setModeCommun] = useState(false)
   const [triObjets, setTriObjets] = useState('utilite')
@@ -142,10 +145,13 @@ export default function HabitatPage() {
   // d'un habitat à l'autre comme les filtres — on n'a pas à les refaire à chaque enclos.
   const [tailleObjets, setTailleObjets] = useState(TAILLE_DEFAUT)
   const [compteursObjets, setCompteursObjets] = useState(true)
-  // Le lot minimal est replié par défaut : c'est une réponse qu'on va chercher, pas une
-  // grille de plus à faire défiler avant d'arriver aux filtres. Retenu d'un habitat à
-  // l'autre, comme les réglages ci-dessus.
-  const [lotOuvert, setLotOuvert] = useState(false)
+  // Le lot minimal est déplié par défaut : c'est LA réponse à « que poser ? », celle qu'on
+  // vient chercher — replié, il se lisait comme une ligne de plus à ignorer. Retenu d'un
+  // habitat à l'autre, comme les réglages ci-dessus.
+  const [lotOuvert, setLotOuvert] = useState(true)
+  // Les filtres, eux, sont repliés : une trentaine de bascules passaient avant la première
+  // vignette. La recherche et « Choses en commun » restent à portée, hors du repli.
+  const [filtresOuverts, setFiltresOuverts] = useState(false)
   const [tailleLot, setTailleLot] = useState(LOT_DEFAUT)
   const [saisie, setSaisie] = useState('')
 
@@ -234,6 +240,8 @@ export default function HabitatPage() {
       setPrefsActives={setPrefsActives}
       typesActifs={typesActifs}
       setTypesActifs={setTypesActifs}
+      murSeul={murSeul}
+      setMurSeul={setMurSeul}
       modeCommun={modeCommun}
       setModeCommun={setModeCommun}
       triObjets={triObjets}
@@ -244,6 +252,8 @@ export default function HabitatPage() {
       setCompteursObjets={setCompteursObjets}
       lotOuvert={lotOuvert}
       setLotOuvert={setLotOuvert}
+      filtresOuverts={filtresOuverts}
+      setFiltresOuverts={setFiltresOuverts}
       tailleLot={tailleLot}
       setTailleLot={setTailleLot}
       onAjouter={() =>
@@ -379,8 +389,9 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
               setMessage('')
               setSauvegarde(sauvegarde === null ? exporterHabitats() : null)
             }}
+            aria-expanded={sauvegarde !== null}
           >
-            Sauvegarde
+            Exporter / importer
           </button>
         </div>
       </div>
@@ -505,8 +516,15 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
       {!habitats.length ? (
         <div className="vide">
           <p>
-            Rien d’enregistré pour l’instant. Composez-en un, ou partez d’une fiche du{' '}
-            <Link to="/pokedex">Pokédex</Link>.
+            Rien d’enregistré pour l’instant. Choisissez de 1 à {MAX_COLOCATAIRES} Pokémon :
+            l’app calcule les objets qui leur plaisent à tous, et le plus petit lot qui les
+            contente.
+          </p>
+          <p>
+            <button type="button" className="ghost-btn primaire" onClick={onNouveau}>
+              Composer mon premier habitat
+            </button>{' '}
+            ou partez d’une fiche du <Link to="/pokedex">Pokédex</Link>.
           </p>
         </div>
       ) : sections.length ? (
@@ -944,6 +962,8 @@ function VueHabitat({
   setPrefsActives,
   typesActifs,
   setTypesActifs,
+  murSeul,
+  setMurSeul,
   modeCommun,
   setModeCommun,
   triObjets,
@@ -954,6 +974,8 @@ function VueHabitat({
   setCompteursObjets,
   lotOuvert,
   setLotOuvert,
+  filtresOuverts,
+  setFiltresOuverts,
   tailleLot,
   setTailleLot,
   onAjouter,
@@ -1008,15 +1030,27 @@ function VueHabitat({
     [groupe, lot, tailleLot],
   )
 
-  /** Décompte par catégorie de meuble, calculé avant filtrage : les bascules le montrent. */
+  // Comme les catégories, « Mur » s'éteint sous « Choses en commun ».
+  const mur = murSeul && !commun
+
+  /**
+   * Décompte par catégorie de meuble, calculé avant le filtre de catégories : les bascules
+   * le montrent. « Mur » coché, il ne compte que les objets muraux — chaque bascule dit
+   * alors ce qu'on obtiendrait en la cochant.
+   */
   const parType = useMemo(() => {
     const compte = Object.fromEntries(TYPES_OBJET.map((t) => [t, 0]))
-    for (const o of objets) compte[typeDe(o.nom)] += 1
+    for (const o of objets) if (!mur || estMural(o.nom)) compte[typeDe(o.nom)] += 1
     return compte
-  }, [objets])
+  }, [objets, mur])
 
   // Aucune catégorie cochée = toutes sauf fossiles et ressources.
   const typesRetenus = typesActifs.size ? typesActifs : TYPES_VISIBLES_PAR_DEFAUT
+  // Le pendant pour « Mur » : les objets muraux parmi les catégories retenues.
+  const nbMuraux = useMemo(
+    () => objets.filter((o) => typesRetenus.has(typeDe(o.nom)) && estMural(o.nom)).length,
+    [objets, typesRetenus],
+  )
 
   const objetsFiltres = useMemo(() => {
     // « Choses en commun » remplace le filtre de catégories, sans lever le tri par défaut :
@@ -1027,7 +1061,7 @@ function VueHabitat({
             o.pokemonSatisfaits.length === groupe.length &&
             TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(o.nom)),
         )
-      : objets.filter((o) => typesRetenus.has(typeDe(o.nom)))
+      : objets.filter((o) => typesRetenus.has(typeDe(o.nom)) && (!mur || estMural(o.nom)))
     const retenus = terme ? gardes.filter((o) => correspond(terme, o.nom, frObjet(o.nom))) : gardes
     if (triObjets === 'utilite') return retenus
 
@@ -1041,7 +1075,7 @@ function VueHabitat({
         b.pokemonSatisfaits.length - a.pokemonSatisfaits.length ||
         frObjet(a.nom).localeCompare(frObjet(b.nom), 'fr'),
     )
-  }, [objets, typesRetenus, terme, commun, groupe.length, triObjets])
+  }, [objets, typesRetenus, mur, terme, commun, groupe.length, triObjets])
 
   const confort = useMemo(() => {
     const compte = { Relaxation: 0, Decoration: 0, Toy: 0 }
@@ -1060,6 +1094,9 @@ function VueHabitat({
       ? `${slugsActifs.length} préférence${slugsActifs.length > 1 ? 's' : ''} sur ${toutesLesPrefs.length}`
       : `${toutesLesPrefs.length} préférences${solo ? '' : ' cumulées'}`
   const masques = objets.length - objetsFiltres.length
+  // Ce que le repli des filtres cache, dit sur son bouton : un filtre actif invisible
+  // expliquerait mal une grille amputée.
+  const nbFiltresActifs = commun ? 0 : typesActifs.size + (murSeul ? 1 : 0) + retenues.length
 
   return (
     <div className="wrap habitat">
@@ -1089,10 +1126,9 @@ function VueHabitat({
                     <span className="colocataire-id">
                       <strong>{frPokemon(nom)}</strong>
                       <span>
-                        {numeroAffiche(nom)}
-                        {habitatDe(nom) ? ` · ${habitatDe(nom).toLowerCase()}` : ''} ·{' '}
-                        {(prefsParPokemon.get(nom) || []).length} préf.
+                        {numeroAffiche(nom)} · {(prefsParPokemon.get(nom) || []).length} préf.
                       </span>
+                      {habitatDe(nom) && <MarqueHabitat nom={nom} />}
                       {/* Le goût préféré décide des aliments à offrir : c'est l'autre moitié
                           du confort, à côté des objets qu'on pose. Les aliments eux-mêmes
                           sont dans l'infobulle de la fiche. */}
@@ -1147,24 +1183,26 @@ function VueHabitat({
             </button>
           )}
         </div>
+
+        {/* Le bilan du groupe tient dans sa carte : compatibilité et ambiance décrivent les
+            colocataires, pas la grille, et deux bandeaux séparés repoussaient d'autant la
+            réponse qu'on vient chercher. */}
+        {(taux !== null || zones.length > 0) && (
+          <div className="entete-bilan">
+            {taux !== null && (
+              <p className={'bilan-compat ' + (taux >= 40 ? 'fort' : taux >= 15 ? 'moyen' : 'faible')}>
+                <strong>{taux} % de compatibilité</strong>
+                <Aide texte="Le recouvrement moyen des préférences, paire par paire : communes ÷ réunies. Il ne dit rien de l’habitat idéal — c’est l’ambiance, à côté, qui s’en charge." />
+                {' · '}
+                {nbCommuns
+                  ? `${nbCommuns} objet${nbCommuns > 1 ? 's' : ''} content${nbCommuns > 1 ? 'ent' : 'e'} tout le groupe à la fois`
+                  : 'aucun objet ne fait l’unanimité'}
+              </p>
+            )}
+            {zones.length > 0 && <BandeauAmbiance groupe={groupe} />}
+          </div>
+        )}
       </div>
-
-      {taux !== null && (
-        <p className={'bandeau-compat ' + (taux >= 40 ? 'fort' : taux >= 15 ? 'moyen' : 'faible')}>
-          <strong>{taux} % de compatibilité</strong> — recouvrement moyen des objets appréciés,
-          paire par paire.{' '}
-          {nbCommuns
-            ? `${nbCommuns} objet${nbCommuns > 1 ? 's' : ''} content${nbCommuns > 1 ? 'ent' : 'e'} tout le groupe à la fois — la bascule « Choses en commun » ne montre que ceux-là.`
-            : 'Aucun objet ne fait l’unanimité : chaque objet posé ne contentera qu’une partie du groupe.'}
-        </p>
-      )}
-
-      {zones.length > 1 && (
-        <p className="avertissement">
-          Habitats différents dans ce groupe ({zones.map((h) => h.toLowerCase()).join(', ')}) — un
-          même enclos ne peut satisfaire qu’un seul habitat.
-        </p>
-      )}
 
       {lot.objets.length > 0 && (
         <LotMinimal
@@ -1184,84 +1222,16 @@ function VueHabitat({
       )}
 
       <div className="barre-filtres">
-        <div className="champ-groupe">
-          <Input
-            allowClear
-            value={saisie}
-            onChange={(e) => setSaisie(e.target.value)}
-            placeholder={`Chercher parmi les objets de ${solo ? frPokemon(groupe[0]) : 'ce groupe'}…`}
-            aria-label="Chercher parmi les objets de ce groupe"
-          />
-        </div>
-
-        <div className="titre-filtre">
-          <h3 className="etiquette">Catégorie d’objet</h3>
-          <span className="actions-filtre">
-            <button
-              type="button"
-              className="mini-btn"
-              disabled={commun || typesActifs.size === 0}
-              onClick={() => setTypesActifs(new Set())}
-            >
-              Réinitialiser
-            </button>
-            <button
-              type="button"
-              className="mini-btn"
-              disabled={commun || typesActifs.size === TYPES_OBJET.length}
-              onClick={() => setTypesActifs(new Set(TYPES_OBJET))}
-            >
-              Tout sélectionner
-            </button>
-          </span>
-        </div>
-        {/* L'explication du filtre neutre ne s'affiche plus : la règle se découvre en
-            cochant, et le paragraphe pesait plus lourd que les bascules qu'il décrivait.
-            Reste le seul cas où l'état surprend — les catégories éteintes par « Choses en
-            commun » —, qu'aucune bascule ne dit d'elle-même. */}
-        {commun && (
-          <p className="indice">
-            « Choses en commun » montre le terrain d’entente du groupe : les catégories ne
-            s’appliquent pas, hors fossiles et ressources qui restent masqués.
-          </p>
-        )}
-        <div className="bascules">
-          {TYPES_OBJET.map((type) => {
-            const IconeCat = ICONE_CATEGORIE[type]
-            return (
-            <button
-              key={type}
-              type="button"
-              className="bascule teintee"
-              style={{ '--teinte': `var(--c-${type})`, '--teinte-fond': `var(--c-${type}-fond)` }}
-              aria-pressed={!commun && typesActifs.has(type)}
-              disabled={commun}
-              onClick={() =>
-                setTypesActifs((precedent) => {
-                  const suivant = new Set(precedent)
-                  if (suivant.has(type)) suivant.delete(type)
-                  else suivant.add(type)
-                  return suivant
-                })
-              }
-            >
-              <IconeCat />
-              {FR_TYPE_OBJET[type]} <b>{parType[type]}</b>
-            </button>
-          )})}
-        </div>
-
-        <h3 className="etiquette second">Filtrer par préférence</h3>
-        <div className="bascules">
-          <button
-            type="button"
-            className="bascule reset"
-            aria-pressed={!commun && retenues.length === 0}
-            disabled={commun}
-            onClick={() => setPrefsActives(new Set())}
-          >
-            Toutes
-          </button>
+        <div className="ligne-filtres">
+          <div className="champ-groupe">
+            <Input
+              allowClear
+              value={saisie}
+              onChange={(e) => setSaisie(e.target.value)}
+              placeholder={`Chercher parmi les objets de ${solo ? frPokemon(groupe[0]) : 'ce groupe'}…`}
+              aria-label="Chercher parmi les objets de ce groupe"
+            />
+          </div>
           {!solo && (
             <button
               type="button"
@@ -1273,34 +1243,151 @@ function VueHabitat({
               Choses en commun <b>{nbCommuns}</b>
             </button>
           )}
-          {toutesLesPrefs.map((slug) => {
-            const amateurs = amateursDe(groupe, slug)
-            return (
+          <button
+            type="button"
+            className={'bascule bouton-filtres' + (nbFiltresActifs ? ' actifs' : '')}
+            aria-expanded={filtresOuverts}
+            aria-controls="filtres-habitat"
+            onClick={() => setFiltresOuverts((precedent) => !precedent)}
+          >
+            {filtresOuverts ? '▾' : '▸'} Filtres
+            {nbFiltresActifs > 0 && (
+              <b>
+                {nbFiltresActifs} actif{nbFiltresActifs > 1 ? 's' : ''}
+              </b>
+            )}
+          </button>
+          {nbFiltresActifs > 0 && (
+            <button
+              type="button"
+              className="mini-btn"
+              onClick={() => {
+                setTypesActifs(new Set())
+                setMurSeul(false)
+                setPrefsActives(new Set())
+              }}
+            >
+              Tout effacer
+            </button>
+          )}
+        </div>
+
+        {filtresOuverts && (
+          <div id="filtres-habitat" className="corps-filtres">
+            <div className="titre-filtre">
+              <h3 className="etiquette">Catégorie d’objet</h3>
+              <span className="actions-filtre">
+                <button
+                  type="button"
+                  className="mini-btn"
+                  disabled={commun || (typesActifs.size === 0 && !murSeul)}
+                  onClick={() => {
+                    setTypesActifs(new Set())
+                    setMurSeul(false)
+                  }}
+                >
+                  Réinitialiser
+                </button>
+                <button
+                  type="button"
+                  className="mini-btn"
+                  disabled={commun || typesActifs.size === TYPES_OBJET.length}
+                  onClick={() => setTypesActifs(new Set(TYPES_OBJET))}
+                >
+                  Tout sélectionner
+                </button>
+              </span>
+            </div>
+            {/* L'explication du filtre neutre ne s'affiche plus : la règle se découvre en
+                cochant, et le paragraphe pesait plus lourd que les bascules qu'il décrivait.
+                Reste le seul cas où l'état surprend — les catégories éteintes par « Choses en
+                commun » —, qu'aucune bascule ne dit d'elle-même. */}
+            {commun && (
+              <p className="indice">
+                « Choses en commun » montre le terrain d’entente du groupe : les catégories et le
+                filtre « Mur » ne s’appliquent pas, hors fossiles et ressources qui restent masqués.
+              </p>
+            )}
+            <div className="bascules">
+              {TYPES_OBJET.map((type) => {
+                const IconeCat = ICONE_CATEGORIE[type]
+                return (
+                <button
+                  key={type}
+                  type="button"
+                  className="bascule teintee"
+                  style={{ '--teinte': `var(--c-${type})`, '--teinte-fond': `var(--c-${type}-fond)` }}
+                  aria-pressed={!commun && typesActifs.has(type)}
+                  disabled={commun}
+                  onClick={() =>
+                    setTypesActifs((precedent) => {
+                      const suivant = new Set(precedent)
+                      if (suivant.has(type)) suivant.delete(type)
+                      else suivant.add(type)
+                      return suivant
+                    })
+                  }
+                >
+                  <IconeCat />
+                  {FR_TYPE_OBJET[type]} <b>{parType[type]}</b>
+                </button>
+              )})}
+              {/* À part des catégories, qu'elle recoupe : une lampe murale est une lumière. */}
+              <span className="separateur-bascules" aria-hidden="true" />
               <button
-                key={slug}
                 type="button"
                 className="bascule"
-                aria-pressed={!commun && prefsActives.has(slug)}
+                aria-pressed={mur}
                 disabled={commun}
-                title={amateurs.map(frPokemon).join(', ')}
-                onClick={() =>
-                  setPrefsActives((precedent) => {
-                    const suivant = new Set(precedent)
-                    if (suivant.has(slug)) suivant.delete(slug)
-                    else suivant.add(slug)
-                    return suivant
-                  })
-                }
+                title="Les objets qui s’accrochent au mur : calendrier, horloge murale, lampe murale…"
+                onClick={() => setMurSeul((precedent) => !precedent)}
               >
-                {prefParSlug.get(slug).fr}{' '}
-                <b>
-                  {prefParSlug.get(slug).objets.length}
-                  {solo ? '' : ` · ${amateurs.length}/${groupe.length}`}
-                </b>
+                <IconeCadre />
+                Mur <b>{nbMuraux}</b>
               </button>
-            )
-          })}
-        </div>
+            </div>
+
+            <h3 className="etiquette second">Filtrer par préférence</h3>
+            <div className="bascules">
+              <button
+                type="button"
+                className="bascule reset"
+                aria-pressed={!commun && retenues.length === 0}
+                disabled={commun}
+                onClick={() => setPrefsActives(new Set())}
+              >
+                Toutes
+              </button>
+              {toutesLesPrefs.map((slug) => {
+                const amateurs = amateursDe(groupe, slug)
+                return (
+                  <button
+                    key={slug}
+                    type="button"
+                    className="bascule"
+                    aria-pressed={!commun && prefsActives.has(slug)}
+                    disabled={commun}
+                    title={amateurs.map(frPokemon).join(', ')}
+                    onClick={() =>
+                      setPrefsActives((precedent) => {
+                        const suivant = new Set(precedent)
+                        if (suivant.has(slug)) suivant.delete(slug)
+                        else suivant.add(slug)
+                        return suivant
+                      })
+                    }
+                  >
+                    {prefParSlug.get(slug).fr}{' '}
+                    <b>
+                      {prefParSlug.get(slug).objets.length}
+                      {solo ? '' : ` · ${amateurs.length}/${groupe.length}`}
+                    </b>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="resultats">
@@ -1380,6 +1467,72 @@ function VueHabitat({
 /* ========================================================= petits blocs */
 
 /** Le goût préféré d'un colocataire, sur le gabarit des marques d'habitat et de ville. */
+/**
+ * L'ambiance que réclame un colocataire (humide, sombre…), au-dessus de son goût : les deux
+ * disent ce qu'il faut à l'enclos, l'un par le décor, l'autre par l'assiette.
+ */
+function MarqueHabitat({ nom }) {
+  const cle = pokemonParNom.get(nom)?.habitat
+  const IconeH = ICONE_HABITAT[cle]
+  return (
+    <span
+      className={'colocataire-habitat marque-habitat hab-' + cle}
+      title="Habitat idéal : l’ambiance que l’enclos doit offrir pour que ce Pokémon s’y plaise"
+    >
+      {IconeH && <IconeH />}
+      habitat {habitatDe(nom).toLowerCase()}
+    </span>
+  )
+}
+
+/**
+ * L'ambiance de l'enclos, rapportée à ses colocataires. D'accord entre eux, une ligne suffit ;
+ * sinon, qui veut quoi — un même enclos n'offre qu'une ambiance, et savoir laquelle contente
+ * le plus de monde dit quoi garder et qui déménager.
+ */
+function BandeauAmbiance({ groupe }) {
+  const parAmbiance = new Map()
+  for (const nom of groupe) {
+    const cle = pokemonParNom.get(nom)?.habitat
+    if (!cle || !habitatDe(nom)) continue
+    if (!parAmbiance.has(cle)) parAmbiance.set(cle, [])
+    parAmbiance.get(cle).push(nom)
+  }
+  // La plus demandée d'abord : c'est la candidate naturelle pour l'enclos.
+  const ambiances = [...parAmbiance].sort((a, b) => b[1].length - a[1].length)
+  const marque = (cle, noms) => {
+    const IconeH = ICONE_HABITAT[cle]
+    return (
+      <span className={'marque-habitat hab-' + cle}>
+        {IconeH && <IconeH />}
+        <strong>{habitatDe(noms[0])}</strong>
+      </span>
+    )
+  }
+
+  if (ambiances.length === 1) {
+    const [cle, noms] = ambiances[0]
+    return (
+      <p className="bandeau-ambiance">
+        Ambiance à donner à l’enclos : {marque(cle, noms)}
+        {groupe.length > 1 ? ` — tous les colocataires la réclament.` : ''}
+      </p>
+    )
+  }
+  return (
+    <p className="bandeau-ambiance melee">
+      Ambiances différentes :{' '}
+      {ambiances.map(([cle, noms], i) => (
+        <Fragment key={cle}>
+          {i > 0 && ' · '}
+          {marque(cle, noms)} ({noms.map(frPokemon).join(', ')})
+        </Fragment>
+      ))}{' '}
+      — un même enclos n’en offre qu’une.
+    </p>
+  )
+}
+
 function MarqueGout({ nom }) {
   const cle = goutBrutDe(nom)
   const IconeG = ICONE_GOUT[cle]

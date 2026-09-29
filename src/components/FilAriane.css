@@ -1,0 +1,18 @@
+/* Le fil d'Ariane : une ligne discrète sous l'en-tête, étapes séparées par un chevron. */
+.fil-ariane { padding-top: 14px; }
+.fil-ariane.large { max-width: 1680px; }
+.fil-ariane ol {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0;
+  margin: 0; padding: 0; list-style: none;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.fil-ariane li { display: inline-flex; align-items: center; min-width: 0; }
+.fil-ariane li + li::before { content: '›'; margin: 0 8px; color: var(--line-strong); font-size: 14px; }
+.fil-ariane a { color: var(--ink-3); text-decoration: none; border-radius: var(--radius); }
+.fil-ariane a:hover { color: var(--accent-ink); }
+.fil-ariane a:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+/* La page où l'on est : en encre, et coupée si le nom est long (un habitat à quatre). */
+.fil-ariane [aria-current='page'] {
+  color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 60ch;
+}

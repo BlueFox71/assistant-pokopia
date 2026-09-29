@@ -11,12 +11,13 @@ réseau, sur le web comme en version bureau.
 
 | Vue | Ce qu'elle répond |
 | --- | --- |
-| **Accueil** (`/`) | Le tableau de bord : une **recherche globale** qui mène directement à la bonne fiche — un objet ouvre la sienne, un Pokémon la sienne, une préférence ouvre l'index positionné dessus —, une **barre de progression par ville** (« 42/73 logés ») dès le premier habitat enregistré, et ce que couvre l'application en chiffres. |
+| **Accueil** (`/`) | Le tableau de bord : une **recherche globale** qui mène directement à la bonne fiche — un objet ouvre la sienne, un Pokémon la sienne, une préférence ouvre l'index positionné dessus —, une **barre de progression par ville** (« 42/73 logés ») dès le premier habitat enregistré, et **trois cartes d'entrée** — composer (ou reprendre) un habitat, le catalogue des objets, la construction —, chacune avec ce qu'elle couvre en chiffres. Au-delà de cinq résultats, un lien mène au catalogue ou au Pokédex filtré (`?q=`). |
 | **Préférences** (`/preferences`) | Les 43 cartes dépliables. La recherche accepte le français et l'anglais, et remonte au-dessus de la grille la **recherche inversée** : un objet coche souvent plusieurs préférences, c'est ce croisement qui décide de le fabriquer. |
-| **Habitat** (`/habitat`) | Des habitats nommés, enregistrés, de un à quatre colocataires, avec le **goût préféré** de chacun — le survol d'un colocataire liste les aliments qui l'ont. En tête, le **lot minimal**, replié par défaut : le plus petit ensemble d'objets qui coche toutes les préférences du groupe. Leurs préférences se cumulent, et chaque objet est classé d'abord par le **nombre de colocataires** qu'il satisfait, ensuite par le nombre de préférences cochées : un objet « 3 Pokémon » vaut mieux que trois objets séparés — un tri à part reclasse sur les seules préférences, croissant ou décroissant. Les vignettes y sont **nues** — le sprite et ses badges, rien d'autre : le survol donne le nom, le type et les préférences cochées avec, pour chacune, le colocataire qui y tient. Un curseur règle leur taille de 32 à 128 px, et une case éteint les deux compteurs sous l'image pour ne garder que les silhouettes. Deux filtres — **catégorie d'objet** et préférence — plus le décompte Repos / Décoration / Jouet du confort « exceptionnel ». Le sélecteur filtre les candidats **par ville** et sait en proposer un (« Suggestion colocataire »). |
+| **Habitat** (`/habitat`) | Des habitats nommés, enregistrés, de un à quatre colocataires, avec le **goût préféré** de chacun — le survol d'un colocataire liste les aliments qui l'ont. En tête, le **lot minimal**, déplié par défaut : le plus petit ensemble d'objets qui coche toutes les préférences du groupe. Leurs préférences se cumulent, et chaque objet est classé d'abord par le **nombre de colocataires** qu'il satisfait, ensuite par le nombre de préférences cochées : un objet « 3 Pokémon » vaut mieux que trois objets séparés — un tri à part reclasse sur les seules préférences, croissant ou décroissant. Les vignettes y sont **nues** — le sprite et ses badges, rien d'autre : le survol donne le nom, le type et les préférences cochées avec, pour chacune, le colocataire qui y tient. Un curseur règle leur taille de 32 à 128 px, et une case éteint les deux compteurs sous l'image pour ne garder que les silhouettes. Deux filtres — **catégorie d'objet** et préférence —, repliés derrière un bouton « Filtres » qui dit combien sont actifs, plus le décompte Repos / Décoration / Jouet du confort « exceptionnel ». Le sélecteur filtre les candidats **par ville** et sait en proposer un (« Suggestion colocataire »). |
 | **Villes** (`/villes`) | Les 366 Pokémon rangés par région de l'île, et de quoi **les réattribuer** — un ou plusieurs à la fois. Aucune source ne publie la ville d'origine : 287 rattachements sont relevés en jeu, les 79 autres sont **déduits** de l'habitat idéal et le disent. |
 | **Objets** (`/objets`) | Le catalogue des 714 objets, filtrable par **catégorie de meuble**, catégorie de confort et **personnalisation**, triable par nom, préférences ou nombre de Pokémon contentés. Un pinceau sous la vignette marque ce que Smearguru peut repeindre. |
 | **Pokédex** (`/pokedex`) | Les 366 Pokémon, filtrables par habitat, **type** et **spécialité**, triables par numéro, nom ou nombre de préférences. Chaque fiche donne ses préférences, ses objets les plus utiles et les Pokémon aux **goûts les plus proches dans sa ville** — le bon réflexe avant de composer un enclos. |
+| **Construction** (`/construction`) | Des simulations pour préparer un chantier. La première, le **générateur de formes**, dessine bloc par bloc sur une grille un cercle, une ellipse, un carré, un rectangle, un losange ou une étoile (de 3 à 12 branches) — contour fin, contour continu (étanche) ou plein, épaisseur réglable — avec le **nombre de blocs** à prévoir et le détail rangée par rangée. Les réglages sont dans l'URL (`?sim=formes&forme=cercle&l=21&mode=fin`) ; un ancien lien sans `sim` est redirigé vers le bon générateur. Le **générateur d'habitat** (`?sim=habitat`) dit si une maison de largeur × longueur donnée sera reconnue par le jeu — intérieur de 2 × 2 à 9 × 10, d'après Game8 et Serebii —, avec la surface (entière et hors bordure — sans la rangée qui longe les murs), l'emprise, les blocs de mur, et le tableau de toutes les tailles acceptées. Le **générateur d'escalier** (`?sim=escalier`) trace de profil un escalier d'un dénivelé donné — profondeur de marche, palier, plein ou marches seules — avec sa longueur au sol et le nombre de blocs ; il suppose un bloc de haut par marche, faute de source sur ce que le personnage franchit. Le **plan personnalisé** (`?sim=plan`) est une grille carrée de 4 à 64 de côté, à remplir à la main — case par case ou en ligne avec un pinceau de 1 à 5 cases, ou en carré (contour ou plein), pour poser ou effacer —, avec le compte des blocs, un historique (Ctrl+Z), et deux boutons pour pivoter le plan d'un quart de tour, habitats compris. L'outil **Dupliquer** copie une forme d'un clic (ou une zone au rectangle), habitats compris, puis la colle autant de fois que voulu — pivotable, et à la gomme pour effacer cette forme. L'outil **Habitat** remplit un enclos existant, ou en dessine un d'un geste (murs et habitat d'un coup), et marque son intérieur comme maison s'il respecte les règles — fermé, rectangulaire, de 2 × 2 à 9 × 10 —, dit pourquoi sinon, et signale un habitat dont on a cassé le mur depuis. Le plan en cours est gardé à chaque tracé (`pokopia:plan`) ; on peut aussi **enregistrer des plans nommés** pour les rouvrir plus tard (`pokopia:plans`), et les exporter ou importer en JSON comme les habitats. |
 
 L'index et le catalogue acceptent `?q=` comme point d'entrée (`/preferences?q=lampe`,
 `/objets?q=lit`), ce dont se sert l'accueil ; le catalogue accepte en plus
@@ -55,7 +56,7 @@ côtés, sans quoi il ne tomberait jamais à zéro.
 Le groupe libre existe pour les liens venant des fiches (« Composer un habitat ») et
 s'enregistre en un clic.
 
-**Sauvegarde.** Le bouton du même nom, dans la liste, affiche les habitats au format JSON :
+**Exporter / importer.** Le bouton du même nom, dans la liste, affiche les habitats au format JSON :
 à copier quelque part, et à recoller pour les restaurer — ici, ou dans une autre
 installation. L'import **ajoute** sans jamais écraser : un identifiant déjà présent est
 ignoré. C'est le seul moyen d'emporter ses habitats, puisqu'ils vivent dans le
@@ -139,7 +140,7 @@ corrigera d'un coup tout ce qui n'a pas été touché à la main, sans écraser 
 du joueur. Le nom donné à Ville-Nouvelle vit à part, dans `pokopia:villes:noms`.
 
 Comme les habitats, tout cela vit dans le `localStorage` d'une origine précise : le bouton
-**Sauvegarde** de la page Villes est le seul moyen de l'emporter. Une différence avec les
+**Exporter / importer** de la page Villes est le seul moyen de l'emporter. Une différence avec les
 habitats : l'import **corrige** ce qui est déjà là — la réattribution la plus récente gagne,
 puisque c'est une correction, pas un ajout.
 
@@ -171,7 +172,7 @@ Chaque barre mène au sélecteur avec ses candidats filtrés sur la ville
 (`/habitat?nouveau=1&ville=terrassec`) : c'est là que se règle ce qu'elle signale.
 
 Le bloc ne paraît pas tant qu'aucun habitat n'existe — six barres à zéro se liraient comme
-une grille de cases à remplir, et l'accueil tient dans un écran.
+une grille de cases à remplir.
 
 Les deux pages l'affichent différemment, parce qu'elles n'ont pas la même largeur utile :
 trois colonnes sur deux rangs sur l'accueil, **les six villes d'un seul rang** en tête de la
@@ -369,9 +370,9 @@ pour un groupe, ce qu'un parcours en profondeur élagué traite en quelques mill
 400 groupes de quatre tirés au hasard, il fait mieux que le glouton dans 251 cas, jamais
 moins bien, et il lui faut de 4 à 8 objets, le plus souvent 5.
 
-- Il est **replié par défaut** — une ligne, « 6 objets pour les 15 préférences », et un
-  bouton Afficher. Déplié ou non, il le reste d'un habitat à l'autre, comme les réglages
-  de la grille.
+- Il est **déplié par défaut** : c'est la réponse qu'on vient chercher. Replié, il tient
+  en une ligne (« 6 objets pour les 15 préférences ») ; déplié ou non, il le reste d'un
+  habitat à l'autre, comme les réglages de la grille.
 - Un curseur fixe sa **taille**, de la taille minimale à 12 objets, 6 par défaut. Au-delà
   du minimum, `completerLot` ajoute une **réserve**, séparée par un trait : les objets qui
   cochent une deuxième fois les préférences qui ne l'étaient qu'une fois — le gain décroît
@@ -405,24 +406,37 @@ variables — `--lum` pour l'encre, `--lum-fond` pour l'aplat. Le thème sombre 
 que ces deux-là et les trente-six teintes suivent : deux jeux complets écrits à la main
 auraient divergé à la première retouche.
 
+Une même luminosité HSL ne donne pas le même contraste d'une teinte à l'autre : à 34 %, un
+jaune ou un vert est bien plus clair à l'œil qu'un bleu. Treize teintes (Électrik, Lumineux,
+Acide, Lumière…) retranchent donc quelques points en thème clair, via `--clair` (1 % en
+clair, 0 en sombre), et Dragon en ajoute un en sombre via `--sombre`. Chaque écart est celui
+qui amène l'encre à **4,5:1** sur le pire des fonds où elle paraît — papier, surfaces, fond
+des vignettes, son propre aplat —, dans les deux thèmes.
+
+Les teintes sont déclarées sur `:root` **et** sur `.bulle-objet` : une propriété
+personnalisée se résout là où elle est déclarée, puis se transmet déjà calculée. Sans la
+seconde déclaration, le `--lum` sombre que l'infobulle se donne ne changeait rien, et une
+catégorie restait en violet foncé sur le fond sombre de la bulle.
+
 L'illustration de l'accueil (`src/assets/accueil-pokopia.webp`) est un visuel du jeu,
 recadré sur les personnages et converti en WebP. Elle est **embarquée**, pas liée : le CSP
 de la coquille Tauri n'autorise que `img-src 'self' data: blob:`, donc une URL distante
 n'afficherait rien dans l'exe — et l'application ne fait aucune requête réseau.
 
-Deux frises de **60 Pokémon** tirés au sort traversent l'accueil (`components/BandeDefilante.jsx`) :
-l'une sous l'en-tête, vers la gauche, l'autre en pied de page, vers la droite. La boucle est
+Une frise de **60 Pokémon** tirés au sort traverse l'accueil sous l'en-tête, vers la gauche
+(`components/BandeDefilante.jsx`) — il y en avait une seconde en pied de page, qui
+disputait l'attention au contenu. La boucle est
 sans couture parce que la piste contient **deux fois** le même tirage et se déplace
 d'exactement la moitié de sa largeur. Elle ne s'arrête pas au survol — seule la vignette
 visée se détache — mais se fige sous `prefers-reduced-motion`.
 
-L'accueil **tient dans un écran** : `.accueil-ecran` fait la hauteur du viewport moins
-l'en-tête, mesuré par un `ResizeObserver` plutôt que figé, et la frise du bas est poussée en
-pied par une marge automatique. Dès qu'une recherche affiche des résultats, la page reprend
-sa hauteur naturelle et défile.
+L'accueil occupe **au moins un écran** : `.accueil-ecran` fait au minimum la hauteur du
+viewport moins l'en-tête, mesuré par un `ResizeObserver` plutôt que figé. Le contenu part
+d'une marge fixe, jamais d'un centrage vertical : centré, il remontait d'un bloc — champ de
+recherche compris — à la première lettre tapée.
 
-Les frises sont des enfants directs de cette colonne pleine largeur, **jamais du `.wrap`
-centré** : c'est ce qui leur évite la ruse du `100vw`, laquelle ignore la barre de
+La frise est un enfant direct de cette colonne pleine largeur, **jamais du `.wrap`
+centré** : c'est ce qui lui évite la ruse du `100vw`, laquelle ignore la barre de
 défilement verticale et finit par provoquer une barre horizontale dès que la page s'allonge.
 
 Les icônes sont dans `src/components/Icones.jsx`, dessinées à la main en SVG inline —
@@ -462,7 +476,7 @@ npm run desktop:build  # exe autonome (--no-bundle)
 | `personnalisation.json` | ce que Smearguru peut changer sur 121 meubles : peinture, motif, les deux ou rien (cf. « La personnalisation ») |
 | `villes.json` | la ville d'origine de chaque Pokémon — **vide par défaut**, aucune source ne la publie (cf. « Les villes ») |
 | `aliments.json` | 48 aliments : nom anglais, nom français, goût, clé de sprite (cf. « Les goûts ») |
-| `sprites/objets/`, `sprites/pokemon/` | 1 081 vignettes WebP de 44 px |
+| `sprites/objets/`, `sprites/pokemon/` | 1 100 vignettes WebP de 72 px |
 | `sprites/aliments/` | 48 vignettes WebP de 72 px |
 
 Ils sont **extraits** de l'artifact d'origine (« Pokopia — Index des préférences ») par

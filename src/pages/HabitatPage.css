@@ -236,7 +236,9 @@
 .colocataire img { width: 56px; height: 56px; object-fit: contain; }
 .colocataire-id { display: flex; flex-direction: column; }
 .colocataire-id strong { font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
-.colocataire-id span { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: .04em; }
+/* `:not([class])` : la ligne grise du numéro seulement — habitat, goût et spécialité ont
+   leur propre couleur, que cette règle plus spécifique écrasait. */
+.colocataire-id span:not([class]) { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: .04em; }
 
 .retirer {
   position: absolute;
@@ -264,7 +266,14 @@
 }
 .barre-filtres h3 { display: block; margin: 0 0 4px; color: var(--ink-2); }
 .barre-filtres h3.second { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); }
-.champ-groupe { width: 100%; max-width: 460px; margin: 0 0 14px; }
+
+/* La ligne toujours visible : recherche, « Choses en commun », et le bouton du repli. */
+.ligne-filtres { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.champ-groupe { flex: 1 1 260px; max-width: 460px; }
+.bouton-filtres b { color: var(--ink-3); }
+.bouton-filtres.actifs { border-color: var(--accent-ink); }
+.bouton-filtres.actifs b { color: var(--accent-ink); }
+.corps-filtres { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line); }
 
 .bascules { display: flex; flex-wrap: wrap; gap: 6px; }
 .bascule {
@@ -285,6 +294,9 @@
 .bascule:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
 /* « Trier par compatibilité » et « Suggestion colocataire » sont éteintes tant qu'aucun
    Pokémon n'est choisi : sans cette règle, elles paraissaient cliquables et ne l'étaient pas. */
+.bascule svg { font-size: 14px; }
+/* Entre les catégories et « Mur », qui les recoupe au lieu de s'y ajouter. */
+.separateur-bascules { width: 1px; align-self: stretch; margin: 2px 4px; background: var(--line-strong); }
 .bascule:disabled { opacity: .45; cursor: not-allowed; }
 .bascule:disabled:hover { border-color: var(--line-strong); }
 .bascule[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
@@ -346,7 +358,9 @@
   color: var(--accent-ink);
 }
 
-/* Le goût préféré, juste sous le numéro : même gabarit mono que la ligne qu'il suit. */
+/* L'habitat idéal et le goût préféré, juste sous le numéro : même gabarit mono que la
+   ligne qu'ils suivent, chacun dans sa couleur. */
+.colocataire-habitat,
 .colocataire-gout {
   font-family: var(--mono);
   font-size: 10px;
@@ -371,7 +385,7 @@
 /* ---- lot minimal ---- */
 /* Liseré d'accent, comme les objets : c'est une réponse, pas un filtre de plus. */
 .lot-minimal {
-  margin: 0 0 18px;
+  margin: 14px 0 0;
   padding: 14px 18px;
   background: var(--surface);
   border: 1px solid var(--line-strong);
@@ -427,17 +441,24 @@
 .jauge-compat.moyen b { color: var(--accent-ink); }
 .jauge-compat.faible b { color: var(--ink-2); }
 
-.bandeau-compat {
-  margin: 12px 0 0;
-  padding: 10px 14px;
+/* ---- bilan du groupe, en pied de sa carte ----
+   Compatibilité et ambiance décrivent les colocataires : elles vivent dans leur carte, sous
+   un filet, au lieu de deux bandeaux pleine largeur empilés au-dessus de la réponse. */
+.entete-bilan {
+  flex: 1 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  align-items: baseline;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
   font-size: 13px;
-  border-radius: var(--radius);
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--line-strong);
   color: var(--ink-2);
 }
-.bandeau-compat strong { color: var(--ink); }
-.bandeau-compat.fort { border-left-color: var(--second); }
-.bandeau-compat.moyen { border-left-color: var(--accent); }
-.bandeau-compat.faible { border-left-color: var(--line-strong); }
+.entete-bilan p { margin: 0; }
+.bilan-compat strong { color: var(--ink); }
+.bilan-compat.fort strong { color: var(--second); }
+.bilan-compat.moyen strong { color: var(--accent-ink); }
+/* Les ambiances mêlées gardent leur fond d'avertissement : c'est un problème à régler. */
+.bandeau-ambiance.melee { padding: 3px 8px; background: var(--hit-bg); color: var(--hit-ink); border-radius: var(--radius); }
+.bandeau-ambiance .marque-habitat svg { font-size: 12px; }

@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import Aide from '../components/Aide'
 import { ICONE_CATEGORIE, IconePinceau } from '../components/Icones'
 import { VignettePokemon } from '../components/Vignette'
 import { urlSpriteObjet } from '../data/images'
@@ -43,20 +44,23 @@ function Couleurs({ nom }) {
   const peinture = repeignable(nom)
   const motif = motifs(nom)
 
+  // Sans donnée, une ligne suffit : quatre lignes d'avertissement en tête de fiche
+  // passaient avant ce qu'on vient y chercher. L'explication est derrière le « ⓘ ».
+  if (etat === null) {
+    return (
+      <p className="fiche-note perso-inconnue">
+        <IconePinceau /> Personnalisation : non documentée
+        <Aide texte="Seule la table des meubles de Serebii porte la colonne « Colour », et elle ne couvre ni les matériaux, ni les revêtements, ni les fossiles. Absence de donnée, donc — pas une impossibilité." />
+      </p>
+    )
+  }
+
   return (
     <section className="fiche-bloc">
       <h2 className="etiquette">
         <IconePinceau /> Variantes de couleurs
         {etat && <span className="etat-perso">{FR_PERSONNALISATION[etat]}</span>}
       </h2>
-
-      {etat === null && (
-        <p className="fiche-note">
-          Rien de publié pour cet objet : seule la table des meubles de Serebii porte la
-          colonne « Colour », et elle ne couvre ni les matériaux, ni les revêtements, ni les
-          fossiles. Absence de donnée, donc — pas une impossibilité.
-        </p>
-      )}
 
       {etat === 'aucune' && (
         <p className="fiche-note">
@@ -113,8 +117,8 @@ function Couleurs({ nom }) {
 }
 
 /**
- * Fiche d'un objet : les couleurs qu'il accepte, les préférences qu'il coche, et tous les
- * Pokémon qu'il contente.
+ * Fiche d'un objet : les préférences qu'il coche, les couleurs qu'il accepte, et tous les
+ * Pokémon qu'il contente — dans cet ordre, celui de la question qu'on se pose.
  *
  * C'est la question posée dans l'autre sens que la vue habitat — « j'ai cet objet, à qui
  * sert-il ? » — utile quand on tombe sur un plan de fabrication en jeu.
@@ -152,10 +156,6 @@ export default function ObjetPage() {
 
   return (
     <div className="wrap fiche">
-      <Link to="/objets" className="retour">
-        ← Tous les objets
-      </Link>
-
       <header className="fiche-tete">
         <img src={urlSpriteObjet(spriteObjet(nom))} alt="" width="96" height="96" />
         <div>
@@ -185,8 +185,6 @@ export default function ObjetPage() {
         </p>
       )}
 
-      <Couleurs nom={nom} />
-
       <section className="fiche-bloc">
         <h2 className="etiquette">
           Coche {slugs.length} préférence{slugs.length > 1 ? 's' : ''}
@@ -208,6 +206,8 @@ export default function ObjetPage() {
           </p>
         )}
       </section>
+
+      <Couleurs nom={nom} />
 
       {slugs.length > 0 && (
         <section className="fiche-bloc">

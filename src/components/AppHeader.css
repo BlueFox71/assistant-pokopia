@@ -11,7 +11,7 @@
 .marque img { border-radius: 6px; }
 .marque span { display: flex; flex-direction: column; line-height: 1.15; }
 .marque-sur {
-  font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .marque strong { font-family: var(--display); font-size: 19px; letter-spacing: -.01em; }
@@ -33,13 +33,25 @@
 .bascule-theme:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 .bascule-theme:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
 .pastille-auto {
-  font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
   color: var(--ink-3);
 }
 
+/* Petit écran : la marque et le thème sur une ligne, les six onglets sur une seule autre,
+   qui défile au doigt plutôt que de se replier sur deux rangs. */
 @media (max-width: 720px) {
-  .app-header-inner { gap: 12px; flex-wrap: wrap; }
-  .onglets { order: 3; width: 100%; }
+  .app-header-inner { gap: 10px 12px; flex-wrap: wrap; padding: 10px 16px 0; }
+  .onglets {
+    order: 3;
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+    padding: 0 16px 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .onglets::-webkit-scrollbar { display: none; }
+  .onglet { flex: 0 0 auto; white-space: nowrap; }
   .bascule-theme { margin-left: auto; }
 }
 

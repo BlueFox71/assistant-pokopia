@@ -26,5 +26,8 @@
 .objets .bascule:not(.teintee)[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .objets .bascule:not(.teintee)[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
 .objets .bascule.reset[aria-pressed='true'] { background: var(--ink-2); border-color: var(--ink-2); }
+.objets .bascule svg { font-size: 14px; }
+/* Entre les types et « Mur », qui les recoupe au lieu de s'y ajouter. */
+.objets .separateur-bascules { width: 1px; align-self: stretch; margin: 2px 4px; background: var(--line-strong); }
 
 .objets .note-source { font-size: 12.5px; color: var(--ink-3); margin: 0 0 16px; max-width: 82ch; }

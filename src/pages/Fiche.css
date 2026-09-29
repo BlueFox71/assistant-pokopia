@@ -110,7 +110,7 @@
 .teinte-recette {
   margin-left: auto;
   font-family: var(--mono);
-  font-size: 9.5px;
+  font-size: 10px;
   letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -125,7 +125,7 @@
 .voisin { display: flex; flex-direction: column; gap: 2px; }
 .voisin-score {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -149,10 +149,14 @@
 .etiquette-specialite { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
 .fiche-tags-intitule {
   font-family: var(--mono);
-  font-size: 9.5px;
+  font-size: 10px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-3);
   align-self: center;
 }
 .fiche-tags-intitule:not(:first-child) { margin-left: 10px; }
+
+/* Personnalisation non documentée : une ligne, l'explication au survol. */
+.perso-inconnue { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; }
+.perso-inconnue svg { font-size: 13px; }

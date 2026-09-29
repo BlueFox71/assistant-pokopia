@@ -18,6 +18,7 @@ const ObjetsPage = lazy(() => import('./pages/ObjetsPage'))
 const PokedexPage = lazy(() => import('./pages/PokedexPage'))
 const FichePokemonPage = lazy(() => import('./pages/FichePokemonPage'))
 const ObjetPage = lazy(() => import('./pages/ObjetPage'))
+const ConstructionPage = lazy(() => import('./pages/ConstructionPage'))
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="pokedex" element={<PokedexPage />} />
             <Route path="pokedex/:nom" element={<FichePokemonPage />} />
             <Route path="objet/:nom" element={<ObjetPage />} />
+            <Route path="construction" element={<ConstructionPage />} />
             <Route path="*" element={<AccueilPage />} />
           </Route>
         </Routes>

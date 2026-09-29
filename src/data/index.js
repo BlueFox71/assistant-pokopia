@@ -78,8 +78,8 @@ export const preferences = preferencesBrutes
  * produit (cf. scripts/extraire-artifact.mjs). Une vingtaine de meubles du jeu n'en
  * cochent aucune : ils manquaient donc au catalogue, introuvables par la recherche et sans
  * fiche. objets-complement.json les rajoute ; l'ordre alphabétique est refait ici pour que
- * le catalogue reste rangé, et les doublons éventuels laissent la main à l'extraction, qui
- * seule porte un sprite.
+ * le catalogue reste rangé, et les doublons éventuels laissent la main à l'extraction. Leurs
+ * vignettes viennent du catalogue de Serebii, ramenées au format des autres (webp, 72 px).
  */
 const parNomBrut = new Map(objetsBruts.map((o) => [o.en, o]))
 export const objets = [

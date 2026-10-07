@@ -68,7 +68,11 @@
   "habitat": "Warm",
   "sprite": "594",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Arrosage",
+   "Nettoyage"
+  ]
  },
  {
   "en": "Altaria",
@@ -287,7 +291,10 @@
   "habitat": "Humid",
   "sprite": "339",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Recherche"
+  ]
  },
  {
   "en": "Bastiodon",
@@ -426,7 +433,11 @@
   "habitat": "Bright",
   "sprite": "729",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Animation",
+   "Troc"
+  ]
  },
  {
   "en": "Bruxish",
@@ -435,7 +446,11 @@
   "habitat": "Warm",
   "sprite": "779",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Rangement",
+   "Téléportation"
+  ]
  },
  {
   "en": "Buizel",
@@ -444,7 +459,11 @@
   "habitat": "Bright",
   "sprite": "418",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Coupe de bois",
+   "Troc"
+  ]
  },
  {
   "en": "Bulbasaur",
@@ -518,7 +537,10 @@
   "habitat": "Warm",
   "sprite": "318",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Coupe de bois"
+  ]
  },
  {
   "en": "Ceruledge",
@@ -570,12 +592,15 @@
  },
  {
   "en": "Charcadet",
-  "fr": "Charcabex",
+  "fr": "Charbambin",
   "numero": "200",
   "habitat": "Warm",
   "sprite": "935",
   "dex": "principal",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Combustion"
+  ]
  },
  {
   "en": "Charizard",
@@ -596,12 +621,16 @@
  },
  {
   "en": "Charjabug",
-  "fr": "Coconfort",
+  "fr": "Chrysapile",
   "numero": "139",
   "habitat": "Bright",
   "sprite": "737",
   "dex": "principal",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Électrification",
+   "Coupe de bois"
+  ]
  },
  {
   "en": "Charmander",
@@ -657,7 +686,10 @@
   "habitat": "Bright",
   "sprite": "833",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Coupe de bois"
+  ]
  },
  {
   "en": "Chinchou",
@@ -666,7 +698,10 @@
   "habitat": "Humid",
   "sprite": "170",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Électrification"
+  ]
  },
  {
   "en": "Cinccino",
@@ -770,7 +805,11 @@
   "habitat": "Cool",
   "sprite": "091",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Nettoyage",
+   "Désordre"
+  ]
  },
  {
   "en": "Coalossal",
@@ -845,7 +884,10 @@
   "habitat": "Humid",
   "sprite": "341",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Construction"
+  ]
  },
  {
   "en": "Corsola",
@@ -854,7 +896,10 @@
   "habitat": "Warm",
   "sprite": "222",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Fertilisation"
+  ]
  },
  {
   "en": "Corviknight",
@@ -927,7 +972,11 @@
   "habitat": "Humid",
   "sprite": "342",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Construction",
+   "Broyage"
+  ]
  },
  {
   "en": "Crobat",
@@ -953,7 +1002,11 @@
   "habitat": "Bright",
   "sprite": "159",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Coupe de bois",
+   "Broyage"
+  ]
  },
  {
   "en": "Cubone",
@@ -1059,7 +1112,11 @@
   "habitat": "Dark",
   "sprite": "781",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ]
  },
  {
   "en": "Diglett",
@@ -1164,7 +1221,11 @@
   "habitat": "Bright",
   "sprite": "834",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Broyage",
+   "Aplanissement"
+  ]
  },
  {
   "en": "Dreepy",
@@ -1455,7 +1516,11 @@
   "habitat": "Bright",
   "sprite": "102",
   "dex": "principal",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Fertilisation",
+   "Téléportation"
+  ]
  },
  {
   "en": "Exeggutor",
@@ -1514,7 +1579,10 @@
   "habitat": "Humid",
   "sprite": "349",
   "dex": "evenement",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Arrosage"
+  ]
  },
  {
   "en": "Feraligatr",
@@ -1523,7 +1591,11 @@
   "habitat": "Bright",
   "sprite": "160",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Coupe de bois",
+   "Broyage"
+  ]
  },
  {
   "en": "Fidough",
@@ -1547,7 +1619,10 @@
   "habitat": "Bright",
   "sprite": "456",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Animation"
+  ]
  },
  {
   "en": "Flaaffy",
@@ -1587,7 +1662,11 @@
   "habitat": "Bright",
   "sprite": "419",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Troc",
+   "Construction"
+  ]
  },
  {
   "en": "Floragato",
@@ -1623,12 +1702,15 @@
  },
  {
   "en": "Fraxure",
-  "fr": "Incisécaille",
+  "fr": "Incisache",
   "numero": "072",
   "habitat": "Dark",
   "sprite": "611",
   "dex": "principal",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Coupe de bois"
+  ]
  },
  {
   "en": "Frillish Female Form",
@@ -1637,7 +1719,11 @@
   "habitat": "Dark",
   "sprite": "592-frillishfemaleform",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Recherche",
+   "Combustion"
+  ]
  },
  {
   "en": "Frillish Male Form",
@@ -1646,7 +1732,11 @@
   "habitat": "Dark",
   "sprite": "592-frillishmaleform",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Recherche",
+   "Combustion"
+  ]
  },
  {
   "en": "Froakie",
@@ -1752,7 +1842,11 @@
   "habitat": "Humid",
   "sprite": "423",
   "dex": "principal",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Arrosage",
+   "Troc"
+  ]
  },
  {
   "en": "Gastrodon East Sea",
@@ -1761,7 +1855,11 @@
   "habitat": "Humid",
   "sprite": "423-gastrodoneastsea",
   "dex": "principal",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Arrosage",
+   "Troc"
+  ]
  },
  {
   "en": "Gengar",
@@ -1798,12 +1896,15 @@
  },
  {
   "en": "Gholdengo",
-  "fr": "Auradraille",
+  "fr": "Gromago",
   "numero": "206",
   "habitat": "Bright",
   "sprite": "1000",
   "dex": "principal",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Collection"
+  ]
  },
  {
   "en": "Gimmighoul",
@@ -1869,12 +1970,15 @@
  },
  {
   "en": "Glimmora",
-  "fr": "Fluoreiller",
+  "fr": "Floréclat",
   "numero": "204",
   "habitat": "Dark",
   "sprite": "970",
   "dex": "principal",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Désordre"
+  ]
  },
  {
   "en": "Gloom",
@@ -1947,7 +2051,11 @@
   "habitat": "Dark",
   "sprite": "768",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Recyclage",
+   "Coupe de bois"
+  ]
  },
  {
   "en": "Goodra",
@@ -2301,7 +2409,10 @@
   "habitat": "Bright",
   "sprite": "187",
   "dex": "evenement",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Fertilisation"
+  ]
  },
  {
   "en": "Horsea",
@@ -2310,7 +2421,10 @@
   "habitat": "Humid",
   "sprite": "116",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Arrosage"
+  ]
  },
  {
   "en": "Igglybuff",
@@ -2350,7 +2464,11 @@
   "habitat": "Dark",
   "sprite": "686",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Rangement",
+   "Téléportation"
+  ]
  },
  {
   "en": "Ivysaur",
@@ -2375,7 +2493,11 @@
   "habitat": "Dark",
   "sprite": "593-jellicentfemaleform",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Recherche",
+   "Combustion"
+  ]
  },
  {
   "en": "Jellicent Male Form",
@@ -2384,7 +2506,11 @@
   "habitat": "Dark",
   "sprite": "593-jellicentmaleform",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Recherche",
+   "Combustion"
+  ]
  },
  {
   "en": "Jigglypuff",
@@ -2408,7 +2534,10 @@
   "numero": "005",
   "habitat": "Bright",
   "sprite": "385",
-  "dex": "evenement"
+  "dex": "evenement",
+  "specialites": [
+   "Désordre"
+  ]
  },
  {
   "en": "Jolteon",
@@ -2432,7 +2561,11 @@
   "habitat": "Bright",
   "sprite": "189",
   "dex": "evenement",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Fertilisation",
+   "Désordre"
+  ]
  },
  {
   "en": "Kadabra",
@@ -2451,12 +2584,16 @@
  },
  {
   "en": "Kilowattrel",
-  "fr": "Fulgudog",
+  "fr": "Fulgulairo",
   "numero": "267",
   "habitat": "Bright",
   "sprite": "941",
   "dex": "principal",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Électrification",
+   "Vol"
+  ]
  },
  {
   "en": "Kingdra",
@@ -2465,7 +2602,11 @@
   "habitat": "Dark",
   "sprite": "230",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Arrosage",
+   "Désordre"
+  ]
  },
  {
   "en": "Kirlia",
@@ -2564,7 +2705,11 @@
   "habitat": "Dark",
   "sprite": "171",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Électrification",
+   "Arrosage"
+  ]
  },
  {
   "en": "Lapras",
@@ -2733,7 +2878,11 @@
   "habitat": "Dark",
   "sprite": "457",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Animation",
+   "Arrosage"
+  ]
  },
  {
   "en": "Luvdisc",
@@ -2742,7 +2891,10 @@
   "habitat": "Warm",
   "sprite": "370",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Animation"
+  ]
  },
  {
   "en": "Machamp",
@@ -2794,12 +2946,15 @@
  },
  {
   "en": "Magby",
-  "fr": "Limagma",
+  "fr": "Magby",
   "numero": "162",
   "habitat": "Warm",
   "sprite": "240",
   "dex": "principal",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Combustion"
+  ]
  },
  {
   "en": "Magikarp",
@@ -2912,12 +3067,16 @@
  },
  {
   "en": "Malamar",
-  "fr": "Sepiallious",
+  "fr": "Sepiatroce",
   "numero": "033",
   "habitat": "Bright",
   "sprite": "687",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Rangement",
+   "Téléportation"
+  ]
  },
  {
   "en": "Manaphy",
@@ -2926,7 +3085,11 @@
   "habitat": "Cool",
   "sprite": "490",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Troc",
+   "Animation"
+  ]
  },
  {
   "en": "Mareanie",
@@ -2935,7 +3098,10 @@
   "habitat": "Warm",
   "sprite": "747",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Recyclage"
+  ]
  },
  {
   "en": "Mareep",
@@ -2992,7 +3158,11 @@
   "habitat": "Bright",
   "sprite": "259",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Arrosage",
+   "Construction"
+  ]
  },
  {
   "en": "Mawile",
@@ -3113,7 +3283,11 @@
   "habitat": "Humid",
   "sprite": "350",
   "dex": "evenement",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Arrosage",
+   "Animation"
+  ]
  },
  {
   "en": "Mime Jr.",
@@ -3230,7 +3404,10 @@
   "numero": "108",
   "habitat": "Bright",
   "sprite": "143-mosslax",
-  "dex": "principal"
+  "dex": "principal",
+  "specialites": [
+   "Gloutonnerie"
+  ]
  },
  {
   "en": "Mr. Mime",
@@ -3256,7 +3433,10 @@
   "habitat": "Bright",
   "sprite": "258",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Arrosage"
+  ]
  },
  {
   "en": "Muk",
@@ -3511,7 +3691,7 @@
    "electrik"
   ],
   "specialites": [
-   "Électrification"
+   "Luminescence"
   ],
   "dex": "principal"
  },
@@ -3554,7 +3734,10 @@
   "habitat": "Warm",
   "sprite": "489",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Troc"
+  ]
  },
  {
   "en": "Pichu",
@@ -3644,7 +3827,10 @@
   "habitat": "Humid",
   "sprite": "871",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Électrification"
+  ]
  },
  {
   "en": "Pinsir",
@@ -3762,7 +3948,11 @@
   "habitat": "Bright",
   "sprite": "728",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Animation",
+   "Arrosage"
+  ]
  },
  {
   "en": "Porygon",
@@ -3816,7 +4006,11 @@
   "habitat": "Bright",
   "sprite": "730",
   "dex": "bassin",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Animation",
+   "Nettoyage"
+  ]
  },
  {
   "en": "Prinplup",
@@ -3840,7 +4034,10 @@
   "numero": "041",
   "habitat": "Humid",
   "sprite": "465-professortangrowth",
-  "dex": "principal"
+  "dex": "principal",
+  "specialites": [
+   "Expertise"
+  ]
  },
  {
   "en": "Psyduck",
@@ -4035,7 +4232,10 @@
   "numero": "004",
   "habitat": "Dark",
   "sprite": "302",
-  "dex": "evenement"
+  "dex": "evenement",
+  "specialites": [
+   "Recherche"
+  ]
  },
  {
   "en": "Scizor",
@@ -4091,7 +4291,11 @@
   "habitat": "Humid",
   "sprite": "117",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Arrosage",
+   "Désordre"
+  ]
  },
  {
   "en": "Serperior",
@@ -4132,7 +4336,11 @@
   "habitat": "Humid",
   "sprite": "319",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Broyage",
+   "Nettoyage"
+  ]
  },
  {
   "en": "Shellder",
@@ -4141,7 +4349,11 @@
   "habitat": "Dark",
   "sprite": "090",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Nettoyage",
+   "Désordre"
+  ]
  },
  {
   "en": "Shellos",
@@ -4150,7 +4362,10 @@
   "habitat": "Humid",
   "sprite": "422",
   "dex": "principal",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Arrosage"
+  ]
  },
  {
   "en": "Shellos East Sea",
@@ -4159,7 +4374,10 @@
   "habitat": "Humid",
   "sprite": "422-shelloseastsea",
   "dex": "principal",
-  "gout": "sour"
+  "gout": "sour",
+  "specialites": [
+   "Arrosage"
+  ]
  },
  {
   "en": "Shieldon",
@@ -4184,7 +4402,10 @@
   "habitat": "Bright",
   "sprite": "188",
   "dex": "evenement",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Fertilisation"
+  ]
  },
  {
   "en": "Skwovet",
@@ -4368,7 +4589,11 @@
   "habitat": "Bright",
   "sprite": "121",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Téléportation",
+   "Rangement"
+  ]
  },
  {
   "en": "Staryu",
@@ -4377,7 +4602,10 @@
   "habitat": "Bright",
   "sprite": "120",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Téléportation"
+  ]
  },
  {
   "en": "Steelix",
@@ -4403,7 +4631,10 @@
   "habitat": "Bright",
   "sprite": "479-stereorotom",
   "dex": "principal",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "DJ"
+  ]
  },
  {
   "en": "Stunfisk",
@@ -4412,7 +4643,11 @@
   "habitat": "Humid",
   "sprite": "618",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Électrification",
+   "Aplanissement"
+  ]
  },
  {
   "en": "Sudowoodo",
@@ -4482,7 +4717,11 @@
   "habitat": "Bright",
   "sprite": "260",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Construction",
+   "Aplanissement"
+  ]
  },
  {
   "en": "Sylveon",
@@ -4537,7 +4776,10 @@
   "habitat": "Humid",
   "sprite": "978-tatsugiricurlyform",
   "dex": "principal",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Troc"
+  ]
  },
  {
   "en": "Tatsugiri Droopy Form",
@@ -4546,7 +4788,10 @@
   "habitat": "Humid",
   "sprite": "978-tatsugiridroopyform",
   "dex": "principal",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Troc"
+  ]
  },
  {
   "en": "Tatsugiri Stretchy Form",
@@ -4555,7 +4800,10 @@
   "habitat": "Humid",
   "sprite": "978-tatsugiristretchyform",
   "dex": "principal",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Troc"
+  ]
  },
  {
   "en": "Timburr",
@@ -4657,7 +4905,10 @@
   "habitat": "Bright",
   "sprite": "158",
   "dex": "bassin",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Coupe de bois"
+  ]
  },
  {
   "en": "Toxapex",
@@ -4666,7 +4917,11 @@
   "habitat": "Warm",
   "sprite": "748",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Recyclage",
+   "Construction"
+  ]
  },
  {
   "en": "Toxel",
@@ -4708,7 +4963,11 @@
   "habitat": "Humid",
   "sprite": "849-toxtricitylowkeyform",
   "dex": "principal",
-  "gout": "spicy"
+  "gout": "spicy",
+  "specialites": [
+   "Électrification",
+   "Animation"
+  ]
  },
  {
   "en": "Trapinch",
@@ -4859,7 +5118,11 @@
   "habitat": "Cool",
   "sprite": "976",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Rangement",
+   "Téléportation"
+  ]
  },
  {
   "en": "Venomoth",
@@ -5144,7 +5407,11 @@
   "habitat": "Humid",
   "sprite": "340",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Recherche",
+   "Aplanissement"
+  ]
  },
  {
   "en": "Wigglytuff",
@@ -5169,7 +5436,10 @@
   "habitat": "Humid",
   "sprite": "960",
   "dex": "bassin",
-  "gout": "dry"
+  "gout": "dry",
+  "specialites": [
+   "Aplanissement"
+  ]
  },
  {
   "en": "Wimpod",
@@ -5178,7 +5448,10 @@
   "habitat": "Dark",
   "sprite": "767",
   "dex": "bassin",
-  "gout": "bitter"
+  "gout": "bitter",
+  "specialites": [
+   "Recyclage"
+  ]
  },
  {
   "en": "Wingull",
@@ -5204,7 +5477,11 @@
   "habitat": "Humid",
   "sprite": "961",
   "dex": "bassin",
-  "gout": "sweet"
+  "gout": "sweet",
+  "specialites": [
+   "Aplanissement",
+   "Recherche"
+  ]
  },
  {
   "en": "Zapdos",

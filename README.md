@@ -309,8 +309,33 @@ L'appariement se fait sur le nom français, et les formes héritent de leur esp�
 
 **Pokébip ne couvre que le Pokédex principal**, soit 288 de nos 366 entrées : les 52 du
 bassin, les 7 événementiels et 19 formes ou surnoms (Professeur Bouldeneu, Motisma Enceinte,
-Ronflex moussu…) restent sans type ni spécialité, et l'affichage saute la ligne. Le script
-imprime la liste des non-appariés.
+Ronflex moussu…) restent sans type, et l'affichage saute la mention. Le script imprime la
+liste des non-appariés.
+
+**Les spécialités manquantes viennent de Serebii**, dont les trois Pokédex portent une
+colonne « Specialty ». Les noms anglais sont traduits d'après la
+[liste de Pokékalos](https://www.pokekalos.fr/jeux/switch2/pokopia/specialites.html), qui
+donne les deux côte à côte — d'où Nettoyage (*Scrub*, propre au bassin), Gloutonnerie
+(Ronflex moussu), DJ (Motisma Enceinte) ou Luminescence (Peakychu).
+
+```sh
+node scripts/importer-serebii-specialites.mjs            # télécharge, compare, n'écrit rien
+node scripts/importer-serebii-specialites.mjs --ecrire   # applique
+```
+
+Pokébip garde la main : ce script **ne remplit que les trous** et imprime les désaccords
+sans y toucher — huit au dernier relevé. Pour six d'entre eux (Dedenne, Noctunoir,
+Farigiraf, Sonistrelle, Persian, Grodoudou), [Pokedexia](https://pokedexia.com/fr/pokedex/dedenne/pokemon-pokopia)
+donne raison à Pokébip contre Serebii. Les deux autres sont vérifiés en jeu : Bouldeneu
+porte l'Expertise (Serebii : Fertilisation, Désordre), Torgamord Broyage et Aplanissement
+(Serebii : Coupe de bois, Aplanissement ; Pokedexia : Coupe de bois). Au bassin, Délestin
+(Rangement, Téléportation) et Khélocrok (Coupe de bois) ont été vérifiés en jeu aussi, où
+Pokedexia se trompait. Seule exception, un
+héritage fautif de l'appariement Pokébip, corrigé : Peakychu portait l'Électrification de
+Pikachu au lieu de la Luminescence. **Ho-Oh, Kyogre, Lugia et Magicarpe** n'ont pas de
+spécialité : les trois légendaires ne s'accueillent pas en ville, et Magicarpe n'en a pas
+en jeu. À lancer après `importer-pokebip.mjs`, qui réintroduirait l'erreur
+sur Peakychu.
 
 **Ce script ne fait pas autorité sur les numéros** — `importer-serebii-dex.mjs` s'en charge,
 et doit passer après lui. Pokébip porte d'ailleurs une coquille sur ce point : Riolu et

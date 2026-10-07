@@ -8,7 +8,7 @@ import { MAX_COLOCATAIRES, comparerParNumero, frPokemon, pokemonParNom } from '.
  * préférences et les avertissements se recalculent à l'affichage, donc un habitat
  * enregistré aujourd'hui reste juste si les listes de Serebii bougent demain.
  *
- * Le nom EST la liste de ses habitants — « Onix + Coconfort » — et se recalcule à chaque
+ * Le nom EST la liste de ses habitants — « Onix + Chrysapile » — et se recalcule à chaque
  * lecture comme à chaque écriture. Il a été renommable un temps, et un nom saisi à la main
  * mentait dès qu'on retirait un colocataire : la carte annonçait encore quelqu'un qui n'y
  * vivait plus. Le dériver retire la question.

@@ -3,7 +3,14 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Checkbox, Input, Popconfirm, Segmented, Select, Slider, Tooltip } from 'antd'
 import Aide from '../components/Aide'
 import CarteHabitat from '../components/CarteHabitat'
-import { ICONE_CATEGORIE, ICONE_GOUT, ICONE_HABITAT, ICONE_VILLE, IconeCadre } from '../components/Icones'
+import {
+  ICONE_CATEGORIE,
+  ICONE_GOUT,
+  ICONE_HABITAT,
+  ICONE_VILLE,
+  IconeCadre,
+  IconeSpecialite,
+} from '../components/Icones'
 import ProgressionVilles from '../components/ProgressionVilles'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
 import { urlSpriteAliment, urlSpritePokemon } from '../data/images'
@@ -33,6 +40,7 @@ import {
   prefParSlug,
   prefsParPokemon,
   specialitesDe,
+  specialitesUtilisees,
   spritePokemon,
 } from '../data'
 import { FR_TYPE_OBJET, TYPES_OBJET, TYPES_PAR_DEFAUT, estMural, typeObjet } from '../data/categories'
@@ -149,9 +157,10 @@ export default function HabitatPage() {
   // vient chercher — replié, il se lisait comme une ligne de plus à ignorer. Retenu d'un
   // habitat à l'autre, comme les réglages ci-dessus.
   const [lotOuvert, setLotOuvert] = useState(true)
-  // Les filtres, eux, sont repliés : une trentaine de bascules passaient avant la première
-  // vignette. La recherche et « Choses en commun » restent à portée, hors du repli.
-  const [filtresOuverts, setFiltresOuverts] = useState(false)
+  // Les filtres aussi sont dépliés par défaut : on s'en sert à chaque visite d'un habitat,
+  // et les rouvrir à chaque fois coûtait un clic de plus. Le bouton reste là pour les
+  // replier ; la recherche et « Choses en commun » restent à portée, hors du repli.
+  const [filtresOuverts, setFiltresOuverts] = useState(true)
   const [tailleLot, setTailleLot] = useState(LOT_DEFAUT)
   const [saisie, setSaisie] = useState('')
 
@@ -286,8 +295,8 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
   const attributions = useAttributions()
   const nomsVilles = useNomsVilles()
   const loges = new Set(habitats.flatMap((h) => h.pokemon))
-  // Kyogre ne compte ni d'un côté ni de l'autre : sans quoi le décompte ne tomberait
-  // jamais à zéro, et donnerait à chercher une place pour un Pokémon qui n'en a pas.
+  // Kyogre, Lugia et Ho-Oh ne comptent ni d'un côté ni de l'autre : sans quoi le décompte ne
+  // tomberait jamais à zéro, et donnerait à chercher une place pour qui n'en a pas.
   const logeables = [...prefsParPokemon.keys()].filter(logeable)
   const sansHabitat = logeables.filter((n) => !loges.has(n)).length
   const [sauvegarde, setSauvegarde] = useState(null)
@@ -600,6 +609,8 @@ function SelecteurPokemon({
   const [villeFiltre, setVilleFiltre] = useState(() =>
     cleVilleValide(villeInitiale) ? villeInitiale : null,
   )
+  // La spécialité : on compose souvent un enclos pour le travail qu'il rendra sur l'île.
+  const [specialiteFiltre, setSpecialiteFiltre] = useState(null)
   // Éteint par défaut : trier par compatibilité reclasse la liste à chaque choix, si bien
   // que le Pokémon qu'on vient de cliquer change de place et paraît disparaître. L'ordre du
   // Pokédex ne bouge pas, on voit la vignette passer à l'état sélectionné là où elle est.
@@ -636,13 +647,15 @@ function SelecteurPokemon({
   }, [groupeEnCours, attributions])
 
   const liste = useMemo(() => {
-    // Kyogre n'entre dans aucun enclos : il ne figure donc jamais parmi les candidats.
+    // Kyogre, Lugia et Ho-Oh n'entrent dans aucun enclos : jamais parmi les candidats.
     let noms = [...prefsParPokemon.keys()].filter((n) => logeable(n) && !deja.includes(n))
     if (sansHabitatSeul) noms = noms.filter((n) => choisis.includes(n) || !habitatDuPokemon(habitats, n))
     // Un Pokémon déjà retenu reste visible même si le filtre l'exclut : le voir disparaître
     // du panier au moment où on change de ville laisserait croire qu'il a été retiré.
     if (villeFiltre)
       noms = noms.filter((n) => choisis.includes(n) || cleVilleDe(attributions, n) === villeFiltre)
+    if (specialiteFiltre)
+      noms = noms.filter((n) => choisis.includes(n) || specialitesDe(n).includes(specialiteFiltre))
     if (terme) noms = noms.filter((n) => correspond(terme, n, frPokemon(n)))
 
     // Sans groupe en cours, il n'y a rien à comparer : on retombe sur l'ordre du Pokédex.
@@ -653,7 +666,18 @@ function SelecteurPokemon({
           comparerParNumero(a, b),
       )
     return noms.sort(comparerParNumero)
-  }, [terme, sansHabitatSeul, habitats, deja, choisis, triCompat, groupeEnCours, villeFiltre, attributions])
+  }, [
+    terme,
+    sansHabitatSeul,
+    habitats,
+    deja,
+    choisis,
+    triCompat,
+    groupeEnCours,
+    villeFiltre,
+    specialiteFiltre,
+    attributions,
+  ])
 
   /** Combien de candidats par ville, à filtre de ville près — affiché dans le sélecteur. */
   const repartitionVilles = useMemo(() => {
@@ -661,10 +685,12 @@ function SelecteurPokemon({
     for (const n of prefsParPokemon.keys()) {
       if (!logeable(n) || deja.includes(n)) continue
       if (sansHabitatSeul && !choisis.includes(n) && habitatDuPokemon(habitats, n)) continue
+      if (specialiteFiltre && !choisis.includes(n) && !specialitesDe(n).includes(specialiteFiltre))
+        continue
       compte[cleVilleDe(attributions, n)] += 1
     }
     return compte
-  }, [deja, choisis, habitats, sansHabitatSeul, attributions])
+  }, [deja, choisis, habitats, sansHabitatSeul, specialiteFiltre, attributions])
 
   /**
    * Les colocataires qui iraient le mieux au groupe en cours, du meilleur au moins bon.
@@ -673,7 +699,7 @@ function SelecteurPokemon({
    * mauvais habitat serait un mauvais conseil quelle que soit sa compatibilité. Vient
    * ensuite le taux de compatibilité — le vrai « match » —, puis la ville, qui départage à
    * score égal. Le classement se fait sur la liste AFFICHÉE : les filtres en cours (ville,
-   * « sans habitat seulement », recherche) valent aussi pour la suggestion.
+   * spécialité, « sans habitat seulement », recherche) valent aussi pour la suggestion.
    */
   const suggestions = useMemo(() => {
     if (!groupeEnCours.length || places <= 0) return []
@@ -813,6 +839,26 @@ function SelecteurPokemon({
           options={VILLES.map((v) => ({
             value: v.cle,
             label: `${nomVille(nomsVilles, v.cle)} (${repartitionVilles[v.cle]})`,
+          }))}
+        />
+        <Select
+          allowClear
+          value={specialiteFiltre}
+          onChange={(s) => {
+            setSpecialiteFiltre(s || null)
+            setRang(0)
+          }}
+          placeholder="Spécialité"
+          aria-label="Filtrer les candidats par spécialité"
+          style={{ minWidth: 180 }}
+          options={specialitesUtilisees.map((s) => ({
+            value: s,
+            label: (
+              <span className="option-specialite">
+                <IconeSpecialite nom={s} />
+                {s}
+              </span>
+            ),
           }))}
         />
         <button
@@ -1135,7 +1181,12 @@ function VueHabitat({
                       {goutDe(nom) && <MarqueGout nom={nom} />}
                       {specialitesDe(nom).length > 0 && (
                         <span className="colocataire-specialite">
-                          {specialitesDe(nom).join(' · ')}
+                          {specialitesDe(nom).map((s) => (
+                            <span key={s}>
+                              <IconeSpecialite nom={s} />
+                              {s}
+                            </span>
+                          ))}
                         </span>
                       )}
                     </span>

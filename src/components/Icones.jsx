@@ -5,7 +5,12 @@
  * embarqué (l'application ne fait aucune requête réseau, exe compris), et une vingtaine de
  * formes simples pèsent moins qu'un paquet de plus. Chacune hérite de `currentColor` et se
  * dimensionne en `em`, donc une icône prend la couleur et la taille de son texte.
+ *
+ * Exception : les villes et les spécialités portent les icônes du jeu lui-même, découpées
+ * dans des captures (cf. « icônes du jeu », plus bas). Elles gardent leurs couleurs.
  */
+
+import { urlIconeSpecialite, urlIconeVille } from '../data/images'
 
 const Svg = ({ children, plein = false, ...reste }) => (
   <svg
@@ -445,52 +450,36 @@ export const IconeTerrasse = (p) => (
   </Svg>
 )
 
-/** Ancre : Grisemer et son port gris. */
-export const IconeAncre = (p) => (
-  <Svg {...p}>
-    <circle cx="12" cy="4" r="2" />
-    <path d="M12 6v14" />
-    <path d="M8.5 10h7" />
-    <path d="M5 14a7 7 0 0 0 14 0" />
-  </Svg>
-)
+/* ---------- icônes du jeu ---------- */
 
-/** Deux collines : Collinangle et ses galeries. */
-export const IconeColline = (p) => (
-  <Svg {...p}>
-    <path d="M2 20h20" />
-    <path d="M2 20 8 10l3.5 5" />
-    <path d="M10 20l5.5-9L22 20" />
-  </Svg>
-)
+/**
+ * Une image du jeu (cf. data/images.js), dans un `<svg>` de 1em : elle se dimensionne
+ * alors comme les icônes dessinées, et les règles `… svg { font-size }` des feuilles de
+ * style valent pour elle sans qu'on les double. Elle garde ses couleurs.
+ */
+const ImageJeu = ({ url, className = '', ...reste }) =>
+  url ? (
+    <svg
+      viewBox="0 0 64 64"
+      width="1em"
+      height="1em"
+      aria-hidden="true"
+      focusable="false"
+      className={('icone-jeu ' + className).trim()}
+      {...reste}
+    >
+      <image href={url} width="64" height="64" preserveAspectRatio="xMidYMid meet" />
+    </svg>
+  ) : null
 
-/** Pont suspendu : Flotîles-Millefeux, ses îles et ses passerelles. */
-export const IconePont = (p) => (
-  <Svg {...p}>
-    <path d="M4 7v12M20 7v12" />
-    <path d="M4 8c5 6 11 6 16 0" />
-    <path d="M2 15h20" />
-  </Svg>
-)
+/** L'icône d'une ville, découpée dans le jeu ; IconeTerrasse reste celle de l'onglet Villes. */
+const iconeVille = (cle) => {
+  const Icone = (p) => <ImageJeu url={urlIconeVille(cle)} {...p} />
+  return Icone
+}
 
-/** Silhouette de bâtiments : Ville-Nouvelle, le terrain libre du joueur. */
-export const IconeVille = (p) => (
-  <Svg {...p}>
-    <path d="M2 21h20" />
-    <path d="M4 21v-8h5v8" />
-    <path d="M9 21V7h6v14" />
-    <path d="M15 21v-6h5v6" />
-  </Svg>
-)
-
-/** Bulles : Fonds Bulleux, le bassin du DLC. */
-export const IconeBulles = (p) => (
-  <Svg {...p}>
-    <circle cx="9" cy="14.5" r="4.5" />
-    <circle cx="17" cy="8.5" r="2.8" />
-    <circle cx="17.5" cy="16.5" r="1.5" />
-  </Svg>
-)
+/** L'icône d'une spécialité, d'après son nom français ; rien si elle est inconnue. */
+export const IconeSpecialite = ({ nom, ...p }) => <ImageJeu url={urlIconeSpecialite(nom)} {...p} />
 
 /* ---------- index par clé ---------- */
 
@@ -515,12 +504,12 @@ export const ICONE_GOUT = {
 
 /** Ville de l'île : les clés sont celles de data/villes.js. */
 export const ICONE_VILLE = {
-  terrassec: IconeTerrasse,
-  grisemer: IconeAncre,
-  collinangle: IconeColline,
-  flotiles: IconePont,
-  'ville-nouvelle': IconeVille,
-  'fonds-bulleux': IconeBulles,
+  terrassec: iconeVille('terrassec'),
+  grisemer: iconeVille('grisemer'),
+  collinangle: iconeVille('collinangle'),
+  flotiles: iconeVille('flotiles'),
+  'ville-nouvelle': iconeVille('ville-nouvelle'),
+  'fonds-bulleux': iconeVille('fonds-bulleux'),
 }
 
 /** Catégorie de meuble : les clés sont celles de data/categories.js. */

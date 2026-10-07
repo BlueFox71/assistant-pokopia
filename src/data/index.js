@@ -38,11 +38,12 @@ export const GOUTS = ['sweet', 'spicy', 'sour', 'bitter', 'dry']
 export const FR_GOUT = { sweet: 'Sucré', spicy: 'Épicé', sour: 'Acide', bitter: 'Amer', dry: 'Sec' }
 
 /**
- * Kyogre est le seul Pokémon de l'île qu'aucun enclos ne peut accueillir. Il a pourtant des
- * préférences comme les autres, donc rien dans les données ne le distingue : c'est ici qu'on
- * le dit, et les listes où l'on compose un habitat s'en servent pour l'écarter.
+ * Kyogre, Lugia et Ho-Oh sont les seuls Pokémon de l'île qu'aucun enclos ne peut accueillir :
+ * ils ne vivent pas avec les autres. Ils ont pourtant des préférences comme les autres, donc
+ * rien dans les données ne les distingue : c'est ici qu'on le dit, et les listes où l'on
+ * compose un habitat s'en servent pour les écarter.
  */
-export const NON_LOGEABLES = new Set(['Kyogre'])
+export const NON_LOGEABLES = new Set(['Kyogre', 'Lugia', 'Ho-Oh'])
 
 /** Peut-il rejoindre un enclos ? Faux pour Kyogre seul. */
 export const logeable = (nom) => !NON_LOGEABLES.has(nom)

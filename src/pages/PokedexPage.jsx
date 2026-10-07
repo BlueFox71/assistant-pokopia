@@ -1,7 +1,7 @@
 import { useDeferredValue, useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Input, Segmented, Select } from 'antd'
-import { ICONE_HABITAT } from '../components/Icones'
+import { ICONE_HABITAT, IconeSpecialite } from '../components/Icones'
 import { VignettePokemon } from '../components/Vignette'
 import {
   FR_DEX,
@@ -138,7 +138,15 @@ export default function PokedexPage() {
             placeholder="Spécialité"
             aria-label="Filtrer par spécialité"
             style={{ minWidth: 165 }}
-            options={specialitesUtilisees.map((s) => ({ value: s, label: s }))}
+            options={specialitesUtilisees.map((s) => ({
+              value: s,
+              label: (
+                <span className="option-specialite">
+                  <IconeSpecialite nom={s} />
+                  {s}
+                </span>
+              ),
+            }))}
           />
           <Segmented options={TRIS} value={tri} onChange={setTri} size="large" />
           <span className="statut">{liste.length} Pokémon</span>
@@ -178,9 +186,10 @@ export default function PokedexPage() {
 
         {(type || specialite) && (
           <p className="note-source">
-            Types et spécialités viennent du Pokédex de Pokébip, qui couvre 288 des 366
-            Pokémon : les autres — surtout des Pokémon aquatiques — n’y figurent pas encore et
-            n’apparaissent donc dans aucun de ces deux filtres.
+            Les types viennent du Pokédex de Pokébip, qui couvre 288 des 366 Pokémon : les
+            autres — surtout des Pokémon aquatiques — n’apparaissent dans aucun filtre de
+            type. Les spécialités couvrent tout le monde, sauf Ho-Oh, Kyogre, Lugia et
+            Magicarpe, qui n’en ont pas.
           </p>
         )}
 

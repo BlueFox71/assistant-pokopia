@@ -423,7 +423,7 @@ h1, h2, h3 { text-wrap: balance; }
   display: inline-flex; align-items: center; gap: 3px;
   max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.chip-ville svg { font-size: 10px; flex: 0 0 auto; }
+.chip-ville svg { font-size: 13px; flex: 0 0 auto; }
 .chip.hit .chip-ville { color: var(--hit-ink); opacity: .8; }
 
 /* La suggestion de colocataire : un liseré pointillé, pour ne pas se confondre avec la
@@ -565,7 +565,17 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Ville de rattachement, sous un Pokémon : même gabarit que la marque d'habitat. */
 .marque-ville { display: inline-flex; align-items: center; gap: 3px; }
-.marque-ville svg { font-size: 10px; }
+.marque-ville svg { font-size: 14px; }
+/* Les icônes du jeu sont des illustrations, pas des traits : à la taille d'une icône au
+   trait, elles deviennent illisibles. Dans les boutons de filtre, on les grossit — et on
+   les centre : la liste des habitats aligne ses bascules sur la ligne de base du texte, où
+   le pied d'une image de cette taille la fait paraître trop haute. */
+button.bascule svg.icone-jeu { font-size: 19px; margin: -3px 0; align-self: center; }
+
+/* Le filtre par spécialité (Pokédex, sélecteur d'habitat) : l'icône du jeu devant chaque
+   option, dans la liste comme dans la valeur choisie. */
+.option-specialite { display: inline-flex; align-items: center; gap: 6px; }
+.option-specialite svg { font-size: 18px; flex: 0 0 auto; }
 .ville-terrassec { color: var(--v-terrassec); }
 .ville-grisemer { color: var(--v-grisemer); }
 .ville-collinangle { color: var(--v-collinangle); }

@@ -356,7 +356,12 @@
   letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--accent-ink);
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
 }
+.colocataire-specialite > span { display: inline-flex; align-items: center; gap: 4px; }
+.colocataire-specialite svg { font-size: 16px; flex: 0 0 auto; }
 
 /* L'habitat idéal et le goût préféré, juste sous le numéro : même gabarit mono que la
    ligne qu'ils suivent, chacun dans sa couleur. */

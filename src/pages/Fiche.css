@@ -147,6 +147,8 @@
   color: var(--ink-2);
 }
 .etiquette-specialite { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+.etiquette-specialite { display: inline-flex; align-items: center; gap: 5px; padding-left: 5px; }
+.etiquette-specialite svg { font-size: 18px; margin: -3px 0; flex: 0 0 auto; }
 .fiche-tags-intitule {
   font-family: var(--mono);
   font-size: 10px;

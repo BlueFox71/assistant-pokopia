@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Modal, Select } from 'antd'
-import { ICONE_HABITAT, ICONE_VILLE } from '../components/Icones'
+import { ICONE_HABITAT, ICONE_VILLE, IconeSpecialite } from '../components/Icones'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
 import { urlSpritePokemon } from '../data/images'
 import {
@@ -79,8 +79,9 @@ export default function FichePokemonPage() {
   const { memeVille, ailleurs } = useMemo(() => {
     if (!connu) return { memeVille: [], ailleurs: [] }
     const mien = new Set(slugs)
-    // Un voisin de goût est un colocataire en puissance : Kyogre, qu'aucun enclos ne peut
-    // accueillir, n'a pas à figurer dans une liste dont chaque entrée propose un enclos.
+    // Un voisin de goût est un colocataire en puissance : Kyogre, Lugia et Ho-Oh, qu'aucun
+    // enclos ne peut accueillir, n'ont pas à figurer dans une liste dont chaque entrée
+    // propose un enclos.
     const tous = [...prefsParPokemon.keys()]
       .filter((autre) => autre !== nom && logeable(autre))
       .map((autre) => ({
@@ -170,6 +171,7 @@ export default function FichePokemonPage() {
                       className="etiquette-specialite"
                       title="Le travail que ce Pokémon accomplit sur l’île"
                     >
+                      <IconeSpecialite nom={s} />
                       {s}
                     </span>
                   ))}
@@ -189,8 +191,8 @@ export default function FichePokemonPage() {
           >
             Changer de ville
           </button>
-          {/* Kyogre n'entre dans aucun enclos : lui proposer d'en composer un mènerait à
-              une page que le sélecteur, lui, refuse de peupler. */}
+          {/* Kyogre, Lugia et Ho-Oh n'entrent dans aucun enclos : leur proposer d'en composer
+              un mènerait à une page que le sélecteur, lui, refuse de peupler. */}
           {logeable(nom) ? (
             <button
               type="button"

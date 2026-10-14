@@ -568,3 +568,6 @@ quelle ville**.
 - **Bureau** : `git tag v1.0.1 && git push --tags` déclenche `release.yml`, qui publie
   `Assistant-Pokopia-<version>.exe` — un exécutable autonome, tel que
   [Le Grenier](https://github.com/BlueFox71/le-grenier) l'attend.
+- **Rapport de mise à jour** : avant le tag, réécrire `RELEASE_NOTES.md` (première ligne
+  `<!-- version: X.Y.Z -->`, égale à `package.json`). `release.yml` le pose comme notes de
+  la release, que Le Grenier affiche dans la section « Actualités » de la fiche.

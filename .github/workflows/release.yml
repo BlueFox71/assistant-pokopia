@@ -1,6 +1,7 @@
 name: Release desktop
 
 # Publier une version = pousser un tag :  git tag v1.0.0 && git push --tags
+# Avant le tag : réécrire RELEASE_NOTES.md, le rapport de la version (affiché par Le Grenier).
 #
 # Le Grenier (BlueFox71/le-grenier) lit la dernière release de ce dépôt, compare son tag
 # à la version installée, et télécharge l'asset .exe. Deux contraintes viennent de lui,
@@ -66,3 +67,13 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: Assistant-Pokopia-*.exe
+
+      # Le rapport de mise à jour devient les notes de la release : Le Grenier les affiche
+      # dans la section « Actualités » de la fiche. Échoue VOLONTAIREMENT si le marqueur
+      # `<!-- version: X.Y.Z -->` de RELEASE_NOTES.md ne correspond pas à package.json :
+      # un tag poussé sans rapport à jour se voit, au lieu de republier celui de la version
+      # précédente. Corriger le fichier, puis en local : node scripts/publish-notes.mjs
+      - name: Publish release notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/publish-notes.mjs

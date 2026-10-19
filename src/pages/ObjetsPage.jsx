@@ -5,6 +5,8 @@ import { ICONE_CATEGORIE, IconeCadre } from '../components/Icones'
 import { VignetteObjet } from '../components/Vignette'
 import {
   FR_CATEGORIE,
+  evenementParObjet,
+  evenements,
   frObjet,
   objetParNom,
   objets,
@@ -44,6 +46,13 @@ const PERSONNALISATIONS = [
   { value: 'inconnu', label: 'Non documenté' },
 ]
 
+/** Le filtre d'événement accepte un événement précis, ou tous à la fois. */
+const TOUS_EVENEMENTS = 'tous'
+
+/** « Pitrouille · octobre 2026 » : le jeu présente ses événements par leur Pokémon. */
+const libelleEvenement = (e) =>
+  `${e.pokemon} · ${new Date(e.debut).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })}`
+
 /**
  * Le catalogue des objets : les 714 entrées de l'index, filtrables et triables, chacune
  * ouvrant sa fiche.
@@ -65,6 +74,7 @@ export default function ObjetsPage() {
   const [personnalisation, setPersonnalisation] = useState(
     () => params.get('personnalisation') || null,
   )
+  const [evenement, setEvenement] = useState(null)
 
   const saisieDifferee = useDeferredValue(saisie)
   const terme = normaliser(saisieDifferee.trim())
@@ -126,6 +136,12 @@ export default function ObjetsPage() {
         if (personnalisation === 'inconnu') return etat === null
         return etat === personnalisation
       })
+    if (evenement)
+      noms = noms.filter((n) =>
+        evenement === TOUS_EVENEMENTS
+          ? evenementParObjet.has(n)
+          : evenementParObjet.get(n)?.slug === evenement,
+      )
     if (terme) noms = noms.filter((n) => correspond(terme, n, frObjet(n)))
 
     if (tri === 'prefs')
@@ -143,7 +159,7 @@ export default function ObjetsPage() {
     else noms.sort((a, b) => frObjet(a).localeCompare(frObjet(b), 'fr'))
 
     return noms
-  }, [terme, tri, type, murSeul, confort, personnalisation, infos])
+  }, [terme, tri, type, murSeul, confort, personnalisation, evenement, infos])
 
   /** Combien d'objets répondent à chaque filtre de personnalisation — mis dans son libellé. */
   const comptePersonnalisation = (valeur) => {
@@ -208,6 +224,29 @@ export default function ObjetsPage() {
               value,
               label: `${label} (${comptePersonnalisation(value)})`,
             }))}
+          />
+          {/* Un événement dont aucun objet n'est encore au catalogue reste visible, grisé :
+              il existe, ses objets manquent seulement chez nous. */}
+          <Select
+            allowClear
+            size="large"
+            value={evenement}
+            onChange={setEvenement}
+            placeholder="Événement"
+            aria-label="Filtrer par événement"
+            style={{ minWidth: 230 }}
+            popupMatchSelectWidth={false}
+            options={[
+              {
+                value: TOUS_EVENEMENTS,
+                label: `Tous les événements (${evenementParObjet.size})`,
+              },
+              ...evenements.map((e) => ({
+                value: e.slug,
+                label: `${libelleEvenement(e)} (${e.objets.length})`,
+                disabled: !e.objets.length,
+              })),
+            ]}
           />
           <Segmented options={TRIS} value={tri} onChange={setTri} size="large" />
           <span className="statut">{liste.length} objets</span>

@@ -16,6 +16,7 @@ import objetsBruts from './objets.json'
 import complementObjets from './objets-complement.json'
 import pokemonBruts from './pokemon.json'
 import alimentsBruts from './aliments.json'
+import evenementsBruts from './evenements.json'
 
 /** Nombre maximum de colocataires d'un même habitat. */
 export const MAX_COLOCATAIRES = 4
@@ -87,6 +88,17 @@ export const objets = [
   ...objetsBruts,
   ...complementObjets.objets.filter((o) => !parNomBrut.has(o.en)),
 ].sort((a, b) => a.en.localeCompare(b.en, 'en'))
+
+/**
+ * Les événements du jeu, du plus récent au plus ancien, chacun avec les objets qu'il a
+ * introduits (cf. scripts/importer-serebii-evenements.mjs). Seuls ceux du catalogue y
+ * figurent : un événement peut donc n'en compter aucun, le temps qu'on les relève.
+ */
+export const evenements = evenementsBruts.evenements
+/** nom anglais d'objet -> l'événement qui l'a introduit. */
+export const evenementParObjet = new Map(
+  evenements.flatMap((e) => e.objets.map((nom) => [nom, e])),
+)
 
 export const pokemon = pokemonBruts
 

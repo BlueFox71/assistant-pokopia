@@ -1,0 +1,134 @@
+{
+ "_lisezMoi": "Les objets introduits par chaque événement, d'après la section « New Items in Event » des pages de Serebii. `objets` ne retient que ceux de notre catalogue ; `absents` dit ce qui manque. Produit par scripts/importer-serebii-evenements.mjs — ne pas éditer à la main.",
+ "_source": "https://www.serebii.net/pokemonpokopia/events.shtml",
+ "evenements": [
+  {
+   "slug": "pumpkaboo'ssweetsurprises",
+   "en": "Pumpkaboo's Sweet Surprises",
+   "pokemon": "Pitrouille",
+   "debut": "2026-10-17",
+   "objets": [
+    "Pumpkin candy",
+    "Cofagrigus locker",
+    "Huge table",
+    "Candy bucket",
+    "Fun balloons",
+    "Ghost smoke projector",
+    "Eerie statue",
+    "Trevenant streetlight",
+    "Pumpkin lantern",
+    "Pumpkin lantern tower"
+   ],
+   "absents": []
+  },
+  {
+   "slug": "fetchingscalesforfeebas",
+   "en": "Fetching Scales for Feebas",
+   "pokemon": "Barpau",
+   "debut": "2026-08-13",
+   "objets": [
+    "Prism scale",
+    "Cooler",
+    "Sand bed",
+    "Swim ring",
+    "Big swim ring",
+    "Beach volleyball set",
+    "Floating lantern"
+   ],
+   "absents": []
+  },
+  {
+   "slug": "zorua'shide-and-sneakcontest",
+   "en": "Zorua's Hide-and-Sneak Contest",
+   "pokemon": "Zorua",
+   "debut": "2026-07-19",
+   "objets": [
+    "Hide-and-sneak trophy"
+   ],
+   "absents": []
+  },
+  {
+   "slug": "wishuponajirachi",
+   "en": "Wish Upon a Jirachi",
+   "pokemon": "Jirachi",
+   "debut": "2026-06-23",
+   "objets": [
+    "Wish note",
+    "Shining wish note",
+    "Star closet",
+    "Cloud table",
+    "Starry-sky bed",
+    "Star-shaped Dresser",
+    "Telescope",
+    "Moon clock",
+    "Star wall decoration",
+    "Cloud cannon",
+    "Jirachi lamp",
+    "Star mat"
+   ],
+   "absents": []
+  },
+  {
+   "slug": "sableye'sgemhunt",
+   "en": "Sableye's Gem Hunt",
+   "pokemon": "Ténéfix",
+   "debut": "2026-04-29",
+   "objets": [
+    "Red crystal fragment",
+    "Red crystal cluster",
+    "Tent kit",
+    "Camping chair",
+    "Sleeping bag",
+    "Digital camera",
+    "Jewel wall decoration",
+    "Adventure kit",
+    "Map and compass",
+    "Treasure",
+    "Camping cooking pot",
+    "Oil lantern"
+   ],
+   "absents": []
+  },
+  {
+   "slug": "bulbasaur'sjumpropecontest",
+   "en": "Bulbasaur's Jump Rope Contest",
+   "pokemon": "Bulbizarre",
+   "debut": "2026-04-19",
+   "objets": [
+    "Jump rope trophy"
+   ],
+   "absents": []
+  },
+  {
+   "slug": "copycatchallenge",
+   "en": "Copycat Challenge",
+   "pokemon": "Simularbre",
+   "debut": "2026-04-01",
+   "objets": [
+    "Inflatable Sudowoodo"
+   ],
+   "absents": []
+  },
+  {
+   "slug": "moresporesforhoppip",
+   "en": "More Spores for Hoppip",
+   "pokemon": "Granivol",
+   "debut": "2026-03-10",
+   "objets": [
+    "Cotton Spores",
+    "Dandy flower seeds",
+    "Dandy flowers",
+    "Flower table",
+    "Flower cushion",
+    "Flowery table setting",
+    "Lunch box",
+    "Hoppip water bottle",
+    "Juice trio",
+    "Flower garland",
+    "Flower backpack",
+    "Picnic blanket"
+   ],
+   "absents": []
+  }
+ ]
+}

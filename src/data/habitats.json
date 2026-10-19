@@ -1,0 +1,8327 @@
+{
+ "_lisezMoi": "Les habitats du jeu : la recette (`requis`) et les Pokémon qu'elle attire, avec leur rareté et, quand ils sont restreints, les moments et la météo où ils viennent. Un requis porte `objet` (nom anglais de notre catalogue) ou, hors catalogue, `en` et `fr`. Produit par scripts/importer-serebii-habitats.mjs — ne pas éditer à la main.",
+ "_sources": {
+  "habitats": "https://www.serebii.net/pokemonpokopia/habitats.shtml",
+  "nomsFr": "https://www.pokekalos.fr/jeux/switch2/pokopia/habitats.html"
+ },
+ "habitats": [
+  {
+   "numero": "001",
+   "dex": "principal",
+   "slug": "tallgrass",
+   "en": "Tall Grass",
+   "fr": "Hautes herbes vertes",
+   "image": "1",
+   "requis": [
+    {
+     "en": "Tall Grass",
+     "fr": "Herbe verte",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Bulbasaur",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Charmander",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Squirtle",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Geodude",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Oddish",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Charizard",
+     "rarete": "tres-rare",
+     "meteos": [
+      "soleil",
+      "nuages"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "002",
+   "dex": "principal",
+   "slug": "tree-shadedtallgrass",
+   "en": "Tree-shaded tall grass",
+   "fr": "Hautes herbes sous un arbre",
+   "image": "2",
+   "requis": [
+    {
+     "en": "Tall Grass",
+     "fr": "Herbe verte",
+     "quantite": 4
+    },
+    {
+     "en": "Tree",
+     "fr": "Arbre (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Scyther",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Scizor",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Pinsir",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Bellsprout",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Skwovet",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Heracross",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "003",
+   "dex": "principal",
+   "slug": "boulder-shadedtallgrass",
+   "en": "Boulder-shaded Tall Grass",
+   "fr": "Hautes herbes près d'un rocher",
+   "image": "3",
+   "requis": [
+    {
+     "en": "Tall Grass",
+     "fr": "Herbe verte",
+     "quantite": 4
+    },
+    {
+     "en": "Large Boulder",
+     "fr": "Grosse pierre",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Timburr",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Machop",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Gurdurr",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "004",
+   "dex": "principal",
+   "slug": "hydratedtallgrass",
+   "en": "Hydrated tall grass",
+   "fr": "Hautes herbes riveraines",
+   "image": "4",
+   "requis": [
+    {
+     "en": "Tall Grass",
+     "fr": "Herbe verte",
+     "quantite": 4
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Squirtle",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Sliggoo",
+     "rarete": "commun",
+     "meteos": [
+      "pluie"
+     ]
+    },
+    {
+     "nom": "Blastoise",
+     "rarete": "tres-rare"
+    },
+    {
+     "nom": "Cramorant",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Wartortle",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "005",
+   "dex": "principal",
+   "slug": "seasidetallgrass",
+   "en": "Seaside Tall Grass",
+   "fr": "Hautes herbes en bord de mer",
+   "image": "5",
+   "requis": [
+    {
+     "en": "Tall Grass",
+     "fr": "Herbe verte",
+     "quantite": 4
+    },
+    {
+     "en": "Ocean water",
+     "fr": "Eau de mer",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Slowpoke",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Slowbro",
+     "rarete": "tres-rare"
+    },
+    {
+     "nom": "Slowking",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "006",
+   "dex": "principal",
+   "slug": "elevatedtallgrass",
+   "en": "Elevated tall grass",
+   "fr": "Hautes herbes en altitude",
+   "image": "6",
+   "requis": [
+    {
+     "en": "Tall Grass",
+     "fr": "Herbe verte",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pidgey",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Pidgeotto",
+     "rarete": "rare",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Hoothoot",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Noctowl",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "007",
+   "dex": "principal",
+   "slug": "illuminatedtallgrass",
+   "en": "Illuminated tall grass",
+   "fr": "Hautes herbes éclairées",
+   "image": "7",
+   "requis": [
+    {
+     "en": "Tall Grass",
+     "fr": "Herbe verte",
+     "quantite": 4
+    },
+    {
+     "en": "Lighting",
+     "fr": "Éclairage (au choix)",
+     "quantite": 10
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Venonat",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Venomoth",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "008",
+   "dex": "principal",
+   "slug": "prettyflowerbed",
+   "en": "Pretty flower bed",
+   "fr": "Joli parterre de fleurs",
+   "image": "8",
+   "requis": [
+    {
+     "objet": "Wildflowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pidgey",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Combee",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Eevee",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Hoothoot",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Magby",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Pidgeotto",
+     "rarete": "rare",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "009",
+   "dex": "principal",
+   "slug": "tree-shadedflowerbed",
+   "en": "Tree-shaded flower bed",
+   "fr": "Parterre de fleurs sous un arbre",
+   "image": "9",
+   "requis": [
+    {
+     "objet": "Wildflowers",
+     "quantite": 4
+    },
+    {
+     "en": "Berry tree",
+     "fr": "Arbre à Baies (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Goomy",
+     "rarete": "commun",
+     "meteos": [
+      "pluie"
+     ]
+    },
+    {
+     "nom": "Cacturne",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Vikavolt",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "010",
+   "dex": "principal",
+   "slug": "hydratedflowerbed",
+   "en": "Hydrated flower bed",
+   "fr": "Parterre de fleurs riveraines",
+   "image": "10",
+   "requis": [
+    {
+     "objet": "Wildflowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Volbeat",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Illumise",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "011",
+   "dex": "principal",
+   "slug": "fieldofflowers",
+   "en": "Field of Flowers",
+   "fr": "Champ de fleurs",
+   "image": "11",
+   "requis": [
+    {
+     "objet": "Wildflowers",
+     "quantite": 8
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Vespiquen",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Ivysaur",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Venusaur",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "012",
+   "dex": "principal",
+   "slug": "elevatedflowerbed",
+   "en": "Elevated flower bed",
+   "fr": "Parterre de fleurs en altitude",
+   "image": "12",
+   "requis": [
+    {
+     "objet": "Wildflowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Paras",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Parasect",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "013",
+   "dex": "principal",
+   "slug": "gravewithflowers",
+   "en": "Grave with flowers",
+   "fr": "Pierre tombale bordée de fleurs",
+   "image": "13",
+   "requis": [
+    {
+     "objet": "Wildflowers",
+     "quantite": 4
+    },
+    {
+     "objet": "Gravestone",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Cubone",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Marowak",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "014",
+   "dex": "principal",
+   "slug": "flowergarden",
+   "en": "Flower garden",
+   "fr": "Jardin fleuri",
+   "image": "14",
+   "requis": [
+    {
+     "en": "Hedge",
+     "fr": "Buisson (au choix)",
+     "quantite": 4
+    },
+    {
+     "objet": "Wildflowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Paras",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Parasect",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "015",
+   "dex": "principal",
+   "slug": "freshveggiefield",
+   "en": "Fresh Veggie Field",
+   "fr": "Potager de légumes frais",
+   "image": "15",
+   "requis": [
+    {
+     "en": "Vegetables",
+     "fr": "Culture (au choix)",
+     "quantite": 8
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Drilbur",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Rowlet",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Excadrill",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "016",
+   "dex": "principal",
+   "slug": "ridingwarmupdrafts",
+   "en": "Riding warm updrafts",
+   "fr": "Zone de courants d'air chaud",
+   "image": "16",
+   "requis": [
+    {
+     "objet": "Campfire",
+     "quantite": 3
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Drifloon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "017",
+   "dex": "principal",
+   "slug": "campsite",
+   "en": "Campsite",
+   "fr": "Aire de camping",
+   "image": "17",
+   "requis": [
+    {
+     "objet": "Campfire",
+     "quantite": 1
+    },
+    {
+     "objet": "Straw table",
+     "quantite": 1
+    },
+    {
+     "objet": "Straw stool",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Charmeleon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "018",
+   "dex": "principal",
+   "slug": "trainingwaterfall",
+   "en": "Training waterfall",
+   "fr": "Cascade propice à l'entraînement",
+   "image": "18",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    },
+    {
+     "en": "Waterfall",
+     "fr": "Cascade",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tyrogue",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "019",
+   "dex": "principal",
+   "slug": "tantalizingdiningset",
+   "en": "Tantalizing dining set",
+   "fr": "Coin collation",
+   "image": "19",
+   "requis": [
+    {
+     "en": "Leppa Berry",
+     "fr": "Baie Mepo",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Wooden stool",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Gulpin",
+     "rarete": null
+    }
+   ]
+  },
+  {
+   "numero": "020",
+   "dex": "principal",
+   "slug": "picnicset",
+   "en": "Picnic Set",
+   "fr": "Coin pique-nique",
+   "image": "20",
+   "requis": [
+    {
+     "en": "Seat (any)",
+     "fr": "Siège (au choix)",
+     "quantite": 2
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Picnic basket",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pichu",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Pikachu",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "021",
+   "dex": "principal",
+   "slug": "flowerytable",
+   "en": "Flowery table",
+   "fr": "Table fleurie",
+   "image": "21",
+   "requis": [
+    {
+     "en": "Seat (any)",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Small vase",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Weepinbell",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Victreebel",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "022",
+   "dex": "principal",
+   "slug": "benchwithgreenery",
+   "en": "Bench with greenery",
+   "fr": "Banc près de buissons",
+   "image": "22",
+   "requis": [
+    {
+     "en": "Hedge",
+     "fr": "Buisson (au choix)",
+     "quantite": 2
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Bulbasaur",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Ivysaur",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Tangrowth",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "023",
+   "dex": "principal",
+   "slug": "illuminatedbench",
+   "en": "Illuminated bench",
+   "fr": "Banc éclairé",
+   "image": "23",
+   "requis": [
+    {
+     "en": "Seat (wide)",
+     "fr": "Banc ou Canapé (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Streetlight",
+     "fr": "Lampadaire (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Venonat",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Venomoth",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "024",
+   "dex": "principal",
+   "slug": "exerciserestingspot",
+   "en": "Exercise resting spot",
+   "fr": "Coin post-entraînement",
+   "image": "24",
+   "requis": [
+    {
+     "objet": "Punching bag",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Hitmonchan",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "025",
+   "dex": "principal",
+   "slug": "urgentcare",
+   "en": "Urgent Care",
+   "fr": "Infirmerie",
+   "image": "25",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "First aid kit",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Hitmonlee",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "026",
+   "dex": "principal",
+   "slug": "gymfirstaid",
+   "en": "Gym first aid",
+   "fr": "Infirmerie de salle de sport",
+   "image": "26",
+   "requis": [
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Punching bag",
+     "quantite": 1
+    },
+    {
+     "objet": "First aid kit",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Hitmontop",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "027",
+   "dex": "principal",
+   "slug": "roadsign",
+   "en": "Road Sign",
+   "fr": "Panneau directionnel",
+   "image": "27",
+   "requis": [
+    {
+     "objet": "Arrow sign",
+     "quantite": 1
+    },
+    {
+     "en": "Wooden path",
+     "fr": "Chemin en bois",
+     "quantite": 3
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Shellos",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Shellos East Sea",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "028",
+   "dex": "principal",
+   "slug": "largeluggagecarrier",
+   "en": "Large luggage carrier",
+   "fr": "Porte-bagages",
+   "image": "28",
+   "requis": [
+    {
+     "en": "Cart",
+     "fr": "Charrette",
+     "quantite": 1
+    },
+    {
+     "objet": "Wooden crate",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tinkatink",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Gurdurr",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Tinkatuff",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "029",
+   "dex": "principal",
+   "slug": "lumberjack'sworkplace",
+   "en": "Lumberjack's workplace",
+   "fr": "Scierie",
+   "image": "29",
+   "requis": [
+    {
+     "objet": "Log chair",
+     "quantite": 1
+    },
+    {
+     "en": "Cart",
+     "fr": "Charrette",
+     "quantite": 1
+    },
+    {
+     "en": "Tree Stump",
+     "fr": "Souche (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Log table",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Axew",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Fraxure",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Haxorus",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "030",
+   "dex": "principal",
+   "slug": "bedwithaplush",
+   "en": "Bed with a plush",
+   "fr": "Lit avec peluche",
+   "image": "30",
+   "requis": [
+    {
+     "en": "Bed",
+     "fr": "Lit (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Doll (any)",
+     "fr": "Peluche (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Drifloon",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Slowbro",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Munchlax",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Slowking",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "031",
+   "dex": "principal",
+   "slug": "gentlylitbed",
+   "en": "Gently lit bed",
+   "fr": "Lit éclairé d'une lumière douce",
+   "image": "31",
+   "requis": [
+    {
+     "en": "Bed",
+     "fr": "Lit (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Slender candle",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Hoothoot",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Noctowl",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "032",
+   "dex": "principal",
+   "slug": "graveoffering",
+   "en": "Grave offering",
+   "fr": "Pierre tombale avec offrande",
+   "image": "32",
+   "requis": [
+    {
+     "objet": "Gravestone",
+     "quantite": 1
+    },
+    {
+     "objet": "Slender candle",
+     "quantite": 2
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Litwick",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Lampent",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "033",
+   "dex": "principal",
+   "slug": "creepygraveoffering",
+   "en": "Creepy grave offering",
+   "fr": "Pierre tombale avec offrande",
+   "image": "33",
+   "requis": [
+    {
+     "objet": "Eerie candle",
+     "quantite": 2
+    },
+    {
+     "objet": "Gravestone",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Litwick",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Lampent",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Chandelure",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "034",
+   "dex": "principal",
+   "slug": "chanseyrestingarea",
+   "en": "Chansey Resting area",
+   "fr": "Coin détente Leveinard",
+   "image": "34",
+   "requis": [
+    {
+     "en": "Hedge",
+     "fr": "Buisson (au choix)",
+     "quantite": 6
+    },
+    {
+     "objet": "Chansey plant",
+     "quantite": 1
+    },
+    {
+     "en": "Seat (wide)",
+     "fr": "Banc ou Canapé (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Vileplume",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Bellossom",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "035",
+   "dex": "principal",
+   "slug": "irresistiblescentandglow",
+   "en": "Irresistible scent and glow",
+   "fr": "Espace parfum et lumière",
+   "image": "35",
+   "requis": [
+    {
+     "objet": "Pitcher-plant pot",
+     "quantite": 1
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Mushroom lamp",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Weepinbell",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Victreebel",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "036",
+   "dex": "principal",
+   "slug": "floatingintheshade",
+   "en": "Floating in the shade",
+   "fr": "Espace de jeux aquatiques à l'ombre",
+   "image": "36",
+   "requis": [
+    {
+     "objet": "Inflatable boat",
+     "quantite": 1
+    },
+    {
+     "objet": "Beach parasol",
+     "quantite": 1
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Blastoise",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "037",
+   "dex": "principal",
+   "slug": "smoothtallgrass",
+   "en": "Smooth tall grass",
+   "fr": "Hautes herbes sèches",
+   "image": "37",
+   "requis": [
+    {
+     "en": "Dry tall grass",
+     "fr": "Herbe verte desséchée (au choix)",
+     "quantite": 4
+    },
+    {
+     "en": "Smooth Rock",
+     "fr": "Pierre sèche",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Onix",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "038",
+   "dex": "principal",
+   "slug": "factorystorage",
+   "en": "Factory Storage",
+   "fr": "Réserve industrielle",
+   "image": "38",
+   "requis": [
+    {
+     "en": "Streetlight",
+     "fr": "Lampadaire (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Control unit",
+     "quantite": 1
+    },
+    {
+     "objet": "Metal drum",
+     "quantite": 1
+    },
+    {
+     "objet": "Jumbled cords",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Magnemite",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "039",
+   "dex": "principal",
+   "slug": "luxurychirp-chirpmeal",
+   "en": "Luxury chirp-chirp meal",
+   "fr": "Coin festin pour pioupiou",
+   "image": "39",
+   "requis": [
+    {
+     "objet": "Wooden birdhouse",
+     "quantite": 1
+    },
+    {
+     "objet": "Berry basket",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pidgeot",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "040",
+   "dex": "principal",
+   "slug": "berry-feastcampsite",
+   "en": "Berry-feast Campsite",
+   "fr": "Camp rempli de délicieuses Baies",
+   "image": "40",
+   "requis": [
+    {
+     "en": "Castform weather charm (sun)",
+     "fr": "Morphe-météo (soleil) (au choix)",
+     "quantite": 2
+    },
+    {
+     "objet": "Bonfire",
+     "quantite": 1
+    },
+    {
+     "objet": "Berry basket",
+     "quantite": 1
+    },
+    {
+     "en": "High-up Location",
+     "fr": "Lieu en altitude",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Charizard",
+     "rarete": "rare",
+     "meteos": [
+      "soleil",
+      "nuages"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "041",
+   "dex": "principal",
+   "slug": "raindancesite",
+   "en": "Rain Dance site",
+   "fr": "Lieu de rituel Danse Pluie",
+   "image": "41",
+   "requis": [
+    {
+     "en": "Castform weather charm (rain)",
+     "fr": "Morphe-météo (pluie) (au choix)",
+     "quantite": 2
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Goomy",
+     "rarete": null,
+     "meteos": [
+      "pluie"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "042",
+   "dex": "principal",
+   "slug": "sunnydaysite",
+   "en": "Sunny Day site",
+   "fr": "Lieu de rituel Zénith",
+   "image": "42",
+   "requis": [
+    {
+     "en": "Castform weather charm (sun)",
+     "fr": "Morphe-météo (soleil) (au choix)",
+     "quantite": 2
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Cacnea",
+     "rarete": "commun",
+     "meteos": [
+      "soleil"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "043",
+   "dex": "principal",
+   "slug": "professor'streasuretrove",
+   "en": "Professor's treasure trove",
+   "fr": "Coin trésors du Professeur",
+   "image": "43",
+   "requis": [
+    {
+     "en": "Professor's treasure trove",
+     "fr": "Trésor du Professeur",
+     "quantite": 1
+    },
+    {
+     "objet": "Large Lost Relic",
+     "quantite": 4
+    },
+    {
+     "en": "Bed (any)",
+     "fr": "Lit (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Professor Tangrowth",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "044",
+   "dex": "principal",
+   "slug": "cozyloghandicrafts",
+   "en": "Cozy log handicrafts",
+   "fr": "Coin chaleureux en rondins",
+   "image": "44",
+   "requis": [
+    {
+     "objet": "Log chair",
+     "quantite": 1
+    },
+    {
+     "objet": "Log Bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Log table",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Axew",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Fraxure",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Haxorus",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "045",
+   "dex": "principal",
+   "slug": "very-berryspace",
+   "en": "Very-berry space",
+   "fr": "Assortiment de meubles Baie",
+   "image": "45",
+   "requis": [
+    {
+     "objet": "Berry chair",
+     "quantite": 1
+    },
+    {
+     "objet": "Berry bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Berry table",
+     "quantite": 1
+    },
+    {
+     "objet": "Berry table lamp",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Goodra",
+     "rarete": "rare",
+     "meteos": [
+      "pluie"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "046",
+   "dex": "principal",
+   "slug": "gardenterrace",
+   "en": "Garden Terrace",
+   "fr": "Terrasse fleurie",
+   "image": "46",
+   "requis": [
+    {
+     "objet": "Wildflowers",
+     "quantite": 4
+    },
+    {
+     "objet": "Garden chair",
+     "quantite": 1
+    },
+    {
+     "objet": "Garden light",
+     "quantite": 1
+    },
+    {
+     "objet": "Garden table",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Venusaur",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "047",
+   "dex": "principal",
+   "slug": "tree-shadedsnoozingsnorlax",
+   "en": "Tree-shaded snoozing Snorlax",
+   "fr": "Ronflex endormi sous un arbre",
+   "image": "47",
+   "requis": [
+    {
+     "en": "Large tree",
+     "fr": "Grand arbre (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Munchlax",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Snorlax",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "048",
+   "dex": "principal",
+   "slug": "goodold-fashionedantiques",
+   "en": "Good old-fashioned antiques",
+   "fr": "Salon antique",
+   "image": "48",
+   "requis": [
+    {
+     "objet": "Antique closet",
+     "quantite": 1
+    },
+    {
+     "objet": "Antique bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Antique dresser",
+     "quantite": 1
+    },
+    {
+     "objet": "Antique chair",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Weezing",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Snorlax",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "049",
+   "dex": "principal",
+   "slug": "nothin'butpokeballs",
+   "en": "Nothin' but Poke Balls",
+   "fr": "Amas de Poké Balls",
+   "image": "49",
+   "requis": [
+    {
+     "objet": "Poké Ball Sofa",
+     "quantite": 1
+    },
+    {
+     "objet": "Poké Ball bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Poké Ball table",
+     "quantite": 1
+    },
+    {
+     "objet": "Poké Ball light",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tangela",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "050",
+   "dex": "principal",
+   "slug": "yellowtallgrass",
+   "en": "Yellow tall grass",
+   "fr": "Hautes herbes jaunes",
+   "image": "50",
+   "requis": [
+    {
+     "en": "Yellow tall grass",
+     "fr": "Herbe jaune",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Spinarak",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Grubbin",
+     "rarete": null
+    },
+    {
+     "nom": "Ariados",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "051",
+   "dex": "principal",
+   "slug": "tree-shadedyellowtallgrass",
+   "en": "Tree-shaded Yellow tall grass",
+   "fr": "Hautes herbes jaunes sous un arbre",
+   "image": "51",
+   "requis": [
+    {
+     "en": "Yellow tall grass",
+     "fr": "Herbe jaune",
+     "quantite": 4
+    },
+    {
+     "en": "Large tree",
+     "fr": "Grand arbre (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Zubat",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Golbat",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Makuhita",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Hariyama",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "052",
+   "dex": "principal",
+   "slug": "elevatedyellowtallgrass",
+   "en": "Elevated yellow tall grass",
+   "fr": "Hautes herbes jaunes en altitude",
+   "image": "52",
+   "requis": [
+    {
+     "en": "Yellow tall grass",
+     "fr": "Herbe jaune",
+     "quantite": 4
+    },
+    {
+     "en": "High-up location",
+     "fr": "Lieu en altitude",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Wingull",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Pelipper",
+     "rarete": "rare",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Crobat",
+     "rarete": "tres-rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "053",
+   "dex": "principal",
+   "slug": "hydratedyellowtallgrass",
+   "en": "Hydrated yellow tall grass",
+   "fr": "Hautes herbes jaunes riveraines",
+   "image": "53",
+   "requis": [
+    {
+     "en": "Yellow tall grass",
+     "fr": "Herbe jaune",
+     "quantite": 4
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Azurill",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Marill",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Piplup",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Prinplup",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "054",
+   "dex": "principal",
+   "slug": "marshytallgrass",
+   "en": "Marshy tall grass",
+   "fr": "Hautes herbes des marais",
+   "image": "54",
+   "requis": [
+    {
+     "en": "Yellow tall grass",
+     "fr": "Herbe jaune",
+     "quantite": 4
+    },
+    {
+     "en": "Muddy Water",
+     "fr": "Eau boueuse",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Paldean Wooper",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Clodsire",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "055",
+   "dex": "principal",
+   "slug": "overgrowthvendingmachine",
+   "en": "Overgrowth vending machine",
+   "fr": "Distributeur dans les hautes herbes",
+   "image": "55",
+   "requis": [
+    {
+     "objet": "Vending machine",
+     "quantite": 1
+    },
+    {
+     "en": "Yellow tall grass",
+     "fr": "Herbe jaune",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Mareep",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "056",
+   "dex": "principal",
+   "slug": "breezyflowerbed",
+   "en": "Breezy flower bed",
+   "fr": "Parterre de fleurs rafraîchissantes",
+   "image": "56",
+   "requis": [
+    {
+     "objet": "Seashore flowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pawmi",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Zorua",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Zoroark",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "057",
+   "dex": "principal",
+   "slug": "tropicalvibes",
+   "en": "Tropical vibes",
+   "fr": "Espace tropical",
+   "image": "57",
+   "requis": [
+    {
+     "en": "Large palm tree",
+     "fr": "Grand palmier",
+     "quantite": 1
+    },
+    {
+     "objet": "Seashore flowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Gloom",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Exeggcute",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Exeggutor",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "058",
+   "dex": "principal",
+   "slug": "windyflowerbed",
+   "en": "Windy Flower Bed",
+   "fr": "Parterre de fleurs venteux",
+   "image": "58",
+   "requis": [
+    {
+     "en": "Windmill",
+     "fr": "Aérogénérateur (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Seashore flowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Wingull",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Pelipper",
+     "rarete": "rare",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "059",
+   "dex": "principal",
+   "slug": "shadedbeach",
+   "en": "Shaded beach",
+   "fr": "Chaise de plage sous un arbre",
+   "image": "59",
+   "requis": [
+    {
+     "en": "Large palm tree",
+     "fr": "Grand palmier",
+     "quantite": 1
+    },
+    {
+     "objet": "Beach chair",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Exeggcute",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Exeggutor",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "060",
+   "dex": "principal",
+   "slug": "tropicalseaside",
+   "en": "Tropical seaside",
+   "fr": "Littoral tropical",
+   "image": "60",
+   "requis": [
+    {
+     "en": "Large palm tree",
+     "fr": "Grand palmier",
+     "quantite": 1
+    },
+    {
+     "en": "Hedge",
+     "fr": "Buisson (au choix)",
+     "quantite": 4
+    },
+    {
+     "en": "Ocean Water",
+     "fr": "Eau de mer",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Lapras",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "061",
+   "dex": "principal",
+   "slug": "restingspot",
+   "en": "Resting spot",
+   "fr": "Coin sieste",
+   "image": "61",
+   "requis": [
+    {
+     "objet": "Cardboard boxes",
+     "quantite": 1
+    },
+    {
+     "objet": "Straw bed",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Meowth",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "062",
+   "dex": "principal",
+   "slug": "perpetualmess",
+   "en": "Perpetual mess",
+   "fr": "Zone en pagaille",
+   "image": "62",
+   "requis": [
+    {
+     "objet": "Cardboard boxes",
+     "quantite": 1
+    },
+    {
+     "en": "Toy",
+     "fr": "Divertissement (au choix)",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Growlithe",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Azurill",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "063",
+   "dex": "principal",
+   "slug": "trashcollectionsite",
+   "en": "Trash collection site",
+   "fr": "Décharge",
+   "image": "63",
+   "requis": [
+    {
+     "objet": "Garbage bin",
+     "quantite": 1
+    },
+    {
+     "objet": "Sign",
+     "quantite": 1
+    },
+    {
+     "objet": "Garbage bags",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Trubbish",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Koffing",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Weezing",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Garbodor",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "064",
+   "dex": "principal",
+   "slug": "trashcancentral",
+   "en": "Trash can central",
+   "fr": "Coin poubelles",
+   "image": "64",
+   "requis": [
+    {
+     "objet": "Garbage bin",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Magneton",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Electabuzz",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Magnezone",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "065",
+   "dex": "principal",
+   "slug": "trashdisposalsite",
+   "en": "Trash disposal site",
+   "fr": "Dépotoir",
+   "image": "65",
+   "requis": [
+    {
+     "objet": "Utility pole",
+     "quantite": 1
+    },
+    {
+     "objet": "Garbage bags",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Crobat",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "066",
+   "dex": "principal",
+   "slug": "parkbench",
+   "en": "Park bench",
+   "fr": "Banc de parc",
+   "image": "66",
+   "requis": [
+    {
+     "en": "Seat (Wide)",
+     "fr": "Banc ou Canapé (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Garbage bin",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Zubat",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Voltorb",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Electrode",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "067",
+   "dex": "principal",
+   "slug": "tantalizingrestaurant",
+   "en": "Tantalizing restaurant",
+   "fr": "Coin grosse faim",
+   "image": "67",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Menu board",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Plated Food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pawmo",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Pawmi",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "068",
+   "dex": "principal",
+   "slug": "tablesidedeliverycart",
+   "en": "Tableside delivery cart",
+   "fr": "Chariot de service",
+   "image": "68",
+   "requis": [
+    {
+     "objet": "Chic chair",
+     "quantite": 2
+    },
+    {
+     "objet": "Chic table",
+     "quantite": 1
+    },
+    {
+     "objet": "Small vase",
+     "quantite": 1
+    },
+    {
+     "objet": "Push cart",
+     "quantite": 1
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Empoleon",
+     "rarete": "rare",
+     "meteos": [
+      "pluie"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "069",
+   "dex": "principal",
+   "slug": "chirp-chirpmeal",
+   "en": "Chirp-chirp meal",
+   "fr": "Coin collation pour pioupiou",
+   "image": "69",
+   "requis": [
+    {
+     "objet": "Wooden birdhouse",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Torchic",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Blaziken",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "070",
+   "dex": "principal",
+   "slug": "cafespace",
+   "en": "Café space",
+   "fr": "Minicafé",
+   "image": "70",
+   "requis": [
+    {
+     "en": "Seat (any)",
+     "fr": "Siège (au choix)",
+     "quantite": 2
+    },
+    {
+     "en": "Potted Plant",
+     "fr": "Plante en pot (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Counter",
+     "quantite": 2
+    },
+    {
+     "objet": "Mug",
+     "quantite": 1
+    },
+    {
+     "objet": "Menu board",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pawmo",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Pawmot",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "071",
+   "dex": "principal",
+   "slug": "beachset",
+   "en": "Beach Set",
+   "fr": "Coin plage",
+   "image": "71",
+   "requis": [
+    {
+     "objet": "Beach chair",
+     "quantite": 1
+    },
+    {
+     "objet": "Beach parasol",
+     "quantite": 1
+    },
+    {
+     "objet": "Side table",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tatsugiri Curly Form",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Tatsugiri Droopy Form",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Tatsugiri Stretchy Form",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "072",
+   "dex": "principal",
+   "slug": "light-upstage",
+   "en": "Light-up stage",
+   "fr": "Scène sous les projecteurs",
+   "image": "72",
+   "requis": [
+    {
+     "objet": "Spotlight",
+     "quantite": 2
+    },
+    {
+     "objet": "Small stage",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Electabuzz",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Electivire",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "073",
+   "dex": "principal",
+   "slug": "surpriseinstore",
+   "en": "Surprise in store",
+   "fr": "Zone piégée",
+   "image": "73",
+   "requis": [
+    {
+     "objet": "Balloons",
+     "quantite": 2
+    },
+    {
+     "objet": "Boo-in-the-box",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Haunter",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Zoroark",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Gengar",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "074",
+   "dex": "principal",
+   "slug": "nightfestivalvenue",
+   "en": "Night festival venue",
+   "fr": "Espace de festivités nocturnes",
+   "image": "74",
+   "requis": [
+    {
+     "objet": "Balloons",
+     "quantite": 2
+    },
+    {
+     "objet": "Raichu sign",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Flaaffy",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "075",
+   "dex": "principal",
+   "slug": "changingarea",
+   "en": "Changing area",
+   "fr": "Espace d'essayage",
+   "image": "75",
+   "requis": [
+    {
+     "objet": "Plain closet",
+     "quantite": 1
+    },
+    {
+     "objet": "Large mirror",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Minccino",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "076",
+   "dex": "principal",
+   "slug": "privatemakeupstand",
+   "en": "Private makeup stand",
+   "fr": "Coiffeuse à l'abri des regards",
+   "image": "76",
+   "requis": [
+    {
+     "en": "Wooden partition",
+     "fr": "Grand miroir",
+     "quantite": 2
+    },
+    {
+     "objet": "Plain closet",
+     "quantite": 1
+    },
+    {
+     "en": "Dresser (any)",
+     "fr": "Coiffeuse (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Minccino",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Cinccino",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "077",
+   "dex": "principal",
+   "slug": "knittingstation",
+   "en": "Knitting station",
+   "fr": "Espace pour le tricot",
+   "image": "77",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Knitting supplies",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Mareep",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Flaaffy",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "078",
+   "dex": "principal",
+   "slug": "hot-springshower",
+   "en": "Hot-spring shower",
+   "fr": "Douche de bains thermaux",
+   "image": "78",
+   "requis": [
+    {
+     "objet": "Shower",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Hot-spring water",
+     "fr": "Eau de source",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Psyduck",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Golduck",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "079",
+   "dex": "principal",
+   "slug": "resortmealprep",
+   "en": "Resort meal prep",
+   "fr": "Coin repas balnéaire",
+   "image": "79",
+   "requis": [
+    {
+     "en": "Large palm tree",
+     "fr": "Grand palmier",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Campfire",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Growlithe",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Torchic",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Combusken",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "080",
+   "dex": "principal",
+   "slug": "allpackedup",
+   "en": "All packed up",
+   "fr": "Chariot chargé d'affaires",
+   "image": "80",
+   "requis": [
+    {
+     "en": "Cart",
+     "fr": "Charrette",
+     "quantite": 1
+    },
+    {
+     "objet": "Cardboard boxes",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Farfetch'd",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Makuhita",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Hariyama",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "081",
+   "dex": "principal",
+   "slug": "fullrecovery",
+   "en": "Full recovery",
+   "fr": "Coin sommeil réparateur",
+   "image": "81",
+   "requis": [
+    {
+     "en": "Bed",
+     "fr": "Lit (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Plain chest",
+     "quantite": 1
+    },
+    {
+     "objet": "First aid kit",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Chansey",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Peakychu",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "082",
+   "dex": "principal",
+   "slug": "alarmclocksleepzone",
+   "en": "Alarm clock sleep zone",
+   "fr": "Lit avec réveil",
+   "image": "82",
+   "requis": [
+    {
+     "en": "Bed",
+     "fr": "Lit (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Alarm Clock",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Happiny",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "083",
+   "dex": "principal",
+   "slug": "vendingmachinebreakarea",
+   "en": "Vending machine break area",
+   "fr": "Distributeur avec banc",
+   "image": "83",
+   "requis": [
+    {
+     "objet": "Vending machine",
+     "quantite": 1
+    },
+    {
+     "en": "Seat (Wide)",
+     "fr": "Banc ou Canapé (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Grubbin",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Charjabug",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "084",
+   "dex": "principal",
+   "slug": "vendingmachineset",
+   "en": "Vending machine set",
+   "fr": "Distributeur avec poubelle",
+   "image": "84",
+   "requis": [
+    {
+     "en": "Waste bin (any)",
+     "fr": "Poubelle",
+     "quantite": 1
+    },
+    {
+     "objet": "Vending machine",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Elekid",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Electivire",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "085",
+   "dex": "principal",
+   "slug": "minigamecorner",
+   "en": "Mini Game Corner",
+   "fr": "Petite salle d'arcade",
+   "image": "85",
+   "requis": [
+    {
+     "objet": "Arcade machine",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Punching game",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Magneton",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Magnezone",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "086",
+   "dex": "principal",
+   "slug": "waterwheelspot",
+   "en": "Waterwheel Spot",
+   "fr": "Coin hydrogénérateur",
+   "image": "86",
+   "requis": [
+    {
+     "en": "Waterwheel",
+     "fr": "Hydrogénérateur (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    },
+    {
+     "en": "Waterfall",
+     "fr": "Cascade",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Prinplup",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Empoleon",
+     "rarete": "tres-rare",
+     "meteos": [
+      "pluie"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "087",
+   "dex": "principal",
+   "slug": "furnacespot",
+   "en": "Furnace Spot",
+   "fr": "Coin pyrogénérateur",
+   "image": "87",
+   "requis": [
+    {
+     "objet": "Metal drum",
+     "quantite": 1
+    },
+    {
+     "en": "Furnace",
+     "fr": "Pyrogénérateur (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Combusken",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Blaziken",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "088",
+   "dex": "principal",
+   "slug": "dock",
+   "en": "Dock",
+   "fr": "Jetée",
+   "image": "88",
+   "requis": [
+    {
+     "en": "Walkway",
+     "fr": "Ponton",
+     "quantite": 4
+    },
+    {
+     "en": "Streetlight",
+     "fr": "Lampadaire (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Ocean Water",
+     "fr": "Eau de mer",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Marill",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Azumarill",
+     "rarete": "rare",
+     "meteos": [
+      "pluie"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "089",
+   "dex": "principal",
+   "slug": "spookystudy",
+   "en": "Spooky study",
+   "fr": "Bibliothèque inquiétante",
+   "image": "89",
+   "requis": [
+    {
+     "objet": "Bookcase",
+     "quantite": 1
+    },
+    {
+     "objet": "Chic sofa",
+     "quantite": 1
+    },
+    {
+     "objet": "Plain table",
+     "quantite": 1
+    },
+    {
+     "objet": "Slender candle",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Gastly",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Haunter",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "090",
+   "dex": "principal",
+   "slug": "playingpirate",
+   "en": "Playing pirate",
+   "fr": "Pont de navire",
+   "image": "90",
+   "requis": [
+    {
+     "objet": "Barrel",
+     "quantite": 2
+    },
+    {
+     "objet": "Ship's Wheel",
+     "quantite": 1
+    },
+    {
+     "objet": "Cannon",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Voltorb",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Electrode",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "091",
+   "dex": "principal",
+   "slug": "workingtheregister",
+   "en": "Working the register",
+   "fr": "Caisse enregistreuse",
+   "image": "91",
+   "requis": [
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Cash register",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Meowth",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Audino",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Happiny",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Mawile",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "092",
+   "dex": "principal",
+   "slug": "tinyatelier",
+   "en": "Tiny Atelier",
+   "fr": "Petit atelier",
+   "image": "92",
+   "requis": [
+    {
+     "en": "Canvas",
+     "fr": "Toile (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Smeargle",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "093",
+   "dex": "principal",
+   "slug": "gourmet'saltar",
+   "en": "Gourmet's altar",
+   "fr": "Autel d'offrande gourmande",
+   "image": "93",
+   "requis": [
+    {
+     "en": "Offering dish",
+     "fr": "Plateau à offrandes",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Mosslax",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "094",
+   "dex": "principal",
+   "slug": "pikachuspace",
+   "en": "Pikachu space",
+   "fr": "Espace Pikachu",
+   "image": "94",
+   "requis": [
+    {
+     "objet": "Pikachu sofa",
+     "quantite": 1
+    },
+    {
+     "objet": "Pikachu doll",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Mimikyu",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "095",
+   "dex": "principal",
+   "slug": "cutenessoverload",
+   "en": "Cuteness overload",
+   "fr": "Espace ravissant",
+   "image": "95",
+   "requis": [
+    {
+     "objet": "Cute sofa",
+     "quantite": 1
+    },
+    {
+     "objet": "Cute table",
+     "quantite": 1
+    },
+    {
+     "objet": "Cute lamp",
+     "quantite": 1
+    },
+    {
+     "objet": "Cute bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Cute dresser",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Blissey",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "096",
+   "dex": "principal",
+   "slug": "welcomingresort",
+   "en": "Welcoming resort",
+   "fr": "Salon balnéaire",
+   "image": "96",
+   "requis": [
+    {
+     "objet": "Resort sofa",
+     "quantite": 1
+    },
+    {
+     "objet": "Resort table",
+     "quantite": 1
+    },
+    {
+     "objet": "Resort hammock",
+     "quantite": 1
+    },
+    {
+     "objet": "Resort light",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Absol",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "097",
+   "dex": "principal",
+   "slug": "plainlife",
+   "en": "Plain life",
+   "fr": "Salon style naturel",
+   "image": "97",
+   "requis": [
+    {
+     "objet": "Plain bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Plain sofa",
+     "quantite": 1
+    },
+    {
+     "objet": "Plain table",
+     "quantite": 1
+    },
+    {
+     "objet": "Plain lamp",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Ampharos",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "098",
+   "dex": "principal",
+   "slug": "redtallgrass",
+   "en": "Red tall grass",
+   "fr": "Hautes herbes rouges",
+   "image": "98",
+   "requis": [
+    {
+     "en": "Red tall grass",
+     "fr": "Herbe rouge",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Scorbunny",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Riolu",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Cinderace",
+     "rarete": "tres-rare"
+    },
+    {
+     "nom": "Kricketot",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Kricketune",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "099",
+   "dex": "principal",
+   "slug": "tree-shadedredtallgrass",
+   "en": "Tree-shaded red tall grass",
+   "fr": "Hautes herbes rouges sous un arbre",
+   "image": "99",
+   "requis": [
+    {
+     "en": "Red tall grass",
+     "fr": "Herbe rouge",
+     "quantite": 4
+    },
+    {
+     "en": "Large tree",
+     "fr": "Grand arbre (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Diglett",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Dugtrio",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Bonsly",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Sudowoodo",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "100",
+   "dex": "principal",
+   "slug": "pointytree-shadedrockytallgrass",
+   "en": "Pointy tree-shaded rocky tall grass",
+   "fr": "Hautes herbes avec rocher et sapin",
+   "image": "100",
+   "requis": [
+    {
+     "en": "Pointy tree",
+     "fr": "Arbre pointu",
+     "quantite": 1
+    },
+    {
+     "en": "Red tall grass",
+     "fr": "Herbe rouge",
+     "quantite": 4
+    },
+    {
+     "en": "Large Boulder",
+     "fr": "Grosse pierre",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Dartrix",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Decidueye",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "101",
+   "dex": "principal",
+   "slug": "hydratedredtallgrass",
+   "en": "Hydrated red tall grass",
+   "fr": "Hautes herbes rouges riveraines",
+   "image": "101",
+   "requis": [
+    {
+     "en": "Red tall grass",
+     "fr": "Herbe rouge",
+     "quantite": 4
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Lotad",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Lombre",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "102",
+   "dex": "principal",
+   "slug": "elevatedredtallgrass",
+   "en": "Elevated red tall grass",
+   "fr": "Hautes herbes rouges en altitude",
+   "image": "102",
+   "requis": [
+    {
+     "en": "Red tall grass",
+     "fr": "Herbe rouge",
+     "quantite": 4
+    },
+    {
+     "en": "High-up location",
+     "fr": "Lieu en altitude",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Murkrow",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Chatot",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Honchkrow",
+     "rarete": "rare",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "103",
+   "dex": "principal",
+   "slug": "grassytrainingfield",
+   "en": "Grassy training field",
+   "fr": "Coin d'entraînement en hautes herbes",
+   "image": "103",
+   "requis": [
+    {
+     "objet": "Sandbags",
+     "quantite": 2
+    },
+    {
+     "en": "Red tall grass",
+     "fr": "Herbe rouge",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Machoke",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Machamp",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "104",
+   "dex": "principal",
+   "slug": "gracefulflowerbed",
+   "en": "Graceful flower bed",
+   "fr": "Parterre de fleurs splendides",
+   "image": "104",
+   "requis": [
+    {
+     "objet": "Mountain flowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Cleffa",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Fidough",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Clefable",
+     "rarete": "tres-rare",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Clefairy",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Dachsbun",
+     "rarete": "rare",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "105",
+   "dex": "principal",
+   "slug": "tree-shadedgracefulflowerbed",
+   "en": "Tree-shaded graceful flower bed",
+   "fr": "Fleurs splendides sous un arbre",
+   "image": "105",
+   "requis": [
+    {
+     "en": "Pointy tree",
+     "fr": "Arbre pointu",
+     "quantite": 1
+    },
+    {
+     "objet": "Mountain flowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Murkrow",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Larvesta",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Volcarona",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "106",
+   "dex": "principal",
+   "slug": "hydratedgracefulflowerbed",
+   "en": "Hydrated graceful flower bed",
+   "fr": "Fleurs splendides riveraines",
+   "image": "106",
+   "requis": [
+    {
+     "objet": "Mountain flowers",
+     "quantite": 4
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Ekans",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Arbok",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Politoed",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "107",
+   "dex": "principal",
+   "slug": "flowergardenstumpstage",
+   "en": "Flower garden stump stage",
+   "fr": "Scène souche bordée de fleurs",
+   "image": "107",
+   "requis": [
+    {
+     "objet": "Mountain flowers",
+     "quantite": 4
+    },
+    {
+     "en": "Tree stump",
+     "fr": "Souche (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Mushroom lamp",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Igglybuff",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Jigglypuff",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Politoed",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "108",
+   "dex": "principal",
+   "slug": "toilinthesoil",
+   "en": "Toil in the soil",
+   "fr": "Espace de travail agricole",
+   "image": "108",
+   "requis": [
+    {
+     "en": "Vegetable field",
+     "fr": "Culture (au choix)",
+     "quantite": 4
+    },
+    {
+     "objet": "Wheelbarrow",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tyranitar",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "109",
+   "dex": "principal",
+   "slug": "upliftingduckweed",
+   "en": "Uplifting duckweed",
+   "fr": "Étang avec plantes flottantes",
+   "image": "109",
+   "requis": [
+    {
+     "en": "Duckweed",
+     "fr": "Carré de lentilles d'eau",
+     "quantite": 4
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Lotad",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Ludicolo",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "110",
+   "dex": "principal",
+   "slug": "mossyrestspot",
+   "en": "Mossy rest spot",
+   "fr": "Coin moussu",
+   "image": "110",
+   "requis": [
+    {
+     "en": "Moss",
+     "fr": "Mousse",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Larvitar",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Tyranitar",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "111",
+   "dex": "principal",
+   "slug": "mossyboulder",
+   "en": "Mossy boulder",
+   "fr": "Rocher couvert de mousse",
+   "image": "111",
+   "requis": [
+    {
+     "en": "Moss",
+     "fr": "Mousse",
+     "quantite": 4
+    },
+    {
+     "en": "Mossy Boulder",
+     "fr": "Rocher moussu",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Graveler",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Golem",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "112",
+   "dex": "principal",
+   "slug": "mossyhotspring",
+   "en": "Mossy hot spring",
+   "fr": "Source chaude moussue",
+   "image": "112",
+   "requis": [
+    {
+     "en": "Moss",
+     "fr": "Mousse",
+     "quantite": 4
+    },
+    {
+     "en": "Hot-spring water",
+     "fr": "Eau de source",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Torkoal",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "113",
+   "dex": "principal",
+   "slug": "open-airbath",
+   "en": "Open-air bath",
+   "fr": "Bain thermal naturel",
+   "image": "113",
+   "requis": [
+    {
+     "en": "Hot-spring spout",
+     "fr": "Déversoir pour bassin",
+     "quantite": 1
+    },
+    {
+     "en": "Hot-spring water",
+     "fr": "Eau de source",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Raboot",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "114",
+   "dex": "principal",
+   "slug": "harmonioushotspring",
+   "en": "Harmonious hot spring",
+   "fr": "Bain thermal vivifiant",
+   "image": "114",
+   "requis": [
+    {
+     "en": "Hot-spring spout",
+     "fr": "Déversoir pour bassin",
+     "quantite": 1
+    },
+    {
+     "objet": "Water basin",
+     "quantite": 1
+    },
+    {
+     "en": "Hot-spring water",
+     "fr": "Eau de source",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Politoed",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "115",
+   "dex": "principal",
+   "slug": "piping-hotlava",
+   "en": "Piping-hot lava",
+   "fr": "Lave brûlante",
+   "image": "115",
+   "requis": [
+    {
+     "en": "Molten rock",
+     "fr": "Rocher ardent",
+     "quantite": 1
+    },
+    {
+     "en": "Lava",
+     "fr": "Lave",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Charcadet",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Volcarona",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "116",
+   "dex": "principal",
+   "slug": "diggingandburning",
+   "en": "Digging and burning",
+   "fr": "Site d'extraction et de fusion",
+   "image": "116",
+   "requis": [
+    {
+     "objet": "Wheelbarrow",
+     "quantite": 1
+    },
+    {
+     "objet": "Smelting furnace",
+     "quantite": 1
+    },
+    {
+     "objet": "Excavation tools",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Magmar",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "117",
+   "dex": "principal",
+   "slug": "clink-clangironconstruction",
+   "en": "Clink-clang iron construction",
+   "fr": "Charpente métallique en travaux",
+   "image": "117",
+   "requis": [
+    {
+     "en": "Iron beam or column",
+     "fr": "Poutre ou poteau en fer (au choix)",
+     "quantite": 3
+    },
+    {
+     "objet": "Wheelbarrow",
+     "quantite": 1
+    },
+    {
+     "objet": "Sandbags",
+     "quantite": 1
+    },
+    {
+     "objet": "Excavation tools",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Steelix",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Machamp",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "118",
+   "dex": "principal",
+   "slug": "creepywhiterocks",
+   "en": "Creepy white rocks",
+   "fr": "Rochers blancs inquiétants",
+   "image": "118",
+   "requis": [
+    {
+     "en": "Stalagmites",
+     "fr": "Stalagmites",
+     "quantite": 1
+    },
+    {
+     "en": "Moss",
+     "fr": "Mousse",
+     "quantite": 4
+    },
+    {
+     "objet": "Wooden crate",
+     "quantite": 1
+    },
+    {
+     "objet": "Lantern",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Glimmet",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Glimmora",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "119",
+   "dex": "principal",
+   "slug": "containersnacking",
+   "en": "Container snacking",
+   "fr": "Coin casse-croûte dans la remise",
+   "image": "119",
+   "requis": [
+    {
+     "objet": "Barrel",
+     "quantite": 1
+    },
+    {
+     "objet": "Wooden crate",
+     "quantite": 1
+    },
+    {
+     "objet": "Lantern",
+     "quantite": 1
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Diglett",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Glimmet",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Glimmora",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "120",
+   "dex": "principal",
+   "slug": "dinnertablesurprise",
+   "en": "Dinner table surprise",
+   "fr": "Table surprise culinaire",
+   "image": "120",
+   "requis": [
+    {
+     "en": "Seat (wide)",
+     "fr": "Banc ou Canapé (au choix)",
+     "quantite": 2
+    },
+    {
+     "en": "Table (large)",
+     "fr": "Grande table (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Party Platter",
+     "fr": "Assiette de fête",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Swalot",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "121",
+   "dex": "principal",
+   "slug": "bestbreadbakery",
+   "en": "Best bread bakery",
+   "fr": "Four à pain parfaitement pétri",
+   "image": "121",
+   "requis": [
+    {
+     "en": "Bread oven",
+     "fr": "Four à pain",
+     "quantite": 1
+    },
+    {
+     "objet": "Counter",
+     "quantite": 2
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Fidough",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Dachsbun",
+     "rarete": "rare",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "122",
+   "dex": "principal",
+   "slug": "minikitchen",
+   "en": "Mini kitchen",
+   "fr": "Cuisinette",
+   "image": "122",
+   "requis": [
+    {
+     "objet": "Kitchen table",
+     "quantite": 1
+    },
+    {
+     "objet": "Cooking stove",
+     "quantite": 1
+    },
+    {
+     "en": "Frying pan",
+     "fr": "Poêle",
+     "quantite": 1
+    },
+    {
+     "objet": "Modern sink",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Magmortar",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "123",
+   "dex": "principal",
+   "slug": "houseparty",
+   "en": "House party",
+   "fr": "Table festive",
+   "image": "123",
+   "requis": [
+    {
+     "objet": "Food counter",
+     "quantite": 1
+    },
+    {
+     "objet": "Paper Party cups",
+     "quantite": 1
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Dugtrio",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Sudowoodo",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "124",
+   "dex": "principal",
+   "slug": "lazy-photoalbumscrolling",
+   "en": "Lazy-photo album scrolling",
+   "fr": "Coin défilement de photos",
+   "image": "124",
+   "requis": [
+    {
+     "objet": "Tablet",
+     "quantite": 1
+    },
+    {
+     "objet": "Paper Party cups",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Toxel",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "125",
+   "dex": "principal",
+   "slug": "chirpingrecital",
+   "en": "Chirping recital",
+   "fr": "Micro de récital de gazouillis",
+   "image": "125",
+   "requis": [
+    {
+     "en": "Perch",
+     "fr": "Perchoir",
+     "quantite": 1
+    },
+    {
+     "objet": "Standing mic",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Chatot",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Honchkrow",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "126",
+   "dex": "principal",
+   "slug": "recitalstage",
+   "en": "Recital stage",
+   "fr": "Scène de récital",
+   "image": "126",
+   "requis": [
+    {
+     "objet": "Speaker",
+     "quantite": 2
+    },
+    {
+     "objet": "Small stage",
+     "quantite": 1
+    },
+    {
+     "objet": "Standing mic",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Jigglypuff",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Wigglytuff",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "127",
+   "dex": "principal",
+   "slug": "boxtotherhythm",
+   "en": "Box to the rhythm",
+   "fr": "Espace d'entraînement en rythme",
+   "image": "127",
+   "requis": [
+    {
+     "objet": "Punching bag",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "CD player",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Machoke",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Riolu",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Lucario",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "128",
+   "dex": "principal",
+   "slug": "musicandmagazines",
+   "en": "Music and magazines",
+   "fr": "Coin musique et lecture",
+   "image": "128",
+   "requis": [
+    {
+     "objet": "CD player",
+     "quantite": 1
+    },
+    {
+     "objet": "CD rack",
+     "quantite": 1
+    },
+    {
+     "objet": "Magazine rack",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Kricketot",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Kricketune",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Stereo Rotom",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "129",
+   "dex": "principal",
+   "slug": "minimuseum",
+   "en": "Mini museum",
+   "fr": "Minimusée",
+   "image": "129",
+   "requis": [
+    {
+     "en": "Post",
+     "fr": "Barrière (au choix)",
+     "quantite": 3
+    },
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Lost relic (large)",
+     "fr": "Objet perdu de grande taille",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Gimmighoul",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Arcanine",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "130",
+   "dex": "principal",
+   "slug": "refreshinglockerroom",
+   "en": "Refreshing locker room",
+   "fr": "Vestiaire agréable",
+   "image": "130",
+   "requis": [
+    {
+     "objet": "Office locker",
+     "quantite": 2
+    },
+    {
+     "en": "Potted plant",
+     "fr": "Plante en pot (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Seat (wide)",
+     "fr": "Banc ou Canapé (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Punching game",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Raboot",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Cinderace",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "131",
+   "dex": "principal",
+   "slug": "bronzelandmark",
+   "en": "Bronze landmark",
+   "fr": "Monument en bronze",
+   "image": "131",
+   "requis": [
+    {
+     "en": "Hedge",
+     "fr": "Buisson (au choix)",
+     "quantite": 4
+    },
+    {
+     "en": "Moonlight dance statue kit",
+     "fr": "Statue de danse lunaire (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Sign",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Clefairy",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Clefable",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "132",
+   "dex": "principal",
+   "slug": "railroadcrossing",
+   "en": "Railroad crossing",
+   "fr": "Passage à niveau",
+   "image": "132",
+   "requis": [
+    {
+     "en": "Railway track",
+     "fr": "Rails",
+     "quantite": 1
+    },
+    {
+     "en": "Crossing gate",
+     "fr": "Barrière de passage à niveau",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Carkol",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Rolycoly",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Coalossal",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "133",
+   "dex": "principal",
+   "slug": "chef'skitchen",
+   "en": "Chef's kitchen",
+   "fr": "Cuisine professionnelle",
+   "image": "133",
+   "requis": [
+    {
+     "objet": "Cooking stove",
+     "quantite": 1
+    },
+    {
+     "objet": "Modern sink",
+     "quantite": 1
+    },
+    {
+     "objet": "Plain table",
+     "quantite": 1
+    },
+    {
+     "en": "Stylish Cooking Pot",
+     "fr": "Marmite élégante",
+     "quantite": 1
+    },
+    {
+     "objet": "Cutting board",
+     "quantite": 1
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Greedent",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "134",
+   "dex": "principal",
+   "slug": "absoluteluxury",
+   "en": "Absolute luxury",
+   "fr": "Assortiment de meubles luxueux",
+   "image": "134",
+   "requis": [
+    {
+     "objet": "Luxury lamp",
+     "quantite": 1
+    },
+    {
+     "objet": "Luxury bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Luxury sofa",
+     "quantite": 1
+    },
+    {
+     "objet": "Luxury table",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Gholdengo",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "135",
+   "dex": "principal",
+   "slug": "heavyiron",
+   "en": "Heavy iron",
+   "fr": "Chambre en fer",
+   "image": "135",
+   "requis": [
+    {
+     "objet": "Iron bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Iron table",
+     "quantite": 1
+    },
+    {
+     "objet": "Iron chair",
+     "quantite": 1
+    },
+    {
+     "objet": "Lantern",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Coalossal",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "136",
+   "dex": "principal",
+   "slug": "modernliving",
+   "en": "Modern living",
+   "fr": "Zone de vie moderne",
+   "image": "136",
+   "requis": [
+    {
+     "objet": "Industrial bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Industrial desk",
+     "quantite": 1
+    },
+    {
+     "objet": "Industrial chair",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Decidueye",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "137",
+   "dex": "principal",
+   "slug": "pinktallgrass",
+   "en": "Pink tall grass",
+   "fr": "Hautes herbes roses",
+   "image": "137",
+   "requis": [
+    {
+     "en": "Pink tall grass",
+     "fr": "Herbe rose",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Trapinch",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Duskull",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Vibrava",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Swablu",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Flygon",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "138",
+   "dex": "principal",
+   "slug": "tree-shadedpinktallgrass",
+   "en": "Tree-shaded pink tall grass",
+   "fr": "Hautes herbes roses sous un arbre",
+   "image": "138",
+   "requis": [
+    {
+     "en": "Pink tall grass",
+     "fr": "Herbe rose",
+     "quantite": 4
+    },
+    {
+     "en": "Large tree",
+     "fr": "Grand arbre (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Sprigatito",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Dreepy",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Pupitar",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Drakloak",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "139",
+   "dex": "principal",
+   "slug": "hydratedpinktallgrass",
+   "en": "Hydrated pink tall grass",
+   "fr": "Hautes herbes roses riveraines",
+   "image": "139",
+   "requis": [
+    {
+     "en": "Pink tall grass",
+     "fr": "Herbe rose",
+     "quantite": 4
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Froakie",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Frogadier",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Greninja",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "140",
+   "dex": "principal",
+   "slug": "elevatedpinktallgrass",
+   "en": "Elevated pink tall grass",
+   "fr": "Hautes herbes roses en altitude",
+   "image": "140",
+   "requis": [
+    {
+     "en": "Pink tall grass",
+     "fr": "Herbe rose",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Corvisquire",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Kilowattrel",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Wattrel",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Corviknight",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "141",
+   "dex": "principal",
+   "slug": "concretepipesecretbase",
+   "en": "Concrete pipe secret base",
+   "fr": "Cachette secrète avec tuyau",
+   "image": "141",
+   "requis": [
+    {
+     "objet": "Concrete pipe",
+     "quantite": 3
+    },
+    {
+     "en": "Tall Grass (any)",
+     "fr": "Herbe verte",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Cyndaquil",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Quilava",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "142",
+   "dex": "principal",
+   "slug": "fluffyflowerbed",
+   "en": "Fluffy flower bed",
+   "fr": "Parterre de fleurs duveteuses",
+   "image": "142",
+   "requis": [
+    {
+     "objet": "Skyland flowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Vulpix",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Rookidee",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Mismagius",
+     "rarete": "tres-rare",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Misdreavus",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Ninetales",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "143",
+   "dex": "principal",
+   "slug": "tree-shadedfluffyflowerbed",
+   "en": "Tree-shaded fluffy flower bed",
+   "fr": "Fleurs duveteuses sous un arbre",
+   "image": "143",
+   "requis": [
+    {
+     "en": "Large tree",
+     "fr": "Grand arbre (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Skyland flowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Girafarig",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Servine",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Farigiraf",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Serperior",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "144",
+   "dex": "principal",
+   "slug": "hydratedfluffyflowerbed",
+   "en": "Hydrated fluffy flower bed",
+   "fr": "Fleurs duveteuses riveraines",
+   "image": "144",
+   "requis": [
+    {
+     "objet": "Skyland flowers",
+     "quantite": 4
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Dratini",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Poliwhirl",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Dragonair",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "145",
+   "dex": "principal",
+   "slug": "watersidedinghy",
+   "en": "Waterside dinghy",
+   "fr": "Barque sur l'eau",
+   "image": "145",
+   "requis": [
+    {
+     "objet": "Canoe",
+     "quantite": 1
+    },
+    {
+     "en": "Duckweed",
+     "fr": "Carré de lentilles d'eau",
+     "quantite": 2
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    },
+    {
+     "en": "High-up location",
+     "fr": "Lieu en altitude",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Dragonite",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "146",
+   "dex": "principal",
+   "slug": "illuminatedwaterfall",
+   "en": "Illuminated waterfall",
+   "fr": "Cascade éclairée",
+   "image": "146",
+   "requis": [
+    {
+     "en": "Stepping stones",
+     "fr": "Chemin de pierre",
+     "quantite": 3
+    },
+    {
+     "objet": "Torch",
+     "quantite": 2
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 3
+    },
+    {
+     "en": "Waterfall",
+     "fr": "Cascade",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Gyarados",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "147",
+   "dex": "principal",
+   "slug": "birdsonggarden",
+   "en": "Birdsong garden",
+   "fr": "Jardin avec gazouillements",
+   "image": "147",
+   "requis": [
+    {
+     "en": "Stylish hedge",
+     "fr": "Buisson chic",
+     "quantite": 1
+    },
+    {
+     "objet": "Wooden birdhouse",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Altaria",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "148",
+   "dex": "principal",
+   "slug": "simplebathroom",
+   "en": "Simple bathroom",
+   "fr": "Salle de bain ordinaire",
+   "image": "148",
+   "requis": [
+    {
+     "objet": "Shower",
+     "quantite": 1
+    },
+    {
+     "objet": "Bathtub",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Dratini",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Dragonair",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "149",
+   "dex": "principal",
+   "slug": "cyclingreststop",
+   "en": "Cycling rest stop",
+   "fr": "Aire de repos pour les cyclistes",
+   "image": "149",
+   "requis": [
+    {
+     "objet": "Bike",
+     "quantite": 1
+    },
+    {
+     "objet": "Vending machine",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Beldum",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "150",
+   "dex": "principal",
+   "slug": "fireplacenapspot",
+   "en": "Fireplace nap spot",
+   "fr": "Coin détente avec cheminée",
+   "image": "150",
+   "requis": [
+    {
+     "objet": "Stone fireplace",
+     "quantite": 1
+    },
+    {
+     "en": "Seat (wide)",
+     "fr": "Banc ou Canapé (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Quilava",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Typhlosion",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "151",
+   "dex": "principal",
+   "slug": "surgingpsychicpower",
+   "en": "Surging psychic power",
+   "fr": "Coin débordant de pouvoir psychiques",
+   "image": "151",
+   "requis": [
+    {
+     "objet": "Simple cushion",
+     "quantite": 1
+    },
+    {
+     "objet": "Crystal ball",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Abra",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Alakazam",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "152",
+   "dex": "principal",
+   "slug": "fortune-teller'stable",
+   "en": "Fortune-teller's table",
+   "fr": "Table de divination",
+   "image": "152",
+   "requis": [
+    {
+     "en": "Seat (any)",
+     "fr": "Siège (au choix)",
+     "quantite": 2
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Crystal ball",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Abra",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Kadabra",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "153",
+   "dex": "principal",
+   "slug": "trashsitetv",
+   "en": "Trash site TV",
+   "fr": "Télévision au milieu des ordures",
+   "image": "153",
+   "requis": [
+    {
+     "objet": "Garbage bags",
+     "quantite": 2
+    },
+    {
+     "objet": "Television",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Dusclops",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Dusknoir",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "154",
+   "dex": "principal",
+   "slug": "oversizeddumpingground",
+   "en": "Oversized dumping ground",
+   "fr": "Dépôt d'ordures encombrantes",
+   "image": "154",
+   "requis": [
+    {
+     "en": "Iron beam or column",
+     "fr": "Poutre ou poteau en fer (au choix)",
+     "quantite": 3
+    },
+    {
+     "objet": "Tires",
+     "quantite": 1
+    },
+    {
+     "en": "Waste bin (any)",
+     "fr": "Poubelle",
+     "quantite": 1
+    },
+    {
+     "objet": "Microwave oven",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tinkatink",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Tinkaton",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "155",
+   "dex": "principal",
+   "slug": "interrogationdesk",
+   "en": "Interrogation desk",
+   "fr": "Salle d'interrogatoire en duo",
+   "image": "155",
+   "requis": [
+    {
+     "objet": "Arcanine doll",
+     "quantite": 1
+    },
+    {
+     "objet": "Folding chair",
+     "quantite": 2
+    },
+    {
+     "objet": "Industrial desk",
+     "quantite": 1
+    },
+    {
+     "objet": "Desk light",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Sprigatito",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Floragato",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "156",
+   "dex": "principal",
+   "slug": "sewerholeinspection",
+   "en": "Sewer hole inspection",
+   "fr": "Plaque d'égout en travaux",
+   "image": "156",
+   "requis": [
+    {
+     "objet": "Iron pipes",
+     "quantite": 1
+    },
+    {
+     "en": "Sewer-hole cover",
+     "fr": "Plaque d'égout",
+     "quantite": 1
+    },
+    {
+     "objet": "Excavation tools",
+     "quantite": 1
+    },
+    {
+     "en": "Traffic cone",
+     "fr": "Cône de chantier",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tinkatuff",
+     "rarete": null
+    },
+    {
+     "nom": "Corviknight",
+     "rarete": null
+    },
+    {
+     "nom": "Poliwrath",
+     "rarete": null
+    }
+   ]
+  },
+  {
+   "numero": "157",
+   "dex": "principal",
+   "slug": "spotlesswashingstation",
+   "en": "Spotless Washing station",
+   "fr": "Salle de bain étincelante",
+   "image": "157",
+   "requis": [
+    {
+     "objet": "Towel rack",
+     "quantite": 1
+    },
+    {
+     "objet": "Wall mirror",
+     "quantite": 1
+    },
+    {
+     "objet": "Sink",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Mime Jr.",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Mr. Mime",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "158",
+   "dex": "principal",
+   "slug": "hometheater",
+   "en": "Home theater",
+   "fr": "Home cinéma",
+   "image": "158",
+   "requis": [
+    {
+     "objet": "Speaker",
+     "quantite": 2
+    },
+    {
+     "en": "Stand",
+     "fr": "Meuble bas (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Television",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Mismagius",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "159",
+   "dex": "principal",
+   "slug": "studyarea",
+   "en": "Study Area",
+   "fr": "Espace d'étude",
+   "image": "159",
+   "requis": [
+    {
+     "objet": "Bookcase",
+     "quantite": 1
+    },
+    {
+     "en": "Seat (any)",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Pencil holder",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Ralts",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Kirlia",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "160",
+   "dex": "principal",
+   "slug": "rhythmiclivingroom",
+   "en": "Rhythmic Living room",
+   "fr": "Salon rythmique",
+   "image": "160",
+   "requis": [
+    {
+     "objet": "Speaker",
+     "quantite": 2
+    },
+    {
+     "objet": "Television",
+     "quantite": 1
+    },
+    {
+     "en": "Music mat",
+     "fr": "Tapis musical (au choix)",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Noibat",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Noivern",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "161",
+   "dex": "principal",
+   "slug": "squeakyclean",
+   "en": "Squeaky clean",
+   "fr": "Coin propreté",
+   "image": "161",
+   "requis": [
+    {
+     "objet": "Bathtub",
+     "quantite": 1
+    },
+    {
+     "objet": "Cleaning supplies",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Poliwag",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "162",
+   "dex": "principal",
+   "slug": "moisturizingmakeupstand",
+   "en": "Moisturizing makeup stand",
+   "fr": "Coiffeuse avec humidificateur",
+   "image": "162",
+   "requis": [
+    {
+     "en": "Dresser (any)",
+     "fr": "Coiffeuse (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Seat (any)",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Humidifier",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Kirlia",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Gardevoir",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "163",
+   "dex": "principal",
+   "slug": "minilibrary",
+   "en": "Mini library",
+   "fr": "Petite bibliothèque",
+   "image": "163",
+   "requis": [
+    {
+     "objet": "Bookcase",
+     "quantite": 2
+    },
+    {
+     "objet": "Step stool",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Lighting (any)",
+     "fr": "Éclairage (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Gardevoir",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "164",
+   "dex": "principal",
+   "slug": "gamecornerbattlezone",
+   "en": "Game Corner battle zone",
+   "fr": "Espace arcade",
+   "image": "164",
+   "requis": [
+    {
+     "objet": "Arcade machine",
+     "quantite": 2
+    },
+    {
+     "en": "Seat (any)",
+     "fr": "Siège (au choix)",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Porygon-Z",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "165",
+   "dex": "principal",
+   "slug": "playland",
+   "en": "Playland",
+   "fr": "Aire de jeu",
+   "image": "165",
+   "requis": [
+    {
+     "objet": "Slide",
+     "quantite": 1
+    },
+    {
+     "en": "Toy (Any)",
+     "fr": "Divertissement (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Snivy",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "166",
+   "dex": "principal",
+   "slug": "workdesk",
+   "en": "Work desk",
+   "fr": "Bureau de travail",
+   "image": "166",
+   "requis": [
+    {
+     "objet": "Office desk",
+     "quantite": 1
+    },
+    {
+     "objet": "Laptop",
+     "quantite": 1
+    },
+    {
+     "objet": "Mug",
+     "quantite": 1
+    },
+    {
+     "objet": "Office chair",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Porygon2",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "167",
+   "dex": "principal",
+   "slug": "officestoreroom",
+   "en": "Office storeroom",
+   "fr": "Réserve de bureau",
+   "image": "167",
+   "requis": [
+    {
+     "objet": "Office shelf",
+     "quantite": 1
+    },
+    {
+     "objet": "Step stool",
+     "quantite": 1
+    },
+    {
+     "objet": "Cardboard boxes",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Misdreavus",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Mismagius",
+     "rarete": "rare",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Drakloak",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Dragapult",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "168",
+   "dex": "principal",
+   "slug": "experimentspace",
+   "en": "Experiment Space",
+   "fr": "Laboratoire improvisé",
+   "image": "168",
+   "requis": [
+    {
+     "objet": "Science experiment",
+     "quantite": 1
+    },
+    {
+     "objet": "Microscope",
+     "quantite": 1
+    },
+    {
+     "objet": "Papers",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Alakazam",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "169",
+   "dex": "principal",
+   "slug": "professor'sapprenticeprogram",
+   "en": "Professor's apprentice program",
+   "fr": "Bureau de recherches professoral",
+   "image": "169",
+   "requis": [
+    {
+     "objet": "Whiteboard",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Jumbled cords",
+     "quantite": 1
+    },
+    {
+     "objet": "Laptop",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Metang",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "170",
+   "dex": "principal",
+   "slug": "researcher'sdesk",
+   "en": "Researcher's desk",
+   "fr": "Bureau de scientifique",
+   "image": "170",
+   "requis": [
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 2
+    },
+    {
+     "objet": "Computer",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Porygon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "171",
+   "dex": "principal",
+   "slug": "publicreadingmaterial",
+   "en": "Public reading material",
+   "fr": "Coin de lecture en libre-service",
+   "image": "171",
+   "requis": [
+    {
+     "objet": "Magazine rack",
+     "quantite": 1
+    },
+    {
+     "objet": "Newspaper",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Mime Jr.",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Serperior",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "172",
+   "dex": "principal",
+   "slug": "heart-poundingsurprisebox",
+   "en": "Heart-pounding surprise box",
+   "fr": "Boîte à surprise intense",
+   "image": "172",
+   "requis": [
+    {
+     "objet": "Spotlight",
+     "quantite": 2
+    },
+    {
+     "objet": "Big drum",
+     "quantite": 1
+    },
+    {
+     "objet": "Boo-in-the-box",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Meowscarada",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "173",
+   "dex": "principal",
+   "slug": "prankbutton",
+   "en": "Prank button",
+   "fr": "Interrupteur facétieux",
+   "image": "173",
+   "requis": [
+    {
+     "objet": "Floor switch",
+     "quantite": 1
+    },
+    {
+     "objet": "Boo-in-the-box",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Frogadier",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Greninja",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "174",
+   "dex": "principal",
+   "slug": "picturesquephotocutoutboard",
+   "en": "Picturesque photo cutout board",
+   "fr": "Passe-tête avec beau paysage",
+   "image": "174",
+   "requis": [
+    {
+     "objet": "Photo cutout board",
+     "quantite": 1
+    },
+    {
+     "objet": "Spotlight",
+     "quantite": 2
+    },
+    {
+     "en": "High-up location",
+     "fr": "Lieu en altitude",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Plusle",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Minun",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "175",
+   "dex": "principal",
+   "slug": "tirepark",
+   "en": "Tire Park",
+   "fr": "Parc à pneus",
+   "image": "175",
+   "requis": [
+    {
+     "objet": "Slide",
+     "quantite": 1
+    },
+    {
+     "objet": "Tires",
+     "quantite": 1
+    },
+    {
+     "objet": "Tire toy",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Dedenne",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "176",
+   "dex": "principal",
+   "slug": "nature'smarket",
+   "en": "Nature's market",
+   "fr": "Marché en pleine nature",
+   "image": "176",
+   "requis": [
+    {
+     "en": "Large tree",
+     "fr": "Grand arbre (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Large boulder",
+     "fr": "Grosse pierre",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 2
+    },
+    {
+     "objet": "Cash register",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Raichu",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "177",
+   "dex": "principal",
+   "slug": "construction-sitegenerator",
+   "en": "Construction-site generator",
+   "fr": "Générateur de chantier",
+   "image": "177",
+   "requis": [
+    {
+     "en": "Furnace kit",
+     "fr": "Pyrogénérateur (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Iron scaffold",
+     "quantite": 2
+    },
+    {
+     "objet": "Iron pipes",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Conkeldurr",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "178",
+   "dex": "principal",
+   "slug": "dojotraining",
+   "en": "Dojo training",
+   "fr": "Salle d'entraînement de dojo",
+   "image": "178",
+   "requis": [
+    {
+     "objet": "Hanging scroll",
+     "quantite": 2
+    },
+    {
+     "objet": "Strength rock",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Poliwrath",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Gallade",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "179",
+   "dex": "principal",
+   "slug": "evilorganizationhq",
+   "en": "Evil organization HQ",
+   "fr": "QG d'organisation malfaisante",
+   "image": "179",
+   "requis": [
+    {
+     "en": "Potted plant (any)",
+     "fr": "Plante en pot (au choix)",
+     "quantite": 2
+    },
+    {
+     "objet": "Team Rocket Wall Hanging",
+     "quantite": 1
+    },
+    {
+     "objet": "Luxury sofa",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Persian",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "180",
+   "dex": "principal",
+   "slug": "nineflames",
+   "en": "Nine flames",
+   "fr": "Neuf flammes",
+   "image": "180",
+   "requis": [
+    {
+     "objet": "Firepit",
+     "quantite": 9
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Ninetales",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "181",
+   "dex": "principal",
+   "slug": "plushcentral",
+   "en": "Plush central",
+   "fr": "Collection de peluches",
+   "image": "181",
+   "requis": [
+    {
+     "objet": "Arcanine doll",
+     "quantite": 1
+    },
+    {
+     "objet": "Pikachu doll",
+     "quantite": 1
+    },
+    {
+     "objet": "Dragonite doll",
+     "quantite": 1
+    },
+    {
+     "objet": "Eevee doll",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Drifloon",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Drifblim",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "182",
+   "dex": "principal",
+   "slug": "gamer'sparadise",
+   "en": "Gamer's paradise",
+   "fr": "Assortiment de meubles gaming",
+   "image": "182",
+   "requis": [
+    {
+     "objet": "Gaming bed",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Gaming PC",
+     "quantite": 1
+    },
+    {
+     "objet": "Gaming chair",
+     "quantite": 1
+    },
+    {
+     "objet": "Gaming fridge",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Metagross",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "183",
+   "dex": "principal",
+   "slug": "toppop",
+   "en": "Top pop",
+   "fr": "Salon pop art",
+   "image": "183",
+   "requis": [
+    {
+     "objet": "Pop art bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Pop art sofa",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Typhlosion",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "184",
+   "dex": "principal",
+   "slug": "fishingpond",
+   "en": "Fishing pond",
+   "fr": "Coin de pêche",
+   "image": "184",
+   "requis": [
+    {
+     "objet": "Fishing rod",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Slowbro",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Slowking",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "185",
+   "dex": "principal",
+   "slug": "oceanfishingspot",
+   "en": "Ocean fishing spot",
+   "fr": "Coin de pêche marin",
+   "image": "185",
+   "requis": [
+    {
+     "objet": "Fishing rod",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Ocean Water",
+     "fr": "Eau de mer",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Magikarp",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Gastrodon",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Gastrodon East Sea",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "186",
+   "dex": "principal",
+   "slug": "marshfishingspot",
+   "en": "Marsh fishing spot",
+   "fr": "Coin de pêche marécageux",
+   "image": "186",
+   "requis": [
+    {
+     "objet": "Fishing rod",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Muddy water",
+     "fr": "Eau boueuse",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Grimer",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Muk",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Clodsire",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "187",
+   "dex": "principal",
+   "slug": "hot-springfishingspot",
+   "en": "Hot-spring Fishing Spot",
+   "fr": "Coin de pêche en eaux thermales",
+   "image": "187",
+   "requis": [
+    {
+     "objet": "Fishing rod",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Lotad",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Lombre",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "188",
+   "dex": "principal",
+   "slug": "magmafishingspot",
+   "en": "Magma fishing spot",
+   "fr": "Coin de pêche magmatique",
+   "image": "188",
+   "requis": [
+    {
+     "objet": "Fishing rod",
+     "quantite": 1
+    },
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Lava",
+     "fr": "Lave",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Arcanine",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "189",
+   "dex": "principal",
+   "slug": "ampedrockstage",
+   "en": "Amped rock stage",
+   "fr": "Scène rock aigüe",
+   "image": "189",
+   "requis": [
+    {
+     "objet": "Speaker",
+     "quantite": 2
+    },
+    {
+     "objet": "Small stage",
+     "quantite": 1
+    },
+    {
+     "objet": "Cool electric guitar",
+     "quantite": 1
+    },
+    {
+     "objet": "Standing mic",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Toxtricity Amped Form",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "190",
+   "dex": "principal",
+   "slug": "low-keyrockstage",
+   "en": "Low-key rock stage",
+   "fr": "Scène rock grave",
+   "image": "190",
+   "requis": [
+    {
+     "objet": "Speaker",
+     "quantite": 2
+    },
+    {
+     "objet": "Small stage",
+     "quantite": 1
+    },
+    {
+     "objet": "Cool bass guitar",
+     "quantite": 1
+    },
+    {
+     "objet": "Standing mic",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Toxtricity Low Key Form",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "191",
+   "dex": "principal",
+   "slug": "maliciousknight'sshrine",
+   "en": "Malicious knight's shrine",
+   "fr": "Autel de la rancœur guerrière",
+   "image": "191",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Malicious Armor",
+     "quantite": 1
+    },
+    {
+     "en": "Stepping Stones",
+     "fr": "Chemin de pierre",
+     "quantite": 2
+    },
+    {
+     "objet": "Firepit",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Ceruledge",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "192",
+   "dex": "principal",
+   "slug": "auspiciousknight'sshrine",
+   "en": "Auspicious knight's shrine",
+   "fr": "Autel de la loyauté guerrière",
+   "image": "192",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Auspicious Armor",
+     "quantite": 1
+    },
+    {
+     "en": "Stepping Stones",
+     "fr": "Chemin de pierre",
+     "quantite": 2
+    },
+    {
+     "objet": "Firepit",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Armarouge",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "193",
+   "dex": "principal",
+   "slug": "wingfossildisplay",
+   "en": "Wing Fossil Display",
+   "fr": "Spécimen de Fossile Aile",
+   "image": "193",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Wing Fossil (head)",
+     "quantite": 1
+    },
+    {
+     "objet": "Wing fossil (body)",
+     "quantite": 1
+    },
+    {
+     "objet": "Wing Fossil (left wing)",
+     "quantite": 1
+    },
+    {
+     "objet": "Wing Fossil (right wing)",
+     "quantite": 1
+    },
+    {
+     "objet": "Wing Fossil (tail)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Aerodactyl",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "194",
+   "dex": "principal",
+   "slug": "skullfossildisplay",
+   "en": "Skull Fossil display",
+   "fr": "Spécimen de Fossile Crâne",
+   "image": "194",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Skull Fossil",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Cranidos",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "195",
+   "dex": "principal",
+   "slug": "headbuttfossildisplay",
+   "en": "Headbutt Fossil display",
+   "fr": "Spécimen de Fossile Coud'Boule",
+   "image": "195",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Headbutt Fossil (head)",
+     "quantite": 1
+    },
+    {
+     "objet": "Headbutt Fossil (body)",
+     "quantite": 1
+    },
+    {
+     "objet": "Headbutt Fossil (tail)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Rampardos",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "196",
+   "dex": "principal",
+   "slug": "armorfossildisplay",
+   "en": "Armor Fossil display",
+   "fr": "Spécimen de Fossile Armure",
+   "image": "196",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Armor Fossil",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Shieldon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "197",
+   "dex": "principal",
+   "slug": "shieldfossildisplay",
+   "en": "Shield Fossil display",
+   "fr": "Spécimen de Fossile Bouclier",
+   "image": "197",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 2
+    },
+    {
+     "objet": "Shield Fossil (Head)",
+     "quantite": 1
+    },
+    {
+     "objet": "Shield Fossil (body)",
+     "quantite": 1
+    },
+    {
+     "objet": "Shield Fossil (tail)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Bastiodon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "198",
+   "dex": "principal",
+   "slug": "jawfossildisplay",
+   "en": "Jaw Fossil display",
+   "fr": "Spécimen de Fossile Mâchoire",
+   "image": "198",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Jaw Fossil",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tyrunt",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "199",
+   "dex": "principal",
+   "slug": "despotfossildisplay",
+   "en": "Despot fossil display",
+   "fr": "Spécimen de Fossile Tyran",
+   "image": "199",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 2
+    },
+    {
+     "objet": "Despot Fossil (head)",
+     "quantite": 1
+    },
+    {
+     "objet": "Despot Fossil (body)",
+     "quantite": 1
+    },
+    {
+     "objet": "Despot Fossil (legs)",
+     "quantite": 1
+    },
+    {
+     "objet": "Despot Fossil (tail)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Tyrantrum",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "200",
+   "dex": "principal",
+   "slug": "sailfossildisplay",
+   "en": "Sail Fossil display",
+   "fr": "Spécimen de Fossile Nageoire",
+   "image": "200",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Sail Fossil",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Amaura",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "201",
+   "dex": "principal",
+   "slug": "tundrafossildisplay",
+   "en": "Tundra fossil display",
+   "fr": "Spécimen de Fossile Toundra",
+   "image": "201",
+   "requis": [
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Tundra Fossil (head)",
+     "quantite": 1
+    },
+    {
+     "objet": "Tundra Fossil (body)",
+     "quantite": 1
+    },
+    {
+     "objet": "Tundra Fossil (tail)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Aurorus",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "202",
+   "dex": "principal",
+   "slug": "boundlessbluebeverage",
+   "en": "Boundless blue beverage",
+   "fr": "Coin boisson glacée océan",
+   "image": "202",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Soda float",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Vaporeon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "203",
+   "dex": "principal",
+   "slug": "electrifyingpotatoes",
+   "en": "Electrifying potatoes",
+   "fr": "Coin frites électrisantes",
+   "image": "203",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Fried potatoes",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Jolteon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "204",
+   "dex": "principal",
+   "slug": "burning-hotspice",
+   "en": "Burning-hot spice",
+   "fr": "Coin pizza épicée",
+   "image": "204",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Pizza",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Flareon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "205",
+   "dex": "principal",
+   "slug": "elegantdaytimetreats",
+   "en": "Elegant daytime treats",
+   "fr": "Coin mignardises",
+   "image": "205",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Afternoon tea set",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Espeon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "206",
+   "dex": "principal",
+   "slug": "dark-chocolatecookies",
+   "en": "Dark-chocolate cookies",
+   "fr": "Coin biscuits au chocolat noir",
+   "image": "206",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Chocolate cookies",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Umbreon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "207",
+   "dex": "principal",
+   "slug": "leafygreenssandwich",
+   "en": "Leafy greens sandwich",
+   "fr": "Coin sandwichs végétariens",
+   "image": "207",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Sandwiches",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Leafeon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "208",
+   "dex": "principal",
+   "slug": "chillyshavedice",
+   "en": "Chilly shaved ice",
+   "fr": "Coin glace pilée",
+   "image": "208",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Shaved ice",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Glaceon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "209",
+   "dex": "principal",
+   "slug": "lovelyribboncake",
+   "en": "Lovely ribbon cake",
+   "fr": "Coin gâteau adorable",
+   "image": "209",
+   "requis": [
+    {
+     "en": "Seat",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Sylveon",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "001",
+   "dex": "bassin",
+   "slug": "basintallgrass",
+   "en": "Basin tall grass",
+   "fr": "Hautes herbes sous-marines",
+   "image": "b1",
+   "requis": [],
+   "pokemon": [
+    {
+     "nom": "Mudkip",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Buizel",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Totodile",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Feraligatr",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "002",
+   "dex": "bassin",
+   "slug": "basintallgrassandcoral",
+   "en": "Basin tall grass and coral",
+   "fr": "Hautes herbes sous-marines et coraux",
+   "image": "b2",
+   "requis": [
+    {
+     "en": "Seabed tall grass",
+     "fr": "Herbe des fonds marins",
+     "quantite": 4
+    },
+    {
+     "en": "Small coral",
+     "fr": "Corail de petite taille",
+     "quantite": 1
+    },
+    {
+     "en": "Tall coral",
+     "fr": "Corail oblong",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Corsola",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Shellder",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Swampert",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "003",
+   "dex": "bassin",
+   "slug": "swayingflowerbed",
+   "en": "Swaying flower bed",
+   "fr": "Parterre de fleurs ondoyantes",
+   "image": "b3",
+   "requis": [
+    {
+     "en": "Seabed flowers",
+     "fr": "Fleurs des fonds marins",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Stunfisk",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Popplio",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Staryu",
+     "rarete": "commun",
+     "moments": [
+      "nuit"
+     ]
+    },
+    {
+     "nom": "Finneon",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "004",
+   "dex": "bassin",
+   "slug": "swayingflowerbedandcoral",
+   "en": "Swaying flower bed and coral",
+   "fr": "Parterre de fleurs ondoyantes et coraux",
+   "image": "b4",
+   "requis": [
+    {
+     "en": "Colorful corals",
+     "fr": "Coraux multicolores",
+     "quantite": 1
+    },
+    {
+     "en": "Seabed flowers",
+     "fr": "Fleurs des fonds marins",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Mareanie",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Luvdisc",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Golisopod",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "005",
+   "dex": "bassin",
+   "slug": "swayingflowerbedandseaweed",
+   "en": "Swaying flower bed and seaweed",
+   "fr": "Parterre de fleurs et algues ondoyantes",
+   "image": "b5",
+   "requis": [
+    {
+     "en": "Chimney rocks",
+     "fr": "Cheminées rocheuses",
+     "quantite": 1
+    },
+    {
+     "en": "Seabed flowers",
+     "fr": "Fleurs des fonds marins",
+     "quantite": 4
+    },
+    {
+     "en": "Lush seaweed",
+     "fr": "Algues hautes",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Cloyster",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Lumineon",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "006",
+   "dex": "bassin",
+   "slug": "seaweedandnetting",
+   "en": "Seaweed and netting",
+   "fr": "Algues et filets",
+   "image": "b6",
+   "requis": [
+    {
+     "en": "Netting",
+     "fr": "Filet",
+     "quantite": 4
+    },
+    {
+     "en": "Lush seaweed",
+     "fr": "Algues hautes",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Carvanha",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Stunfisk",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "007",
+   "dex": "bassin",
+   "slug": "coralcongregation",
+   "en": "Coral congregation",
+   "fr": "Assortiment de coraux",
+   "image": "b7",
+   "requis": [
+    {
+     "en": "Colorful corals",
+     "fr": "Coraux multicolores",
+     "quantite": 1
+    },
+    {
+     "en": "Small coral",
+     "fr": "Corail de petite taille",
+     "quantite": 1
+    },
+    {
+     "en": "Tall coral",
+     "fr": "Corail oblong",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Horsea",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Corsola",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Seadra",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Kingdra",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "008",
+   "dex": "bassin",
+   "slug": "sandybasintallgrass",
+   "en": "Sandy basin tall grass",
+   "fr": "Hautes herbes sous-marines et tas de sable",
+   "image": "b8",
+   "requis": [
+    {
+     "en": "Sandpile",
+     "fr": "Tas de sable",
+     "quantite": 1
+    },
+    {
+     "en": "Seabed tall grass",
+     "fr": "Herbe des fonds marins",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Corphish",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "009",
+   "dex": "bassin",
+   "slug": "sandydiggingspot",
+   "en": "Sandy digging spot",
+   "fr": "Zone de fouille dans le sable",
+   "image": "b9",
+   "requis": [
+    {
+     "en": "Sandpile",
+     "fr": "Tas de sable",
+     "quantite": 1
+    },
+    {
+     "objet": "Sand toys",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Shellder",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Corphish",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Crawdaunt",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "010",
+   "dex": "bassin",
+   "slug": "sandyspeech",
+   "en": "Sandy speech",
+   "fr": "Zone de conférence sableuse",
+   "image": "b10",
+   "requis": [
+    {
+     "en": "Sandpile",
+     "fr": "Tas de sable",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Tabletop mic",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Barboach",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Wiglett",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "011",
+   "dex": "bassin",
+   "slug": "biteablepunchingbag",
+   "en": "Biteable punching bag",
+   "fr": "Sac de frappe qui a du mordant",
+   "image": "b11",
+   "requis": [
+    {
+     "en": "Sandpile",
+     "fr": "Tas de sable",
+     "quantite": 1
+    },
+    {
+     "objet": "Punching bag",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Gold Teeth",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Feraligatr",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "012",
+   "dex": "bassin",
+   "slug": "marinemossyrestspot",
+   "en": "Marine mossy rest spot",
+   "fr": "Coin moussu marin",
+   "image": "b12",
+   "requis": [
+    {
+     "en": "Sea moss",
+     "fr": "Mousse marine",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Finneon",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Veluza",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    },
+    {
+     "nom": "Lumineon",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "013",
+   "dex": "bassin",
+   "slug": "moltenmossyrestspot",
+   "en": "Molten mossy rest spot",
+   "fr": "Coin moussu ardent",
+   "image": "b13",
+   "requis": [
+    {
+     "en": "Molten rock",
+     "fr": "Rocher ardent",
+     "quantite": 1
+    },
+    {
+     "en": "Sea moss",
+     "fr": "Mousse marine",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Bruxish",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "014",
+   "dex": "bassin",
+   "slug": "creepychimneyrocks",
+   "en": "Creepy chimney rocks",
+   "fr": "Cheminées rocheuses inquiétantes",
+   "image": "b14",
+   "requis": [
+    {
+     "en": "Chimney rocks",
+     "fr": "Cheminées rocheuses",
+     "quantite": 1
+    },
+    {
+     "en": "Sea moss",
+     "fr": "Mousse marine",
+     "quantite": 4
+    },
+    {
+     "objet": "Barrel",
+     "quantite": 1
+    },
+    {
+     "objet": "Lantern",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pincurchin",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Marshtomp",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "015",
+   "dex": "bassin",
+   "slug": "chimneyrocksdigsite",
+   "en": "Chimney rocks dig site",
+   "fr": "Forage aux cheminées rocheuses",
+   "image": "b15",
+   "requis": [
+    {
+     "en": "Chimney rocks",
+     "fr": "Cheminées rocheuses",
+     "quantite": 1
+    },
+    {
+     "objet": "Wheelbarrow",
+     "quantite": 1
+    },
+    {
+     "objet": "Excavation tools",
+     "quantite": 1
+    },
+    {
+     "en": "Traffic cone",
+     "fr": "Cône de chantier",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Sharpedo",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Croconaw",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "016",
+   "dex": "bassin",
+   "slug": "discardedtreasure",
+   "en": "Discarded treasure",
+   "fr": "Coffre au trésor abandonné",
+   "image": "b16",
+   "requis": [
+    {
+     "objet": "Big treasure chest",
+     "quantite": 1
+    },
+    {
+     "en": "Waste bin",
+     "fr": "Poubelle",
+     "quantite": 1
+    },
+    {
+     "objet": "Garbage bags",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Wimpod",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Golisopod",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "017",
+   "dex": "bassin",
+   "slug": "playingsailor",
+   "en": "Playing sailor",
+   "fr": "Espace de jeu maritime",
+   "image": "b17",
+   "requis": [
+    {
+     "objet": "Big treasure chest",
+     "quantite": 1
+    },
+    {
+     "objet": "Ship's Wheel",
+     "quantite": 1
+    },
+    {
+     "objet": "Wooden crate",
+     "quantite": 1
+    },
+    {
+     "objet": "Bottled ship",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Frillish Female Form",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Frillish Male Form",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Dhelmise",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "018",
+   "dex": "bassin",
+   "slug": "treasurechestandsparklingjewels",
+   "en": "Treasure chest and sparkling jewels",
+   "fr": "Trésor étincelant",
+   "image": "b18",
+   "requis": [
+    {
+     "objet": "Big treasure chest",
+     "quantite": 1
+    },
+    {
+     "objet": "Sparkling jewelry",
+     "quantite": 1
+    },
+    {
+     "objet": "Lantern",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Luvdisc",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Toxapex",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "019",
+   "dex": "bassin",
+   "slug": "oceanrestspot",
+   "en": "Ocean rest spot",
+   "fr": "Salon traditionnel marin",
+   "image": "b19",
+   "requis": [
+    {
+     "en": "Small coral",
+     "fr": "Corail de petite taille",
+     "quantite": 1
+    },
+    {
+     "objet": "Seashell seat",
+     "quantite": 1
+    },
+    {
+     "objet": "Lampion",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Barboach",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "020",
+   "dex": "bassin",
+   "slug": "marineshop",
+   "en": "Marine shop",
+   "fr": "Boutique marine",
+   "image": "b20",
+   "requis": [
+    {
+     "objet": "Cash register",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 2
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Floatzel",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "021",
+   "dex": "bassin",
+   "slug": "oceantreasures",
+   "en": "Ocean treasures",
+   "fr": "Trésors de la mer",
+   "image": "b21",
+   "requis": [
+    {
+     "objet": "Marine chest",
+     "quantite": 1
+    },
+    {
+     "objet": "Bottled ship",
+     "quantite": 1
+    },
+    {
+     "objet": "Sparkling jewelry",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Frillish Female Form",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Frillish Male Form",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Alomomola",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "022",
+   "dex": "bassin",
+   "slug": "smoothie-makingspot",
+   "en": "Smoothie-making spot",
+   "fr": "Atelier smoothie",
+   "image": "b22",
+   "requis": [
+    {
+     "objet": "Blender",
+     "quantite": 1
+    },
+    {
+     "en": "Plated food",
+     "fr": "Plat (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Buizel",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Chewtle",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "023",
+   "dex": "bassin",
+   "slug": "fluffyrelaxation",
+   "en": "Fluffy relaxation",
+   "fr": "Espace de relaxation douillet",
+   "image": "b23",
+   "requis": [
+    {
+     "objet": "Cushion bed",
+     "quantite": 1
+    },
+    {
+     "en": "Lighting",
+     "fr": "Éclairage (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Doll (any)",
+     "fr": "Peluche (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Chinchou",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Mudkip",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Luvdisc",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "024",
+   "dex": "bassin",
+   "slug": "canoedock",
+   "en": "Canoe dock",
+   "fr": "Embarcadère",
+   "image": "b24",
+   "requis": [
+    {
+     "objet": "Canoe",
+     "quantite": 1
+    },
+    {
+     "en": "Floating logs",
+     "fr": "Rondins flottants",
+     "quantite": 2
+    },
+    {
+     "en": "Water",
+     "fr": "Étendue d'eau",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Totodile",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Croconaw",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Drednaw",
+     "rarete": "commun",
+     "moments": [
+      "matin",
+      "jour",
+      "soir"
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "025",
+   "dex": "bassin",
+   "slug": "muddyplaytime",
+   "en": "Muddy playtime",
+   "fr": "Coin de barbotage dans la boue",
+   "image": "b25",
+   "requis": [
+    {
+     "objet": "Windup Inkay",
+     "quantite": 1
+    },
+    {
+     "objet": "Towel rack",
+     "quantite": 1
+    },
+    {
+     "en": "Floating logs",
+     "fr": "Rondins flottants",
+     "quantite": 1
+    },
+    {
+     "en": "Muddy water",
+     "fr": "Eau boueuse",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Marshtomp",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Barboach",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Inkay",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "026",
+   "dex": "bassin",
+   "slug": "muddyspa",
+   "en": "Muddy spa",
+   "fr": "Spa de boue",
+   "image": "b26",
+   "requis": [
+    {
+     "en": "Seat (widde)",
+     "fr": "Banc ou Canapé (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Gyarados fountain",
+     "quantite": 1
+    },
+    {
+     "objet": "Bathtime set",
+     "quantite": 1
+    },
+    {
+     "en": "Muddy water",
+     "fr": "Eau boueuse",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Swampert",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "027",
+   "dex": "bassin",
+   "slug": "topsy-turvy",
+   "en": "Topsy-turvy",
+   "fr": "Éclairage sens dessus dessous",
+   "image": "b27",
+   "requis": [
+    {
+     "objet": "Lampion",
+     "quantite": 3
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Malamar",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "028",
+   "dex": "bassin",
+   "slug": "bubblybathtub",
+   "en": "Bubbly bathtub",
+   "fr": "Bain moussant",
+   "image": "b28",
+   "requis": [
+    {
+     "objet": "Bathtub",
+     "quantite": 1
+    },
+    {
+     "objet": "Bubble machine",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Totodile",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "029",
+   "dex": "bassin",
+   "slug": "bubblystage",
+   "en": "Bubbly stage",
+   "fr": "Scène bulleuse",
+   "image": "b29",
+   "requis": [
+    {
+     "objet": "Small stage",
+     "quantite": 1
+    },
+    {
+     "objet": "Bubble machine",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Popplio",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Brionne",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "030",
+   "dex": "bassin",
+   "slug": "glowingstageforthree",
+   "en": "Glowing stage for three",
+   "fr": "Scène étincelante pour trio",
+   "image": "b30",
+   "requis": [
+    {
+     "objet": "Standing mic",
+     "quantite": 3
+    },
+    {
+     "en": "Wireless power-transmitter post",
+     "fr": "Plot transmetteur sans fil",
+     "quantite": 3
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Wugtrio",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "031",
+   "dex": "bassin",
+   "slug": "elegantconcert",
+   "en": "Elegant concert",
+   "fr": "Scène de concert sophistiqué",
+   "image": "b31",
+   "requis": [
+    {
+     "objet": "Harp",
+     "quantite": 1
+    },
+    {
+     "objet": "Marine chair",
+     "quantite": 1
+    },
+    {
+     "objet": "Shell lamp",
+     "quantite": 2
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Primarina",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "032",
+   "dex": "bassin",
+   "slug": "marineteatime",
+   "en": "Marine teatime",
+   "fr": "Salon de thé au thème naval",
+   "image": "b32",
+   "requis": [
+    {
+     "objet": "Chic table",
+     "quantite": 1
+    },
+    {
+     "objet": "Chic chair",
+     "quantite": 2
+    },
+    {
+     "objet": "Push cart",
+     "quantite": 1
+    },
+    {
+     "objet": "Tea set",
+     "quantite": 1
+    },
+    {
+     "objet": "Bottled ship",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Jellicent Female Form",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Jellicent Male Form",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "033",
+   "dex": "bassin",
+   "slug": "nostalgiazone",
+   "en": "Nostalgia zone",
+   "fr": "Endroit nostalgique",
+   "image": "b33",
+   "requis": [
+    {
+     "objet": "Antique chest",
+     "quantite": 1
+    },
+    {
+     "objet": "Music box",
+     "quantite": 1
+    },
+    {
+     "objet": "Photo frame",
+     "quantite": 1
+    },
+    {
+     "en": "Sea moss",
+     "fr": "Mousse marine",
+     "quantite": 2
+    },
+    {
+     "objet": "Wooden crate",
+     "quantite": 1
+    },
+    {
+     "objet": "Lantern",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Lanturn",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "034",
+   "dex": "bassin",
+   "slug": "marinemakeupstand",
+   "en": "Marine makeup stand",
+   "fr": "Espace de beauté océanique",
+   "image": "b34",
+   "requis": [
+    {
+     "objet": "Marine closet",
+     "quantite": 1
+    },
+    {
+     "objet": "Marine dresser",
+     "quantite": 1
+    },
+    {
+     "objet": "Marine chair",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Kingdra",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "035",
+   "dex": "bassin",
+   "slug": "gorgeoussleepingarea",
+   "en": "Gorgeous Sleeping Area",
+   "fr": "Chambre somptueuse",
+   "image": "b35",
+   "requis": [
+    {
+     "en": "Ornate partition",
+     "fr": "Paravent à entrelacs",
+     "quantite": 1
+    },
+    {
+     "objet": "Ornate bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Ornate stand",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Whiscash",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "036",
+   "dex": "bassin",
+   "slug": "mermaid'sgym",
+   "en": "Mermaid's Gym",
+   "fr": "Arène de la sirène en short",
+   "image": "b36",
+   "requis": [
+    {
+     "objet": "Marine sofa",
+     "quantite": 1
+    },
+    {
+     "en": "Pedestal",
+     "fr": "Piédestal (au choix)",
+     "quantite": 6
+    },
+    {
+     "objet": "Decorative Great Ball",
+     "quantite": 1
+    },
+    {
+     "objet": "Decorative Heal Ball",
+     "quantite": 1
+    },
+    {
+     "objet": "Decorative Dive Ball",
+     "quantite": 1
+    },
+    {
+     "objet": "Decorative Net Ball",
+     "quantite": 1
+    },
+    {
+     "objet": "Decorative Lure Ball",
+     "quantite": 1
+    },
+    {
+     "objet": "Decorative Quick Ball",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Starmie",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "001",
+   "dex": "evenement",
+   "slug": "yellowcarpet",
+   "en": "Yellow carpet",
+   "fr": "Tapis de fleurs jaunes",
+   "image": "e1",
+   "requis": [
+    {
+     "objet": "Dandy flowers",
+     "quantite": 4
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Hoppip",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Skiploom",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Jumpluff",
+     "rarete": "tres-rare"
+    }
+   ]
+  },
+  {
+   "numero": "002",
+   "dex": "evenement",
+   "slug": "field-tripfriends",
+   "en": "Field-trip friends",
+   "fr": "Kit d'excursion",
+   "image": "e2",
+   "requis": [
+    {
+     "objet": "Flower backpack",
+     "quantite": 1
+    },
+    {
+     "objet": "Hoppip water bottle",
+     "quantite": 1
+    },
+    {
+     "objet": "Lunch box",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Skiploom",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "003",
+   "dex": "evenement",
+   "slug": "dandelionlunchtime",
+   "en": "Dandelion lunchtime",
+   "fr": "Coin pique-nique fleuri",
+   "image": "e3",
+   "requis": [
+    {
+     "objet": "Dandy flowers",
+     "quantite": 1
+    },
+    {
+     "objet": "Flower cushion",
+     "quantite": 1
+    },
+    {
+     "objet": "Lunch box",
+     "quantite": 1
+    },
+    {
+     "objet": "Flowery table setting",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Jumpluff",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "004",
+   "dex": "evenement",
+   "slug": "treasure-huntingset",
+   "en": "Treasure-hunting set",
+   "fr": "Kit de chasse aux trésors",
+   "image": "e4",
+   "requis": [
+    {
+     "objet": "Adventure kit",
+     "quantite": 1
+    },
+    {
+     "objet": "Map and compass",
+     "quantite": 1
+    },
+    {
+     "objet": "Treasure",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Sableye",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "005",
+   "dex": "evenement",
+   "slug": "surroundedbystars",
+   "en": "Surrounded by stars",
+   "fr": "Chambre ciel étoilé",
+   "image": "e5",
+   "requis": [
+    {
+     "objet": "Star closet",
+     "quantite": 1
+    },
+    {
+     "objet": "Starry-sky bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Cloud table",
+     "quantite": 1
+    },
+    {
+     "objet": "Jirachi lamp",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Jirachi",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "006",
+   "dex": "evenement",
+   "slug": "excitingbeach",
+   "en": "Exciting beach",
+   "fr": "Plage ludique",
+   "image": "e6",
+   "requis": [
+    {
+     "objet": "Sand bed",
+     "quantite": 1
+    },
+    {
+     "objet": "Big swim ring",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Feebas",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "007",
+   "dex": "evenement",
+   "slug": "marineleisureactivities",
+   "en": "Marine leisure activities",
+   "fr": "Activités de plage",
+   "image": "e7",
+   "requis": [
+    {
+     "objet": "Swim ring",
+     "quantite": 1
+    },
+    {
+     "objet": "Cooler",
+     "quantite": 1
+    },
+    {
+     "objet": "Beach volleyball set",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Milotic",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "008",
+   "dex": "evenement",
+   "slug": "givemesomethinggoodtoeat",
+   "en": "Give me something good to eat",
+   "fr": "Coin friandises ou hantise",
+   "image": "e8",
+   "requis": [
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "objet": "Candy bucket",
+     "quantite": 1
+    },
+    {
+     "objet": "Ghost smoke projector",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Pumpkaboo",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "009",
+   "dex": "evenement",
+   "slug": "creepypumpkins",
+   "en": "Creepy pumpkins",
+   "fr": "Citrouilles inquiétantes",
+   "image": "e9",
+   "requis": [
+    {
+     "objet": "Trevenant streetlight",
+     "quantite": 1
+    },
+    {
+     "objet": "Pumpkin lantern",
+     "quantite": 1
+    },
+    {
+     "objet": "Pumpkin lantern tower",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Gourgeist",
+     "rarete": "commun"
+    }
+   ]
+  }
+ ]
+}

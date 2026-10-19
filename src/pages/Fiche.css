@@ -162,3 +162,77 @@
 /* Personnalisation non documentée : une ligne, l'explication au survol. */
 .perso-inconnue { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; }
 .perso-inconnue svg { font-size: 13px; }
+
+/* ---- habitats du jeu (fiche Pokémon) ---- */
+
+/* Une carte par recette : la vignette du jeu à gauche, ce qu'il faut poser à droite. Deux
+   colonnes dès que la largeur le permet — un Pokémon a rarement plus de trois recettes. */
+.habitats-jeu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: 10px;
+}
+.habitat-jeu {
+  display: flex;
+  gap: 14px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+/* `rootClassName` de l'Image d'antd. antd le pose AUSSI sur la racine de l'aperçu : sans
+   le `.ant-image` devant, le `width: 100%` de la vignette étirait l'aperçu à toute la
+   largeur de l'écran. */
+.ant-image.habitat-jeu-image {
+  width: 120px;
+  height: 84px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius);
+  cursor: zoom-in;
+}
+.ant-image.habitat-jeu-image img { width: 100%; height: 100%; object-fit: cover; }
+.ant-image.habitat-jeu-image .ant-image-mask { font-size: 20px; }
+.habitat-jeu-corps { min-width: 0; }
+.habitat-jeu-num {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.habitat-jeu h3 { margin: 2px 0 4px; font-size: 15px; font-weight: 700; line-height: 1.25; }
+.habitat-jeu-venue { margin: 0 0 8px; font-size: 12.5px; color: var(--ink-2); }
+.habitat-jeu-venue .etoiles { color: var(--second); letter-spacing: .05em; }
+
+.recette { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.recette li { display: flex; }
+.recette b { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--ink-3); }
+.recette-objet,
+.recette-generique {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px 2px 4px;
+  font: inherit;
+  font-size: 12.5px;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.recette-objet { cursor: pointer; }
+.recette-objet:hover { border-color: var(--accent-ink); }
+.recette-objet img { width: 28px; height: 28px; object-fit: contain; }
+/* Un requis générique ne mène nulle part : pointillés, et la place de l'image laissée vide. */
+.recette-generique { padding-left: 8px; border-style: dashed; background: transparent; min-height: 34px; }
+
+.habitat-jeu-autres { margin: 8px 0 0; font-size: 12px; color: var(--ink-3); }
+.habitat-jeu-autres a { color: var(--accent-ink); text-decoration: none; }
+.habitat-jeu-autres a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .habitat-jeu { flex-direction: column; }
+  .ant-image.habitat-jeu-image { width: 100%; height: auto; aspect-ratio: 400 / 278; }
+}

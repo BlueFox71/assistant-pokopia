@@ -1,12 +1,14 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { Modal, Select } from 'antd'
+import { Image, Modal, Select } from 'antd'
+import { ZoomInOutlined } from '@ant-design/icons'
 import { ICONE_HABITAT, ICONE_VILLE, IconeSpecialite } from '../components/Icones'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
-import { urlSpritePokemon } from '../data/images'
+import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
   FR_TYPE,
   comparerParNumero,
+  frObjet,
   frPokemon,
   habitatDe,
   logeable,
@@ -16,9 +18,19 @@ import {
   prefParSlug,
   prefsParPokemon,
   specialitesDe,
+  spriteObjet,
   spritePokemon,
   typesDe,
 } from '../data'
+import {
+  ETOILES_RARETE,
+  FR_METEO,
+  FR_MOMENT,
+  FR_RARETE,
+  habitatsJeuDe,
+  numeroHabitat,
+  vignetteHabitat,
+} from '../data/habitatsJeu'
 import { FR_SOURCE_VILLE, VILLES, habitatsDeVille } from '../data/villes'
 import { habitatDuPokemon, useHabitats } from '../utils/habitatsStorage'
 import {
@@ -36,6 +48,85 @@ import './Fiche.css'
 const APERCU = 24
 /** Voisins de goût proposés en bas de fiche, par groupe. */
 const VOISINS = 6
+/** Les autres Pokémon qu'une recette attire, nommés sous la carte avant un « … ». */
+const AUTRES_ATTIRES = 5
+
+/** « le soir, la nuit » : n'apparaît que si la recette le restreint. */
+const listeFr = (valeurs, table) => valeurs.map((v) => table[v] || v).join(', ')
+
+/**
+ * Une recette de l'Habitadex : sa vignette, ce qu'elle demande, et ce qu'elle réserve à
+ * ce Pokémon — rareté, moments, météo. Les objets du catalogue mènent à leur fiche ; les
+ * requis génériques (« Siège (au choix) ») n'en ont pas.
+ */
+function CarteHabitatJeu({ habitat, venue, nom }) {
+  const navigate = useNavigate()
+  const vignette = vignetteHabitat(habitat)
+  const etoiles = ETOILES_RARETE[venue.rarete] || 0
+  const autres = habitat.pokemon.map((p) => p.nom).filter((n) => n !== nom)
+  return (
+    <article className="habitat-jeu">
+      {/* Un clic agrandit la vignette : c'est en la regardant de près qu'on voit comment
+          les objets se disposent. L'aperçu d'antd zoome à la molette et se ferme sur Échap. */}
+      {vignette && (
+        <Image
+          rootClassName="habitat-jeu-image"
+          src={vignette}
+          alt={habitat.fr || habitat.en}
+          loading="lazy"
+          preview={{ mask: <ZoomInOutlined aria-label="Agrandir" /> }}
+        />
+      )}
+      <div className="habitat-jeu-corps">
+        <p className="habitat-jeu-num">{numeroHabitat(habitat)}</p>
+        <h3>{habitat.fr || habitat.en}</h3>
+        <p className="habitat-jeu-venue">
+          <span className="etoiles" aria-hidden="true">
+            {'★'.repeat(etoiles)}
+            {'☆'.repeat(3 - etoiles)}
+          </span>{' '}
+          {FR_RARETE[venue.rarete] || 'Rareté non publiée'}
+          {venue.moments && ` · ${listeFr(venue.moments, FR_MOMENT)} seulement`}
+          {venue.meteos && ` · par ${listeFr(venue.meteos, FR_METEO)}`}
+        </p>
+        <ul className="recette">
+          {habitat.requis.map((r, i) =>
+            r.objet ? (
+              <li key={i}>
+                <button
+                  type="button"
+                  className="recette-objet"
+                  onClick={() => navigate(`/objet/${encodeURIComponent(r.objet)}`)}
+                >
+                  {urlSpriteObjet(spriteObjet(r.objet)) && (
+                    <img src={urlSpriteObjet(spriteObjet(r.objet))} alt="" width="28" height="28" />
+                  )}
+                  <b>{r.quantite} ×</b> {frObjet(r.objet)}
+                </button>
+              </li>
+            ) : (
+              <li key={i} className="recette-generique">
+                <b>{r.quantite} ×</b> {r.fr || r.en}
+              </li>
+            ),
+          )}
+        </ul>
+        {autres.length > 0 && (
+          <p className="habitat-jeu-autres">
+            Attire aussi{' '}
+            {autres.slice(0, AUTRES_ATTIRES).map((n, i) => (
+              <span key={n}>
+                {i > 0 && ', '}
+                <Link to={`/pokedex/${encodeURIComponent(n)}`}>{frPokemon(n)}</Link>
+              </span>
+            ))}
+            {autres.length > AUTRES_ATTIRES && ` et ${autres.length - AUTRES_ATTIRES} autres`}
+          </p>
+        )}
+      </div>
+    </article>
+  )
+}
 
 /**
  * Fiche d'un Pokémon : ses préférences, un aperçu des objets qui lui plaisent, et les
@@ -58,6 +149,7 @@ export default function FichePokemonPage() {
   const types = connu ? typesDe(nom) : []
   const specialites = connu ? specialitesDe(nom) : []
   const objets = useMemo(() => (connu ? objetsPourGroupe([nom], slugs) : []), [connu, nom, slugs])
+  const habitatsJeu = connu ? habitatsJeuDe(nom) : []
 
   const { cle: maVille, source: sourceVille } = connu
     ? villeDe(attributions, nom)
@@ -270,6 +362,33 @@ export default function FichePokemonPage() {
           )}
         </div>
       </Modal>
+
+      {/* La première question qu'on pose à une fiche : comment l'avoir. L'habitat idéal
+          de l'en-tête est un climat ; ceci est la recette de l'Habitadex. */}
+      <section className="fiche-bloc">
+        <h2 className="etiquette">Pour le faire apparaître</h2>
+        {habitatsJeu.length ? (
+          <>
+            <p className="fiche-note">
+              {habitatsJeu.length > 1
+                ? `Chacune de ces ${habitatsJeu.length} recettes de l’Habitadex peut l’attirer`
+                : 'La recette de l’Habitadex qui l’attire'}{' '}
+              : posez-la, et {frPokemon(nom)} finit par passer — plus ou moins vite selon sa
+              rareté, et seulement aux moments et par le temps indiqués quand il y en a.
+            </p>
+            <div className="habitats-jeu">
+              {habitatsJeu.map(({ habitat, venue }) => (
+                <CarteHabitatJeu key={habitat.slug} habitat={habitat} venue={venue} nom={nom} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <p className="fiche-note">
+            Aucune recette de l’Habitadex ne l’attire : {frPokemon(nom)} s’obtient autrement,
+            par le récit ou un événement.
+          </p>
+        )}
+      </section>
 
       <section className="fiche-bloc">
         <h2 className="etiquette">Ses {slugs.length} préférences</h2>

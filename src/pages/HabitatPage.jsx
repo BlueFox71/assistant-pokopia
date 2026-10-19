@@ -586,7 +586,7 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
 /**
  * Choix de 1 à 4 Pokémon. La bascule « sans habitat » est active d'office dès qu'un
  * habitat existe : on compose en général pour les Pokémon qui n'ont pas encore de place,
- * et les 366 vignettes d'un coup noient les quelques-uns qui restent à loger.
+ * et les 368 vignettes d'un coup noient les quelques-uns qui restent à loger.
  */
 function SelecteurPokemon({
   habitats,
@@ -616,7 +616,7 @@ function SelecteurPokemon({
   // Pokédex ne bouge pas, on voit la vignette passer à l'état sélectionné là où elle est.
   const [triCompat, setTriCompat] = useState(false)
   // La suggestion est un panneau qu'on ouvre, pas un tri : elle désigne UN Pokémon, et
-  // « Suivant » descend le classement sans réorganiser les 366 vignettes sous les yeux.
+  // « Suivant » descend le classement sans réorganiser les 368 vignettes sous les yeux.
   const [suggestionOuverte, setSuggestionOuverte] = useState(false)
   const [rang, setRang] = useState(0)
 

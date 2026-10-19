@@ -8,7 +8,7 @@
 //
 //   principal   300 espèces (308 lignes avec les formes)  availablepokemon.shtml
 //   bassin       52 espèces, DLC Bubbly Basin             basinpokedex.shtml
-//   evenement     7 espèces, obtenues en événement        eventpokedex.shtml
+//   evenement     9 espèces, obtenues en événement        eventpokedex.shtml
 //
 // Le numéro seul est donc ambigu : Onix est #030 du principal, Mamanbo #030 du bassin.
 // C'est ce qui produisait 56 collisions dans nos données, qui les avaient fusionnés en une

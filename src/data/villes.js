@@ -12,7 +12,7 @@
  * a donc trois provenances, que l'affichage distingue toujours :
  *
  *   `liste`    src/data/villes.json — la seule donnée qui fasse autorité. Vide par défaut.
- *   `dex`      le Pokédex lui-même : les 52 entrées du bassin SONT Fonds Bulleux, et les 7
+ *   `dex`      le Pokédex lui-même : les 52 entrées du bassin SONT Fonds Bulleux, et les 9
  *              événementielles n'apparaissent que dans la ville du joueur.
  *   `habitat`  déduction maison, depuis l'habitat idéal — le repli des 307 du principal.
  *
@@ -122,7 +122,7 @@ function calculerDefaut(nom) {
   return { cle: HABITAT_VERS_VILLE[infos?.habitat] || 'terrassec', source: 'habitat' }
 }
 
-/** Calculé une fois à l'import : la page Villes croise les 366 entrées à chaque frappe. */
+/** Calculé une fois à l'import : la page Villes croise les 368 entrées à chaque frappe. */
 export const villeParDefautParNom = new Map(pokemon.map((p) => [p.en, calculerDefaut(p.en)]))
 
 /** La ville par défaut d'un Pokémon, sans les réattributions. */

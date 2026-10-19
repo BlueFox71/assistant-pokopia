@@ -1,5 +1,5 @@
 {
- "_lisezMoi": "Les objets que l'extraction d'origine n'a pas rapportés. objets.json se construit à partir des objets cités par preferences.json : un objet qui ne coche aucune préférence n'y entre jamais, quand bien même le jeu le propose. Ce fichier les rattrape pour que le catalogue soit complet et cherchable. Sauf Mud, aucun ne coche de préférence : ils ne seront recommandés dans aucun habitat, et c'est correct — sans préférence, ils ne contentent personne. Relevé via scripts/auditer-objets-serebii.mjs, qui signale tout nouvel écart. `frReleve` dit si le nom français vient d'un relevé en jeu (Pokékalos) ou s'il est de notre fait, faute de source.",
+ "_lisezMoi": "Les objets que l'extraction d'origine n'a pas rapportés. objets.json se construit à partir des objets cités par preferences.json : un objet qui ne coche aucune préférence n'y entre jamais, quand bien même le jeu le propose. Ce fichier les rattrape pour que le catalogue soit complet et cherchable. La plupart ne cochent aucune préférence : ils ne seront recommandés dans aucun habitat, et c'est correct — sans préférence, ils ne contentent personne. Font exception Mud et les objets d'événements arrivés après l'extraction (cf. evenements.json), qui ont été ajoutés aussi à preferences.json. Relevé via scripts/auditer-objets-serebii.mjs, qui signale tout nouvel écart. `frReleve` dit si le nom français vient d'un relevé en jeu (Pokékalos) ou s'il est de notre fait, faute de source.",
  "_sources": {
   "catalogue": "https://www.serebii.net/pokemonpokopia/furniture.shtml",
   "nomsFr": "https://www.pokekalos.fr/jeux/switch2/pokopia/objets.html"
@@ -24,6 +24,25 @@
   { "en": "Portal pod", "fr": "Dispositif de stockage", "categorie": null, "sprite": "portalpod", "frReleve": true },
   { "en": "Safe", "fr": "Coffre-fort", "categorie": null, "sprite": "safe", "frReleve": true },
   { "en": "Big treasure chest", "fr": "Coffre au trésor imposant", "categorie": null, "sprite": "bigtreasurechest", "frReleve": true },
-  { "en": "Worn treasure chest", "fr": "Coffre au trésor usé", "categorie": null, "sprite": "worntreasurechest", "frReleve": false }
+  { "en": "Worn treasure chest", "fr": "Coffre au trésor usé", "categorie": null, "sprite": "worntreasurechest", "frReleve": false },
+  { "en": "Pumpkin candy", "fr": "Sucette citrouille", "categorie": null, "sprite": "pumpkincandy", "frReleve": true },
+  { "en": "Cofagrigus locker", "fr": "Casier Tutankafer", "categorie": "Toy", "sprite": "cofagriguslocker", "frReleve": true },
+  { "en": "Huge table", "fr": "Table gigantesque", "categorie": null, "sprite": "hugetable", "frReleve": true },
+  { "en": "Candy bucket", "fr": "Seau de bonbons", "categorie": "Decoration", "sprite": "candybucket", "frReleve": true },
+  { "en": "Fun balloons", "fr": "Ballons festifs", "categorie": "Toy", "sprite": "funballoons", "frReleve": true },
+  { "en": "Ghost smoke projector", "fr": "Diffuseur de fumée spectrale", "categorie": "Toy", "sprite": "ghostsmokeprojector", "frReleve": true },
+  { "en": "Eerie statue", "fr": "Sculpture inquiétante", "categorie": "Toy", "sprite": "eeriestatue", "frReleve": true },
+  { "en": "Trevenant streetlight", "fr": "Lampadaire Desséliande", "categorie": "Toy", "sprite": "trevenantstreetlight", "frReleve": true },
+  { "en": "Pumpkin lantern", "fr": "Lanterne citrouille", "categorie": "Toy", "sprite": "pumpkinlantern", "frReleve": true },
+  { "en": "Pumpkin lantern tower", "fr": "Pile de lanternes citrouilles", "categorie": "Toy", "sprite": "pumpkinlanterntower", "frReleve": true },
+  { "en": "Wish note", "fr": "Papier à vœux", "categorie": null, "sprite": "wishnote", "frReleve": true },
+  { "en": "Shining wish note", "fr": "Papier à vœu scintillant", "categorie": null, "sprite": "shiningwishnote", "frReleve": true },
+  { "en": "Star mat", "fr": "Tapis étoile", "categorie": null, "sprite": "starmat", "frReleve": true },
+  { "en": "Red crystal cluster", "fr": "Cristal rouge", "categorie": null, "sprite": "redcrystalcluster", "frReleve": false },
+  { "en": "Tent kit", "fr": "Kit tente", "categorie": null, "sprite": "tentkit", "frReleve": true },
+  { "en": "Camping cooking pot", "fr": "Marmite de camping", "categorie": null, "sprite": "campingcookingpot", "frReleve": true },
+  { "en": "Dandy flower seeds", "fr": "Graines de fleurs paisibles", "categorie": null, "sprite": "dandyflowerseeds", "frReleve": true },
+  { "en": "Dandy flowers", "fr": "Fleurs paisibles", "categorie": null, "sprite": "dandyflowers", "frReleve": true },
+  { "en": "Picnic blanket", "fr": "Couverture de pique-nique", "categorie": null, "sprite": "picnicblanket", "frReleve": true }
  ]
 }

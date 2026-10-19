@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Input, Select } from 'antd'
 import { ICONE_VILLE } from '../components/Icones'
 import { VignettePokemon } from '../components/Vignette'
-import { comparerParNumero, frPokemon, pokemonParNom } from '../data'
+import { comparerParNumero, frPokemon, pokemon, pokemonParNom } from '../data'
 import { VILLES, cleVilleValide, habitatsDeVille, nbOfficielles } from '../data/villes'
 import { correspond, normaliser } from '../utils/recherche'
 import {
@@ -121,7 +121,7 @@ export default function VillesPage() {
       <div className="wrap page-tete villes-tete">
         <div>
           <p className="etiquette">Les villes de Pokopia</p>
-          <h1>{villeActive ? nomVille(noms, villeActive) : 'Six régions, 366 Pokémon'}</h1>
+          <h1>{villeActive ? nomVille(noms, villeActive) : `Six régions, ${pokemon.length} Pokémon`}</h1>
           <p className="liste-chapeau">
             Où vit chaque Pokémon de l’île. Le rattachement est réattribuable : cliquez sur
             « Réattribuer des Pokémon », sélectionnez-en un ou plusieurs, et envoyez-les

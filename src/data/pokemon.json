@@ -2089,6 +2089,19 @@
   "gout": "sweet"
  },
  {
+  "en": "Gourgeist",
+  "fr": "Banshitrouye",
+  "numero": "009",
+  "habitat": "Bright",
+  "sprite": "711",
+  "dex": "evenement",
+  "gout": "dry",
+  "specialites": [
+   "Animation",
+   "Rangement"
+  ]
+ },
+ {
   "en": "Graveler",
   "fr": "Gravalanch",
   "numero": "160",
@@ -4053,6 +4066,18 @@
   ],
   "dex": "principal",
   "gout": "dry"
+ },
+ {
+  "en": "Pumpkaboo",
+  "fr": "Pitrouille",
+  "numero": "008",
+  "habitat": "Bright",
+  "sprite": "710",
+  "dex": "evenement",
+  "gout": "sweet",
+  "specialites": [
+   "Animation"
+  ]
  },
  {
   "en": "Pupitar",

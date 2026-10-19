@@ -15,6 +15,9 @@ import {
   specialitesUtilisees,
   typesUtilises,
 } from '../data'
+
+/** Les Pokémon que Pokébip type : les autres n'entrent dans aucun filtre de type. */
+const nbTypes = pokemon.filter((p) => p.types?.length).length
 import { correspond, normaliser } from '../utils/recherche'
 import './PokedexPage.css'
 
@@ -28,7 +31,7 @@ const TRIS = [
 const HABITATS = ['Bright', 'Dark', 'Humid', 'Dry', 'Warm', 'Cool']
 
 /**
- * Les 366 Pokémon de Pokopia, filtrables par Pokédex (principal, bassin DLC, événement),
+ * Les 368 Pokémon de Pokopia, filtrables par Pokédex (principal, bassin DLC, événement),
  * habitat, type et spécialité.
  *
  * Le tri « Préférences » remonte les Pokémon les plus faciles à contenter — ceux qui
@@ -186,7 +189,7 @@ export default function PokedexPage() {
 
         {(type || specialite) && (
           <p className="note-source">
-            Les types viennent du Pokédex de Pokébip, qui couvre 288 des 366 Pokémon : les
+            Les types viennent du Pokédex de Pokébip, qui couvre {nbTypes} des {pokemon.length} Pokémon : les
             autres — surtout des Pokémon aquatiques — n’apparaissent dans aucun filtre de
             type. Les spécialités couvrent tout le monde, sauf Ho-Oh, Kyogre, Lugia et
             Magicarpe, qui n’en ont pas.

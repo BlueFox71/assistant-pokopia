@@ -103,7 +103,8 @@
    "Restaurant sign",
    "Gift shop sign",
    "Standing frame",
-   "Cooler"
+   "Cooler",
+   "Cofagrigus locker"
   ],
   "pokemon": [
    "Onix",
@@ -316,7 +317,8 @@
    "Sand bed",
    "Swim ring",
    "Big swim ring",
-   "Floating lantern"
+   "Floating lantern",
+   "Fun balloons"
   ],
   "pokemon": [
    "Ivysaur",
@@ -557,7 +559,9 @@
    "Toolbox",
    "Wall plant",
    "Party ball",
-   "Blender"
+   "Blender",
+   "Cofagrigus locker",
+   "Candy bucket"
   ],
   "pokemon": [
    "Noctowl",
@@ -600,7 +604,8 @@
    "Volcanion",
    "Shellder",
    "Cloyster",
-   "Toxapex"
+   "Toxapex",
+   "Pumpkaboo"
   ]
  },
  {
@@ -687,7 +692,9 @@
    "Cycle shop sign",
    "Café sign",
    "Gift shop sign",
-   "Cursola light"
+   "Cursola light",
+   "Candy bucket",
+   "Fun balloons"
   ],
   "pokemon": [
    "Bulbasaur",
@@ -1214,7 +1221,9 @@
    "Book stack",
    "Shop display case",
    "Ornate decorative shelf",
-   "Wall plant"
+   "Wall plant",
+   "Candy bucket",
+   "Fun balloons"
   ],
   "pokemon": [
    "Magneton",
@@ -1528,7 +1537,9 @@
    "Cranidos",
    "Amaura",
    "Eevee",
-   "Glaceon"
+   "Glaceon",
+   "Pumpkaboo",
+   "Gourgeist"
   ]
  },
  {
@@ -1775,7 +1786,8 @@
    "Supermarket sign",
    "Café sign",
    "Restaurant sign",
-   "Gift shop sign"
+   "Gift shop sign",
+   "Eerie statue"
   ],
   "pokemon": [
    "Venonat",
@@ -1827,7 +1839,10 @@
    "Lunch box",
    "Juice trio",
    "Teaware set",
-   "Wall plant"
+   "Wall plant",
+   "Candy bucket",
+   "Pumpkin lantern",
+   "Pumpkin lantern tower"
   ],
   "pokemon": [
    "Pidgeotto",
@@ -2124,7 +2139,9 @@
    "Wimpod",
    "Golisopod",
    "Dhelmise",
-   "Chewtle"
+   "Chewtle",
+   "Pumpkaboo",
+   "Gourgeist"
   ]
  },
  {
@@ -2337,7 +2354,8 @@
    "Party ball",
    "Gyarados fountain",
    "Primarina statue",
-   "Lampion"
+   "Lampion",
+   "Cofagrigus locker"
   ],
   "pokemon": [
    "Venusaur",
@@ -2570,7 +2588,8 @@
    "Hanging sign",
    "Slim information board",
    "Dangling streetlight",
-   "Chain lamp"
+   "Chain lamp",
+   "Cofagrigus locker"
   ],
   "pokemon": [
    "Magnemite",
@@ -2741,7 +2760,8 @@
    "Inkay",
    "Brionne",
    "Primarina",
-   "Manaphy"
+   "Manaphy",
+   "Gourgeist"
   ]
  },
  {
@@ -2857,7 +2877,8 @@
    "Sand toys",
    "Gyarados fountain",
    "Sand bed",
-   "Beach volleyball set"
+   "Beach volleyball set",
+   "Fun balloons"
   ],
   "pokemon": [
    "Pidgey",
@@ -2985,7 +3006,9 @@
    "Leafeon",
    "Hoppip",
    "Skiploom",
-   "Jumpluff"
+   "Jumpluff",
+   "Pumpkaboo",
+   "Gourgeist"
   ]
  },
  {
@@ -3199,7 +3222,11 @@
    "Po Town",
    "Stow-on-Side",
    "Cascarrafa",
-   "Hotel Z"
+   "Hotel Z",
+   "Fun balloons",
+   "Ghost smoke projector",
+   "Pumpkin lantern",
+   "Pumpkin lantern tower"
   ],
   "pokemon": [
    "Tyrogue",
@@ -3367,7 +3394,11 @@
    "Dangling streetlight",
    "Cursola light",
    "Decorative cloth",
-   "Prism scale"
+   "Prism scale",
+   "Cofagrigus locker",
+   "Trevenant streetlight",
+   "Pumpkin lantern",
+   "Pumpkin lantern tower"
   ],
   "pokemon": [
    "Magnemite",
@@ -3486,7 +3517,8 @@
    "Chimecho wind chime",
    "Dangling streetlight",
    "Pearl streetlight",
-   "Lampion"
+   "Lampion",
+   "Trevenant streetlight"
   ],
   "pokemon": [
    "Onix",
@@ -3741,7 +3773,15 @@
    "Chic streetlight",
    "Spell Tag",
    "Adrenaline Orb",
-   "Cursola light"
+   "Cursola light",
+   "Cofagrigus locker",
+   "Candy bucket",
+   "Fun balloons",
+   "Ghost smoke projector",
+   "Eerie statue",
+   "Trevenant streetlight",
+   "Pumpkin lantern",
+   "Pumpkin lantern tower"
   ],
   "pokemon": [
    "Drifloon",
@@ -3777,7 +3817,9 @@
    "Jellicent Male Form",
    "Jellicent Female Form",
    "Malamar",
-   "Dhelmise"
+   "Dhelmise",
+   "Pumpkaboo",
+   "Gourgeist"
   ]
  },
  {
@@ -3881,7 +3923,8 @@
    "Party ball",
    "Gyarados fountain",
    "Primarina statue",
-   "Stone sign"
+   "Stone sign",
+   "Eerie statue"
   ],
   "pokemon": [
    "Onix",
@@ -4070,7 +4113,8 @@
    "Party ball",
    "Gyarados fountain",
    "Bubble machine",
-   "Cursola light"
+   "Cursola light",
+   "Ghost smoke projector"
   ],
   "pokemon": [
    "Parasect",
@@ -4183,7 +4227,8 @@
    "Supermarket sign",
    "Café sign",
    "Restaurant sign",
-   "Gift shop sign"
+   "Gift shop sign",
+   "Eerie statue"
   ],
   "pokemon": [
    "Arcanine",
@@ -4313,7 +4358,11 @@
    "Gift shop sign",
    "Standing frame",
    "Bubble machine",
-   "Lampion"
+   "Lampion",
+   "Eerie statue",
+   "Trevenant streetlight",
+   "Pumpkin lantern",
+   "Pumpkin lantern tower"
   ],
   "pokemon": [
    "Pidgey",
@@ -4413,7 +4462,9 @@
    "Chimecho wind chime",
    "Hanging sign",
    "Chain lamp",
-   "Beach volleyball set"
+   "Beach volleyball set",
+   "Fun balloons",
+   "Eerie statue"
   ],
   "pokemon": [
    "Koffing",

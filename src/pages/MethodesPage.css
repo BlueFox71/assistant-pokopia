@@ -44,5 +44,7 @@
 .source-boutique { border-color: var(--accent-ink); color: var(--accent-ink); }
 .source-expansion { border-style: dashed; }
 
-.methode-fiche { font-size: 11px; color: var(--ink-3); text-decoration: none; border-bottom: 1px dotted var(--line-strong); }
+/* Poussé au pied de la vignette : d'une vignette à l'autre de la rangée, il tombe à la même
+   hauteur, quel que soit le nombre de sources au-dessus. */
+.methode-fiche { margin-top: auto; font-size: 11px; color: var(--ink-3); text-decoration: none; border-bottom: 1px dotted var(--line-strong); }
 .methode-fiche:hover { color: var(--accent-ink); border-bottom-color: var(--accent-ink); }

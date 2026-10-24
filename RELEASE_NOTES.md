@@ -1,14 +1,12 @@
-<!-- version: 1.5.0 -->
+<!-- version: 1.5.1 -->
 
 ### Nouveautés
-- **Page Méthodes** : les 882 méthodes de fabrication du jeu, à cocher au fur et à mesure que vous les apprenez. Elle dit combien il vous en reste à trouver et où les obtenir : la boutique du PC d'une ville à un niveau donné, son offre du jour, les remous scintillants, un palier du Pokédex ou l'histoire. Filtrez par famille ou par provenance, et sauvegardez vos coches avec Exporter / importer.
-- **La méthode sur la fiche objet** : chaque objet fabricable indique sa méthode, si vous la connaissez déjà ou où la trouver.
-- **Générateur d'habitat dans la fiche habitat** : un bouton ouvre le générateur sans quitter la fiche. Enregistrez les dimensions choisies : la taille au sol de la maison s'affiche ensuite sous le bouton, et le générateur se rouvre sur ces réglages.
-- **Page Inspirations** : une galerie pour vos images trouvées ailleurs. Collez une capture (Ctrl+V), déposez-la ou choisissez un fichier, donnez-lui un nom si vous voulez.
-- **Comment faire apparaître un Pokémon** : chaque fiche Pokémon montre les habitats de l'Habitadex qui l'attirent : la recette à poser (les objets sont cliquables), sa rareté, et les moments ou la météo quand il ne vient pas tout le temps. Cliquez sur l'image d'un habitat pour l'agrandir. Les 254 habitats du jeu sont couverts.
-- **Événement Pitrouille** : Pitrouille et Banshitrouye rejoignent le Pokédex avec leurs préférences, et les dix objets de l'événement (Casier Tutankafer, Lanterne citrouille, Seau de bonbons…) entrent au catalogue et dans les recommandations d'habitat.
-- **Filtre « Événement »** sur la page Objets : tous les objets venus d'un événement, ou ceux d'un seul (Pitrouille, Barpau, Jirachi, Ténéfix, Granivol…).
+- **Liste de courses** : un bouton panier, en bas à droite de toutes les pages, garde la liste de ce qu'il vous faut aller chercher ou fabriquer — pratique quand vous construisez dans une ville et que vos réserves sont dans une autre. Ajoutez un objet depuis le petit panier de sa vignette (page Objets, fiche habitat), depuis sa fiche, ou en le cherchant dans la fenêtre d'ajout, filtrable par rayon (meubles, blocs, portes, fenêtres, tapis, matières premières, peintures, fleurs, CD). Une ligne de texte libre fait aussi l'affaire. Précisez une quantité si vous voulez, cochez ce que vous avez pris, puis retirez les lignes cochées d'un coup. La liste est conservée d'une session à l'autre.
+- **Le catalogue au complet** : la page Objets montre désormais tout ce qui se fabrique, pas seulement les objets que les Pokémon aiment — blocs, murs, sols, portes, fenêtres, clôtures, toits, papiers peints, tapis, affiches, outils. Plus de 1 200 objets en tout. Un clic sur l'un d'eux ouvre sa méthode de fabrication.
+- Feuille, Cordes étranges et Perle brillante rejoignent le catalogue.
 
 ### Améliorations
-- **Un en-tête allégé** : Villes passe sous l'onglet Habitat ; Méthodes et Préférences sous l'onglet Objets. Survolez l'onglet pour ouvrir son menu.
-- Les objets des événements Jirachi, Ténéfix et Granivol qui manquaient au catalogue y sont ajoutés : Papier à vœux, Tapis étoile, Kit tente, Marmite de camping, Fleurs paisibles, Couverture de pique-nique…
+- **Fini le fourre-tout « Ressource »** : ses objets sont rangés comme dans le jeu, en CD, Trésor, Matière première, Peinture et Fleur, et ce qui sert à construire en Bloc, Construction, Papier peint, Tapis, Affiche, Extérieur, Utilitaire et Divers. Chaque type a son icône et sa couleur.
+- **Fiche habitat plus claire** : matières premières, peintures, CD et fossiles n'y sont plus proposés, puisqu'ils ne meublent pas un enclos. Un objet que le jeu compte comme Repos, Décoration ou Jouet reste recommandé, même rangé ailleurs (le blender, par exemple).
+- Le filtre « Mur » inclut les affiches, la douche et la fontaine Léviator.
+- Quelques objets changent de rayon : coffre-fort et dispositif de stockage en Commode, chariot en Table, assiettes, couverture et panier de pique-nique en Décoration.

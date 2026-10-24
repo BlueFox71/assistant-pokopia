@@ -10,37 +10,32 @@
 .methodes-groupe h2 { display: flex; align-items: baseline; gap: 6px; margin: 0 0 8px; }
 .methodes-groupe h2 b { font-family: var(--mono); font-size: 10.5px; font-weight: 400; color: var(--ink-3); }
 
-/* Une liste dense : on la parcourt pour cocher, pas pour admirer les vignettes. */
-.methodes-liste { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-.methode {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1.4fr);
-  gap: 4px 14px;
-  align-items: center;
-  padding: 6px 4px;
-  border-bottom: 1px solid var(--line);
+/* Plus large que la grille des objets : la vignette porte aussi où obtenir la méthode,
+   et « Boutique – Flotîles-Millefeux niv. 4 » doit tenir sur deux lignes au plus. */
+.methodes-grille { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+
+.methode-tuile { cursor: default; gap: 6px; padding: 0 0 7px; justify-content: flex-start; }
+.methode-tuile:hover { border-color: var(--line-strong); }
+
+/* Le bouton prend le haut de la vignette : image et nom, la surface qu'on clique. */
+.methode-bouton {
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+  width: 100%; padding: 8px 6px 0; margin: 0;
+  background: none; border: 0; border-radius: var(--radius);
+  font: inherit; color: inherit; cursor: pointer;
 }
-.methode:hover { background: var(--surface); }
+.methode-bouton:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+.methode-tuile:has(.methode-bouton:hover) { border-color: var(--accent-ink); }
+.methode-bouton img, .methode-sans-image { width: 56px; height: 56px; object-fit: contain; margin-bottom: 3px; }
 
-.methode-case { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
-.methode-case input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); cursor: pointer; }
-.methode-case img, .methode-sans-image { width: 32px; height: 32px; object-fit: contain; }
+/* À trouver : la vignette reste nette ; connue, l'image s'efface derrière la coche. */
+.methode-tuile.sel img { opacity: .5; }
 
-.methode-nom { display: flex; flex-direction: column; min-width: 0; }
-.methode-nom a, .methode-nom span { color: var(--ink); font-size: 14px; }
-.methode-nom a { text-decoration: none; border-bottom: 1px dotted var(--line-strong); align-self: flex-start; }
-.methode-nom a:hover { color: var(--accent-ink); border-bottom-color: var(--accent-ink); }
-.methode-nom small { font-size: 11.5px; color: var(--ink-3); }
-
-/* Connue : la ligne s'efface sans disparaître, pour qu'on voie encore ce qu'on vient de cocher. */
-.methode.connue .methode-nom a, .methode.connue .methode-nom span { color: var(--ink-3); }
-.methode.connue img { opacity: .55; }
-
-.methode-sources { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.methode-sources { list-style: none; margin: 0; padding: 0 6px; display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; }
 .source {
-  font-size: 11.5px;
+  font-size: 10.5px;
   line-height: 1.3;
-  padding: 2px 7px;
+  padding: 1px 6px;
   border-radius: var(--radius);
   border: 1px solid var(--line-strong);
   color: var(--ink-2);
@@ -49,7 +44,5 @@
 .source-boutique { border-color: var(--accent-ink); color: var(--accent-ink); }
 .source-expansion { border-style: dashed; }
 
-@media (max-width: 720px) {
-  .methode { grid-template-columns: auto minmax(0, 1fr); }
-  .methode-sources { grid-column: 2; }
-}
+.methode-fiche { font-size: 11px; color: var(--ink-3); text-decoration: none; border-bottom: 1px dotted var(--line-strong); }
+.methode-fiche:hover { color: var(--accent-ink); border-bottom-color: var(--accent-ink); }

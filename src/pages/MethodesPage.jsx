@@ -249,11 +249,11 @@ export default function MethodesPage() {
                   {g.libelle} <b>{g.methodes.length}</b>
                 </h2>
               )}
-              <ul className="methodes-liste">
+              <div className="chips methodes-grille">
                 {g.methodes.map((m) => (
-                  <Ligne key={m.en} m={m} connue={connues.has(m.en)} ville={ville} cocher={cocher} />
+                  <Tuile key={m.en} m={m} connue={connues.has(m.en)} ville={ville} cocher={cocher} />
                 ))}
-              </ul>
+              </div>
             </section>
           ))
         ) : (
@@ -270,28 +270,30 @@ export default function MethodesPage() {
   )
 }
 
-/** Une méthode : sa case, sa vignette, son nom (vers la fiche de l'objet s'il en a une), ses sources. */
-function Ligne({ m, connue, ville, cocher }) {
+/**
+ * Une méthode, en vignette : un clic la coche ou la décoche — c'est le geste qu'on répète,
+ * il prend toute la surface. Connue, elle porte le liseré et la coche de la sélection
+ * d'habitat. La fiche de l'objet, quand il en a une, est un lien à part, sous les sources.
+ */
+function Tuile({ m, connue, ville, cocher }) {
   const url = urlSpriteMethode(m)
   return (
-    <li className={`methode${connue ? ' connue' : ''}`}>
-      <label className="methode-case">
-        <input
-          type="checkbox"
-          checked={connue}
-          onChange={(e) => cocher(m.en, e.target.checked)}
-          aria-label={`${m.fr} : méthode connue`}
-        />
-        {url ? <img src={url} alt="" width={32} height={32} loading="lazy" /> : <span className="methode-sans-image" />}
-      </label>
-      <div className="methode-nom">
-        {m.objet ? (
-          <Link to={`/objet/${encodeURIComponent(m.objet)}`}>{m.fr}</Link>
-        ) : (
-          <span>{m.fr}</span>
+    <div className={`chip methode-tuile${connue ? ' sel' : ''}`}>
+      <button
+        type="button"
+        className="methode-bouton"
+        aria-pressed={connue}
+        title={connue ? 'Connue — cliquer pour la décocher' : 'À trouver — cliquer pour la cocher'}
+        onClick={() => cocher(m.en, !connue)}
+      >
+        {url ? <img src={url} alt="" width={56} height={56} loading="lazy" /> : <span className="methode-sans-image" />}
+        <span className="chip-name">{m.fr}</span>
+        {m.fr !== m.en && (
+          <span className="chip-en" lang="en">
+            {m.en}
+          </span>
         )}
-        {m.fr !== m.en && <small lang="en">{m.en}</small>}
-      </div>
+      </button>
       <ul className="methode-sources">
         {m.sources.map((s, i) => (
           <li key={i} className={`source source-${s.type}`} title={s.texte}>
@@ -299,6 +301,11 @@ function Ligne({ m, connue, ville, cocher }) {
           </li>
         ))}
       </ul>
-    </li>
+      {m.objet && (
+        <Link className="methode-fiche" to={`/objet/${encodeURIComponent(m.objet)}`}>
+          fiche
+        </Link>
+      )}
+    </div>
   )
 }

@@ -1,0 +1,80 @@
+/* La vue Inspirations : une grille d'images collées, à faire défiler. */
+
+.inspirations { padding-block: 20px 60px; min-height: 70vh; }
+
+/* Pendant un glisser-déposer, toute la page est la cible : on le montre. */
+.inspirations.survol { outline: 2px dashed var(--accent-ink); outline-offset: -8px; }
+
+.inspirations kbd {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 1px 5px;
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.inspirations-vide {
+  margin-top: 20px;
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--ink-2);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.inspirations-vide p { margin: 0; }
+
+.inspirations-grille {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.inspiration {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.inspiration-image {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: var(--surface-2);
+  cursor: zoom-in;
+  aspect-ratio: 4 / 3;
+}
+.inspiration-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.inspiration-image:hover img { filter: brightness(1.05); }
+.inspiration-image:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+
+.inspiration-pied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-top: 1px solid var(--line);
+}
+.inspiration-nom { min-width: 0; flex: 1; font-size: 13px; }
+.inspiration-nom.sans-nom { color: var(--ink-3); font-style: italic; }
+
+/* Le nom, sous l'image agrandie. */
+.inspirations-apercu { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.inspirations-apercu-nom {
+  margin: 0;
+  padding: 4px 12px;
+  color: #fff;
+  font-size: 15px;
+  background: rgba(0, 0, 0, .55);
+  border-radius: var(--radius);
+}

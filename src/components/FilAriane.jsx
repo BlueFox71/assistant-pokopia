@@ -15,6 +15,7 @@ const VUES = {
   methodes: 'Méthodes',
   pokedex: 'Pokédex',
   construction: 'Construction',
+  inspirations: 'Inspirations',
 }
 
 /**

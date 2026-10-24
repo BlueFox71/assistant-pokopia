@@ -2,26 +2,21 @@ import { useDeferredValue, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Input, Segmented, Select } from 'antd'
 import { urlSpriteMethode } from '../data/images'
+import { filtrerMethodes } from '../data/filtreMethodes'
 import { FAMILLES, FR_SOURCE, cleFiltre, libelleSource, methodes, nomsMethodes } from '../data/methodes'
 import { VILLES } from '../data/villes'
 import { basculer, exporterMethodes, importerMethodes, useConnues } from '../utils/methodesStorage'
-import { correspond, normaliser } from '../utils/recherche'
+import { normaliser } from '../utils/recherche'
 import { nomVille, useNomsVilles } from '../utils/villesStorage'
 import './MethodesPage.css'
+
+const VIDE = new Set()
 
 const VUES = [
   { value: 'a-trouver', label: 'À trouver' },
   { value: 'connues', label: 'Connues' },
   { value: 'toutes', label: 'Toutes' },
 ]
-
-/** Une méthode répond-elle au filtre de source ? « boutique » prend toutes les boutiques. */
-const aLaSource = (m, source) =>
-  m.sources.some((s) => (source === 'boutique' ? s.type === 'boutique' : cleFiltre(s) === source))
-
-/** Le plus petit niveau de boutique de la zone filtrée : c'est l'ordre d'achat. */
-const niveauDans = (m, source) =>
-  Math.min(...m.sources.filter((s) => cleFiltre(s) === source && s.niveau).map((s) => s.niveau), Infinity)
 
 /**
  * Les méthodes de fabrication, à cocher.
@@ -81,19 +76,22 @@ export default function MethodesPage() {
     return options
   }, [noms])
 
-  const liste = useMemo(() => {
-    let l = methodes
-    if (vue === 'a-trouver') l = l.filter((m) => !connues.has(m.en))
-    else if (vue === 'connues') l = l.filter((m) => connues.has(m.en))
-    if (famille) l = l.filter((m) => m.famille === famille)
-    if (source) l = l.filter((m) => aLaSource(m, source))
-    if (terme) l = l.filter((m) => correspond(terme, m.en, m.fr))
-    // Filtrée sur la boutique d'une ville, la liste suit l'ordre des niveaux : ce qu'on peut
-    // acheter maintenant d'abord, ce qui attend un palier ensuite.
-    if (source?.startsWith('boutique-'))
-      l = [...l].sort((a, b) => niveauDans(a, source) - niveauDans(b, source))
-    return l
-  }, [vue, famille, source, terme, connues])
+  // Ce qu'on coche en « À trouver » reste affiché tant que la vue ne change pas : la liste
+  // ne remonte pas sous le pointeur, et une coche de travers se défait sur place.
+  const cleVue = `${vue}|${famille}|${source}|${terme}`
+  const [cochees, setCochees] = useState({ cle: cleVue, noms: new Set() })
+  const gardees = cochees.cle === cleVue ? cochees.noms : VIDE
+
+  const cocher = (en, oui) => {
+    basculer(en, oui)
+    if (oui && vue === 'a-trouver')
+      setCochees((c) => ({ cle: cleVue, noms: new Set([...(c.cle === cleVue ? c.noms : []), en]) }))
+  }
+
+  const liste = useMemo(
+    () => filtrerMethodes(methodes, { vue, connues, gardees, famille, source, terme }),
+    [vue, famille, source, terme, connues, gardees],
+  )
 
   /** Les groupes par famille, dans l'ordre de Serebii ; triée par niveau, la liste reste d'un tenant. */
   const groupes = useMemo(() => {
@@ -253,7 +251,7 @@ export default function MethodesPage() {
               )}
               <ul className="methodes-liste">
                 {g.methodes.map((m) => (
-                  <Ligne key={m.en} m={m} connue={connues.has(m.en)} ville={ville} />
+                  <Ligne key={m.en} m={m} connue={connues.has(m.en)} ville={ville} cocher={cocher} />
                 ))}
               </ul>
             </section>
@@ -273,7 +271,7 @@ export default function MethodesPage() {
 }
 
 /** Une méthode : sa case, sa vignette, son nom (vers la fiche de l'objet s'il en a une), ses sources. */
-function Ligne({ m, connue, ville }) {
+function Ligne({ m, connue, ville, cocher }) {
   const url = urlSpriteMethode(m)
   return (
     <li className={`methode${connue ? ' connue' : ''}`}>
@@ -281,7 +279,7 @@ function Ligne({ m, connue, ville }) {
         <input
           type="checkbox"
           checked={connue}
-          onChange={(e) => basculer(m.en, e.target.checked)}
+          onChange={(e) => cocher(m.en, e.target.checked)}
           aria-label={`${m.fr} : méthode connue`}
         />
         {url ? <img src={url} alt="" width={32} height={32} loading="lazy" /> : <span className="methode-sans-image" />}

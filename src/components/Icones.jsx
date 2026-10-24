@@ -68,6 +68,15 @@ export const IconeListe = (p) => (
   </Svg>
 )
 
+/** Parchemin coché : les méthodes de fabrication connues. */
+export const IconeParchemin = (p) => (
+  <Svg {...p}>
+    <path d="M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6" />
+    <path d="M6 3a2 2 0 0 0-2 2v2h4V5a2 2 0 0 0-2-2zM6 21a2 2 0 0 1-2-2v-1h4" />
+    <path d="m10 12 2 2 4-4" />
+  </Svg>
+)
+
 /** Caisse : le catalogue des objets. */
 export const IconeCaisse = (p) => (
   <Svg {...p}>

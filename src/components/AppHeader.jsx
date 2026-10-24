@@ -1,7 +1,7 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { MoonOutlined, SunOutlined } from '@ant-design/icons'
 import { Dropdown, Tooltip } from 'antd'
-import { IconeBriques, IconeCaisse, IconeListe, IconeMaison, IconePokeball, IconeTerrasse } from './Icones'
+import { IconeBriques, IconeCaisse, IconeListe, IconeMaison, IconeParchemin, IconePokeball, IconeTerrasse } from './Icones'
 import { useTheme } from '../context/ThemeContext'
 import { SIMULATIONS, urlSimulation } from '../pages/simulations'
 import './AppHeader.css'
@@ -11,6 +11,7 @@ const ONGLETS = [
   { to: '/villes', libelle: 'Villes', Icone: IconeTerrasse },
   { to: '/preferences', libelle: 'Préférences', Icone: IconeListe },
   { to: '/objets', libelle: 'Objets', Icone: IconeCaisse },
+  { to: '/methodes', libelle: 'Méthodes', Icone: IconeParchemin },
   { to: '/pokedex', libelle: 'Pokédex', Icone: IconePokeball },
   // Construction déroule ses simulations au survol : on va droit à celle qu'on veut.
   { to: '/construction', libelle: 'Construction', Icone: IconeBriques, sousMenu: SIMULATIONS },

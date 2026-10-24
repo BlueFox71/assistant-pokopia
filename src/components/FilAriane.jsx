@@ -12,6 +12,7 @@ const VUES = {
   villes: 'Villes',
   preferences: 'Préférences',
   objets: 'Objets',
+  methodes: 'Méthodes',
   pokedex: 'Pokédex',
   construction: 'Construction',
 }

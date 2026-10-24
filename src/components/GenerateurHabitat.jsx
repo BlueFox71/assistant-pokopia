@@ -9,23 +9,18 @@ import {
   INTERIEUR_MIN,
   MEUBLES_REQUIS,
   PORTES_MAX,
+  TAILLE_MAX,
+  HAUTEUR_MAX,
   evaluerHabitat,
   planHabitat,
+  reglagesDeUrl,
 } from '../utils/habitatConstruction'
 import { Chiffre, Dimension, Grille } from './OutilsConstruction'
-
-const TAILLE_MAX = 10
-const HAUTEUR_MAX = 10
 
 const VERDICTS = {
   ok: { titre: 'Habitat acceptable', classe: 'ok' },
   petit: { titre: 'Trop petit', classe: 'refus' },
   grand: { titre: 'Trop grand', classe: 'refus' },
-}
-
-const entier = (v, min, max, defaut) => {
-  const n = Number.parseInt(v, 10)
-  return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : defaut
 }
 
 const pluriel = (n, mot) => `${n.toLocaleString('fr-FR')} ${mot}${n > 1 ? 's' : ''}`
@@ -41,10 +36,7 @@ const pluriel = (n, mot) => `${n.toLocaleString('fr-FR')} ${mot}${n > 1 ? 's' : 
 export default function GenerateurHabitat() {
   const [params, setParams] = useSearchParams()
 
-  const largeur = entier(params.get('l'), 1, TAILLE_MAX, 7)
-  const longueur = entier(params.get('p'), 1, TAILLE_MAX, 8)
-  const hauteurMur = entier(params.get('hm'), 1, HAUTEUR_MAX, HAUTEUR_CONSEILLEE)
-  const portes = entier(params.get('po'), 1, PORTES_MAX, 1)
+  const { largeur, longueur, hauteurMur, portes } = reglagesDeUrl(params)
   const deduirePortes = params.get('dp') === '1'
 
   const regler = (valeurs) =>

@@ -1,7 +1,8 @@
 import { Fragment, useCallback, useDeferredValue, useMemo, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { Checkbox, Input, Popconfirm, Segmented, Select, Slider, Tooltip } from 'antd'
+import { Checkbox, Input, Modal, Popconfirm, Segmented, Select, Slider, Tooltip } from 'antd'
 import Aide from '../components/Aide'
+import GenerateurHabitat from '../components/GenerateurHabitat'
 import CarteHabitat from '../components/CarteHabitat'
 import {
   ICONE_CATEGORIE,
@@ -61,7 +62,10 @@ import {
   supprimerHabitat,
   useHabitats,
 } from '../utils/habitatsStorage'
+import { EPAISSEUR_MUR, reglagesDeUrl, reglagesVersUrl } from '../utils/habitatConstruction'
 import { correspond, normaliser } from '../utils/recherche'
+// Les styles du générateur : la fiche l'ouvre dans un dialogue, hors de la vue Construction.
+import './ConstructionPage.css'
 import './HabitatPage.css'
 
 /** Ordre d'affichage des catégories de confort dans le décompte. */
@@ -1032,6 +1036,29 @@ function VueHabitat({
   onPokemon,
   onObjet,
 }) {
+  const [generateurOuvert, setGenerateurOuvert] = useState(false)
+  const [params, setParams] = useSearchParams()
+  const dimensions = habitat?.dimensions
+
+  // Le générateur s'ouvre sur les dimensions enregistrées : on reprend la maison où on l'a
+  // laissée, au lieu des réglages de la dernière visite.
+  const ouvrirGenerateur = () => {
+    if (dimensions) {
+      setParams(
+        (p) => {
+          const suivant = new URLSearchParams(p)
+          Object.entries(reglagesVersUrl(dimensions)).forEach(([cle, v]) => suivant.set(cle, String(v)))
+          return suivant
+        },
+        { replace: true },
+      )
+    }
+    setGenerateurOuvert(true)
+  }
+  const enregistrerDimensions = (valeur) => {
+    modifierHabitat(habitat.id, { dimensions: valeur })
+    setGenerateurOuvert(false)
+  }
   const saisieDifferee = useDeferredValue(saisie)
   const terme = normaliser(saisieDifferee.trim())
 
@@ -1208,6 +1235,21 @@ function VueHabitat({
         </div>
 
         <div className="entete-actions">
+          {/* Les dimensions enregistrées sous le bouton qui les règle : un clic les rouvre. */}
+          <div className="bloc-generateur">
+            <button type="button" className="ghost-btn" onClick={ouvrirGenerateur}>
+              Générateur d’habitat
+            </button>
+            {dimensions && (
+              <button type="button" className="dimensions-habitat" onClick={ouvrirGenerateur}>
+                {/* L'emprise au sol, murs compris : ce qu'on trace sur le terrain. */}
+                <strong>
+                  {dimensions.largeur + 2 * EPAISSEUR_MUR} × {dimensions.longueur + 2 * EPAISSEUR_MUR} blocs
+                </strong>{' '}
+                au sol
+              </button>
+            )}
+          </div>
           {groupe.length < MAX_COLOCATAIRES ? (
             <button type="button" className="ghost-btn" onClick={onAjouter}>
               + Ajouter un colocataire
@@ -1254,6 +1296,39 @@ function VueHabitat({
           </div>
         )}
       </div>
+
+      {/* Le générateur de Construction, sans quitter la fiche : on dimensionne la maison
+          en gardant ses colocataires sous les yeux. Ses réglages vivent dans l'URL, à côté
+          de ceux de la fiche ; les dimensions retenues s'enregistrent dans l'habitat. */}
+      <Modal
+        title="Générateur d’habitat"
+        open={generateurOuvert}
+        onCancel={() => setGenerateurOuvert(false)}
+        footer={
+          habitat ? (
+            <div className="pied-generateur">
+              {dimensions && (
+                <button type="button" className="mini-btn" onClick={() => enregistrerDimensions(null)}>
+                  Oublier les dimensions
+                </button>
+              )}
+              <button
+                type="button"
+                className="ghost-btn primaire"
+                onClick={() => enregistrerDimensions(reglagesDeUrl(params))}
+              >
+                Enregistrer ces dimensions
+              </button>
+            </div>
+          ) : (
+            <p className="pied-generateur note-max">Enregistrez l’habitat pour garder ses dimensions.</p>
+          )
+        }
+        width={1000}
+        className="dialogue-generateur"
+      >
+        <GenerateurHabitat />
+      </Modal>
 
       {lot.objets.length > 0 && (
         <LotMinimal

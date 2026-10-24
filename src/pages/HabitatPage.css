@@ -467,3 +467,30 @@
 /* Les ambiances mêlées gardent leur fond d'avertissement : c'est un problème à régler. */
 .bandeau-ambiance.melee { padding: 3px 8px; background: var(--hit-bg); color: var(--hit-ink); border-radius: var(--radius); }
 .bandeau-ambiance .marque-habitat svg { font-size: 12px; }
+
+/* Le générateur d'habitat ouvert depuis la fiche (cf. ConstructionPage.css). */
+.dialogue-generateur .note-source { font-size: 12.5px; color: var(--ink-3); margin: 18px 0 0; max-width: 88ch; }
+.pied-generateur { display: flex; gap: 14px; justify-content: flex-end; align-items: center; margin: 0; }
+
+/* Les dimensions enregistrées au générateur, sous son bouton : un clic le rouvre. Elles
+   sortent du flux, pour que le bouton reste aligné sur ses voisins. */
+.bloc-generateur { position: relative; }
+.dimensions-habitat {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 4px;
+  white-space: nowrap;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink-2);
+  text-align: center;
+  cursor: pointer;
+}
+.dimensions-habitat strong { color: var(--accent-ink); }
+.dimensions-habitat:hover { color: var(--accent-ink); }
+.dimensions-habitat:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }

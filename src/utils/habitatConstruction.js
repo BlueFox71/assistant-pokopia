@@ -25,6 +25,43 @@ export const HAUTEUR_PORTE = 2
 /** Les murs font un bloc d'épaisseur : l'extérieur a deux blocs de plus sur chaque axe. */
 export const EPAISSEUR_MUR = 1
 
+/** Les bornes des réglages du générateur, au-delà des tailles acceptées pour qu'on voie le refus. */
+export const TAILLE_MAX = 10
+export const HAUTEUR_MAX = 10
+
+const entier = (v, min, max, defaut) => {
+  const n = Number.parseInt(v, 10)
+  return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : defaut
+}
+
+/**
+ * Les réglages d'une maison, bornés : ce que lit le générateur dans l'URL, et ce qu'un
+ * habitat enregistré garde de ses dimensions. Une valeur illisible prend celle par défaut.
+ */
+export const reglagesHabitat = ({ largeur, longueur, hauteurMur, portes } = {}) => ({
+  largeur: entier(largeur, 1, TAILLE_MAX, 7),
+  longueur: entier(longueur, 1, TAILLE_MAX, 8),
+  hauteurMur: entier(hauteurMur, 1, HAUTEUR_MAX, HAUTEUR_CONSEILLEE),
+  portes: entier(portes, 1, PORTES_MAX, 1),
+})
+
+/** Les réglages du générateur, lus dans l'URL (`?l=7&p=8&hm=3&po=1`). */
+export const reglagesDeUrl = (params) =>
+  reglagesHabitat({
+    largeur: params.get('l'),
+    longueur: params.get('p'),
+    hauteurMur: params.get('hm'),
+    portes: params.get('po'),
+  })
+
+/** Les mêmes réglages, à poser dans l'URL : l'inverse de `reglagesDeUrl`. */
+export const reglagesVersUrl = ({ largeur, longueur, hauteurMur, portes }) => ({
+  l: largeur,
+  p: longueur,
+  hm: hauteurMur,
+  po: portes,
+})
+
 /**
  * Évalue une maison à partir de son intérieur.
  *

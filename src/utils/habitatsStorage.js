@@ -1,12 +1,14 @@
 import { useSyncExternalStore } from 'react'
 import { MAX_COLOCATAIRES, comparerParNumero, frPokemon, pokemonParNom } from '../data'
+import { reglagesHabitat } from './habitatConstruction'
 
 /**
  * Les habitats enregistrés, dans le localStorage du navigateur.
  *
- * Un habitat = de un à quatre Pokémon. Rien d'autre n'est stocké : le nom, les objets, les
- * préférences et les avertissements se recalculent à l'affichage, donc un habitat
- * enregistré aujourd'hui reste juste si les listes de Serebii bougent demain.
+ * Un habitat = de un à quatre Pokémon, et, si on les a relevées au générateur, les
+ * dimensions de sa maison. Rien d'autre n'est stocké : le nom, les objets, les préférences
+ * et les avertissements se recalculent à l'affichage, donc un habitat enregistré
+ * aujourd'hui reste juste si les listes de Serebii bougent demain.
  *
  * Le nom EST la liste de ses habitants — « Onix + Chrysapile » — et se recalcule à chaque
  * lecture comme à chaque écriture. Il a été renommable un temps, et un nom saisi à la main
@@ -39,12 +41,15 @@ function assainir(brut) {
     ? [...new Set(brut.pokemon.filter((n) => pokemonParNom.has(n)))].slice(0, MAX_COLOCATAIRES)
     : []
   if (!pokemon.length) return null
-  return {
+  const habitat = {
     id: typeof brut.id === 'string' && brut.id ? brut.id : nouvelId(),
     nom: nomDeGroupe(pokemon),
     pokemon,
     creeLe: typeof brut.creeLe === 'number' ? brut.creeLe : Date.now(),
   }
+  // Facultatives : `dimensions: null` les retire.
+  if (brut.dimensions && typeof brut.dimensions === 'object') habitat.dimensions = reglagesHabitat(brut.dimensions)
+  return habitat
 }
 
 function lireDisque() {

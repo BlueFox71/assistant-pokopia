@@ -64,9 +64,10 @@ function une(texte) {
     const source = { type: 'boutique' }
     const zone = zoneDe(texte)
     if (zone) source.zone = zone
-    const niveau = texte.match(/Lv\.?\s*(\d+)/i)
+    const niveau = texte.match(/(?:Lv\.?|Level)\s*(\d+)/i)
     if (niveau) source.niveau = Number(niveau[1])
-    const nomme = texte.match(/([A-Z][\w ]*?(?:Recipe|Construction) Set)/)
+    // « Mountain House Recipe Set », « Wooden Construction Set », « Wasteland House Set ».
+    const nomme = texte.match(/([A-Z][\w ]*? Set)\b/)
     if (nomme) source.lot = nomme[1].trim()
     else if (/bundle/.test(bas)) source.lot = true
     source.texte = texte
@@ -86,4 +87,29 @@ export function sources(ligne) {
   return propre
     .split(/ or /i)
     .map((morceau) => une(morceau.trim()))
+}
+
+/**
+ * Les clés des coches du joueur sont les noms anglais de methodes.json. Serebii corrige
+ * parfois une casse (« Box sofa » -> « Box Sofa ») : la méthode garde alors son ANCIEN nom,
+ * sans quoi la coche ne la retrouverait plus. Ce qui a changé est rendu pour être imprimé.
+ */
+export function garderNoms(methodes, avant) {
+  const ancien = new Map(avant.map((m) => [cleNom(m.en), m.en]))
+  const renommees = []
+  const nouvelles = []
+  const vues = new Set()
+  const suivant = methodes.map((m) => {
+    const cle = cleNom(m.en)
+    vues.add(cle)
+    const prec = ancien.get(cle)
+    if (!prec) {
+      nouvelles.push(m.en)
+      return m
+    }
+    if (prec !== m.en) renommees.push([prec, m.en])
+    return { ...m, en: prec }
+  })
+  const disparues = avant.filter((m) => !vues.has(cleNom(m.en))).map((m) => m.en)
+  return { methodes: suivant, renommees, nouvelles, disparues }
 }

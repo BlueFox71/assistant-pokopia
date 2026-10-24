@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { cleNom, sources } from './methodes.mjs'
+import { cleNom, garderNoms, sources } from './methodes.mjs'
 
 test('boutique de zone avec niveau', () =>
   assert.deepEqual(sources('Shop - Bleak Beach Lv. 2'), [
@@ -71,3 +71,19 @@ test('demandes et quêtes → histoire', () => {
 })
 
 test('hasard de l’offre du jour', () => assert.equal(sources('Random chance in Daily shop')[0].type, 'offre-du-jour'))
+
+test('niveau écrit « Level », lot nommé en « Set »', () => {
+  const s = sources('Shop after reaching Bubbly Basin Level 5')[0]
+  assert.equal(s.zone, 'fonds-bulleux')
+  assert.equal(s.niveau, 5)
+  assert.equal(sources('Shop (as bundle) - Wasteland House Set')[0].lot, 'Wasteland House Set')
+  assert.equal(sources('Shop (as bundle) Wasteland House Set')[0].lot, 'Wasteland House Set')
+})
+
+test('garderNoms : une correction de casse chez Serebii garde l’ancienne clé', () => {
+  const r = garderNoms([{ en: 'Box Sofa' }, { en: 'Neuve' }], [{ en: 'Box sofa' }, { en: 'Partie' }])
+  assert.deepEqual(r.methodes.map((m) => m.en), ['Box sofa', 'Neuve'])
+  assert.deepEqual(r.renommees, [['Box sofa', 'Box Sofa']])
+  assert.deepEqual(r.nouvelles, ['Neuve'])
+  assert.deepEqual(r.disparues, ['Partie'])
+})

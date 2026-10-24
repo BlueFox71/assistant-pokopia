@@ -3571,6 +3571,7 @@
     {
      "type": "boutique",
      "zone": "fonds-bulleux",
+     "niveau": 5,
      "texte": "Shop after reaching Bubbly Basin Level 5"
     },
     {
@@ -11027,7 +11028,7 @@
    "sources": [
     {
      "type": "boutique",
-     "lot": true,
+     "lot": "Wasteland House Set",
      "texte": "Shop (as bundle) Wasteland House Set"
     }
    ],
@@ -14988,7 +14989,7 @@
    "sources": [
     {
      "type": "boutique",
-     "lot": true,
+     "lot": "Wasteland House Set",
      "texte": "Shop (as bundle) - Wasteland House Set"
     }
    ],
@@ -16561,7 +16562,7 @@
    "sources": [
     {
      "type": "boutique",
-     "lot": true,
+     "lot": "Wasteland House Set",
      "texte": "Shop (as bundle) Wasteland House Set"
     }
    ],

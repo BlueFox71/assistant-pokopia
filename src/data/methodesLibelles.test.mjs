@@ -37,3 +37,9 @@ test('clé de filtre : la boutique se range par zone', () => {
   assert.equal(cleFiltre({ type: 'remous' }), 'remous')
   assert.equal(cleFiltre({ type: 'autre', zone: 'collinangle' }), 'autre')
 })
+
+test('lot nommé : la zone et le niveau restent', () =>
+  assert.equal(
+    lib({ type: 'boutique', zone: 'grisemer', niveau: 3, lot: 'Wooden Construction Set', texte: '' }),
+    'Boutique – Grisemer niv. 3, lot « Wooden Construction Set »',
+  ))

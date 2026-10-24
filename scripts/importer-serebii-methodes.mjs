@@ -26,7 +26,7 @@
 // celles qui n'existent encore sous aucune des deux formes.
 import fs from 'node:fs'
 import path from 'node:path'
-import { cleNom, decoderEntites, sources } from './lib/methodes.mjs'
+import { cleNom, decoderEntites, garderNoms, sources } from './lib/methodes.mjs'
 
 const SEREBII = 'https://www.serebii.net/pokemonpokopia/crafting.shtml'
 const IMAGES = 'https://www.serebii.net/pokemonpokopia/items/'
@@ -149,13 +149,24 @@ console.log(`\nsans nom français (${sansFr.length}) : ${sansFr.map((m) => m.en)
 console.log(`\nsources non reconnues, rangées dans « autre » (${inconnues.size}) :`)
 for (const [t, n] of [...inconnues].sort((a, b) => b[1] - a[1])) console.log(`  ${String(n).padStart(3)}  ${t}`)
 
+// Une boutique sans ville ou sans niveau ne se range sous aucun filtre de ville, ou s'y
+// range en dernier : à relire, comme les « autre ».
+const boutiquesFloues = new Set(
+  methodes.flatMap((m) => m.sources.filter((s) => s.type === 'boutique' && (!s.zone || !s.niveau)).map((s) => s.texte)),
+)
+console.log(`\nboutiques sans ville ou sans niveau (${boutiquesFloues.size}) : ${[...boutiquesFloues].join(' | ') || '—'}`)
+
+// Les noms anglais sont les clés des coches du joueur : une correction de casse chez
+// Serebii garde l'ancien nom (cf. garderNoms).
 const avant = fs.existsSync(FICHIER) ? JSON.parse(fs.readFileSync(FICHIER, 'utf8')).methodes : []
-const nomsAvant = new Set(avant.map((m) => m.en))
-const nouvelles = methodes.filter((m) => !nomsAvant.has(m.en)).map((m) => m.en)
-const disparues = avant.filter((m) => !parNom.has(cleNom(m.en))).map((m) => m.en)
+const suivi = garderNoms(methodes, avant)
+methodes.splice(0, methodes.length, ...suivi.methodes)
 if (avant.length) {
-  console.log(`\nnouvelles (${nouvelles.length}) : ${nouvelles.join(', ') || '—'}`)
-  console.log(`disparues (${disparues.length}) : ${disparues.join(', ') || '—'}`)
+  console.log(`\nnouvelles (${suivi.nouvelles.length}) : ${suivi.nouvelles.join(', ') || '—'}`)
+  console.log(`disparues (${suivi.disparues.length}) : ${suivi.disparues.join(', ') || '—'}`)
+  console.log(
+    `orthographe changée chez Serebii, ancien nom gardé (${suivi.renommees.length}) : ${suivi.renommees.map(([a, b]) => `${a} → ${b}`).join(', ') || '—'}`,
+  )
 }
 
 if (!ecrire) {

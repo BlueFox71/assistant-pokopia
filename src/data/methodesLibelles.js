@@ -32,11 +32,11 @@ const FR_AUTRE = {
 export function libelleSource(s, nomVille) {
   switch (s.type) {
     case 'boutique': {
-      if (typeof s.lot === 'string') return `Boutique – lot « ${s.lot} »`
       let l = 'Boutique'
       if (s.zone) l += ` – ${nomVille(s.zone)}`
       if (s.niveau) l += ` niv. ${s.niveau}`
-      if (s.lot) l += ', en lot'
+      if (typeof s.lot === 'string') l += `${s.zone || s.niveau ? ',' : ' –'} lot « ${s.lot} »`
+      else if (s.lot) l += ', en lot'
       return l
     }
     case 'pokedex':

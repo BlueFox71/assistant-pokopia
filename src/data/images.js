@@ -60,6 +60,17 @@ export const urlSpritePokemon = (cle) => (cle && pokemonParCle.get(cle)) || null
 /** URL de la vignette d'un aliment, ou null si la clé est inconnue. */
 export const urlSpriteAliment = (cle) => (cle && alimentsParCle.get(cle)) || null
 
+/* Les plats et leurs ingrédients, d'après Pokékalos (cf. importer-pokekalos-recettes.mjs). */
+const modulesRecettes = import.meta.glob('./sprites/recettes/*.webp', {
+  query: '?url',
+  import: 'default',
+  eager: true,
+})
+const recettesParCle = indexer(modulesRecettes)
+
+/** URL de l'image d'un plat ou d'un ingrédient, d'après son numéro Pokékalos, ou null. */
+export const urlSpriteRecette = (id) => (id && recettesParCle.get(id)) || null
+
 /** URL de la vignette d'une méthode : celle de son objet s'il est au catalogue, sinon la sienne. */
 export const urlSpriteMethode = (m) =>
   (m && (m.objet ? objetsParCle.get(m.sprite) : methodesParCle.get(m.sprite))) || null

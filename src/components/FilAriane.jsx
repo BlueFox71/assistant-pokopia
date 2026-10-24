@@ -13,6 +13,7 @@ const VUES = {
   preferences: 'Préférences',
   objets: 'Objets',
   methodes: 'Méthodes',
+  recettes: 'Recettes',
   pokedex: 'Pokédex',
   construction: 'Construction',
   inspirations: 'Inspirations',

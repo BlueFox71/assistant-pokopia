@@ -17,7 +17,8 @@ const ONGLETS = [
       { cle: '/villes', libelle: 'Villes', to: '/villes' },
     ],
   },
-  // Objets, Méthodes et Préférences partagent un onglet : le catalogue d'abord, le reste au survol.
+  // Objets, Méthodes, Recettes et Préférences partagent un onglet : le catalogue d'abord, le
+  // reste au survol.
   {
     to: '/objets',
     libelle: 'Objets',
@@ -25,6 +26,7 @@ const ONGLETS = [
     sousMenu: [
       { cle: '/objets', libelle: 'Objets', to: '/objets' },
       { cle: '/methodes', libelle: 'Méthodes de fabrication', to: '/methodes' },
+      { cle: '/recettes', libelle: 'Recettes', to: '/recettes' },
       { cle: '/preferences', libelle: 'Préférences', to: '/preferences' },
     ],
   },

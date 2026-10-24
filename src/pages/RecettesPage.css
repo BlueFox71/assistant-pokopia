@@ -1,0 +1,179 @@
+/* ---- page Recettes (cf. RecettesPage.jsx) ---- */
+
+.recettes { padding-block: 20px 60px; }
+.recettes .note-source { font-size: 12.5px; color: var(--ink-3); margin: 18px 0 0; }
+.recettes .note-source a { color: var(--accent-ink); }
+
+/* ---- les onglets : un par ustensile, nommé d'après son effet ---- */
+.recettes-onglets {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--line-strong);
+}
+.recettes-onglet {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 14px 7px; margin-bottom: -1px;
+  font: inherit; font-size: 13.5px; color: var(--ink-2); text-align: left;
+  background: none; border: 1px solid transparent; border-bottom: 0;
+  border-radius: var(--radius) var(--radius) 0 0; cursor: pointer;
+}
+.recettes-onglet img { width: 26px; height: 26px; object-fit: contain; }
+.recettes-onglet span { display: flex; flex-direction: column; line-height: 1.2; }
+.recettes-onglet small {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.recettes-onglet:hover { color: var(--ink); }
+.recettes-onglet:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+.recettes-onglet[aria-selected='true'] {
+  color: var(--ink); font-weight: 600;
+  background: var(--surface); border-color: var(--line-strong);
+  box-shadow: inset 0 3px 0 var(--teinte);
+}
+.recettes-onglet[aria-selected='true'] small { color: var(--teinte); font-weight: 400; }
+
+/* ---- le bandeau : la capacité en grand, le matériel à côté ---- */
+.recettes-panneau {
+  background: var(--surface);
+  border: 1px solid var(--line-strong); border-top: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 0 0 14px;
+}
+.recettes-bandeau {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px;
+  padding: 18px 20px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--teinte) 16%, transparent), transparent 75%);
+  border-bottom: 1px solid var(--line);
+}
+.recettes-capacite {
+  flex: 1 1 320px;
+  font-family: var(--display); font-size: clamp(24px, 3vw, 30px); font-weight: 700; line-height: 1.1;
+  color: var(--teinte);
+}
+.recettes-capacite small {
+  display: block; margin-bottom: 4px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.recettes-capacite p {
+  margin: 6px 0 0; max-width: 56ch;
+  font-family: var(--body); font-size: 13.5px; font-weight: 400; line-height: 1.45; color: var(--ink-2);
+}
+.recettes-materiel { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.recettes-materiel > div {
+  min-width: 110px; max-width: 220px;
+  padding: 8px 12px; border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.recettes-materiel dt {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3);
+}
+.recettes-materiel dd {
+  display: flex; align-items: center; gap: 5px; margin: 3px 0 0;
+  font-size: 13.5px; font-weight: 600; color: var(--ink);
+}
+.recettes-materiel dd img { width: 22px; height: 22px; object-fit: contain; }
+.recettes-remarque dd { font-size: 12.5px; font-weight: 400; line-height: 1.35; }
+
+/* ---- les recettes, en formule ---- */
+.recettes-liste { list-style: none; margin: 0; padding: 14px 14px 0; display: flex; flex-direction: column; gap: 6px; }
+.recette {
+  /* Une formule tient au plus en cinq pastilles : sa colonne s'arrête là, pour que la
+     flèche reste près des ingrédients et que les plats s'alignent d'une ligne à l'autre. */
+  display: grid; grid-template-columns: minmax(0, 440px) auto minmax(0, 1fr) minmax(190px, 240px);
+  align-items: center; gap: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--paper);
+}
+.recette-formule { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; }
+.recette-plus { align-self: center; margin-top: -18px; color: var(--ink-3); font-size: 16px; }
+.recette-fleche { color: var(--teinte); font-size: 24px; line-height: 1; }
+
+.ingredient {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  width: 72px; text-align: center; color: inherit; text-decoration: none;
+}
+.ingredient-pastille {
+  position: relative; display: grid; place-items: center;
+  width: 50px; height: 50px; border-radius: 50%;
+  background: var(--surface-2); color: var(--ink-3);
+  font-size: 18px; font-weight: 700;
+}
+.ingredient-pastille img { width: 40px; height: 40px; object-fit: contain; }
+.ingredient-pastille b {
+  position: absolute; right: -6px; bottom: -3px;
+  padding: 0 5px; border-radius: 8px;
+  background: var(--accent); color: var(--on-accent);
+  font: 700 10.5px/16px var(--body);
+}
+.ingredient-nom { font-size: 11.5px; line-height: 1.2; color: var(--ink-2); }
+.ingredient-nom small { display: block; font-size: 10px; color: var(--ink-3); }
+.ingredient.cle .ingredient-pastille { box-shadow: 0 0 0 2px var(--teinte); }
+.ingredient.cle .ingredient-nom { color: var(--ink); font-weight: 600; }
+.ingredient.libre .ingredient-pastille { background: none; border: 1px dashed var(--line-strong); }
+.ingredient.commis .ingredient-pastille { background: var(--accent-soft); font-size: 30px; }
+.ingredient.commis .ingredient-nom { color: var(--accent-ink); font-weight: 600; }
+.ingredient.commis:hover .ingredient-pastille { box-shadow: 0 0 0 2px var(--accent-ink); }
+.ingredient.commis:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; border-radius: var(--radius); }
+
+.recette-plat { display: flex; align-items: center; gap: 10px; }
+.recette-plat img { width: 64px; height: 64px; object-fit: contain; flex: 0 0 auto; }
+.recette-plat h3 { margin: 0 0 4px; font-size: 14.5px; line-height: 1.25; }
+.recette-gout {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 1px 8px; border-radius: 10px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase;
+  background: var(--surface-2); color: var(--ink-3);
+}
+.recette-gout svg { font-size: 12px; }
+.recette-gout.gout-sweet { background: var(--g-sweet-fond); }
+.recette-gout.gout-spicy { background: var(--g-spicy-fond); }
+.recette-gout.gout-sour { background: var(--g-sour-fond); }
+.recette-gout.gout-bitter { background: var(--g-bitter-fond); }
+.recette-gout.gout-dry { background: var(--g-dry-fond); }
+
+/* L'offrande à Ronflex Moussu, en bout de ligne : ce que le plat rapporte une fois donné. */
+.recette-offrande {
+  display: flex; flex-direction: column; gap: 3px;
+  padding-left: 14px; border-left: 1px solid var(--line);
+  font-size: 12.5px; line-height: 1.3; color: var(--ink-2);
+}
+.recette-offrande small {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3);
+}
+.offrande-puissance { display: flex; align-items: center; gap: 3px; font-size: 10.5px; color: var(--ink-3); }
+.offrande-puissance i { width: 7px; height: 7px; border-radius: 50%; border: 1px solid var(--line-strong); }
+.offrande-puissance i.pleine { background: var(--teinte); border-color: var(--teinte); }
+.offrande-puissance i:last-of-type { margin-right: 4px; }
+
+/* Plus étroit, l'offrande passe sous la recette ; sur un téléphone, le plat passe en tête. */
+@media (max-width: 1000px) {
+  .recette { grid-template-columns: minmax(0, 440px) auto minmax(0, 1fr); }
+  .recette-offrande { grid-column: 1 / -1; padding: 8px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 760px) {
+  .recette { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .recette-plat { order: -1; }
+  .recette-fleche { display: none; }
+}
+
+/* ---- la bulle du commis : qui a la spécialité ---- */
+/* antd borne ses bulles à 250 px : une grille de cinquante Pokémon y tiendrait sur deux colonnes. */
+.ant-tooltip.bulle-commis { max-width: 460px; }
+.commis-bulle { width: min(420px, 80vw); padding: 2px; }
+.commis-titre { display: flex; align-items: center; gap: 6px; margin: 0 0 8px; font-size: 13px; }
+.commis-titre svg { font-size: 20px; }
+.commis-titre span { margin-left: auto; font-size: 11px; opacity: .75; }
+.commis-grille {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(62px, 1fr)); gap: 2px;
+  max-height: 300px; overflow-y: auto;
+}
+.commis-grille li {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 3px 2px; border-radius: 3px;
+  font-size: 10px; line-height: 1.15; text-align: center;
+}
+.commis-grille img { width: 36px; height: 36px; object-fit: contain; }
+.commis-grille li.chez-vous { background: rgba(189, 173, 234, .22); font-weight: 600; }
+.commis-pied { margin: 8px 0 0; font-size: 11px; opacity: .7; }

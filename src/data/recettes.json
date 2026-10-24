@@ -1,0 +1,828 @@
+{
+ "_lisezMoi": "Les plats du jeu, d'après la liste des plats de Pokékalos. `image` est le numéro de l'image Pokékalos (src/data/sprites/recettes/<image>.webp) ; un ingrédient `libre` se choisit à volonté, un ingrédient `famille` accepte n'importe quel plat de cette famille. `commis` est la spécialité du Pokémon qu'il faut en cuisine. Produit par scripts/importer-pokekalos-recettes.mjs — ne pas éditer à la main.",
+ "_source": "https://www.pokekalos.fr/jeux/switch2/pokopia/articles-liste-des-plats-et-leurs-effets-6436.html",
+ "familles": [
+  {
+   "cle": "salades",
+   "nom": "Salades",
+   "ustensile": "Planche à découper",
+   "capacite": "Feuillage",
+   "effet": "Fait pousser de la mousse sur les rochers et des lentilles d’eau sur l’eau. Bouton maintenu : cinq herbes en croix, ou du lierre sur le bloc d’en face.",
+   "remarque": null,
+   "plats": [
+    {
+     "nom": "Salade Simple",
+     "gout": null,
+     "image": "171",
+     "ingredients": [
+      {
+       "nom": "Feuille",
+       "quantite": 1,
+       "image": "1"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Salade de Baie Mepo",
+     "gout": "sweet",
+     "image": "950",
+     "ingredients": [
+      {
+       "nom": "Feuille",
+       "quantite": 1,
+       "image": "1"
+      },
+      {
+       "nom": "Baie Mepo",
+       "quantite": 1,
+       "image": "15"
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Salade d'Algues",
+     "gout": "bitter",
+     "image": "951",
+     "ingredients": [
+      {
+       "nom": "Feuille",
+       "quantite": 1,
+       "image": "1"
+      },
+      {
+       "nom": "Algues",
+       "quantite": 1,
+       "image": "196"
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Salade Julienne",
+     "gout": "sour",
+     "image": "952",
+     "ingredients": [
+      {
+       "nom": "Feuille",
+       "quantite": 1,
+       "image": "1"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": "Coupe de bois"
+    },
+    {
+     "nom": "Salade de Baies Écrasées",
+     "gout": "dry",
+     "image": "953",
+     "ingredients": [
+      {
+       "nom": "Feuille",
+       "quantite": 1,
+       "image": "1"
+      },
+      {
+       "nom": "Baie Maron",
+       "quantite": 1,
+       "image": "32"
+      }
+     ],
+     "commis": "Broyage"
+    },
+    {
+     "nom": "Salade de Croûtons",
+     "gout": "spicy",
+     "image": "954",
+     "ingredients": [
+      {
+       "nom": "Feuille",
+       "quantite": 1,
+       "image": "1"
+      },
+      {
+       "nom": "Pain",
+       "quantite": 1,
+       "image": "179",
+       "famille": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Salade aux grains juteux",
+     "gout": "bitter",
+     "image": "1488",
+     "ingredients": [
+      {
+       "nom": "Feuille",
+       "quantite": 1,
+       "image": "1"
+      },
+      {
+       "nom": "Raisin de mer",
+       "quantite": 1,
+       "image": "1487"
+      }
+     ],
+     "commis": null
+    }
+   ],
+   "ingredientCle": "Feuille"
+  },
+  {
+   "cle": "soupes",
+   "nom": "Soupes",
+   "ustensile": "Marmite",
+   "capacite": "Pistolet à O",
+   "effet": "Bouton maintenu : arrose une zone plus large.",
+   "remarque": "Sur une cuisinière ou un feu de camp. Une marmite se trouve près du musée.",
+   "plats": [
+    {
+     "nom": "Soupe Simple",
+     "gout": null,
+     "image": "955",
+     "ingredients": [
+      {
+       "nom": "Eau Fraîche",
+       "quantite": 1,
+       "image": "200"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 2,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Soupe d'Algues",
+     "gout": "bitter",
+     "image": "956",
+     "ingredients": [
+      {
+       "nom": "Eau Fraîche",
+       "quantite": 1,
+       "image": "200"
+      },
+      {
+       "nom": "Algues",
+       "quantite": 1,
+       "image": "196"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Soupe aux Champignon",
+     "gout": "dry",
+     "image": "957",
+     "ingredients": [
+      {
+       "nom": "Eau Fraîche",
+       "quantite": 1,
+       "image": "200"
+      },
+      {
+       "nom": "Champignon des grottes",
+       "quantite": 1,
+       "image": "137"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Soupe Pimentée",
+     "gout": "spicy",
+     "image": "958",
+     "ingredients": [
+      {
+       "nom": "Eau Fraîche",
+       "quantite": 1,
+       "image": "200"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 2,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": "Électrification"
+    },
+    {
+     "nom": "Soupe Tonique",
+     "gout": "spicy",
+     "image": "959",
+     "ingredients": [
+      {
+       "nom": "Eau Fraîche",
+       "quantite": 1,
+       "image": "200"
+      },
+      {
+       "nom": "Feuille",
+       "quantite": 1,
+       "image": "1"
+      },
+      {
+       "nom": "Haricot",
+       "quantite": 1,
+       "image": "71"
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Soupe Goûteuse",
+     "gout": "sour",
+     "image": "960",
+     "ingredients": [
+      {
+       "nom": "Eau Fraîche",
+       "quantite": 1,
+       "image": "200"
+      },
+      {
+       "nom": "Steak haché",
+       "quantite": 1,
+       "image": "966",
+       "famille": true
+      },
+      {
+       "nom": "Baie Willia",
+       "quantite": 1,
+       "image": "947"
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Soupe aux grains juteux",
+     "gout": "bitter",
+     "image": "1489",
+     "ingredients": [
+      {
+       "nom": "Eau Fraîche",
+       "quantite": 1,
+       "image": "200"
+      },
+      {
+       "nom": "Raisin de mer",
+       "quantite": 1,
+       "image": "1487"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    }
+   ],
+   "ingredientCle": "Eau Fraîche"
+  },
+  {
+   "cle": "pains",
+   "nom": "Pains",
+   "ustensile": "Four à pain",
+   "capacite": "Coupe",
+   "effet": "Coupe les objets métalliques. Bouton maintenu : Coupe-Vent, une ligne de coupe droit devant.",
+   "remarque": "Allumé par un Pokémon de type Feu.",
+   "plats": [
+    {
+     "nom": "Pain Simple",
+     "gout": null,
+     "image": "179",
+     "ingredients": [
+      {
+       "nom": "Blé",
+       "quantite": 1,
+       "image": "74"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 2,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Pain aux Baies Mepo",
+     "gout": "sour",
+     "image": "961",
+     "ingredients": [
+      {
+       "nom": "Blé",
+       "quantite": 1,
+       "image": "74"
+      },
+      {
+       "nom": "Baie Mepo",
+       "quantite": 1,
+       "image": "15"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Pain aux Carottes",
+     "gout": "spicy",
+     "image": "962",
+     "ingredients": [
+      {
+       "nom": "Blé",
+       "quantite": 1,
+       "image": "74"
+      },
+      {
+       "nom": "Carotte",
+       "quantite": 1,
+       "image": "68"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Pain Recomposé",
+     "gout": "bitter",
+     "image": "963",
+     "ingredients": [
+      {
+       "nom": "Blé",
+       "quantite": 1,
+       "image": "74"
+      },
+      {
+       "nom": "Pain",
+       "quantite": 1,
+       "image": "179",
+       "famille": true
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": "Recyclage"
+    },
+    {
+     "nom": "Pain Moelleux",
+     "gout": "sweet",
+     "image": "964",
+     "ingredients": [
+      {
+       "nom": "Blé",
+       "quantite": 1,
+       "image": "74"
+      },
+      {
+       "nom": "Baie Pêcha",
+       "quantite": 1,
+       "image": "201"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": "Arrosage"
+    },
+    {
+     "nom": "Bol de Pain Pimenté avec Soupe",
+     "gout": "spicy",
+     "image": "965",
+     "ingredients": [
+      {
+       "nom": "Blé",
+       "quantite": 1,
+       "image": "74"
+      },
+      {
+       "nom": "Soupe",
+       "quantite": 1,
+       "image": "955",
+       "famille": true
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": "Combustion"
+    },
+    {
+     "nom": "Pain à la pastèque",
+     "gout": "sweet",
+     "image": "1490",
+     "ingredients": [
+      {
+       "nom": "Blé",
+       "quantite": 1,
+       "image": "74"
+      },
+      {
+       "nom": "Tranche de pastèque",
+       "quantite": 1,
+       "image": "1486"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    }
+   ],
+   "ingredientCle": "Blé"
+  },
+  {
+   "cle": "steaks",
+   "nom": "Steaks hachés",
+   "ustensile": "Poêle",
+   "capacite": "Éclate-Roc",
+   "effet": "Casse les blocs durs, et les blocs simples en moins de coups. Les steaks garni, aux pommes de terre et très épicé en retirent bien davantage.",
+   "remarque": "Sur une cuisinière ou un feu de camp.",
+   "plats": [
+    {
+     "nom": "Steak Haché Simple",
+     "gout": null,
+     "image": "966",
+     "ingredients": [
+      {
+       "nom": "Haricot",
+       "quantite": 1,
+       "image": "71"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 3,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Steak Haché aux Champignons",
+     "gout": "dry",
+     "image": "967",
+     "ingredients": [
+      {
+       "nom": "Haricot",
+       "quantite": 1,
+       "image": "71"
+      },
+      {
+       "nom": "Champignon des grottes",
+       "quantite": 1,
+       "image": "137"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 2,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Steak Haché aux Tomates",
+     "gout": "sour",
+     "image": "968",
+     "ingredients": [
+      {
+       "nom": "Haricot",
+       "quantite": 1,
+       "image": "71"
+      },
+      {
+       "nom": "Tomate",
+       "quantite": 1,
+       "image": "190"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 2,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Steak Haché aux Pommes de Terre",
+     "gout": "sweet",
+     "image": "969",
+     "ingredients": [
+      {
+       "nom": "Haricot",
+       "quantite": 1,
+       "image": "71"
+      },
+      {
+       "nom": "Pomme de terre",
+       "quantite": 1,
+       "image": "949"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 2,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Steak Haché Amer",
+     "gout": "bitter",
+     "image": "970",
+     "ingredients": [
+      {
+       "nom": "Haricot",
+       "quantite": 1,
+       "image": "71"
+      },
+      {
+       "nom": "Baie Fraive",
+       "quantite": 1,
+       "image": "946"
+      },
+      {
+       "nom": "Baie Prine",
+       "quantite": 1,
+       "image": "948"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Steak Haché Garni",
+     "gout": null,
+     "image": "971",
+     "ingredients": [
+      {
+       "nom": "Haricot",
+       "quantite": 1,
+       "image": "71"
+      },
+      {
+       "nom": "Salade",
+       "quantite": 1,
+       "image": "171",
+       "famille": true
+      },
+      {
+       "nom": "Pomme de terre",
+       "quantite": 1,
+       "image": "949"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Steak haché très épicé",
+     "gout": "spicy",
+     "image": "1491",
+     "ingredients": [
+      {
+       "nom": "Haricot",
+       "quantite": 1,
+       "image": "71"
+      },
+      {
+       "nom": "Raisin de mer",
+       "quantite": 1,
+       "image": "1487"
+      },
+      {
+       "nom": "Sauce Piquante",
+       "quantite": 1,
+       "image": "979"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": "Explosion"
+    }
+   ],
+   "ingredientCle": "Haricot"
+  },
+  {
+   "cle": "smoothies",
+   "nom": "Smoothies",
+   "ustensile": "Blender",
+   "capacite": "Surf",
+   "effet": "Nage plus vite et plus facilement sous l’eau, et casse une large zone de blocs d’un coup.",
+   "remarque": "Arrive avec le DLC Fonds Bulleux.",
+   "plats": [
+    {
+     "nom": "Smoothie à la pastèque",
+     "gout": null,
+     "image": "1492",
+     "ingredients": [
+      {
+       "nom": "Tranche de pastèque",
+       "quantite": 1,
+       "image": "1486"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 2,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Smoothie au raisin de mer",
+     "gout": "dry",
+     "image": "1493",
+     "ingredients": [
+      {
+       "nom": "Tranche de pastèque",
+       "quantite": 1,
+       "image": "1486"
+      },
+      {
+       "nom": "Raisin de mer",
+       "quantite": 1,
+       "image": "1487"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Smoothie à la Baie Mepo",
+     "gout": "sweet",
+     "image": "1494",
+     "ingredients": [
+      {
+       "nom": "Tranche de pastèque",
+       "quantite": 1,
+       "image": "1486"
+      },
+      {
+       "nom": "Baie Mepo",
+       "quantite": 1,
+       "image": "15"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Smoothie très piquant",
+     "gout": "spicy",
+     "image": "1495",
+     "ingredients": [
+      {
+       "nom": "Tranche de pastèque",
+       "quantite": 1,
+       "image": "1486"
+      },
+      {
+       "nom": "Carotte",
+       "quantite": 1,
+       "image": "68"
+      },
+      {
+       "nom": "Au choix",
+       "quantite": 1,
+       "image": null,
+       "libre": true
+      }
+     ],
+     "commis": "Combustion"
+    },
+    {
+     "nom": "Smoothie rafraîchissant au soda",
+     "gout": "sour",
+     "image": "1496",
+     "ingredients": [
+      {
+       "nom": "Tranche de pastèque",
+       "quantite": 1,
+       "image": "1486"
+      },
+      {
+       "nom": "Soda Cool",
+       "quantite": 1,
+       "image": "976"
+      },
+      {
+       "nom": "Baie Willia",
+       "quantite": 1,
+       "image": "947"
+      }
+     ],
+     "commis": null
+    },
+    {
+     "nom": "Smoothie à la glace au café",
+     "gout": "bitter",
+     "image": "1497",
+     "ingredients": [
+      {
+       "nom": "Tranche de pastèque",
+       "quantite": 1,
+       "image": "1486"
+      },
+      {
+       "nom": "Pain Simple",
+       "quantite": 1,
+       "image": "179"
+      },
+      {
+       "nom": "Café au Lait Meumeu",
+       "quantite": 1,
+       "image": "977"
+      }
+     ],
+     "commis": null
+    }
+   ],
+   "ingredientCle": "Tranche de pastèque"
+  }
+ ]
+}

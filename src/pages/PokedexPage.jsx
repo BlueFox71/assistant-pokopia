@@ -45,7 +45,8 @@ export default function PokedexPage() {
   const [tri, setTri] = useState('numero')
   const [habitat, setHabitat] = useState(null)
   const [type, setType] = useState(null)
-  const [specialite, setSpecialite] = useState(null)
+  // `?specialite=` : la page Recettes y envoie qui chercher comme commis de cuisine.
+  const [specialite, setSpecialite] = useState(() => params.get('specialite') || null)
   const [dex, setDex] = useState(null)
 
   const saisieDifferee = useDeferredValue(saisie)

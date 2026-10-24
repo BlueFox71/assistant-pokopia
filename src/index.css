@@ -208,7 +208,20 @@
   --c-plante: hsl(122 50% calc(var(--lum) - 3 * var(--clair)));
   --c-decoration: hsl(288 45% var(--lum));
   --c-fossile: hsl(38 30% var(--lum));
-  --c-ressource: hsl(220 12% var(--lum));
+  /* au-delà des meubles : ce qui se collectionne, sert à fabriquer ou à construire */
+  --c-cd: hsl(250 45% var(--lum));
+  --c-tresor: hsl(48 70% calc(var(--lum) - 6 * var(--clair)));
+  --c-matiere: hsl(220 12% var(--lum));
+  --c-peinture: hsl(340 55% var(--lum));
+  --c-fleur: hsl(300 45% var(--lum));
+  --c-bloc: hsl(16 40% var(--lum));
+  --c-construction: hsl(32 45% var(--lum));
+  --c-papier: hsl(240 30% var(--lum));
+  --c-tapis: hsl(0 40% var(--lum));
+  --c-affiche: hsl(200 40% var(--lum));
+  --c-exterieur: hsl(95 35% calc(var(--lum) - 3 * var(--clair)));
+  --c-utilitaire: hsl(185 35% var(--lum));
+  --c-divers: hsl(160 20% var(--lum));
   --c-lit-fond: hsl(265 var(--sat-fond) var(--lum-fond));
   --c-chaise-fond: hsl(200 var(--sat-fond) var(--lum-fond));
   --c-canape-fond: hsl(322 var(--sat-fond) var(--lum-fond));
@@ -220,7 +233,19 @@
   --c-plante-fond: hsl(122 var(--sat-fond) var(--lum-fond));
   --c-decoration-fond: hsl(288 var(--sat-fond) var(--lum-fond));
   --c-fossile-fond: hsl(38 var(--sat-fond) var(--lum-fond));
-  --c-ressource-fond: hsl(220 14% var(--lum-fond));
+  --c-cd-fond: hsl(250 var(--sat-fond) var(--lum-fond));
+  --c-tresor-fond: hsl(48 var(--sat-fond) var(--lum-fond));
+  --c-matiere-fond: hsl(220 14% var(--lum-fond));
+  --c-peinture-fond: hsl(340 var(--sat-fond) var(--lum-fond));
+  --c-fleur-fond: hsl(300 var(--sat-fond) var(--lum-fond));
+  --c-tapis-fond: hsl(0 var(--sat-fond) var(--lum-fond));
+  --c-affiche-fond: hsl(200 var(--sat-fond) var(--lum-fond));
+  --c-exterieur-fond: hsl(95 var(--sat-fond) var(--lum-fond));
+  --c-utilitaire-fond: hsl(185 var(--sat-fond) var(--lum-fond));
+  --c-bloc-fond: hsl(16 var(--sat-fond) var(--lum-fond));
+  --c-construction-fond: hsl(32 var(--sat-fond) var(--lum-fond));
+  --c-papier-fond: hsl(240 var(--sat-fond) var(--lum-fond));
+  --c-divers-fond: hsl(160 var(--sat-fond) var(--lum-fond));
 }
 
 * { box-sizing: border-box; }
@@ -542,7 +567,19 @@ h1, h2, h3 { text-wrap: balance; }
 .meuble-plante { color: var(--c-plante); }
 .meuble-decoration { color: var(--c-decoration); }
 .meuble-fossile { color: var(--c-fossile); }
-.meuble-ressource { color: var(--c-ressource); }
+.meuble-cd { color: var(--c-cd); }
+.meuble-tresor { color: var(--c-tresor); }
+.meuble-matiere { color: var(--c-matiere); }
+.meuble-peinture { color: var(--c-peinture); }
+.meuble-fleur { color: var(--c-fleur); }
+.meuble-tapis { color: var(--c-tapis); }
+.meuble-affiche { color: var(--c-affiche); }
+.meuble-exterieur { color: var(--c-exterieur); }
+.meuble-utilitaire { color: var(--c-utilitaire); }
+.meuble-bloc { color: var(--c-bloc); }
+.meuble-construction { color: var(--c-construction); }
+.meuble-papier { color: var(--c-papier); }
+.meuble-divers { color: var(--c-divers); }
 
 /* Habitat idéal, sous chaque Pokémon : l'icône hérite de la couleur du texte. */
 .marque-habitat { display: inline-flex; align-items: center; gap: 3px; }

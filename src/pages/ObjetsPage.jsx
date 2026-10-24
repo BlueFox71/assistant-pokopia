@@ -1,8 +1,8 @@
-import { useDeferredValue, useMemo, useState } from 'react'
+import { Fragment, useDeferredValue, useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Input, Segmented, Select } from 'antd'
 import { ICONE_CATEGORIE, IconeCadre } from '../components/Icones'
-import { VignetteObjet } from '../components/Vignette'
+import { VignetteFabrique, VignetteObjet } from '../components/Vignette'
 import {
   FR_CATEGORIE,
   evenementParObjet,
@@ -13,7 +13,7 @@ import {
   prefParSlug,
   prefsParObjet,
 } from '../data'
-import { FR_TYPE_OBJET, TYPES_OBJET, estMural, typeObjet } from '../data/categories'
+import { DEBUTS_GROUPE, FR_TYPE_OBJET, TYPES_OBJET, estMural } from '../data/categories'
 import {
   FR_PERSONNALISATION,
   nbPersonnalisables,
@@ -21,6 +21,8 @@ import {
   repartitionPersonnalisation,
   repeignable,
 } from '../data/couleurs'
+import { methodes } from '../data/methodes'
+import { typeDe, typeDeMethode } from '../data/types'
 import { correspond, normaliser } from '../utils/recherche'
 import './ObjetsPage.css'
 
@@ -45,6 +47,28 @@ const PERSONNALISATIONS = [
   { value: 'aucune', label: FR_PERSONNALISATION.aucune },
   { value: 'inconnu', label: 'Non documenté' },
 ]
+
+/**
+ * Ce qui se fabrique sans être au catalogue : blocs, éléments de construction, papiers
+ * peints, tapis, affiches, outils. Sans eux, la liste où l'on cherche « ce qui se fabrique
+ * ou se ramasse » ignorait la moitié d'un chantier. Ils n'ont ni préférence, ni confort, ni
+ * fiche — un clic ouvre leur méthode de fabrication.
+ */
+const FABRIQUES = methodes.filter((m) => !m.objet)
+
+/** Leur type, du même jeu que celui des objets : bloc, construction, papier peint, affiche… */
+const typeDeFabrique = typeDeMethode
+
+/**
+ * Calculés une fois : leur type, et s'ils s'accrochent au mur — les affiches, surtout. Un
+ * bloc « Ornate wall » est un pan de mur, pas un objet qu'on y accroche.
+ */
+const INFOS_FABRIQUES = new Map(
+  FABRIQUES.map((m) => {
+    const type = typeDeFabrique(m)
+    return [m, { type, mural: type !== 'bloc' && estMural(m.en) }]
+  }),
+)
 
 /** Le filtre d'événement accepte un événement précis, ou tous à la fois. */
 const TOUS_EVENEMENTS = 'tous'
@@ -87,7 +111,7 @@ export default function ObjetsPage() {
       const vus = new Set()
       for (const slug of slugs) for (const p of prefParSlug.get(slug)?.pokemon || []) vus.add(p)
       table.set(objet.en, {
-        type: typeObjet(objet.en, objet.categorie),
+        type: typeDe(objet.en),
         mural: estMural(objet.en),
         nbPrefs: slugs.length,
         nbPokemon: vus.size,
@@ -100,12 +124,15 @@ export default function ObjetsPage() {
   // obtiendrait en la cochant. Et réciproquement pour « Mur », au type choisi près.
   const parType = useMemo(() => {
     const compte = Object.fromEntries(TYPES_OBJET.map((t) => [t, 0]))
-    for (const { type: t, mural } of infos.values())
+    for (const { type: t, mural } of [...infos.values(), ...INFOS_FABRIQUES.values()])
       if (!murSeul || mural) compte[t] = (compte[t] || 0) + 1
     return compte
   }, [infos, murSeul])
   const nbMuraux = useMemo(
-    () => [...infos.values()].filter((i) => i.mural && (!type || i.type === type)).length,
+    () =>
+      [...infos.values(), ...INFOS_FABRIQUES.values()].filter(
+        (i) => i.mural && (!type || i.type === type),
+      ).length,
     [infos, type],
   )
 
@@ -144,21 +171,32 @@ export default function ObjetsPage() {
       )
     if (terme) noms = noms.filter((n) => correspond(terme, n, frObjet(n)))
 
-    if (tri === 'prefs')
-      noms.sort(
-        (a, b) =>
-          infos.get(b).nbPrefs - infos.get(a).nbPrefs ||
-          frObjet(a).localeCompare(frObjet(b), 'fr'),
-      )
-    else if (tri === 'pokemon')
-      noms.sort(
-        (a, b) =>
-          infos.get(b).nbPokemon - infos.get(a).nbPokemon ||
-          frObjet(a).localeCompare(frObjet(b), 'fr'),
-      )
-    else noms.sort((a, b) => frObjet(a).localeCompare(frObjet(b), 'fr'))
+    // Ce qui se fabrique hors catalogue n'a ni confort, ni personnalisation documentée, ni
+    // événement : il ne répond qu'aux filtres qui le laissent passer — « sans catégorie »,
+    // « non documenté ».
+    const avecFabriques =
+      (!confort || confort === SANS_CONFORT) &&
+      (!personnalisation || personnalisation === 'inconnu') &&
+      !evenement
+    const fabriques = avecFabriques
+      ? FABRIQUES.filter(
+          (m) =>
+            (!type || INFOS_FABRIQUES.get(m).type === type) &&
+            (!murSeul || INFOS_FABRIQUES.get(m).mural) &&
+            (!terme || correspond(terme, m.en, m.fr || m.en)),
+        )
+      : []
 
-    return noms
+    const entrees = [
+      ...noms.map((nom) => ({ nom, fr: frObjet(nom), nbPrefs: infos.get(nom).nbPrefs, nbPokemon: infos.get(nom).nbPokemon })),
+      ...fabriques.map((m) => ({ nom: m.en, fr: m.fr || m.en, nbPrefs: 0, nbPokemon: 0, fabrique: m })),
+    ]
+    const parNom = (a, b) => a.fr.localeCompare(b.fr, 'fr')
+    if (tri === 'prefs') entrees.sort((a, b) => b.nbPrefs - a.nbPrefs || parNom(a, b))
+    else if (tri === 'pokemon') entrees.sort((a, b) => b.nbPokemon - a.nbPokemon || parNom(a, b))
+    else entrees.sort(parNom)
+
+    return entrees
   }, [terme, tri, type, murSeul, confort, personnalisation, evenement, infos])
 
   /** Combien d'objets répondent à chaque filtre de personnalisation — mis dans son libellé. */
@@ -176,10 +214,11 @@ export default function ObjetsPage() {
       <div className="wrap page-tete">
         <div>
           <p className="etiquette">Objets</p>
-          <h1>{objets.length} objets</h1>
+          <h1>{objets.length + FABRIQUES.length} objets</h1>
           <p className="liste-chapeau">
-            Tout ce qui se fabrique ou se ramasse, dont {prefsParObjet.size} objets utiles à au
-            moins une préférence. Ouvrez-en un pour savoir à quels Pokémon il plaît.
+            Tout ce qui se fabrique ou se ramasse, blocs et constructions compris, dont{' '}
+            {prefsParObjet.size} objets utiles à au moins une préférence. Ouvrez-en un pour
+            savoir à quels Pokémon il plaît.
           </p>
         </div>
       </div>
@@ -261,22 +300,26 @@ export default function ObjetsPage() {
             aria-pressed={type === null}
             onClick={() => setType(null)}
           >
-            Tous les types <b>{murSeul ? nbMuraux : objets.length}</b>
+            Tous les types <b>{murSeul ? nbMuraux : objets.length + FABRIQUES.length}</b>
           </button>
+          {/* Quatre groupes séparés d'un trait : les meubles, ce qui se collectionne, ce qui
+              sert à fabriquer, ce qui sert à construire (cf. TYPES_OBJET). */}
           {TYPES_OBJET.map((t) => {
             const IconeCat = ICONE_CATEGORIE[t]
             return (
-              <button
-                key={t}
-                type="button"
-                className="bascule teintee"
-                style={{ '--teinte': `var(--c-${t})`, '--teinte-fond': `var(--c-${t}-fond)` }}
-                aria-pressed={type === t}
-                onClick={() => setType(type === t ? null : t)}
-              >
-                <IconeCat />
-                {FR_TYPE_OBJET[t]} <b>{parType[t] || 0}</b>
-              </button>
+              <Fragment key={t}>
+                {DEBUTS_GROUPE.has(t) && <span className="separateur-bascules" aria-hidden="true" />}
+                <button
+                  type="button"
+                  className="bascule teintee"
+                  style={{ '--teinte': `var(--c-${t})`, '--teinte-fond': `var(--c-${t}-fond)` }}
+                  aria-pressed={type === t}
+                  onClick={() => setType(type === t ? null : t)}
+                >
+                  <IconeCat />
+                  {FR_TYPE_OBJET[t]} <b>{parType[t] || 0}</b>
+                </button>
+              </Fragment>
             )
           })}
           <span className="separateur-bascules" aria-hidden="true" />
@@ -302,19 +345,33 @@ export default function ObjetsPage() {
 
         {liste.length ? (
           <div className="chips">
-            {liste.map((nom) => (
-              <VignetteObjet
-                key={nom}
-                nom={nom}
-                trouve={!!terme}
-                nbPrefs={infos.get(nom).nbPrefs}
-                nomsPrefs={
-                  tri === 'pokemon' ? `${infos.get(nom).nbPokemon} Pokémon contentés` : ''
-                }
-                pinceau={repeignable(nom)}
-                onClick={() => navigate(`/objet/${encodeURIComponent(nom)}`)}
-              />
-            ))}
+            {liste.map(({ nom, fabrique, nbPrefs, nbPokemon }) =>
+              fabrique ? (
+                <VignetteFabrique
+                  key={'methode:' + nom}
+                  methode={fabrique}
+                  libelle={FR_TYPE_OBJET[typeDeFabrique(fabrique)]}
+                  rayon={typeDeFabrique(fabrique)}
+                  trouve={!!terme}
+                  onClick={() =>
+                    navigate(
+                      `/methodes?vue=toutes&famille=${fabrique.famille}&q=${encodeURIComponent(fabrique.fr || fabrique.en)}`,
+                    )
+                  }
+                />
+              ) : (
+                <VignetteObjet
+                  key={nom}
+                  nom={nom}
+                  trouve={!!terme}
+                  nbPrefs={nbPrefs}
+                  nomsPrefs={tri === 'pokemon' ? `${nbPokemon} Pokémon contentés` : ''}
+                  pinceau={repeignable(nom)}
+                  panier
+                  onClick={() => navigate(`/objet/${encodeURIComponent(nom)}`)}
+                />
+              ),
+            )}
           </div>
         ) : (
           <div className="vide">

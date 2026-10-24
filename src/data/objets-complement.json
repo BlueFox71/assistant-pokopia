@@ -43,6 +43,9 @@
   { "en": "Camping cooking pot", "fr": "Marmite de camping", "categorie": null, "sprite": "campingcookingpot", "frReleve": true },
   { "en": "Dandy flower seeds", "fr": "Graines de fleurs paisibles", "categorie": null, "sprite": "dandyflowerseeds", "frReleve": true },
   { "en": "Dandy flowers", "fr": "Fleurs paisibles", "categorie": null, "sprite": "dandyflowers", "frReleve": true },
-  { "en": "Picnic blanket", "fr": "Couverture de pique-nique", "categorie": null, "sprite": "picnicblanket", "frReleve": true }
+  { "en": "Picnic blanket", "fr": "Couverture de pique-nique", "categorie": null, "sprite": "picnicblanket", "frReleve": true },
+  { "en": "Leaf", "fr": "Feuille", "categorie": null, "sprite": "leaf", "frReleve": true },
+  { "en": "Strange strings", "fr": "Cordes étranges", "categorie": null, "sprite": "strangestrings", "frReleve": true },
+  { "en": "Shiny pearl", "fr": "Perle brillante", "categorie": null, "sprite": "shinypearl", "frReleve": true }
  ]
 }

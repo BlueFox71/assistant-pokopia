@@ -1,4 +1,4 @@
-// Imprime le classement des 714 objets par catégorie de meuble, pour relecture.
+// Imprime le classement des objets du catalogue par catégorie, pour relecture.
 //
 //   node scripts/auditer-categories.mjs            décomptes seuls
 //   node scripts/auditer-categories.mjs --tout     décomptes + liste complète
@@ -9,14 +9,20 @@
 import fs from 'node:fs'
 import { FR_TYPE_OBJET, TYPES_OBJET, typeObjet } from '../src/data/categories.js'
 
-const objets = JSON.parse(fs.readFileSync(new URL('../src/data/objets.json', import.meta.url)))
+const lire = (f) => JSON.parse(fs.readFileSync(new URL(`../src/data/${f}`, import.meta.url)))
+const objets = [...lire('objets.json'), ...lire('objets-complement.json').objets]
+const cds = new Set(lire('cds.json').cds)
+const onglets = lire('categories-jeu.json').categories
 
 const args = process.argv.slice(2)
 const tout = args.includes('--tout')
 const demandes = args.filter((a) => !a.startsWith('--'))
 
 const parType = new Map(TYPES_OBJET.map((t) => [t, []]))
-for (const o of objets) parType.get(typeObjet(o.en, o.categorie)).push(o)
+for (const o of objets)
+  parType
+    .get(typeObjet(o.en, o.categorie, { cd: cds.has(o.en), onglet: onglets[o.en.toLowerCase()] || null }))
+    .push(o)
 
 for (const type of TYPES_OBJET) {
   const liste = parType.get(type)

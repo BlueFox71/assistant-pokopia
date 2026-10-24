@@ -7,7 +7,6 @@ import { IconeBriques, IconeCaisse, IconeFeuille, IconeMaison } from '../compone
 import ProgressionVilles from '../components/ProgressionVilles'
 import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
-  objetParNom,
   objets as tousLesObjets,
   comparerParNumero,
   frObjet,
@@ -20,14 +19,15 @@ import {
   spriteObjet,
   spritePokemon,
 } from '../data'
-import { FR_TYPE_OBJET, typeObjet } from '../data/categories'
+import { FR_TYPE_OBJET } from '../data/categories'
+import { typeDe } from '../data/types'
 import { useHabitats } from '../utils/habitatsStorage'
 import { correspond, normaliser } from '../utils/recherche'
 import { SIMULATIONS } from './simulations'
 import './AccueilPage.css'
 
 /** La catégorie de meuble parle plus que celle de confort : « lumière » plutôt que « décoration ». */
-const meubleDe = (nom) => FR_TYPE_OBJET[typeObjet(nom, objetParNom.get(nom)?.categorie)]
+const meubleDe = (nom) => FR_TYPE_OBJET[typeDe(nom)]
 
 /** Au-delà, la liste de résultats cesse d'aider : on invite à préciser le terme. */
 const MAX_PAR_FAMILLE = 5

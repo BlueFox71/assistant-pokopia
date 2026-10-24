@@ -1,14 +1,15 @@
 import { memo } from 'react'
 import { Tooltip } from 'antd'
 import { ICONE_HABITAT, ICONE_VILLE, IconePinceau } from './Icones'
-import { FR_TYPE_OBJET, typeObjet } from '../data/categories'
-import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
+import { PanierVignette } from './BoutonsCourses'
+import { FR_TYPE_OBJET } from '../data/categories'
+import { typeDe } from '../data/types'
+import { urlSpriteMethode, urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
   frObjet,
   frPokemon,
   habitatDe,
   numeroAffiche,
-  objetParNom,
   pokemonParNom,
   specialitesDe,
   spriteObjet,
@@ -56,6 +57,7 @@ function Image({ src }) {
  *                       reconnaît d'un coup d'œil. Ce que la vignette cesse alors de
  *                       montrer, l'infobulle le reprend en tête — les deux vont donc de
  *                       pair, et une vignette nue sans `bulle` serait muette.
+ * @param panier         un petit panier dans le coin, pour l'ajouter à la liste de courses.
  */
 export const VignetteObjet = memo(function VignetteObjet({
   nom,
@@ -68,10 +70,11 @@ export const VignetteObjet = memo(function VignetteObjet({
   bulle = null,
   nue = false,
   badges = true,
+  panier = false,
   onClick,
 }) {
   const fr = frObjet(nom)
-  const meuble = typeObjet(nom, objetParNom.get(nom)?.categorie)
+  const meuble = typeDe(nom)
   // Les deux compteurs tombent dès la première unité, pour qu'une vignette sans badge veuille
   // dire « aucun », et non « un, qu'on ne vous dit pas ». `multi` et `partage` gardent leur
   // seuil à 2 : ce sont eux qui teintent le badge et posent le liseré d'accent, et un
@@ -119,7 +122,7 @@ export const VignetteObjet = memo(function VignetteObjet({
   // tête quand la vignette est nue, jamais quand elle porte déjà son nom sous l'image.
   // Le délai, lui, vient de la grille : quatre cents vignettes serrées, et une bulle qui
   // surgit au moindre passage de la souris rendrait le survol illisible.
-  return bulle ? (
+  const avecBulle = bulle ? (
     <Tooltip
       title={
         <>
@@ -141,6 +144,46 @@ export const VignetteObjet = memo(function VignetteObjet({
     </Tooltip>
   ) : (
     vignette
+  )
+
+  return panier ? (
+    <span className="chip-cadre">
+      {avecBulle}
+      <PanierVignette nom={nom} />
+    </span>
+  ) : (
+    avecBulle
+  )
+})
+
+/**
+ * Ce qui se fabrique sans être au catalogue — un bloc, une porte, un papier peint : une
+ * méthode de fabrication sans objet (cf. data/methodes.js). Même gabarit qu'un objet, sans
+ * les compteurs de préférences — il n'en coche aucune —, et toujours avec son panier : on
+ * ne le cherche que pour le fabriquer ou le rapporter.
+ *
+ * @param methode   l'entrée de methodes.json
+ * @param libelle   son rayon, sous le nom (« Bloc », « Construction »…)
+ * @param rayon     sa clé, qui donne la couleur du libellé
+ * @param trouve    surligné : correspond à la recherche
+ */
+export const VignetteFabrique = memo(function VignetteFabrique({ methode, libelle, rayon, trouve = false, onClick }) {
+  const fr = methode.fr || methode.en
+  return (
+    <span className="chip-cadre">
+      <button
+        type="button"
+        className={'chip' + (trouve ? ' hit' : '')}
+        title={fr !== methode.en ? `${fr} (${methode.en})` : fr}
+        onClick={onClick}
+      >
+        <Image src={urlSpriteMethode(methode)} />
+        <span className="chip-name">{fr}</span>
+        {fr !== methode.en && <span className="chip-en">{methode.en}</span>}
+        <span className={'chip-sub meuble-' + rayon}>{libelle}</span>
+      </button>
+      <PanierVignette type="methode" nom={methode.en} />
+    </span>
   )
 })
 

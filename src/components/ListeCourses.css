@@ -1,0 +1,179 @@
+/* ---- liste de courses (cf. ListeCourses.jsx, PanneauCourses.jsx, BoutonsCourses.jsx) ---- */
+
+/* Le bouton flottant : lavande pleine, comme un bouton principal, et assez gros pour le doigt. */
+.courses-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .18), 0 6px 16px rgba(0, 0, 0, .12);
+}
+.courses-fab:hover { filter: brightness(1.08); }
+.courses-fab:focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 2px; }
+.courses-fab-compte {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: var(--accent-ink);
+  color: var(--surface);
+  font: 700 11px/20px var(--body);
+  text-align: center;
+}
+/* Sur un téléphone, la vue Construction fixe sa boîte à outils au bas de l'écran : le
+   panier monte au-dessus pour ne pas cacher un crayon. */
+@media (max-width: 820px) {
+  .app-shell:has(.boite-outils) .courses-fab { bottom: 92px; }
+}
+
+/* ---- le panneau ---- */
+.courses-lignes { list-style: none; margin: 0; padding: 0; }
+.courses-ligne {
+  display: grid;
+  grid-template-columns: auto 36px minmax(0, 1fr) 64px auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.courses-image { width: 36px; height: 36px; }
+.courses-image img { width: 36px; height: 36px; object-fit: contain; }
+.courses-nom { font-size: 13.5px; font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
+.courses-nom a { color: inherit; }
+.courses-nom a:hover { color: var(--accent-ink); }
+.courses-en { display: block; font-family: var(--mono); font-size: 10px; font-weight: 400; color: var(--ink-3); }
+.courses-qte { width: 64px; }
+.courses-retirer {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--ink-3);
+  font-size: 15px;
+  cursor: pointer;
+}
+.courses-retirer:hover { background: var(--surface-2); color: var(--ink); }
+.courses-retirer:focus-visible { outline: 2px solid var(--accent-ink); }
+.courses-ligne.prise .courses-nom { text-decoration: line-through; color: var(--ink-3); font-weight: 400; }
+.courses-ligne.prise .courses-image { opacity: .45; }
+.courses-vide { color: var(--ink-3); font-size: 13.5px; }
+.courses-pied { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ---- la fenêtre d'ajout ---- */
+.courses-rayons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.courses-ligne-libre { display: flex; gap: 8px; margin-top: 12px; }
+.courses-ligne-libre .ghost-btn { padding: 4px 12px; }
+
+/* Le gabarit des bascules de filtre, repris ici : les leurs vivent dans la feuille de leur
+   page, que la fenêtre — ouverte par-dessus n'importe laquelle — ne peut pas supposer chargée. */
+.courses-rayon {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  font: inherit; font-size: 13px; padding: 6px 11px; border-radius: var(--radius); cursor: pointer;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong);
+}
+.courses-rayon b { font-family: var(--mono); font-size: 10.5px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.courses-rayon:hover { border-color: var(--accent-ink); }
+.courses-rayon:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.courses-rayon[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.courses-rayon[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
+.courses-choix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 4px;
+  max-height: min(60vh, 560px);
+  overflow-y: auto;
+  margin-top: 12px;
+}
+.courses-article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px 6px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--ink);
+  font: inherit;
+  font-size: 11.5px;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+}
+.courses-article img, .courses-sans-image { width: 48px; height: 48px; object-fit: contain; }
+.courses-article:hover { border-color: var(--accent-ink); }
+.courses-article:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.courses-article-nom { font-weight: 600; text-wrap: balance; }
+.courses-article-famille {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.courses-article.dedans { outline: 3px solid var(--accent-ink); outline-offset: -3px; }
+.courses-article.dedans::after {
+  content: '✓';
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-ink);
+}
+.courses-libre { margin-top: 14px; }
+.courses-libre p { margin: 0 0 8px; color: var(--ink-2); }
+
+/* ---- ajout depuis une fiche ou une vignette ---- */
+.bouton-courses { display: inline-flex; align-items: center; gap: 6px; }
+.bouton-courses svg { font-size: 16px; }
+.bouton-courses.dedans:disabled,
+.bouton-courses.dedans:disabled:hover {
+  opacity: 1; cursor: default; color: var(--accent-ink); border-color: var(--accent-ink);
+}
+
+/* La vignette devient un cadre : un bouton ne peut pas en contenir un autre. Le petit
+   panier n'apparaît qu'au survol, pour ne pas charger une grille de quatre cents objets —
+   sauf s'il est déjà dans la liste, ou sur un écran tactile, sans survol. */
+.chip-cadre { position: relative; display: grid; }
+.chip-cadre > .chip { width: 100%; height: 100%; }
+.chip-panier {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-2);
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0;
+}
+.chip-cadre:hover .chip-panier,
+.chip-cadre:focus-within .chip-panier,
+.chip-panier.dedans { opacity: 1; }
+.chip-panier:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+.chip-panier:focus-visible { outline: 2px solid var(--accent-ink); }
+.chip-panier.dedans { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+@media (hover: none) {
+  .chip-panier { opacity: 1; }
+}

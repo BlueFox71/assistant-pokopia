@@ -226,6 +226,22 @@ export const IconePivoterDroite = (p) => (
   </Svg>
 )
 
+/** Panier à anses : la liste de courses. */
+export const IconePanier = (p) => (
+  <Svg {...p}>
+    <path d="M3 10h18l-2 9.5a1 1 0 0 1-1 .5H6a1 1 0 0 1-1-.5z" />
+    <path d="M7.5 10 10 4M16.5 10 14 4" />
+    <path d="M9 14v3M12 14v3M15 14v3" />
+  </Svg>
+)
+
+/** Croix : retirer une ligne. */
+export const IconeCroix = (p) => (
+  <Svg {...p}>
+    <path d="M6 6l12 12M18 6 6 18" />
+  </Svg>
+)
+
 export const IconeLoupe = (p) => (
   <Svg {...p}>
     <circle cx="11" cy="11" r="6" />
@@ -432,7 +448,68 @@ export const IconeOs = (p) => (
   </Svg>
 )
 
-/** Rondin : les matériaux et ressources. */
+/** Disque : les CD de musique. */
+export const IconeDisque = (p) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <circle cx="12" cy="12" r="2.5" />
+    <path d="M12 6.5a5.5 5.5 0 0 0-5.5 5.5" />
+  </Svg>
+)
+
+/** Gemme taillée : les trésors et objets tenus. */
+export const IconeGemme = (p) => (
+  <Svg {...p}>
+    <path d="M7 4h10l4 5-9 11L3 9z" />
+    <path d="M3 9h18M9.5 4 8 9l4 11 4-11-1.5-5" />
+  </Svg>
+)
+
+/** Fleur à cinq pétales : les fleurs à cueillir. */
+export const IconeFleur = (p) => (
+  <Svg {...p}>
+    <circle cx="12" cy="9" r="2" />
+    <path d="M12 7a2.5 2.5 0 1 1 2.4-3.2A2.5 2.5 0 1 1 15.6 8a2.5 2.5 0 1 1-1.6 3.6A2.5 2.5 0 1 1 10 11.6 2.5 2.5 0 1 1 8.4 8 2.5 2.5 0 1 1 9.6 3.8 2.5 2.5 0 0 1 12 7z" />
+    <path d="M12 11v10M12 17c-2.5 0-4-1.5-4.5-3.5M12 19c2 0 3.5-1 4-3" />
+  </Svg>
+)
+
+/** Rouleau qui se déroule : les papiers peints. */
+export const IconeRouleau = (p) => (
+  <Svg {...p}>
+    <rect x="3" y="4" width="6" height="16" rx="3" />
+    <path d="M6 4h12v13H9" />
+    <path d="M12 8h3M12 12h3" />
+  </Svg>
+)
+
+/** Tapis à franges : les tapis. */
+export const IconeTapis = (p) => (
+  <Svg {...p}>
+    <rect x="5" y="4" width="14" height="16" rx="1" />
+    <rect x="8.5" y="8" width="7" height="8" />
+    <path d="M7 4V2M10 4V2M14 4V2M17 4V2M7 22v-2M10 22v-2M14 22v-2M17 22v-2" />
+  </Svg>
+)
+
+/** Affiche punaisée : les posters. */
+export const IconeAffiche = (p) => (
+  <Svg {...p}>
+    <rect x="5" y="4" width="14" height="17" rx="1" />
+    <circle cx="12" cy="4" r="1.2" fill="currentColor" stroke="none" />
+    <path d="m7.5 17 3-4 2 2.5 2-2.5 2 4" />
+    <circle cx="10" cy="9" r="1.3" />
+  </Svg>
+)
+
+/** Clé plate : les objets utiles — établi, marmites, interrupteurs, rails. */
+export const IconeOutil = (p) => (
+  <Svg {...p}>
+    <path d="M14.5 4a4.5 4.5 0 0 0-4.2 6.1L4 16.4V20h3.6l6.3-6.3A4.5 4.5 0 0 0 20 9.5l-2.8 2.8-3.2-.7-.7-3.2L16.1 5.6A4.5 4.5 0 0 0 14.5 4z" />
+  </Svg>
+)
+
+/** Rondin : les matières premières. */
 export const IconeRondin = (p) => (
   <Svg {...p}>
     <path d="M6 5h12a3 3 0 0 1 0 14H6a3 3 0 0 1 0-14z" />
@@ -542,5 +619,17 @@ export const ICONE_CATEGORIE = {
   plante: IconePlante,
   decoration: IconeEtoile,
   fossile: IconeOs,
-  ressource: IconeRondin,
+  cd: IconeDisque,
+  tresor: IconeGemme,
+  matiere: IconeRondin,
+  peinture: IconePeinture,
+  fleur: IconeFleur,
+  bloc: IconeBriques,
+  construction: IconeMaison,
+  papier: IconeRouleau,
+  tapis: IconeTapis,
+  affiche: IconeAffiche,
+  exterieur: IconeFeuille,
+  utilitaire: IconeOutil,
+  divers: IconeListe,
 }

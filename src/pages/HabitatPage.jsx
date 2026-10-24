@@ -44,7 +44,8 @@ import {
   specialitesUtilisees,
   spritePokemon,
 } from '../data'
-import { FR_TYPE_OBJET, TYPES_OBJET, TYPES_PAR_DEFAUT, estMural, typeObjet } from '../data/categories'
+import { FR_TYPE_OBJET, TYPES_OBJET, TYPES_PAR_DEFAUT, estMural } from '../data/categories'
+import { typeDe } from '../data/types'
 import { VILLES, cleVilleValide } from '../data/villes'
 import {
   cleVilleDe,
@@ -73,6 +74,26 @@ const CATEGORIES_CONFORT = ['Relaxation', 'Decoration', 'Toy']
 
 /** Ce que montre le filtre de catégories quand aucune case n'est cochée. */
 const TYPES_VISIBLES_PAR_DEFAUT = new Set(TYPES_PAR_DEFAUT)
+
+/**
+ * Ce qui n'a rien à faire dans un enclos, pas même à un clic : on ne pose ni un minerai, ni
+ * un pot de peinture, ni un CD, ni un fossile pour contenter un Pokémon. Leurs bascules ne
+ * s'affichent pas, et « Tout sélectionner » les laisse dehors.
+ */
+const TYPES_MASQUES = new Set(['fossile', 'cd', 'matiere', 'peinture'])
+const TYPES_PROPOSES = TYPES_OBJET.filter((t) => !TYPES_MASQUES.has(t))
+
+/**
+ * Ce qui meuble un enclos : les types de meuble, et tout objet qui porte une catégorie de
+ * confort, quel que soit son type — le blender est un utilitaire pour qui le range, mais un
+ * Jouet pour le jeu, et compte comme tel pour un habitat « exceptionnel ». C'est ce que
+ * montre la liste quand aucune catégorie n'est cochée, et ce que le lot minimal peut
+ * recommander.
+ */
+const meuble = (nom) => {
+  const type = typeDe(nom)
+  return TYPES_VISIBLES_PAR_DEFAUT.has(type) || (!!objetParNom.get(nom)?.categorie && !TYPES_MASQUES.has(type))
+}
 
 /** Profondeur du classement de « Suggestion colocataire » : ce que « Suivant » peut parcourir. */
 const MAX_SUGGESTIONS = 8
@@ -113,8 +134,6 @@ const TAILLE_DEFAUT = 60
  */
 const LOT_DEFAUT = 6
 const LOT_MAX = 12
-
-const typeDe = (nom) => typeObjet(nom, objetParNom.get(nom)?.categorie)
 
 const listerParam = (params) =>
   (params.get('pokemon') || '')
@@ -1081,14 +1100,14 @@ function VueHabitat({
     () =>
       solo
         ? 0
-        : objetsCommuns(groupe).filter((nom) => TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(nom))).length,
+        : objetsCommuns(groupe).filter(meuble).length,
     [groupe, solo],
   )
 
   // Le lot minimal ignore les filtres : il répond à « que fabriquer pour tout le monde ? »,
   // et une préférence décochée n'en reste pas moins une préférence du groupe.
   const lot = useMemo(
-    () => lotMinimal(groupe, (nom) => TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(nom))),
+    () => lotMinimal(groupe, meuble),
     [groupe],
   )
   // Complété jusqu'à la taille demandée. Hors de la grille, la taille demandée survit d'un
@@ -1096,7 +1115,7 @@ function VueHabitat({
   const complements = useMemo(
     () =>
       completerLot(groupe, lot.objets, tailleLot, {
-        admissible: (nom) => TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(nom)),
+        admissible: meuble,
         categorie: (nom) => objetParNom.get(nom)?.categorie,
         confort: CATEGORIES_CONFORT,
       }),
@@ -1117,11 +1136,12 @@ function VueHabitat({
     return compte
   }, [objets, mur])
 
-  // Aucune catégorie cochée = toutes sauf fossiles et ressources.
-  const typesRetenus = typesActifs.size ? typesActifs : TYPES_VISIBLES_PAR_DEFAUT
+  // Aucune catégorie cochée = ce qui meuble un enclos (cf. `meuble`).
+  const typesRetenus = typesActifs.size ? typesActifs : null
+  const retenu = (nom) => (typesRetenus ? typesRetenus.has(typeDe(nom)) : meuble(nom))
   // Le pendant pour « Mur » : les objets muraux parmi les catégories retenues.
   const nbMuraux = useMemo(
-    () => objets.filter((o) => typesRetenus.has(typeDe(o.nom)) && estMural(o.nom)).length,
+    () => objets.filter((o) => retenu(o.nom) && estMural(o.nom)).length,
     [objets, typesRetenus],
   )
 
@@ -1132,9 +1152,9 @@ function VueHabitat({
       ? objets.filter(
           (o) =>
             o.pokemonSatisfaits.length === groupe.length &&
-            TYPES_VISIBLES_PAR_DEFAUT.has(typeDe(o.nom)),
+            meuble(o.nom),
         )
-      : objets.filter((o) => typesRetenus.has(typeDe(o.nom)) && (!mur || estMural(o.nom)))
+      : objets.filter((o) => retenu(o.nom) && (!mur || estMural(o.nom)))
     const retenus = terme ? gardes.filter((o) => correspond(terme, o.nom, frObjet(o.nom))) : gardes
     if (triObjets === 'utilite') return retenus
 
@@ -1417,8 +1437,8 @@ function VueHabitat({
                 <button
                   type="button"
                   className="mini-btn"
-                  disabled={commun || typesActifs.size === TYPES_OBJET.length}
-                  onClick={() => setTypesActifs(new Set(TYPES_OBJET))}
+                  disabled={commun || typesActifs.size === TYPES_PROPOSES.length}
+                  onClick={() => setTypesActifs(new Set(TYPES_PROPOSES))}
                 >
                   Tout sélectionner
                 </button>
@@ -1431,11 +1451,16 @@ function VueHabitat({
             {commun && (
               <p className="indice">
                 « Choses en commun » montre le terrain d’entente du groupe : les catégories et le
-                filtre « Mur » ne s’appliquent pas, hors fossiles et ressources qui restent masqués.
+                filtre « Mur » ne s’appliquent pas ; ce qui ne meuble pas — trésors, fleurs, constructions… — reste masqué.
               </p>
             )}
             <div className="bascules">
-              {TYPES_OBJET.map((type) => {
+              {/* Hors meubles, une catégorie ne s'affiche que si ces Pokémon en aiment un
+                  objet : vingt et une bascules, dont la moitié à zéro, noieraient les dix qui
+                  servent à meubler. */}
+              {TYPES_PROPOSES.filter(
+                (type) => TYPES_VISIBLES_PAR_DEFAUT.has(type) || parType[type] || typesActifs.has(type),
+              ).map((type) => {
                 const IconeCat = ICONE_CATEGORIE[type]
                 return (
                 <button
@@ -1576,6 +1601,7 @@ function VueHabitat({
                 bulle={<BullePreferences objet={o} groupe={groupe} solo={solo} />}
                 nue
                 badges={compteursObjets}
+                panier
                 onClick={() => onObjet(o.nom)}
               />
             ))}
@@ -1803,6 +1829,7 @@ function LotMinimal({
                   bulle={<BullePreferences objet={o} groupe={groupe} solo={solo} />}
                   nue
                   badges={badges}
+                  panier
                   onClick={() => onObjet(o.nom)}
                 />
               </Fragment>

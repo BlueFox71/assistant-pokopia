@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import Aide from '../components/Aide'
+import { BoutonCourses } from '../components/BoutonsCourses'
 import { ICONE_CATEGORIE, IconePinceau } from '../components/Icones'
 import { VignettePokemon } from '../components/Vignette'
 import { urlSpriteObjet } from '../data/images'
@@ -13,7 +14,8 @@ import {
   prefsParObjet,
   spriteObjet,
 } from '../data'
-import { FR_TYPE_OBJET, typeObjet } from '../data/categories'
+import { FR_TYPE_OBJET } from '../data/categories'
+import { typeDe } from '../data/types'
 import { libelleSource, methodeParObjet } from '../data/methodes'
 import { basculer, useConnues } from '../utils/methodesStorage'
 import { nomVille, useNomsVilles } from '../utils/villesStorage'
@@ -186,7 +188,7 @@ export default function ObjetPage() {
   }
 
   const categorie = categorieDe(nom)
-  const meuble = typeObjet(nom, objetParNom.get(nom)?.categorie)
+  const meuble = typeDe(nom)
   const IconeCat = ICONE_CATEGORIE[meuble]
 
   return (
@@ -210,6 +212,9 @@ export default function ObjetPage() {
             {slugs.length} préférence{slugs.length > 1 ? 's' : ''} · {pokemonContents.length}{' '}
             Pokémon contentés
           </p>
+        </div>
+        <div className="fiche-actions">
+          <BoutonCourses nom={nom} />
         </div>
       </header>
 

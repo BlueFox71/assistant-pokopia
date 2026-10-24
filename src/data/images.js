@@ -29,6 +29,13 @@ const modulesAliments = import.meta.glob('./sprites/aliments/*.webp', {
   eager: true,
 })
 
+/* Les méthodes sans objet au catalogue (blocs, murs, sols…), cf. importer-serebii-methodes.mjs. */
+const modulesMethodes = import.meta.glob('./sprites/methodes/*.webp', {
+  query: '?url',
+  import: 'default',
+  eager: true,
+})
+
 /** `./sprites/objets/plainchest.webp` -> `plainchest` */
 const cleDepuisChemin = (chemin) =>
   (chemin.split('/').pop() || '').replace(/\.webp$/i, '')
@@ -42,6 +49,7 @@ function indexer(modules) {
 const objetsParCle = indexer(modulesObjets)
 const pokemonParCle = indexer(modulesPokemon)
 const alimentsParCle = indexer(modulesAliments)
+const methodesParCle = indexer(modulesMethodes)
 
 /** URL de la vignette d'un objet, ou null si la clé est inconnue. */
 export const urlSpriteObjet = (cle) => (cle && objetsParCle.get(cle)) || null
@@ -51,6 +59,10 @@ export const urlSpritePokemon = (cle) => (cle && pokemonParCle.get(cle)) || null
 
 /** URL de la vignette d'un aliment, ou null si la clé est inconnue. */
 export const urlSpriteAliment = (cle) => (cle && alimentsParCle.get(cle)) || null
+
+/** URL de la vignette d'une méthode : celle de son objet s'il est au catalogue, sinon la sienne. */
+export const urlSpriteMethode = (m) =>
+  (m && (m.objet ? objetsParCle.get(m.sprite) : methodesParCle.get(m.sprite))) || null
 
 /*
  * Les icônes du jeu, découpées dans des captures (assets/) : une par spécialité, nommée

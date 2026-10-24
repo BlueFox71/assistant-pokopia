@@ -27,9 +27,17 @@
 //
 // ── Ce qui reste sans goût ──────────────────────────────────────────────────────────────
 //
-// Six entrées ne sont données par aucune des deux sources : Métamorph, Jirachi, Ténéfix,
+// Six entrées n'étaient données par aucune des deux sources : Métamorph, Jirachi, Ténéfix,
 // Mosslax, Peakychu et le Professeur Saquedeneu. Le champ est alors absent, et l'affichage
 // saute la mention — comme il le fait déjà pour les types et les spécialités manquants.
+//
+// ── Les corrections de pokopia.gamertw.com ──────────────────────────────────────────────
+//
+// pokopia.gamertw.com/fr/favorite range chaque forme à part, et plusieurs n'ont pas le goût
+// de leur espèce : Sancoki Mer Est est sec quand Sancoki est acide. Ses comptes par goût
+// tombent juste une fois ces écarts pris en compte, et il comble les entrées orphelines.
+// Il n'a pas de flux exploitable simplement, d'où la table CORRECTIONS, qui l'emporte sur
+// les deux autres sources.
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -60,6 +68,22 @@ const FORMES = {
   'Frillish Male Form': 'Frillish (Male)',
   'Jellicent Female Form': 'Jellicent (Female)',
   'Jellicent Male Form': 'Jellicent (Male)',
+}
+
+/** Relevé sur pokopia.gamertw.com/fr/favorite/<goût>-flavors : nos noms, leur goût. */
+const CORRECTIONS = {
+  'Shellos East Sea': 'dry',
+  'Gastrodon East Sea': 'dry',
+  'Tatsugiri Curly Form': 'sour',
+  'Tatsugiri Droopy Form': 'sweet',
+  'Tatsugiri Stretchy Form': 'spicy',
+  'Toxtricity Amped Form': 'spicy',
+  'Toxtricity Low Key Form': 'bitter',
+  Jirachi: 'sweet',
+  Peakychu: 'sweet',
+  Sableye: 'sour',
+  Mosslax: 'spicy',
+  'Professor Tangrowth': 'dry',
 }
 
 const args = process.argv.slice(2)
@@ -222,13 +246,14 @@ const changes = []
 
 const suivant = nôtres.map((p) => {
   const cherche = FORMES[p.en] || p.en
-  const gout = guide.get(cherche) || wiki.get(cherche) || null
+  const gout = CORRECTIONS[p.en] || guide.get(cherche) || wiki.get(cherche) || null
   if (!gout) {
     sansGout.push(`${p.fr} (${p.en})`)
     const { gout: _, ...sansChamp } = p
     return sansChamp
   }
-  if (!guide.has(cherche)) rattrapes.push(`${p.fr} ← wiki`)
+  if (CORRECTIONS[p.en]) rattrapes.push(`${p.fr} ← gamertw`)
+  else if (!guide.has(cherche)) rattrapes.push(`${p.fr} ← wiki`)
   if (p.gout && p.gout !== gout) changes.push(`${p.fr} : ${p.gout} → ${gout}`)
   return { ...p, gout }
 })

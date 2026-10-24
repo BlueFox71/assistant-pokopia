@@ -48,7 +48,16 @@ function une(texte) {
   const bas = texte.toLowerCase()
 
   if (/expansion pass/.test(bas)) return { type: 'expansion', texte }
-  if (/daily special|shop special/.test(bas)) return { type: 'offre-du-jour', texte }
+  if (/daily special|shop special|daily shop/.test(bas)) return { type: 'offre-du-jour', texte }
+
+  // « Register 140 Pokémon », « Regsiter 240 Pokémon », « Basin Pokédex - 25 Registered » :
+  // un palier du Pokédex, celui du bassin quand il est nommé.
+  const palier = texte.match(/^Reg\w* (\d+) Pok/i) || texte.match(/^Basin Pok\S* - (\d+) Registered/i)
+  if (palier) {
+    const source = { type: 'pokedex' }
+    if (/^basin/.test(bas)) source.zone = 'fonds-bulleux'
+    return { ...source, niveau: Number(palier[1]), texte }
+  }
   if (/sparkling (water|ripples)|whirlpool|ripples in water/.test(bas)) return { type: 'remous', texte }
 
   if (/^shop\b/.test(bas)) {
@@ -64,7 +73,7 @@ function une(texte) {
     return source
   }
 
-  if (/^from\b|during the story|^beginning$/.test(bas)) return { type: 'histoire', texte }
+  if (/^from\b|during the story|^beginning$|request|quest\b/.test(bas)) return { type: 'histoire', texte }
 
   const zone = zoneDe(texte)
   return zone ? { type: 'autre', zone, texte } : { type: 'autre', texte }

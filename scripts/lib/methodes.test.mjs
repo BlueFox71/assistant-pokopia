@@ -55,3 +55,19 @@ test('cleNom', () => {
   assert.equal(cleNom('Adventure Kit'), cleNom('Adventure kit'))
   assert.equal(cleNom('Pikachu&#39;s bed'), cleNom('Pikachu’s bed'))
 })
+
+test('palier du Pokédex, coquilles comprises', () => {
+  assert.deepEqual(sources('Register 140 Pokémon'), [{ type: 'pokedex', niveau: 140, texte: 'Register 140 Pokémon' }])
+  assert.equal(sources('Regsiter 240 Pokémon')[0].niveau, 240)
+  assert.equal(sources('Register 25 Pokémon in the Pokédex')[0].type, 'pokedex')
+  assert.deepEqual(sources('Basin Pokédex - 25 Registered'), [
+    { type: 'pokedex', zone: 'fonds-bulleux', niveau: 25, texte: 'Basin Pokédex - 25 Registered' },
+  ])
+})
+
+test('demandes et quêtes → histoire', () => {
+  for (const t of ["Complete Bulbasaur's request", 'During Poliwrath quest line', "Start Mudkip's Request after building temple", 'During quest to make a picnic'])
+    assert.equal(sources(t)[0].type, 'histoire', t)
+})
+
+test('hasard de l’offre du jour', () => assert.equal(sources('Random chance in Daily shop')[0].type, 'offre-du-jour'))

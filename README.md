@@ -4,7 +4,7 @@ Index des **43 préférences d'aménagement** de *Pokémon Pokopia* : pour chacu
 qui la satisfont et les Pokémon qui l'apprécient — et l'inverse, qui est la question qu'on
 se pose vraiment en jeu : « quels objets poser dans l'enclos de ces quatre-là ? »
 
-Tout est embarqué (données et 1 129 vignettes) : l'application ne fait aucune requête
+Tout est embarqué (données et 1 593 vignettes) : l'application ne fait aucune requête
 réseau, sur le web comme en version bureau.
 
 ## Les vues
@@ -16,6 +16,7 @@ réseau, sur le web comme en version bureau.
 | **Habitat** (`/habitat`) | Des habitats nommés, enregistrés, de un à quatre colocataires, avec le **goût préféré** de chacun — le survol d'un colocataire liste les aliments qui l'ont. En tête, le **lot minimal**, déplié par défaut : le plus petit ensemble d'objets qui coche toutes les préférences du groupe. Leurs préférences se cumulent, et chaque objet est classé d'abord par le **nombre de colocataires** qu'il satisfait, ensuite par le nombre de préférences cochées : un objet « 3 Pokémon » vaut mieux que trois objets séparés — un tri à part reclasse sur les seules préférences, croissant ou décroissant. Les vignettes y sont **nues** — le sprite et ses badges, rien d'autre : le survol donne le nom, le type et les préférences cochées avec, pour chacune, le colocataire qui y tient. Un curseur règle leur taille de 32 à 128 px, et une case éteint les deux compteurs sous l'image pour ne garder que les silhouettes. Deux filtres — **catégorie d'objet** et préférence —, dépliés par défaut sous un bouton « Filtres » qui les replie et dit combien sont actifs, plus le décompte Repos / Décoration / Jouet du confort « exceptionnel ». Le sélecteur filtre les candidats **par ville** et **par spécialité**, et sait en proposer un (« Suggestion colocataire »). |
 | **Villes** (`/villes`) | Les 366 Pokémon rangés par région de l'île, et de quoi **les réattribuer** — un ou plusieurs à la fois. Aucune source ne publie la ville d'origine : 287 rattachements sont relevés en jeu, les 79 autres sont **déduits** de l'habitat idéal et le disent. |
 | **Objets** (`/objets`) | Le catalogue des 714 objets, filtrable par **catégorie de meuble**, catégorie de confort et **personnalisation**, triable par nom, préférences ou nombre de Pokémon contentés. Un pinceau sous la vignette marque ce que Smearguru peut repeindre. |
+| **Méthodes** (`/methodes`) | Les 882 méthodes de fabrication du jeu, à **cocher** quand on les connaît : un compteur (« 212 / 882 connues ») et le filtre **À trouver** disent ce qu'il reste, et chaque ligne dit **où l'obtenir** — la boutique du PC de telle ville à tel niveau, son offre du jour, les remous scintillants, un palier du Pokédex, l'histoire, l'Expansion Pass. Filtrée sur la boutique d'une ville, la liste se range par niveau. La fiche d'un objet porte la même case. Coches gardées dans `pokopia:methodes`, avec export / import. |
 | **Pokédex** (`/pokedex`) | Les 366 Pokémon, filtrables par habitat, **type** et **spécialité**, triables par numéro, nom ou nombre de préférences. Chaque fiche donne ses préférences, ses objets les plus utiles et les Pokémon aux **goûts les plus proches dans sa ville** — le bon réflexe avant de composer un enclos. |
 | **Construction** (`/construction`) | Des simulations pour préparer un chantier. La première, le **générateur de formes**, dessine bloc par bloc sur une grille un cercle, une ellipse, un carré, un rectangle, un losange ou une étoile (de 3 à 12 branches) — contour fin, contour continu (étanche) ou plein, épaisseur réglable — avec le **nombre de blocs** à prévoir et le détail rangée par rangée. Les réglages sont dans l'URL (`?sim=formes&forme=cercle&l=21&mode=fin`) ; un ancien lien sans `sim` est redirigé vers le bon générateur. Le **générateur d'habitat** (`?sim=habitat`) dit si une maison de largeur × longueur donnée sera reconnue par le jeu — intérieur de 2 × 2 à 9 × 10, d'après Game8 et Serebii —, avec la surface (entière et hors bordure — sans la rangée qui longe les murs), l'emprise, les blocs de mur, et le tableau de toutes les tailles acceptées. Le **générateur d'escalier** (`?sim=escalier`) trace de profil un escalier d'un dénivelé donné — profondeur de marche, palier, plein ou marches seules — avec sa longueur au sol et le nombre de blocs ; il suppose un bloc de haut par marche, faute de source sur ce que le personnage franchit. Le **plan personnalisé** (`?sim=plan`) est une grille carrée de 4 à 64 de côté, à remplir à la main — case par case ou en ligne avec un pinceau de 1 à 5 cases, ou en carré (contour ou plein), pour poser ou effacer —, avec le compte des blocs, un historique (Ctrl+Z), et deux boutons pour pivoter le plan d'un quart de tour, habitats compris. L'outil **Dupliquer** copie une forme d'un clic (ou une zone au rectangle), habitats compris, puis la colle autant de fois que voulu — pivotable, et à la gomme pour effacer cette forme. L'outil **Habitat** remplit un enclos existant, ou en dessine un d'un geste (murs et habitat d'un coup), et marque son intérieur comme maison s'il respecte les règles — fermé, rectangulaire, de 2 × 2 à 9 × 10 —, dit pourquoi sinon, et signale un habitat dont on a cassé le mur depuis. Le plan en cours est gardé à chaque tracé (`pokopia:plan`) ; on peut aussi **enregistrer des plans nommés** pour les rouvrir plus tard (`pokopia:plans`), et les exporter ou importer en JSON comme les habitats. |
 
@@ -405,6 +406,38 @@ objets, et le script liste celles qui restent à convertir. Les baies, le Super 
 Lait Meumeu portent leur nom officiel ; **les autres noms français sont une traduction
 maison**, écrite dans le script.
 
+### Les méthodes
+
+La boutique du PC finit par ne plus proposer que des méthodes déjà connues, et le jeu ne dit
+jamais combien il en reste : c'est la question à laquelle répond la page Méthodes.
+
+**Les données.** `scripts/importer-serebii-methodes.mjs` lit `crafting.shtml` de Serebii —
+une section par famille, une ligne par méthode avec ses ingrédients et sa colonne
+« Locations » — et prend le nom français chez Pokékalos, comme le catalogue ; celui du
+catalogue prime quand la méthode y a son objet. La colonne Locations est saisie à la main
+(« Shop - Bleak Beach Lv. 2 », « Sparkly Skylands », « Regsiter 240 Pokémon ») :
+`scripts/lib/methodes.mjs` la range en sept types — boutique (ville, niveau, lot), offre du
+jour, remous, palier du Pokédex, histoire, Expansion Pass, autre — et garde toujours le texte
+d'origine, que l'infobulle affiche. Ce qu'il ne reconnaît pas tombe dans « autre » et est
+imprimé à l'import. Une ligne inachevée de Serebii (« C », sans image ni ingrédient) est
+écartée.
+
+Les 418 méthodes dont l'objet est au catalogue reprennent son sprite et mènent à sa fiche ;
+les 464 autres — blocs, murs, sols, constructions — ont leur image de Serebii dans
+`sprites/methodes/`, au même format. Les ingrédients sont importés, pas encore affichés.
+
+**Les coches.** Elles ne gardent que des noms anglais. Un nom que `methodes.json` ne connaît
+plus est conservé — une mise à jour de Serebii peut renommer une ligne — mais pas compté.
+L'import **ajoute** et n'efface jamais rien.
+
+```sh
+node scripts/importer-serebii-methodes.mjs            # télécharge, compare, n'écrit rien
+node scripts/importer-serebii-methodes.mjs --ecrire   # écrit le JSON et télécharge les images manquantes (PNG)
+```
+
+Les PNG téléchargés se convertissent en webp de 72 px, centrés sur fond transparent, avant
+d'être commités ; le script dit combien il en reste.
+
 ### Le lot minimal
 
 Un objet posé dans l'enclos compte pour chaque colocataire qui l'apprécie : une préférence
@@ -498,6 +531,7 @@ colorent leur icône sans une règle de plus.
 ```sh
 npm install
 npm run dev            # http://localhost:5191
+npm test               # tests des scripts et des modules purs (node --test)
 npm run build          # build web (base /assistant-pokopia/ pour GitHub Pages)
 npm run desktop:dev    # coquille Tauri
 npm run desktop:build  # exe autonome (--no-bundle)
@@ -522,7 +556,9 @@ npm run desktop:build  # exe autonome (--no-bundle)
 | `villes.json` | la ville d'origine de chaque Pokémon — **vide par défaut**, aucune source ne la publie (cf. « Les villes ») |
 | `aliments.json` | 48 aliments : nom anglais, nom français, goût, clé de sprite (cf. « Les goûts ») |
 | `sprites/objets/`, `sprites/pokemon/` | 1 100 vignettes WebP de 72 px |
+| `methodes.json` | 882 méthodes de fabrication : nom anglais, nom français, famille, objet du catalogue, sources, ingrédients (cf. « Les méthodes ») |
 | `sprites/aliments/` | 48 vignettes WebP de 72 px |
+| `sprites/methodes/` | 464 vignettes WebP de 72 px, pour les méthodes sans objet au catalogue |
 | `sprites/specialites/`, `sprites/villes/` | les icônes du jeu : 32 spécialités, 6 villes (cf. « Les icônes du jeu ») |
 
 Ils sont **extraits** de l'artifact d'origine (« Pokopia — Index des préférences ») par

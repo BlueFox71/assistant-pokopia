@@ -236,3 +236,9 @@
   .habitat-jeu { flex-direction: column; }
   .ant-image.habitat-jeu-image { width: 100%; height: auto; aspect-ratio: 400 / 278; }
 }
+
+/* La méthode de fabrication : la même case que la page Méthodes, et où l'obtenir. */
+.fiche-methode .methode-bascule { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+.fiche-methode .methode-bascule input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); cursor: pointer; }
+.fiche-sources { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.fiche-sources li { font-size: 12.5px; padding: 2px 8px; border-radius: var(--radius); border: 1px solid var(--line-strong); color: var(--ink-2); }

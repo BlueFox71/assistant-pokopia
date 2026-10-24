@@ -14,6 +14,9 @@ import {
   spriteObjet,
 } from '../data'
 import { FR_TYPE_OBJET, typeObjet } from '../data/categories'
+import { libelleSource, methodeParObjet } from '../data/methodes'
+import { basculer, useConnues } from '../utils/methodesStorage'
+import { nomVille, useNomsVilles } from '../utils/villesStorage'
 import {
   BAIES,
   COULEURS,
@@ -117,6 +120,38 @@ function Couleurs({ nom }) {
 }
 
 /**
+ * La méthode de fabrication de l'objet, s'il en a une : connue ou à trouver, et où
+ * l'obtenir. La même case que sur la page Méthodes — c'est souvent ici qu'on tombe sur un
+ * objet en voyant passer sa méthode à la boutique.
+ */
+function Methode({ nom }) {
+  const connues = useConnues()
+  const noms = useNomsVilles()
+  const m = methodeParObjet.get(nom)
+  if (!m) return null
+  const connue = connues.has(m.en)
+  return (
+    <section className="fiche-bloc fiche-methode">
+      <h2 className="etiquette">Méthode de fabrication</h2>
+      <label className="methode-bascule">
+        <input type="checkbox" checked={connue} onChange={(e) => basculer(m.en, e.target.checked)} />
+        {connue ? 'Connue' : 'À trouver'}
+      </label>
+      <ul className="fiche-sources">
+        {m.sources.map((s, i) => (
+          <li key={i} title={s.texte}>
+            {libelleSource(s, (cle) => nomVille(noms, cle))}
+          </li>
+        ))}
+      </ul>
+      <p className="fiche-note">
+        <Link to={`/methodes?vue=toutes&q=${encodeURIComponent(m.fr)}`}>Voir dans les méthodes</Link>
+      </p>
+    </section>
+  )
+}
+
+/**
  * Fiche d'un objet : les préférences qu'il coche, les couleurs qu'il accepte, et tous les
  * Pokémon qu'il contente — dans cet ordre, celui de la question qu'on se pose.
  *
@@ -184,6 +219,8 @@ export default function ObjetPage() {
           Décoration, ni comme Jouet dans le calcul du confort d’un habitat.
         </p>
       )}
+
+      <Methode nom={nom} />
 
       <section className="fiche-bloc">
         <h2 className="etiquette">

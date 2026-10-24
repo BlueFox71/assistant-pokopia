@@ -1,6 +1,6 @@
 import { useDeferredValue, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { Input, Segmented, Select } from 'antd'
+import { Checkbox, Input, Segmented, Select } from 'antd'
 import { urlSpriteMethode } from '../data/images'
 import { filtrerMethodes } from '../data/filtreMethodes'
 import { FAMILLES, FR_SOURCE, cleFiltre, libelleSource, methodes, nomsMethodes } from '../data/methodes'
@@ -11,6 +11,20 @@ import { nomVille, useNomsVilles } from '../utils/villesStorage'
 import './MethodesPage.css'
 
 const VIDE = new Set()
+
+/**
+ * Afficher ou non, sous chaque vignette, où obtenir la méthode. Retenu d'une visite à
+ * l'autre, comme les réglages de la grille du plan : sans les sources, la grille se
+ * resserre, ce qu'on veut pour cocher vite ce qu'on reconnaît d'un coup d'œil.
+ */
+const CLE_SOURCES = 'pokopia:methodes-sources'
+const lireSources = () => {
+  try {
+    return localStorage.getItem(CLE_SOURCES) !== 'non'
+  } catch {
+    return true
+  }
+}
 
 const VUES = [
   { value: 'a-trouver', label: 'À trouver' },
@@ -33,6 +47,16 @@ export default function MethodesPage() {
   const [saisie, setSaisie] = useState(() => params.get('q') || '')
   const [sauvegarde, setSauvegarde] = useState(null)
   const [message, setMessage] = useState('')
+  const [avecSources, setAvecSources] = useState(lireSources)
+  const changerSources = (oui) => {
+    setAvecSources(oui)
+    try {
+      if (oui) localStorage.removeItem(CLE_SOURCES)
+      else localStorage.setItem(CLE_SOURCES, 'non')
+    } catch {
+      /* le réglage vaut au moins pour la session */
+    }
+  }
 
   const vue = VUES.some((v) => v.value === params.get('vue')) ? params.get('vue') : 'a-trouver'
   const famille = params.get('famille') || null
@@ -176,6 +200,9 @@ export default function MethodesPage() {
             popupMatchSelectWidth={false}
             options={optionsSource}
           />
+          <Checkbox checked={avecSources} onChange={(e) => changerSources(e.target.checked)}>
+            Afficher où l’obtenir
+          </Checkbox>
           <span className="statut">{liste.length} méthodes</span>
         </div>
       </div>
@@ -251,7 +278,14 @@ export default function MethodesPage() {
               )}
               <div className="chips methodes-grille">
                 {g.methodes.map((m) => (
-                  <Tuile key={m.en} m={m} connue={connues.has(m.en)} ville={ville} cocher={cocher} />
+                  <Tuile
+                    key={m.en}
+                    m={m}
+                    connue={connues.has(m.en)}
+                    ville={ville}
+                    cocher={cocher}
+                    avecSources={avecSources}
+                  />
                 ))}
               </div>
             </section>
@@ -275,7 +309,7 @@ export default function MethodesPage() {
  * il prend toute la surface. Connue, elle porte le liseré et la coche de la sélection
  * d'habitat. La fiche de l'objet, quand il en a une, est un lien à part, sous les sources.
  */
-function Tuile({ m, connue, ville, cocher }) {
+function Tuile({ m, connue, ville, cocher, avecSources }) {
   const url = urlSpriteMethode(m)
   return (
     <div className={`chip methode-tuile${connue ? ' sel' : ''}`}>
@@ -294,13 +328,15 @@ function Tuile({ m, connue, ville, cocher }) {
           </span>
         )}
       </button>
-      <ul className="methode-sources">
-        {m.sources.map((s, i) => (
-          <li key={i} className={`source source-${s.type}`} title={s.texte}>
-            {libelleSource(s, ville)}
-          </li>
-        ))}
-      </ul>
+      {avecSources && (
+        <ul className="methode-sources">
+          {m.sources.map((s, i) => (
+            <li key={i} className={`source source-${s.type}`} title={s.texte}>
+              {libelleSource(s, ville)}
+            </li>
+          ))}
+        </ul>
+      )}
       {m.objet && (
         <Link className="methode-fiche" to={`/objet/${encodeURIComponent(m.objet)}`}>
           fiche

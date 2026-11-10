@@ -1,10 +1,15 @@
-<!-- version: 1.6.0 -->
+<!-- version: 1.6.1 -->
 
 ### Nouveautés
-- **Page Recettes** (menu Objets) : les 35 plats du jeu, rangés en cinq familles — salades, soupes, pains, steaks, smoothies —, une par ustensile. Chaque famille rappelle la capacité de Métamorph qu'elle améliore et son ingrédient clé. Chaque recette se lit comme une formule : les ingrédients à réunir, le Pokémon à mettre en cuisine s'il en faut un, puis le plat et sa saveur.
-- **Le bon commis sous la main** : survolez le commis d'une recette pour voir tous les Pokémon qui ont la spécialité demandée, ceux de vos habitats en premier. Un clic ouvre le Pokédex filtré sur cette spécialité.
-- **Offrandes à Ronflex Moussu** : chaque plat indique le bonus qu'il donne jusqu'au lendemain si vous l'offrez à Ronflex Moussu, et sa puissance.
+- **Page Code île de rêve** (menu Objets), en deux onglets :
+  - **Peluches** : pour chaque peluche, l'Île Rêve où Baudrive vous emmène, son décor, les trois ressources qu'on y trouve et le Pokémon légendaire qui peut s'y cacher (Raikou, Suicune, Entei, Mewtwo). Un encadré explique comment les trouver : au fond d'une grotte, derrière des murs à casser avec Éclate-Roc.
+  - **Abonnés** : gardez les codes d'île de vos abonnés, au format XXXX XXXX, avec un nom et une image si vous voulez. Un clic copie le code.
+- **Vidéos dans les Inspirations** : collez le lien d'une vidéo YouTube ou TikTok (Ctrl+V n'importe où sur la page, ou dans le nouveau champ) et elle rejoint la galerie. Un clic la lit sans quitter l'app. Une image peut aussi recevoir un lien vidéo, et une vidéo une image.
+- **Événement Verpom** : l'événement « Apples to Applin », à partir du 16 novembre, est enregistré. Ses objets seront ajoutés dès qu'ils seront connus.
+
+### Améliorations
+- **Préférences complétées** : les trophées de corde à sauter et de cache-cache comptent parmi les « Choses difficiles », la boîte à outils et le porte-outils mural parmi les « Constructions ».
+- **Types** : Charbambin, Chrysapile, Incisache, Gromago, Floréclat, Fulgulairo et Magby affichent enfin les leurs dans le Pokédex.
 
 ### Corrections
-- **Préférences complétées** : tous les Pokémon ont désormais leurs cinq préférences. Onze Pokémon aquatiques (Hypotrempe, Kaiminus, Carvanha, Lovdisc, Mustébouée, Luminéon, Otarlette, Sovkipou, Taupikeau, Triopikeau, Barpau) aiment aussi les « Choses à partager », Hypotrempe les « Choses liées à l'eau », et Nigirigon Forme Bouclée les « Choses fines ». Les objets recommandés sur les fiches habitat en tiennent compte.
-- **Goûts préférés** : Jirachi, Ténéfix, Ronflex Moussu, Peakychu et le Professeur Bouldeneu affichent enfin le leur. Certaines formes n'aiment pas la même chose que leur espèce, et c'est maintenant corrigé : Sancoki et Tritosor Mer Est préfèrent l'âcre, Nigirigon Forme Bouclée l'acidulé, Nigirigon Forme Étirée l'épicé, et Salarsen Forme Grave l'amer.
+- **Noms d'objets** alignés sur ceux du jeu : Produits de bain, Motif Baies, Maxi Pépite, Morphe-météo, Table en rondins, Décoration murale étoile et Porte-outils mural.

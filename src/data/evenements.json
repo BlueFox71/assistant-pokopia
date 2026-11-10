@@ -3,6 +3,14 @@
  "_source": "https://www.serebii.net/pokemonpokopia/events.shtml",
  "evenements": [
   {
+   "slug": "applestoapplin",
+   "en": "Apples to Applin",
+   "pokemon": "Verpom",
+   "debut": "2026-11-16",
+   "objets": [],
+   "absents": []
+  },
+  {
    "slug": "pumpkaboo'ssweetsurprises",
    "en": "Pumpkaboo's Sweet Surprises",
    "pokemon": "Pitrouille",

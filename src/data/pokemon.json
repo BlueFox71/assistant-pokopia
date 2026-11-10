@@ -600,6 +600,9 @@
   "gout": "sweet",
   "specialites": [
    "Combustion"
+  ],
+  "types": [
+   "feu"
   ]
  },
  {
@@ -630,6 +633,10 @@
   "specialites": [
    "Électrification",
    "Coupe de bois"
+  ],
+  "types": [
+   "insecte",
+   "electrik"
   ]
  },
  {
@@ -1710,6 +1717,9 @@
   "gout": "spicy",
   "specialites": [
    "Coupe de bois"
+  ],
+  "types": [
+   "dragon"
   ]
  },
  {
@@ -1904,6 +1914,10 @@
   "gout": "dry",
   "specialites": [
    "Collection"
+  ],
+  "types": [
+   "acier",
+   "spectre"
   ]
  },
  {
@@ -1978,6 +1992,10 @@
   "gout": "bitter",
   "specialites": [
    "Désordre"
+  ],
+  "types": [
+   "roche",
+   "poison"
   ]
  },
  {
@@ -2607,6 +2625,10 @@
   "specialites": [
    "Électrification",
    "Vol"
+  ],
+  "types": [
+   "electrik",
+   "vol"
   ]
  },
  {
@@ -2968,6 +2990,9 @@
   "gout": "sweet",
   "specialites": [
    "Combustion"
+  ],
+  "types": [
+   "feu"
   ]
  },
  {

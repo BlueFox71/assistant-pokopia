@@ -163,7 +163,7 @@
  },
  {
   "en": "Bathtime set",
-  "fr": "Produit de bain",
+  "fr": "Produits de bain",
   "categorie": "Toy",
   "sprite": "bathtimeset"
  },
@@ -289,7 +289,7 @@
  },
  {
   "en": "Berry print",
-  "fr": "Motif Baie",
+  "fr": "Motif Baies",
   "categorie": null,
   "sprite": "berryprint"
  },
@@ -319,7 +319,7 @@
  },
  {
   "en": "Big Nugget",
-  "fr": "Maxi pépite",
+  "fr": "Maxi Pépite",
   "categorie": "Toy",
   "sprite": "bignugget"
  },
@@ -535,7 +535,7 @@
  },
  {
   "en": "Castform weather charm",
-  "fr": "Morphe-Météo",
+  "fr": "Morphe-météo",
   "categorie": "Toy",
   "sprite": "castformweathercharm"
  },
@@ -1891,7 +1891,7 @@
  },
  {
   "en": "Log table",
-  "fr": "Table en rondin",
+  "fr": "Table en rondins",
   "categorie": null,
   "sprite": "logtable"
  },
@@ -3481,7 +3481,7 @@
  },
  {
   "en": "Star wall decoration",
-  "fr": "Décoration murale étoiles",
+  "fr": "Décoration murale étoile",
   "categorie": "Decoration",
   "sprite": "starwalldecoration"
  },
@@ -4045,7 +4045,7 @@
  },
  {
   "en": "Wall-mounted tools",
-  "fr": "Outils muraux",
+  "fr": "Porte-outils mural",
   "categorie": "Toy",
   "sprite": "wall-mountedtools"
  },

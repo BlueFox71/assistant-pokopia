@@ -38,6 +38,7 @@ const POKEMON_FR = {
   "bulbasaur'sjumpropecontest": 'Bulbizarre',
   copycatchallenge: 'Simularbre',
   moresporesforhoppip: 'Granivol',
+  applestoapplin: 'Verpom',
 }
 
 const MOIS = [

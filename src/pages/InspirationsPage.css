@@ -78,3 +78,51 @@
   background: rgba(0, 0, 0, .55);
   border-radius: var(--radius);
 }
+
+/* Le champ « coller un lien vidéo ». */
+.inspirations-lien { display: flex; gap: 8px; margin-top: 4px; max-width: 640px; }
+.inspirations-lien .ant-input-affix-wrapper { flex: 1; }
+
+/* Une vidéo : pastille de lecture par-dessus la miniature. */
+.inspiration-image { position: relative; }
+.inspiration-image.video { cursor: pointer; }
+.inspiration-lecture {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px 3px 7px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, .65);
+  border-radius: 999px;
+}
+.inspiration-lecture .triangle {
+  width: 0;
+  height: 0;
+  border-left: 8px solid #fff;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+/* Une vidéo sans miniature (TikTok, tant qu'on ne lui a pas donné d'image). */
+.inspiration-sans-image {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+.inspiration-sans-image.site-tiktok { color: #fff; background: linear-gradient(135deg, #25f4ee33, #111 45%, #111 55%, #fe2c5533); }
+
+/* Le lecteur, dans sa fenêtre. */
+.inspirations-lecteur { display: flex; flex-direction: column; gap: 10px; }
+.inspirations-lecteur iframe { display: block; width: 100%; border: 0; border-radius: var(--radius); background: #000; }
+.inspirations-lecteur iframe.lecteur-youtube { aspect-ratio: 16 / 9; }
+.inspirations-lecteur iframe.lecteur-tiktok { height: min(640px, 75vh); }
+.inspirations-lecteur a { align-self: flex-end; color: var(--accent-ink); font-size: 13px; }

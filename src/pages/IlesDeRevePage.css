@@ -1,0 +1,141 @@
+/* ---- page Code île de rêve (cf. IlesDeRevePage.jsx) ---- */
+
+.iles { padding-block: 20px 60px; }
+.iles kbd {
+  font-family: var(--mono); font-size: 11px; padding: 1px 5px;
+  border: 1px solid var(--line-strong); border-bottom-width: 2px;
+  border-radius: var(--radius); background: var(--surface);
+}
+
+/* ---- les onglets, comme ceux de la page Recettes ---- */
+.iles-onglets { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--line-strong); }
+.iles-onglet {
+  display: flex; flex-direction: column; line-height: 1.25;
+  padding: 8px 16px 7px; margin-bottom: -1px;
+  font: inherit; font-size: 14px; color: var(--ink-2); text-align: left;
+  background: none; border: 1px solid transparent; border-bottom: 0;
+  border-radius: var(--radius) var(--radius) 0 0; cursor: pointer;
+}
+.iles-onglet small {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3);
+}
+.iles-onglet:hover { color: var(--ink); }
+.iles-onglet:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: -2px; }
+.iles-onglet[aria-selected='true'] {
+  color: var(--ink); font-weight: 600;
+  background: var(--surface); border-color: var(--line-strong);
+  box-shadow: inset 0 3px 0 var(--accent);
+}
+.iles-onglet[aria-selected='true'] small { color: var(--accent-ink); font-weight: 400; }
+
+.iles-panneau {
+  background: var(--surface);
+  border: 1px solid var(--line-strong); border-top: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 16px;
+}
+
+/* ---- Peluches ---- */
+
+.peluches-grille {
+  list-style: none; margin: 16px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px;
+}
+.peluche {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 12px 14px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.peluche.hasard { border-style: dashed; }
+.peluche-tete { display: flex; gap: 12px; align-items: center; }
+.peluche-tete > img { width: 56px; height: 56px; object-fit: contain; flex: none; }
+.peluche-tete h3 { margin: 0; font-size: 15px; }
+.peluche-tete h3 a { color: inherit; text-decoration: none; }
+.peluche-tete h3 a:hover { color: var(--accent-ink); }
+.peluche-ile { margin: 2px 0 0; font-size: 13px; color: var(--ink-2); display: flex; align-items: center; gap: 6px; }
+.peluche-dlc {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .05em;
+  padding: 0 5px; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--ink-3);
+}
+.peluche-ville { margin: 2px 0 0; font-size: 12px; color: var(--ink-3); display: flex; align-items: center; gap: 5px; }
+.peluche-ville img { width: 16px; height: 16px; object-fit: contain; }
+.peluche-biome { margin: -4px 0 0; font-size: 12.5px; color: var(--ink-2); }
+.peluche-legendaire {
+  margin: auto 0 0; padding-top: 10px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px;
+}
+.peluche-legendaire > span {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3);
+}
+.peluche-legendaire a { display: flex; align-items: center; gap: 6px; color: var(--ink); font-weight: 600; text-decoration: none; }
+.peluche-legendaire a:hover { color: var(--accent-ink); }
+.peluche-legendaire img { width: 32px; height: 32px; object-fit: contain; }
+.peluches-legendaires {
+  margin-top: 0; padding: 10px 14px;
+  background: var(--accent-soft); border-radius: var(--radius);
+}
+.peluches-legendaires h3 { margin: 0 0 4px; font-size: 14px; }
+.peluches-legendaires p { margin: 0; font-size: 13px; color: var(--ink-2); max-width: 90ch; }
+.peluche-hasard { margin: 0; font-size: 13px; color: var(--ink-2); }
+
+.peluche-ressources { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.ressource > a, .ressource {
+  display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink);
+}
+.ressource > a { text-decoration: none; }
+.ressource > a:hover { color: var(--accent-ink); }
+.ressource img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+.ressource-sans-image {
+  width: 28px; height: 28px; flex: none;
+  border: 1px dashed var(--line-strong); border-radius: 50%;
+}
+.ressource sup { color: var(--ink-3); margin-left: 1px; }
+
+/* ---- Abonnés ---- */
+.abonnes-saisie {
+  padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--line);
+}
+.abonnes-champs { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.abonnes-champs label, .abonnes-image { display: flex; flex-direction: column; gap: 4px; }
+.abonnes-champs label > span, .abonnes-image > span { font-size: 12px; color: var(--ink-2); }
+.abonnes-champs label:nth-child(2) { flex: 1; min-width: 200px; }
+.abonnes-code { width: 150px; font-family: var(--mono); font-size: 16px; letter-spacing: .08em; text-transform: uppercase; }
+.abonnes-zone {
+  height: 32px; padding: 0 12px;
+  font: inherit; font-size: 12.5px; color: var(--ink-3);
+  background: none; border: 1px dashed var(--line-strong); border-radius: var(--radius); cursor: pointer;
+}
+.abonnes-zone:hover { color: var(--accent-ink); border-color: var(--accent-ink); }
+.abonnes-apercu { display: flex; align-items: center; gap: 8px; height: 32px; }
+.abonnes-apercu img { height: 32px; width: 48px; object-fit: cover; border-radius: var(--radius); }
+.abonnes-doublon { margin: 8px 0 0; font-size: 12.5px; color: var(--hit-ink); background: var(--hit-bg); display: inline-block; padding: 2px 8px; border-radius: var(--radius); }
+
+.abonnes-filtre { max-width: 320px; margin-bottom: 14px; }
+.abonnes-vide {
+  padding: 36px 20px; text-align: center; color: var(--ink-2);
+  border: 1px dashed var(--line-strong); border-radius: var(--radius);
+}
+
+.abonnes-grille {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
+}
+.abonne {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.abonne-image { aspect-ratio: 16 / 9; background: var(--surface-2); overflow: hidden; }
+.abonne-image .ant-image { display: block; width: 100%; height: 100%; }
+.abonne-image .ant-image-img { width: 100%; height: 100%; object-fit: cover; }
+.abonne-sans-image {
+  width: 100%; height: 100%;
+  font: inherit; font-size: 13px; color: var(--ink-3);
+  background: none; border: 0; cursor: pointer;
+}
+.abonne-sans-image:hover { color: var(--accent-ink); }
+.abonne-corps { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; border-top: 1px solid var(--line); }
+.abonne-code { font-family: var(--mono); font-size: 20px; font-weight: 600; letter-spacing: .08em; }
+.abonne-nom { font-size: 13px; }
+.abonne-nom.sans-nom { color: var(--ink-3); font-style: italic; }
+.abonne-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }

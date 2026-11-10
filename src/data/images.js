@@ -109,3 +109,15 @@ export const urlIconeSpecialite = (nom) => (nom && specialitesParCle.get(cleSpec
 
 /** URL de l'icône d'une ville, d'après sa clé, ou null. */
 export const urlIconeVille = (cle) => (cle && villesParCle.get(cle)) || null
+
+/* Les ressources des Îles Rêve absentes du catalogue, découpées dans l'infographie de
+   PokopiaFR ou dans des captures du jeu (cf. data/ilesDeReve.js). */
+const modulesIles = import.meta.glob('./sprites/iles/*.webp', {
+  query: '?url',
+  import: 'default',
+  eager: true,
+})
+const ilesParCle = indexer(modulesIles)
+
+/** URL de l'icône d'une ressource d'Île Rêve, ou null. */
+export const urlSpriteIle = (cle) => (cle && ilesParCle.get(cle)) || null

@@ -428,7 +428,7 @@ function ListeHabitats({ habitats, onOuvrir, onNouveau, onSupprimer }) {
         </div>
       </div>
 
-      <ProgressionVilles habitats={habitats} resume={false} />
+      <ProgressionVilles habitats={habitats} />
 
       {/* Les habitats vivent dans le stockage du navigateur : cette zone est le seul moyen
           de les emporter ailleurs, et de les retrouver s'ils disparaissent. */}

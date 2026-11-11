@@ -28,7 +28,7 @@ const ONGLETS = [
       { cle: '/methodes', libelle: 'Méthodes de fabrication', to: '/methodes' },
       { cle: '/recettes', libelle: 'Recettes', to: '/recettes' },
       { cle: '/preferences', libelle: 'Préférences', to: '/preferences' },
-      { cle: '/iles-de-reve', libelle: 'Code île de rêve', to: '/iles-de-reve' },
+      { cle: '/iles-de-reve', libelle: 'Îles de rêve', to: '/iles-de-reve' },
     ],
   },
   { to: '/pokedex', libelle: 'Pokédex', Icone: IconePokeball },

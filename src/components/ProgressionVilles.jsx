@@ -21,8 +21,8 @@ import './ProgressionVilles.css'
  * Le bloc ne paraît qu'une fois un premier habitat enregistré : six barres à zéro se
  * liraient comme une grille de cases à remplir, et l'accueil tient dans un écran.
  *
- * `resume` porte le total, à éteindre là où la page le dit déjà — la liste des habitats
- * annonce en tête combien de Pokémon n'ont pas encore de place.
+ * `resume` porte le total de l'île, toutes villes confondues, à éteindre là où la page
+ * le dit déjà.
  */
 export default function ProgressionVilles({ habitats, resume = true }) {
   const attributions = useAttributions()

@@ -14,7 +14,7 @@ const VUES = {
   objets: 'Objets',
   methodes: 'Méthodes',
   recettes: 'Recettes',
-  'iles-de-reve': 'Code île de rêve',
+  'iles-de-reve': 'Îles de rêve',
   pokedex: 'Pokédex',
   construction: 'Construction',
   inspirations: 'Inspirations',

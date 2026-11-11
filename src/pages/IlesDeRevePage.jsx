@@ -16,7 +16,7 @@ const ONGLETS = [
 ]
 
 /**
- * La page « Code île de rêve », en deux onglets : les peluches (quelle île, quelles
+ * La page « Îles de rêve », en deux onglets : les peluches (quelle île, quelles
  * ressources) et les îles des abonnés (codes `XXXX XXXX`, image facultative). L'onglet
  * ouvert vit dans l'URL (`?onglet=abonnes`), comme la famille de la page Recettes.
  */
@@ -38,7 +38,7 @@ export default function IlesDeRevePage() {
       <div className="wrap page-tete">
         <div>
           <p className="etiquette">Objets</p>
-          <h1>Code île de rêve</h1>
+          <h1>Îles de rêve</h1>
           <p className="liste-chapeau">
             Posez une peluche chez vous et interagissez avec : Baudrive propose de vous emmener sur
             l’Île Rêve qui lui correspond. Une île par jour ; elle se réinitialise le lendemain,

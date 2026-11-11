@@ -1,16 +1,23 @@
 /**
- * Charte de l'Assistant Pokopia.
+ * Charte de l'Assistant Pokopia — « Ciel sur la prairie, orchidée ».
  *
- * Lavande (#BDADEA) pour la marque et les objets, vert pour les Pokémon : la distinction
- * est portée par la couleur partout dans l'app (compteurs des cartes, fond des vignettes,
- * liseré des panneaux), donc les deux teintes ne sont pas interchangeables.
+ * Trois couleurs, trois rôles, à ne pas intervertir :
+ *   • le BLEU CIEL (`--accent`) marque les objets ;
+ *   • le VERT PRAIRIE (`--second`) marque les Pokémon : la distinction objet / Pokémon est
+ *     portée par la couleur partout dans l'app (compteurs des cartes, fond des vignettes,
+ *     liseré des panneaux) ;
+ *   • l'ORCHIDÉE (`--actif`) marque ce qui est ACTIF ou CHOISI : onglet courant, bascule
+ *     enfoncée, bouton principal, vignette sélectionnée. Elle ne désigne jamais une famille
+ *     de contenu, sinon l'œil ne sait plus si le rose veut dire « objet » ou « coché ».
+ * L'en-tête est un bandeau bleu profond (`--head`), souligné d'orchidée.
  *
- * L'accent existe en deux valeurs, et les confondre casse la lisibilité :
- *   • `--accent` est la lavande elle-même, réservée aux APLATS (onglet actif, bascule
- *     enfoncée, bouton principal), avec `--on-accent` — une encre sombre — par-dessus ;
- *   • `--accent-ink` est sa version foncée, pour tout ce qui est TEXTE, bordure ou
- *     liseré. En thème clair, la lavande sur du papier tombe à 1,9:1 de contraste : elle
- *     y est illisible. En thème sombre les deux se rejoignent.
+ * Chacune existe en plusieurs valeurs, et les confondre casse la lisibilité :
+ *   • `--accent` / `--actif` sont les teintes elles-mêmes, réservées aux APLATS, avec
+ *     `--on-accent` / `--on-actif` — une encre sombre — par-dessus ;
+ *   • `--accent-ink` / `--actif-ink` sont leurs versions foncées, pour tout ce qui est
+ *     TEXTE, bordure ou liseré : en thème clair, le bleu ciel ou l'orchidée sur du papier
+ *     tombent sous 2,5:1 de contraste. En thème sombre, les valeurs se rapprochent ;
+ *   • `--accent-soft` / `--actif-soft` sont les fonds pâles.
  *
  * Le thème suit le système par défaut ; `data-theme` sur <html> le force dans un sens ou
  * dans l'autre (cf. src/context/ThemeContext.jsx), et antd reçoit l'algorithme
@@ -18,24 +25,31 @@
  */
 
 :root {
-  --paper: #F5F3FA;
+  --paper: #F4F9F6;
   --surface: #FFFFFF;
-  --surface-2: #ECE8F5;
-  --ink: #23203A;
-  --ink-2: #565073;
-  --ink-3: #6A6485;
-  --line: #DCD6EC;
-  --line-strong: #BFB6DA;
-  --accent: #BDADEA;
-  --accent-ink: #5B45A6;
-  --accent-soft: #EDE8F9;
-  --second: #1F7A63;
-  --second-soft: #DDEFE7;
+  --surface-2: #E7F1EE;
+  --ink: #15263A;
+  --ink-2: #45596E;
+  --ink-3: #5A6E82;
+  --line: #D5E3DE;
+  --line-strong: #B3CBC4;
+  --accent: #5BB4F0;
+  --accent-ink: #1660A8;
+  --accent-soft: #DCEFFC;
+  --on-accent: #0B2540;
+  --second: #387A12;
+  --second-soft: #E3F4D4;
+  --actif: #DD91C2;
+  --actif-ink: #9E4282;
+  --actif-soft: #F8E6F1;
+  --on-actif: #3D1230;
+  --head: #1E6FB8;
+  --head-ink: #FFFFFF;
+  --head-ink-2: #E8F1FA;
   --hit-bg: #F7DE9A;
   --hit-ink: #4A3608;
-  --on-accent: #241C3D;
   --radius: 3px;
-  --shadow: 0 1px 0 rgba(35, 32, 58, .04), 0 1px 3px rgba(35, 32, 58, .06);
+  --shadow: 0 1px 0 rgba(21, 38, 58, .04), 0 1px 3px rgba(21, 38, 58, .06);
   --display: Cambria, Constantia, "Iowan Old Style", Georgia, serif;
   --body: "Segoe UI", system-ui, -apple-system, sans-serif;
   --mono: Consolas, "SF Mono", ui-monospace, monospace;
@@ -44,44 +58,58 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #16131F;
-    --surface: #1E1A2B;
-    --surface-2: #262135;
-    --ink: #EAE6F5;
-    --ink-2: #C3BCD9;
-    --ink-3: #A39BBD;
-    --line: #322B45;
-    --line-strong: #473E60;
-    --accent: #BDADEA;
-    --accent-ink: #BDADEA;
-    --accent-soft: #2C2542;
-    --second: #5CC3A3;
-    --second-soft: #1D3B31;
+    --paper: #0F1820;
+    --surface: #16222C;
+    --surface-2: #1D2B37;
+    --ink: #E6F0FA;
+    --ink-2: #B4C6D8;
+    --ink-3: #93A8BC;
+    --line: #253745;
+    --line-strong: #375066;
+    --accent: #5BB4F0;
+    --accent-ink: #7CC4F5;
+    --accent-soft: #183552;
+    --on-accent: #0B2540;
+    --second: #A6E07D;
+    --second-soft: #22361A;
+    --actif: #DD91C2;
+    --actif-ink: #E8A9D1;
+    --actif-soft: #3A2232;
+    --on-actif: #3D1230;
+    --head: #14304D;
+    --head-ink: #E6F0FA;
+    --head-ink-2: #B4C6D8;
     --hit-bg: #5C4A17;
     --hit-ink: #FBE9BC;
-    --on-accent: #1B1530;
     --shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 1px 3px rgba(0, 0, 0, .25);
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --paper: #16131F;
-  --surface: #1E1A2B;
-  --surface-2: #262135;
-  --ink: #EAE6F5;
-  --ink-2: #C3BCD9;
-  --ink-3: #A39BBD;
-  --line: #322B45;
-  --line-strong: #473E60;
-  --accent: #BDADEA;
-  --accent-ink: #BDADEA;
-  --accent-soft: #2C2542;
-  --second: #5CC3A3;
-  --second-soft: #1D3B31;
+  --paper: #0F1820;
+  --surface: #16222C;
+  --surface-2: #1D2B37;
+  --ink: #E6F0FA;
+  --ink-2: #B4C6D8;
+  --ink-3: #93A8BC;
+  --line: #253745;
+  --line-strong: #375066;
+  --accent: #5BB4F0;
+  --accent-ink: #7CC4F5;
+  --accent-soft: #183552;
+  --on-accent: #0B2540;
+  --second: #A6E07D;
+  --second-soft: #22361A;
+  --actif: #DD91C2;
+  --actif-ink: #E8A9D1;
+  --actif-soft: #3A2232;
+  --on-actif: #3D1230;
+  --head: #14304D;
+  --head-ink: #E6F0FA;
+  --head-ink-2: #B4C6D8;
   --hit-bg: #5C4A17;
   --hit-ink: #FBE9BC;
-  --on-accent: #1B1530;
   --shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 1px 3px rgba(0, 0, 0, .25);
   color-scheme: dark;
 }
@@ -277,8 +305,8 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .ghost-btn:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 .ghost-btn:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
-.ghost-btn.primaire { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.ghost-btn.primaire:hover { color: var(--on-accent); filter: brightness(1.08); }
+.ghost-btn.primaire { background: var(--actif); border-color: var(--actif); color: var(--on-actif); }
+.ghost-btn.primaire:hover { color: var(--on-actif); filter: brightness(1.08); }
 .ghost-btn:disabled { opacity: .45; cursor: not-allowed; }
 .ghost-btn:disabled:hover { border-color: var(--line-strong); color: var(--ink-2); filter: none; }
 
@@ -389,11 +417,11 @@ h1, h2, h3 { text-wrap: balance; }
 .chip.mon:hover { border-color: var(--second); }
 /* Vignette retenue pendant la composition d'un habitat. Un simple liseré ne suffisait pas :
    on clique, la liste garde l'élément en place, encore faut-il le voir. D'où le changement
-   de fond — le violet des Pokémon passe au lavande de la sélection — et la coche. */
+   de fond — l'objet comme le Pokémon passent à l'orchidée de la sélection — et la coche. */
 .chip.sel {
-  outline: 3px solid var(--accent-ink);
+  outline: 3px solid var(--actif-ink);
   outline-offset: -3px;
-  background: var(--accent-soft);
+  background: var(--actif-soft);
 }
 .chip.sel .chip-name { font-weight: 700; }
 .chip.sel::after {
@@ -404,7 +432,7 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: 11px;
   font-weight: 700;
   line-height: 1;
-  color: var(--accent-ink);
+  color: var(--actif-ink);
 }
 /* surlignage des correspondances de recherche */
 .chip.hit { background: var(--hit-bg); color: var(--hit-ink); }

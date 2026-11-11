@@ -1,6 +1,6 @@
 /* ---- liste de courses (cf. ListeCourses.jsx, PanneauCourses.jsx, BoutonsCourses.jsx) ---- */
 
-/* Le bouton flottant : lavande pleine, comme un bouton principal, et assez gros pour le doigt. */
+/* Le bouton flottant : orchidée pleine, comme un bouton principal, et assez gros pour le doigt. */
 .courses-fab {
   position: fixed;
   right: 20px;
@@ -12,8 +12,8 @@
   height: 52px;
   border: none;
   border-radius: 50%;
-  background: var(--accent);
-  color: var(--on-accent);
+  background: var(--actif);
+  color: var(--on-actif);
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, .18), 0 6px 16px rgba(0, 0, 0, .12);
@@ -90,8 +90,8 @@
 .courses-rayon b { font-family: var(--mono); font-size: 10.5px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .courses-rayon:hover { border-color: var(--accent-ink); }
 .courses-rayon:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
-.courses-rayon[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.courses-rayon[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
+.courses-rayon[aria-pressed='true'] { background: var(--actif); border-color: var(--actif); color: var(--on-actif); }
+.courses-rayon[aria-pressed='true'] b { color: var(--on-actif); opacity: .8; }
 .courses-choix {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
@@ -173,7 +173,7 @@
 .chip-panier.dedans { opacity: 1; }
 .chip-panier:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 .chip-panier:focus-visible { outline: 2px solid var(--accent-ink); }
-.chip-panier.dedans { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip-panier.dedans { background: var(--actif); border-color: var(--actif); color: var(--on-actif); }
 @media (hover: none) {
   .chip-panier { opacity: 1; }
 }

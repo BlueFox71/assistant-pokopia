@@ -17,7 +17,7 @@ import {
 } from '../data'
 
 /**
- * Les deux vignettes de l'app : un objet (fond lavande) et un Pokémon (fond vert).
+ * Les deux vignettes de l'app : un objet (fond bleu ciel) et un Pokémon (fond vert).
  *
  * Elles sont mémoïsées parce que l'index en affiche jusqu'à 3 000 d'un coup quand tout
  * est déplié, et qu'une frappe dans la recherche ne change l'état que de quelques-unes.

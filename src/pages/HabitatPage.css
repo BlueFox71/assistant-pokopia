@@ -299,16 +299,16 @@
 .separateur-bascules { width: 1px; align-self: stretch; margin: 2px 4px; background: var(--line-strong); }
 .bascule:disabled { opacity: .45; cursor: not-allowed; }
 .bascule:disabled:hover { border-color: var(--line-strong); }
-.bascule[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.bascule[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
+.bascule[aria-pressed='true'] { background: var(--actif); border-color: var(--actif); color: var(--on-actif); }
+.bascule[aria-pressed='true'] b { color: var(--on-actif); opacity: .8; }
 .bascule.reset[aria-pressed='true'] { background: var(--ink-2); border-color: var(--ink-2); }
 /* « Choses en commun » n'est pas une préférence de plus mais une vue à part : la seconde
    teinte la distingue de la rangée de bascules cumulatives au milieu de laquelle elle vit. */
 .bascule.commun { border-color: var(--second); color: var(--second); }
 .bascule.commun b { color: var(--second); opacity: .75; }
 .bascule.commun:hover { border-color: var(--second); background: var(--second-soft); }
-.bascule.commun[aria-pressed='true'] { background: var(--second); border-color: var(--second); color: var(--on-accent); }
-.bascule.commun[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
+.bascule.commun[aria-pressed='true'] { background: var(--second); border-color: var(--second); color: var(--surface); }
+.bascule.commun[aria-pressed='true'] b { color: var(--surface); opacity: .8; }
 
 /* ---- résultats ---- */
 .resultats { margin-top: 18px; }

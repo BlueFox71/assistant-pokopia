@@ -1,4 +1,6 @@
-.app-header { background: var(--surface); border-bottom: 1px solid var(--line); }
+/* Le bandeau bleu profond, souligné d'orchidée (cf. la charte dans index.css). Tout ce qui
+   s'y pose lit ses couleurs dans `--head-ink`, pas dans l'encre de la page. */
+.app-header { background: var(--head); color: var(--head-ink); border-bottom: 3px solid var(--actif); }
 
 .app-header-inner {
   display: flex;
@@ -12,29 +14,29 @@
 .marque span { display: flex; flex-direction: column; line-height: 1.15; }
 .marque-sur {
   font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--head-ink-2);
 }
 .marque strong { font-family: var(--display); font-size: 19px; letter-spacing: -.01em; }
 
 .onglets { display: flex; gap: 4px; flex-wrap: wrap; }
 .onglet {
   padding: 7px 13px; border-radius: var(--radius); font-size: 14px;
-  color: var(--ink-2); text-decoration: none; border: 1px solid transparent;
+  color: var(--head-ink); text-decoration: none; border: 1px solid transparent;
 }
-.onglet:hover { color: var(--accent-ink); border-color: var(--line-strong); }
-.onglet.active { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
-.onglet:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.onglet:hover { color: var(--head-ink); border-color: var(--actif); }
+.onglet.active { background: var(--actif); color: var(--on-actif); border-color: var(--actif); }
+.onglet:focus-visible { outline: 2px solid var(--actif); outline-offset: 1px; }
 
 .bascule-theme {
   margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
-  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  border: 1px solid var(--head-ink-2); background: transparent; color: var(--head-ink);
   border-radius: var(--radius); padding: 7px 10px; cursor: pointer; font: inherit; font-size: 14px;
 }
-.bascule-theme:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
-.bascule-theme:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
+.bascule-theme:hover { border-color: var(--actif); color: var(--actif); }
+.bascule-theme:focus-visible { outline: 2px solid var(--actif); outline-offset: 1px; }
 .pastille-auto {
   font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--head-ink-2);
 }
 
 /* Petit écran : la marque et le thème sur une ligne, les six onglets sur une seule autre,
@@ -56,7 +58,7 @@
 }
 
 /* Les onglets portent une icône : elle prend la couleur du texte, donc l'onglet actif
-   la fait passer en encre sur lavande sans règle supplémentaire. */
+   la fait passer en encre sur orchidée sans règle supplémentaire. */
 .onglet { display: inline-flex; align-items: center; gap: 7px; }
 .onglet svg { font-size: 15px; opacity: .85; }
 .onglet.active svg { opacity: 1; }

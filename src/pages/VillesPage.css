@@ -27,8 +27,8 @@
 }
 .villes .bascule:hover { border-color: var(--accent-ink); }
 .villes .bascule:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
-.villes .bascule[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.villes .bascule[aria-pressed='true'] b { color: var(--on-accent); opacity: .8; }
+.villes .bascule[aria-pressed='true'] { background: var(--actif); border-color: var(--actif); color: var(--on-actif); }
+.villes .bascule[aria-pressed='true'] b { color: var(--on-actif); opacity: .8; }
 .villes .bascule.reset[aria-pressed='true'] { background: var(--ink-2); border-color: var(--ink-2); }
 
 /* ---- barre de réattribution ---- */

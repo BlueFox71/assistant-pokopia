@@ -339,7 +339,7 @@
 .tableau-tailles button.refus { background: var(--surface-2); color: var(--ink-3); }
 .tableau-tailles button:hover { border-color: var(--accent-ink); }
 .tableau-tailles button:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
-.tableau-tailles button.actif { background: var(--accent); color: var(--on-accent); font-weight: 700; }
+.tableau-tailles button.actif { background: var(--actif); color: var(--on-actif); font-weight: 700; }
 
 .legende { list-style: none; margin: 12px 0 0; padding: 0; font-size: 12px; color: var(--ink-2); }
 .legende li { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
@@ -407,7 +407,7 @@
 .bouton-outil svg { font-size: 17px; }
 .bouton-outil:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 .bouton-outil:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 1px; }
-.bouton-outil.actif { background: var(--accent-soft); border-color: var(--accent-ink); color: var(--accent-ink); font-weight: 600; }
+.bouton-outil.actif { background: var(--actif-soft); border-color: var(--actif-ink); color: var(--actif-ink); font-weight: 600; }
 .bouton-outil:disabled { opacity: .45; cursor: not-allowed; }
 .bouton-outil:disabled:hover { border-color: var(--line-strong); color: var(--ink-2); }
 /* Les réglages de l'outil choisi : sur toute la largeur, deux par rangée. */
@@ -423,15 +423,17 @@
 .plan-zone { min-width: 0; grid-column: 1; grid-row: 1; }
 /* La grille dans le thème qu'on lui force, quel que soit celui de la page (cf. index.css). */
 .plan-zone.grille-sombre {
-  --paper: #16131F; --surface: #1E1A2B; --surface-2: #262135; --ink: #EAE6F5; --ink-2: #C3BCD9; --ink-3: #A39BBD;
-  --line: #322B45; --line-strong: #473E60; --accent-ink: #BDADEA; --accent-soft: #2C2542;
-  --second: #5CC3A3; --second-soft: #1D3B31; --hit-bg: #5C4A17; --hit-ink: #FBE9BC;
+  --paper: #0F1820; --surface: #16222C; --surface-2: #1D2B37; --ink: #E6F0FA; --ink-2: #B4C6D8; --ink-3: #93A8BC;
+  --line: #253745; --line-strong: #375066; --accent-ink: #7CC4F5; --accent-soft: #183552;
+  --second: #A6E07D; --second-soft: #22361A; --hit-bg: #5C4A17; --hit-ink: #FBE9BC;
+  --actif-ink: #E8A9D1; --actif-soft: #3A2232;
   color-scheme: dark;
 }
 .plan-zone.grille-clair {
-  --paper: #F5F3FA; --surface: #FFFFFF; --surface-2: #ECE8F5; --ink: #23203A; --ink-2: #565073; --ink-3: #6A6485;
-  --line: #DCD6EC; --line-strong: #BFB6DA; --accent-ink: #5B45A6; --accent-soft: #EDE8F9;
-  --second: #1F7A63; --second-soft: #DDEFE7; --hit-bg: #F7DE9A; --hit-ink: #4A3608;
+  --paper: #F4F9F6; --surface: #FFFFFF; --surface-2: #E7F1EE; --ink: #15263A; --ink-2: #45596E; --ink-3: #5A6E82;
+  --line: #D5E3DE; --line-strong: #B3CBC4; --accent-ink: #1660A8; --accent-soft: #DCEFFC;
+  --second: #387A12; --second-soft: #E3F4D4; --hit-bg: #F7DE9A; --hit-ink: #4A3608;
+  --actif-ink: #9E4282; --actif-soft: #F8E6F1;
   color-scheme: light;
 }
 .plan-editeur > .outils-colonne { grid-column: 2; grid-row: 1; }
@@ -515,8 +517,8 @@
 .grille-bloc-feuillage { fill: var(--bloc-feuillage); --bloc: var(--bloc-feuillage); }
 .grille-bloc-metal { fill: var(--bloc-metal); --bloc: var(--bloc-metal); }
 .grille-bloc-neige { fill: var(--bloc-neige); --bloc: var(--bloc-neige); }
-/* L'aperçu d'un plan, dans l'infobulle : le lavande du thème n'y est pas défini. */
-.plan-apercu .grille-bloc-mur { fill: #BDADEA; }
+/* L'aperçu d'un plan, dans l'infobulle : le bleu ciel du thème n'y est pas défini. */
+.plan-apercu .grille-bloc-mur { fill: #5BB4F0; }
 
 .palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
 .pastille-type {
@@ -603,9 +605,9 @@
   margin: 2px 0 6px;
   border-radius: 2px;
 }
-.plan-apercu .grille-fond { fill: #16131F; }
-.plan-apercu .grille-blocs { fill: #BDADEA; }
-.plan-apercu .grille-habitat { fill: #1D3B31; }
+.plan-apercu .grille-fond { fill: #0F1820; }
+.plan-apercu .grille-blocs { fill: #5BB4F0; }
+.plan-apercu .grille-habitat { fill: #22361A; }
 
 /* Redéclarée : la page peut s'ouvrir seule (cf. PokedexPage.css). */
 .construction .note-source { font-size: 12.5px; color: var(--ink-3); margin: 18px 0 0; max-width: 88ch; }

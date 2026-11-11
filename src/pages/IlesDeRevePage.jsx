@@ -2,23 +2,38 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Image, Input, Popconfirm, Typography, message } from 'antd'
 import { frObjet, frPokemon, objetParNom, pokemonParNom, spriteObjet, spritePokemon } from '../data'
-import { CHANCE_LEGENDAIRE, PELUCHES } from '../data/ilesDeReve'
+import {
+  CHANCE_LEGENDAIRE,
+  PELUCHES,
+  SECTIONS_TROUVAILLES,
+  TROUVAILLES,
+  TROUVAILLES_COMMUNES,
+} from '../data/ilesDeReve'
 import { nomVilleParDefaut } from '../data/villes'
-import { urlIconeVille, urlSpriteAliment, urlSpriteObjet, urlSpriteIle, urlSpritePokemon, urlSpriteRecette } from '../data/images'
+import {
+  urlIconeVille,
+  urlSpriteAliment,
+  urlSpriteIle,
+  urlSpriteMethode,
+  urlSpriteObjet,
+  urlSpritePokemon,
+  urlSpriteRecette,
+} from '../data/images'
 import { imagesDe } from '../utils/baseLocale'
 import { codeComplet, extraireCode, formaterCode } from '../utils/codeIle'
 import { ajouterIle, listerIles, modifierIle, supprimerIle } from '../utils/ilesStorage'
 import './IlesDeRevePage.css'
 
 const ONGLETS = [
-  { cle: 'peluches', libelle: 'Peluches', detail: 'Ce qu’on trouve sur chaque île' },
-  { cle: 'abonnes', libelle: 'Abonnés', detail: 'Les codes d’île gardés' },
+  { cle: 'peluches', libelle: 'Îles Rêve', detail: 'Les peluches, et ce qu’on trouve sur chaque île' },
+  { cle: 'abonnes', libelle: 'Îles-Nuages', detail: 'Les codes des îles de vos abonnés' },
 ]
 
 /**
- * La page « Îles de rêve », en deux onglets : les peluches (quelle île, quelles
- * ressources) et les îles des abonnés (codes `XXXX XXXX`, image facultative). L'onglet
- * ouvert vit dans l'URL (`?onglet=abonnes`), comme la famille de la page Recettes.
+ * La page « Îles », en deux onglets : les Îles Rêve (quelle peluche, quelles
+ * ressources) et les Îles-Nuages des abonnés (codes `XXXX XXXX`, image facultative).
+ * La clé d'onglet `abonnes` et l'URL `/iles-de-reve` restent, pour les liens déjà gardés.
+ * L'onglet ouvert vit dans l'URL (`?onglet=abonnes`), comme la famille de la page Recettes.
  */
 export default function IlesDeRevePage() {
   const [params, setParams] = useSearchParams()
@@ -38,17 +53,12 @@ export default function IlesDeRevePage() {
       <div className="wrap page-tete">
         <div>
           <p className="etiquette">Objets</p>
-          <h1>Îles de rêve</h1>
-          <p className="liste-chapeau">
-            Posez une peluche chez vous et interagissez avec : Baudrive propose de vous emmener sur
-            l’Île Rêve qui lui correspond. Une île par jour ; elle se réinitialise le lendemain,
-            avec ce qu’on y a laissé. Et gardez ici les codes des îles de vos abonnés.
-          </p>
+          <h1>Îles</h1>
         </div>
       </div>
 
       <div className="wrap iles">
-        <div className="iles-onglets" role="tablist" aria-label="Îles de rêve">
+        <div className="iles-onglets" role="tablist" aria-label="Îles">
           {ONGLETS.map((o) => (
             <button
               key={o.cle}
@@ -100,6 +110,15 @@ function Peluches() {
           <Peluche key={p.cle} peluche={p} />
         ))}
       </ul>
+
+      {/* Ce que les cinq îles de base partagent : une fois ici, plutôt que cinq fois dans
+          les cartes, où ça noierait ce qui fait la différence d'une île à l'autre. */}
+      <details className="trouvailles trouvailles-communes">
+        <summary>
+          Sur toutes les Îles Rêve <b>{compterTrouvailles(TROUVAILLES_COMMUNES)}</b>
+        </summary>
+        <Trouvailles sections={TROUVAILLES_COMMUNES} />
+      </details>
     </div>
   )
 }
@@ -159,8 +178,77 @@ function Peluche({ peluche }) {
           })}
         </ul>
       )}
+      {TROUVAILLES[peluche.cle] && (
+        <details className="trouvailles">
+          <summary>
+            Tout ce qu’on y trouve <b>{compterTrouvailles(TROUVAILLES[peluche.cle])}</b>
+          </summary>
+          <p className="trouvailles-note">En plus de ce qu’on trouve sur toutes les îles (liste sous les cartes).</p>
+          <Trouvailles sections={TROUVAILLES[peluche.cle]} />
+        </details>
+      )}
       {!peluche.hasard && <Legendaire nom={peluche.legendaire} />}
     </li>
+  )
+}
+
+/**
+ * Fleurs et buissons existent en quatre couleurs, mais chaque partie n'en voit pousser
+ * qu'une, toujours la même (cf. regrouperCouleurs dans scripts/importer-serebii-iles.mjs).
+ */
+const BULLE_COULEURS =
+  'Une seule des quatre couleurs pousse dans votre partie, toujours la même ; les autres s’achètent à la boutique du jour.'
+
+const compterTrouvailles = (sections) =>
+  SECTIONS_TROUVAILLES.reduce((n, s) => n + (sections[s.cle]?.length || 0), 0)
+
+/** L'image d'une trouvaille : le slug de Serebii est aussi la clé de nos sprites. */
+const urlTrouvaille = (slug) =>
+  urlSpriteObjet(slug) || urlSpriteIle(slug) || urlSpriteAliment(slug) || urlSpriteMethode({ sprite: slug })
+
+/**
+ * Ce qu'on trouve sur une île, section par section (cf. scripts/importer-serebii-iles.mjs).
+ * Un nom sans traduction connue reste en anglais, en italique ; un objet du catalogue mène
+ * à sa fiche.
+ */
+function Trouvailles({ sections }) {
+  // Une zone qui défile : dépliée, la liste ne rallonge pas la carte de plusieurs écrans.
+  return (
+    <div className="trouvailles-defilement">
+      {SECTIONS_TROUVAILLES.filter((s) => sections[s.cle]?.length).map((s) => (
+        // Chaque section se déplie à la demande : fermées, les trois tiennent sur trois lignes.
+        <details key={s.cle} className="trouvailles-section">
+          <summary>
+            {s.libelle} <b>{sections[s.cle].length}</b>
+          </summary>
+          <ul>
+            {sections[s.cle].map((t) => {
+              const url = urlTrouvaille(t.sprite)
+              const contenu = (
+                <>
+                  {url ? (
+                    <img src={url} alt="" width="32" height="32" loading="lazy" />
+                  ) : (
+                    <span className="trouvaille-sans-image" />
+                  )}
+                  {t.fr || <i title="Pas de nom français connu">{t.en}</i>}
+                  {t.couleurs && <small className="trouvaille-couleurs">1 couleur sur 4</small>}
+                </>
+              )
+              return (
+                <li
+                  key={t.en}
+                  className="trouvaille"
+                  title={t.couleurs ? `${t.en} — ${BULLE_COULEURS}` : t.en}
+                >
+                  {objetParNom.has(t.en) ? <Link to={`/objet/${encodeURIComponent(t.en)}`}>{contenu}</Link> : contenu}
+                </li>
+              )
+            })}
+          </ul>
+        </details>
+      ))}
+    </div>
   )
 }
 

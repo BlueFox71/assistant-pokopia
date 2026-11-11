@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { Tooltip } from 'antd'
-import { ICONE_HABITAT, ICONE_VILLE, IconePinceau } from './Icones'
+import { ICONE_HABITAT, ICONE_VILLE, IconeNuage, IconePinceau } from './Icones'
 import { PanierVignette } from './BoutonsCourses'
 import { FR_TYPE_OBJET } from '../data/categories'
 import { typeDe } from '../data/types'
@@ -9,6 +9,7 @@ import {
   frObjet,
   frPokemon,
   habitatDe,
+  ileNuageUniquement,
   numeroAffiche,
   pokemonParNom,
   specialitesDe,
@@ -249,6 +250,12 @@ export const VignettePokemon = memo(function VignettePokemon({
           </>
         )}
       </span>
+      {ileNuageUniquement(nom) && (
+        <span className="chip-sub chip-ville ile-nuage" title="Ne vit que sur une Île-Nuage">
+          <IconeNuage />
+          Île-Nuage uniquement
+        </span>
+      )}
       {ville && (
         <span className={'chip-sub chip-ville ville-' + ville}>
           {IconeVil && <IconeVil />}

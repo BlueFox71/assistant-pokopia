@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react'
-import { pokemonParNom } from '../data'
+import { ileNuageUniquement, pokemonParNom } from '../data'
 import {
   CLES_VILLE,
   cleVilleValide,
@@ -122,10 +122,14 @@ export const cleVilleDe = (attrib, nom) => villeDe(attrib, nom).cle
 /** Le nom d'une ville, renommage du joueur compris. */
 export const nomVille = (noms, cle) => noms?.[cle] || nomVilleParDefaut(cle)
 
-/** Les Pokémon de chaque ville : { clé de ville -> noms anglais }, toutes les villes servies. */
+/**
+ * Les Pokémon de chaque ville : { clé de ville -> noms anglais }, toutes les villes servies.
+ * Ceux de l'Île-Nuage n'habitent aucune ville : ils n'y figurent pas.
+ */
 export function pokemonParVille(attrib) {
   const par = Object.fromEntries(CLES_VILLE.map((cle) => [cle, []]))
-  for (const nom of pokemonParNom.keys()) par[cleVilleDe(attrib, nom)]?.push(nom)
+  for (const nom of pokemonParNom.keys())
+    if (!ileNuageUniquement(nom)) par[cleVilleDe(attrib, nom)]?.push(nom)
   return par
 }
 

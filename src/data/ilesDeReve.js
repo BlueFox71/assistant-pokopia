@@ -13,6 +13,8 @@
  * `legendaire` : nom anglais du Pokémon (clé de pokemon.json), absent si l'île n'en a pas.
  */
 
+import trouvailles from './iles-reve.json'
+
 /** Chance qu'un légendaire apparaisse, d'après les notes de l'utilisateur. */
 export const CHANCE_LEGENDAIRE = '15 %'
 
@@ -107,4 +109,18 @@ export const PELUCHES = [
     hasard: true,
     ressources: [],
   },
+]
+
+/**
+ * Tout ce qu'on trouve sur chaque île, d'après Serebii (cf. scripts/importer-serebii-iles.mjs) :
+ * `communs` pour ce que les cinq îles de base partagent, `iles[cle]` pour le reste.
+ */
+export const TROUVAILLES_COMMUNES = trouvailles.communs
+export const TROUVAILLES = trouvailles.iles
+
+/** Les trois sections de Serebii, dans l'ordre de la page. */
+export const SECTIONS_TROUVAILLES = [
+  { cle: 'materiaux', libelle: 'Matériaux' },
+  { cle: 'blocs', libelle: 'Plantes et blocs' },
+  { cle: 'objets', libelle: 'Objets sur place' },
 ]

@@ -24,7 +24,7 @@
  */
 
 import fichierVilles from './villes.json'
-import { FR_HABITAT, pokemon, pokemonParNom } from './index'
+import { FR_HABITAT, ileNuageUniquement, pokemon, pokemonParNom } from './index'
 
 /**
  * Les villes, dans l'ordre où l'île se découvre. `teinte` est la clé de la couleur écrite
@@ -98,7 +98,10 @@ export const FR_SOURCE_VILLE = {
 
 /** Les attributions qui font autorité, si le fichier en porte. */
 const officielles = new Map(
-  Object.entries(fichierVilles.attributions || {}).filter(([, cle]) => cleVilleValide(cle)),
+  Object.entries(fichierVilles.attributions || {}).filter(
+    // Bouldeneu y figure (Ville-Nouvelle), mais il ne vit que sur l'Île-Nuage.
+    ([nom, cle]) => cleVilleValide(cle) && !ileNuageUniquement(nom),
+  ),
 )
 
 /** Combien d'entrées de villes.json ont été retenues — affiché sur la page Villes. */

@@ -289,6 +289,12 @@ body {
 }
 
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+/* Sur grand écran, toutes les pages prennent 80 % de la fenêtre : les grilles de vignettes
+   y gagnent des colonnes. Sous 1 480 px, 80 % rendraient moins que ces 1 180 px : on garde
+   alors la largeur fixe, plutôt que de creuser des marges là où la place manque déjà. */
+@media (min-width: 1480px) {
+  .wrap { max-width: 80%; }
+}
 
 h1, h2, h3 { text-wrap: balance; }
 
@@ -647,6 +653,8 @@ button.bascule svg.icone-jeu { font-size: 19px; margin: -3px 0; align-self: cent
 .ville-flotiles { color: var(--v-flotiles); }
 .ville-ville-nouvelle { color: var(--v-ville-nouvelle); }
 .ville-fonds-bulleux { color: var(--v-fonds-bulleux); }
+/* Bouldeneu : ni ville ni enclos, seulement l’Île-Nuage. */
+.ile-nuage { color: var(--accent-ink); }
 
 /* Bascule teintée : le filtre prend la couleur de ce qu'il filtre, éteint comme allumé. */
 .bascule.teintee { border-color: color-mix(in srgb, var(--teinte) 45%, var(--line-strong)); }

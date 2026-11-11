@@ -6,17 +6,17 @@
     </linearGradient>
   </defs>
   <rect width="1024" height="1024" rx="224" fill="url(#fond)"/>
-  <!-- le marteau : ce qui distingue l'Assistant d'une Poke Ball ordinaire — on y construit.
-       Dessiné avant la balle : s'il descend, sa tête passe derrière elle. -->
-  <g transform="translate(700 270) rotate(-35) scale(.9)">
-    <rect x="-34" y="-40" width="68" height="440" rx="28" fill="#E3B57C" stroke="#15263A" stroke-width="22"/>
-    <path d="M-170 -170H110Q170 -170 170 -115V-95Q170 -40 110 -40H-170Q-195 -105 -170 -170Z" fill="#B3CBC4" stroke="#15263A" stroke-width="22" stroke-linejoin="round"/>
-    <path d="M-140 -145H90" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" opacity=".55"/>
+  <!-- la pousse : ce qui distingue l'Assistant d'une balle ordinaire — Pokopia, c'est une
+       île qu'on fait reverdir. Dessinée avant la balle : la tige passe derrière elle. -->
+  <g stroke="#15263A" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M512 290V170" fill="none" stroke-width="26"/>
+    <path d="M512 200C470 120 380 110 330 140 360 210 450 230 512 200Z" fill="#8FCB5A" stroke-width="20"/>
+    <path d="M512 170C560 80 660 70 714 104 680 180 580 200 512 170Z" fill="#B5E08A" stroke-width="20"/>
   </g>
-  <g transform="translate(400 570) scale(.8273)">
-    <circle r="278" fill="#F4F9F6" stroke="#15263A" stroke-width="20"/>
-    <path d="M-278 0a278 278 0 0 1 556 0z" fill="#DD91C2"/>
-    <rect x="-278" y="-36" width="556" height="72" fill="#15263A"/>
+  <g transform="translate(512 548)">
+    <circle r="280" fill="#F4F9F6" stroke="#15263A" stroke-width="22"/>
+    <path d="M-280 0a280 280 0 0 1 560 0z" fill="#DD91C2"/>
+    <rect x="-280" y="-36" width="560" height="72" fill="#15263A"/>
     <circle r="108" fill="#F4F9F6" stroke="#15263A" stroke-width="56"/>
   </g>
 </svg>

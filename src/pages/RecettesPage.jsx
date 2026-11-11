@@ -66,21 +66,12 @@ export default function RecettesPage() {
       { replace: true },
     )
 
-  const nbPlats = FAMILLES.reduce((n, f) => n + f.plats.length, 0)
-
   return (
     <>
       <div className="wrap page-tete">
         <div>
           <p className="etiquette">Objets</p>
           <h1>Recettes</h1>
-          <p className="liste-chapeau">
-            Les {nbPlats} plats du jeu et ce qu’il faut réunir pour les cuisiner. On cuisine après
-            avoir rencontré Rongragoût à Collinangle, avec quatre ustensiles — et un cinquième, le
-            blender, dans le DLC. Chaque famille de plats renforce une capacité de Métamorph ;
-            certaines recettes demandent en plus un Pokémon en commis. Offert à Ronflex Moussu, un
-            plat donne en plus un bonus jusqu’au lendemain, selon sa saveur.
-          </p>
         </div>
       </div>
 

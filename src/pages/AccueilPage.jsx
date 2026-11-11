@@ -3,11 +3,22 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Input } from 'antd'
 import illustration from '../assets/accueil-pokopia.webp'
 import BandeDefilante from '../components/BandeDefilante'
-import { IconeBriques, IconeCaisse, IconeFeuille, IconeMaison } from '../components/Icones'
+import {
+  IconeAmpoule,
+  IconeBriques,
+  IconeCaisse,
+  IconeFeuille,
+  IconeListe,
+  IconeMaison,
+  IconeNuage,
+  IconeParchemin,
+  IconePokeball,
+  IconeTasse,
+  IconeTerrasse,
+} from '../components/Icones'
 import ProgressionVilles from '../components/ProgressionVilles'
 import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
-  objets as tousLesObjets,
   comparerParNumero,
   frObjet,
   frPokemon,
@@ -23,11 +34,27 @@ import { FR_TYPE_OBJET } from '../data/categories'
 import { typeDe } from '../data/types'
 import { useHabitats } from '../utils/habitatsStorage'
 import { correspond, normaliser } from '../utils/recherche'
-import { SIMULATIONS } from './simulations'
 import './AccueilPage.css'
 
 /** La catégorie de meuble parle plus que celle de confort : « lumière » plutôt que « décoration ». */
 const meubleDe = (nom) => FR_TYPE_OBJET[typeDe(nom)]
+
+/**
+ * Les tuiles de l'accueil, une par entrée du menu (cf. AppHeader.jsx), dans le même ordre :
+ * une icône et un nom, rien de plus. Habitat ouvre le sélecteur tant qu'aucun n'existe.
+ */
+const entrees = (habitats) => [
+  { to: habitats.length ? '/habitat' : '/habitat?nouveau=1', Icone: IconeMaison, teinte: 'var(--second)', titre: 'Habitat' },
+  { to: '/villes', Icone: IconeTerrasse, teinte: 'var(--second)', titre: 'Villes' },
+  { to: '/objets', Icone: IconeCaisse, teinte: 'var(--c-table)', titre: 'Objets' },
+  { to: '/methodes', Icone: IconeParchemin, teinte: 'var(--c-table)', titre: 'Méthodes' },
+  { to: '/recettes', Icone: IconeTasse, teinte: 'var(--c-table)', titre: 'Recettes' },
+  { to: '/preferences', Icone: IconeListe, teinte: 'var(--c-table)', titre: 'Préférences' },
+  { to: '/iles-de-reve', Icone: IconeNuage, teinte: 'var(--c-table)', titre: 'Îles' },
+  { to: '/pokedex', Icone: IconePokeball, teinte: 'var(--second)', titre: 'Pokédex' },
+  { to: '/construction', Icone: IconeBriques, teinte: 'var(--accent-ink)', titre: 'Construction' },
+  { to: '/inspirations', Icone: IconeAmpoule, teinte: 'var(--accent-ink)', titre: 'Inspirations' },
+]
 
 /** Au-delà, la liste de résultats cesse d'aider : on invite à préciser le terme. */
 const MAX_PAR_FAMILLE = 5
@@ -240,37 +267,14 @@ export default function AccueilPage() {
 
       <ProgressionVilles habitats={habitats} />
 
-      {/* Les trois choses qu'on vient faire ici, chacune avec ce qu'elle couvre : les
-          chiffres de l'application servent de preuve, pas de décor. */}
+      {/* Une tuile par page du menu, dans son ordre : l'accueil sert aussi de plan du site. */}
       <nav className="accueil-entrees" aria-label="Par où commencer">
-        <Link
-          to={habitats.length ? '/habitat' : '/habitat?nouveau=1'}
-          className="entree"
-          style={{ '--teinte': 'var(--second)' }}
-        >
-          <IconeMaison />
-          <strong>{habitats.length ? 'Reprendre mes habitats' : 'Composer un habitat'}</strong>
-          <span>
-            {habitats.length
-              ? `${habitats.length} habitat${habitats.length > 1 ? 's' : ''} enregistré${habitats.length > 1 ? 's' : ''}`
-              : 'Jusqu’à 4 Pokémon, et le plus petit lot d’objets qui les contente tous.'}
-          </span>
-          <small>{prefsParPokemon.size} Pokémon · {preferences.length} préférences</small>
-        </Link>
-        <Link to="/objets" className="entree" style={{ '--teinte': 'var(--c-table)' }}>
-          <IconeCaisse />
-          <strong>À qui sert cet objet ?</strong>
-          <span>Le catalogue, filtrable par catégorie, confort et personnalisation.</span>
-          <small>
-            {tousLesObjets.length} objets, dont {prefsParObjet.size} utiles à une préférence
-          </small>
-        </Link>
-        <Link to="/construction" className="entree" style={{ '--teinte': 'var(--accent-ink)' }}>
-          <IconeBriques />
-          <strong>Préparer une construction</strong>
-          <span>Taille d’une maison, formes, escaliers, et un plan à dessiner case par case.</span>
-          <small>{SIMULATIONS.length} simulations</small>
-        </Link>
+        {entrees(habitats).map((e) => (
+          <Link key={e.to} to={e.to} className="entree" style={{ '--teinte': e.teinte }}>
+            <e.Icone />
+            <strong>{e.titre}</strong>
+          </Link>
+        ))}
       </nav>
       </div>
     </div>

@@ -17,7 +17,7 @@ const ONGLETS = [
       { cle: '/villes', libelle: 'Villes', to: '/villes' },
     ],
   },
-  // Objets, Méthodes, Recettes, Préférences et Îles de rêve partagent un onglet : le catalogue d'abord, le
+  // Objets, Méthodes, Recettes, Préférences et Îles partagent un onglet : le catalogue d'abord, le
   // reste au survol.
   {
     to: '/objets',
@@ -28,7 +28,8 @@ const ONGLETS = [
       { cle: '/methodes', libelle: 'Méthodes de fabrication', to: '/methodes' },
       { cle: '/recettes', libelle: 'Recettes', to: '/recettes' },
       { cle: '/preferences', libelle: 'Préférences', to: '/preferences' },
-      { cle: '/iles-de-reve', libelle: 'Îles de rêve', to: '/iles-de-reve' },
+      // « Îles » tout court : il y a les Îles Rêve et les Îles-Nuages, un onglet chacune.
+      { cle: '/iles-de-reve', libelle: 'Îles', to: '/iles-de-reve' },
     ],
   },
   { to: '/pokedex', libelle: 'Pokédex', Icone: IconePokeball },

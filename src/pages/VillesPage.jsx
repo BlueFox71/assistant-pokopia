@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Input, Select } from 'antd'
 import { ICONE_VILLE } from '../components/Icones'
 import { VignettePokemon } from '../components/Vignette'
-import { comparerParNumero, frPokemon, pokemon, pokemonParNom } from '../data'
+import { comparerParNumero, frPokemon, ileNuageUniquement, pokemonParNom } from '../data'
 import { VILLES, cleVilleValide, habitatsDeVille, nbOfficielles } from '../data/villes'
 import { correspond, normaliser } from '../utils/recherche'
 import {
@@ -58,6 +58,11 @@ export default function VillesPage() {
   const villeActive = cleVilleValide(filtre) ? filtre : null
 
   const parVille = useMemo(() => pokemonParVille(attributions), [attributions])
+  /** Les Pokémon des six villes : tout le Pokédex, moins ceux de l'Île-Nuage. */
+  const nbHabitants = useMemo(
+    () => Object.values(parVille).reduce((n, noms) => n + noms.length, 0),
+    [parVille],
+  )
 
   /** Les villes à afficher, chacune avec ses Pokémon triés puis filtrés par la recherche. */
   const sections = useMemo(
@@ -112,7 +117,10 @@ export default function VillesPage() {
   const nbReattribues = Object.keys(attributions).length
   /** Combien de Pokémon suivent encore la déduction — le reste à corriger, affiché en tête. */
   const nbDeduits = useMemo(
-    () => [...pokemonParNom.keys()].filter((n) => villeDe(attributions, n).source === 'habitat').length,
+    () =>
+      [...pokemonParNom.keys()].filter(
+        (n) => !ileNuageUniquement(n) && villeDe(attributions, n).source === 'habitat',
+      ).length,
     [attributions],
   )
 
@@ -121,7 +129,7 @@ export default function VillesPage() {
       <div className="wrap page-tete villes-tete">
         <div>
           <p className="etiquette">Les villes de Pokopia</p>
-          <h1>{villeActive ? nomVille(noms, villeActive) : `Six régions, ${pokemon.length} Pokémon`}</h1>
+          <h1>{villeActive ? nomVille(noms, villeActive) : `Six régions, ${nbHabitants} Pokémon`}</h1>
           <p className="liste-chapeau">
             Où vit chaque Pokémon de l’île. Le rattachement est réattribuable : cliquez sur
             « Réattribuer des Pokémon », sélectionnez-en un ou plusieurs, et envoyez-les
@@ -181,7 +189,7 @@ export default function VillesPage() {
             {reattribution ? 'Terminer la réattribution' : 'Réattribuer des Pokémon'}
           </button>
           <span className="statut">
-            {affiches} Pokémon{terme ? ` sur ${pokemonParNom.size}` : ''}
+            {affiches} Pokémon{terme ? ` sur ${nbHabitants}` : ''}
           </span>
         </div>
       </div>
@@ -192,7 +200,7 @@ export default function VillesPage() {
         <p className="note-source">
           {nbOfficielles > 0 ? (
             <>
-              <b>{nbOfficielles} rattachements sur {pokemonParNom.size}</b> viennent d’une liste
+              <b>{nbOfficielles} rattachements sur {nbHabitants}</b> viennent d’une liste
               relevée en jeu, et les 52 entrées du bassin de leur Pokédex.{' '}
             </>
           ) : null}
@@ -270,7 +278,7 @@ export default function VillesPage() {
             aria-pressed={villeActive === null}
             onClick={() => choisir(null)}
           >
-            Toute l’île <b>{pokemonParNom.size}</b>
+            Toute l’île <b>{nbHabitants}</b>
           </button>
           {VILLES.map((v) => {
             const IconeVil = ICONE_VILLE[v.cle]

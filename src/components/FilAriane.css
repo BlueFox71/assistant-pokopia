@@ -1,5 +1,7 @@
 /* Le fil d'Ariane : une ligne discrète sous l'en-tête, étapes séparées par un chevron. */
-.fil-ariane { padding-top: 14px; }
+/* Un peu d'air entre le bandeau de l'en-tête et le fil. `.wrap.fil-ariane` et non
+   `.fil-ariane` seul : `.wrap { padding: 0 20px }`, chargé après, l'annulait. */
+.wrap.fil-ariane { padding-top: 24px; }
 .fil-ariane.large { max-width: 1680px; }
 .fil-ariane ol {
   display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0;

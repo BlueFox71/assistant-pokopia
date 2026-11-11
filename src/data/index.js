@@ -46,8 +46,19 @@ export const FR_GOUT = { sweet: 'Sucré', spicy: 'Épicé', sour: 'Acide', bitte
  */
 export const NON_LOGEABLES = new Set(['Kyogre', 'Lugia', 'Ho-Oh'])
 
-/** Peut-il rejoindre un enclos ? Faux pour Kyogre seul. */
-export const logeable = (nom) => !NON_LOGEABLES.has(nom)
+/**
+ * Les Pokémon qu'on ne croise QUE sur une Île-Nuage. Le Bouldeneu ordinaire (pas le
+ * Professeur) n'apparaît que là, attiré par le Banc près de buissons, et l'Île-Nuage est
+ * une partie à part : seuls le Pokédex et les recettes passent d'une partie à l'autre. On
+ * peut donc le compléter au Pokédex, mais il ne vivra jamais dans les villes. Il n'entre
+ * ni dans le sélecteur d'habitat, ni dans la vue Villes, ni dans les décomptes de logés.
+ */
+export const ILE_NUAGE_UNIQUEMENT = new Set(['Tangrowth'])
+
+export const ileNuageUniquement = (nom) => ILE_NUAGE_UNIQUEMENT.has(nom)
+
+/** Peut-il rejoindre un enclos de nos villes ? Faux pour les trois légendaires et Bouldeneu. */
+export const logeable = (nom) => !NON_LOGEABLES.has(nom) && !ILE_NUAGE_UNIQUEMENT.has(nom)
 
 /** Libellés des 18 types, dont les clés viennent de Pokébip (sans accents, en minuscules). */
 export const FR_TYPE = {

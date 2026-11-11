@@ -264,6 +264,13 @@ export const IconeLune = (p) => (
   </Svg>
 )
 
+/** Nuage : les Pokémon qu'on ne croise que sur une Île-Nuage. */
+export const IconeNuage = (p) => (
+  <Svg {...p}>
+    <path d="M7 18h10.5a4 4 0 0 0 .4-8 6 6 0 0 0-11.6 1.5A3.3 3.3 0 0 0 7 18z" />
+  </Svg>
+)
+
 export const IconeGoutte = (p) => (
   <Svg {...p}>
     <path d="M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3z" />

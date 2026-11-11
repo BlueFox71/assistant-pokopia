@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Image, Modal, Select } from 'antd'
 import { ZoomInOutlined } from '@ant-design/icons'
-import { ICONE_HABITAT, ICONE_VILLE, IconeSpecialite } from '../components/Icones'
+import { ICONE_HABITAT, ICONE_VILLE, IconeNuage, IconeSpecialite } from '../components/Icones'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
 import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
 import {
@@ -11,6 +11,7 @@ import {
   frObjet,
   frPokemon,
   habitatDe,
+  ileNuageUniquement,
   logeable,
   numeroAffiche,
   objetsPourGroupe,
@@ -150,6 +151,8 @@ export default function FichePokemonPage() {
   const specialites = connu ? specialitesDe(nom) : []
   const objets = useMemo(() => (connu ? objetsPourGroupe([nom], slugs) : []), [connu, nom, slugs])
   const habitatsJeu = connu ? habitatsJeuDe(nom) : []
+  /** Ne vit que sur l'Île-Nuage : ni ville, ni enclos, ni colocataires. */
+  const nuage = ileNuageUniquement(nom)
 
   const { cle: maVille, source: sourceVille } = connu
     ? villeDe(attributions, nom)
@@ -169,7 +172,7 @@ export default function FichePokemonPage() {
    * eux qu'on va chercher quand la ville ne donne personne d'assez proche.
    */
   const { memeVille, ailleurs } = useMemo(() => {
-    if (!connu) return { memeVille: [], ailleurs: [] }
+    if (!connu || nuage) return { memeVille: [], ailleurs: [] }
     const mien = new Set(slugs)
     // Un voisin de goût est un colocataire en puissance : Kyogre, Lugia et Ho-Oh, qu'aucun
     // enclos ne peut accueillir, n'ont pas à figurer dans une liste dont chaque entrée
@@ -188,7 +191,7 @@ export default function FichePokemonPage() {
       memeVille: tous.filter((v) => v.ville === maVille).slice(0, VOISINS),
       ailleurs: tous.filter((v) => v.ville !== maVille).slice(0, VOISINS),
     }
-  }, [connu, nom, slugs, attributions, maVille])
+  }, [connu, nuage, nom, slugs, attributions, maVille])
 
   if (!connu) {
     return (
@@ -221,17 +224,25 @@ export default function FichePokemonPage() {
               </>
             )}
             {' · '}
-            <Link
-              to={`/villes?ville=${maVille}`}
-              className={'marque-ville ville-' + maVille}
-              title="Voir tous les Pokémon de cette ville"
-            >
-              {(() => {
-                const I = ICONE_VILLE[maVille]
-                return I ? <I /> : null
-              })()}
-              {nomVille(nomsVilles, maVille)}
-            </Link>{' '}
+            {/* Bouldeneu n'habite aucune ville : à sa place, l'Île-Nuage. */}
+            {nuage ? (
+              <span className="marque-ville ile-nuage" title="Ne vit que sur une Île-Nuage">
+                <IconeNuage />
+                Île-Nuage uniquement
+              </span>
+            ) : (
+              <Link
+                to={`/villes?ville=${maVille}`}
+                className={'marque-ville ville-' + maVille}
+                title="Voir tous les Pokémon de cette ville"
+              >
+                {(() => {
+                  const I = ICONE_VILLE[maVille]
+                  return I ? <I /> : null
+                })()}
+                {nomVille(nomsVilles, maVille)}
+              </Link>
+            )}{' '}
             · {slugs.length} préférences · {objets.length} objets
           </p>
           {/* Type et spécialité peuvent porter le même mot — Dracaufeu est de type Vol et
@@ -273,19 +284,24 @@ export default function FichePokemonPage() {
           )}
         </div>
         <div className="fiche-actions">
-          <button
-            type="button"
-            className="ghost-btn"
-            onClick={() => {
-              setChoix(maVille)
-              setDialogueVille(true)
-            }}
-          >
-            Changer de ville
-          </button>
-          {/* Kyogre, Lugia et Ho-Oh n'entrent dans aucun enclos : leur proposer d'en composer
-              un mènerait à une page que le sélecteur, lui, refuse de peupler. */}
-          {logeable(nom) ? (
+          {!nuage && (
+            <button
+              type="button"
+              className="ghost-btn"
+              onClick={() => {
+                setChoix(maVille)
+                setDialogueVille(true)
+              }}
+            >
+              Changer de ville
+            </button>
+          )}
+          {/* Kyogre, Lugia et Ho-Oh n'entrent dans aucun enclos, Bouldeneu ne quitte pas
+              l'Île-Nuage : leur proposer d'en composer un mènerait à une page que le
+              sélecteur, lui, refuse de peupler. */}
+          {nuage ? (
+            <span className="fiche-sans-habitat">Ne vient pas dans vos villes</span>
+          ) : logeable(nom) ? (
             <button
               type="button"
               className="ghost-btn"
@@ -376,6 +392,14 @@ export default function FichePokemonPage() {
               : posez-la, et {frPokemon(nom)} finit par passer — plus ou moins vite selon sa
               rareté, et seulement aux moments et par le temps indiqués quand il y en a.
             </p>
+            {nuage && (
+              <p className="fiche-note">
+                <b>Seulement sur une Île-Nuage.</b> {frPokemon(nom)} n’apparaît nulle part
+                ailleurs, et l’Île-Nuage est une partie à part : seuls le Pokédex et les
+                recettes passent de l’une à l’autre. Vous pouvez le compléter au Pokédex,
+                mais il ne viendra pas vivre dans vos villes.
+              </p>
+            )}
             <div className="habitats-jeu">
               {habitatsJeu.map(({ habitat, venue }) => (
                 <CarteHabitatJeu key={habitat.slug} habitat={habitat} venue={venue} nom={nom} />
@@ -420,7 +444,7 @@ export default function FichePokemonPage() {
             />
           ))}
         </div>
-        {objets.length > APERCU && (
+        {objets.length > APERCU && !nuage && (
           <p className="fiche-note">
             <Link to={`/habitat?pokemon=${encodeURIComponent(nom)}`}>
               Voir les {objets.length} objets, filtrables par préférence →
@@ -429,39 +453,42 @@ export default function FichePokemonPage() {
         )}
       </section>
 
-      <section className="fiche-bloc">
-        <h2 className="etiquette">
-          Goûts les plus proches à {nomVille(nomsVilles, maVille)}
-        </h2>
-        <p className="fiche-note">
-          Nombre de préférences en commun avec {frPokemon(nom)}, parmi les Pokémon de sa
-          ville — un bon colocataire en partage beaucoup, et le même habitat.
-        </p>
-        {memeVille.length ? (
-          <div className="chips">
-            {memeVille.map((v) => (
-              <div key={v.nom} className="voisin">
-                <VignettePokemon
-                  nom={v.nom}
-                  onClick={() =>
-                    navigate(
-                      `/habitat?pokemon=${encodeURIComponent(nom)},${encodeURIComponent(v.nom)}`,
-                    )
-                  }
-                />
-                <span className="voisin-score">
-                  {v.communes} préf. en commun
-                  {habitatDe(v.nom) === habitatDe(nom) ? ' · même habitat' : ''}
-                </span>
-              </div>
-            ))}
-          </div>
-        ) : (
+      {/* Des colocataires pour Bouldeneu n’auraient pas de sens : il ne quitte pas l’Île-Nuage. */}
+      {!nuage && (
+        <section className="fiche-bloc">
+          <h2 className="etiquette">
+            Goûts les plus proches à {nomVille(nomsVilles, maVille)}
+          </h2>
           <p className="fiche-note">
-            Personne d’autre à {nomVille(nomsVilles, maVille)} ne partage ses goûts.
+            Nombre de préférences en commun avec {frPokemon(nom)}, parmi les Pokémon de sa
+            ville — un bon colocataire en partage beaucoup, et le même habitat.
           </p>
-        )}
-      </section>
+          {memeVille.length ? (
+            <div className="chips">
+              {memeVille.map((v) => (
+                <div key={v.nom} className="voisin">
+                  <VignettePokemon
+                    nom={v.nom}
+                    onClick={() =>
+                      navigate(
+                        `/habitat?pokemon=${encodeURIComponent(nom)},${encodeURIComponent(v.nom)}`,
+                      )
+                    }
+                  />
+                  <span className="voisin-score">
+                    {v.communes} préf. en commun
+                    {habitatDe(v.nom) === habitatDe(nom) ? ' · même habitat' : ''}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="fiche-note">
+              Personne d’autre à {nomVille(nomsVilles, maVille)} ne partage ses goûts.
+            </p>
+          )}
+        </section>
+      )}
 
       {/* Second choix, mais pas hors sujet : c'est là qu'on regarde quand la ville ne donne
           personne, quitte à déplacer le Pokémon depuis la vue Villes. */}

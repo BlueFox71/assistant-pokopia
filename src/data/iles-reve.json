@@ -1,0 +1,3031 @@
+{
+ "_lisezMoi": "Tout ce qu'on trouve sur chaque Île Rêve, d'après les pages « Dream Island » de Serebii, en trois sections : matériaux, plantes et blocs, objets. `communs` : ce que les cinq îles de base ont toutes ; chaque île ne garde que le reste. `fr` absent : pas de nom français connu. `sprite` : slug Serebii, qui est aussi la clé de nos sprites. Produit par scripts/importer-serebii-iles.mjs — ne pas éditer à la main.",
+ "_source": "https://www.serebii.net/pokemonpokopia/dreamislands.shtml",
+ "communs": {
+  "materiaux": [
+   {
+    "en": "Sturdy stick",
+    "fr": "Branche robuste",
+    "sprite": "sturdystick"
+   },
+   {
+    "en": "Stone",
+    "fr": "Pierre",
+    "sprite": "stone"
+   },
+   {
+    "en": "Vine rope",
+    "fr": "Corde en lierre",
+    "sprite": "vinerope"
+   }
+  ],
+  "blocs": [
+   {
+    "en": "Moss",
+    "fr": "Mousse",
+    "sprite": "moss"
+   },
+   {
+    "en": "Vine",
+    "sprite": "vine"
+   },
+   {
+    "en": "Dry vine",
+    "sprite": "dryvine"
+   },
+   {
+    "en": "Large boulder",
+    "fr": "Grosse pierre",
+    "sprite": "largeboulder"
+   },
+   {
+    "en": "Cracked sandstone",
+    "fr": "Grès fissuré",
+    "sprite": "crackedsandstone"
+   }
+  ],
+  "objets": [
+   {
+    "en": "Sandbags",
+    "fr": "Sacs de sable",
+    "sprite": "sandbags"
+   },
+   {
+    "en": "Bridge planks",
+    "fr": "Planche de ponton",
+    "sprite": "bridgeplanks"
+   },
+   {
+    "en": "Walkway",
+    "fr": "Ponton",
+    "sprite": "walkway"
+   },
+   {
+    "en": "Torch",
+    "fr": "Torche",
+    "sprite": "torch"
+   },
+   {
+    "en": "Wooden fencing",
+    "fr": "Clôture en bois",
+    "sprite": "woodenfencing"
+   },
+   {
+    "en": "Worn wooden crate",
+    "fr": "Caisse en bois usée",
+    "sprite": "wornwoodencrate"
+   },
+   {
+    "en": "Hatch window",
+    "fr": "Fenêtre à auvent",
+    "sprite": "hatchwindow"
+   },
+   {
+    "en": "Wooden ladder",
+    "fr": "Échelle en bois",
+    "sprite": "woodenladder"
+   },
+   {
+    "en": "Castform weather charm",
+    "fr": "Morphe-météo",
+    "sprite": "castformweathercharm"
+   },
+   {
+    "en": "Pitched brick roof",
+    "fr": "Toit en brique incliné",
+    "sprite": "pitchedbrickroof"
+   },
+   {
+    "en": "Brick hipped roof",
+    "fr": "Saillie de toit en brique",
+    "sprite": "brickhippedroof"
+   },
+   {
+    "en": "Dormered brick roof",
+    "fr": "Toit en brique triangulaire",
+    "sprite": "dormeredbrickroof"
+   },
+   {
+    "en": "Garbage bin",
+    "fr": "Poubelle",
+    "sprite": "garbagebin"
+   },
+   {
+    "en": "Grubby newspaper",
+    "fr": "Journal sale",
+    "sprite": "grubbynewspaper"
+   },
+   {
+    "en": "Grubby book",
+    "fr": "Livre sale",
+    "sprite": "grubbybook"
+   },
+   {
+    "en": "Grubby tablet",
+    "fr": "Tablette sale",
+    "sprite": "grubbytablet"
+   },
+   {
+    "en": "Grubby papers",
+    "fr": "Documents sales",
+    "sprite": "grubbypapers"
+   },
+   {
+    "en": "Grubby notepad",
+    "fr": "Bloc-notes sale",
+    "sprite": "grubbynotepad"
+   },
+   {
+    "en": "Grubby letter",
+    "fr": "Lettre sale",
+    "sprite": "grubbyletter"
+   },
+   {
+    "en": "Grubby cell phone",
+    "fr": "Téléphone portable sale",
+    "sprite": "grubbycellphone"
+   },
+   {
+    "en": "CD rack",
+    "fr": "Étagère à CD",
+    "sprite": "cdrack"
+   },
+   {
+    "en": "Book pile",
+    "fr": "Livres en désordre",
+    "sprite": "bookpile"
+   },
+   {
+    "en": "Bookcase",
+    "fr": "Bibliothèque",
+    "sprite": "bookcase"
+   },
+   {
+    "en": "Cart",
+    "fr": "Charrette",
+    "sprite": "cart"
+   }
+  ]
+ },
+ "iles": {
+  "pikachu": {
+   "materiaux": [
+    {
+     "en": "Leaf",
+     "fr": "Feuille",
+     "sprite": "leaf"
+    },
+    {
+     "en": "Fresh carrot",
+     "fr": "Carotte fraîche",
+     "sprite": "freshcarrot"
+    },
+    {
+     "en": "Small log",
+     "fr": "Petit rondin",
+     "sprite": "smalllog"
+    },
+    {
+     "en": "Leppa Berry",
+     "fr": "Baie Mepo",
+     "sprite": "leppaberry"
+    },
+    {
+     "en": "Chesto Berry",
+     "fr": "Baie Maron",
+     "sprite": "chestoberry"
+    },
+    {
+     "en": "Rawst Berry",
+     "fr": "Baie Fraive",
+     "sprite": "rawstberry"
+    },
+    {
+     "en": "Lum Berry",
+     "fr": "Baie Prine",
+     "sprite": "lumberry"
+    },
+    {
+     "en": "Pecha Berry",
+     "fr": "Baie Pêcha",
+     "sprite": "pechaberry"
+    },
+    {
+     "en": "Aspear Berry",
+     "fr": "Baie Willia",
+     "sprite": "aspearberry"
+    },
+    {
+     "en": "Honey",
+     "fr": "Miel",
+     "sprite": "honey"
+    },
+    {
+     "en": "Vine",
+     "sprite": "vine"
+    },
+    {
+     "en": "Dry vine",
+     "sprite": "dryvine"
+    },
+    {
+     "en": "Mossy Stone",
+     "sprite": "mossystone"
+    },
+    {
+     "en": "Glowing mushrooms",
+     "fr": "Champignons luisants",
+     "sprite": "glowingmushrooms"
+    },
+    {
+     "en": "Squishy clay",
+     "fr": "Argile malléable",
+     "sprite": "squishyclay"
+    },
+    {
+     "en": "Copper ore",
+     "fr": "Cuivre",
+     "sprite": "copperore"
+    },
+    {
+     "en": "Gold ore",
+     "fr": "Or",
+     "sprite": "goldore"
+    },
+    {
+     "en": "Pokémetal fragment",
+     "fr": "Fragment de Poké Métal",
+     "sprite": "pokemetalfragment"
+    }
+   ],
+   "blocs": [
+    {
+     "en": "Dry yellow tall grass",
+     "sprite": "dryyellowtallgrass"
+    },
+    {
+     "en": "Seashore grass",
+     "fr": "Gazon de littoral",
+     "sprite": "seashoregrass"
+    },
+    {
+     "en": "Dry seashore grass",
+     "sprite": "dryseashoregrass"
+    },
+    {
+     "en": "Seashell soil",
+     "fr": "Terre coquillière",
+     "sprite": "seashellsoil"
+    },
+    {
+     "en": "Seashore flowers",
+     "fr": "Fleurs maritimes",
+     "sprite": "seashoreflowers",
+     "couleurs": true
+    },
+    {
+     "en": "Cute flower",
+     "fr": "Fleurs ravissantes",
+     "sprite": "cuteflower",
+     "couleurs": true
+    },
+    {
+     "en": "Wooden pillar (lower)",
+     "fr": "Pilier en bois (bas)",
+     "sprite": "woodenpillar(lower)"
+    },
+    {
+     "en": "Wooden pillar (middle)",
+     "fr": "Pilier en bois (milieu)",
+     "sprite": "woodenpillar(middle)"
+    },
+    {
+     "en": "Roof support",
+     "fr": "Support de toit",
+     "sprite": "roofsupport"
+    },
+    {
+     "en": "Pitched brick roof",
+     "fr": "Toit en brique incliné",
+     "sprite": "pitchedbrickroof"
+    },
+    {
+     "en": "Stylish wall (upper)",
+     "fr": "Mur élégant (haut)",
+     "sprite": "stylishwall(upper)"
+    },
+    {
+     "en": "Wooden flooring",
+     "fr": "Sol en bois",
+     "sprite": "woodenflooring"
+    },
+    {
+     "en": "Wooden wall",
+     "fr": "Mur en bois",
+     "sprite": "woodenwall"
+    },
+    {
+     "en": "Beach sand",
+     "fr": "Sable de plage",
+     "sprite": "beachsand"
+    },
+    {
+     "en": "Bumpy beach sand",
+     "fr": "Sable granuleux",
+     "sprite": "bumpybeachsand"
+    },
+    {
+     "en": "Coarse rock",
+     "fr": "Roche rugueuse",
+     "sprite": "coarserock"
+    },
+    {
+     "en": "Black rock",
+     "fr": "Roche noire",
+     "sprite": "blackrock"
+    },
+    {
+     "en": "Muddy sand",
+     "sprite": "muddysand"
+    },
+    {
+     "en": "Mud",
+     "fr": "Boue",
+     "sprite": "mud"
+    },
+    {
+     "en": "Grubby rags",
+     "fr": "Tissus sales",
+     "sprite": "grubbyrags"
+    },
+    {
+     "en": "Worn lumber",
+     "sprite": "wornlumber"
+    },
+    {
+     "en": "Metal Debris",
+     "fr": "Débris métalliques",
+     "sprite": "metaldebris"
+    },
+    {
+     "en": "Iron beam",
+     "fr": "Poutre en fer",
+     "sprite": "ironbeam"
+    },
+    {
+     "en": "Iron column",
+     "fr": "Poteau en fer",
+     "sprite": "ironcolumn"
+    },
+    {
+     "en": "Healthy hedge",
+     "fr": "Buisson luxuriant",
+     "sprite": "healthyhedge",
+     "couleurs": true
+    },
+    {
+     "en": "Light brown rock",
+     "fr": "Roche brun clair",
+     "sprite": "lightbrownrock"
+    },
+    {
+     "en": "Clay",
+     "fr": "Argile",
+     "sprite": "clay"
+    },
+    {
+     "en": "Red cliff rock",
+     "fr": "Roche de falaise rouge",
+     "sprite": "redcliffrock"
+    },
+    {
+     "en": "Red spotted cliff rock",
+     "fr": "Conglomérat de falaise rouge",
+     "sprite": "redspottedcliffrock"
+    },
+    {
+     "en": "Brick flooring",
+     "fr": "Sol en brique",
+     "sprite": "brickflooring"
+    },
+    {
+     "en": "Levee",
+     "fr": "Digue",
+     "sprite": "levee"
+    },
+    {
+     "en": "Square tiling",
+     "fr": "Revêtement carreaux",
+     "sprite": "squaretiling"
+    },
+    {
+     "en": "Damaged square tiling",
+     "sprite": "damagedsquaretiling"
+    },
+    {
+     "en": "Stone brick wall",
+     "fr": "Mur en brique de pierre",
+     "sprite": "stonebrickwall"
+    },
+    {
+     "en": "Yellow-green shoots",
+     "fr": "Pousses vert-jaune",
+     "sprite": "yellow-greenshoots"
+    },
+    {
+     "en": "Dry healthy hedge",
+     "sprite": "dryhealthyhedge"
+    },
+    {
+     "en": "Chesto tree",
+     "fr": "Arbre à Baies Maron",
+     "sprite": "chestotree"
+    },
+    {
+     "en": "Dry chesto tree",
+     "sprite": "drychestotree"
+    },
+    {
+     "en": "Rawst tree",
+     "fr": "Arbre à Baies Fraive",
+     "sprite": "rawsttree"
+    },
+    {
+     "en": "Lum tree",
+     "fr": "Arbre à Baies Prine",
+     "sprite": "lumtree"
+    },
+    {
+     "en": "Aspear tree",
+     "fr": "Arbre à Baies Willia",
+     "sprite": "aspeartree"
+    },
+    {
+     "en": "Pecha tree",
+     "fr": "Arbre à Baies Pêcha",
+     "sprite": "pechatree"
+    },
+    {
+     "en": "Large palm tree",
+     "fr": "Grand palmier",
+     "sprite": "largepalmtree"
+    },
+    {
+     "en": "Lined-stone flooring",
+     "fr": "Sol en pierre avec ligne",
+     "sprite": "lined-stoneflooring"
+    },
+    {
+     "en": "Stone flooring",
+     "fr": "Sol en pierre",
+     "sprite": "stoneflooring"
+    },
+    {
+     "en": "Mossy soil",
+     "fr": "Terre moussue",
+     "sprite": "mossysoil"
+    },
+    {
+     "en": "Sticky web",
+     "fr": "Toile gluante",
+     "sprite": "stickyweb"
+    },
+    {
+     "en": "Driftwood",
+     "fr": "Bois flotté",
+     "sprite": "driftwood"
+    },
+    {
+     "en": "Cube light",
+     "fr": "Cube lumineux",
+     "sprite": "cubelight"
+    },
+    {
+     "en": "Neon flooring",
+     "fr": "Sol néon",
+     "sprite": "neonflooring"
+    },
+    {
+     "en": "Cyber flooring",
+     "fr": "Sol cybernétique",
+     "sprite": "cyberflooring"
+    },
+    {
+     "en": "Iron-plate flooring",
+     "fr": "Sol en plaques de fer",
+     "sprite": "iron-plateflooring"
+    },
+    {
+     "en": "Muddy Tiling",
+     "sprite": "muddytiling"
+    },
+    {
+     "en": "Muddy seashell soil",
+     "sprite": "muddyseashellsoil"
+    },
+    {
+     "en": "Iron wall",
+     "fr": "Mur en fer",
+     "sprite": "ironwall"
+    },
+    {
+     "en": "Stylish iron wall",
+     "fr": "Mur en fer élégant",
+     "sprite": "stylishironwall"
+    },
+    {
+     "en": "Iron plating",
+     "fr": "Plaque de fer",
+     "sprite": "ironplating"
+    },
+    {
+     "en": "Concrete wall",
+     "fr": "Mur en béton",
+     "sprite": "concretewall"
+    },
+    {
+     "en": "Rusted Wall",
+     "sprite": "rustedwall"
+    },
+    {
+     "en": "Rusted iron-plate flooring",
+     "sprite": "rustediron-plateflooring"
+    },
+    {
+     "en": "Warning wall",
+     "fr": "Mur zone de danger",
+     "sprite": "warningwall"
+    },
+    {
+     "en": "Broken timber",
+     "sprite": "brokentimber"
+    },
+    {
+     "en": "Metal fragments",
+     "fr": "Fragments métalliques",
+     "sprite": "metalfragments"
+    }
+   ],
+   "objets": [
+    {
+     "en": "Planter",
+     "fr": "Jardinière",
+     "sprite": "planter"
+    },
+    {
+     "en": "Broken streetlight",
+     "fr": "Lampadaire cassé",
+     "sprite": "brokenstreetlight"
+    },
+    {
+     "en": "Utility pole",
+     "fr": "Poteau électrique",
+     "sprite": "utilitypole"
+    },
+    {
+     "en": "Harbor pole",
+     "fr": "Plot d'amarrage",
+     "sprite": "harborpole"
+    },
+    {
+     "en": "Vending machine",
+     "fr": "Distributeur de boissons",
+     "sprite": "vendingmachine"
+    },
+    {
+     "en": "Industrial bench",
+     "fr": "Banc industriel",
+     "sprite": "industrialbench"
+    },
+    {
+     "en": "Iron steps",
+     "fr": "Escalier en fer",
+     "sprite": "ironsteps"
+    },
+    {
+     "en": "Traffic cone",
+     "fr": "Cône de chantier",
+     "sprite": "trafficcone"
+    },
+    {
+     "en": "Iron pipe (vertical)",
+     "fr": "Tuyau en fer (vertical)",
+     "sprite": "ironpipe(vertical)"
+    },
+    {
+     "en": "Iron pipe (downward curve)",
+     "fr": "Tuyau en fer (courbe vers le bas)",
+     "sprite": "ironpipe(downwardcurve)"
+    },
+    {
+     "en": "Metal drum",
+     "fr": "Baril",
+     "sprite": "metaldrum"
+    },
+    {
+     "en": "Iron pipe (horizontal)",
+     "fr": "Tuyau en fer (horizontal)",
+     "sprite": "ironpipe(horizontal)"
+    },
+    {
+     "en": "Iron pipe (upward t)",
+     "fr": "Tuyau en fer (en T vers le haut)",
+     "sprite": "ironpipe(upwardt)"
+    },
+    {
+     "en": "Tires",
+     "fr": "Pneus",
+     "sprite": "tires"
+    },
+    {
+     "en": "Stone steps",
+     "fr": "Escalier en pierre",
+     "sprite": "stonesteps"
+    },
+    {
+     "en": "Mysterious pedestal",
+     "fr": "Piédestal mystérieux",
+     "sprite": "mysteriouspedestal"
+    },
+    {
+     "en": "Iron ladder",
+     "fr": "Échelle en fer",
+     "sprite": "ironladder"
+    },
+    {
+     "en": "Grate flooring",
+     "fr": "Plaque grillagée",
+     "sprite": "grateflooring"
+    },
+    {
+     "en": "Excavation tools",
+     "fr": "Outils pour creuser",
+     "sprite": "excavationtools"
+    },
+    {
+     "en": "Iron pipe (vertical cross)",
+     "fr": "Tuyau en fer (croix verticale)",
+     "sprite": "ironpipe(verticalcross)"
+    },
+    {
+     "en": "Jumbled cords",
+     "fr": "Câbles emmêlés",
+     "sprite": "jumbledcords"
+    },
+    {
+     "en": "Metal fragments",
+     "fr": "Fragments métalliques",
+     "sprite": "metalfragments"
+    },
+    {
+     "en": "Plain closet",
+     "fr": "Armoire style naturel",
+     "sprite": "plaincloset"
+    },
+    {
+     "en": "Plain table",
+     "fr": "Table style naturel",
+     "sprite": "plaintable"
+    },
+    {
+     "en": "Log chair",
+     "fr": "Tabouret en rondin",
+     "sprite": "logchair"
+    },
+    {
+     "en": "Plain stool",
+     "fr": "Tabouret style naturel",
+     "sprite": "plainstool"
+    },
+    {
+     "en": "Plain chair",
+     "fr": "Chaise style naturel",
+     "sprite": "plainchair"
+    },
+    {
+     "en": "Plain sofa",
+     "fr": "Canapé style naturel",
+     "sprite": "plainsofa"
+    },
+    {
+     "en": "Wall torch",
+     "fr": "Torche murale",
+     "sprite": "walltorch"
+    },
+    {
+     "en": "Firepit",
+     "fr": "Braséro",
+     "sprite": "firepit"
+    },
+    {
+     "en": "Wooden crate",
+     "fr": "Caisse en bois",
+     "sprite": "woodencrate"
+    },
+    {
+     "en": "Mushroom lamp",
+     "fr": "Lampe champignon",
+     "sprite": "mushroomlamp"
+    },
+    {
+     "en": "Plain lamp",
+     "fr": "Lampe style naturel",
+     "sprite": "plainlamp"
+    },
+    {
+     "en": "Rustic door",
+     "fr": "Porte rustique en bois",
+     "sprite": "rusticdoor"
+    },
+    {
+     "en": "Glass window",
+     "fr": "Fenêtre en verre",
+     "sprite": "glasswindow"
+    }
+   ]
+  },
+  "evoli": {
+   "materiaux": [
+    {
+     "en": "Leaf",
+     "fr": "Feuille",
+     "sprite": "leaf"
+    },
+    {
+     "en": "Squishy clay",
+     "fr": "Argile malléable",
+     "sprite": "squishyclay"
+    },
+    {
+     "en": "Nonburnable garbage",
+     "fr": "Déchets non incinérables",
+     "sprite": "nonburnablegarbage"
+    },
+    {
+     "en": "Small log",
+     "fr": "Petit rondin",
+     "sprite": "smalllog"
+    },
+    {
+     "en": "Seashell",
+     "fr": "Coquillage",
+     "sprite": "seashell"
+    },
+    {
+     "en": "Twine",
+     "fr": "Fil de tissu",
+     "sprite": "twine"
+    },
+    {
+     "en": "Sea glass fragments",
+     "fr": "Fragments de verre de mer",
+     "sprite": "seaglassfragments"
+    },
+    {
+     "en": "Vine",
+     "sprite": "vine"
+    },
+    {
+     "en": "Honey",
+     "fr": "Miel",
+     "sprite": "honey"
+    },
+    {
+     "en": "Seaweed",
+     "fr": "Algue",
+     "sprite": "seaweed"
+    },
+    {
+     "en": "Leppa Berry",
+     "fr": "Baie Mepo",
+     "sprite": "leppaberry"
+    }
+   ],
+   "blocs": [
+    {
+     "en": "Dry tall grass",
+     "sprite": "drytallgrass"
+    },
+    {
+     "en": "Ordinary soil",
+     "fr": "Terre ordinaire",
+     "sprite": "ordinarysoil"
+    },
+    {
+     "en": "Wildflowers",
+     "fr": "Fleurs sauvages",
+     "sprite": "wildflowers",
+     "couleurs": true
+    },
+    {
+     "en": "Dry wildflowers",
+     "sprite": "drywildflowers"
+    },
+    {
+     "en": "Beautiful flowers",
+     "fr": "Fleurs sublimes",
+     "sprite": "beautifulflower"
+    },
+    {
+     "en": "Wooden pillar (lower)",
+     "fr": "Pilier en bois (bas)",
+     "sprite": "woodenpillar(lower)"
+    },
+    {
+     "en": "Wooden pillar (middle)",
+     "fr": "Pilier en bois (milieu)",
+     "sprite": "woodenpillar(middle)"
+    },
+    {
+     "en": "Roof support",
+     "fr": "Support de toit",
+     "sprite": "roofsupport"
+    },
+    {
+     "en": "Pitched brick roof",
+     "fr": "Toit en brique incliné",
+     "sprite": "pitchedbrickroof"
+    },
+    {
+     "en": "Stylish wall (upper)",
+     "fr": "Mur élégant (haut)",
+     "sprite": "stylishwall(upper)"
+    },
+    {
+     "en": "Wooden flooring",
+     "fr": "Sol en bois",
+     "sprite": "woodenflooring"
+    },
+    {
+     "en": "Wooden wall",
+     "fr": "Mur en bois",
+     "sprite": "woodenwall"
+    },
+    {
+     "en": "Beach sand",
+     "fr": "Sable de plage",
+     "sprite": "beachsand"
+    },
+    {
+     "en": "Bumpy beach sand",
+     "fr": "Sable granuleux",
+     "sprite": "bumpybeachsand"
+    },
+    {
+     "en": "Cobblestone wall",
+     "fr": "Mur en pierres empilées",
+     "sprite": "cobblestonewall"
+    },
+    {
+     "en": "Plaster wall",
+     "fr": "Mur en plâtre",
+     "sprite": "plasterwall"
+    },
+    {
+     "en": "Wooden pillar (upper)",
+     "fr": "Pilier en bois (haut)",
+     "sprite": "woodenpillar(upper)"
+    },
+    {
+     "en": "Driftwood",
+     "fr": "Bois flotté",
+     "sprite": "driftwood"
+    },
+    {
+     "en": "Leppa tree",
+     "fr": "Arbre à Baies Mepo",
+     "sprite": "leppatree"
+    },
+    {
+     "en": "Chesto tree",
+     "fr": "Arbre à Baies Maron",
+     "sprite": "chestotree"
+    },
+    {
+     "en": "Rawst tree",
+     "fr": "Arbre à Baies Fraive",
+     "sprite": "rawsttree"
+    },
+    {
+     "en": "Lum tree",
+     "fr": "Arbre à Baies Prine",
+     "sprite": "lumtree"
+    },
+    {
+     "en": "Aspear tree",
+     "fr": "Arbre à Baies Willia",
+     "sprite": "aspeartree"
+    },
+    {
+     "en": "Pecha tree",
+     "fr": "Arbre à Baies Pêcha",
+     "sprite": "pechatree"
+    },
+    {
+     "en": "Adorable hedge",
+     "fr": "Buisson charmant",
+     "sprite": "adorablehedge",
+     "couleurs": true
+    },
+    {
+     "en": "Arched tiling",
+     "fr": "Revêtement arqué",
+     "sprite": "archedtiling"
+    },
+    {
+     "en": "Cliff rock",
+     "fr": "Roche de falaise",
+     "sprite": "cliffrock"
+    },
+    {
+     "en": "Spotted cliff rock",
+     "fr": "Conglomérat de falaise",
+     "sprite": "spottedcliffrock"
+    },
+    {
+     "en": "Sandstone",
+     "fr": "Grès",
+     "sprite": "sandstone"
+    },
+    {
+     "en": "Copper deposit (Wasteland)",
+     "fr": "Minerai de cuivre (Terrassec)",
+     "sprite": "copperdepositwasteland"
+    },
+    {
+     "en": "Mossy soil",
+     "fr": "Terre moussue",
+     "sprite": "mossysoil"
+    },
+    {
+     "en": "Coarse rock",
+     "fr": "Roche rugueuse",
+     "sprite": "coarserock"
+    },
+    {
+     "en": "Cave rock",
+     "fr": "Roche souterraine",
+     "sprite": "caverock"
+    },
+    {
+     "en": "Pokémetal deposit",
+     "fr": "Minerai de Poké Métal",
+     "sprite": "pokemetaldeposit"
+    },
+    {
+     "en": "Ice",
+     "fr": "Glace",
+     "sprite": "ice"
+    },
+    {
+     "en": "Crystal wall",
+     "fr": "Mur en cristal",
+     "sprite": "crystalwall"
+    },
+    {
+     "en": "Cube light",
+     "fr": "Cube lumineux",
+     "sprite": "cubelight"
+    },
+    {
+     "en": "Stone pillar (lower)",
+     "fr": "Pilier en pierre (bas)",
+     "sprite": "stonepillar(lower)"
+    },
+    {
+     "en": "Stone pillar (middle)",
+     "fr": "Pilier en pierre (milieu)",
+     "sprite": "stonepillar(middle)"
+    },
+    {
+     "en": "Stone pillar (upper)",
+     "fr": "Pilier en pierre (haut)",
+     "sprite": "stonepillar(upper)"
+    },
+    {
+     "en": "Dry adorable hedge",
+     "sprite": "dryadorablehedge"
+    },
+    {
+     "en": "Dry Leppa tree",
+     "sprite": "dryleppatree"
+    },
+    {
+     "en": "Gravel",
+     "fr": "Gravier",
+     "sprite": "gravel"
+    },
+    {
+     "en": "Copper deposit (Beach)",
+     "fr": "Minerai de cuivre (Grisemer)",
+     "sprite": "copperdepositbeach"
+    },
+    {
+     "en": "Crystal cluster",
+     "fr": "Cristal",
+     "sprite": "crystalcluster"
+    },
+    {
+     "en": "Stalagmite",
+     "fr": "Stalagmites",
+     "sprite": "stalagmite"
+    },
+    {
+     "en": "Stalactite",
+     "fr": "Stalactites",
+     "sprite": "stalactite"
+    },
+    {
+     "en": "Arched tiling fragments",
+     "sprite": "archedtilingfragments"
+    }
+   ],
+   "objets": [
+    {
+     "en": "Stone steps",
+     "fr": "Escalier en pierre",
+     "sprite": "stonesteps"
+    },
+    {
+     "en": "Large wooden door",
+     "fr": "Grande porte en bois",
+     "sprite": "largewoodendoor"
+    },
+    {
+     "en": "Glass window",
+     "fr": "Fenêtre en verre",
+     "sprite": "glasswindow"
+    },
+    {
+     "en": "Wooden table",
+     "fr": "Table en bois",
+     "sprite": "woodentable"
+    },
+    {
+     "en": "Wooden bench",
+     "fr": "Banc en bois",
+     "sprite": "woodenbench"
+    },
+    {
+     "en": "Sloped tiled roof",
+     "fr": "Toit en tuiles incliné",
+     "sprite": "slopedtiledroof"
+    },
+    {
+     "en": "Tiled hipped roof",
+     "fr": "Saillie de toit en tuiles",
+     "sprite": "tiledhippedroof"
+    },
+    {
+     "en": "Flat tiled roof",
+     "fr": "Toit en tuiles plat",
+     "sprite": "flattiledroof"
+    },
+    {
+     "en": "Horsea fountain",
+     "fr": "Fontaine Hypotrempe",
+     "sprite": "horseafountain"
+    },
+    {
+     "en": "Wooden steps",
+     "fr": "Escalier en bois",
+     "sprite": "woodensteps"
+    },
+    {
+     "en": "Wall torch",
+     "fr": "Torche murale",
+     "sprite": "walltorch"
+    },
+    {
+     "en": "Mysterious pedestal",
+     "fr": "Piédestal mystérieux",
+     "sprite": "mysteriouspedestal"
+    },
+    {
+     "en": "Log chair",
+     "fr": "Tabouret en rondin",
+     "sprite": "logchair"
+    },
+    {
+     "en": "Firepit",
+     "fr": "Braséro",
+     "sprite": "firepit"
+    },
+    {
+     "en": "Excavation tools",
+     "fr": "Outils pour creuser",
+     "sprite": "excavationtools"
+    },
+    {
+     "en": "Metal drum",
+     "fr": "Baril",
+     "sprite": "metaldrum"
+    },
+    {
+     "en": "Mushroom streetlight",
+     "fr": "Lampadaire champignon",
+     "sprite": "mushroomstreetlight"
+    },
+    {
+     "en": "Mushroom lamp",
+     "fr": "Lampe champignon",
+     "sprite": "mushroomlamp"
+    }
+   ]
+  },
+  "melofee": {
+   "materiaux": [
+    {
+     "en": "Leaf",
+     "fr": "Feuille",
+     "sprite": "leaf"
+    },
+    {
+     "en": "Copper ore",
+     "fr": "Cuivre",
+     "sprite": "copperore"
+    },
+    {
+     "en": "Iron ore",
+     "fr": "Fer",
+     "sprite": "ironore"
+    },
+    {
+     "en": "Gold ore",
+     "fr": "Or",
+     "sprite": "goldore"
+    },
+    {
+     "en": "Pokémetal fragment",
+     "fr": "Fragment de Poké Métal",
+     "sprite": "pokemetalfragment"
+    },
+    {
+     "en": "Rare Pokémetal fragment",
+     "fr": "Fragment de Poké Métal rare",
+     "sprite": "rarepokemetalfragment"
+    },
+    {
+     "en": "Leppa Berry",
+     "fr": "Baie Mepo",
+     "sprite": "leppaberry"
+    },
+    {
+     "en": "Wheat",
+     "fr": "Blé",
+     "sprite": "wheat"
+    },
+    {
+     "en": "Bean",
+     "fr": "Haricot",
+     "sprite": "bean"
+    },
+    {
+     "en": "Cave mushrooms",
+     "fr": "Champignons des cavernes",
+     "sprite": "cavemushrooms"
+    },
+    {
+     "en": "Glowing mushrooms",
+     "fr": "Champignons luisants",
+     "sprite": "glowingmushrooms"
+    },
+    {
+     "en": "Lumber",
+     "fr": "Bois",
+     "sprite": "lumber"
+    },
+    {
+     "en": "Mossy Stone",
+     "sprite": "mossystone"
+    },
+    {
+     "en": "Vine",
+     "sprite": "vine"
+    },
+    {
+     "en": "Elegant flower seeds",
+     "fr": "Graines de fleurs élégantes",
+     "sprite": "elegantflowerseeds"
+    },
+    {
+     "en": "Pecha Tree seeds",
+     "sprite": "pechatreeseeds"
+    }
+   ],
+   "blocs": [
+    {
+     "en": "Dry red tall grass",
+     "sprite": "dryredtallgrass"
+    },
+    {
+     "en": "Striped soil",
+     "fr": "Terre sédimentaire",
+     "sprite": "stripedsoil"
+    },
+    {
+     "en": "Mountain flowers",
+     "fr": "Fleurs des collines",
+     "sprite": "mountainflowers",
+     "couleurs": true
+    },
+    {
+     "en": "Pointy tree",
+     "fr": "Arbre pointu",
+     "sprite": "pointytree"
+    },
+    {
+     "en": "Dry pointy tree",
+     "sprite": "drypointytree"
+    },
+    {
+     "en": "Chesto tree",
+     "fr": "Arbre à Baies Maron",
+     "sprite": "chestotree"
+    },
+    {
+     "en": "Dry chesto tree",
+     "sprite": "drychestotree"
+    },
+    {
+     "en": "Rawst tree",
+     "fr": "Arbre à Baies Fraive",
+     "sprite": "rawsttree"
+    },
+    {
+     "en": "Lum tree",
+     "fr": "Arbre à Baies Prine",
+     "sprite": "lumtree"
+    },
+    {
+     "en": "Aspear tree",
+     "fr": "Arbre à Baies Willia",
+     "sprite": "aspeartree"
+    },
+    {
+     "en": "Pecha tree",
+     "fr": "Arbre à Baies Pêcha",
+     "sprite": "pechatree"
+    },
+    {
+     "en": "Damp hedge",
+     "fr": "Buisson humide",
+     "sprite": "damphedge",
+     "couleurs": true
+    },
+    {
+     "en": "Dry damp hedge",
+     "sprite": "drydamphedge"
+    },
+    {
+     "en": "Wooden pillar (lower)",
+     "fr": "Pilier en bois (bas)",
+     "sprite": "woodenpillar(lower)"
+    },
+    {
+     "en": "Wooden pillar (middle)",
+     "fr": "Pilier en bois (milieu)",
+     "sprite": "woodenpillar(middle)"
+    },
+    {
+     "en": "Roof support",
+     "fr": "Support de toit",
+     "sprite": "roofsupport"
+    },
+    {
+     "en": "Pitched brick roof",
+     "fr": "Toit en brique incliné",
+     "sprite": "pitchedbrickroof"
+    },
+    {
+     "en": "Stylish wall (upper)",
+     "fr": "Mur élégant (haut)",
+     "sprite": "stylishwall(upper)"
+    },
+    {
+     "en": "Wooden flooring",
+     "fr": "Sol en bois",
+     "sprite": "woodenflooring"
+    },
+    {
+     "en": "Wooden wall",
+     "fr": "Mur en bois",
+     "sprite": "woodenwall"
+    },
+    {
+     "en": "Beach sand",
+     "fr": "Sable de plage",
+     "sprite": "beachsand"
+    },
+    {
+     "en": "Bumpy beach sand",
+     "fr": "Sable granuleux",
+     "sprite": "bumpybeachsand"
+    },
+    {
+     "en": "Copper deposit (Ridge)",
+     "fr": "Minerai de cuivre (Collinangle)",
+     "sprite": "copperdepositridge"
+    },
+    {
+     "en": "White rock",
+     "fr": "Roche blanche",
+     "sprite": "whiterock"
+    },
+    {
+     "en": "Dry bean plant",
+     "sprite": "drybeanplant"
+    },
+    {
+     "en": "Ripe tomato plant",
+     "sprite": "ripetomatoplant"
+    },
+    {
+     "en": "Blooming tomato plant",
+     "sprite": "bloomingtomatoplant"
+    },
+    {
+     "en": "Small wheat plant",
+     "sprite": "smallwheatplant"
+    },
+    {
+     "en": "Tomato sprout",
+     "sprite": "tomatosprout"
+    },
+    {
+     "en": "Wood fragments",
+     "sprite": "woodfragments"
+    },
+    {
+     "en": "Farm soil",
+     "sprite": "farmsoil"
+    },
+    {
+     "en": "Black cliff rock",
+     "fr": "Roche de falaise noire",
+     "sprite": "blackcliffrock"
+    },
+    {
+     "en": "Black spotted cliff rock",
+     "fr": "Conglomérat de falaise noir",
+     "sprite": "blackspottedcliffrock"
+    },
+    {
+     "en": "Stone fragments",
+     "fr": "Fragments de pierre",
+     "sprite": "stonefragments"
+    },
+    {
+     "en": "Stylish stone flooring",
+     "fr": "Sol en pierre élégant",
+     "sprite": "stylishstoneflooring"
+    },
+    {
+     "en": "Ocean rock",
+     "fr": "Roche maritime",
+     "sprite": "oceanrock"
+    },
+    {
+     "en": "Plaster wall",
+     "fr": "Mur en plâtre",
+     "sprite": "plasterwall"
+    },
+    {
+     "en": "Hay pile",
+     "fr": "Botte de foin",
+     "sprite": "haypile"
+    },
+    {
+     "en": "Limestone",
+     "fr": "Calcaire",
+     "sprite": "limestone"
+    },
+    {
+     "en": "Cave rock",
+     "fr": "Roche souterraine",
+     "sprite": "caverock"
+    },
+    {
+     "en": "Mossy soil",
+     "fr": "Terre moussue",
+     "sprite": "mossysoil"
+    },
+    {
+     "en": "Yellow rock",
+     "fr": "Roche jaune",
+     "sprite": "yellowrock"
+    },
+    {
+     "en": "Stalagmites",
+     "fr": "Stalagmites",
+     "sprite": "stalagmites"
+    },
+    {
+     "en": "Pokémetal deposit",
+     "fr": "Minerai de Poké Métal",
+     "sprite": "pokemetaldeposit"
+    },
+    {
+     "en": "Ice",
+     "fr": "Glace",
+     "sprite": "ice"
+    },
+    {
+     "en": "Icicle",
+     "fr": "Stalactites de glace",
+     "sprite": "icicle"
+    },
+    {
+     "en": "Crystal fragment",
+     "fr": "Fragment de cristal",
+     "sprite": "crystalfragment"
+    },
+    {
+     "en": "Black rock",
+     "fr": "Roche noire",
+     "sprite": "blackrock"
+    },
+    {
+     "en": "Crystal cluster",
+     "fr": "Cristal",
+     "sprite": "crystalcluster"
+    }
+   ],
+   "objets": [
+    {
+     "en": "Wooden steps",
+     "fr": "Escalier en bois",
+     "sprite": "woodensteps"
+    },
+    {
+     "en": "Wooden gate",
+     "fr": "Portail en bois",
+     "sprite": "woodengate"
+    },
+    {
+     "en": "Window pane",
+     "fr": "Carreau de verre",
+     "sprite": "windowpane"
+    },
+    {
+     "en": "Water basin",
+     "fr": "Bassine",
+     "sprite": "waterbasin"
+    },
+    {
+     "en": "Straw bed",
+     "fr": "Lit en paille",
+     "sprite": "strawbed"
+    },
+    {
+     "en": "Iron stand",
+     "fr": "Meuble bas en fer",
+     "sprite": "ironstand"
+    },
+    {
+     "en": "Industrial desk",
+     "fr": "Bureau industriel",
+     "sprite": "industrialdesk"
+    },
+    {
+     "en": "Industrial chair",
+     "fr": "Tabouret industriel",
+     "sprite": "industrialchair"
+    },
+    {
+     "en": "Iron bed",
+     "fr": "Lit en fer",
+     "sprite": "ironbed"
+    },
+    {
+     "en": "Television",
+     "fr": "Télévision",
+     "sprite": "television"
+    },
+    {
+     "en": "Excavation tools",
+     "fr": "Outils pour creuser",
+     "sprite": "excavationtools"
+    },
+    {
+     "en": "Handcar",
+     "fr": "Wagonnet",
+     "sprite": "handcar"
+    },
+    {
+     "en": "Lantern",
+     "fr": "Lanterne",
+     "sprite": "lantern"
+    },
+    {
+     "en": "Stone steps",
+     "fr": "Escalier en pierre",
+     "sprite": "stonesteps"
+    },
+    {
+     "en": "Modern door",
+     "fr": "Porte moderne",
+     "sprite": "moderndoor"
+    },
+    {
+     "en": "Sloped stone roof",
+     "fr": "Toit en pierre incliné",
+     "sprite": "slopedstoneroof"
+    },
+    {
+     "en": "Skylight",
+     "fr": "Fenêtre de toit",
+     "sprite": "skylight"
+    }
+   ]
+  },
+  "arcanin": {
+   "materiaux": [
+    {
+     "en": "Vine",
+     "sprite": "vine"
+    },
+    {
+     "en": "Glowing mushrooms",
+     "fr": "Champignons luisants",
+     "sprite": "glowingmushrooms"
+    },
+    {
+     "en": "Iron ore",
+     "fr": "Fer",
+     "sprite": "ironore"
+    },
+    {
+     "en": "Pokémetal fragment",
+     "fr": "Fragment de Poké Métal",
+     "sprite": "pokemetalfragment"
+    },
+    {
+     "en": "Tomato",
+     "fr": "Tomate",
+     "sprite": "tomato"
+    },
+    {
+     "en": "Wheat",
+     "fr": "Blé",
+     "sprite": "wheat"
+    },
+    {
+     "en": "Bean",
+     "fr": "Haricot",
+     "sprite": "bean"
+    },
+    {
+     "en": "Twine",
+     "fr": "Fil de tissu",
+     "sprite": "twine"
+    },
+    {
+     "en": "Nonburnable garbage",
+     "fr": "Déchets non incinérables",
+     "sprite": "nonburnablegarbage"
+    },
+    {
+     "en": "Wastepaper",
+     "fr": "Déchets de papier",
+     "sprite": "wastepaper"
+    },
+    {
+     "en": "Small log",
+     "fr": "Petit rondin",
+     "sprite": "smalllog"
+    },
+    {
+     "en": "Lumber",
+     "fr": "Bois",
+     "sprite": "lumber"
+    },
+    {
+     "en": "Leppa Berry",
+     "fr": "Baie Mepo",
+     "sprite": "leppaberry"
+    },
+    {
+     "en": "Rare Pokémetal fragment",
+     "fr": "Fragment de Poké Métal rare",
+     "sprite": "rarepokemetalfragment"
+    },
+    {
+     "en": "Beautiful flower seeds",
+     "fr": "Graines de fleurs sublimes",
+     "sprite": "beautifulflowerseeds"
+    }
+   ],
+   "blocs": [
+    {
+     "en": "Dry red tall grass",
+     "sprite": "dryredtallgrass"
+    },
+    {
+     "en": "Striped soil",
+     "fr": "Terre sédimentaire",
+     "sprite": "stripedsoil"
+    },
+    {
+     "en": "Mountain flowers",
+     "fr": "Fleurs des collines",
+     "sprite": "mountainflowers",
+     "couleurs": true
+    },
+    {
+     "en": "Pointy tree",
+     "fr": "Arbre pointu",
+     "sprite": "pointytree"
+    },
+    {
+     "en": "Dry pointy tree",
+     "sprite": "drypointytree"
+    },
+    {
+     "en": "Chesto tree",
+     "fr": "Arbre à Baies Maron",
+     "sprite": "chestotree"
+    },
+    {
+     "en": "Dry chesto tree",
+     "sprite": "drychestotree"
+    },
+    {
+     "en": "Rawst tree",
+     "fr": "Arbre à Baies Fraive",
+     "sprite": "rawsttree"
+    },
+    {
+     "en": "Lum tree",
+     "fr": "Arbre à Baies Prine",
+     "sprite": "lumtree"
+    },
+    {
+     "en": "Aspear tree",
+     "fr": "Arbre à Baies Willia",
+     "sprite": "aspeartree"
+    },
+    {
+     "en": "Pecha tree",
+     "fr": "Arbre à Baies Pêcha",
+     "sprite": "pechatree"
+    },
+    {
+     "en": "Damp hedge",
+     "fr": "Buisson humide",
+     "sprite": "damphedge",
+     "couleurs": true
+    },
+    {
+     "en": "Dry damp hedge",
+     "sprite": "drydamphedge"
+    },
+    {
+     "en": "Wooden pillar (lower)",
+     "fr": "Pilier en bois (bas)",
+     "sprite": "woodenpillar(lower)"
+    },
+    {
+     "en": "Wooden pillar (middle)",
+     "fr": "Pilier en bois (milieu)",
+     "sprite": "woodenpillar(middle)"
+    },
+    {
+     "en": "Roof support",
+     "fr": "Support de toit",
+     "sprite": "roofsupport"
+    },
+    {
+     "en": "Pitched brick roof",
+     "fr": "Toit en brique incliné",
+     "sprite": "pitchedbrickroof"
+    },
+    {
+     "en": "Stylish wall (upper)",
+     "fr": "Mur élégant (haut)",
+     "sprite": "stylishwall(upper)"
+    },
+    {
+     "en": "Wooden flooring",
+     "fr": "Sol en bois",
+     "sprite": "woodenflooring"
+    },
+    {
+     "en": "Wooden wall",
+     "fr": "Mur en bois",
+     "sprite": "woodenwall"
+    },
+    {
+     "en": "Beach sand",
+     "fr": "Sable de plage",
+     "sprite": "beachsand"
+    },
+    {
+     "en": "Bumpy beach sand",
+     "fr": "Sable granuleux",
+     "sprite": "bumpybeachsand"
+    },
+    {
+     "en": "Driftwood",
+     "fr": "Bois flotté",
+     "sprite": "driftwood"
+    },
+    {
+     "en": "Volcanic ash",
+     "fr": "Cendre volcanique",
+     "sprite": "volcanicash"
+    },
+    {
+     "en": "Lava rock",
+     "fr": "Roche magmatique",
+     "sprite": "lavarock"
+    },
+    {
+     "en": "Fern",
+     "fr": "Fougère",
+     "sprite": "fern"
+    },
+    {
+     "en": "Iron ore deposit",
+     "fr": "Minerai de fer",
+     "sprite": "irondeposit"
+    },
+    {
+     "en": "Gold ore deposit",
+     "fr": "Minerai d'or",
+     "sprite": "golddeposit"
+    },
+    {
+     "en": "Glowing stone",
+     "fr": "Roche lumineuse",
+     "sprite": "glowingstone"
+    },
+    {
+     "en": "Black rock",
+     "fr": "Roche noire",
+     "sprite": "blackrock"
+    },
+    {
+     "en": "Red rock",
+     "fr": "Roche rouge",
+     "sprite": "redrock"
+    },
+    {
+     "en": "Dry bean plant",
+     "sprite": "drybeanplant"
+    },
+    {
+     "en": "Ripe tomato plant",
+     "sprite": "ripetomatoplant"
+    },
+    {
+     "en": "Blooming tomato plant",
+     "sprite": "bloomingtomatoplant"
+    },
+    {
+     "en": "Small wheat plant",
+     "sprite": "smallwheatplant"
+    },
+    {
+     "en": "Tomato sprout",
+     "sprite": "tomatosprout"
+    },
+    {
+     "en": "Wood fragments",
+     "sprite": "woodfragments"
+    },
+    {
+     "en": "Farm soil",
+     "sprite": "farmsoil"
+    },
+    {
+     "en": "Stone debris",
+     "fr": "Débris de pierre",
+     "sprite": "stonedebris"
+    },
+    {
+     "en": "White rock",
+     "fr": "Roche blanche",
+     "sprite": "whiterock"
+    },
+    {
+     "en": "Ocean rock",
+     "fr": "Roche maritime",
+     "sprite": "oceanrock"
+    },
+    {
+     "en": "Metal fragments",
+     "fr": "Fragments métalliques",
+     "sprite": "metalfragments"
+    },
+    {
+     "en": "Stylish brick wall (middle)",
+     "fr": "Mur en brique élégant (milieu)",
+     "sprite": "stylishbrickwall(middle)"
+    },
+    {
+     "en": "Stone pillar (middle)",
+     "fr": "Pilier en pierre (milieu)",
+     "sprite": "stonepillar(middle)"
+    },
+    {
+     "en": "Stone flooring",
+     "fr": "Sol en pierre",
+     "sprite": "stoneflooring"
+    },
+    {
+     "en": "Damaged stone flooring",
+     "sprite": "damagedstoneflooring"
+    },
+    {
+     "en": "Brick wall",
+     "fr": "Mur en brique",
+     "sprite": "brickwall"
+    },
+    {
+     "en": "Dark marble flooring",
+     "fr": "Sol en marbre sombre",
+     "sprite": "darkmarbleflooring"
+    },
+    {
+     "en": "Marble",
+     "fr": "Marbre",
+     "sprite": "marble"
+    },
+    {
+     "en": "Extravagant carpeting",
+     "fr": "Tapis somptueux",
+     "sprite": "extravagantcarpeting"
+    },
+    {
+     "en": "Worn lumber",
+     "sprite": "wornlumber"
+    },
+    {
+     "en": "Aged-stone wall",
+     "fr": "Mur en vieille pierre",
+     "sprite": "aged-stonewall"
+    },
+    {
+     "en": "Patterned aged-stone wall",
+     "fr": "Mur en vieille pierre à motif",
+     "sprite": "patternedaged-stonewall"
+    },
+    {
+     "en": "Aged-stone flooring",
+     "fr": "Sol en vieille pierre",
+     "sprite": "aged-stoneflooring"
+    },
+    {
+     "en": "Reddish-brown cave rock",
+     "fr": "Roche de caverne rouge",
+     "sprite": "reddish-browncaverock"
+    },
+    {
+     "en": "Crystal cluster",
+     "fr": "Cristal",
+     "sprite": "crystalcluster"
+    },
+    {
+     "en": "Cooled molten rock",
+     "fr": "Rocher ardent refroidi",
+     "sprite": "cooledmoltenrock"
+    },
+    {
+     "en": "Molten rock",
+     "fr": "Rocher ardent",
+     "sprite": "moltenrock"
+    },
+    {
+     "en": "Volcanic rock",
+     "fr": "Roche volcanique",
+     "sprite": "volcanicrock"
+    }
+   ],
+   "objets": [
+    {
+     "en": "Wooden steps",
+     "fr": "Escalier en bois",
+     "sprite": "woodensteps"
+    },
+    {
+     "en": "Wooden gate",
+     "fr": "Portail en bois",
+     "sprite": "woodengate"
+    },
+    {
+     "en": "Window pane",
+     "fr": "Carreau de verre",
+     "sprite": "windowpane"
+    },
+    {
+     "en": "Railway track",
+     "fr": "Rails",
+     "sprite": "railwaytrack"
+    },
+    {
+     "en": "Lantern",
+     "fr": "Lanterne",
+     "sprite": "lantern"
+    },
+    {
+     "en": "Stone steps",
+     "fr": "Escalier en pierre",
+     "sprite": "stonesteps"
+    },
+    {
+     "en": "Metal drum",
+     "fr": "Baril",
+     "sprite": "metaldrum"
+    },
+    {
+     "en": "Crossing gate",
+     "fr": "Barrière de passage à niveau",
+     "sprite": "crossinggate"
+    },
+    {
+     "en": "Handcar",
+     "fr": "Wagonnet",
+     "sprite": "handcar"
+    },
+    {
+     "en": "Pop art lamp",
+     "fr": "Lampe pop art",
+     "sprite": "popartlamp"
+    },
+    {
+     "en": "Skylight",
+     "fr": "Fenêtre de toit",
+     "sprite": "skylight"
+    },
+    {
+     "en": "Sloped stone roof",
+     "fr": "Toit en pierre incliné",
+     "sprite": "slopedstoneroof"
+    },
+    {
+     "en": "Flat stone roof",
+     "fr": "Toit en pierre plat",
+     "sprite": "flatstoneroof"
+    },
+    {
+     "en": "Stained-glass window (lower)",
+     "fr": "Vitrail (bas)",
+     "sprite": "stained-glasswindow(lower)"
+    },
+    {
+     "en": "Stained-glass window (middle)",
+     "fr": "Vitrail (milieu)",
+     "sprite": "stained-glasswindow(middle)"
+    },
+    {
+     "en": "Stained-glass window (upper)",
+     "fr": "Vitrail (haut)",
+     "sprite": "stained-glasswindow(upper)"
+    },
+    {
+     "en": "Mysterious pedestal",
+     "fr": "Piédestal mystérieux",
+     "sprite": "mysteriouspedestal"
+    },
+    {
+     "en": "Mysterious statue",
+     "fr": "Statue mystérieuse",
+     "sprite": "mysteriousstatue"
+    },
+    {
+     "en": "Wooden handrail",
+     "fr": "Rambarde en bois",
+     "sprite": "woodenhandrail"
+    },
+    {
+     "en": "Exhibition stand",
+     "fr": "Présentoir",
+     "sprite": "exhibitionstand"
+    },
+    {
+     "en": "Tall potted plant",
+     "fr": "Arbuste élancé en pot",
+     "sprite": "tallpottedplant"
+    },
+    {
+     "en": "Extravagant pillar (lower)",
+     "fr": "Pilier somptueux (bas)",
+     "sprite": "extravagantpillar(lower)"
+    },
+    {
+     "en": "Extravagant pillar (middle)",
+     "fr": "Pilier somptueux (milieu)",
+     "sprite": "extravagantpillar(middle)"
+    },
+    {
+     "en": "Extravagant pillar (upper)",
+     "fr": "Pilier somptueux (haut)",
+     "sprite": "extravagantpillar(upper)"
+    },
+    {
+     "en": "Surface light",
+     "fr": "Spot lumineux",
+     "sprite": "surfacelight"
+    },
+    {
+     "en": "Wall torch",
+     "fr": "Torche murale",
+     "sprite": "walltorch"
+    },
+    {
+     "en": "Log chair",
+     "fr": "Tabouret en rondin",
+     "sprite": "logchair"
+    },
+    {
+     "en": "Firepit",
+     "fr": "Braséro",
+     "sprite": "firepit"
+    },
+    {
+     "en": "Mushroom lamp",
+     "fr": "Lampe champignon",
+     "sprite": "mushroomlamp"
+    }
+   ]
+  },
+  "dracolosse": {
+   "materiaux": [
+    {
+     "en": "Glowing mushrooms",
+     "fr": "Champignons luisants",
+     "sprite": "glowingmushrooms"
+    },
+    {
+     "en": "Sea glass fragments",
+     "fr": "Fragments de verre de mer",
+     "sprite": "seaglassfragments"
+    },
+    {
+     "en": "Seaweed",
+     "fr": "Algue",
+     "sprite": "seaweed"
+    },
+    {
+     "en": "Wastepaper",
+     "fr": "Déchets de papier",
+     "sprite": "wastepaper"
+    },
+    {
+     "en": "Leaf",
+     "fr": "Feuille",
+     "sprite": "leaf"
+    },
+    {
+     "en": "Fresh carrot",
+     "fr": "Carotte fraîche",
+     "sprite": "freshcarrot"
+    },
+    {
+     "en": "Copper ore",
+     "fr": "Cuivre",
+     "sprite": "copperore"
+    },
+    {
+     "en": "Iron ore",
+     "fr": "Fer",
+     "sprite": "ironore"
+    },
+    {
+     "en": "Gold ore",
+     "fr": "Or",
+     "sprite": "goldore"
+    }
+   ],
+   "blocs": [
+    {
+     "en": "Dry pink tall grass",
+     "sprite": "drypinktallgrass"
+    },
+    {
+     "en": "Sky-high grass",
+     "fr": "Gazon des cieux",
+     "sprite": "sky-highgrass"
+    },
+    {
+     "en": "Dry Sky-high grass",
+     "sprite": "drysky-highgrass"
+    },
+    {
+     "en": "Pure-white soil",
+     "fr": "Terre blanche",
+     "sprite": "pure-whitesoil"
+    },
+    {
+     "en": "Barren pure-white soil",
+     "sprite": "barrenpure-whitesoil"
+    },
+    {
+     "en": "Skyland flowers",
+     "fr": "Fleurs de Flotîles",
+     "sprite": "skylandflowers",
+     "couleurs": true
+    },
+    {
+     "en": "Robust flower",
+     "fr": "Fleurs résistantes",
+     "sprite": "robustflower"
+    },
+    {
+     "en": "Stylish hedge",
+     "fr": "Buisson chic",
+     "sprite": "stylishhedge",
+     "couleurs": true
+    },
+    {
+     "en": "Skyland sand",
+     "fr": "Sable de Flotîles",
+     "sprite": "skylandsand"
+    },
+    {
+     "en": "Ordinary sand",
+     "fr": "Sable ordinaire",
+     "sprite": "ordinarysand"
+    },
+    {
+     "en": "Coarse rock",
+     "fr": "Roche rugueuse",
+     "sprite": "coarserock"
+    },
+    {
+     "en": "Ocean rock",
+     "fr": "Roche maritime",
+     "sprite": "oceanrock"
+    },
+    {
+     "en": "Skyland cliff rock",
+     "fr": "Roche de falaise de Flotîles",
+     "sprite": "skylandcliffrock"
+    },
+    {
+     "en": "Skyland spotted cliff rock",
+     "fr": "Conglomérat de falaise de Flotîles",
+     "sprite": "skylandspottedcliffrock"
+    },
+    {
+     "en": "Pointy tree",
+     "fr": "Arbre pointu",
+     "sprite": "pointytree"
+    },
+    {
+     "en": "Dry pointy tree",
+     "sprite": "drypointytree"
+    },
+    {
+     "en": "Dry stylish hedge",
+     "sprite": "drystylishhedge"
+    },
+    {
+     "en": "Mysterious stone",
+     "fr": "Pierre mystérieuse",
+     "sprite": "mysteriousstone"
+    },
+    {
+     "en": "Scrap cube",
+     "fr": "Ferraille",
+     "sprite": "scrapcube"
+    },
+    {
+     "en": "Rusted wall",
+     "sprite": "rustedwall"
+    },
+    {
+     "en": "Rusted iron-plate flooring",
+     "sprite": "rustediron-plateflooring"
+    },
+    {
+     "en": "Metal Debris",
+     "fr": "Débris métalliques",
+     "sprite": "metaldebris"
+    },
+    {
+     "en": "Worn lumber",
+     "sprite": "wornlumber"
+    },
+    {
+     "en": "Grubby rags",
+     "fr": "Tissus sales",
+     "sprite": "grubbyrags"
+    },
+    {
+     "en": "Sticky web",
+     "fr": "Toile gluante",
+     "sprite": "stickyweb"
+    },
+    {
+     "en": "Cyber flooring",
+     "fr": "Sol cybernétique",
+     "sprite": "cyberflooring"
+    },
+    {
+     "en": "Ripe potato plant",
+     "sprite": "ripepotatoplant"
+    },
+    {
+     "en": "Blooming potato plant",
+     "sprite": "bloomingpotatoplant"
+    },
+    {
+     "en": "Dry potato plant",
+     "sprite": "drypotatoplant"
+    },
+    {
+     "en": "Potato sprout",
+     "sprite": "potatosprout"
+    },
+    {
+     "en": "Protruding wall",
+     "fr": "Saillie de mur",
+     "sprite": "protrudingwall"
+    },
+    {
+     "en": "Iron tiling",
+     "fr": "Revêtement métal",
+     "sprite": "irontiling"
+    },
+    {
+     "en": "Rough wall",
+     "fr": "Mur en crépi",
+     "sprite": "roughwall"
+    },
+    {
+     "en": "Stone pillar (upper)",
+     "fr": "Pilier en pierre (haut)",
+     "sprite": "stonepillar(upper)"
+    },
+    {
+     "en": "Stone pillar (middle)",
+     "fr": "Pilier en pierre (milieu)",
+     "sprite": "stonepillar(middle)"
+    },
+    {
+     "en": "Stone pillar (lower)",
+     "fr": "Pilier en pierre (bas)",
+     "sprite": "stonepillar(lower)"
+    },
+    {
+     "en": "Woven carpeting",
+     "fr": "Moquette à carreaux",
+     "sprite": "wovencarpeting"
+    },
+    {
+     "en": "Diagonal wooden flooring",
+     "fr": "Sol en bois à motif en biais",
+     "sprite": "diagonalwoodenflooring"
+    },
+    {
+     "en": "Foundation",
+     "fr": "Fondation de maison",
+     "sprite": "foundation"
+    },
+    {
+     "en": "Cute flower",
+     "fr": "Fleurs ravissantes",
+     "sprite": "cuteflower",
+     "couleurs": true
+    },
+    {
+     "en": "Pokémetal deposit",
+     "fr": "Minerai de Poké Métal",
+     "sprite": "pokemetaldeposit"
+    },
+    {
+     "en": "Muddy pure-white soil",
+     "sprite": "muddypure-whitesoil"
+    },
+    {
+     "en": "Cave rock",
+     "fr": "Roche souterraine",
+     "sprite": "caverock"
+    },
+    {
+     "en": "Mossy soil",
+     "fr": "Terre moussue",
+     "sprite": "mossysoil"
+    },
+    {
+     "en": "Cube light",
+     "fr": "Cube lumineux",
+     "sprite": "cubelight"
+    },
+    {
+     "en": "Pokémon Center wall (trim)",
+     "fr": "Mur Centre Pokémon (bordure)",
+     "sprite": "pokemoncenterwall(trim)"
+    },
+    {
+     "en": "Copper deposit (Skyland)",
+     "fr": "Minerai de cuivre (Flotîles-Millefeux)",
+     "sprite": "copperdepositskyland"
+    },
+    {
+     "en": "Skyland sandstone",
+     "fr": "Grès de Flotîles",
+     "sprite": "skylandsandstone"
+    },
+    {
+     "en": "Crystal cluster",
+     "fr": "Cristal",
+     "sprite": "crystalcluster"
+    },
+    {
+     "en": "Driftwood",
+     "fr": "Bois flotté",
+     "sprite": "driftwood"
+    },
+    {
+     "en": "Dense vines",
+     "fr": "Lierre enroulé",
+     "sprite": "densevines"
+    }
+   ],
+   "objets": [
+    {
+     "en": "Wooden steps",
+     "fr": "Escalier en bois",
+     "sprite": "woodensteps"
+    },
+    {
+     "en": "Wooden gate",
+     "fr": "Portail en bois",
+     "sprite": "woodengate"
+    },
+    {
+     "en": "Window pane",
+     "fr": "Carreau de verre",
+     "sprite": "windowpane"
+    },
+    {
+     "en": "Fire hydrant",
+     "fr": "Borne d'incendie",
+     "sprite": "firehydrant"
+    },
+    {
+     "en": "Garbage bags",
+     "fr": "Sacs-poubelle",
+     "sprite": "garbagebags"
+    },
+    {
+     "en": "Tires",
+     "fr": "Pneus",
+     "sprite": "tires"
+    },
+    {
+     "en": "Antique clock",
+     "fr": "Pendule antique",
+     "sprite": "antiqueclock"
+    },
+    {
+     "en": "Alarm Clock",
+     "fr": "Réveil",
+     "sprite": "alarmclock"
+    },
+    {
+     "en": "Broken Window Pane",
+     "sprite": "brokenwindowpane"
+    },
+    {
+     "en": "Chic chair",
+     "fr": "Fauteuil chic",
+     "sprite": "chicchair"
+    },
+    {
+     "en": "Balloons",
+     "fr": "Ballons de baudruche",
+     "sprite": "balloons"
+    },
+    {
+     "en": "Whiteboard",
+     "fr": "Tableau blanc",
+     "sprite": "whiteboard"
+    },
+    {
+     "en": "Computer",
+     "fr": "Ordinateur",
+     "sprite": "computer"
+    },
+    {
+     "en": "Office desk",
+     "fr": "Bureau d'entreprise",
+     "sprite": "officedesk"
+    },
+    {
+     "en": "Office chair",
+     "fr": "Chaise de bureau",
+     "sprite": "officechair"
+    },
+    {
+     "en": "Iron ladder",
+     "fr": "Échelle en fer",
+     "sprite": "ironladder"
+    },
+    {
+     "en": "Office cabinet",
+     "fr": "Petit meuble de bureau",
+     "sprite": "officecabinet"
+    },
+    {
+     "en": "Office locker",
+     "fr": "Casier de bureau",
+     "sprite": "officelocker"
+    },
+    {
+     "en": "First aid kit",
+     "fr": "Trousse de premiers soins",
+     "sprite": "firstaidkit"
+    },
+    {
+     "en": "Stylish steps",
+     "fr": "Escalier élégant",
+     "sprite": "stylishsteps"
+    },
+    {
+     "en": "Office shelf",
+     "fr": "Armoire de bureau",
+     "sprite": "officeshelf"
+    },
+    {
+     "en": "Plain sofa",
+     "fr": "Canapé style naturel",
+     "sprite": "plainsofa"
+    },
+    {
+     "en": "Mug",
+     "fr": "Tasse",
+     "sprite": "mug"
+    },
+    {
+     "en": "Office table",
+     "fr": "Table de bureau",
+     "sprite": "officetable"
+    },
+    {
+     "en": "Plain chair",
+     "fr": "Chaise style naturel",
+     "sprite": "plainchair"
+    },
+    {
+     "en": "Twisted potted plant",
+     "fr": "Arbuste torsadé en pot",
+     "sprite": "twistedpottedplant"
+    },
+    {
+     "en": "Stylish door",
+     "fr": "Porte distinguée",
+     "sprite": "stylishdoor"
+    },
+    {
+     "en": "Planter",
+     "fr": "Jardinière",
+     "sprite": "planter"
+    },
+    {
+     "en": "Large ventilation fan",
+     "fr": "Gros ventilateur d'extraction",
+     "sprite": "largeventilationfan"
+    },
+    {
+     "en": "Mysterious pedestal",
+     "fr": "Piédestal mystérieux",
+     "sprite": "mysteriouspedestal"
+    },
+    {
+     "en": "Metal drum",
+     "fr": "Baril",
+     "sprite": "metaldrum"
+    },
+    {
+     "en": "Straw table",
+     "fr": "Table sur paille",
+     "sprite": "strawtable"
+    },
+    {
+     "en": "Straw stool",
+     "fr": "Siège en paille",
+     "sprite": "strawstool"
+    },
+    {
+     "en": "Log chair",
+     "fr": "Tabouret en rondin",
+     "sprite": "logchair"
+    },
+    {
+     "en": "Cardboard boxes",
+     "fr": "Boîtes en carton",
+     "sprite": "cardboardboxes"
+    },
+    {
+     "en": "Firepit",
+     "fr": "Braséro",
+     "sprite": "firepit"
+    },
+    {
+     "en": "Traffic cone",
+     "fr": "Cône de chantier",
+     "sprite": "trafficcone"
+    },
+    {
+     "en": "Excavation tools",
+     "fr": "Outils pour creuser",
+     "sprite": "excavationtools"
+    },
+    {
+     "en": "Mushroom lamp",
+     "fr": "Lampe champignon",
+     "sprite": "mushroomlamp"
+    },
+    {
+     "en": "Spotlight",
+     "fr": "Projecteur",
+     "sprite": "spotlight"
+    },
+    {
+     "en": "Concrete steps",
+     "fr": "Escalier en béton",
+     "sprite": "concretesteps"
+    },
+    {
+     "en": "Iron steps",
+     "fr": "Escalier en fer",
+     "sprite": "ironsteps"
+    },
+    {
+     "en": "Wooden partition",
+     "fr": "Paravent en bois",
+     "sprite": "woodenpartition"
+    },
+    {
+     "en": "Grate flooring",
+     "fr": "Plaque grillagée",
+     "sprite": "grateflooring"
+    },
+    {
+     "en": "Roof support",
+     "fr": "Support de toit",
+     "sprite": "roofsupport"
+    }
+   ]
+  },
+  "staross": {
+   "materiaux": [],
+   "blocs": [
+    {
+     "en": "White rock",
+     "fr": "Roche blanche",
+     "sprite": "whiterock"
+    },
+    {
+     "en": "Chimney rocks",
+     "fr": "Cheminées rocheuses",
+     "sprite": "chimneyrocks"
+    },
+    {
+     "en": "Mossy ocean soil",
+     "fr": "Terre moussue marine",
+     "sprite": "mossyoceansoil"
+    },
+    {
+     "en": "Ocean rock",
+     "fr": "Roche maritime",
+     "sprite": "oceanrock"
+    },
+    {
+     "en": "Beach sand",
+     "fr": "Sable de plage",
+     "sprite": "beachsand"
+    },
+    {
+     "en": "Seafloor algae",
+     "fr": "Algues sous-marines",
+     "sprite": "seaflooralgae"
+    },
+    {
+     "en": "Blue rock",
+     "fr": "Roche bleue",
+     "sprite": "bluerock"
+    },
+    {
+     "en": "White driftwood",
+     "fr": "Bois flotté blanc",
+     "sprite": "whitedriftwood"
+    },
+    {
+     "en": "Lush seaweed",
+     "fr": "Algues hautes",
+     "sprite": "lushseaweed"
+    },
+    {
+     "en": "Star-spotted rock",
+     "fr": "Conglomérat d'étoiles",
+     "sprite": "star-spottedrock"
+    },
+    {
+     "en": "Wood fragments",
+     "sprite": "woodfragments"
+    },
+    {
+     "en": "Mossy ocean boulder",
+     "fr": "Rocher moussu marin",
+     "sprite": "mossyoceanboulder"
+    },
+    {
+     "en": "Sea moss",
+     "fr": "Mousse marine",
+     "sprite": "seamoss"
+    },
+    {
+     "en": "Seabed flowers",
+     "fr": "Fleurs des fonds marins",
+     "sprite": "seabedflowers"
+    },
+    {
+     "en": "Seabed flowers (purple)",
+     "fr": "Fleurs des fonds marins (violet)",
+     "sprite": "seabedflowerspurple"
+    },
+    {
+     "en": "Chesto tree",
+     "fr": "Arbre à Baies Maron",
+     "sprite": "chestotree"
+    },
+    {
+     "en": "Lum tree",
+     "fr": "Arbre à Baies Prine",
+     "sprite": "lumtree"
+    },
+    {
+     "en": "Aspear tree",
+     "fr": "Arbre à Baies Willia",
+     "sprite": "aspeartree"
+    },
+    {
+     "en": "Rawst tree",
+     "fr": "Arbre à Baies Fraive",
+     "sprite": "rawsttree"
+    },
+    {
+     "en": "Sea grape stalk",
+     "fr": "Pied de vigne à raisin de mer",
+     "sprite": "seagrapestalk"
+    },
+    {
+     "en": "Iron ore deposit",
+     "fr": "Minerai de fer",
+     "sprite": "irondeposit"
+    },
+    {
+     "en": "Gold ore deposit",
+     "fr": "Minerai d'or",
+     "sprite": "golddeposit"
+    },
+    {
+     "en": "Twisty waterweed",
+     "sprite": "twistywaterweed"
+    },
+    {
+     "en": "Driftwood",
+     "fr": "Bois flotté",
+     "sprite": "driftwood"
+    },
+    {
+     "en": "Mossy boulder",
+     "fr": "Rocher moussu",
+     "sprite": "mossyboulder"
+    },
+    {
+     "en": "Metal Wall",
+     "fr": "Mur en métal",
+     "sprite": "metalwall"
+    },
+    {
+     "en": "Heat Rock",
+     "fr": "Pierre chaude",
+     "sprite": "heatrock"
+    },
+    {
+     "en": "Damp Rock",
+     "fr": "Pierre humide",
+     "sprite": "damprock"
+    },
+    {
+     "en": "Smooth Rock",
+     "fr": "Pierre sèche",
+     "sprite": "smoothrock"
+    },
+    {
+     "en": "Icy Rock",
+     "fr": "Pierre froide",
+     "sprite": "icyrock"
+    }
+   ],
+   "objets": [
+    {
+     "en": "Interior door",
+     "fr": "Porte d'intérieur",
+     "sprite": "interiordoor"
+    },
+    {
+     "en": "Ornate door",
+     "fr": "Porte à entrelacs",
+     "sprite": "ornatedoor"
+    },
+    {
+     "en": "Ornate table",
+     "fr": "Table à entrelacs",
+     "sprite": "ornatetable"
+    },
+    {
+     "en": "Harp",
+     "fr": "Harpe",
+     "sprite": "harp"
+    },
+    {
+     "en": "Wall plant",
+     "fr": "Plante murale",
+     "sprite": "wallplant"
+    },
+    {
+     "en": "Safari poster",
+     "fr": "Poster safari",
+     "sprite": "safariposter"
+    },
+    {
+     "en": "Battle poster",
+     "fr": "Poster combat",
+     "sprite": "battleposter"
+    },
+    {
+     "en": "Thunder Wave poster",
+     "fr": "Poster Cage Éclair",
+     "sprite": "thunderwaveposter"
+    },
+    {
+     "en": "Beach poster",
+     "fr": "Poster rivage",
+     "sprite": "beachposter"
+    },
+    {
+     "en": "Surprise poster",
+     "fr": "Poster surprise",
+     "sprite": "surpriseposter"
+    },
+    {
+     "en": "Security poster",
+     "fr": "Poster sûreté",
+     "sprite": "securityposter"
+    },
+    {
+     "en": "Sunset poster",
+     "fr": "Poster coucher de soleil",
+     "sprite": "sunsetposter"
+    },
+    {
+     "en": "Fighting poster",
+     "fr": "Poster type Combat",
+     "sprite": "fightingposter"
+    },
+    {
+     "en": "Raging sea poster",
+     "fr": "Poster flots déchaînés",
+     "sprite": "ragingseaposter"
+    },
+    {
+     "en": "Roaring flame poster",
+     "fr": "Poster ardeur",
+     "sprite": "roaringflameposter"
+    },
+    {
+     "en": "Pearl streetlight",
+     "fr": "Lampadaire perle",
+     "sprite": "pearlstreetlight"
+    },
+    {
+     "en": "Ornate chair",
+     "fr": "Siège à entrelacs",
+     "sprite": "ornatechair"
+    },
+    {
+     "en": "Pokémetal",
+     "fr": "Poké Métal",
+     "sprite": "pokemetal"
+    },
+    {
+     "en": "Hanging sign",
+     "fr": "Enseigne suspendue",
+     "sprite": "hangingsign"
+    },
+    {
+     "en": "Submarine door",
+     "fr": "Porte de sous-marin",
+     "sprite": "submarinedoor"
+    },
+    {
+     "en": "Glass pane",
+     "fr": "Plaque de verre",
+     "sprite": "glasspane"
+    },
+    {
+     "en": "Mysterious pedestal",
+     "fr": "Piédestal mystérieux",
+     "sprite": "mysteriouspedestal"
+    },
+    {
+     "en": "Twisty pillar (upper)",
+     "fr": "Pilier torsadé (haut)",
+     "sprite": "twistypillar(upper)"
+    },
+    {
+     "en": "Twisty pillar (middle)",
+     "fr": "Pilier torsadé (milieu)",
+     "sprite": "twistypillar(middle)"
+    },
+    {
+     "en": "Twisty pillar (lower)",
+     "fr": "Pilier torsadé (bas)",
+     "sprite": "twistypillar(lower)"
+    },
+    {
+     "en": "Extravagant carpeting",
+     "fr": "Tapis somptueux",
+     "sprite": "extravagantcarpeting"
+    },
+    {
+     "en": "Stone steps",
+     "fr": "Escalier en pierre",
+     "sprite": "stonesteps"
+    },
+    {
+     "en": "Stately flooring",
+     "fr": "Sol grandiose",
+     "sprite": "statelyflooring"
+    },
+    {
+     "en": "Stone-accent wall",
+     "fr": "Mur en pierre à moulures",
+     "sprite": "stone-accentwall"
+    },
+    {
+     "en": "Scale hipped roof",
+     "fr": "Saillie de toit en écailles",
+     "sprite": "scalehippedroof"
+    },
+    {
+     "en": "Sloped scale roof",
+     "fr": "Toit en écailles incliné",
+     "sprite": "slopedscaleroof"
+    },
+    {
+     "en": "Rough wall",
+     "fr": "Mur en crépi",
+     "sprite": "roughwall"
+    },
+    {
+     "en": "Stone brick wall",
+     "fr": "Mur en brique de pierre",
+     "sprite": "stonebrickwall"
+    },
+    {
+     "en": "Window pane",
+     "fr": "Carreau de verre",
+     "sprite": "windowpane"
+    },
+    {
+     "en": "Marine chair",
+     "fr": "Siège océanique",
+     "sprite": "marinechair"
+    },
+    {
+     "en": "Marine table",
+     "fr": "Table océanique",
+     "sprite": "marinetable"
+    },
+    {
+     "en": "Slim information board",
+     "fr": "Panneau d'information fin",
+     "sprite": "sliminformationboard"
+    },
+    {
+     "en": "Ornate window",
+     "fr": "Fenêtre à entrelacs",
+     "sprite": "ornatewindow"
+    },
+    {
+     "en": "Ornate decorative shelf",
+     "fr": "Étagère à entrelacs",
+     "sprite": "ornatedecorativeshelf"
+    },
+    {
+     "en": "Ornate stand",
+     "fr": "Commode à entrelacs",
+     "sprite": "ornatestand"
+    },
+    {
+     "en": "Shell lamp",
+     "fr": "Lampe coquillage",
+     "sprite": "shelllamp"
+    },
+    {
+     "en": "Seashell Fencing",
+     "fr": "Clôture coquillage",
+     "sprite": "seashellfencing"
+    },
+    {
+     "en": "Colorful fish-scale tiling",
+     "fr": "Revêtement écailles colorées",
+     "sprite": "colorfulfish-scaletiling"
+    },
+    {
+     "en": "Ornate wall",
+     "fr": "Mur à entrelacs",
+     "sprite": "ornatewall"
+    },
+    {
+     "en": "Plaster wall",
+     "fr": "Mur en plâtre",
+     "sprite": "plasterwall"
+    },
+    {
+     "en": "Lampion",
+     "fr": "Lampion",
+     "sprite": "lampion"
+    },
+    {
+     "en": "Lacquered wall",
+     "fr": "Mur laqué",
+     "sprite": "lacqueredwall"
+    },
+    {
+     "en": "Decorative cloth",
+     "fr": "Tenture murale",
+     "sprite": "decorativecloth"
+    },
+    {
+     "en": "Metronome",
+     "fr": "Métronome",
+     "sprite": "metronome"
+    },
+    {
+     "en": "Stone sign",
+     "fr": "Panneau en pierre",
+     "sprite": "stonesign"
+    },
+    {
+     "en": "Wall-mounted tools",
+     "fr": "Porte-outils mural",
+     "sprite": "wall-mountedtools"
+    },
+    {
+     "en": "Iron support",
+     "fr": "Pilier d'angle en fer",
+     "sprite": "ironsupport"
+    },
+    {
+     "en": "Office chair",
+     "fr": "Chaise de bureau",
+     "sprite": "officechair"
+    },
+    {
+     "en": "Office desk",
+     "fr": "Bureau d'entreprise",
+     "sprite": "officedesk"
+    },
+    {
+     "en": "Whiteboard",
+     "fr": "Tableau blanc",
+     "sprite": "whiteboard"
+    },
+    {
+     "en": "Iron pipe (downward T)",
+     "fr": "Tuyau en fer (en T vers le bas)",
+     "sprite": "ironpipe(downwardt)"
+    },
+    {
+     "en": "Iron pipe (vertical T)",
+     "fr": "Tuyau en fer (en T vertical)",
+     "sprite": "ironpipe(verticalt)"
+    },
+    {
+     "en": "Iron pipe (horizontal)",
+     "fr": "Tuyau en fer (horizontal)",
+     "sprite": "ironpipe(horizontal)"
+    },
+    {
+     "en": "Iron pipe (horizontal curve)",
+     "fr": "Tuyau en fer (courbe horizontale)",
+     "sprite": "ironpipe(horizontalcurve)"
+    },
+    {
+     "en": "Glass pane (horizontal)",
+     "fr": "Plaque de verre (horizontal)",
+     "sprite": "glasspane(horizontal)"
+    }
+   ]
+  }
+ }
+}

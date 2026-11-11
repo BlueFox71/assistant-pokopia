@@ -50,6 +50,14 @@ se filtrent aussi par **ville** et par **spécialité** — on compose souvent u
 travail qu'il rendra sur l'île ; un Pokémon déjà choisi reste visible même s'il n'y répond
 pas, et les compteurs par ville suivent le filtre de spécialité.
 
+**Bouldeneu (le Pokémon ordinaire, pas le Professeur) ne vit que sur l'Île-Nuage** : le
+Banc près de buissons ne l'attire que là, et l'Île-Nuage est une partie à part, dont seuls
+le Pokédex et les recettes reviennent. `ILE_NUAGE_UNIQUEMENT`, dans `src/data/index.js`,
+le marque : il reste au Pokédex, avec une mention « Île-Nuage uniquement » sur sa vignette
+et sa fiche, mais sort de tout ce qui touche aux villes et aux enclos (sélecteur, voisins
+de goût, vue Villes, décomptes de logés). Il passe pour cela par `logeable`, comme les
+trois légendaires ci-dessous.
+
 **Kyogre, Lugia et Ho-Oh sont les seuls qu'aucun enclos ne peut accueillir** : ils ne
 vivent pas avec les autres Pokémon. Rien dans les données ne les distingue — ils ont leurs
 préférences comme les autres —, c'est donc `NON_LOGEABLES`, dans `src/data/index.js`, qui

@@ -1,4 +1,5 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { ArrowLeftOutlined } from '@ant-design/icons'
 import { frObjet, frPokemon, objetParNom, pokemonParNom } from '../data'
 import { SIMULATIONS } from '../pages/simulations'
 import { nomDeGroupe, useHabitats } from '../utils/habitatsStorage'
@@ -80,9 +81,16 @@ function etapes(pathname, params, { habitats, nomsVilles }) {
 /**
  * Le fil d'Ariane, sous l'en-tête : d'où vient la page, étape par étape, chaque étape
  * cliquable sauf la dernière. Absent de l'accueil, qui n'a rien au-dessus de lui.
+ *
+ * Devant, une flèche ramène à la page précédente, comme le bouton du navigateur — que la
+ * fenêtre de bureau n'a pas. Si l'on est arrivé directement ici (lien partagé, première
+ * page de la session), il n'y a pas d'avant dans l'appli : la flèche remonte alors d'un
+ * cran dans le fil.
  */
 export default function FilAriane() {
-  const { pathname, search } = useLocation()
+  const location = useLocation()
+  const { pathname, search } = location
+  const navigate = useNavigate()
   const habitats = useHabitats()
   const nomsVilles = useNomsVilles()
   const params = new URLSearchParams(search)
@@ -92,8 +100,22 @@ export default function FilAriane() {
   // Le plan personnalisé prend toute la largeur de l'écran : le fil s'aligne sur lui.
   const large = pathname === '/construction' && SIMULATIONS.find((s) => s.cle === params.get('sim'))?.large
 
+  // React Router donne la clé « default » à la première page chargée : rien avant elle.
+  const aUnAvant = location.key !== 'default'
+  const parent = fil.findLast((e) => e.to)
+  const revenir = () => (aUnAvant ? navigate(-1) : navigate(parent.to))
+
   return (
     <nav className={'wrap fil-ariane' + (large ? ' large' : '')} aria-label="Fil d’Ariane">
+      <button
+        type="button"
+        className="fil-retour"
+        onClick={revenir}
+        title={aUnAvant ? 'Page précédente' : `Remonter à « ${parent.libelle} »`}
+        aria-label={aUnAvant ? 'Page précédente' : `Remonter à ${parent.libelle}`}
+      >
+        <ArrowLeftOutlined />
+      </button>
       <ol>
         {fil.map((e, i) => (
           <li key={i}>

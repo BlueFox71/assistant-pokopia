@@ -481,6 +481,14 @@ export const IconeFleur = (p) => (
   </Svg>
 )
 
+/** Pomme à sa queue et sa feuille : ce qui se cultive pour se manger. */
+export const IconePomme = (p) => (
+  <Svg {...p}>
+    <path d="M12 8c-1.5-1-5-1.5-6.5 1.5S5 17 7.5 19.5c1.5 1.5 3 1 4.5.5 1.5.5 3 1 4.5-.5C19 17 20 12.5 18.5 9.5S13.5 7 12 8z" />
+    <path d="M12 8V4M12 5c1-2 3-2.5 4.5-2-.3 1.8-2 3-4.5 3" />
+  </Svg>
+)
+
 /** Rouleau qui se déroule : les papiers peints. */
 export const IconeRouleau = (p) => (
   <Svg {...p}>
@@ -631,6 +639,7 @@ export const ICONE_CATEGORIE = {
   matiere: IconeRondin,
   peinture: IconePeinture,
   fleur: IconeFleur,
+  fruitLegume: IconePomme,
   bloc: IconeBriques,
   construction: IconeMaison,
   papier: IconeRouleau,

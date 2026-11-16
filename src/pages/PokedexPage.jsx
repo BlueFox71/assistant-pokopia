@@ -31,7 +31,7 @@ const TRIS = [
 const HABITATS = ['Bright', 'Dark', 'Humid', 'Dry', 'Warm', 'Cool']
 
 /**
- * Les 368 Pokémon de Pokopia, filtrables par Pokédex (principal, bassin DLC, événement),
+ * Les 373 Pokémon de Pokopia, filtrables par Pokédex (principal, bassin DLC, événement),
  * habitat, type et spécialité.
  *
  * Le tri « Préférences » remonte les Pokémon les plus faciles à contenter — ceux qui

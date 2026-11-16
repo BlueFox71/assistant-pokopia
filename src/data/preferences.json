@@ -318,7 +318,9 @@
    "Swim ring",
    "Big swim ring",
    "Floating lantern",
-   "Fun balloons"
+   "Fun balloons",
+   "Harvest basket",
+   "Cooking utensils"
   ],
   "pokemon": [
    "Ivysaur",
@@ -565,7 +567,8 @@
    "Party ball",
    "Blender",
    "Cofagrigus locker",
-   "Candy bucket"
+   "Candy bucket",
+   "Harvest basket"
   ],
   "pokemon": [
    "Noctowl",
@@ -609,7 +612,10 @@
    "Shellder",
    "Cloyster",
    "Toxapex",
-   "Pumpkaboo"
+   "Pumpkaboo",
+   "Applin",
+   "Dipplin",
+   "Hydrapple"
   ]
  },
  {
@@ -994,7 +1000,8 @@
    "Crawdaunt",
    "Golisopod",
    "Drednaw",
-   "Veluza"
+   "Veluza",
+   "Flapple"
   ]
  },
  {
@@ -1227,7 +1234,8 @@
    "Ornate decorative shelf",
    "Wall plant",
    "Candy bucket",
-   "Fun balloons"
+   "Fun balloons",
+   "Harvest basket"
   ],
   "pokemon": [
    "Magneton",
@@ -1251,7 +1259,9 @@
    "Wattrel",
    "Kilowattrel",
    "Wiglett",
-   "Wugtrio"
+   "Wugtrio",
+   "Dipplin",
+   "Hydrapple"
   ]
  },
  {
@@ -1355,7 +1365,8 @@
    "Wall clock",
    "Chimecho wind chime",
    "Blender",
-   "Chain lamp"
+   "Chain lamp",
+   "Appley blender"
   ],
   "pokemon": [
    "Pichu",
@@ -1751,7 +1762,8 @@
    "Floatzel",
    "Alomomola",
    "Golisopod",
-   "Manaphy"
+   "Manaphy",
+   "Flapple"
   ]
  },
  {
@@ -1857,7 +1869,10 @@
    "Wall plant",
    "Candy bucket",
    "Pumpkin lantern",
-   "Pumpkin lantern tower"
+   "Pumpkin lantern tower",
+   "Apple pie",
+   "Harvest basket",
+   "Appley blender"
   ],
   "pokemon": [
    "Pidgeotto",
@@ -1878,7 +1893,11 @@
    "Noibat",
    "Noivern",
    "Tinkatink",
-   "Sableye"
+   "Sableye",
+   "Applin",
+   "Flapple",
+   "Appletun",
+   "Dipplin"
   ]
  },
  {
@@ -2076,7 +2095,8 @@
    "Miracle Seed",
    "Silver Powder",
    "Big Root",
-   "Berry print"
+   "Berry print",
+   "Harvest basket"
   ],
   "pokemon": [
    "Bulbasaur",
@@ -2156,7 +2176,12 @@
    "Dhelmise",
    "Chewtle",
    "Pumpkaboo",
-   "Gourgeist"
+   "Gourgeist",
+   "Applin",
+   "Flapple",
+   "Appletun",
+   "Dipplin",
+   "Hydrapple"
   ]
  },
  {
@@ -2371,7 +2396,8 @@
    "Gyarados fountain",
    "Primarina statue",
    "Lampion",
-   "Cofagrigus locker"
+   "Cofagrigus locker",
+   "Apple pie"
   ],
   "pokemon": [
    "Venusaur",
@@ -3024,7 +3050,9 @@
    "Skiploom",
    "Jumpluff",
    "Pumpkaboo",
-   "Gourgeist"
+   "Gourgeist",
+   "Applin",
+   "Appletun"
   ]
  },
  {
@@ -3242,7 +3270,10 @@
    "Fun balloons",
    "Ghost smoke projector",
    "Pumpkin lantern",
-   "Pumpkin lantern tower"
+   "Pumpkin lantern tower",
+   "Apple pie",
+   "Harvest basket",
+   "Dipplin mixing bowl"
   ],
   "pokemon": [
    "Tyrogue",
@@ -3534,7 +3565,8 @@
    "Dangling streetlight",
    "Pearl streetlight",
    "Lampion",
-   "Trevenant streetlight"
+   "Trevenant streetlight",
+   "Cooking utensils"
   ],
   "pokemon": [
    "Onix",
@@ -3574,7 +3606,8 @@
    "Barboach",
    "Wiglett",
    "Wugtrio",
-   "Tatsugiri Curly Form"
+   "Tatsugiri Curly Form",
+   "Hydrapple"
   ]
  },
  {
@@ -4452,7 +4485,8 @@
    "Frillish Female Form",
    "Stunfisk",
    "Bruxish",
-   "Pincurchin"
+   "Pincurchin",
+   "Appletun"
   ]
  },
  {
@@ -4481,7 +4515,9 @@
    "Chain lamp",
    "Beach volleyball set",
    "Fun balloons",
-   "Eerie statue"
+   "Eerie statue",
+   "Dipplin mixing bowl",
+   "Cooking utensils"
   ],
   "pokemon": [
    "Koffing",
@@ -4575,7 +4611,8 @@
    "Star closet",
    "Music box",
    "Harp",
-   "Standing frame"
+   "Standing frame",
+   "Cooking utensils"
   ],
   "pokemon": [
    "Charmander",
@@ -4624,7 +4661,12 @@
    "Corvisquire",
    "Corviknight",
    "Flareon",
-   "Ho-Oh"
+   "Ho-Oh",
+   "Applin",
+   "Flapple",
+   "Appletun",
+   "Dipplin",
+   "Hydrapple"
   ]
  }
 ]

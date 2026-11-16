@@ -8322,6 +8322,108 @@
      "rarete": "commun"
     }
    ]
+  },
+  {
+   "numero": "010",
+   "dex": "evenement",
+   "slug": "abundantapples",
+   "en": "Abundant apples",
+   "fr": "Montagne de pommes",
+   "image": "e10",
+   "requis": [
+    {
+     "objet": "Syrupy Apple tree",
+     "quantite": 1
+    },
+    {
+     "objet": "Harvest basket",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Applin",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Dipplin",
+     "rarete": "rare"
+    },
+    {
+     "nom": "Hydrapple",
+     "rarete": "rare"
+    }
+   ]
+  },
+  {
+   "numero": "011",
+   "dex": "evenement",
+   "slug": "sweetapplepie",
+   "en": "Sweet apple pie",
+   "fr": "Coin tarte aux pommes sucrée",
+   "image": "e11",
+   "requis": [
+    {
+     "objet": "Apple pie",
+     "quantite": 1
+    },
+    {
+     "en": "Table (any)",
+     "fr": "Table (au choix)",
+     "quantite": 1
+    },
+    {
+     "en": "Seat (any)",
+     "fr": "Siège (au choix)",
+     "quantite": 1
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Applin",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Appletun",
+     "rarete": "commun"
+    }
+   ]
+  },
+  {
+   "numero": "012",
+   "dex": "evenement",
+   "slug": "applekitchen",
+   "en": "Apple kitchen",
+   "fr": "Cuisine pomme",
+   "image": "e12",
+   "requis": [
+    {
+     "objet": "Appley blender",
+     "quantite": 1
+    },
+    {
+     "objet": "Dipplin mixing bowl",
+     "quantite": 1
+    },
+    {
+     "objet": "Kitchen scale",
+     "quantite": 1
+    },
+    {
+     "objet": "Kitchen table",
+     "quantite": 3
+    }
+   ],
+   "pokemon": [
+    {
+     "nom": "Applin",
+     "rarete": "commun"
+    },
+    {
+     "nom": "Flapple",
+     "rarete": "commun"
+    }
+   ]
   }
  ]
 }

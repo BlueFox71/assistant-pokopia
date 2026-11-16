@@ -28,6 +28,7 @@ export const RAYONS = [
   { cle: 'matiere', libelle: 'Matières premières' },
   { cle: 'peinture', libelle: 'Peintures' },
   { cle: 'fleur', libelle: 'Fleurs' },
+  { cle: 'fruitLegume', libelle: 'Fruits et légumes' },
   { cle: 'cd', libelle: 'CD' },
   { cle: 'autre', libelle: 'Autres' },
 ]
@@ -35,7 +36,7 @@ export const RAYONS = [
 export const FR_RAYON = Object.fromEntries(RAYONS.map((r) => [r.cle, r.libelle]))
 
 /** Les types du catalogue qui sont aussi des rayons, sous la même clé. */
-const RAYONS_DIRECTS = new Set(['bloc', 'tapis', 'matiere', 'peinture', 'fleur', 'cd'])
+const RAYONS_DIRECTS = new Set(['bloc', 'tapis', 'matiere', 'peinture', 'fleur', 'fruitLegume', 'cd'])
 
 /**
  * Portes et fenêtres d'après le nom anglais, avant tout le reste : elles se rangent sinon

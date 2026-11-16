@@ -113,7 +113,7 @@ const kalosParCle = new Map()
 for (const partie of kalosHabitats.split(/<details[^>]*id="/).slice(1)) {
   const dex = SECTIONS_KALOS[partie.slice(0, partie.indexOf('"'))]
   if (!dex) continue
-  for (const [, page, numero, fr, en] of partie.matchAll(/href="([^"]+)" data-num="(\d+)" data-fr="([^"]+)" data-en="([^"]+)"/g))
+  for (const [, page, numero, fr, en] of partie.matchAll(/href="([^"]+)"[^>]*? data-num="(\d+)" data-fr="([^"]+)" data-en="([^"]+)"/g))
     kalosParCle.set(`${dex}#${numero}`, { page, fr: decoder(fr).replace(/’/g, "'"), en: decoder(en) })
 }
 

@@ -242,6 +242,7 @@
   --c-matiere: hsl(220 12% var(--lum));
   --c-peinture: hsl(340 55% var(--lum));
   --c-fleur: hsl(300 45% var(--lum));
+  --c-fruitLegume: hsl(8 60% var(--lum));
   --c-bloc: hsl(16 40% var(--lum));
   --c-construction: hsl(32 45% var(--lum));
   --c-papier: hsl(240 30% var(--lum));
@@ -266,6 +267,7 @@
   --c-matiere-fond: hsl(220 14% var(--lum-fond));
   --c-peinture-fond: hsl(340 var(--sat-fond) var(--lum-fond));
   --c-fleur-fond: hsl(300 var(--sat-fond) var(--lum-fond));
+  --c-fruitLegume-fond: hsl(8 var(--sat-fond) var(--lum-fond));
   --c-tapis-fond: hsl(0 var(--sat-fond) var(--lum-fond));
   --c-affiche-fond: hsl(200 var(--sat-fond) var(--lum-fond));
   --c-exterieur-fond: hsl(95 var(--sat-fond) var(--lum-fond));
@@ -606,6 +608,7 @@ h1, h2, h3 { text-wrap: balance; }
 .meuble-matiere { color: var(--c-matiere); }
 .meuble-peinture { color: var(--c-peinture); }
 .meuble-fleur { color: var(--c-fleur); }
+.meuble-fruitLegume { color: var(--c-fruitLegume); }
 .meuble-tapis { color: var(--c-tapis); }
 .meuble-affiche { color: var(--c-affiche); }
 .meuble-exterieur { color: var(--c-exterieur); }

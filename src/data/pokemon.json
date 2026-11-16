@@ -124,6 +124,31 @@
   "gout": "sour"
  },
  {
+  "en": "Appletun",
+  "fr": "Dratatin",
+  "numero": "012",
+  "habitat": "Bright",
+  "sprite": "842",
+  "dex": "evenement",
+  "gout": "sweet",
+  "specialites": [
+   "Fertilisation",
+   "Broyage"
+  ]
+ },
+ {
+  "en": "Applin",
+  "fr": "Verpom",
+  "numero": "010",
+  "habitat": "Bright",
+  "sprite": "840",
+  "dex": "evenement",
+  "gout": "sour",
+  "specialites": [
+   "Fertilisation"
+  ]
+ },
+ {
   "en": "Arbok",
   "fr": "Arbok",
   "numero": "147",
@@ -1141,6 +1166,19 @@
   "gout": "bitter"
  },
  {
+  "en": "Dipplin",
+  "fr": "Pomdramour",
+  "numero": "013",
+  "habitat": "Bright",
+  "sprite": "1011",
+  "dex": "evenement",
+  "gout": "sweet",
+  "specialites": [
+   "Fertilisation",
+   "Recyclage"
+  ]
+ },
+ {
   "en": "Dragapult",
   "fr": "Lanssorien",
   "numero": "262",
@@ -1646,6 +1684,19 @@
   ],
   "dex": "principal",
   "gout": "bitter"
+ },
+ {
+  "en": "Flapple",
+  "fr": "Pomdrapi",
+  "numero": "011",
+  "habitat": "Bright",
+  "sprite": "841",
+  "dex": "evenement",
+  "gout": "sour",
+  "specialites": [
+   "Fertilisation",
+   "Vol"
+  ]
  },
  {
   "en": "Flareon",
@@ -2455,6 +2506,19 @@
   "gout": "sweet",
   "specialites": [
    "Arrosage"
+  ]
+ },
+ {
+  "en": "Hydrapple",
+  "fr": "Pomdorochi",
+  "numero": "014",
+  "habitat": "Bright",
+  "sprite": "1019",
+  "dex": "evenement",
+  "gout": "sweet",
+  "specialites": [
+   "Troc",
+   "Recyclage"
   ]
  },
  {

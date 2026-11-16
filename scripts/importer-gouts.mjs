@@ -84,6 +84,13 @@ const CORRECTIONS = {
   Sableye: 'sour',
   Mosslax: 'spicy',
   'Professor Tangrowth': 'dry',
+  // La lignée de Verpom (événement de novembre 2026) manquait aux trois sites à son arrivée ;
+  // son goût vient de sa fiche Serebii (pokedex/<nom>.shtml, ligne « … Flavors »).
+  Applin: 'sour',
+  Flapple: 'sour',
+  Appletun: 'sweet',
+  Dipplin: 'sweet',
+  Hydrapple: 'sweet',
 }
 
 const args = process.argv.slice(2)

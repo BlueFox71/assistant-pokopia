@@ -17,7 +17,7 @@ import './ProgressionVilles.css'
  * Kyogre, Lugia et Ho-Oh ne comptent d'aucun côté, comme le décompte de la vue habitat :
  * aucun enclos ne peut les accueillir, et leur ville n'atteindrait jamais son total
  * (cf. NON_LOGEABLES). Bouldeneu non plus : il ne vit que sur l'Île-Nuage (cf.
- * ILE_NUAGE_UNIQUEMENT). La somme des six villes fait donc 364, pas 368.
+ * ILE_NUAGE_UNIQUEMENT). La somme des six villes fait donc 369, pas 373.
  *
  * Le bloc ne paraît qu'une fois un premier habitat enregistré : six barres à zéro se
  * liraient comme une grille de cases à remplir, et l'accueil tient dans un écran.

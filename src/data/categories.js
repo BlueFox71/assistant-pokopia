@@ -38,6 +38,7 @@ export const TYPES_OBJET = [
   'matiere',
   'peinture',
   'fleur',
+  'fruitLegume',
   // pour construire
   'bloc',
   'construction',
@@ -69,6 +70,7 @@ export const FR_TYPE_OBJET = {
   matiere: 'Matière première',
   peinture: 'Peinture',
   fleur: 'Fleur',
+  fruitLegume: 'Fruits et légumes',
   bloc: 'Bloc',
   construction: 'Construction',
   papier: 'Papier peint',
@@ -191,6 +193,16 @@ const TRESORS = new Set([
   'rainbow feather', 'silver feather',
 ])
 
+/**
+ * Ce qui se cultive pour se manger : les baies et la Pomme Nectar, les légumes, leurs
+ * graines, et chaque stade de la plante — pousse, petit arbre, arbre, arbre desséché,
+ * souche ; pousse, plant en fleur, plant mûr, plant desséché. Les racines sont nommées une
+ * à une : « Berry table » ou « Fried potatoes » sont des meubles, et les graines de fleurs
+ * ou de haies, les palmiers et les arbres pointus ne donnent rien à manger.
+ */
+const FRUIT_LEGUME =
+  /^(?:(?:dry|small|ripe|blooming) )?(?:leppa|chesto|rawst|aspear|pecha|lum|syrupy apple|potato|tomato|wheat|bean|watermelon)(?: berry| tree(?: sapling| stump)?| seeds?| sprout| plant)?$|^(?:fresh carrot|sea grapes|seagrape stalk|bruised berry)$/
+
 /** Les versions murales des blocs : Serebii les nomme toutes ainsi. */
 const PAPIER = /\(wallpaper\)/
 
@@ -288,6 +300,9 @@ export function typeObjet(nom, categorieJeu, { cd = false, onglet = null } = {})
   if (cd) return 'cd'
   const n = nom.toLowerCase()
   if (EXCEPTIONS[n]) return EXCEPTIONS[n]
+  // Avant les mots-clés : la souche d'un arbre à baies passerait pour un siège à venir, et
+  // la Pomme Nectar pour un divers.
+  if (FRUIT_LEGUME.test(n)) return 'fruitLegume'
 
   for (const [type, motif] of REGLES) {
     if (!motif.test(n)) continue

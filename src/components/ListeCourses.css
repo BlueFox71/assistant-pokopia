@@ -43,7 +43,7 @@
 .courses-lignes { list-style: none; margin: 0; padding: 0; }
 .courses-ligne {
   display: grid;
-  grid-template-columns: auto 36px minmax(0, 1fr) 64px auto;
+  grid-template-columns: auto 36px minmax(0, 1fr) 64px auto auto;
   align-items: center;
   gap: 10px;
   padding: 6px 0;
@@ -78,6 +78,15 @@
 /* ---- la fenêtre d'ajout ---- */
 .courses-rayons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .courses-ligne-libre { display: flex; gap: 8px; margin-top: 12px; }
+.courses-champ { flex: 1; width: 100%; }
+.courses-ligne-edition { display: block; }
+
+/* ---- les suggestions sous le champ ---- */
+.courses-suggestions { max-width: min(440px, calc(100vw - 32px)); }
+.courses-suggestion { display: flex; align-items: center; gap: 10px; }
+.courses-suggestion img, .courses-suggestion .courses-sans-image { flex: none; width: 28px; height: 28px; }
+.courses-suggestion-nom { flex: 1; min-width: 0; white-space: normal; font-size: 13px; line-height: 1.2; }
+.courses-suggestion .courses-article-famille { flex: none; }
 .courses-ligne-libre .ghost-btn { padding: 4px 12px; }
 
 /* Le gabarit des bascules de filtre, repris ici : les leurs vivent dans la feuille de leur

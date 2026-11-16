@@ -116,6 +116,35 @@ export const retirer = (cle) => ecrireDisque(courses().filter((l) => cleLigne(l.
 
 export const changerQuantite = (cle, quantite) => remplacer(cle, { quantite: assainirQuantite(quantite) })
 
+/**
+ * Change ce que désigne une ligne — un texte devenu objet, une baie pour une autre — sans
+ * lui faire perdre sa place, sa quantité ni sa coche. Si la nouvelle désignation est déjà
+ * dans la liste, les deux lignes n'en font plus qu'une, à la place de celle qui y était,
+ * et leurs quantités s'additionnent.
+ *
+ * @returns {boolean} vrai si la liste a changé
+ */
+export function modifier(cle, type, nom) {
+  const propre = typeof nom === 'string' ? nom.trim() : ''
+  if (!TYPES.has(type) || !propre) return false
+  const nouvelle = cleLigne(type, propre)
+  if (nouvelle === cle) return false
+  const ligne = courses().find((l) => cleLigne(l.type, l.nom) === cle)
+  if (!ligne) return false
+  const existante = courses().find((l) => cleLigne(l.type, l.nom) === nouvelle)
+  if (existante) {
+    const total = (existante.quantite || 0) + (ligne.quantite || 0)
+    ecrireDisque(
+      courses()
+        .filter((l) => l !== ligne)
+        .map((l) => (l === existante ? { ...l, quantite: assainirQuantite(total) } : l)),
+    )
+    return true
+  }
+  remplacer(cle, { type, nom: propre })
+  return true
+}
+
 /** Coche (`oui` vrai), décoche (`oui` faux) ou inverse (sans `oui`). */
 export function cocher(cle, oui) {
   const ligne = courses().find((l) => cleLigne(l.type, l.nom) === cle)

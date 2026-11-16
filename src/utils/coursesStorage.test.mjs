@@ -8,6 +8,7 @@ import {
   cleLigne,
   cocher,
   courses,
+  modifier,
   retirer,
   retirerCochees,
 } from './coursesStorage.js'
@@ -99,4 +100,31 @@ test('stockage corrompu → liste vide ; lignes invalides écartées', () => {
   })
   _reinitialiser()
   assert.deepEqual(courses(), [{ type: 'objet', nom: 'Plain chest', quantite: null, coche: false }])
+})
+
+test('modifier une ligne : elle garde sa place, sa quantité et sa coche', () => {
+  ajouter('texte', 'baies', 5)
+  ajouter('objet', 'Plain chest')
+  cocher(cleLigne('texte', 'baies'), true)
+  assert.equal(modifier(cleLigne('texte', 'baies'), 'objet', 'Leppa Berry'), true)
+  assert.deepEqual(courses(), [
+    { type: 'objet', nom: 'Leppa Berry', quantite: 5, coche: true },
+    { type: 'objet', nom: 'Plain chest', quantite: null, coche: false },
+  ])
+})
+
+test('modifier vers une ligne déjà présente : les deux fusionnent, la quantité se cumule', () => {
+  ajouter('texte', 'coffre', 2)
+  ajouter('objet', 'Plain chest', 3)
+  assert.equal(modifier(cleLigne('texte', 'coffre'), 'objet', 'Plain chest'), true)
+  assert.deepEqual(courses(), [{ type: 'objet', nom: 'Plain chest', quantite: 5, coche: false }])
+})
+
+test('modifier : sans changement, vide ou ligne inconnue, rien ne bouge', () => {
+  ajouter('texte', 'rondins', 30)
+  const avant = courses()
+  assert.equal(modifier(cleLigne('texte', 'rondins'), 'texte', '  rondins '), false)
+  assert.equal(modifier(cleLigne('texte', 'rondins'), 'texte', '   '), false)
+  assert.equal(modifier(cleLigne('texte', 'inconnu'), 'texte', 'autre'), false)
+  assert.equal(courses(), avant)
 })

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Image, Modal, Select } from 'antd'
 import { ZoomInOutlined } from '@ant-design/icons'
+import BoutonPlans from '../components/BoutonPlans'
 import { ICONE_HABITAT, ICONE_VILLE, IconeNuage, IconeSpecialite } from '../components/Icones'
 import { VignetteObjet, VignettePokemon } from '../components/Vignette'
 import { urlSpriteObjet, urlSpritePokemon } from '../data/images'
@@ -319,6 +320,7 @@ export default function FichePokemonPage() {
           ) : (
             <span className="fiche-sans-habitat">Aucun habitat ne peut l’accueillir</span>
           )}
+          <BoutonPlans pokemon={[nom]} />
         </div>
       </header>
 

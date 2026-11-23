@@ -3,6 +3,8 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Checkbox, Input, Modal, Popconfirm, Segmented, Select, Slider, Tooltip } from 'antd'
 import Aide from '../components/Aide'
 import GenerateurHabitat from '../components/GenerateurHabitat'
+import BoutonPlans from '../components/BoutonPlans'
+import PlanDeVille from '../components/PlanDeVille'
 import CarteHabitat from '../components/CarteHabitat'
 import {
   ICONE_CATEGORIE,
@@ -64,6 +66,7 @@ import {
   useHabitats,
 } from '../utils/habitatsStorage'
 import { EPAISSEUR_MUR, reglagesDeUrl, reglagesVersUrl } from '../utils/habitatConstruction'
+import { usePlans } from '../utils/plansStorage'
 import { correspond, normaliser } from '../utils/recherche'
 // Les styles du générateur : la fiche l'ouvre dans un dialogue, hors de la vue Construction.
 import './ConstructionPage.css'
@@ -642,6 +645,15 @@ function SelecteurPokemon({
   // « Suivant » descend le classement sans réorganiser les 373 vignettes sous les yeux.
   const [suggestionOuverte, setSuggestionOuverte] = useState(false)
   const [rang, setRang] = useState(0)
+  const [planOuvert, setPlanOuvert] = useState(false)
+
+  // Les plans personnalisés bâtis dans la ville filtrée : le bouton « Plans » n'existe
+  // que s'il y en a, pour garder le plan sous les yeux pendant qu'on compose.
+  const tousPlans = usePlans()
+  const plansVille = useMemo(
+    () => (villeFiltre ? tousPlans.filter((p) => p.lieu === villeFiltre) : []),
+    [tousPlans, villeFiltre],
+  )
 
   const saisieDifferee = useDeferredValue(saisie)
   const terme = normaliser(saisieDifferee.trim())
@@ -836,6 +848,31 @@ function SelecteurPokemon({
         </p>
       )}
 
+      <Modal
+        title={`Plan — ${villeFiltre ? nomVille(nomsVilles, villeFiltre) : ''}`}
+        open={planOuvert && plansVille.length > 0}
+        onCancel={() => setPlanOuvert(false)}
+        footer={null}
+        width={1200}
+        destroyOnClose
+      >
+        <PlanDeVille
+          plans={plansVille}
+          mesHabitats={habitats}
+          sansHabitatInitial={sansHabitatSeul}
+          // Composer un habitat : chaque carte du plan peut le créer d'un clic, avec ses
+          // Pokémon pas encore logés. Pour un colocataire, le groupe existe déjà.
+          onCreer={
+            creation
+              ? (noms) => {
+                  setPlanOuvert(false)
+                  onValider([...noms].sort(comparerParNumero))
+                }
+              : undefined
+          }
+        />
+      </Modal>
+
       <div className="selecteur-filtres">
         <div className="champ-groupe">
           <Input
@@ -895,6 +932,16 @@ function SelecteurPokemon({
         >
           Sans habitat seulement
         </button>
+        {plansVille.length > 0 && (
+          <button
+            type="button"
+            className="bascule"
+            title={`Le plan personnalisé de ${nomVille(nomsVilles, villeFiltre)}`}
+            onClick={() => setPlanOuvert(true)}
+          >
+            Plans
+          </button>
+        )}
         <button
           type="button"
           className="bascule"
@@ -1270,6 +1317,7 @@ function VueHabitat({
               </button>
             )}
           </div>
+          <BoutonPlans pokemon={groupe} />
           {groupe.length < MAX_COLOCATAIRES ? (
             <button type="button" className="ghost-btn" onClick={onAjouter}>
               + Ajouter un colocataire

@@ -1,6 +1,7 @@
-<!-- version: 1.9.0 -->
+<!-- version: 1.10.0 -->
 
 ### Nouveautés
-- **Événement « Des pommes pour Verpom »** (jusqu'au 1er décembre) : Verpom, Pomdrapi, Dratatin, Pomdramour et Pomdorochi entrent au Pokédex événementiel, avec leur habitat idéal, leurs spécialités, leur goût et leurs préférences. Les trois habitats de l'événement — Montagne de pommes, Coin tarte aux pommes sucrée, Cuisine pomme — et les douze objets à échanger contre des Pommes Nectar sont dans l'appli ; la tarte, le panier de cueillette, le saladier, l'extracteur de jus et les ustensiles comptent dans les recommandations d'habitat.
-- **Catégorie « Fruits et légumes »** : baies, légumes, graines, et chaque stade des arbres à baies et des plants — de la pousse à l'arbre desséché — se retrouvent dans un même filtre, avec leur rayon dans la liste de courses.
-- **Liste de courses** : un crayon sur chaque ligne permet de la modifier — transformer une ligne de texte en objet, ou un objet en un autre, sans perdre la quantité. Et le champ d'ajout propose les objets au fil de la frappe : choisir une suggestion ajoute l'objet, Entrée garde votre texte tel quel.
+- **Vos plans personnalisés, depuis la création d'habitat** : quand la ville choisie a un plan, un bouton « Plans » apparaît à côté de « Sans habitat seulement ». Il ouvre le plan à gauche, ses habitats à droite : chaque habitat montre en grand les Pokémon que vous y avez prévus. Survolez une carte et son habitat brille sur le plan. Plusieurs plans pour la ville, ou plusieurs étages : on passe de l'un à l'autre en haut de la fenêtre.
+- **Créer un habitat d'un clic depuis le plan** : en bas de chaque carte, « Créer son habitat » crée la fiche avec les Pokémon prévus qui n'ont pas encore d'habitat, et vous y emmène.
+- **« Sans habitat seulement » sur le plan** : cochée, elle grise les Pokémon déjà logés, pour voir d'un coup d'œil ceux qu'il reste à installer.
+- **Bouton « Plan » sur les fiches** : la fiche d'un Pokémon prévu dans un plan, et celle d'un habitat dont un Pokémon l'est, ouvrent ce plan directement à son étage, son habitat mis en lumière.
